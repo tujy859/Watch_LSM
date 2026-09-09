@@ -1,0 +1,9 @@
+{
+  "true_hr_bpm": 112.0,
+  "true_hr_freq_hz": 1.8666666666666667,
+  "raw_ppg_dominant_freq_hz": 2.0666666666666664,
+  "clean_ppg_dominant_freq_hz": 1.0,
+  "snr_raw_db": 1.5709685793899644,
+  "snr_clean_db": 1.0102156134834466,
+  "snr_gain_db": -0.5607529659065178
+}

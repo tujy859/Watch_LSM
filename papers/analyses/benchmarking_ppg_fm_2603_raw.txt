@@ -1,0 +1,402 @@
+--- Page 1 ---
+Benchmarking Open-Source PPG Foundation Models for Biological
+Age Prediction
+N. Brag
+Independent Researcher
+March 2026
+Keywords:photoplethysmography; biological age; foundation models; PPG embeddings; cardio-
+vascular aging; digital biomarker
+Abstract
+A model trained on 212,231 subjects to predict vascular age from PPG (AI-PPG Age, trained
+on UK Biobank finger PPG) fails when applied to a different clinical population—its predictions
+collapse to a narrow range (38–67 years) regardless of the patient’s true age. A general-purpose
+foundation model trained on no age-related objective at all achieves lower error on the same
+data. We document this reversal, explain its cause, and show that open-source PPG embeddings
+reliably encode biological aging information across acquisition contexts.
+We benchmark three open-source PPG models—Pulse-PPG, PaPaGei-S, and AI-PPG Age—
+on 906 surgical patients from PulseDB (VitalDB clinical finger PPG, 125 Hz, 10-second seg-
+ments), using frozen embeddings with Ridge regression and 5-fold stratified cross-validation.
+Pulse-PPG achieves MAE = 9.28 years (R 2 = 0.388), outperforming both the task-specific AI-
+PPG Age in linear probe mode (MAE = 9.72) and the combination of heart rate variability
+with all demographic features (MAE = 9.59). Fusing Pulse-PPG embeddings with demograph-
+ics yields MAE = 8.22 years (R 2 = 0.517,r= 0.725). The age-adjusted PPG age gap correlates
+significantly with diastolic blood pressure (r=−0.188,p= 1.2×10 −8), consistent with Apple’s
+finding that PPG morphology captures vascular aging beyond chronological age. The perfor-
+mance gap with Apple’s PpgAge (MAE = 2.43 years) is attributable to dataset scale (∼236×
+fewer subjects) and population differences, not model architecture: our learning curve shows no
+plateau at 906 subjects. All code is publicly available.
+1 Introduction
+Biological age—a measure of physiological deterioration independent of chronological age—is a pow-
+erful predictor of mortality, cardiovascular disease, and age-related conditions [Jylh¨ av¨ a et al., 2017].
+Traditional biological age clocks rely on blood biomarkers [Levine et al., 2018], DNA methylation
+[Horvath, 2013], or clinical assessments, limiting their use to periodic clinical visits.
+The photoplethysmogram (PPG), a ubiquitous optical signal captured by pulse oximeters and
+consumer smartwatches, encodes information about arterial stiffness, cardiac output, and auto-
+nomic function—all of which change with aging [Elgendi, 2012]. In October 2025, Apple introduced
+PpgAge, a deep learning model trained on 213,593 Apple Health Study participants that predicted
+chronological age with MAE = 2.43 years from wrist PPG and demonstrated that the PPG age gap
+(predicted−chronological age) predicted incident cardiovascular disease (HR = 1.46) [Miller et al.,
+2025].
+1
+arXiv:2603.14030v1  [cs.LG]  14 Mar 2026
+
+--- Page 2 ---
+PpgAge’s reliance on proprietary data (Apple Health Study) and closed-source models, however,
+limits reproducibility and broader adoption. Two questions remain unanswered: (1) Can open-
+source PPG foundation models replicate this capability? (2) Does the PPG age signal persist in
+clinical finger PPG, beyond Apple Watch wrist PPG?
+Several open-source PPG foundation models have recently emerged.Pulse-PPG[Saha et
+al., 2025] is a ResNet-based model pre-trained via contrastive learning on wearable PPG data,
+whilePaPaGei[Pillai et al., 2025] uses a mixture-of-experts ResNet architecture pre-trained on
+20 million PPG segments from public datasets. Both produce general-purpose PPG embeddings
+that can be used for downstream tasks via linear probing.
+A critical question for clinical translation is whether foundation model embeddings capture aging
+information beyond what can be extracted from simple heart rate (HR) and heart rate variability
+(HRV) features. Apple reported that HR/HRV alone achieved MAE = 6.1 years on their large
+dataset (using 30-day aggregated statistics from thousands of segments per subject), compared to
+2.43 years for their full model. If foundation model embeddings merely encode HR/HRV, their
+added complexity would be unjustified.
+In this work, we benchmark Pulse-PPG and PaPaGei-S for chronological age prediction on
+PulseDB [Wang et al., 2023], a public dataset of 5,361 subjects with clinical finger PPG from
+VitalDB surgical patients and MIMIC-III ICU patients. We evaluate frozen embeddings with
+Ridge regression, compare against HR/HRV and demographic baselines, and test whether the PPG
+age gap associates with cardiovascular risk factors, an analysis motivated by the key clinical finding
+from PpgAge.
+2 Methods
+2.1 Dataset
+We use PPG segments from the VitalDB subset of PulseDB [Wang et al., 2023], comprising clinical
+finger PPG recordings from surgical patients at Seoul National University Hospital. PulseDB
+provides pre-segmented 10-second windows at 125 Hz (1,250 samples per segment) with per-segment
+annotations including age, sex, height, weight, BMI, and intra-operative systolic and diastolic blood
+pressure (SBP, DBP).
+From 943 downloaded subject files, 906 were successfully loaded (37 excluded: 29 due to file
+corruption or malformed h5py object references, 8 due to age<18). We restrict our analysis to the
+VitalDB subset, as MIMIC-III subjects in PulseDB lack the complete per-segment demographic
+annotations (height, weight, BMI, and blood pressure) required for our demographic feature exper-
+iments. We use up to 50 segments per subject, sampled evenly across available segments, yielding
+41,104 total segments. The age distribution spans 18–92 years (mean 60.9, SD 15.6), with 56.2%
+male subjects.
+2.2 Foundation Models
+Pulse-PPG[Saha et al., 2025]: A 12-block ResNet1D (128 base filters, kernel size 11, max pooling)
+pre-trained via contrastive learning on wearable PPG from a 100-day field study with 120 partic-
+ipants. Expects 50 Hz input; we resample from 125 Hz using scipy’s signal.resample. Produces
+512-dimensional embeddings directly from the forward pass.
+PaPaGei-S[Pillai et al., 2025]: A ResNet1D with Mixture-of-Experts (18 blocks, 32 base filters,
+3 experts) pre-trained on 20M PPG segments from public datasets using morphology-augmented
+contrastive learning. Operates at native 125 Hz. Produces 512-dimensional embeddings.
+2
+
+--- Page 3 ---
+AI-PPG Age[Nie et al., 2025]: A 1D CNN with Squeeze-and-Excitation blocks trained end-to-
+end on 212,231 UK Biobank subjects for direct vascular age regression using a distribution-aware
+loss function. Input is a single averaged beat waveform (resampled to 100 samples); output is
+a scalar age prediction. We evaluate this model in two modes: (1)zero-shot, using direct age
+predictions without any adaptation; and (2)linear probe, extracting 192-dimensional pre-dense
+layer activations via a forward hook on the final convolutional stage and training Ridge regression
+on these embeddings. Beat templates are extracted by detecting systolic peaks in each 10-second
+segment, isolating peak-to-peak waveforms, resampling each to 100 samples, and averaging across
+all valid beats in the segment.
+All three models are used as frozen feature extractors—no fine-tuning is performed. Input
+segments for Pulse-PPG and PaPaGei-S are z-score normalized per segment before embedding
+extraction.
+2.3 HR/HRV Feature Extraction
+To contextualize foundation model performance, we extract traditional heart rate and heart rate
+variability features from each 10-second PPG segment. Systolic peaks are detected using scipy’s
+find peakswith minimum inter-peak distance of 0.4 s (corresponding to 150 BPM maximum) and
+minimum prominence of 0.1. Inter-beat intervals (IBI) are computed from successive peak locations
+and filtered to the physiologically plausible range of 0.3–2.0 s (30–200 BPM). Segments with fewer
+than 4 detected peaks or fewer than 3 valid IBIs are excluded.
+From valid segments, we extract 7 features: mean heart rate (HR), HR standard deviation, HR
+range, mean IBI, standard deviation of normal-to-normal intervals (SDNN), root mean square of
+successive differences (RMSSD), and the proportion of successive IBI differences exceeding 50 ms
+(pNN50). All 41,104 segments (100%) produced valid HR/HRV features.
+2.4 Age Prediction Pipeline
+For each feature set, we train a Ridge regression (sklearn RidgeCV,α∈{0.01,0.1,1,10,100,1000})
+to predict chronological age. Features are standardized (zero mean, unit variance) before regression.
+We evaluate the following feature configurations:
+1.Baseline: predict the training set mean age for all subjects
+2.HR only: mean heart rate (1 feature)
+3.HR + HR V: all 7 HR/HRV features
+4.Demographics only: sex, BMI, height, weight, SBP, DBP (6 features)
+5.HR/HR V + Demographics: 7 HR/HRV + 6 demographic features (13 features)
+6.PPG only: 512-dim embeddings from each foundation model
+7.PPG + Demographics: concatenation of embeddings and demographic features (518 fea-
+tures)
+2.5 Evaluation Protocol
+We use 5-fold stratified cross-validation at the subject level. Subjects are stratified by age decade
+and assigned to folds via round-robin within each stratum, ensuring balanced age distributions
+3
+
+--- Page 4 ---
+across folds. All segments from a given subject appear in the same fold (no segment-level data
+leakage).
+For each test fold, segment-level predictions are averaged per subject to produce a single age
+estimate. We report subject-level MAE, R 2, and Pearson correlation (r), along with per-decade
+MAE breakdown.
+2.6 Age Gap Association Analysis
+Following Miller et al. [2025], we compute the PPG age gap as predicted age minus chronological age
+for each subject using cross-validated predictions (each subject’s prediction comes from a fold where
+it was held out). We test Pearson correlations between the age gap and cardiovascular markers
+(SBP, DBP, BMI), both raw and adjusted for chronological age via linear residualization. The
+age-adjusted partial correlation removes the confound that both the age gap and health markers
+correlate with chronological age.
+Statistical significance is assessed atα= 0.05; given three simultaneous tests, the Bonferroni-
+corrected threshold isα= 0.017.
+3 Results
+3.1 Age Prediction Performance
+Table 1 presents the main results across all models and feature configurations.
+Table 1: Age prediction performance (5-fold stratified CV, 906 VitalDB subjects). MAE in years.
+Model MAE±SD R 2 r
+Baseline (predict mean) 11.91 — —
+Traditional cardiac features
+HR only 11.83±0.21 0.015 0.122
+HR + HRV (7 features) 11.49±0.15 0.072 0.283
+Demographics only
+Sex only 11.81±0.13 0.007 0.087
+All demographics 10.04±0.38 0.270 0.519
+Combined traditional features
+HR/HRV + Demographics 9.59±0.30 0.329 0.574
+PPG foundation models (linear probe, 5-fold CV)
+PaPaGei-S 9.80±0.34 0.313 0.583
+Pulse-PPG 9.28±0.44 0.388 0.645
+AI-PPG Age (zero-shot) 11.50 0.043 0.313
+AI-PPG Age (linear probe) 9.72±0.37 0.310 0.563
+PPG + Demographics fusion
+PaPaGei-S + Demographics 8.56±0.22 0.477 0.696
+Pulse-PPG + Demographics 8.22±0.25 0.517 0.725
+AI-PPG Age + Demographics 8.58±0.25 0.440 0.664
+4
+
+--- Page 5 ---
+Traditional HR/HRV features provide minimal age prediction capability from 10-second seg-
+ments (MAE = 11.49, barely improving over the baseline of 11.91). Demographics alone are mod-
+erately informative (MAE = 10.04), with anthropometric measurements (height, weight) and blood
+pressure contributing the most signal. Combining HR/HRV with demographics yields MAE = 9.59—
+the best achievable without deep learning.
+Pulse-PPG embeddings alone (MAE = 9.28) outperform the HR/HRV + Demographics com-
+bination (MAE = 9.59), demonstrating that foundation model embeddings capture morphological
+aging information in the PPG waveform that goes beyond heart rate, heart rate variability, and
+body measurements combined. The fusion of Pulse-PPG with demographics achieves the best
+overall performance (MAE = 8.22, R2 = 0.517), with low fold-to-fold variance (±0.25 years).
+The AI-PPG Age model (trained on UK Biobank healthy subjects) shows poor zero-shot transfer
+to clinical VitalDB data (MAE = 11.50), with predictions compressed to a narrow range (38–67
+years) compared to the true age range (18–92 years). This is consistent with a population shift:
+the UK Biobank model is calibrated for healthy ambulatory subjects, not surgical patients under
+anesthesia. With linear probe fine-tuning, AI-PPG Age (linear probe) achieves MAE = 9.72, still
+inferior to Pulse-PPG and PaPaGei-S which were pre-trained on more diverse PPG data.
+Figure 1 shows predicted vs. chronological age for all 906 subjects under the best model, illus-
+trating the regression-to-the-mean pattern at age extremes.
+Figure 1: Predicted vs. chronological age for the two contrasting models (n= 906 subjects).Left:
+AI-PPG Age (zero-shot), a task-specific model trained on 212,231 UK Biobank subjects, produces
+predictions compressed to a narrow range (38–67 years) regardless of true age — a population
+shift failure.Right: Pulse-PPG + Demographics, a general-purpose foundation model with no
+age-related training objective, achieves MAE = 8.22 years with predictions well distributed along
+the diagonal.
+3.2 Performance by Age Decade
+Performance is best for the 50–70 age range (MAE 5–6 years), which contains the majority of
+subjects. The model struggles with extremes (<40 and>80 years), consistent with regression
+5
+
+--- Page 6 ---
+Table 2: MAE by age decade for Pulse-PPG + Demographics (n= 902 subjects aged 20–100; 4
+subjects aged 18–19 excluded from decade bins).
+Age group20–40 40–50 50–60 60–70 70–80 80–100
+nsubjects 96 140 213 229 179 45
+MAE (years) 15.69 7.51 5.59 6.01 9.10 13.40
+toward the mean in an age-imbalanced dataset centered around 60 years.
+3.3 Learning Curve
+Figure 2: Learning curve: subject-level MAE vs training set size for Pulse-PPG and PaPaGei-S
+(5-fold CV, averaged across folds).
+Figure 2 shows that MAE decreases monotonically with training set size for both models, from
+∼10.5 years (20 subjects) to∼9.2 years (700+ subjects), without fully plateauing. This suggests
+that additional training data would further improve performance, and that the gap with Apple’s
+PpgAge (MAE 2.43) is partly attributable to dataset size (906 vs 213,593 subjects).
+3.4 Age Gap Association with Cardiovascular Health
+Table 3 presents correlations between the cross-validated PPG age gap and cardiovascular markers.
+The key finding is a highly significant age-adjusted partial correlation between the PPG age
+gap and DBP (r=−0.188,p= 1.2×10 −8). At a given chronological age, subjects whose PPG
+appears “older” have lower diastolic blood pressure. This is physiologically consistent: arterial
+stiffening with age reduces diastolic pressure (widening pulse pressure), and the PPG waveform
+directly reflects arterial compliance through its morphology [Millasseau et al., 2002]. A borderline
+6
+
+--- Page 7 ---
+Table 3: Correlation of PPG age gap (Pulse-PPG + Demographics) with health markers (n= 906).
+Markerr p r partial ppartial
+SBP (mmHg)−0.039 0.237 0.066 0.048
+DBP (mmHg) 0.013 0.688−0.1881.2×10 −8
+BMI (kg/m2)−0.014 0.672−0.007 0.836
+association with SBP (r= 0.066,p= 0.048) is also observed, with the expected positive direction
+(stiffer arteries raise systolic pressure). Together, these results are consistent with Apple’s finding
+that PPG-derived age captures vascular aging [Miller et al., 2025], demonstrated here in a clinical
+rather than ambulatory context.
+Raw (non-age-adjusted) correlations are near zero because the age gap in a regression model
+is dominated by the systematic regression-to-the-mean bias (young subjects are overestimated, old
+subjects underestimated), which confounds any health association. The partial correlation removes
+this confound, revealing the true biological signal.
+4 Discussion
+4.1 Open-Source Models Can Predict Age from PPG
+Our results demonstrate that open-source PPG foundation models, used as frozen feature extractors
+with simple linear probing, can predict chronological age from clinical finger PPG with MAE of
+8–10 years. While this is considerably higher than Apple’s 2.43 years, several factors explain the
+gap:
+Dataset size: We use 906 subjects vs Apple’s 213,593—a 236×difference. Our learning curve
+shows no plateau, suggesting that performance would improve substantially with more data.
+Population: PulseDB contains surgical patients under anesthesia, with hemodynamic pertur-
+bations (vasopressors, fluid resuscitation, anesthetic agents) that alter PPG morphology. Apple
+used ambulatory resting PPG from generally healthy participants.
+Signal source: Clinical finger pulse oximetry vs consumer wrist PPG. While finger PPG has
+higher signal-to-noise ratio, the waveform morphology differs from wrist PPG, and the foundation
+models may not be optimally trained for finger PPG age prediction.
+T raining paradigm: We use frozen embeddings with Ridge regression (linear probe), whereas
+Apple trained an end-to-end deep learning model. Fine-tuning the foundation models on PulseDB
+would likely improve performance.
+4.2 AI-PPG Age Does Not Transfer Zero-Shot to Clinical Data
+The AI-PPG Age model [Nie et al., 2025] (trained on 212,231 UK Biobank subjects) fails to
+generalize directly to VitalDB clinical finger PPG. Zero-shot predictions are compressed to a narrow
+range (38–67 years), effectively predicting a constant near the UK Biobank mean rather than
+capturing inter-individual variation. This population shift failure demonstrates that models trained
+exclusively on healthy finger PPG from a single cohort (UK Biobank) cannot be directly applied
+to clinical settings without adaptation.
+General-purpose PPG foundation models like Pulse-PPG and PaPaGei, pre-trained on diverse
+multi-dataset collections, generalize better across acquisition contexts than task-specific age clocks,
+which achieve lower MAE within-distribution at the cost of cross-domain robustness.
+7
+
+--- Page 8 ---
+Figure 3: Correlation of PPG age gap (Pulse-PPG + Demographics) with cardiovascular markers
+(n= 906). Each panel shows the scatter plot with both raw and age-adjusted (partial) correlations.
+Only the DBP partial correlation survives Bonferroni correction.
+Pulse-PPG (MAE = 9.28), a general-purpose foundation model never trained on any age-related
+objective, outperforms AI-PPG Age (MAE = 9.72), which was explicitly trained for vascular age
+prediction on 212,231 subjects. This reversal directly demonstrates the cost of distribution shift: a
+task-specific model tuned within-distribution loses its advantage when applied out-of-distribution,
+while a diverse pre-training regime confers robustness that compensates for the absence of age
+supervision.
+4.3 Foundation Models Capture More Than HR/HRV
+PPG foundation model embeddings outperform traditional HR/HRV features for age prediction.
+HR alone is nearly uninformative (MAE = 11.83 vs baseline 11.91), and adding HRV features pro-
+vides only modest improvement (MAE = 11.49). Even when combined with all demographics,
+HR/HRV achieves only MAE = 9.59—still worse than Pulse-PPG embeddings alone (MAE = 9.28).
+The 512-dimensional foundation model embeddings encode subtle morphological features of the
+PPG waveform (pulse contour shape, dicrotic notch characteristics, and wave reflection patterns)
+that are lost when the signal is reduced to peak-to-peak intervals. These morphological features
+carry aging information related to arterial stiffness and vascular compliance that is invisible to
+HR/HRV analysis.
+The poor performance of HR/HRV from 10-second segments contrasts with Apple’s report of
+MAE = 6.1 years for HR/HRV. This discrepancy is likely explained by segment duration: Apple
+8
+
+--- Page 9 ---
+used longer recording windows with thousands of segments per subject aggregated over 30 days,
+providing much more stable HR/HRV estimates. From a single 10-second window, HRV metrics
+like SDNN and RMSSD are inherently noisy, as they are estimated from only∼10 inter-beat
+intervals. This highlights an advantage of foundation model approaches: they can extract rich
+aging information from short segments where traditional features are unreliable.
+4.4 PPG Captures Aging Beyond Demographics
+PPG embeddings alone (MAE = 9.28) outperform all demographic features combined, including
+sex, BMI, height, weight, and blood pressure (MAE = 10.04). This demonstrates that the PPG
+waveform encodes aging information that cannot be captured by simple body measurements. The
+further improvement from PPG+Demographics fusion (MAE = 8.22) shows that these information
+sources are complementary.
+Sex and BMI alone provide no predictive value beyond the baseline (MAE≈11.8 vs 11.91),
+confirming that demographic features have limited utility for age prediction unless combined with
+anthropometric and hemodynamic measurements.
+4.5 Clinical Significance of the Age Gap
+The highly significant association between the age-adjusted PPG age gap and diastolic blood pres-
+sure (r=−0.188,p= 1.2×10 −8) provides clinical validation. In a population of surgical patients
+with noisy intra-operative blood pressure measurements, the PPG age gap still captures vascular
+aging—a signal that would likely be stronger in ambulatory settings with resting blood pressure.
+The negative direction of the DBP correlation is physiologically consistent: arterial stiffening
+increases pulse pressure (SBP rises, DBP falls), and the PPG waveform, which is shaped by arte-
+rial compliance, peripheral resistance, and wave reflection, directly encodes this stiffening process
+[Millasseau et al., 2002]. Subjects who “look older” by PPG morphology have stiffer arteries and
+thus lower DBP at any given age.
+4.6 Limitations
+Clinical population: VitalDB subjects are surgical patients, not healthy individuals. The PPG
+age gap may reflect acute illness rather than chronic biological aging. Future work should validate
+on ambulatory datasets.
+Intra-operative PPG: Anesthetic agents and hemodynamic interventions alter PPG mor-
+phology in ways unrelated to aging. This likely adds noise and inflates MAE.
+No longitudinal outcomes: Unlike Apple’s PpgAge, we cannot test whether the PPG age
+gap predicts incident cardiovascular events, as PulseDB lacks long-term follow-up data.
+Linear probe only: We use frozen embeddings with Ridge regression. Fine-tuning on the age
+prediction task, or using more expressive regression heads, could substantially improve performance.
+No wearable validation: Our results are on clinical finger PPG. Transfer to consumer wrist
+PPG remains untested.
+Short segment duration: HR/HRV features extracted from 10-second windows are inherently
+noisier than those from longer recordings. The poor HR/HRV baseline may partly reflect this
+limitation rather than a fundamental lack of age information in cardiac timing.
+Multiple comparisons: The borderline SBP association (p= 0.048) does not survive Bonfer-
+roni correction (adjusted thresholdα= 0.017) and should be interpreted with caution.
+9
+
+--- Page 10 ---
+4.7 Implications
+Despite these limitations, the results are clear: open-source PPG foundation models capture mean-
+ingful aging biomarkers without any task-specific training, their embeddings encode waveform mor-
+phology that HR/HRV cannot, and the resulting age gap reflects vascular health even in noisy
+intra-operative data. An open-source, wearable biological age clock is feasible.
+5 Conclusion
+To our knowledge, we present the first independent benchmark of open-source PPG foundation
+models for biological age prediction. On 906 VitalDB subjects, Pulse-PPG with demographic
+fusion achieves MAE = 8.22 years (R 2 = 0.517), substantially outperforming HR/HRV baselines
+(MAE = 11.49) and demographic baselines (MAE = 10.04). Foundation model embeddings alone
+outperform the combination of HR/HRV with demographics, demonstrating that they capture mor-
+phological aging information invisible to traditional cardiac metrics. The PPG age gap significantly
+correlates with diastolic blood pressure (p= 1.2×10 −8), providing clinical validation. While the
+gap with Apple’s PpgAge (2.43 years) remains large, our learning curve analysis suggests this is
+primarily driven by dataset size and population differences rather than model capability. These
+results establish open-source PPG foundation models as viable tools for biological age estimation
+and motivate further development on larger, ambulatory, and longitudinal datasets.
+Data and Code Availability
+PulseDB is publicly available athttps://github.com/pulselabteam/PulseDB. Pulse-PPG weights
+are available athttps://github.com/maxxu05/pulseppg. PaPaGei-S weights are available at
+https://github.com/Nokia-Bell-Labs/papagei-foundation-model. AI-PPG Age weights are
+available athttps://huggingface.co/Ngks03/PPG-VascularAge. Our analysis code, including
+the full benchmark pipeline and all evaluation scripts, is publicly available athttps://github.
+com/Misterbra/ppg-age-benchmark.
+Ethics Statement
+This study used the publicly available PulseDB dataset [Wang et al., 2023], which is derived from
+VitalDB clinical records collected at Seoul National University Hospital under institutional ethical
+approval. No new human subjects data were collected for this study; no additional ethics review
+was required.
+Author Contributions
+N. Brag: Conceptualization, Methodology, Software, Formal analysis, Investigation, Visualization,
+Writing – Original Draft, Writing – Review & Editing.
+Acknowledgments
+The author thanks Maxwell Xu and Santosh Kumar (University of Memphis) for open-sourcing the
+Pulse-PPG foundation model; Arvind Pillai (Dartmouth College) and Dimitris Spathis, Fahim
+10
+
+--- Page 11 ---
+Kawsar, and Mohammad Malekzadeh (Nokia Bell Labs) for open-sourcing PaPaGei; and the
+PulseDB and VitalDB teams for making clinical PPG data publicly available.
+Conflict of Interest
+The author declares no competing interests.
+References
+Horvath, S. (2013). DNA methylation age of human tissues and cell types.Genome Biology,
+14(10):R115.
+Jylh¨ av¨ a, J., Pedersen, N. L., and H¨ agg, S. (2017). Biological age predictors.EBioMedicine, 21:29–
+36.
+Levine, M. E., Lu, A. T., Quach, A., et al. (2018). An epigenetic biomarker of aging for lifespan
+and healthspan.Aging, 10(4):573–591.
+Elgendi, M. (2012). On the analysis of fingertip photoplethysmogram signals.Current Cardiology
+Reviews, 8(1):14–25.
+Millasseau, S. C., Kelly, R. P., Ritter, J. M., and Chowienczyk, P. J. (2002). Determination of
+age-related increases in large artery stiffness by digital pulse contour analysis.Clinical Science,
+103:371–377.
+Miller, A. C., Futoma, J., Abbaspourazad, S., et al. (2025). A wearable-based aging clock associates
+with disease and behavior.Nature Communications, 16:9264.
+Saha, M., Xu, M. A., Mao, W., Neupane, S., Rehg, J. M., and Kumar, S. (2025). Pulse-PPG: An
+open-source field-trained PPG foundation model for wearable applications across lab and field
+settings.Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies
+(IMWUT), 9(3):126.
+Pillai, A., Spathis, D., Kawsar, F., and Malekzadeh, M. (2025). PaPaGei: Open foundation models
+for optical physiological signals.Proceedings of ICLR 2025.
+Wang, W., Mohseni, P., Kilgore, K. L., and Najafizadeh, L. (2023). PulseDB: A large, cleaned
+dataset based on MIMIC-III and VitalDB for benchmarking cuff-less blood pressure estimation
+methods.Frontiers in Digital Health, 4:1090854.
+Nie, G., Zhao, Q., Tang, G., Li, Y., and Hong, S. (2025). Artificial intelligence-derived photoplethys-
+mography age as a digital biomarker for cardiovascular health.Communications Medicine, 5:481.
+11

@@ -1,0 +1,29 @@
+{
+  "num_samples": 1069,
+  "feature_dim": 768,
+  "cpu_latency_ms_per_sample": 15.472891176828611,
+  "silhouette_score": 0.20265252888202667,
+  "classification_accuracy": 0.9968847352024922,
+  "per_class_f1": {
+    "Walk": 0.9961389961389961,
+    "Run": 1.0,
+    "Bike": 0.9948717948717949
+  },
+  "confusion_matrix": [
+    [
+      129,
+      0,
+      0
+    ],
+    [
+      0,
+      94,
+      0
+    ],
+    [
+      1,
+      0,
+      97
+    ]
+  ]
+}

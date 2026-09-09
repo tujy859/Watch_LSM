@@ -1,0 +1,45 @@
+# Watch-LSM Pretraining Configuration
+experiment_name: "watch_lsm_pretrain"
+seed: 42
+
+# Signal & Sampling Parameters
+signals:
+  window_duration_sec: 8.0     # 8-second temporal context window
+  ppg:
+    sampling_rate: 64          # PPG resampled or raw target fs (Hz)
+    channels: 1
+    patch_len_sec: 0.25        # 0.25s per patch (16 samples per patch)
+  acc:
+    sampling_rate: 32          # 3-axis ACC resampled target fs (Hz)
+    channels: 3
+    patch_len_sec: 0.25        # 0.25s per patch (8 samples per patch)
+
+# Model Architecture
+model:
+  hidden_dim: 128              # Transformer hidden dimension
+  n_heads: 4                   # Multi-head self-attention heads
+  n_layers: 4                  # Transformer encoder layers
+  feedforward_dim: 256         # Feedforward MLP expansion
+  dropout: 0.1
+  cross_attention: true        # Enable PPG <-> ACC bidirectional cross-modal attention
+
+# Self-Supervised Objectives
+ssl:
+  mask_ratio_ppg: 0.40         # 40% random patch masking for PPG
+  mask_ratio_acc: 0.30         # 30% random patch masking for ACC
+  loss_weights:
+    mae_recon: 1.0             # L1/L2 reconstruction loss
+    cross_modal_infonce: 0.2   # Cross-modal contrastive alignment
+    spectral_fft: 0.1          # Frequency spectrum preservation loss
+
+# Training Hyperparameters
+training:
+  batch_size: 64
+  learning_rate: 0.0005
+  weight_decay: 0.01
+  warmup_epochs: 5
+  max_epochs: 100
+  optimizer: "AdamW"
+  scheduler: "CosineAnnealingLR"
+  save_dir: "models/checkpoints/pretrain"
+  log_interval: 10

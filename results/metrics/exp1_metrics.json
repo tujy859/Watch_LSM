@@ -1,0 +1,20 @@
+{
+  "walk": {
+    "mean_hr_bpm": 59.4729217100044,
+    "std_hr_bpm": 6.632021529946698,
+    "mean_cadence_spm": 75.69767441860465,
+    "mean_acc_energy": 1.3892596793526815
+  },
+  "run": {
+    "mean_hr_bpm": 109.04773067827837,
+    "std_hr_bpm": 3.2569295916754326,
+    "mean_cadence_spm": 120.26162790697674,
+    "mean_acc_energy": 6.569664206069813
+  },
+  "bike": {
+    "mean_hr_bpm": 78.46952546389163,
+    "std_hr_bpm": 4.219907796725249,
+    "mean_cadence_spm": 92.44186046511628,
+    "mean_acc_energy": 0.24931220926538483
+  }
+}

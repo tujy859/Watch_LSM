@@ -1,0 +1,8 @@
+{
+  "num_samples": 717,
+  "embedding_dim": 72,
+  "activity_silhouette_score": 0.11797910183668137,
+  "activity_classification_accuracy": 0.9212962962962963,
+  "cadence_mae_spm": 22.16517568517614,
+  "cadence_r2": 0.024731523675023404
+}

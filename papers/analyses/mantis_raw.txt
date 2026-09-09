@@ -1,0 +1,2548 @@
+Mantis: Lightweight Foundation Model for Time Series Classification
+Vasilii Feofanov1 2 Songkang Wen 1 Shifeng Xie 1 3 Simon Roschmann 4 5 Marius Alonso 6 1 Hongbo Guo 1
+Romain Ilbert 7 1 Malik Tiomoko 1 Quentin Bouniot 4 5 8 Zeynep Akata 4 5 Lujia Pan 1 Jianfeng Zhang 1
+Ievgen Redko 1
+Abstract
+While foundation models have revolutionized var-
+ious domains, their application to time series clas-
+sification remains rather under-explored, with ex-
+isting literature predominantly focused on fore-
+casting. To bridge this gap, we introduceMan-
+tis, a transformer-based foundation model pre-
+trained exclusively on synthetic data via self-
+supervised contrastive learning. We demonstrate
+that effective tokenization is critical to unlock-
+ing the full potential of transformers, propos-
+ing a novel token generator unit. Furthermore,
+we introduce an enhanced test-time methodology
+that bridges the performance gap between Man-
+tis and strong specialized approaches by lever-
+aging intermediate-layer representations, self-
+ensembling, and cross-model embedding fusion.
+Extensive experiments demonstrate that Mantis
+establishes a new state-of-the-art, outperform-
+ing existing foundation models across four di-
+verse dataset collections covering various appli-
+cation domains. The source code is available at
+https://github.com/vfeofanov/mantis.
+1. Introduction
+Classification of time series data is a fundamental prob-
+lem in both academia and industry, arising in domains such
+as human activity recognition (Chen et al., 2025; Li et al.,
+2025b), power electronics (Liao et al., 2025; Li et al., 2025a),
+healthcare (Alchieri et al., 2025; Wong et al., 2025), fi-
+nance (Lee et al., 2023), and neuroscience (Wang et al.,
+2024; Gnassounou et al., 2025). Following the success of
+foundation models in vision (Radford et al., 2021) and lan-
+guage (Achiam et al., 2023), the development of time series
+1Huawei Noah’s Ark Lab 242.com 3Paris Cit ´e University
+4Helmholtz Munich 5Technical University of Munich 6Criteo
+7Meta 8Telecom Paris. Correspondence to: Vasilii Feofanov<first-
+name.lastname@gmail.com>.
+Proceedings of the 43 rd International Conference on Machine
+Learning, Seoul, South Korea. PMLR 306, 2026. Copyright 2026
+by the author(s).
+foundation models (TSFMs) has become an active research
+direction. These models aim to serve as universal feature ex-
+tractors for diverse downstream tasks, reducing the need for
+extensive labeled data required to train specialized models
+and simplifying the process of model selection and tuning.
+Over the past three years, a wide variety of TSFMs have
+been introduced. Most of them focus on forecasting, either
+pre-training a model from scratch (Auer et al., 2025b; Ansari
+et al., 2025) or re-programming foundation models designed
+for other modalities (Zhou et al., 2023; Chen et al., 2024).
+Although in principle any TSFM can be used for any time
+series downstream task, using a forecasting model for classi-
+fication may lead to suboptimal performance because certain
+pre-training paradigms are inherently more suitable for dis-
+criminative tasks (e.g., masked reconstruction loss may be
+better suited for imputation, while contrastive loss aligns
+more naturally with classification). Surprisingly, despite the
+omnipresence of time series classification tasks (Bagnall
+et al., 2018; Dau et al., 2019; Dempster et al., 2020), there
+are very few foundation models that focus specifically on
+them.
+To address this gap, we introduce Mantis, a new lightweight
+time series classification foundation model that has a strong
+zero-shot feature extraction performance. Mantis establishes
+a state-of-the-art performance on common benchmarks by
+leveraging the following key ideas:
+1. Time-series multi-view tokenizer.We design a ded-
+icated tokenizer that maps a raw sequence to a fixed
+number of tokens to control attention cost, by com-
+bining convolutional patch features of the instance-
+normalized signal, convolutional patch features of its
+first-order difference, and patch-wise statistics’ encod-
+ing. The three branches are concatenated and linearly
+projected into token embeddings.
+2. Synthetic contrastive pre-training for classification.
+Instead of masked reconstruction or autoregressive
+modelling that are often forecasting-oriented, we pre-
+train Mantis with contrastive InfoNCE loss (Oord
+et al., 2018; He et al., 2020) to explicitly increase
+representation separability for classification. We use
+CauKer (Xie et al., 2026) to generate synthetic pre-
+1
+arXiv:2502.15637v2  [cs.LG]  29 Jun 2026
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+TS2Vec T-Loss TNC
+Catch22+T abPFN T abICLMOMENT
+TiRex
+Chronos2 TiViT-H
+TiConvNext
+NuTime Mantis
+SE-Mantis
+Mantis
+& TiViT-HMantis
+& TiConvNext
+Accuracy
+0.8516
+0.8336
+0.7933
+0.8145 0.8173
+0.8083
+0.8338
+0.8394 0.8415 0.8436 0.8458
+0.8121
+0.8584 0.8582 0.8612 0.862
+Self-Supervised Stats T abular FMs TS Forecasting FMs Vision FMs TS Classif. FMs Self-Ens. Concatenation
+UCR Performance
+Figure 1.Final Performance on the UCR Benchmark.
+training data, naturally matching the contrastive learn-
+ing’s need for broad diversity and helping to enforce
+an out-of-distribution generalization.
+3. Test-time optimization.We introduce an inference-
+time pipeline that unlocks the potential of the pre-
+trained model, allowing us to reach strong general-
+ization in a purely frozen-encoder (zero-shot) regime.
+We achieve this by leveraging intermediate-layer repre-
+sentations, improved output-token aggregation, input-
+perturbation self-ensembling, and cross-model embed-
+ding fusion. Jointly, these steps allow us to match the
+performance of strong supervised and self-supervised
+baselines trained on individual datasets.
+Our extensive experiments on UCR (Dau et al., 2019),
+UEA (Bagnall et al., 2018), as well as domain-specific
+benchmarks including Human Activity Recognition (HAR)
+and EEG classification, demonstrate that Mantis consistently
+delivers strong performance in the frozen zero-shot regime,
+as shown in Figure 1.
+Throughout this paper, we use the term “zero-shot feature ex-
+traction” to describe the linear probing setup and emphasize
+that the encoder’s weights remain completely untouched
+(zero-shot transfer) during the downstream task adaptation.
+Both linear probing and zero-shot feature extraction refer to
+the same frozen-encoder paradigm.
+Conflict of Interest Disclosure.V . Feofanov, S. Wen, S.
+Xie, M. Alonso, H. Guo, R. Ilbert, M. Tiomoko, L. Pan, J.
+Zhang, and I. Redko are/were employed by Huawei Noah’s
+Ark Lab, where Mantis have been developed.
+2. Related Work
+Forecasting.Most of recently proposed TSFMs focus on
+forecasting, with existing approaches including pre-training
+decoder-only architectures (Das et al., 2023) or masked au-
+toencoders (Goswami et al., 2024). Another approach con-
+sists in adapting large language (Zhou et al., 2023; Ashok
+et al., 2025) or vision models (Chen et al., 2024; Roschmann
+et al., 2025) to the time series modality. In terms of architec-
+ture, transformers (Cohen et al., 2025; Ansari et al., 2025;
+Liu et al., 2025) are a common choice, with a few excep-
+tions such as state-space models (Bhethanabhotla et al.,
+2024; Graf et al., 2025) and xLSTM (Auer et al., 2025b).
+Classification.While forecasting TSFMs can be applied
+to classification, these two tasks usually rely on fundamen-
+tally different cues (e.g., low-frequency global trends vs.
+high-frequency local patterns), which hinders models from
+achieving superior performance on both tasks simultane-
+ously. This highlights the need to design foundation models
+tailored specifically for time series classification. In this
+vein, NuTime (Lin et al., 2024) stands out that pre-trains a
+transformer using a self-distillation approach. However, this
+paper has not explored the frozen-encoder paradigm, thus
+heavily relying on fine-tuning to achieve strong performance.
+Prior to the era of TSFMs, self-supervised approaches (Yue
+et al., 2022; Franceschi et al., 2019; Tonekaboni et al., 2021)
+were introduced to learn task-specific representations rather
+than a single universal one.
+Pre-training Data.Most TSFMs are pre-trained on a mix
+of real-world datasets from various domains (Auer et al.,
+2025b; Lin et al., 2024), whereas Cohen et al. (2025) focus
+specifically on observability data. In contrast, we adopt an
+alternative approach that involves pre-training on syntheti-
+cally generated data (Moroshan et al., 2025; Xie et al., 2026),
+which yields both sample efficiency and high diversity.
+3. Proposed Method
+In this section, we present the main technical details behind
+Mantis. including the problem setup, its architecture, the
+pre-training process, and test-time optimization.
+2
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+T oken Generator Unit
+instancenorm
+conv
+mean
+pooling
+diﬀ
+conv
+mean
+pooling
+µ by
+patch
+scalar
+encoder
+σ by
+patch
+scalar
+encoder
+linear
+layer
+norm
+Mantis
+input
+token
+generator unit
+transformer
+embedding
+projector prediction
+head
+output for
+pre-training prediction
+T ransformer
+class token
+6×
+rms norm
+attention
+with rope
+rms norm
+mlp
+Figure 2.Architecture. By symbol+we denote the sum operator, while||designates the vector concatenation operator.
+3.1. Problem Setup
+Mathematically speaking, our time series classification foun-
+dation model is an encoderF:R t→R q that projects any
+time series x∈R t with a fixed sequence length t to a
+discriminative hidden space Rq. During the pre-training
+phase, we observe an unlabeled pre-training set X0 that
+is sufficiently large to learn rich embeddings that general-
+ize well across different tasks. After pre-training, using
+the model on a new supervised downstream task with ob-
+servations X and labels Y can be done it two following
+ways.Zero-shot feature extraction:we use F to extract
+deep embeddings Z ={F(x),x∈X} and then learn
+any classifier h:R q →{1,...,K} using Z as features
+and Y as corresponding labels.Fine-tuning:append a
+classification head h:R q →R K and update parame-
+ters of h F by minimizing a loss function evaluated on
+the downstream task. In this work, we primarily focus
+on zero-shot feature extraction. When time series with
+multiple channels x= [x 1,...,x d]∈R d×t, d >1, are
+considered, we send each channel xi, i∈[1,d] , to the
+TSFM independently, i.e., the embedding of x is defined
+as z=concat[(F(x i))1≤i≤d], where concat denotes the
+vector concatenation operator, and the input dimension of
+the classifier (head) isR d×q.
+3.2. Architecture
+In this section, we describe the architecture of Mantis, which
+adapts the Transformer architecture (Vaswani et al., 2017) to
+time series data modality through a dedicated tokenization
+strategy. The full architecture is illustrated in Figure 2.
+We fix the number of tokens to 32, which implies that the
+input sequence length t must be a multiple of 32. This
+design choice differs from approaches such as Lin et al.
+(2024) and Goswami et al. (2024), which instead fix the
+patch (token) length. However, fixing the number of tokens
+is preferable under computational constraints, as the self-
+attention mechanism scales quadratically with respect to the
+number of tokens. As a requirement, an input time series
+should be resized/padded to a certain length. By default, we
+resize all inputs to length 512. Further analysis of the impact
+of the interpolation length is provided in Section B.5.
+Token Generator Unit.The first stage of the model en-
+codes a raw time series into a set of meaningful tokens,
+which are subsequently processed by the Transformer. The
+token generation procedure consists of the following steps:
+a. Instance normalization.For each time series instance,
+we subtract the mean and divide by the standard devia-
+tion computed across time steps. This normalization
+is implemented as part of the model architecture and
+applied during the forward pass. Note that for step d,
+we use the raw signal bypassing the normalization.
+b. Patch extraction from the signal.We extract patch-
+level representations by applying a single convolutional
+layer with a fixed kernel size, followed by mean pool-
+ing configured to produce 32 patches. The convolution
+outputs 256 channels, resulting in patch embeddings
+of dimension 256.
+c. Patch extraction from the first-order differential.We
+apply the same patching procedure to the first-order
+temporal difference of the time series, computed as the
+difference between adjacent time steps. This differen-
+tial representation encourages stationarity and reduces
+the influence of long-term trends.
+d. Patch-wise statistics encoding.To preserve information
+about the original measurement scale, we split the raw
+(unnormalized) time series into 32 non-overlapping
+patches. For each patch, we compute the mean and
+standard deviation and encode these statistics using the
+Multi-Scaled Scalar Encoder (Lin et al., 2024).
+e. Token projection.All patch-level features (signal, dif-
+ferential signal, and statistical descriptors) are con-
+catenated and passed through a linear projection layer
+followed by layer normalization (Ba et al., 2016), pro-
+3
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+ducing 32 tokens with dimensionality 256.
+Transformer.The resulting tokens are processed by a
+Transformer encoder, as summarized below:
+a. Class token.A learnable class token is prepended to 32
+generated tokens. This token attends to all other tokens
+and aggregates global information, summarizing the
+entire input sequence.
+b. Positional encoding.Positional information is incor-
+porated using positional encodings. We use Rotary
+Positional Encoding (RoPE; Su et al., 2024) that ro-
+tates the query and key representations.
+c. Transformer layers.We apply six Transformer layers,
+each consisting of multi-head self-attention with eight
+heads, followed by a feedforward network. All layers
+use a pre-normalization design.
+d. Projector and Prediction Head.During pre-training,
+a projector head is appended to produce embeddings
+used for similarity-based objectives. For fine-tuning,
+we append a task-specific classification head mapping
+the embeddings to class logits.
+3.3. Pre-training
+Contrastive Loss.We pre-train Mantis by self-supervised
+contrastive learning. The goal is to learn an encoder that pro-
+duces similar representations for two random augmentations
+of the same time series (a positive pair), while producing
+dissimilar representations for augmentations of different
+time series (negative pairs). Formally, letT be a space of
+transformations (augmentations) such that for all ϕ∈T
+and x∈X we haveϕ(x)∈X . To measure the similarity
+between two embeddings, we first project the output of the
+foundation modelF(x) to a new dimension using a projec-
+torg:R q→R q′
+and then compute the cosine similarity
+between the two vectors as
+scos(a,b) := a⊤b
+∥a∥·∥b∥ ,∀(a,b)∈R 2q′
+.
+Given a batch B={x i}b
+i=1, we uniformly sample two
+augmentation functionsϕ andψ fromT , and then, for each
+examplex i, compute the similarities scores as follows:
+si(ϕ,ψ) = [s cos (g F ϕ(xi), g F ψ(xj))]b
+j=1∈R b.
+Following He et al. (2020) and denoting the cross-entropy
+loss bylce :R b×{1,...,b}→R , we update the parameters
+ofFandgby minimizing the contrastive objective:
+bX
+i=1
+lce
+ si(ϕ,ψ)
+T , i
+
+,
+whereT∈(0,+∞)is a temperature that we fixed to0.1.
+Augmentation.We empirically evaluated several time-
+series augmentation strategies and observed that their
+effectiveness is highly dataset-dependent, as they may
+aggressively distort the signal and remove discrimina-
+tive information. For pre-training, we have chosen
+the Random Crop Resize (RCR) augmentation (Figure
+3). This transformation randomly crops a contiguous
+segment covering (1−c) % of the original time se-
+ries and then resizes it back to the original sequence
+length. We apply moderate distortions by sampling the
+crop rate c uniformly between 0% and 20%, thereby
+preserving the overall temporal structure of the signal.
+Figure 3.Random Crop Resize.
+A key advantage of con-
+trastive learning with
+RCR is that the encoder
+is encouraged to be in-
+variant to small tempo-
+ral stretches and com-
+pressions, which in turn
+enables flexible resiz-
+ing of the input without
+degrading performance.
+It is important to note
+that RCR perturbs the original unit measurements, making
+it less suitable for forecasting tasks. However, since our
+focus is on time series classification, the primary goal is
+to capture discriminative temporal patterns rather than pre-
+serve absolute scales. Empirically, we find RCR to be the
+most effective augmentation for this purpose.
+Synthetic data.To avoid any potential data leakage and im-
+prove sample efficiency, we pre-train Mantis exclusively on
+large-scale synthetic time series generated by CauKer (Xie
+et al., 2026). In contrast to earlier pre-training corpora (Lin
+et al., 2024) that may overlap with popular evaluation suites
+(e.g., UCR/UEA), synthetic data are out-of-distribution by
+construction, yielding a cleaner and more reliable zero-shot
+evaluation protocol. Empirically, we observe that synthetic
+pre-training is highly sample-efficient: even with only100K
+synthetic sequences, Mantis reaches strong zero-shot feature
+extraction accuracy on UCR (see Section B.1 for more de-
+tails). In addition, synthetic data are particularly useful for
+our contrastive objective that promotesuniformity, evenly
+distributing representations (Wang and Isola, 2020). Achiev-
+ing such uniformity requires high data diversity, which
+CauKer can provide in a scalable and controllable manner.
+3.4. Enhanced Test-Time Feature Extraction
+Inspired by recent advances in test-time scaling of LLMs,
+we identified several strategies for enhanced feature extrac-
+tion that we detail below.
+Layer-wise Representations.Prior work has shown that
+intermediate layers of large foundation models often en-
+4
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+code rich and transferable representations, sometimes out-
+performing final layers on downstream tasks (Skean et al.,
+2025). (Roschmann et al., 2025) have discovered that in-
+termediate layers of vision models can be repurposed for
+time series classification. These findings suggest that em-
+beddings produced by the final layer may be suboptimal,
+particularly in the frozen-encoder setting. Motivated by this
+line of work, we extend layer-wise representation analysis
+to Mantis. Rather than assuming that the final Transformer
+layer yields the most informative embedding, we explic-
+itly consider intermediate-layer outputs as potential feature
+representations. In Section B.3, we show that intermediate
+representations are consistently more discriminative than
+the final ones, even for compact models such as Mantis.
+Furthermore, we find that the benefits of increased pre-
+training data scale are primarily reflected in intermediate rep-
+resentations rather than in the final layer (see Appendix B.3
+for more details). While final-layer performance tends to
+saturate (or even degrade) with larger pre-training datasets,
+the best-performing intermediate layer improves monotoni-
+cally as the number of pre-training samples increases. This
+observation indicates that intermediate layers are crucial for
+unlocking the scaling benefits of pre-training in the zero-
+shot regime.
+Finally, we observe that this behavior is not specific to
+Mantis but generalizes across a range of time series founda-
+tion models, including both classification- and forecasting-
+oriented architectures. Taken together, these insights mo-
+tivate our test-time strategy of selecting and leveraging
+intermediate-layer representations for feature extraction,
+which we later show to yield consistent performance gains.
+Output-token aggregation.Standard discriminative Trans-
+formers use the hidden state of the [CLS] token as the final
+representation and discard all other tokens (Devlin et al.,
+2019; Dosovitskiy et al., 2021). While this is often efficient
+when the [CLS] token has sufficiently aggregated global in-
+formation through self-attention, it can be suboptimal when
+intermediate-layer representations are exploited. Therefore,
+we revisit token aggregation for Mantis and consider a strat-
+egy that explicitly incorporates non-classification tokens.
+More specifically, we use a concatenation of [CLS] to-
+ken with the mean of non-classification tokens. As we
+show in Section B.4, non-classification tokens encode com-
+plementary information that is not fully captured by the
+classification token. Thus, the proposed combined aggre-
+gation strategy yields an improved zero-shot performance,
+increasing the embedding dimension from 256 to 512.
+Self-Ensembling (SE).We introduce a simple test-time
+self-ensembling strategy based on input perturbations. The
+key idea is to exploit the fact that interpolating a time series
+to different sequence lengths changes the effective receptive
+field of each token, resulting in complementary representa-
+tions even for the same input. As the number of tokens is
+fixed, varying the interpolation length modifies the degree
+of overlap between tokens: shorter sequences induce more
+overlap, while longer sequences approach non-overlapping
+patching. We therefore generate multiple interpolated ver-
+sions of the same input, encode each independently, and
+concatenate the resulting embeddings. In addition, inspired
+by Auer et al. (2025b), we extend this strategy to first-order
+differences of the input signal and combine both represen-
+tations. We refer to this strategy asSelf-Ensembling (SE),
+denoting the resulting model asSE-Mantis.
+Cross-model Embedding Fusion.Since foundation mod-
+els can be pre-trained with different objectives and archi-
+tectures, their representations may capture complementary
+aspects of time series data. Motivated by this and by find-
+ings of Roschmann et al. (2025), we investigate whether
+zero-shot performance can be further improved by combin-
+ing Mantis embeddings with those of competing models
+pretrained on other modalities and dedicated to the forecast-
+ing task. In Section 4.4, we experimentally show that Mantis
+benefits the most when combined with vision models.
+4. Experimental Results
+In this section, we present several sets of results. First,
+we perform a large-scale study that shows the best perfor-
+mance we obtained when using pre-trained Mantis with
+the enhanced feature extraction techniques described above.
+Then, we carefully break down the obtained performance by
+highlighting the performance of the studied models on col-
+lections of datasets commonly used in the literature. Finally,
+we ablate our design choices and test-time improvements.
+4.1. Broad evaluation on UCR-91
+Our first experimental evaluation is to broadly compare
+a wide variety of the different families of time series ap-
+proaches on the common UCR-91 benchmark. We choose
+this particular benchmark as it allows us to compare Mantis
+and its variations with a maximum possible number of base-
+lines by using the results reported in (Goswami et al., 2024).
+We include the following models in our study:
+• Self-supervised baselines: TS2Vec (Yue et al., 2022),
+T-Loss (Franceschi et al., 2019), TNC (Tonekaboni
+et al., 2021), which learn representation for each
+dataset independently;
+• Catch22 (Lubba et al., 2019) is a set of powerful statis-
+tical features designed for time series classification. In
+this paper, we have significantly improved this baseline
+by incorporating also patched statistics. We name this
+modification asCatch22+and refer to Appendix A.3
+for more details and the corresponding ablation study.
+• TabPFN(Hollmann et al., 2022) andTabICL(Qu
+5
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+et al., 2025) are tabular foundation models. In this
+case, we treat each timestamp as a feature and ignore
+the sequential nature of the data.
+• MOMENT(Goswami et al., 2024) is a T5-based
+auto-encoder (Raffel et al., 2020) pre-trained in a self-
+supervised way on 1.13 billion samples.
+• TiRex(Auer et al., 2025b) a time series forecast-
+ing foundation model based on the xLSTM architec-
+ture (Beck et al., 2024).
+• Chronos2(Ansari et al., 2025) is a transformer-based
+time series forecasting foundation model.
+• TiViT-His the approach proposed by (Roschmann
+et al., 2025) to leverage a pre-trained vision model for
+time series classification.TiConvNextleverages the
+pre-trained CLIP ConvNext in the same spirit.
+• NuTime(Lin et al., 2024) is a classification TSFM
+proposed before Mantis. Their pre-training dataset
+is similar to the one used for pre-training of the first
+version of Mantis (1.89 million time series examples).
+• Mantis,SE-Mantisand their cross-model fused varia-
+tions.
+We perform zero-shot feature extraction evaluation for all
+FMs, i.e., keeping the encoder frozen and using the pro-
+duced embeddings together with the training labels to learn
+a classifier. While prior work (Goswami et al., 2024) used
+a linear classifier, we follow Roschmann et al. (2025) and
+couple the Standard Scaler and Logistic Regression from
+the scikit-learn package (Pedregosa et al., 2011). We set
+the maximum number of iterations to 500 and leave the
+other hyperparameters to the default ones, including the
+solver, which is L-BFGS-B (Zhu et al., 1997; Morales and
+Nocedal, 2011). For all foundation models, except TabPFN
+and TabICL, we perform an intermediate layer analysis to
+determine a layer with the highest zero-shot performance.
+This allows us to significantly improve the performance for
+most of these models, not to mention a drastic model size
+reduction. We give more experimental details in Section A.
+For the self-supervised baselines, we extract the perfor-
+mance results from Goswami et al. (2024) and run the other
+baselines ourselves. The experimental results are presented
+in Figure 1, while in Appendix D we display the full results
+with 9 additional baselines (Figure 19 and Table 17). From
+the results, we note that several Mantis and its variations
+(SE-Mantis, Mantis & TiViT-H, Mantis & TiConvNext)
+outperform all other FMs and beat a very strong baseline
+TS2Vec, which performs self-supervised learningfor each
+dataset independently. To the best of our knowledge, our
+paper is the first one to report this level of performance in a
+zero-shot feature extraction regime.
+4.2. Performance breakdown
+We now turn our attention to a more detailed evaluation that
+showcases the different domains and setups where Mantis
+excels. To this end, we consider the following four collec-
+tions of datasets:
+• FullUCR(Dau et al., 2019) benchmark that consists of
+all 128 univariate datasets (contrary to 91 datasets that
+were previously used above, following prior work).
+• MultivariateUEA(Bagnall et al., 2018) benchmark
+that has 30 datasets. We exclude 3 datasets due to
+small test size or small sequence length, and subsample
+one dataset to ease computations (see more details in
+Appendix A). We further tag the collection by UEA-27.
+• We additionally gathered a collection of datasets for
+Human Activity Recognition (HAR) that is one of the
+most widespread applications of time series classifi-
+cation models (Chen et al., 2025; Li et al., 2025b).
+We consider 7 datasets, where data come from either
+an inertial measurement unit (Ego4D, HHAR, UCI-
+HAR) or motion capture (EMOPain, MP8, MP50). For
+HHAR dataset, we follow (Gagnon-Audet et al., 2022)
+and consider two splits: in-distribution (ID) and out-
+of-distribution (OOD). Please refer to Appendix A.1.2
+for more details.
+• In a similar fashion, we test Mantis also on electroen-
+cephalogram (EEG) data that represent recordings of
+the brain’s electrical activity. We consider various
+tasks, including sleep stage prediction (CAP, SEDFx),
+brain–computer interface (BCI) control tasks (Finger-
+Movements, PCL, SelfRegulationSCP), seizure detec-
+tion (Epilepsy-EEG), blink-type classification (Blink).
+We describe the datasets in Appendix A.1.3.
+To ease the computational burden, in what follows, we re-
+strict our attention to the comparison of Mantis only with
+FMs, keeping one non-deep-learning baseline, Catch22+,
+for reference. Furthermore, due to the extended number
+of runs performed in this evaluation, we replace Logistic
+regression with a faster and computationally cheaper Ran-
+dom Forest with 200 trees and maximal tree depth (Breiman,
+2001). We note beforehand that this choice doesn’t alter the
+relative ranking of the studied methods.
+Results on UCR.Table 1 displays the average performance
+of the considered models over 128 univariate datasets, while
+the complete table with results is deferred to Appendix D
+(Table 18 and 19). We can see that Mantis significantly
+outperforms the other models. Modern forecasting models
+(TiRex, Chronos2) and adapted vision models (TiViT-H,
+TiConvNext) are very competitive, establishing strong base-
+lines. Interestingly, Catch22+, which is a set of statistical
+features, also establishes a good baseline, even outperform-
+ing foundation models such as NuTime and MOMENT. Tab-
+6
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Table 1.Classification accuracy on UCR and UEA-27 datasets of models grouped in different families.
+Dataset Stats Tabular FMs TS Forecasting FMs Vision FMs TS Classification FMs
+Catch22+ TabPFN TabICL MOMENT TiReX Chronos2 TiVIT-H TiConvNext NuTime Mantis
+UCR0.7969 0.7806 0.7707 0.7789 0.8013 0.8002 0.7943 0.8029 0.77320.8195
+UEA-270.6963 0.6721 0.6850 0.6991 0.6952 0.6967 0.7091 0.7105 0.71990.7420
+Table 2.Classification accuracy on HAR and EEG dataset collections. Boldface highlights the best method per row; NaN indicates the
+model did not pass the scale.
+Collection Dataset Catch22+ TabPFN TabICL MOMENT TiRex Chronos2 TiViT-H TiConvNext NuTime Mantis
+HAR
+Ego4D 0.4397±0.002 NaN NaN0.4068 ±0.001 0.5037±0.001 0.4742±0.0 0.1912 0.19070.5108 ±0.0 0.5258±0.001
+EMOPain 0.8826±0.006 0.7831 0.78310.8469 ±0.002 0.7915±0.003 0.8075±0.004 0.83±0.002 0.8225±0.003 0.8901±0.005 0.8798±0.009
+HHAR-ID 0.9738±0.001 0.8938 0.90730.9299 ±0.0 0.9481±0.0 0.9475±0.002 0.9338±0.001 0.9461±0.001 0.9808±0.001 0.9845±0.001
+HHAR-OOD 0.4808±0.008 0.5311 0.54410.3081 ±0.001 0.5135±0.014 0.4174±0.008 0.3748±0.007 0.4031±0.01 0.56±0.005 0.5822±0.005
+MP8 0.572±0.008 0.6235 0.61850.6392 ±0.011 0.5994±0.016 0.5966±0.006 0.6022±0.009 0.5966±0.003 0.6504±0.008 0.6857±0.012
+MP50 0.3602±0.016 0.5664 0.50420.7434 ±0.017 0.6644±0.01 0.6639±0.007 0.6908±0.008 0.6801±0.008 0.6913±0.012 0.7345±0.007
+UCI-HAR 0.8273±0.003 0.809 0.81570.8782 ±0.001 0.8744±0.002 0.8873±0.002 0.8936±0.001 0.8918±0.001 0.8842±0.001 0.9013±0.002
+Avg 0.6481NaN NaN0.6789 0.6993 0.6849 0.6452 0.6473 0.73820.7562
+Avg UCR HAR 0.7564 0.7479 0.7285 0.7572 0.7687 0.7702 0.7726 0.772 0.7560.8007
+Avg UEA HAR 0.8138 0.7591 0.764 0.8431 0.846 0.8492 0.8535 0.8488 0.85390.8739
+EEG
+Blink 0.9963±0.001 0.9178 0.89780.9674 ±0.003 0.997±0.001 0.9733±0.01 0.9852±0.006 0.98±0.002 0.66±0.006 0.9956±0.002
+CAP-ID 0.751±0.001 NaN NaN0.7374 ±0.002 0.8104±0.002 0.8179±0.001 0.7983±0.001 0.8126±0.001 0.8044±0.0 0.8152±0.001
+CAP-OOD 0.71±0.003 NaN NaN0.7408 ±0.001 0.7821±0.001 0.7857±0.001 0.7781±0.001 0.784±0.001 0.767±0.002 0.7859±0.0
+Epilepsy-EEG 0.9507±0.002 0.9496 0.94470.952 ±0.001 0.9614±0.001 0.95±0.001 0.9548±0.0 0.9495±0.001 0.9234±0.002 0.9558±0.001
+FingerMovements 0.4967±0.064 0.5 0.490.53 ±0.02 0.52±0.04 0.5233±0.021 0.5367±0.045 0.5333±0.059 0.5267±0.015 0.55±0.01
+PCL-ID 0.5241±0.003 NaN NaN0.5431 ±0.012 0.5272±0.011 0.5308±0.002 0.5347±0.007 0.5385±0.005 0.5615±0.003 0.5716±0.003
+PCL-OOD 0.5025±0.004 NaN NaN0.5129 ±0.001 0.4988±0.001 0.5072±0.004 0.5003±0.005 0.5132±0.001 0.5415±0.004 0.5311±0.009
+SEDFx-ID 0.7574±0.0 NaN NaN0.7516 ±0.001 0.7904±0.0 0.8±0.0 0.7884±0.001 0.8008±0.001 0.7822±0.001 0.8±0.0
+SEDFx-OOD 0.7142±0.001 NaN NaN0.7244 ±0.001 0.7714±0.0 0.7758±0.0 0.7709±0.0 0.7755±0.001 0.741±0.0 0.7636±0.0
+SelfRegulationSCP1 0.7702±0.007 0.89420.88740.7747 ±0.006 0.7884±0.012 0.785±0.003 0.7986±0.007 0.7929±0.01 0.7952±0.003 0.8134±0.009
+SelfRegulationSCP2 0.4926±0.031 0.4778 0.50560.4907 ±0.023 0.4963±0.049 0.5167±0.006 0.4907±0.033 0.5056±0.011 0.5074±0.018 0.5167±0.006
+Avg 0.6969NaN NaN0.7023 0.7221 0.7242 0.7215 0.726 0.69190.7363
+ular foundation models are competitive as well: although
+their average performance is not very high, their win rate is
+similar to Mantis (see Appendix D). This also indicates that
+a considerable portion of datasets in UCR are nearly tabular,
+so their sequential nature can simply be ignored. We com-
+pare Mantis and TabPFN more thoroughly in Section C.3.
+Results on UEA.The average performance of the con-
+sidered models in average over 27 multivariate datasets is
+illustrated in Table 1 while the complete results are deferred
+to Appendix D (Table 20). One can see that Mantis sig-
+nificantly outperforms the other models by more than 2%.
+Interestingly, the model ranking is quite different in this
+benchmark. For example, NuTime, being one of the worst
+on UCR, is the third-best model this time. Since its hid-
+den dimension is the smallest among the foundation models
+(128, to be exact), we hypothesize that NuTime may be less
+sensitive to the curse of dimensionality as the total number
+of deep features grows linearly with the number of channels.
+Results on HAR.Table 2 displays the experimental results
+for human activity recognition tasks. We also include the
+average performance over 19 UCR and 9 UEA datasets that
+are related to HAR. We can see that the gap between Mantis
+and the other models is quite noticeable, indicating high
+relevance of the proposed models to this application domain.
+Similar to UEA, NuTime performs quite well, while other
+models show less robust results.
+Results on EEG.The experimental results for EEG data
+can be found in Table 2. We note that this benchmark
+includes several big datasets (CAP, PCL, SEDFx) on which
+tabular foundation models do not pass the memory and/or
+time constraints (we set 10 hours as the time deadline for
+the runtime of one method over one dataset). In contrast
+to the HAR results, the performance gap between Mantis
+and other models is smaller, and the model ranking is close
+to that seen on UCR. As EEG classification is notoriously
+known to be a difficult task, it will be interesting to see if
+time series foundation models can have an impact on the
+progress in this field.
+4.3. Complexity Analysis
+In this study, we compare all the models in terms of memory
+consumption and running time. As a rule of thumb, the
+memory consumption of a deep learning model correlates
+with the total number of its parameters. Figure 4 shows
+the trade-off between the UCR accuracy and the model size
+after choosing the layer with the best performance (see Sec-
+tion B.3 for more details). The exact number of parameters
+before and after model pruning can be found in the Ap-
+pendix (Table 6). For TabPFN and TabICL, it is not possible
+to perform layer pruning due to the architectural design.
+From the results, we can see that the four biggest models are
+TiConvNext, TiViT-H, MOMENT, and Chronos2 with more
+than 100 million parameters. After layer pruning, their sizes
+7
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Figure 4.Mantis is the best performing and most lightweight
+model among the existing FMs.
+are significantly reduced, though still being above 100 mil-
+lion parameters for TiViT-H, TiConvNext, and MOMENT.
+Layer pruning also helps to reduce the size of Mantis to 2.2
+million parameters, making it as small as NuTime.
+To measure running time, we compare how much it takes
+for a forward pass over an entire dataset with a batch size
+equal to 256. We generate univariate synthetic data with
+length 100, varying the total number of samples within
+n∈{10 2,10 3,10 4,5·10 4,10 5}. As TabPFN and TabICL
+require both train and test as an input, for them, we use
+n/2 samples as train data and n/2 for test, while using a
+batch strategy (256) for test data. The experimental results
+are displayed in Figure 5 and reveal that tabular founda-
+tion models are the slowest for large sample sizes, taking
+more than 10 hours for 100,000 examples. They are fol-
+lowed by vision-based models, TiViT-H and TiConvNext,
+that are slow but, nevertheless, feasible. Next cluster is
+represented by MOMENT and TiRex1. The other models,
+including Chronos2, Mantis, and NuTime are significantly
+faster. Interestingly, Mantis performs as fast as Catch22+,
+which simply calculates pre-determined statistics. Together
+with Figure 4, this result demonstrates that Mantis can be
+deployed in compute-limited environments.
+4.4. Ablation Study
+We perform a comprehensive ablation study to understand
+which design choices drive the performance of Mantis.
+Pre-training data.We compare pre -training Mantis on
+100K synthetic CauKer sequences against several real-
+world time series corpora. We note that pre-training on
+synthetic data exceeds the performance of pre-training on
+equally sized real-world datasets and approaches the accu-
+racy of pre-training on the full 1.89M NuTime corpus (see
+Table 7 in Section B.1).
+1Note that we did not manage to compile TiRex as they suggest,
+otherwise their model should be faster.
+100 1000 10000 50000 100000
+Number of Samples
+<1 sec
+25 sec
+2 min
+9 min
+40 min
+3 hours
+>11 hours
+Runtime
+Catch22+
+T abPFN
+T abICL
+MOMENT
+TiRex
+Chronos2
+TiViT-H
+TiConvNext
+NuTime
+Mantis
+SE-Mantis
+Figure 5.The inference time of the considered models as a function
+of the number of samples. The time is in log scale.
+Architecture.We ablate the Token Generator Unit and
+the transformer backbone. We show that every branch of
+the tokenizer (encoding raw signal, its first-order difference,
+and patch-wise unnormalized statistics) contributes to the
+performance (Section B.2, Figure 8). In addition, we ablate
+the mean pooling and the convolution operators. Second,
+we vary the convolution kernel size and observe monotoni-
+cally increasing performance up to a kernel of 41 (Figure 9),
+beyond which gains saturate. Third, we compare a classical
+Transformer architecture with sinusoidal positional encod-
+ing, LayerNorm, and GELU to a modern variant with RoPE,
+RMSNorm, and SwiGLU. The modern design yields a small
+yet consistent improvement (Figure 10 and Table 8).
+Layer-wise representations.We analyze the pre-training
+phase by illustrating the performance layer -by-layer,
+epoch-by-epoch. We find that with a sufficient number
+of parameter updates, the final layer starts to overfit the
+contrastive objective, so intermediate layers perform better
+(Section B.3, Figure 11). As the number of pre-training sam-
+ples increases, we see that the final layer stagnates, but the
+best performance across intermediate layersmonotonically
+increases. This finding suggests thatintermediate repre-
+sentations unlock the scaling benefits of pre-training.
+Overall, we find the third layer of Mantis to be the most
+powerful one. In addition, we compute the layer-by-layer
+performance of NuTime, MOMENT, TiRex, and Chronos2
+to identify their most powerful intermediate layers, which
+we used in the final comparisons (Figure 12).
+Output token aggregation.We compare different ways
+to aggregate the output tokens. Concatenating the classifi-
+cation token with the mean of the remaining tokens yields
+consistent accuracy gain compared with using only the clas-
+sification token (Section B.4, Fig. 14). Note that this con-
+catenation strategy may bring help only for intermediate
+layers, whereas at the last layer the [CLS] token aggre-
+gates the information from the remaining tokens sufficiently
+well (Section B.4, Fig. 15).
+8
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Mantis
+Mantis & 
+Catch22+
+Mantis & 
+MOMENT
+Mantis & TiRex Mantis & 
+Chronos2
+Mantis & TiViT-HMantis & 
+TiConvNext
+Mantis & NuTime
+Accuracy
+0.8195
+0.8255
+0.8204
+0.8276 0.8262 0.827 0.8283
+0.8211
+UCR Performance
+Figure 6.Combination of Mantis with other models.
+Self-ensembling.We experimentally show that self-
+ensembling improves the performance at inference time
+(Section B.5, Fig. 17). We demonstrate that interpolat-
+ing both the input and its first-order difference to multiple
+lengths allows us to get richer embeddings. Note that SE-
+Mantis outperforms Mantis on the full UCR collection, but
+not on the subset of 91 datasets as it can be seen in Fig-
+ure 1. All in all, we view SE as an optional technique that
+can yield significant performance boost on some datasets
+(e.g., see Car, Phoneme and Worms datasets in Table 21 and
+Table 22).
+Cross-model embedding fusion.The experimental re-
+sults for combining the embeddings of different pretrained
+models are reported in Figure 6. Similar to Roschmann
+et al. (2025), we observe that model combination is con-
+sistently beneficial, even when Mantis is combined with
+hand-crafted statistical features (Catch22+). The smallest
+gains are obtained when combining Mantis with MOMENT
+and NuTime, which may be explained by limited representa-
+tional complementarity in the case of NuTime, or by lower
+standalone performance. The highest overall performance
+is achieved when Mantis is combined with TiConvNeXt.
+Choice of a predictor.While simple linear probing is
+conventional in the deep learning community, it implicitly
+assumes that feature variances (across the dimensions of the
+embeddings) share the same order of magnitude. For Man-
+tis, this is not the case as self-supervised pre-training does
+not guarantee similarly distributed features, thus standard
+scaling or batch normalization is generally recommended
+for probing (Marks et al., 2025).
+Table 3.Performance of Mantis on UCR with different predictors.
+Log. Regression (L-BFGS-B) PyTorch Linear (AdamW) RF
+W/o Norm MinMax Standard W/o Norm LayerNorm BatchNorm
+0.763 0.8290.8370.669 0.71 0.827 0.82
+In Table 3, we compare several probing approaches: (a)
+scikit-learn logistic regression (optimized by L-BFGS-B)
+without normalization, with a Min-Max Scaler, and with
+a Standard Scaler, (b) PyTorch (Paszke et al., 2019) logis-
+tic regression (optimized by AdamW optimizer) without
+normalization, with a Layer Norm, and with a BatchNorm,
+(c) Random Forest (RF). We can see that linear probing’s
+performance degrades drastically without normalization,
+and layer pre-normalization does not fully resolve the issue.
+Conversely, scaling features over the entire dataset or batch
+yields superior results.
+5. Conclusion and Future Work
+In this paper, we presented Mantis, a time series classifica-
+tion foundation model pre-trained exclusively on synthetic
+data via contrastive learning. Our ablation studies high-
+light the importance of careful time series tokenization and
+demonstrate the effectiveness of the proposed Token Gener-
+ator Unit. In addition, we introduced an enhanced test-time
+methodology that yields consistent performance gains. In
+particular, we showed that the zero-shot capabilities of a
+pre-trained model can be significantly improved by leverag-
+ing intermediate-layer representations, refined output-token
+aggregation, and self-ensembling. These findings suggest
+that scaling laws in time series classification are attainable,
+and that larger models can be trained whose full potential is
+unlocked at test time.
+Beyond scaling, several promising research directions re-
+main open, including multi-modal architectures, zero-shot
+classification via in-context learning, and joint foundation
+models for classification and forecasting. Finally, we believe
+that improving the interpretability of model outputs and en-
+suring strong calibration properties are crucial directions
+for future work, as they may enable reliable unsupervised
+assessment of model performance.
+Impact Statement
+This paper advances the field of machine learning by propos-
+ing a lightweight foundation model for time series classifica-
+tion. Our experiments are conducted on standard, publicly
+available benchmarks, and the pre-training data are syn-
+thetic. There are many potential societal consequences of
+our work, none of which we feel must be specifically high-
+lighted here.
+References
+Achiam, J., Adler, S., Agarwal, S., Ahmad, L., Akkaya, I.,
+Aleman, F. L., Almeida, D., Altenschmidt, J., Altman, S.,
+Anadkat, S., et al. (2023). GPT-4 technical report.arXiv
+preprint arXiv:2303.08774.
+Alchieri, L., Candian, L., Abdalazim, N., Alecci, L., De Fe-
+lice, G., and Santini, S. (2025). Exploring generalist
+9
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+foundation models for time series of electrodermal activ-
+ity data.
+Andrzejak, R. G., Lehnertz, K., Mormann, F., Rieke, C.,
+David, P., and Elger, C. E. (2001). Indications of non-
+linear deterministic and finite-dimensional structures in
+time series of brain electrical activity: Dependence on
+recording region and brain state.Physical Review E,
+64(6):061907.
+Anguita, D., Ghio, A., Oneto, L., Parra, X., Reyes-Ortiz,
+J. L., et al. (2013). A public domain dataset for human ac-
+tivity recognition using smartphones. InEsann, volume 3,
+page 3.
+Ansari, A. F., Shchur, O., K ¨uken, J., Auer, A., Han, B.,
+Mercado, P., Rangapuram, S. S., Shen, H., Stella, L.,
+Zhang, X., et al. (2025). Chronos-2: From univariate to
+universal forecasting.arXiv preprint arXiv:2510.15821.
+Ashok, A., Williams, A. R., Zheng, V . Z., Rish, I., Chapados,
+N., Marcotte, ´E., Zantedeschi, V ., and Drouin, A. (2025).
+Beyond na¨ıve prompting: Strategies for improved zero-
+shot context-aided forecasting with LLMs.arXiv preprint
+arXiv:2508.09904.
+Auer, A., Klotz, D., B ¨ock, S., and Hochreiter, S. (2025a).
+Pre-trained forecasting models: Strong zero-shot feature
+extractors for time series classification.arXiv preprint
+arXiv:2510.26777.
+Auer, A., Podest, P., Klotz, D., B ¨ock, S., Klambauer, G.,
+and Hochreiter, S. (2025b). TiRex: Zero-shot forecasting
+across long and short horizons with enhanced in-context
+learning.arXiv preprint arXiv:2505.23719.
+Ba, J. L., Kiros, J. R., and Hinton, G. E. (2016). Layer
+normalization.arXiv preprint arXiv:1607.06450.
+Bagnall, A., Dau, H. A., Lines, J., Flynn, M., Large, J.,
+Bostrom, A., Southam, P., and Keogh, E. (2018). The
+UEA multivariate time series classification archive, 2018.
+arXiv preprint arXiv:1811.00075.
+Beck, M., P¨oppel, K., Spanring, M., Auer, A., Prudnikova,
+O., Kopp, M., Klambauer, G., Brandstetter, J., and
+Hochreiter, S. (2024). xlstm: Extended long short-term
+memory.Advances in Neural Information Processing
+Systems, 37:107547–107603.
+Benechehab, A., Feofanov, V ., Paolo, G., Thomas, A., Fil-
+ippone, M., and K ´egl, B. (2025). Adapts: Adapting
+univariate foundation models to probabilistic multivariate
+time series forecasting.arXiv preprint arXiv:2502.10235.
+Bhethanabhotla, S. K., Swelam, O., Siems, J., Salinas, D.,
+and Hutter, F. (2024). Mamba4Cast: Efficient zero-shot
+time series forecasting with state space models.arXiv
+preprint arXiv:2410.09385.
+Breiman, L. (2001). Random forests.Machine learning,
+45:5–32.
+Chen, B., Wongso, W., Li, Z., Khaokaew, Y ., Xue, H.,
+and Salim, F. (2025). COMODO: Cross-modal video-
+to-imu distillation for efficient egocentric human activity
+recognition.arXiv preprint arXiv:2503.07259.
+Chen, M., Shen, L., Li, Z., Wang, X. J., Sun, J., and Liu, C.
+(2024). VisionTS: Visual masked autoencoders are free-
+lunch zero-shot time series forecasters.arXiv preprint
+arXiv:2408.17253.
+Chicaiza, K. O. and Benalc ´azar, M. E. (2021). A brain-
+computer interface for controlling IoT devices using EEG
+signals. In2021 IEEE Fifth Ecuador Technical Chapters
+Meeting (ETCM), pages 1–6. IEEE.
+Cho, H., Ahn, M., Ahn, S., Kwon, M., and Jun, S. C. (2017).
+EEG datasets for motor imagery brain–computer inter-
+face.GigaScience, 6(7):gix034.
+Cohen, B., Khwaja, E., Doubli, Y ., Lemaachi, S., Lettieri,
+C., Masson, C., Miccinilli, H., Ram ´e, E., Ren, Q., Ros-
+tamizadeh, A., et al. (2025). This time is different: An
+observability perspective on time series foundation mod-
+els.arXiv preprint arXiv:2505.14766.
+Das, A., Kong, W., Sen, R., and Zhou, Y . (2023). A decoder-
+only foundation model for time-series forecasting.arXiv
+preprint arXiv:2310.10688.
+Dau, H. A., Bagnall, A., Kamgar, K., Yeh, C.-C. M., Zhu,
+Y ., Gharghabi, S., Ratanamahatana, C. A., and Keogh, E.
+(2019). The UCR time series archive.IEEE/CAA Journal
+of Automatica Sinica, 6(6):1293–1305.
+Dempster, A., Petitjean, F., and Webb, G. I. (2020).
+ROCKET: exceptionally fast and accurate time series
+classification using random convolutional kernels.Data
+Mining and Knowledge Discovery, 34(5):1454–1495.
+Devlin, J., Chang, M.-W., Lee, K., and Toutanova, K. (2019).
+BERT: Pre-training of deep bidirectional transformers for
+language understanding. InProceedings of the 2019 con-
+ference of the North American chapter of the association
+for computational linguistics: human language technolo-
+gies, volume 1 (long and short papers), pages 4171–4186.
+Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn,
+D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer,
+M., Heigold, G., Gelly, S., Uszkoreit, J., and Houlsby,
+N. (2021). An image is worth 16x16 words: Trans-
+formers for image recognition at scale.arXiv preprint
+arXiv:2010.11929.
+Egede, J. O., Song, S., Olugbade, T. A., Wang, C., Amanda,
+C. D. C., Meng, H., Aung, M., Lane, N. D., Valstar, M.,
+10
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+and Bianchi-Berthouze, N. (2020). Emopain challenge
+2020: Multimodal pain evaluation from facial and bodily
+expressions. In2020 15th IEEE International Conference
+on Automatic Face and Gesture Recognition (FG 2020),
+pages 849–856. IEEE.
+Eldele, E., Ragab, M., Chen, Z., Wu, M., Kwoh, C. K.,
+Li, X., and Guan, C. (2021). Time-series representation
+learning via temporal and contextual contrasting.arXiv
+preprint arXiv:2106.14112.
+Franceschi, J.-Y ., Dieuleveut, A., and Jaggi, M. (2019).
+Unsupervised scalable representation learning for mul-
+tivariate time series.Advances in neural information
+processing systems, 32.
+Gagnon-Audet, J.-C., Ahuja, K., Darvishi-Bayazi, M.-J.,
+Mousavi, P., Dumas, G., and Rish, I. (2022). WOODS:
+Benchmarks for out-of-distribution generalization in time
+series.arXiv preprint arXiv:2203.09978.
+Gao, S., Koker, T., Queen, O., Hartvigsen, T., Tsiligkaridis,
+T., and Zitnik, M. (2024). UniTS: A unified multi-task
+time series model. InThe Thirty-eighth Annual Confer-
+ence on Neural Information Processing Systems.
+Gnassounou, T., Moakher, Y ., Xie, S., Feofanov, V ., and
+Redko, I. (2025). Leveraging generic time series foun-
+dation models for EEG classification.arXiv preprint
+arXiv:2510.27522.
+Goswami, M., Szafer, K., Choudhry, A., Cai, Y ., Li, S.,
+and Dubrawski, A. (2024). MOMENT: A family of
+open time-series foundation models.arXiv preprint
+arXiv:2402.03885.
+Graf, L., Ortner, T., Wo´Ls ¸niak, S., Pantazi, A., et al. (2025).
+FlowState: Sampling rate invariant time series forecast-
+ing.arXiv preprint arXiv:2508.05287.
+Grauman, K., Westbury, A., Byrne, E., Chavis, Z., Furnari,
+A., Girdhar, R., Hamburger, J., Jiang, H., Liu, M., Liu, X.,
+et al. (2022). Ego4D: Around the world in 3,000 hours
+of egocentric video. InProceedings of the IEEE/CVF
+conference on computer vision and pattern recognition,
+pages 18995–19012.
+He, K., Fan, H., Wu, Y ., Xie, S., and Girshick, R. (2020).
+Momentum contrast for unsupervised visual representa-
+tion learning. InProceedings of the IEEE/CVF confer-
+ence on computer vision and pattern recognition, pages
+9729–9738.
+Hollmann, N., M¨uller, S., Eggensperger, K., and Hutter, F.
+(2022). TabPFN: A transformer that solves small tabu-
+lar classification problems in a second.arXiv preprint
+arXiv:2207.01848.
+Ilbert, R., Feofanov, V ., Tiomoko, M., Redko, I., and
+Palpanas, T. (2025). User-friendly foundation model
+adapters for multivariate time series classification. In
+2025 IEEE 41st International Conference on Data Engi-
+neering Workshops (ICDEW), pages 136–144. IEEE.
+Ilharco, G., Wortsman, M., Wightman, R., Gordon, C., Car-
+lini, N., Taori, R., Dave, A., Shankar, V ., Namkoong, H.,
+Miller, J., Hajishirzi, H., Farhadi, A., and Schmidt, L.
+(2021). OpenCLIP.
+Ismail Fawaz, H., Forestier, G., Weber, J., Idoumghar, L.,
+and Muller, P.-A. (2019). Deep learning for time series
+classification: a review.Data mining and knowledge
+discovery, 33(4):917–963.
+Kemp, B., Zwinderman, A. H., Tuk, B., Kamphuisen, H. A.,
+and Oberye, J. J. (2000). Analysis of a sleep-dependent
+neuronal feedback loop: the slow-wave microcontinuity
+of the EEG.IEEE Transactions on Biomedical Engineer-
+ing, 47(9):1185–1194.
+Lee, J., Youn, H. L., Poon, J., and Han, S. C. (2023). Stock-
+Emotions: Discover investor emotions for financial senti-
+ment analysis and multivariate time series.arXiv preprint
+arXiv:2301.09279.
+Lee, M.-H., Kwon, O.-Y ., Kim, Y .-J., Kim, H.-K., Lee, Y .-
+E., Williamson, J., Fazli, S., and Lee, S.-W. (2019). EEG
+dataset and OpenBMI toolbox for three BCI paradigms:
+An investigation into BCI illiteracy.GigaScience,
+8(5):giz002.
+Li, D., Liao, X., Chen, S., and Zhao, S. (2025a). Data-
+efficient motor condition monitoring with time series
+foundation models.arXiv preprint arXiv:2511.23177.
+Li, Z., Chen, B., Xue, H., and Salim, F. D. (2025b).
+ZARA: Zero-shot motion time-series analysis via knowl-
+edge and retrieval driven llm agents.arXiv preprint
+arXiv:2508.04038.
+Liao, X., Zhang, X., Wei, X., Liu, J., Zhao, S., Bu, S.,
+and Zhang, Y . (2025). PE-TSFM: Self-supervised time-
+series learning for generalizable power converter health
+monitoring under unseen conditions.arXiv preprint
+arXiv:2511.08250.
+Lin, C., Wen, X., Cao, W., Huang, C., Bian, J., Lin, S.,
+and Wu, Z. (2024). NuTime: Numerically multi-scaled
+embedding for large- scale time-series pretraining.Trans-
+actions on Machine Learning Research.
+Liu, C., Aksu, T., Liu, J., Liu, X., Yan, H., Pham, Q.,
+Savarese, S., Sahoo, D., Xiong, C., and Li, J. (2025).
+Moirai 2.0: When less is more for time series forecasting.
+arXiv preprint arXiv:2511.11698.
+11
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Liu, Z., Mao, H., Wu, C.-Y ., Feichtenhofer, C., Darrell, T.,
+and Xie, S. (2022). A ConvNet for the 2020s.Proceed-
+ings of the IEEE/CVF Conference on Computer Vision
+and Pattern Recognition (CVPR).
+Loshchilov, I., Hutter, F., et al. (2017). Fixing weight decay
+regularization in Adam.arXiv preprint arXiv:1711.05101,
+5.
+Lubba, C. H., Sethi, S. S., Knaute, P., Schultz, S. R., Fulcher,
+B. D., and Jones, N. S. (2019). catch22: CAnonical Time-
+series CHaracteristics: Selected through highly compar-
+ative time-series analysis.Data mining and knowledge
+discovery, 33(6):1821–1852.
+Marks, M., Knott, M., Kondapaneni, N., Cole, E., Defraeye,
+T., Perez-Cruz, F., and Perona, P. (2025). A closer look
+at benchmarking self-supervised pre-training with image
+classification.International Journal of Computer Vision,
+133(8):5013–5025.
+Morales, J. L. and Nocedal, J. (2011). Remark on “algo-
+rithm 778: L-BFGS-B: Fortran subroutines for large-scale
+bound constrained optimization”.ACM Transactions on
+Mathematical Software (TOMS), 38(1):1–4.
+Moroshan, V ., Siems, J., Zela, A., Carstensen, T., and Hutter,
+F. (2025). Tempopfn: Synthetic pre-training of linear
+rnns for zero-shot time series forecasting.arXiv preprint
+arXiv:2510.25502.
+Oord, A. v. d., Li, Y ., and Vinyals, O. (2018). Representa-
+tion learning with contrastive predictive coding.arXiv
+preprint arXiv:1807.03748.
+Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J.,
+Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga,
+L., et al. (2019). PyTorch: An imperative style, high-
+performance deep learning library.Advances in neural
+information processing systems, 32.
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V .,
+Thirion, B., Grisel, O., Blondel, M., Prettenhofer, P.,
+Weiss, R., Dubourg, V ., et al. (2011). Scikit-learn: Ma-
+chine learning in Python.the Journal of machine Learn-
+ing research, 12:2825–2830.
+Qu, J., Holzm ¨uller, D., Varoquaux, G., and Le Morvan,
+M. (2025). TabICL: A tabular foundation model for
+in-context learning on large data. InInternational Con-
+ference on Machine Learning.
+Radford, A., Kim, J. W., Hallacy, C., Ramesh, A., Goh, G.,
+Agarwal, S., Sastry, G., Askell, A., Mishkin, P., Clark, J.,
+Krueger, G., and Sutskever, I. (2021). Learning transfer-
+able visual models from natural language supervision. In
+ICML.
+Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S.,
+Matena, M., Zhou, Y ., Li, W., and Liu, P. J. (2020). Ex-
+ploring the limits of transfer learning with a unified text-
+to-text transformer.Journal of machine learning research,
+21(140):1–67.
+Rommel, C., Paillard, J., Moreau, T., and Gramfort, A.
+(2022). Data augmentation for learning predictive models
+on eeg: a systematic comparison.Journal of Neural
+Engineering, 19(6):066020.
+Roschmann, S., Bouniot, Q., Feofanov, V ., Redko, I., and
+Akata, Z. (2025). Time series representations for classifi-
+cation lie hidden in pretrained vision transformers.arXiv
+preprint arXiv:2506.08641.
+Schalk, G., McFarland, D. J., Hinterberger, T., Birbaumer,
+N., and Wolpaw, J. R. (2004). BCI2000: a general-
+purpose brain-computer interface (BCI) system.IEEE
+Transactions on biomedical engineering, 51(6):1034–
+1043.
+Schuhmann, C., Beaumont, R., Vencu, R., Gordon, C. W.,
+Wightman, R., Cherti, M., Coombes, T., Katta, A., Mullis,
+C., Wortsman, M., Schramowski, P., Kundurthy, S. R.,
+Crowson, K., Schmidt, L., Kaczmarczyk, R., and Jitsev, J.
+(2022). LAION-5B: An open large-scale dataset for train-
+ing next generation image-text models. InThirty-sixth
+Conference on Neural Information Processing Systems
+Datasets and Benchmarks Track.
+Serra, J., Pascual, S., and Karatzoglou, A. (2018). Towards
+a universal neural network encoder for time series. In
+Artificial Intelligence Research and Development, pages
+120–129. IOS Press.
+Shazeer, N. (2020). GLU variants improve transformer.
+arXiv preprint arXiv:2002.05202.
+Singh, A., Bevilacqua, A., Nguyen, T. L., Hu, F., McGuin-
+ness, K., O’Reilly, M., Whelan, D., Caulfield, B., and
+Ifrim, G. (2023). Fast and robust video-based exercise
+classification via body pose tracking and scalable multi-
+variate time series classifiers.Data Mining and Knowl-
+edge Discovery, 37(2):873–912.
+Skean, O., Arefin, M. R., Zhao, D., Patel, N., Naghiyev, J.,
+LeCun, Y ., and Shwartz-Ziv, R. (2025). Layer by layer:
+Uncovering hidden representations in language models.
+arXiv preprint arXiv:2502.02013.
+Stisen, A., Blunck, H., Bhattacharya, S., Prentow, T. S.,
+Kjærgaard, M. B., Dey, A., Sonne, T., and Jensen, M. M.
+(2015). Smart devices are different: Assessing and miti-
+gatingmobile sensing heterogeneities for activity recog-
+nition. InProceedings of the 13th ACM conference on
+embedded networked sensor systems, pages 127–140.
+12
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Su, J., Ahmed, M., Lu, Y ., Pan, S., Bo, W., and Liu, Y .
+(2024). RoFormer: Enhanced transformer with rotary
+position embedding.Neurocomputing, 568:127063.
+Sungu Isiacik, P., Nguyen, T. L., Aderinola, T., and Ifrim,
+G. (2025). An empirical evaluation of foundation models
+for multivariate time series classification. InJoint Euro-
+pean Conference on Machine Learning and Knowledge
+Discovery in Databases, pages 3–21. Springer.
+Tanisaro, P. and Heidemann, G. (2016). Time series clas-
+sification using time warping invariant echo state net-
+works. In2016 15th IEEE international conference on
+machine learning and applications (ICMLA), pages 831–
+836. IEEE.
+Terzano, M. G., Parrino, L., Smerieri, A., Chervin, R.,
+Chokroverty, S., Guilleminault, C., Hirshkowitz, M., Ma-
+howald, M., Moldofsky, H., Rosa, A., et al. (2002). Atlas,
+rules, and recording techniques for the scoring of cyclic
+alternating pattern (CAP) in human sleep.Sleep medicine,
+3(2):187–199.
+Tonekaboni, S., Eytan, D., and Goldenberg, A. (2021).
+Unsupervised representation learning for time series
+with temporal neighborhood coding.arXiv preprint
+arXiv:2106.00750.
+Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones,
+L., Gomez, A. N., Kaiser, L. u., and Polosukhin, I. (2017).
+Attention is all you need. In Guyon, I., Luxburg, U. V .,
+Bengio, S., Wallach, H., Fergus, R., Vishwanathan, S.,
+and Garnett, R., editors,Advances in Neural Information
+Processing Systems, volume 30. Curran Associates, Inc.
+Wang, J., Zhao, S., Luo, Z., Zhou, Y ., Jiang, H., Li, S., Li,
+T., and Pan, G. (2024). CBraMod: A criss-cross brain
+foundation model for EEG decoding.arXiv preprint
+arXiv:2412.07236.
+Wang, T. and Isola, P. (2020). Understanding contrastive rep-
+resentation learning through alignment and uniformity on
+the hypersphere. InInternational conference on machine
+learning, pages 9929–9939. PMLR.
+Wang, Z., Yan, W., and Oates, T. (2017). Time series classi-
+fication from scratch with deep neural networks: A strong
+baseline. In2017 International joint conference on neural
+networks (IJCNN), pages 1578–1585. IEEE.
+Wolf, T., Debut, L., Sanh, V ., Chaumond, J., Delangue, C.,
+Moi, A., Cistac, P., Rault, T., Louf, R., Funtowicz, M.,
+Davison, J., Shleifer, S., von Platen, P., Ma, C., Jernite,
+Y ., Plu, J., Xu, C., Scao, T. L., Gugger, S., Drame, M.,
+Lhoest, Q., and Rush, A. M. (2020). Transformers: State-
+of-the-art natural language processing. InProceedings of
+the 2020 Conference on Empirical Methods in Natural
+Language Processing: System Demonstrations, pages 38–
+45, Online. Association for Computational Linguistics.
+Wong, S., Shankar, R., Albert, B., and Jones, G. D. (2025).
+Large language models surpass domain-specific architec-
+tures for antepartum electronic fetal monitoring analysis.
+arXiv preprint arXiv:2509.18112.
+Wu, R. and Keogh, E. J. (2021). Current time series anomaly
+detection benchmarks are flawed and are creating the
+illusion of progress.IEEE transactions on knowledge
+and data engineering, 35(3):2421–2429.
+Xie, S., Feofanov, V ., Zhang, J., Palpanas, T., and Redko,
+I. (2026). Cauker: Classification time series founda-
+tion models can be pretrained on synthetic data. InThe
+Fourteenth International Conference on Learning Repre-
+sentations.
+Ye, H.-J., Liu, S.-Y ., and Chao, W.-L. (2025). A closer look
+at TabPFN v2: Strength, limitation, and extension.arXiv
+preprint arXiv:2502.17361.
+Yue, Z., Wang, Y ., Duan, J., Yang, T., Huang, C., Tong, Y .,
+and Xu, B. (2022). TS2Vec: Towards universal represen-
+tation of time series.Proceedings of the AAAI Conference
+on Artificial Intelligence, 36(8):8980–8987.
+Zhang, B. and Sennrich, R. (2019). Root mean square
+layer normalization.Advances in neural information
+processing systems, 32.
+Zhang, X., Zhao, Z., Tsiligkaridis, T., and Zitnik, M. (2022).
+Self-supervised contrastive pre-training for time series
+via time-frequency consistency. In Koyejo, S., Mohamed,
+S., Agarwal, A., Belgrave, D., Cho, K., and Oh, A., edi-
+tors,Advances in Neural Information Processing Systems,
+volume 35, pages 3988–4003. Curran Associates, Inc.
+Zhao, B., Lu, H., Chen, S., Liu, J., and Wu, D. (2017).
+Convolutional neural networks for time series classifi-
+cation.Journal of systems engineering and electronics,
+28(1):162–169.
+Zhou, T., Niu, P., Sun, L., Jin, R., et al. (2023). One fits
+all: Power general time series analysis by pretrained
+LM.Advances in neural information processing systems,
+36:43322–43355.
+Zhu, C., Byrd, R. H., Lu, P., and Nocedal, J. (1997). Algo-
+rithm 778: L-BFGS-B: Fortran subroutines for large-scale
+bound-constrained optimization.ACM Transactions on
+mathematical software (TOMS), 23(4):550–560.
+13
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+A. Experimental Setup
+In this section, we provide more details on the chosen
+datasets and models. We also experimentally justify
+Catch22+, a strong baseline that we have proposed.
+A.1. Datasets
+We consider four benchmarks. For UCR (Dau et al., 2019),
+we follow the standard protocol and detail the three other
+benchmarks below.
+A.1.1. UEA BENCHMARK
+From the original set (Bagnall et al., 2018), we have ex-
+cluded AtrialFibrillation and StandWalkJump datasets due
+to their very small test size and PenDigits due to its very
+small sequence length. For InsectWingbeat dataset, we sub-
+sampled 1000 examples from the original training set (which
+contains 30,000 examples) and 1000 from the original test
+set (of 20,000 examples) to reduce computational overhead
+while maintaining sufficient variety in the data for robust
+model evaluation.
+A.1.2. HAR DATASETS
+Below we give more details on the human activity recogni-
+tion datasets used in our experiments, which characteristics
+can be found in Table 4.
+Table 4.Characteristics of HAR datasets.
+Dataset Num. of Seq. Train Test Num. of
+Channels Length Size Size classes
+Ego4D 6 1000 247095 66994 31
+EMOPain 30 200 968 355 3
+HHAR-ID 6 500 8716 3419 6
+HHAR-OOD 6 500 11150 2154 6
+MP8 8 161 1426 595 4
+MP50 50 161 1426 595 4
+UCI-HAR 3 206 5881 2947 6
+• Ego4D(Grauman et al., 2022) is a multi-modal dataset
+for ego-centric human activity recognition. The use
+of the dataset requires signing the license agreement.
+We take time series data coming from Inertial Mea-
+surement Units (IMU) and pre-process them using the
+script provided by Chen et al. (2025).
+• EMOPain(Egede et al., 2020) is a movement-based
+chronic pain detection dataset. We downloaded it using
+the script provided by Gao et al. (2024).
+• HHAR(Stisen et al., 2015): we take from the WOODS
+benchmark (Gagnon-Audet et al., 2022). ForIDsetting,
+we merge all domains and make a train-validation-test
+split in proportion 63.75%-11.25%-25%. ForOOD
+setting, we use three domains for training, namely,
+”nexus4”, ”s3” and ”s3mini”, and ”lgwatch” domain
+for test.
+• Military Press (MP, Singh et al., 2023) is a dataset for
+human exercise performance classification. We use
+two versions of the dataset provided by Sungu Isiacik
+et al. (2025):MP8(8 key body point coordinates) and
+MP50(all 50 coordinates from 25 body parts).
+• UCI-HAR(Anguita et al., 2013) is preprocessed fol-
+lowing Zhang et al. (2022).
+• In the UCR collection, the following datasets
+are related to HAR: AllGestureWiimo-
+teX,AllGestureWiimoteY , AllGestureWiimoteZ,
+CricketX, CricketY , CricketZ, GestureMidAirD1, Ges-
+tureMidAirD2, GestureMidAirD3, GesturePebbleZ1,
+GesturePebbleZ2, GunPoint, GunPointAgeSpan, Gun-
+PointMaleVersusFemale, GunPointOldVersusYoung,
+PickupGestureWiimoteZ, ShakeGestureWiimoteZ,
+UWaveGestureLibraryAll, UWaveGestureLibraryX,
+UWaveGestureLibraryY , UWaveGestureLibraryZ.
+• In the UEA collection, these datasets are related to
+HAR: BasicMotions, Cricket, ERing, Epilepsy, Hand-
+writing, Libras, NATOPS, RacketSports, UWaveGes-
+tureLibrary.
+A.1.3. EEG DATASETS
+Below we provide more details on the EEG datasets used
+in our experiments, which main characteristics are given in
+Table 5.
+Table 5.Characteristics of EEG datasets.
+Dataset Num. of Seq. Train Test Num. of
+Channels Length Size Size classes
+Blink 4 510 500 450 2
+CAP-ID 19 3000 25748 10098 6
+CAP-OOD 19 3000 27393 8265 6
+Epilepsy-EEG 1 178 60 11420 2
+FingerMovements 28 50 316 100 2
+PCL-ID 48 750 14405 5650 2
+PCL-OOD 48 750 9880 7800 2
+SEDFx-ID 4 3000 152178 59678 6
+SEDFx-OOD 4 3000 133746 52838 6
+SelfRegulationSCP1 6 896 268 293 2
+SelfRegulationSCP2 7 1152 200 180 2
+• Blink(Chicaiza and Benalc ´azar, 2021) is a dataset for
+classification of eye blink types. We downloaded it
+using the script provided by Gao et al. (2024).
+• Epilepsy-EEG(Andrzejak et al., 2001) is preprocessed
+following Zhang et al. (2022).
+• FingerMovements,SelfRegulationSCP1andSelfRegu-
+lationSCP2are taken from the UEA archive.
+14
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Table 6.Comparison of Model Sizes.
+# of Params. TabPFN TabICL MOMENT TiRex Chronos2 TiViT-H TiConvNext NuTime Mantis
+Original 7.2M 27.1M 341.2M 35.3M 119.5M 630.8M 843.4M 2.4M 4.2M
+After Pruning - - 161.4M 16.5M 44M 276.6M 180.3M 2M 2.2M
+• 3 datasets are taken from the WOODS bench-
+mark (Gagnon-Audet et al., 2022): motor imagery
+classification withPCL(Schalk et al., 2004; Cho et al.,
+2017; Lee et al., 2019), and sleep stage classification
+withCAP(Terzano et al., 2002) andSEDFx(Kemp
+et al., 2000). ForIDsetting, we merge all domains
+and make a train-validation-test split in proportion
+63.75%-11.25%-25%. ForOODsetting, we split by
+domains. For PCL, we use ”Cho2017” for training,
+”PhysionetMI” for validation, ”Lee2019MI” for test.
+For CAP, we use Machine 0,1,3 for training, Machine
+2 for validation, Machine 4 for test. For SEDFx, we
+use Age 20-60 for training, Age 60-80 for validation,
+Age 80-100 for test.
+A.2. Models
+In Table 6, one can found the number of parameters for
+each foundation model under consideration. If relevant,
+the table show the number of parameters before and after
+pruning using the layer-by-layer approach (more details
+on the optimal intermediate layer for each model can be
+found in Section B.3). Below, we give more implementation
+details on the baselines.
+• Catch22.We use the official python implementation
+pycatch22==0.4.5.
+• NuTime.We use the pre-trained weights provided by
+the authors in their GitHub repository, while fixing the
+hyperparameters of the architecture according to this
+configuration file. In contrast to the original imple-
+mentation, we do not use their adapter (described in
+Section 3.4 of their paper) but process all channels in-
+dependently as for Mantis and MOMENT. This allows
+us to use NuTime in the zero-shot feature extraction
+setting as their adapter has to be fine-tuned.
+• TabPFN.We use the default version of
+TabPFNClassifier from tabpfn==2.2.1. As
+TabPFN does not support more than 10 classes, we
+use the ManyClassClassifier wrapper from
+TabPFN Extensions (Ye et al., 2025).
+• TabICL.We use the official implementation with de-
+fault parameters fromtabicl==0.1.3.
+• MOMENT:We use the MOMENT-large model
+(d model=1024), which pre-trained weights can be
+found on the corresponding HuggingFace repository.
+To handle the multi-channel setup, we process every
+channel independently and concatenate all the embed-
+dings before passing them to the classification head.
+In the paper, they have considered datasets with a se-
+quence length≤512 and use zero-padding to fix the
+input size to 512. At the same time, we have also tried
+to interpolate sequences to 512 instead, and it did not
+affect the performance of MOMENT. Thus, we have
+decided to stick to the latter option as it allows us to
+evaluate MOMENT for any sequence length.
+• TiRex.We use the official implementation with default
+parameters fromtirex-ts==1.1.1.
+• Chronos2.We use the official imple-
+mentation with default parameters from
+chronos-forecasting==2.0.0.
+• TiViT-HandTiConvNext. We use the official implemen-
+tation available at GitHub. For CLIP ViT-H, we use
+this checkpoint, while CLIP ConvNext’s checkpoint
+can be found here (Wolf et al., 2020; Radford et al.,
+2021; Ilharco et al., 2021; Liu et al., 2022; Schuhmann
+et al., 2022).
+A.3. Catch22+
+Stats
+Catch22 Catch24
+Catch22+
+(Stats+Catch22)
+Accuracy
+0.7492
+0.7611
+0.7686
+0.7969
+UCR Performance
+Figure 7.Catch22+ ablation study.
+Catch22 (Lubba et al., 2019) is a manually selected set of
+time series statistics with a high discriminative power. De-
+spite the authors later proposed an improvement by adding
+the global mean and standard deviation to the set (so-called
+Catch24), we have found that it can be further improved by
+splitting the input into non-overlapping patches (we follow
+Auer et al. (2025a) and set their number to 8) and computing
+15
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+the mean and standard deviation for each of them. Using
+these means and standard deviations as features for classi-
+fication we further refer by Stats. Figure 7 illustrates the
+average accuracy of different configurations across UCR
+datasets. One can notice that the combination of Catch22
+with Stats yields a big improvement by 3.58%, while the
+improvement from adding global mean and standard devia-
+tion (Catch24) is more modest (0.75%). For this reason, we
+have considered Catch22+ (concatenation of Catch22 and
+Stats) as a baseline in the main part of our paper.
+B. Ablation Study
+B.1. Pre-training Data
+To validate the benefit of synthetic data for pre-training,
+we compare 100,000 samples generated by CauKer with
+other pre-training datasets: (a) a set of 1.89 million real
+time series samples used to pre-train NuTime (Lin et al.,
+2024), which is not strictly out-of-distribution (OOD) as
+data included UCR and UEA training sets, (b) its 100,000
+subset such that there are no UCR nor UEA samples in it,
+(c) Anomaly UCR (Wu and Keogh, 2021), a collection of
+datasets for anomaly detection. In Table 7 we display zero-
+shot feature extraction performance results. We can see that
+the obtained results confirm high efficiency of synthetic data
+for pre-training that outperform the real data of same size.
+Table 7.Performance of Mantis on UCR collection with different
+pre-training datasets.
+Pre-training Data Nature Size UCR In? UCR acc.
+NuTime (NT) Real 1.89M Yes0.7921 ±0.0012
+Subset of NT Real 100K No0.7829 ±0.0008
+Anomaly Real 38K No0.7473 ±0.0014
+CauKer Synth 100K No0.7881 ±0.001
+This observation can be intuitively explained by the nature
+of the pre-training objective. Self-supervised contrastive
+learning explicitly promotesuniformityin the embedding
+space, encouraging representations to be evenly distributed
+(Wang and Isola, 2020). Achieving such uniformity requires
+high data diversity, which synthetic generation methods
+such as CauKer can provide in a scalable and controllable
+manner. As a result, synthetic data offer both strong sample
+efficiency and improved generalization performance.
+B.2. Architecture
+First, we analyze the proposed Token Generator Unit, which
+combines three parallel branches: tokens extracted from
+the raw time series, tokens derived from its first-order dif-
+ferential, and the encoded patch-wise statistics (mean and
+standard deviation).
+We compare the proposed tokenizer against the following
+conv+meanpoolconv+meanpool& scalars
+2 * (conv+meanpool)
+& scalars
+conv+meanpool &
+ diff+conv+meanpool
+non-ovelap
+ diff+non-ovelap
+ scalarsconv+maxpool
+ diff+conv+maxpool
+ scalarsconv+meanpool
+ diff+conv+meanpool
+ scalars
+Accuracy
+0.7697
+0.774 0.7744
+0.7808
+0.7844 0.7856
+0.788
+UCR Performance
+Figure 8.Ablation study for the proposed Token Generator Unit.
+baselines:
+• Only the first branch is used, consisting of a convolu-
+tional layer followed by mean pooling.
+• The first and third branches are combined, i.e., patch-
+wise scalar encoding is added to the raw signal branch.
+• The first branch is duplicated and combined with the
+scalar statistics branch. This baseline is introduced to
+determine whether the benefit of the second branch
+arises from incorporating the first-order differential or
+simply from increasing the number of parameters.
+• The first and second branches are combined, removing
+the scalar encoder.
+• All three branches are retained, but the convolution
+with mean pooling is replaced by embeddings of
+non-overlapping patches. This baseline is introduced
+to compare the proposed convolution-based patch-
+ing against the non-overlapping patching used in Nu-
+Time (Lin et al., 2024).
+• All three branches are retained, but mean pooling is
+replaced with max pooling to assess the impact of the
+pooling strategy.
+Figure 8 presents the corresponding results. Each branch of
+the proposed Token Generator Unit contributes positively
+to performance (when comparing the 1st, 2nd, 4th, and 7th
+bars). Moreover, comparing the 3rd and 4th bars shows that
+incorporating features derived from the first-order differ-
+ential yields a clear performance gain, confirming that the
+improvement is not merely due to increased model capac-
+ity. Regarding patching strategies, convolution with mean
+pooling consistently outperforms both max pooling and the
+non-overlapping patch embedder.
+Next, we investigate the impact of the kernel size of the
+convolutional layers in Token Generator Unit. We vary
+kernel size within{9,17,25,33,41,49} and observe that
+performance improves monotonically up to a kernel size
+of 41, which provides the best trade-off between temporal
+16
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+9 17 25 33 41 49
+Kernel Size
+0.78
+0.785
+0.79
+0.795Accuracy
+Figure 9.Ablation on convolution kernel size.
+resolution and receptive field (Figure 9).
+classic activ.& sin pe
+new activ.& no pe new activ.& sin pe classic activ.& rope new activ.& rope
+Accuracy
+0.788
+0.7724
+0.7796
+0.7886 0.79
+UCR Performance
+Figure 10.Comparison of different transformer configurations.
+Finally, we explore two Transformer architectures: (a) the
+standard one with sinusoidal position encoding, layer norm,
+GELU in the feedforward layers (Vaswani et al., 2017; Doso-
+vitskiy et al., 2021), and (b) a more modern version (Co-
+hen et al., 2025) with Rotary Positional Encoding (RoPE;
+Su et al., 2024), RMS Layer Normalization (Zhang and
+Sennrich, 2019) in place of standard Layer Normalization,
+and the use of SwiGLU activations (Shazeer, 2020) in the
+feedforward layers. We empirically evaluate the following
+variants:
+• Classical activations and normalization with sinusoidal
+positional encoding.
+• SwiGLU and RMS normalization without positional
+encoding.
+• SwiGLU and RMS normalization with sinusoidal posi-
+tional encoding.
+• Classical activations and normalization with RoPE.
+• SwiGLU and RMS normalization with RoPE.
+Figure 10 reports the corresponding results on the UCR
+benchmark, averaged over three seeds. The combination
+of SwiGLU, RMS Layer Normalization, and RoPE yields
+the best performance. Although the absolute improvement
+is modest, it is stable across runs. For additional valida-
+tion, we also compared the two versions of Transformer on
+larger-scale pre-training with one million synthetic samples,
+performing a layer-by-layer analysis (as in this setup the last
+layer is not anymore the most powerful one). The results are
+illustrated in Table 8: again, a modern transformer yields
+slightly better results. Thus, we use the second version of
+Transformer for the final architecture of Mantis.
+Table 8.Performance comparison between the first and the second
+version of transformer architecture keeping all the other parameters
+of Mantis fixed. Both architectures were pre-trained on 1 million
+synthetic examples and evaluated on UCR.
+Layer V1 Transformer V2 TransformerNumber
+1 0.7872 0.7669
+2 0.7979 0.7987
+3 0.79890.7994
+4 0.7927 0.7986
+5 0.7927 0.7919
+6 0.7892 0.78
+B.3. Layer-by-layer, Epoch-by-epoch
+We extend the layer-by-layer analysis to Mantis (Skean
+et al., 2025) and other time series foundation models. In
+Figure 11, we track the UCR classification performance
+of all six Transformer layers of Mantis across pre-training
+epochs. We additionally vary the size of the synthetic pre-
+training dataset from 100,000 to 2,000,000 samples. Several
+notable patterns emerge. First, the relative improvement of
+intermediate layers appears to be closely tied to the total
+number of parameter updates. In our training setup, each
+epoch processes the full dataset, so increasing the dataset
+size directly increases the number of updates. With 100K
+samples, the final layer remains the strongest throughout
+training. In contrast, for larger datasets, intermediate layers
+steadily improve over time and eventually surpass the final
+layer. To test whether this behavior is indeed driven by
+the number of updates rather than dataset size per se, we
+pre-train Mantis on 100K samples for 1,000 epochs, match-
+ing the number of updates used for 1M samples over 100
+epochs. The experimental results are displayed in Figure 13.
+One can see an interesting pattern where the intermediate
+layers start to dominate in performance when increasing the
+number of updates. This suggests that the final layer may
+overfit the contrastive objective, so intermediate layers start
+to generalize better.
+However, increasing the number of epochs for the 100K
+dataset does not lead to further gains in overall performance.
+17
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+0.73
+0.74
+0.75
+0.76
+0.77
+0.78
+0.79
+0.8
+Accuracy
+100K Pre-training Samples 500K Pre-training Samples
+0 10 20 30 40 50 60 70 80 90 100
+Epoch Number
+0.73
+0.74
+0.75
+0.76
+0.77
+0.78
+0.79
+0.8
+Accuracy
+1M Pre-training Samples
+0 10 20 30 40 50 60 70 80 90 100
+Epoch Number
+2M Pre-training Samples
+Layer
+1
+2
+3
+4
+5
+6
+Figure 11.Intermediate layer results
+1 2 3 4 5 6
+0.74
+0.76Accuracy
+NuTime
+2 4 6 8 10 12 14 16 18 20 22 24
+0.74
+0.76
+0.78
+MOMENT
+1 2 3 4 5 6 7 8 9 10 11 12
+Layer
+0.76
+0.78
+0.80Accuracy
+TiRex
+1 2 3 4 5 6 7 8 9 10 11 12
+Layer
+0.74
+0.76
+0.78
+0.80
+Chronos2
+Figure 12.Layer-by-Layer for other models.
+18
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+0 50 1001502002503003504004505005506006507007508008509009501000
+Epoch Number
+0.73
+0.74
+0.75
+0.76
+0.77
+0.78
+0.79Accuracy
+100K Pre-training Samples
+Layer
+1
+2
+3
+4
+5
+6
+Figure 13.Layer by layer over 1000 epochs with 100K pre-training
+samples.
+Instead, performance follows a double-descent–like behav-
+ior and converges to the same level achieved during the
+first 100 epochs. This leads to our second key observa-
+tion from Figure 11. While the final-layer performance
+remains largely unchanged (or may even degrade) as the
+pre-training dataset grows, thebest-performing intermedi-
+ate layerimproves consistently with increased data scale.
+In other words,intermediate representations unlock the
+scaling benefits of pre-training. By selecting the most
+informative layer, Mantis exhibits a clear and monotonic
+improvement in performance as the number of pre-training
+samples increases.
+Layer-by-layer for other TSFMs.For a more comprehen-
+sive comparison, we conduct a layer-by-layer analysis of
+several other foundation models, including NuTime (Lin
+et al., 2024), MOMENT (Goswami et al., 2024), TiRex
+(Auer et al., 2025a), and Chronos2 (Ansari et al., 2025).
+Figure 12 summarizes the results. TiRex and Chronos2
+exhibit strong discriminative power in early layers, while
+their final layers appear to be more specialized for forecast-
+ing. MOMENT’s performance plateaus after approximately
+the 10th layer, suggesting that the model could be signifi-
+cantly compressed by truncating its final layers. NuTime
+benefits the least from intermediate representations, with its
+best-performing layer located immediately before the final
+one.
+B.4. Aggregation of Output Tokens
+As we leverage intermediate-layer representations, we have
+proposed a new output-token aggregation strategy, which
+we validate in this section. Specifically, we evaluate three
+approaches to generate the final embedding:
+• using only the classification token (as in the original
+Mantis),
+• computing the mean of all tokens except the classifica-
+tion token,
+• concatenating the classification token with the mean of
+the remaining tokens.
+Figure 14 reports the corresponding results on the UCR
+benchmark. We observe that non-classification tokens en-
+code complementary and discriminative information and
+should not be discarded. Moreover, concatenating the clas-
+sification token with the mean token consistently yields the
+best performance, improving accuracy by0.8 %.
+Cls T oken Mean T oken Combined
+Accuracy
+0.8113 0.8115
+0.8195
+Mantis (3rd Layer)
+UCR Performance
+Figure 14.Ablation study on output-token aggregation.
+We note that the effectiveness of this combined aggregation
+strategy may depend on the depth of the Transformer, as
+the number of layers determines how effectively the classi-
+fication token aggregates information from the remaining
+tokens. We have performed the same experiment for the
+last layer of Mantis (Figure 15) and confirm this argument:
+the strategy is not beneficial anymore in this case, and the
+classification token is the most discriminative alone.
+Cls T oken Mean T oken Combined
+Accuracy
+0.7882
+0.7731
+0.7859
+Mantis (Last Layer)
+UCR Performance
+Figure 15.Ablation study on output-token aggregation.
+B.5. Self-Ensembling
+First let us give more details on why different interpolation
+sizes lead to a different overlap between patches. In Figure
+16, we illustrate how convolution + mean pooling generate
+one token for the same example but interpolated to two dif-
+19
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Figure 16.Motivation to look at different interpolation sizes that,
+in the context of our architecture, imply different degree of overlap
+between tokens.
+ferent sizes. Since the number of tokens in our architecture
+is fixed, the pooling size increases with interpolation size,
+but not linearly. In this particular example, when the kernel
+size is set to 41, the receptive field of one token with interpo-
+lation sizes 128 and 256 will be(41+(128/32−1))/128≈
+34% and (41 + (256/32−1))/256≈19% , respectively.
+This implies that with different interpolation sizes the over-
+lap between tokens will be different. As sequence length
+goes to infinity, the receptive field converges to1/32, i.e., to
+the case when the tokens are non-overlapping. Conversely,
+decreasing the sequence length makes tokens more and more
+overlapped.
+We perform an ablation study over self-ensembling com-
+paring the 4 following methods: (a) interpolate time series
+solely to 512 as we did before, (b) create 4 series by inter-
+polating the input to 128, 256, 512 and 1024, pass all of
+them through the encoder and then concatenate all the em-
+beddings, (c) perform the same multiple interpolations but
+for the first-order difference of the input, (d) concatenate the
+embeddings of (b) and (c). In Figure 17, the experimental re-
+sults are displayed. One can see that multiple interpolations
+improve the performance Mantis by 0.55% on the UCR
+benchmark. Although the embeddings of the first-order dif-
+ference are individually weak, their incorporation further
+improve the performance by 0.29%. It is an interesting ob-
+servation since the feature extraction from the first-order
+differential is already incorporated to the architecture of
+Mantis, yet we can still benefit from this strategy.
+B.6. Pre-training Scheme
+To validate the choice of contrastive pre-training, we in-
+vestigate how Mantis performs when pre-trained using the
+following alternative schemes:
+• Masked Autoencoder: we randomly mask a few non-
+overlapping patches of the original signal, pass the
+input through an encoder, and reconstruct the full sig-
+nal with a decoder.
+• Decoder-only: similar to next-token prediction, we
+mask the last patch and reconstruct it using a decoder-
+only architecture.
+Single 
+ Interpolation
+Multiple 
+ Interpolations
+Multiple 
+ Interpol. of Diff
+Concatenation
+Accuracy
+0.8195
+0.825
+0.7962
+0.8279
+UCR Performance
+Figure 17.Self-Ensembling Ablation Study.
+Table 9 shows the downstream performance averaged across
+128 UCR datasets. Contrastive learning significantly out-
+performs the imputation-based schemes. Analyzing these
+results, we hypothesize that the specific architecture of Man-
+tis may inherently be suboptimal for reconstruction-based
+pre-training. Identifying an optimal configuration for MAE
+and decoder-only setups remains a promising direction for
+future work, which could enable Mantis to perform well on
+forecasting tasks.
+Table 9.Performance of Mantis with different pre-training
+schemes.
+Pre-training type UCR Accuracy
+Contrastive Learning 0.788
+Masked Autoencoder 0.716
+Decoder-only 0.707
+B.7. Contrastive Loss
+We conduct an ablation study on the contrastive learn-
+ing scheme to evaluate our architectural and data choices.
+Specifically, we design two additional experiments. First,
+we pre-train Mantis with a triplet contrastive loss (TLoss,
+Franceschi et al., 2019) to evaluate it against our InfoNCE-
+based objective. The experimental results on the UCR
+benchmark, presented in Table 10, confirm the superior
+performance of our chosen pre-training loss.
+Table 10.Performance of Mantis with different contrastive losses.
+Contrastive Loss UCR Accuracy
+Ours (InfoNCE) 0.788
+TLoss 0.767
+Second, we validate the selection of the Random Crop Re-
+size (RCR) augmentation used in our contrastive learning
+pipeline. We evaluate three alternative augmentations for
+comparison: (a) adding white noise (Noise), (b) a Fourier
+20
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+transform surrogate (FTS, Rommel et al., 2022), and (c)
+Random Masking (RMask). Table 11 demonstrates the
+downstream performance on the UCR archive, confirming
+that RCR outperforms the other augmentation strategies.
+Table 11.Performance of Mantis with different augmentation
+functions.
+Augmentation UCR Accuracy
+Noise 0.751
+FTS 0.768
+RMask 0.698
+RCR 0.788
+C. Additional Experiments
+C.1. Fine-tuning
+In addition, we investigate the performance of Mantis when
+its encoder is fine-tuned to each dataset. We append a pre-
+diction head after an encoder and fine-tune all layers on the
+training data of a dataset. The prediction head is a layer
+normalization step followed by a linear layer. We fix a
+fine-tuning scheme: we minimize the cross-entropy loss for
+500 epochs with a fixed batch size equal to 128, using an
+AdamW optimizer (Loshchilov et al., 2017) with a learning
+rate of 2·10 −4 and a weight decay of 0.05. We report the
+performance of a model at the last epoch in average over 3
+experimental runs.
+3rd Layer Last Layer 3rd Layer Last Layer
+Accuracy0.8113
+0.7882
+0.8409
+0.85
+Zero-shot Fine-tune
+UCR Performance
+Figure 18.Performance of Mantis in zero-shot and fine-tuned
+regimes.
+In Figure 18, we display the performance results for four
+configurations: (a) zero-shot feature extraction performance
+of the best intermediate layer, (b) zero-shot performance
+of the last layer, (c) the performance of fine-tuned Mantis
+when truncating all the layers after the best intermediate
+one, (d) fine-tuned Mantis without truncating. From the re-
+sults we can see that the fine-tuning significantly boosts the
+performance, suggesting that Mantis can be easily adapted
+to specific downstream tasks. What is interesting is that it
+is reasonable to fine-tune the model without truncating the
+layers, despite its promise for the zero-shot feature extrac-
+tion. We suggest that, despite of the low utility of the last
+layers at the end of pre-training, they remain to be impor-
+tant for fine-tuning as they enrich the capacity of the model
+to fit the training data. It is important to mention that in
+Figure 18, we illustrated the zero-shot performance without
+other test-time optimization techniques such as output-token
+aggregation, self-ensembling and cross-model embedding
+fusion. Applying these techniques will substantially reduce
+the performance gap between the zero-shot and fine-tuning
+results.
+C.2. Adapters
+The multivariate setting represents a primary challenge for
+time series foundation models since different tasks vary
+in the number of channels. We adopt the most common
+approach, which involves pre-training a TSFM univari-
+ately and subsequently treating all channels independently
+(Goswami et al., 2024; Auer et al., 2025b). We note that
+while the architecture of some foundation models naturally
+supports multivariate data (Cohen et al., 2025; Ansari et al.,
+2025), the gains from modeling cross-channel relationships
+do not appear significant (Ansari et al., 2025, Fig. 4a).
+However, treating channels independently has its own limita-
+tions. First, cross-channel relationships are only considered
+at the prediction head stage. Second, during full fine-tuning
+with a large number of channels, this approach can lead to
+excessive resource consumption. To address these concerns,
+we follow Benechehab et al. (2025) and Ilbert et al. (2025)
+by prepending a channel-level adapter a:R d →R dnew.
+This adapter precedes the foundation model and mixes the
+original d channels into dnew new ones, yielding a final
+embedding ofz=concat[(F([a(x)] i))1≤i≤dnew].
+Table 12.Performance of Mantis with (PCA, Linear) and without
+(None) adapters on 10 multivariate datasets.
+Dataset None PCA Linear
+CharacterTrajectories 0.976 0.9770.988
+DuckDuckGeese 0.54 0.580.6
+EigenWorms 0.8140.8630.855
+FaceDetection 0.549 0.5530.592
+HandMovementDirection 0.2970.338 0.338
+Handwriting 0.281 0.3150.514
+MotorImagery 0.467 0.480.5
+NATOPS 0.8890.9390.906
+SelfRegulationSCP2 0.5170.533 0.533
+SpokenArabicDigits 0.937 0.9550.987
+We evaluate two types of adapters: (1) PCA: applies
+Principal Component Analysis across channels (i.e., flat-
+tening the sample and time axes) to project to the first
+dnew = min(10,d) principal components; and (2) Linear:
+utilizes a trainable linear layer to project d channels to
+dnew = 10 . Evaluating this approach against the default
+channel-independent pass, we observe improved perfor-
+mance across 10 UEA datasets (Table 12). Thus, adapters
+21
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+offer a simple yet effective solution for enhancing perfor-
+mance on multivariate datasets.
+C.3. Mantis vs. TabPFN: Detailed Comparison
+In our experiments, we observe that despite exhibiting a
+lower average accuracy overall, TabPFN achieves the high-
+est win rate on the UCR archive (see Table 18 and Table 19).
+To better understand this dynamic, we conduct a deeper
+comparison between Mantis and TabPFN. Specifically, we
+compute the average number of training samples, sequence
+length, and number of classes across the UCR datasets
+where each model outperforms the other (Table 13). On
+average, Mantis excels on datasets characterized by fewer
+training samples, longer sequence lengths, and a higher
+number of unique classes.
+Table 13.Average characteristics of UCR datasets where each
+model outperforms the other.
+Metric TabPFN Mantis
+Num. of train samples 521 436
+Sequence length 452 597
+Num. of classes 7.3 9.8
+Furthermore, we stratify the UCR datasets based on these
+characteristics to analyze subgroup performance.
+Number of samples(Table 14). Mantis outperforms
+TabPFN in all intervals except for large training sets (n≥
+400). As TabPFN operates as a supervised feature extractor,
+its representation quality scales with the number of available
+samples. It excels with larger sample sizes, albeit at a high
+computational cost as discussed in Section 4.3.
+Table 14.UCR performance stratified by the number of training
+samples (n).
+Subgroup TabPFN Mantis
+16≤n<55 0.8570.91
+55≤n<200 0.7430.831
+200≤n<400 0.6540.703
+n≥400 0.8680.834
+Sequence length(Table 15). TabPFN outperforms Mantis
+on shorter sequences (t <144 ), which, we hypothesize,
+more closely resemble standard tabular configurations, nat-
+urally playing to TabPFN’s architectural strengths.
+Table 15.UCR performance stratified by sequence length (t).
+Subgroup TabPFN Mantis
+15≤t<144 0.8650.854
+144≤t<345 0.8290.857
+345≤t<720 0.7670.82
+t≥720 0.6610.748
+Number of classes(Table 16). In this breakdown, Mantis
+consistently outperforms TabPFN across all subsets. No-
+tably, TabPFN struggles severely with extreme few-shot
+classification problems such as PigCVP, PigAirwayPres-
+sure, and PigArtPressure, which have a high class count (52
+classes) alongside only 2 training points per class. In these
+scenarios, TabPFN’s performance degrades substantially,
+whereas Mantis remains highly robust.
+Table 16.UCR performance stratified by the number of
+classes (K).
+Subgroup TabPFN Mantis
+K <4 0.8430.871
+4≤K <10 0.80.802
+10≤K <20 0.7350.771
+K≥20 0.5290.713
+D. Complete Results
+Below we provide full tables with experimental results.
+D.1. Broad Evaluation on UCR-91
+In addition to 16 models considered in the main body of
+the paper, we add here 9 more baselines by extracting ex-
+perimental results from (Ismail Fawaz et al., 2019) and
+(Goswami et al., 2024), including the official performance
+results for MOMENT, the self-supervised TS-TCC (Eldele
+et al., 2021), supervised deep learning methods such as
+CNN (Zhao et al., 2017), Encoder (Serra et al., 2018),
+TWIESN (Tanisaro and Heidemann, 2016), FCN, MLP and
+ResNet (Wang et al., 2017), and statistical methods such as
+DTW (Dau et al., 2019). In Figure 19, we illustrate the av-
+erage performance over 91 UCR datasets for all considered
+models. Table 17 show the complete results per dataset.
+D.2. Performance Breakdown.
+We attach the complete results for UCR in Table 18 and
+Table 19, and in Table 20 for UEA-27. In addtion, we
+provide the full results for self-ensembling and cross-model
+embedding fusion in Table 21 and Table 22.
+22
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Table 17.Comparison with more baselines on 91 datasets of UCR, which results are taken from (Goswami et al., 2024).
+TS2Vec T-Loss TNC TS-TCC CNN Encoder FCN MLP ResNet TWIESN DTW Official Improved Catch22+ TabPFN TabICL TiRex Chronos2 TiViT-H TiConvNext NuTime Mantis SE-Mantis Mantis & Mantis &
+MOMENT MOMENT TiViT-H TiConvNext
+Adiac 0.762 0.675 0.767 0.767 0.393 0.318 0.841 0.391 0.833 0.428 0.604 0.688 0.7775 0.734 0.8031 0.8031 0.7826 0.8286 0.7187 0.7059 0.8005 0.83630.84650.7519 0.7749
+AllGestureWiimoteX 0.7770.763 0.697 0.697 0.411 0.475 0.713 0.477 0.741 0.522 0.716 0.607 0.6614 0.5957 0.6229 0.5043 0.7014 0.6843 0.67 0.6943 0.6071 0.73 0.6871 0.7229 0.7357
+AllGestureWiimoteY 0.793 0.726 0.741 0.741 0.479 0.509 0.784 0.5710.7940.6 0.729 0.666 0.7029 0.6319 0.6329 0.5114 0.7314 0.7043 0.7371 0.7229 0.6529 0.7471 0.7271 0.7557 0.7486
+AllGestureWiimoteZ 0.7460.723 0.689 0.689 0.375 0.396 0.692 0.439 0.726 0.516 0.643 0.537 0.6057 0.5462 0.5329 0.4529 0.6343 0.66 0.6771 0.6586 0.5414 0.6814 0.6357 0.6886 0.7043
+ArrowHead 0.857 0.766 0.737 0.737 0.717 0.63 0.843 0.784 0.838 0.689 0.703 0.743 0.7771 0.741 0.7543 0.7429 0.7829 0.8514 0.8229 0.8229 0.7257 0.8514 0.85140.880.8457
+BME 0.993 0.993 0.933 0.933 0.947 0.827 0.836 0.905 0.999 0.819 0.9 0.96 0.99331.0 1.00.98 0.99331.0 1.0 1.00.96671.0 1.0 1.0 1.0
+Beef 0.767 0.667 0.6 0.6 0.767 0.707 0.68 0.713 0.753 0.527 0.633 0.833 0.8 0.6889 0.8 0.76670.93330.7 0.7667 0.8333 0.7333 0.7333 0.8 0.7667 0.8333
+BeetleFly 0.9 0.8 0.8 0.8 0.9 0.62 0.91 0.88 0.85 0.79 0.7 0.90.950.7833 0.9 0.8 0.9 0.8 0.850.950.7 0.850.95 0.95 0.95
+BirdChicken 0.8 0.85 0.65 0.65 0.71 0.51 0.94 0.74 0.88 0.62 0.75 0.851.00.85 0.85 0.75 0.9 0.9 0.9 0.951.00.9 0.9 0.9 0.9
+CBF 1.00.983 0.998 0.998 0.959 0.977 0.994 0.869 0.996 0.896 0.997 0.96 0.9889 0.9763 0.9133 0.9244 0.99671.00.9989 0.9989 0.99 0.9967 0.9944 0.99891.0
+Chinatown 0.965 0.951 0.983 0.983 0.977 0.966 0.98 0.872 0.978 0.825 0.957 0.965 0.9825 0.97960.98540.9796 0.98250.98540.9679 0.9388 0.9621 0.9621 0.9534 0.9592 0.9504
+ChlorineConcentration 0.832 0.749 0.753 0.753 0.608 0.583 0.817 0.8 0.853 0.554 0.648 0.765 0.7789 0.6682 0.950.97730.8018 0.7672 0.7622 0.7771 0.6086 0.7115 0.7867 0.7914 0.8026
+Coffee 1.0 1.0 1.0 1.0 1.00.8861.00.9931.00.9791.00.893 0.9643 0.9881 0.96431.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+CricketX 0.782 0.713 0.731 0.731 0.535 0.644 0.794 0.591 0.799 0.627 0.754 0.749 0.7436 0.6974 0.6667 0.6641 0.7 0.7564 0.759 0.7487 0.7051 0.78210.80.7769 0.7718
+CricketY 0.749 0.728 0.718 0.718 0.582 0.639 0.793 0.598 0.81 0.652 0.744 0.746 0.7077 0.6923 0.7 0.6333 0.7538 0.7359 0.7872 0.7462 0.6897 0.8154 0.81790.82310.8026
+CricketZ 0.792 0.708 0.713 0.713 0.501 0.651 0.81 0.629 0.809 0.643 0.754 0.731 0.7436 0.7427 0.6718 0.6692 0.7333 0.7231 0.7974 0.759 0.659 0.81280.81790.8103 0.7846
+Crop 0.756 0.722 0.742 0.742 0.67 0.76 0.738 0.618 0.743 0.489 0.665 0.734 0.7234 0.7523 0.79890.8120.7029 0.7163 0.6867 0.6737 0.6895 0.7348 0.732 0.7231 0.7171
+DiatomSizeReduction 0.984 0.9840.977 0.977 0.954 0.88 0.346 0.909 0.301 0.914 0.967 0.879 0.9412 0.9401 0.9608 0.951 0.9281 0.9477 0.9673 0.9673 0.915 0.9281 0.9281 0.9575 0.9706
+DistalPhalanxOutlineAgeGroup 0.727 0.727 0.755 0.755 0.758 0.761 0.718 0.647 0.718 0.705 0.77 0.669 0.6691 0.717 0.7626 0.7626 0.7482 0.741 0.7122 0.7266 0.7050.7770.7122 0.705 0.7338
+DistalPhalanxOutlineCorrect 0.761 0.775 0.754 0.754 0.772 0.724 0.76 0.727 0.77 0.711 0.717 0.717 0.75360.79110.7826 0.7754 0.75 0.7645 0.7536 0.7681 0.7428 0.7681 0.7536 0.75 0.7681
+DistalPhalanxTW 0.698 0.676 0.676 0.676 0.671 0.694 0.695 0.61 0.663 0.591 0.59 0.612 0.6259 0.6475 0.6978 0.6835 0.6547 0.6547 0.6691 0.6547 0.6835 0.68350.7050.6691 0.6763
+DodgerLoopDay 0.562 nan nan nan 0.312 0.487 0.143 0.16 0.15 0.593 0.5 0.438 0.4375 0.6417 0.61250.7250.55 0.525 0.5 0.5625 0.55 0.5 0.525 0.5125 0.55
+DodgerLoopGame 0.841 nan nan nan 0.816 0.81 0.768 0.865 0.71 0.716 0.877 0.623 0.8406 0.8333 0.7899 0.7971 0.78990.89130.8406 0.8406 0.8188 0.8623 0.8551 0.8188 0.8841
+DodgerLoopWeekend 0.964 nan nan nan 0.974 0.983 0.904 0.978 0.952 0.954 0.949 0.8260.9855 0.9855 0.98550.9783 0.9565 0.9638 0.9493 0.913 0.9638 0.971 0.9710.98550.9565
+ECG200 0.920.940.88 0.88 0.816 0.884 0.888 0.914 0.874 0.874 0.77 0.76 0.9 0.85 0.89 0.88 0.83 0.84 0.86 0.86 0.85 0.88 0.87 0.85 0.87
+ECG5000 0.935 0.933 0.941 0.941 0.928 0.941 0.94 0.93 0.935 0.922 0.924 0.942 0.9333 0.9398 0.9420.94470.9391 0.9342 0.9378 0.9311 0.9193 0.9353 0.9329 0.9371 0.9289
+ECGFiveDays 1.0 1.00.878 0.878 0.874 0.842 0.985 0.973 0.966 0.723 0.768 0.804 0.9698 0.7975 0.9245 0.9826 0.9756 0.9907 0.9791 0.9895 0.899 0.993 0.9977 0.9895 0.9895
+Earthquakes 0.748 0.748 0.748 0.748 0.709 0.74 0.725 0.727 0.712 0.748 0.719 0.748 0.7050.75060.7482 0.7482 0.6906 0.7482 0.705 0.6978 0.7338 0.7194 0.7122 0.6978 0.7122
+ElectricDevices 0.721 0.707 0.686 0.686 0.686 0.702 0.706 0.593 0.728 0.605 0.602 0.646 0.7404 0.7396 0.7025 0.6614 0.6709 0.7168 0.76350.77640.6786 0.7175 0.7257 0.7636 0.7679
+FaceAll 0.771 0.786 0.813 0.813 0.774 0.7940.9380.794 0.867 0.673 0.808 0.791 0.7787 0.7682 0.8077 0.771 0.7876 0.7533 0.7521 0.7367 0.7207 0.7574 0.7568 0.7562 0.7444
+FaceFour 0.932 0.92 0.773 0.773 0.905 0.852 0.93 0.836 0.955 0.857 0.83 0.852 0.875 0.8977 0.9091 0.8864 0.9545 0.9091 0.875 0.9205 0.96590.98860.9432 0.9659 0.9659
+FacesUCR 0.924 0.884 0.863 0.863 0.873 0.867 0.943 0.8310.9540.641 0.905 0.811 0.8912 0.8558 0.8766 0.8771 0.8776 0.8576 0.8751 0.8561 0.8195 0.9117 0.9083 0.9088 0.898
+FiftyWords 0.771 0.732 0.653 0.653 0.624 0.658 0.646 0.708 0.74 0.518 0.69 0.802 0.7758 0.726 0.7385 0.7165 0.7231 0.7956 0.7868 0.7714 0.7165 0.8198 0.80880.82640.8088
+Fish 0.926 0.891 0.817 0.817 0.855 0.734 0.961 0.848 0.981 0.878 0.823 0.8 0.96 0.7619 0.88 0.8857 0.9029 0.9429 0.9486 0.9714 0.9143 0.96 0.9714 0.96570.9829
+FordA 0.936 0.928 0.93 0.93 0.896 0.928 0.914 0.816 0.937 0.555 0.555 0.936 0.9061 0.9101 0.897 0.87580.9470.928 0.9136 0.9227 0.9061 0.9432 0.9462 0.9242 0.9318
+FordB 0.794 0.793 0.815 0.815 0.749 0.777 0.772 0.707 0.813 0.512 0.62 0.798 0.7556 0.7292 0.7556 0.7136 0.816 0.8074 0.7963 0.779 0.7654 0.80990.82590.8136 0.8111
+FreezerRegularTrain 0.986 0.956 0.989 0.989 0.987 0.76 0.997 0.906 0.998 0.946 0.899 0.982 0.98810.99960.9986 0.9877 0.9912 0.9951 0.9965 0.9975 0.994 0.9961 0.9954 0.9972 0.9982
+FreezerSmallTrain 0.87 0.933 0.979 0.979 0.739 0.676 0.683 0.686 0.832 0.917 0.753 0.902 0.8186 0.9251 0.8933 0.8098 0.8912 0.9688 0.9839 0.9902 0.9863 0.98490.99050.9891 0.9895
+Fungi 0.9571.00.753 0.753 0.961 0.934 0.018 0.863 0.177 0.439 0.839 0.8981.00.9229 0.8656 0.7849 0.9516 0.9462 0.9785 0.9946 0.7473 0.9731 0.9946 0.98391.0
+GestureMidAirD1 0.608 0.608 0.369 0.369 0.534 0.528 0.695 0.575 0.698 0.549 0.569 0.646 0.6846 0.6795 0.6231 0.6769 0.6923 0.7308 0.7538 0.7615 0.68460.77690.76920.77690.7538
+GestureMidAirD2 0.469 0.546 0.254 0.254 0.518 0.48 0.631 0.545 0.668 0.575 0.608 0.608 0.5769 0.6205 0.5615 0.5846 0.61540.70.6615 0.6769 0.5615 0.6462 0.62310.70.6923
+GestureMidAirD3 0.292 0.285 0.177 0.177 0.317 0.368 0.326 0.382 0.34 0.275 0.323 0.369 0.3692 0.3923 0.3692 0.3615 0.4077 0.3538 0.4692 0.4923 0.4462 0.4462 0.4308 0.43850.5
+GesturePebbleZ1 0.93 0.919 0.395 0.395 0.844 0.821 0.88 0.792 0.901 0.84 0.791 0.849 0.8953 0.8779 0.8488 0.8779 0.8837 0.9012 0.907 0.8547 0.8953 0.9302 0.93020.9360.9302
+GesturePebbleZ2 0.873 0.899 0.43 0.43 0.778 0.796 0.781 0.701 0.777 0.843 0.671 0.816 0.8924 0.7384 0.7848 0.7532 0.8418 0.8671 0.8544 0.8165 0.7722 0.9051 0.89240.91140.8797
+GunPoint 0.98 0.98 0.993 0.993 0.948 0.7841.00.928 0.991 0.989 0.907 0.9271.00.9467 0.9667 0.9533 0.98 0.9933 0.9933 0.9933 0.9733 0.98 0.981.00.9933
+GunPointAgeSpan 0.987 0.994 0.994 0.994 0.912 0.89 0.996 0.9340.9970.965 0.918 0.962 0.9778 0.9884 0.9905 0.9842 0.9905 0.9905 0.9937 0.9873 0.9684 0.9937 0.9937 0.9968 0.9905
+GunPointMaleVersusFemale 1.00.997 0.997 0.997 0.977 0.978 0.997 0.98 0.992 0.988 0.997 0.991 0.9968 0.9937 0.99681.00.9937 0.99371.00.9968 0.98731.0 1.0 1.0 1.0
+GunPointOldVersusYoung 1.0 1.0 1.0 1.00.922 0.923 0.989 0.941 0.989 0.975 0.838 0.981 0.9271.0 1.0 1.00.9651 0.9778 0.9873 0.99371.00.9968 0.9968 0.9968 0.9968
+Ham 0.714 0.724 0.743 0.743 0.72 0.682 0.707 0.699 0.7580.7680.467 0.581 0.6571 0.6063 0.7429 0.7238 0.7048 0.6952 0.7429 0.7238 0.7333 0.7048 0.6667 0.7429 0.7333
+Herring 0.641 0.594 0.594 0.594 0.531 0.512 0.644 0.491 0.6 0.625 0.531 0.594 0.6406 0.5208 0.5938 0.6406 0.6094 0.5156 0.5312 0.6094 0.53120.68750.6562 0.6562 0.6406
+InsectWingbeatSound 0.63 0.597 0.415 0.415 0.585 0.63 0.392 0.604 0.499 0.435 0.355 0.607 0.6212 0.6290.66720.6556 0.6253 0.6313 0.551 0.5652 0.5101 0.596 0.5793 0.5899 0.6081
+ItalyPowerDemand 0.925 0.954 0.955 0.955 0.954 0.964 0.963 0.953 0.962 0.871 0.95 0.911 0.9543 0.95370.96990.9631 0.9602 0.964 0.9407 0.9378 0.9116 0.9456 0.9475 0.9427 0.9446
+Lightning7 0.863 0.795 0.685 0.685 0.647 0.696 0.825 0.616 0.827 0.608 0.726 0.726 0.7397 0.7671 0.6986 0.7397 0.8082 0.7945 0.8493 0.7671 0.7808 0.863 0.82190.87670.7945
+Meat 0.95 0.95 0.883 0.883 0.913 0.787 0.803 0.893 0.99 0.97 0.933 0.9171.00.9222 0.9833 0.9333 0.9 0.9333 0.8167 0.85 0.9333 0.9667 0.8833 0.8833 0.8833
+MedicalImages 0.789 0.75 0.747 0.747 0.671 0.664 0.778 0.719 0.77 0.649 0.737 0.762 0.7461 0.7737 0.79470.80790.725 0.7474 0.7316 0.7513 0.7092 0.7711 0.7592 0.7566 0.7711
+MelbournePedestrian 0.959 0.944 0.949 0.949 0.813 0.884 0.912 0.863 0.909 0.73 0.791 0.876 0.8954 0.95970.9803 0.98030.8938 0.9049 0.8626 0.87 0.9332 0.9582 0.9537 0.9377 0.9426
+MiddlePhalanxOutlineAgeGroup 0.6360.6560.63 0.63 0.534 0.577 0.535 0.522 0.545 0.578 0.5 0.461 0.5065 0.5952 0.6234 0.6299 0.487 0.5519 0.5584 0.526 0.5519 0.5455 0.4675 0.539 0.539
+MiddlePhalanxOutlineCorrect 0.838 0.825 0.818 0.818 0.744 0.752 0.795 0.755 0.826 0.743 0.698 0.467 0.8076 0.8110.85220.8351 0.8076 0.8351 0.7938 0.8179 0.7491 0.8419 0.811 0.8007 0.8144
+MiddlePhalanxTW 0.584 0.591 0.61 0.61 0.551 0.597 0.501 0.536 0.495 0.569 0.506 0.532 0.5455 0.5844 0.61690.62340.5 0.5 0.5195 0.4805 0.4416 0.513 0.513 0.5195 0.5
+MoteStrain 0.861 0.851 0.843 0.843 0.885 0.872 0.936 0.855 0.924 0.809 0.835 0.774 0.905 0.8818 0.889 0.8794 0.9241 0.9257 0.9161 0.90650.95530.9393 0.9545 0.9481 0.9497
+OSULeaf 0.851 0.76 0.723 0.723 0.482 0.554 0.979 0.56 0.98 0.628 0.591 0.785 0.7934 0.6832 0.5661 0.595 0.938 0.938 0.98350.99170.8595 0.9628 0.9835 0.9876 0.9835
+PhalangesOutlinesCorrect 0.809 0.784 0.804 0.804 0.799 0.745 0.818 0.756 0.845 0.656 0.728 0.652 0.8135 0.8252 0.84030.86130.7925 0.8228 0.7995 0.7832 0.7471 0.7949 0.8054 0.7995 0.7972
+PickupGestureWiimoteZ 0.82 0.74 0.6 0.6 0.608 0.496 0.744 0.604 0.704 0.616 0.66 0.62 0.7 0.6933 0.76 0.74 0.84 0.660.920.88 0.64 0.76 0.840.920.86
+Plane 1.00.991.0 1.00.962 0.9641.00.9771.0 1.0 1.00.991.0 1.00.9905 0.99051.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+PowerCons 0.961 0.9 0.961 0.961 0.96 0.971 0.863 0.977 0.879 0.852 0.878 0.894 0.9556 0.99441.0 1.00.9389 0.9333 0.9056 0.9222 0.9722 0.9722 0.9556 0.9667 0.9556
+ProximalPhalanxOutlineAgeGroup 0.834 0.844 0.839 0.839 0.8120.8720.825 0.849 0.847 0.839 0.805 0.863 0.8293 0.8472 0.8585 0.839 0.8488 0.8341 0.8293 0.8293 0.8537 0.839 0.8341 0.8293 0.8293
+ProximalPhalanxOutlineCorrect 0.887 0.859 0.873 0.873 0.807 0.768 0.907 0.73 0.92 0.817 0.784 0.856 0.8866 0.8648 0.90380.92440.8866 0.8832 0.8729 0.8625 0.8385 0.8763 0.9107 0.8729 0.8557
+ProximalPhalanxTW 0.824 0.771 0.8 0.8 0.777 0.791 0.761 0.767 0.773 0.784 0.761 0.712 0.7951 0.8033 0.80980.82930.761 0.7561 0.761 0.7463 0.7854 0.761 0.7561 0.7561 0.761
+ShakeGestureWiimoteZ 0.94 0.92 0.86 0.86 0.58 0.756 0.884 0.548 0.88 0.864 0.860.960.84 0.8467 0.82 0.74 0.88 0.92 0.84 0.86 0.9 0.92 0.9 0.88 0.88
+ShapeletSim 1.00.672 0.683 0.683 0.497 0.51 0.706 0.513 0.782 0.546 0.65 0.961 0.9667 0.9704 0.4778 0.5056 0.96671.0 1.0 1.00.9278 0.9778 0.99441.0 1.0
+ShapesAll 0.902 0.848 0.773 0.773 0.617 0.679 0.894 0.7760.9260.643 0.768 0.815 0.8483 0.8206 0.8017 0.7917 0.8633 0.8967 0.9117 0.8967 0.8717 0.9017 0.9167 0.925 0.9167
+SmoothSubspace 0.98 0.96 0.953 0.953 0.976 0.964 0.975 0.98 0.98 0.849 0.827 0.82 0.98 0.98671.0 1.00.9667 0.9667 0.9667 0.98 0.9467 0.9733 0.96 0.9667 0.9667
+SonyAIBORobotSurface1 0.903 0.902 0.899 0.899 0.69 0.729 0.958 0.6920.9610.725 0.725 0.729 0.8253 0.8397 0.772 0.6722 0.9368 0.8236 0.8636 0.8502 0.8153 0.8336 0.8952 0.8652 0.8552
+SonyAIBORobotSurface2 0.871 0.889 0.907 0.907 0.831 0.8440.980.831 0.975 0.635 0.831 0.829 0.8909 0.8835 0.809 0.8279 0.8909 0.8846 0.9381 0.9454 0.8835 0.937 0.9507 0.9486 0.9496
+Strawberry 0.962 0.954 0.965 0.965 0.952 0.959 0.975 0.959 0.98 0.911 0.941 0.951 0.9622 0.9333 0.98110.98380.9649 0.973 0.9568 0.9541 0.9595 0.9622 0.9622 0.9676 0.9541
+SwedishLeaf 0.941 0.914 0.923 0.923 0.884 0.902 0.967 0.845 0.963 0.837 0.792 0.923 0.9312 0.9115 0.9504 0.9456 0.9536 0.9472 0.9584 0.9456 0.93920.97280.9664 0.968 0.9584
+Symbols 0.976 0.963 0.916 0.916 0.808 0.754 0.955 0.836 0.893 0.798 0.95 0.936 0.9558 0.9618 0.8824 0.8945 0.9668 0.9839 0.9859 0.9859 0.9688 0.9769 0.9839 0.98790.9889
+SyntheticControl 0.997 0.987 0.99 0.99 0.987 0.973 0.989 0.973 0.997 0.879 0.993 0.99 0.9767 0.9922 0.99 0.9833 0.9933 0.99671.0 1.00.9733 0.99 0.98671.0 1.0
+ToeSegmentation1 0.917 0.939 0.93 0.93 0.598 0.706 0.961 0.589 0.957 0.882 0.772 0.925 0.9474 0.8553 0.5746 0.6667 0.9693 0.9167 0.9386 0.9035 0.8421 0.96490.97370.9561 0.9693
+ToeSegmentation2 0.892 0.9 0.877 0.877 0.752 0.702 0.889 0.745 0.894 0.794 0.838 0.915 0.9077 0.7846 0.6538 0.8154 0.9154 0.8615 0.9 0.8769 0.86920.93080.9231 0.9154 0.9231
+Trace 1.00.991.0 1.00.952 0.741.00.8061.00.9341.0 1.00.991.00.91 0.981.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+TwoLeadECG 0.986 0.999 0.976 0.976 0.877 0.784 0.999 0.7531.00.949 0.905 0.847 0.9921 0.8584 0.9508 0.9254 0.9851 0.9931.00.993 0.9622 0.9991 0.99821.00.9956
+TwoPatterns 1.00.999 0.999 0.999 0.9911.00.87 0.9481.00.8751.00.994 0.9918 0.9935 0.995 0.9032 0.996 0.9948 0.998 0.999 0.9415 0.997 0.9992 0.9995 0.9992
+UMD 1.00.993 0.986 0.986 0.96 0.771 0.988 0.949 0.99 0.835 0.993 0.993 0.9931 0.93981.00.9375 0.9583 0.9931 0.9931 0.9931 0.9722 0.9931 0.9931 0.9931 0.9931
+UWaveGestureLibraryX 0.795 0.785 0.733 0.733 0.721 0.771 0.754 0.768 0.781 0.608 0.728 0.821 0.7931 0.8062 0.8079 0.7984 0.7998 0.821 0.8314 0.8417 0.8004 0.8445 0.8495 0.84310.8498
+UWaveGestureLibraryY 0.719 0.71 0.641 0.641 0.626 0.676 0.642 0.699 0.666 0.497 0.634 0.738 0.7144 0.7248 0.715 0.7164 0.7074 0.7387 0.7741 0.7744 0.6957 0.7658 0.7834 0.77830.787
+UWaveGestureLibraryZ 0.77 0.757 0.69 0.69 0.63 0.684 0.727 0.697 0.749 0.573 0.658 0.765 0.7401 0.7519 0.7513 0.7379 0.7328 0.7552 0.7739 0.7744 0.7554 0.77470.79560.7887 0.7859
+Wafer 0.998 0.992 0.994 0.994 0.961 0.998 0.997 0.996 0.998 0.916 0.98 0.997 0.994 0.9988 0.9953 0.9959 0.9992 0.9977 0.99920.99980.9961 0.9969 0.9995 0.9995 0.9995
+Wine 0.87 0.815 0.778 0.778 0.519 0.556 0.611 0.541 0.722 0.744 0.574 0.537 0.8333 0.6358 0.7778 0.7222 0.8704 0.8519 0.6667 0.8333 0.7778 0.8333 0.8148 0.83330.8889
+WordSynonyms 0.676 0.691 0.531 0.531 0.568 0.557 0.561 0.599 0.617 0.506 0.649 0.688 0.685 0.639 0.6442 0.5972 0.5987 0.6677 0.6771 0.6771 0.6003 0.7116 0.71940.7320.721
+Yoga 0.887 0.837 0.791 0.791 0.786 0.753 0.837 0.856 0.867 0.626 0.837 0.834 0.8507 0.8289 0.8603 0.8653 0.7947 0.819 0.8403 0.8793 0.7493 0.8557 0.887 0.87130.901
+Avg 0.8516 0.8336 0.7933 0.7933 0.752 0.7433 0.8093 0.7506 0.8255 0.7268 0.7641 0.7941 0.8338 0.8145 0.8173 0.8083 0.8394 0.8415 0.8436 0.8458 0.8121 0.8584 0.8582 0.86120.862
+Best Counts 13 7 4 4 1 2 6 0 10 2 4 2 6 7 10.0 15.0 5 8 9 10 6 11 142017
+23
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Table 18.Comparison with baselines on UCR benchmark. First Part.
+Catch22+ TabPFN TabICL MOMENT TiRex Chronos2 TiViT-H TiConvNext NuTime Mantis
+ACSF1 0.8233±0.021 0.8 0.810.82 ±0.026 0.85±0.01 0.8467±0.012 0.85±0.0 0.8667±0.006 0.75±0.02 0.8233±0.012
+Adiac 0.734±0.007 0.8031 0.80310.7894 ±0.003 0.7852±0.011 0.8107±0.009 0.7059±0.007 0.6547±0.018 0.7357±0.006 0.8483±0.003
+AllGestureWiimoteX 0.5957±0.01 0.6229 0.50430.6138 ±0.002 0.6495±0.012 0.6038±0.005 0.6029±0.011 0.6676±0.002 0.6505±0.005 0.6843±0.006
+AllGestureWiimoteY 0.6319±0.016 0.6329 0.51140.6624 ±0.004 0.7052±0.019 0.6419±0.002 0.6514±0.01 0.6805±0.011 0.63±0.01 0.691±0.004
+AllGestureWiimoteZ 0.5462±0.005 0.5329 0.45290.5767 ±0.007 0.6057±0.001 0.6205±0.004 0.6129±0.014 0.6067±0.011 0.6224±0.009 0.6881±0.001
+ArrowHead 0.741±0.012 0.7543 0.74290.7943 ±0.015 0.7886±0.01 0.779±0.037 0.7638±0.012 0.7714±0.006 0.7733±0.023 0.8057±0.015
+BME 1.0±0.0 1.00.980.9867 ±0.007 0.96±0.007 0.9667±0.007 0.9778±0.017 0.9933±0.007 0.8467±0.035 0.9956±0.004
+Beef 0.6889±0.051 0.8 0.76670.7889 ±0.019 0.8444±0.019 0.7333±0.033 0.7556±0.019 0.8222±0.019 0.6667±0.067 0.6889±0.019
+BeetleFly 0.7833±0.029 0.9 0.80.95 ±0.0 0.9167±0.029 0.8667±0.029 0.9333±0.029 0.95±0.0 0.8±0.05 0.9833±0.029
+BirdChicken 0.85±0.0 0.85 0.750.9833 ±0.029 0.8833±0.029 0.9±0.0 0.85±0.087 1.0±0.0 0.9667±0.029 0.9±0.0
+CBF 0.9763±0.002 0.9133 0.92440.9678 ±0.005 0.9915±0.003 0.993±0.002 0.9978±0.001 0.9937±0.002 0.9726±0.002 0.9948±0.002
+Car 0.7556±0.025 0.78330.81670.7556 ±0.025 0.6667±0.017 0.7389±0.025 0.7389±0.019 0.7222±0.035 0.7667±0.029 0.7556±0.025
+Chinatown 0.9796±0.003 0.98540.97960.9776 ±0.002 0.9689±0.006 0.9718±0.004 0.9631±0.002 0.8717±0.02 0.9281±0.008 0.9534±0.003
+ChlorineConcentration 0.6682±0.001 0.950.97730.6973 ±0.007 0.7018±0.004 0.7095±0.003 0.7076±0.001 0.7073±0.002 0.671±0.002 0.7041±0.001
+CinCECGTorso 0.8872±0.013 0.8341 0.82250.6831 ±0.005 0.8976±0.002 0.8135±0.018 0.8164±0.004 0.8101±0.012 0.7314±0.016 0.8089±0.01
+Coffee 0.9881±0.021 0.96431.00.9286 ±0.0 0.9881±0.021 0.9286±0.0 1.0±0.0 1.0±0.0 0.9286±0.0 1.0±0.0
+Computers 0.7347±0.006 0.62 0.6560.6267 ±0.022 0.76±0.011 0.7413±0.008 0.7333±0.008 0.7413±0.014 0.7627±0.01 0.7213±0.012
+CricketX 0.6974±0.01 0.6667 0.66410.6855 ±0.01 0.6923±0.017 0.6991±0.017 0.7137±0.005 0.6641±0.003 0.6667±0.01 0.7735±0.011
+CricketY 0.6923±0.008 0.7 0.63330.6735 ±0.005 0.7222±0.01 0.7137±0.012 0.7128±0.012 0.665±0.004 0.6889±0.01 0.788±0.02
+CricketZ 0.7427±0.008 0.6718 0.66920.7487 ±0.017 0.7248±0.004 0.7299±0.004 0.7641±0.007 0.712±0.008 0.6778±0.005 0.8171±0.005
+Crop 0.7523±0.001 0.79890.8120.7141 ±0.001 0.7201±0.001 0.7208±0.003 0.6552±0.002 0.6409±0.002 0.6754±0.001 0.7341±0.0
+DiatomSizeReduction 0.9401±0.008 0.96080.9510.8824 ±0.006 0.8617±0.005 0.8998±0.014 0.8649±0.016 0.9009±0.008 0.8617±0.011 0.8301±0.02
+DistalPhalanxOutlineAgeGroup 0.717±0.004 0.7626 0.76260.753 ±0.004 0.741±0.014 0.7818±0.015 0.7818±0.008 0.777±0.007 0.7386±0.004 0.7602±0.008
+DistalPhalanxOutlineCorrect 0.7911±0.002 0.7826 0.77540.7959 ±0.006 0.7874±0.008 0.8031±0.002 0.779±0.01 0.7548±0.004 0.7778±0.006 0.7886±0.002
+DistalPhalanxTW 0.6475±0.019 0.6978 0.68350.6571 ±0.004 0.6667±0.011 0.693±0.015 0.6715±0.004 0.6954±0.015 0.6882±0.018 0.7074±0.011
+DodgerLoopDay 0.6417±0.052 0.61250.7250.4583 ±0.052 0.5042±0.019 0.4917±0.007 0.4417±0.014 0.5333±0.014 0.5417±0.029 0.5333±0.019
+DodgerLoopGame 0.8333±0.007 0.7899 0.79710.8116 ±0.007 0.7633±0.004 0.8333±0.014 0.8164±0.004 0.7826±0.0 0.7826±0.007 0.7995±0.022
+DodgerLoopWeekend 0.9855±0.0 0.98550.97830.9758 ±0.004 0.9493±0.007 0.9638±0.013 0.9275±0.0 0.901±0.015 0.9589±0.004 0.9517±0.004
+ECG200 0.85±0.017 0.890.880.87 ±0.01 0.86±0.017 0.84±0.01 0.83±0.0 0.7833±0.025 0.8233±0.006 0.8367±0.012
+ECG5000 0.9398±0.001 0.9420.94470.938 ±0.001 0.9331±0.002 0.9331±0.001 0.9403±0.001 0.9386±0.001 0.9332±0.0 0.9381±0.0
+ECGFiveDays 0.7975±0.013 0.92450.98260.813 ±0.002 0.8955±0.022 0.9102±0.02 0.9346±0.015 0.971±0.004 0.7871±0.008 0.8707±0.001
+EOGHorizontalSignal 0.5948±0.004 0.5276 0.50.5654 ±0.01 0.5313±0.02 0.5387±0.013 0.5387±0.007 0.5626±0.007 0.4521±0.008 0.5884±0.006
+EOGVerticalSignal 0.5092±0.002 0.489 0.43370.453 ±0.008 0.4144±0.003 0.384±0.003 0.442±0.011 0.3757±0.007 0.267±0.002 0.4816±0.011
+Earthquakes 0.7506±0.008 0.7482 0.74820.7458 ±0.011 0.7482±0.0 0.7458±0.004 0.741±0.0 0.7458±0.004 0.7434±0.004 0.7434±0.004
+ElectricDevices 0.7396±0.003 0.7025 0.66140.7258 ±0.002 0.704±0.003 0.7489±0.002 0.762±0.003 0.7617±0.002 0.7066±0.002 0.7424±0.004
+EthanolLevel 0.38±0.013 0.8480.6940.44 ±0.007 0.306±0.004 0.4367±0.005 0.4047±0.005 0.348±0.007 0.3487±0.005 0.3793±0.014
+FaceAll 0.7682±0.028 0.80770.7710.7178 ±0.003 0.7651±0.015 0.7024±0.005 0.6911±0.006 0.6866±0.004 0.6487±0.002 0.7205±0.003
+FaceFour 0.8977±0.02 0.9091 0.88640.7689 ±0.046 0.7917±0.046 0.6818±0.057 0.6477±0.05 0.8182±0.011 0.803±0.013 0.9167±0.007
+FacesUCR 0.8558±0.004 0.87660.87710.7959 ±0.001 0.7995±0.005 0.7603±0.004 0.7815±0.005 0.7665±0.006 0.714±0.009 0.8439±0.006
+FiftyWords 0.726±0.006 0.73850.71650.7099 ±0.004 0.6381±0.01 0.6689±0.009 0.6425±0.003 0.674±0.006 0.6139±0.005 0.7106±0.001
+Fish 0.7619±0.013 0.88 0.88570.8476 ±0.014 0.8324±0.012 0.8629±0.006 0.9029±0.011 0.9067±0.012 0.9162±0.007 0.9314±0.0
+FordA 0.9101±0.004 0.897 0.87580.8611 ±0.006 0.9409±0.002 0.9174±0.002 0.8975±0.004 0.9081±0.001 0.8934±0.003 0.9303±0.0
+FordB 0.7292±0.007 0.7556 0.71360.7374 ±0.002 0.814±0.006 0.7918±0.004 0.7794±0.003 0.7626±0.001 0.7527±0.008 0.7979±0.003
+FreezerRegularTrain 0.9996±0.0 0.9986 0.98770.9108 ±0.005 0.9261±0.002 0.9718±0.005 0.9827±0.002 0.9908±0.001 0.9766±0.002 0.9857±0.001
+FreezerSmallTrain 0.9251±0.002 0.8933 0.80980.7878 ±0.011 0.8208±0.016 0.9185±0.009 0.9353±0.005 0.9559±0.005 0.9395±0.004 0.935±0.004
+Fungi 0.9229±0.041 0.8656 0.78491.0 ±0.0 0.8405±0.05 0.9104±0.008 0.914±0.014 0.8835±0.03 0.7007±0.031 0.9427±0.028
+GestureMidAirD1 0.6795±0.036 0.6231 0.67690.6744 ±0.009 0.6615±0.013 0.6692±0.023 0.7±0.008 0.7359±0.016 0.6564±0.009 0.7128±0.018
+GestureMidAirD2 0.6205±0.016 0.5615 0.58460.5769 ±0.013 0.6513±0.031 0.7436±0.024 0.6667±0.019 0.6795±0.012 0.5667±0.012 0.6154±0.013
+GestureMidAirD3 0.3923±0.031 0.3692 0.36150.3846 ±0.013 0.3897±0.031 0.3538±0.023 0.441±0.019 0.4692±0.008 0.3923±0.008 0.4385±0.013
+GesturePebbleZ1 0.8779±0.012 0.8488 0.87790.8779 ±0.006 0.8702±0.007 0.8857±0.009 0.8663±0.0 0.8295±0.003 0.8915±0.003 0.9205±0.007
+GesturePebbleZ2 0.7384±0.004 0.7848 0.75320.865 ±0.01 0.8755±0.013 0.8186±0.007 0.8439±0.02 0.8439±0.01 0.8376±0.01 0.9114±0.011
+GunPoint 0.9467±0.018 0.9667 0.95330.9867 ±0.007 0.9644±0.01 0.9956±0.004 0.9933±0.0 0.9667±0.018 0.9422±0.004 0.9778±0.004
+GunPointAgeSpan 0.9884±0.002 0.99050.98420.9525 ±0.008 0.9821±0.005 0.9852±0.002 0.9873±0.0 0.9673±0.01 0.9715±0.003 0.9842±0.003
+GunPointMaleVersusFemale 0.9937±0.0 0.99681.00.9916 ±0.004 0.9947±0.004 0.9884±0.002 0.9968±0.003 0.9979±0.004 0.9789±0.005 1.0±0.0
+GunPointOldVersusYoung 1.0±0.0 1.0 1.00.9598 ±0.005 0.9672±0.007 0.9778±0.003 0.9852±0.005 0.9937±0.0 1.0±0.0 0.9968±0.0
+Ham 0.6063±0.005 0.74290.72380.7333 ±0.019 0.7143±0.01 0.6413±0.015 0.6508±0.04 0.6349±0.02 0.7111±0.048 0.6698±0.031
+HandOutlines 0.9036±0.004 0.91620.9270.909 ±0.006 0.8757±0.016 0.9108±0.003 0.8874±0.009 0.8874±0.01 0.8964±0.007 0.9036±0.006
+Haptics 0.4838±0.015 0.4708 0.4610.5238 ±0.008 0.5271±0.014 0.5444±0.009 0.5076±0.012 0.5141±0.008 0.474±0.006 0.5011±0.011
+Herring 0.5208±0.024 0.5938 0.64060.5885 ±0.024 0.6354±0.065 0.6667±0.018 0.5938±0.031 0.5573±0.033 0.6458±0.018 0.6302±0.018
+HouseTwenty 0.9692±0.005 0.8487 0.75630.9384 ±0.005 0.9692±0.005 0.958±0.008 0.9776±0.005 0.9496±0.008 0.8852±0.013 0.9524±0.013
+InlineSkate 0.3891±0.005 0.3345 0.34360.3224 ±0.006 0.4491±0.014 0.4194±0.007 0.3848±0.012 0.4576±0.006 0.32±0.007 0.3855±0.005
+InsectEPGRegularTrain 1.0±0.0 1.0 1.00.9304 ±0.002 0.9692±0.01 0.9518±0.007 1.0±0.0 0.9893±0.006 1.0±0.0 1.0±0.0
+InsectEPGSmallTrain 1.0±0.0 1.0 1.00.8246 ±0.006 0.8889±0.002 0.8715±0.018 0.9451±0.026 0.9505±0.012 1.0±0.0 1.0±0.0
+InsectWingbeatSound 0.629±0.003 0.66720.65560.6258 ±0.003 0.651±0.001 0.6271±0.003 0.5258±0.013 0.5365±0.004 0.5167±0.006 0.6056±0.009
+24
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Table 19.Comparison with baselines on UCR benchmark. Second Part.
+Catch22+ TabPFN TabICL MOMENT TiRex Chronos2 TiViT-H TiConvNext NuTime Mantis
+ItalyPowerDemand 0.9537±0.002 0.96990.96310.9482 ±0.004 0.9624±0.004 0.9559±0.003 0.8776±0.003 0.9248±0.002 0.8737±0.004 0.9248±0.004
+LargeKitchenAppliances 0.8169±0.009 0.6373 0.6960.7342 ±0.007 0.8053±0.005 0.8729±0.003 0.816±0.003 0.8702±0.002 0.7556±0.009 0.7662±0.006
+Lightning2 0.7322±0.009 0.6721 0.70490.7869 ±0.033 0.7432±0.009 0.7268±0.009 0.7596±0.009 0.7432±0.025 0.6776±0.009 0.7268±0.009
+Lightning7 0.7671±0.014 0.6986 0.73970.7352 ±0.029 0.7352±0.016 0.653±0.021 0.7489±0.029 0.7306±0.016 0.6575±0.027 0.7215±0.044
+Mallat 0.9555±0.009 0.96890.94840.9164 ±0.016 0.9166±0.027 0.9016±0.009 0.9032±0.007 0.8387±0.005 0.8311±0.005 0.8887±0.002
+Meat 0.9222±0.01 0.98330.93330.9222 ±0.01 0.8611±0.01 0.9333±0.017 0.8389±0.038 0.8667±0.0 0.9278±0.019 0.9111±0.025
+MedicalImages 0.7737±0.005 0.79470.80790.714 ±0.008 0.7092±0.007 0.7246±0.009 0.7504±0.005 0.7368±0.0 0.7132±0.002 0.7522±0.006
+MelbournePedestrian 0.9597±0.0 0.9803 0.98030.8643 ±0.0 0.8812±0.002 0.8927±0.006 0.8074±0.004 0.8195±0.003 0.9172±0.002 0.9513±0.001
+MiddlePhalanxOutlineAgeGroup 0.5952±0.004 0.62340.62990.5649 ±0.017 0.5996±0.016 0.5584±0.017 0.6039±0.006 0.6299±0.017 0.6061±0.004 0.5801±0.004
+MiddlePhalanxOutlineCorrect 0.811±0.012 0.8522 0.83510.858 ±0.008 0.8179±0.007 0.8717±0.008 0.8247±0.009 0.8156±0.012 0.7892±0.009 0.8339±0.004
+MiddlePhalanxTW 0.5844±0.006 0.61690.62340.5779 ±0.017 0.5736±0.01 0.5714±0.013 0.5519±0.023 0.5693±0.019 0.5281±0.014 0.5325±0.006
+MixedShapesRegularTrain 0.9306±0.003 0.9344 0.92990.9166 ±0.001 0.9472±0.001 0.9427±0.001 0.9513±0.001 0.9564±0.003 0.9381±0.002 0.9467±0.0
+MixedShapesSmallTrain 0.8827±0.002 0.8293 0.87670.8506 ±0.008 0.909±0.002 0.9019±0.003 0.919±0.005 0.9182±0.002 0.908±0.003 0.9157±0.001
+MoteStrain 0.8818±0.015 0.889 0.87940.8895 ±0.008 0.9193±0.003 0.9332±0.004 0.8586±0.005 0.9055±0.002 0.9481±0.002 0.931±0.004
+NonInvasiveFetalECGThorax1 0.8877±0.004 0.9410.92720.8863 ±0.002 0.8656±0.0 0.8295±0.001 0.8137±0.005 0.8244±0.006 0.78±0.005 0.864±0.002
+NonInvasiveFetalECGThorax2 0.9091±0.0 0.94760.94050.9104 ±0.001 0.888±0.004 0.8675±0.001 0.8755±0.002 0.8692±0.004 0.8175±0.006 0.8867±0.0
+OSULeaf 0.6832±0.009 0.5661 0.5950.7521 ±0.007 0.9174±0.007 0.8953±0.01 0.9463±0.004 0.9793±0.004 0.8003±0.005 0.9353±0.002
+OliveOil 0.8444±0.019 0.93330.90.8889 ±0.019 0.8778±0.019 0.8556±0.019 0.5778±0.038 0.8556±0.019 0.7±0.0 0.8667±0.033
+PLAID 0.8752±0.009 0.7896 0.56610.7393 ±0.005 0.8684±0.003 0.8591±0.008 0.8709±0.007 0.892±0.005 0.7765±0.004 0.8187±0.004
+PhalangesOutlinesCorrect 0.8252±0.003 0.84030.86130.8225 ±0.002 0.8197±0.003 0.8349±0.004 0.796±0.002 0.7949±0.003 0.7766±0.003 0.824±0.002
+Phoneme 0.3216±0.005 0.1097 0.13610.2938 ±0.008 0.3771±0.004 0.3936±0.002 0.355±0.001 0.3745±0.004 0.2913±0.008 0.3641±0.005
+PickupGestureWiimoteZ 0.6933±0.012 0.76 0.740.5867 ±0.031 0.7333±0.023 0.68±0.0 0.82±0.02 0.82±0.035 0.6667±0.031 0.7867±0.031
+PigAirwayPressure 0.2372±0.003 0.0192 0.15380.1074 ±0.014 0.3462±0.029 0.3333±0.012 0.4744±0.029 0.5769±0.005 0.3478±0.012 0.4904±0.017
+PigArtPressure 0.891±0.007 0.0337 0.25480.5369 ±0.015 0.8734±0.02 0.8061±0.018 0.8173±0.027 0.9087±0.01 0.9359±0.012 0.9343±0.003
+PigCVP 0.5128±0.011 0.0192 0.17310.4407 ±0.007 0.8349±0.007 0.6731±0.024 0.6795±0.01 0.7131±0.025 0.8285±0.01 0.8974±0.02
+Plane 1.0±0.0 0.9905 0.99050.9968 ±0.005 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0
+PowerCons 0.9944±0.0 1.0 1.00.9407 ±0.003 0.8981±0.008 0.9407±0.006 0.8907±0.008 0.9074±0.017 0.9333±0.006 0.9648±0.003
+ProximalPhalanxOutlineAgeGroup 0.8472±0.007 0.85850.8390.8341 ±0.005 0.852±0.003 0.8569±0.007 0.8537±0.013 0.8537±0.01 0.8504±0.003 0.8293±0.005
+ProximalPhalanxOutlineCorrect 0.8648±0.012 0.90380.92440.8603 ±0.01 0.8774±0.009 0.8706±0.004 0.8511±0.005 0.8328±0.008 0.8373±0.004 0.8671±0.005
+ProximalPhalanxTW 0.8033±0.007 0.80980.82930.8114 ±0.01 0.8065±0.023 0.7984±0.003 0.7772±0.011 0.7919±0.01 0.8146±0.005 0.8211±0.016
+RefrigerationDevices 0.5493±0.023 0.504 0.49330.5493 ±0.01 0.568±0.0 0.5502±0.009 0.5467±0.003 0.5911±0.016 0.5369±0.009 0.5636±0.006
+Rock 0.62±0.02 0.76 0.640.8333 ±0.012 0.9±0.04 0.8733±0.031 0.8933±0.031 0.9±0.02 0.6533±0.061 0.82±0.02
+ScreenType 0.5271±0.007 0.4187 0.41070.4284 ±0.017 0.5156±0.015 0.4871±0.008 0.5449±0.01 0.5396±0.026 0.5058±0.012 0.4596±0.014
+SemgHandGenderCh2 0.9272±0.003 0.94670.88670.7778 ±0.003 0.8817±0.0 0.8906±0.008 0.8394±0.003 0.8717±0.002 0.8561±0.003 0.9139±0.006
+SemgHandMovementCh2 0.8615±0.007 0.7711 0.56890.4252 ±0.005 0.6489±0.016 0.6259±0.016 0.537±0.008 0.597±0.013 0.6756±0.006 0.7311±0.008
+SemgHandSubjectCh2 0.8837±0.007 0.93560.83330.6504 ±0.006 0.8244±0.008 0.8259±0.007 0.7822±0.008 0.8237±0.008 0.7622±0.004 0.8341±0.011
+ShakeGestureWiimoteZ 0.8467±0.031 0.82 0.740.84 ±0.0 0.88±0.035 0.86±0.02 0.8467±0.042 0.8267±0.012 0.9133±0.012 0.9333±0.012
+ShapeletSim 0.9704±0.008 0.4778 0.50560.9593 ±0.008 0.9426±0.008 1.0±0.0 1.0±0.0 1.0±0.0 0.9204±0.012 0.9593±0.003
+ShapesAll 0.8206±0.002 0.8017 0.79170.8322 ±0.006 0.8356±0.012 0.8839±0.003 0.8678±0.003 0.8444±0.005 0.8394±0.004 0.87±0.009
+SmallKitchenAppliances 0.8302±0.008 0.7867 0.76270.7111 ±0.007 0.8382±0.002 0.8373±0.009 0.8284±0.006 0.8302±0.011 0.8196±0.004 0.8373±0.0
+SmoothSubspace 0.9867±0.007 1.0 1.00.9578 ±0.004 0.9222±0.01 0.9289±0.023 0.9333±0.007 0.9267±0.007 0.8733±0.007 0.9511±0.004
+SonyAIBORobotSurface1 0.8397±0.002 0.772 0.67220.8541 ±0.008 0.8625±0.03 0.6628±0.02 0.7876±0.01 0.7643±0.012 0.8092±0.012 0.8231±0.011
+SonyAIBORobotSurface2 0.8835±0.021 0.809 0.82790.8279 ±0.002 0.8255±0.003 0.8475±0.002 0.9038±0.002 0.9185±0.004 0.8391±0.01 0.922±0.009
+StarLightCurves 0.9702±0.001 0.9732 0.97180.9768 ±0.0 0.9789±0.0 0.98±0.0 0.9788±0.0 0.9803±0.0 0.979±0.0 0.9806±0.0
+Strawberry 0.9333±0.003 0.98110.98380.9568 ±0.005 0.9532±0.004 0.9432±0.003 0.927±0.007 0.9414±0.002 0.936±0.006 0.9595±0.007
+SwedishLeaf 0.9115±0.002 0.9504 0.94560.9211 ±0.002 0.9381±0.005 0.9381±0.004 0.9408±0.002 0.9376±0.006 0.9221±0.002 0.9547±0.004
+Symbols 0.9618±0.005 0.8824 0.89450.9377 ±0.002 0.937±0.004 0.9745±0.006 0.9779±0.005 0.9759±0.003 0.9387±0.005 0.9698±0.005
+SyntheticControl 0.9922±0.002 0.99 0.98330.9578 ±0.002 0.9867±0.0 0.9933±0.003 0.9956±0.002 0.9978±0.002 0.9722±0.002 0.99±0.0
+ToeSegmentation1 0.8553±0.016 0.5746 0.66670.9313 ±0.005 0.9474±0.008 0.924±0.024 0.9415±0.003 0.8611±0.028 0.8436±0.022 0.9547±0.007
+ToeSegmentation2 0.7846±0.013 0.6538 0.81540.8462 ±0.008 0.9026±0.004 0.8769±0.008 0.8564±0.012 0.8513±0.016 0.7385±0.008 0.8821±0.004
+Trace 1.0±0.0 0.91 0.980.99 ±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 0.99±0.0 1.0±0.0
+TwoLeadECG 0.8584±0.015 0.9508 0.92540.9485 ±0.007 0.9511±0.007 0.9309±0.011 0.9936±0.001 0.983±0.002 0.9166±0.025 0.9956±0.001
+TwoPatterns 0.9935±0.001 0.9950.90320.9158 ±0.004 0.9813±0.002 0.908±0.006 0.9474±0.001 0.9693±0.003 0.8502±0.002 0.9819±0.001
+UMD 0.9398±0.033 1.00.93750.9838 ±0.004 0.919±0.004 0.9931±0.0 0.9861±0.0 0.9907±0.004 0.9352±0.014 0.9815±0.004
+UWaveGestureLibraryAll 0.9454±0.001 0.96650.96290.9162 ±0.002 0.9073±0.002 0.9229±0.001 0.8637±0.0 0.8702±0.003 0.8882±0.002 0.8848±0.001
+UWaveGestureLibraryX 0.8062±0.003 0.8079 0.79840.7938 ±0.002 0.7824±0.003 0.8036±0.001 0.7948±0.003 0.7992±0.001 0.8125±0.002 0.813±0.001
+UWaveGestureLibraryY 0.7248±0.002 0.715 0.71640.7139 ±0.002 0.7236±0.002 0.7344±0.003 0.739±0.002 0.7633±0.001 0.7391±0.003 0.7572±0.001
+UWaveGestureLibraryZ 0.7519±0.002 0.7513 0.73790.7339 ±0.004 0.7361±0.001 0.7464±0.004 0.743±0.006 0.7562±0.005 0.7518±0.005 0.7587±0.0
+Wafer 0.9988±0.0 0.9953 0.99590.9878 ±0.001 0.9986±0.0 0.985±0.001 0.9953±0.0 0.9993±0.0 0.9935±0.001 0.9944±0.001
+Wine 0.6358±0.039 0.7778 0.72220.7531 ±0.021 0.6296±0.049 0.8704±0.019 0.5123±0.021 0.6605±0.028 0.7099±0.039 0.8086±0.06
+WordSynonyms 0.639±0.008 0.64420.59720.6186 ±0.01 0.5204±0.005 0.5711±0.001 0.5674±0.007 0.5569±0.008 0.5303±0.014 0.6181±0.006
+Worms 0.7229±0.015 0.5714 0.55840.7359 ±0.015 0.8009±0.007 0.7662±0.0 0.8312±0.013 0.8009±0.02 0.7229±0.02 0.7576±0.02
+WormsTwoClass 0.8182±0.013 0.6104 0.57140.8009 ±0.007 0.8485±0.015 0.8139±0.027 0.8355±0.02 0.8225±0.015 0.7835±0.007 0.8182±0.013
+Yoga 0.8289±0.005 0.86030.86530.8369 ±0.006 0.7677±0.002 0.8162±0.003 0.8091±0.007 0.8144±0.002 0.8207±0.002 0.848±0.003
+Average 0.7969 0.7806 0.7707 0.7789 0.8013 0.8002 0.7943 0.8029 0.77320.8195
+Best Counts 143024 2 12 15 14 21 7 28
+25
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+TS2VecT-Loss
+TNC
+TS-TCC
+CNN
+Encoder
+FCN MLP
+ResNetTWIESN
+DTW
+Off. MOMENTOur MOMENT
+Catch22+
+T abPFNT abICLTiRex
+Chronos2
+TiViT-H
+TiConvNext
+NuTimeMantis
+SE-Mantis
+M
+antis
+& TiViT-HM
+antis
+& TiConvNext
+Accuracy
+0.8516
+0.8336
+0.7933 0.7933
+0.752
+0.7433
+0.8093
+0.7506
+0.8255
+0.7268
+0.7641
+0.7941
+0.8338
+0.8145 0.8173
+0.8083
+0.8394 0.8415 0.8436 0.8458
+0.8121
+0.8584 0.8582 0.8612 0.862
+UCR-91 Performance
+Figure 19.Average performance over 91 datasets from UCR.
+Table 20.The performance comparison between Mantis in the zero-shot feature extraction setting in average over UEA-27 datasets.
+Catch22+ TabPFN TabICL MOMENT TiRex Chronos2 TiViT-H TiConvNext NuTime Mantis
+ArticularyWordRecognition 0.96±0.007 0.93 0.910.9844 ±0.002 0.99±0.0 0.9933±0.003 0.9833±0.003 0.98±0.003 0.9911±0.004 0.9922±0.002
+BasicMotions 1.0±0.0 1.00.950.975 ±0.0 0.9667±0.014 1.0±0.0 0.9833±0.014 1.0±0.0 1.0±0.0 1.0±0.0
+CharacterTrajectories 0.9814±0.001 0.9673 0.96940.9698 ±0.002 0.9603±0.0 0.9631±0.001 0.9373±0.002 0.9517±0.002 0.967±0.002 0.9761±0.0
+Cricket 0.9444±0.014 0.8194 0.84720.9722 ±0.0 0.9954±0.008 0.9861±0.0 1.0±0.0 0.9954±0.008 0.9907±0.008 0.9861±0.0
+DuckDuckGeese 0.5133±0.023 0.32 0.280.4467 ±0.042 0.42±0.02 0.4133±0.023 0.4333±0.023 0.44±0.04 0.4267±0.023 0.54±0.02
+ERing 0.8827±0.022 0.8889 0.85190.9679 ±0.008 0.9765±0.008 0.9877±0.004 0.9815±0.004 0.963±0.007 0.9765±0.004 0.9877±0.002
+EigenWorms 0.8753±0.019 0.4198 0.56490.7608 ±0.004 0.7863±0.038 0.8015±0.015 0.888±0.027 0.9313±0.008 0.7354±0.022 0.8142±0.016
+Epilepsy 0.9855±0.0 0.913 0.95650.9928 ±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 0.9976±0.004
+EthanolConcentration 0.4271±0.002 0.78330.60460.2953 ±0.019 0.275±0.006 0.3485±0.01 0.3866±0.008 0.3663±0.012 0.4132±0.01 0.4183±0.007
+FaceDetection 0.5273±0.0 0.63250.64020.554 ±0.005 0.6133±0.006 0.5716±0.011 0.55±0.005 0.5321±0.003 0.5691±0.004 0.5492±0.004
+FingerMovements 0.4967±0.064 0.5 0.490.53 ±0.02 0.52±0.04 0.5233±0.021 0.5367±0.045 0.5333±0.059 0.5267±0.015 0.55±0.01
+HandMovementDirection 0.3378±0.049 0.43240.39190.2928 ±0.021 0.3153±0.028 0.2748±0.008 0.2883±0.031 0.3288±0.055 0.2883±0.021 0.2793±0.067
+Handwriting 0.2812±0.009 0.1388 0.22590.26 ±0.002 0.2525±0.002 0.2576±0.007 0.2373±0.009 0.2494±0.011 0.2055±0.007 0.2808±0.008
+Heartbeat 0.7496±0.006 0.722 0.72680.7317 ±0.005 0.7252±0.006 0.7317±0.008 0.7252±0.003 0.735±0.007 0.7756±0.005 0.7919±0.003
+InsectWingbeatSubset 0.3617±0.01 0.238 nan0.267 ±0.017 0.287±0.004 0.2803±0.018 0.3203±0.014 0.3243±0.006 0.6143±0.012 0.6073±0.007
+JapaneseV owels 0.955±0.003 0.8135 0.81620.8847 ±0.006 0.8928±0.015 0.8162±0.026 0.882±0.006 0.8721±0.004 0.9342±0.006 0.9396±0.006
+LSST 0.6158±0.002 0.5479 0.50160.6313 ±0.003 0.5733±0.003 0.5892±0.004 0.5953±0.006 0.6004±0.004 0.5673±0.005 0.6599±0.004
+Libras 0.8389±0.01 0.6722 0.63890.8463 ±0.008 0.8963±0.008 0.8648±0.008 0.9037±0.006 0.9074±0.008 0.8778±0.01 0.9241±0.003
+MotorImagery 0.4333±0.086 0.580.570.5233 ±0.015 0.4933±0.038 0.53±0.026 0.51±0.01 0.49±0.036 0.48±0.026 0.4667±0.025
+NATOPS 0.7148±0.029 0.7778 0.79440.8352 ±0.012 0.8296±0.012 0.8389±0.011 0.8685±0.017 0.8574±0.014 0.8333±0.031 0.8889±0.01
+PEMS-SF 0.8401±0.009 0.948 0.94220.9961 ±0.007 0.9961±0.007 0.9961±0.007 0.973±0.007 0.9769±0.0 0.9923±0.007 0.9961±0.007
+PhonemeSpectra 0.2499±0.003 0.1485 0.17120.2112 ±0.006 0.2686±0.003 0.2709±0.003 0.2713±0.005 0.2709±0.003 0.2664±0.005 0.3213±0.004
+RacketSports 0.8004±0.004 0.8158 0.84870.8465 ±0.025 0.8355±0.007 0.8246±0.03 0.8531±0.01 0.8509±0.004 0.9123±0.019 0.9101±0.008
+SelfRegulationSCP1 0.7702±0.007 0.89420.88740.7747 ±0.006 0.7884±0.012 0.785±0.003 0.7986±0.007 0.7929±0.01 0.7952±0.003 0.8134±0.009
+SelfRegulationSCP2 0.4926±0.031 0.4778 0.50560.4907 ±0.023 0.4963±0.049 0.5167±0.006 0.4907±0.033 0.5056±0.011 0.5074±0.018 0.5167±0.006
+SpokenArabicDigits 0.8898±0.003 0.95910.96130.9447 ±0.003 0.7547±0.01 0.7619±0.006 0.8931±0.005 0.9139±0.004 0.9016±0.002 0.9374±0.003
+UWaveGestureLibrary 0.876±0.015 0.8062 0.76250.8917 ±0.007 0.8615±0.002 0.8833±0.004 0.8542±0.004 0.8156±0.005 0.8885±0.007 0.8896±0.011
+Avg 0.6963 0.6721 0.685 0.6991 0.6952 0.6967 0.7091 0.7105 0.71990.742
+Best Counts 4 5 2 2 2 6 2 3 311
+26
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Table 21.Self-ensembling and cross-model embedding fusion on UCR. The first part of the table.
+Mantis SE-Mantis Mantis & Mantis & Mantis & Mantis & Mantis & Mantis & Mantis &
+Catch22+ MOMENT TiRex Chronos2 TiViT-H TiConvNext NuTime
+ACSF1 0.8233±0.012 0.8367±0.025 0.8433±0.015 0.8367±0.015 0.82±0.01 0.8333±0.021 0.8567±0.015 0.88±0.01 0.83±0.01
+Adiac 0.8483±0.003 0.8457±0.004 0.8406±0.006 0.8329±0.003 0.8295±0.01 0.838±0.01 0.8278±0.01 0.8082±0.003 0.8389±0.005
+AllGestureWiimoteX 0.6843±0.006 0.639±0.003 0.6762±0.008 0.6771±0.012 0.6824±0.008 0.6562±0.016 0.6624±0.002 0.6838±0.005 0.6986±0.008
+AllGestureWiimoteY 0.691±0.004 0.6795±0.002 0.6948±0.009 0.7019±0.009 0.7048±0.007 0.6871±0.011 0.6862±0.002 0.7062±0.007 0.6871±0.002
+AllGestureWiimoteZ 0.6881±0.001 0.6481±0.015 0.6814±0.011 0.659±0.005 0.659±0.014 0.6848±0.002 0.6562±0.004 0.6567±0.008 0.6948±0.011
+ArrowHead 0.8057±0.015 0.7752±0.017 0.8305±0.009 0.8438±0.003 0.8248±0.003 0.8248±0.009 0.7981±0.013 0.7943±0.0 0.8171±0.015
+BME 0.9956±0.004 1.0±0.0 1.0±0.0 0.9956±0.008 0.9978±0.004 0.9889±0.004 0.9911±0.004 0.9978±0.004 0.9978±0.004
+Beef 0.6889±0.019 0.6667±0.0 0.6889±0.019 0.8111±0.051 0.7778±0.019 0.7333±0.033 0.7333±0.033 0.7778±0.038 0.6667±0.033
+BeetleFly 0.9833±0.029 0.95±0.0 0.95±0.05 0.95±0.0 0.9333±0.029 0.95±0.0 0.9333±0.029 0.95±0.0 0.95±0.05
+BirdChicken 0.9±0.0 0.9±0.0 0.9±0.0 0.9±0.0 0.9±0.0 0.9±0.0 0.9±0.0 0.9333±0.029 0.9±0.0
+CBF 0.9948±0.002 0.9956±0.002 0.9963±0.002 0.9911±0.001 0.997±0.001 0.9963±0.001 0.9985±0.001 0.9974±0.001 0.9959±0.001
+Car 0.7556±0.025 0.8222±0.019 0.75±0.029 0.8111±0.01 0.7444±0.01 0.75±0.029 0.7667±0.0 0.7444±0.025 0.75±0.017
+Chinatown 0.9534±0.003 0.9543±0.009 0.9728±0.002 0.9776±0.002 0.966±0.003 0.9728±0.004 0.9592±0.013 0.9485±0.004 0.9582±0.002
+ChlorineConcentration 0.7041±0.001 0.7129±0.003 0.7095±0.003 0.7152±0.004 0.7155±0.002 0.7168±0.007 0.7083±0.002 0.7133±0.001 0.7104±0.005
+CinCECGTorso 0.8089±0.01 0.8703±0.014 0.8227±0.012 0.7756±0.011 0.8766±0.009 0.8082±0.012 0.8374±0.007 0.8428±0.003 0.8024±0.007
+Coffee 1.0±0.0 0.9881±0.021 1.0±0.0 0.9762±0.021 1.0±0.0 0.9881±0.021 0.9881±0.021 1.0±0.0 0.9881±0.021
+Computers 0.7213±0.012 0.7147±0.008 0.7173±0.01 0.7213±0.009 0.752±0.004 0.748±0.004 0.7373±0.002 0.752±0.008 0.736±0.007
+CricketX 0.7735±0.011 0.7692±0.007 0.7658±0.007 0.7444±0.015 0.7547±0.013 0.7701±0.01 0.759±0.005 0.747±0.015 0.765±0.006
+CricketY 0.788±0.02 0.8051±0.011 0.7829±0.01 0.753±0.019 0.7846±0.004 0.7872±0.013 0.7769±0.009 0.7581±0.001 0.7932±0.005
+CricketZ 0.8171±0.005 0.8103±0.014 0.8154±0.007 0.7957±0.015 0.8043±0.005 0.7974±0.01 0.7983±0.013 0.7889±0.006 0.8085±0.008
+Crop 0.7341±0.0 0.7384±0.001 0.7492±0.002 0.7489±0.0 0.7488±0.001 0.748±0.001 0.7254±0.001 0.7187±0.003 0.7327±0.001
+DiatomSizeReduction 0.8301±0.02 0.8148±0.008 0.8529±0.02 0.8736±0.016 0.8508±0.011 0.8682±0.013 0.8529±0.003 0.8791±0.017 0.8388±0.011
+DistalPhalanxOutlineAgeGroup 0.7602±0.008 0.7986±0.007 0.7746±0.004 0.7698±0.007 0.7698±0.0 0.777±0.007 0.7842±0.007 0.7698±0.007 0.777±0.007
+DistalPhalanxOutlineCorrect 0.7886±0.002 0.7911±0.008 0.7947±0.008 0.8043±0.004 0.7886±0.006 0.7838±0.002 0.7923±0.009 0.7874±0.008 0.7935±0.006
+DistalPhalanxTW 0.7074±0.011 0.705±0.007 0.7002±0.018 0.6859±0.011 0.6882±0.011 0.6882±0.017 0.6906±0.025 0.6978±0.012 0.705±0.007
+DodgerLoopDay 0.5333±0.019 0.5708±0.029 0.5875±0.013 0.525±0.022 0.5667±0.026 0.5458±0.026 0.5333±0.014 0.5208±0.026 0.5917±0.026
+DodgerLoopGame 0.7995±0.022 0.8406±0.019 0.8454±0.008 0.8333±0.007 0.8309±0.027 0.8696±0.007 0.8502±0.011 0.814±0.017 0.843±0.025
+DodgerLoopWeekend 0.9517±0.004 0.9638±0.007 0.9614±0.008 0.9783±0.007 0.9565±0.007 0.9541±0.004 0.9589±0.004 0.9324±0.011 0.9807±0.004
+ECG200 0.8367±0.012 0.8367±0.021 0.84±0.0 0.87±0.0 0.8533±0.006 0.8567±0.012 0.82±0.01 0.82±0.0 0.8267±0.015
+ECG5000 0.9381±0.0 0.9401±0.0 0.9389±0.001 0.9397±0.001 0.9388±0.0 0.937±0.001 0.9391±0.001 0.9382±0.0 0.9381±0.001
+ECGFiveDays 0.8707±0.001 0.9299±0.003 0.8788±0.007 0.8637±0.005 0.9094±0.025 0.9237±0.038 0.9129±0.017 0.9725±0.006 0.8614±0.016
+EOGHorizontalSignal 0.5884±0.006 0.6114±0.004 0.5902±0.01 0.6077±0.005 0.5884±0.005 0.5801±0.025 0.6041±0.009 0.6243±0.01 0.5967±0.006
+EOGVerticalSignal 0.4816±0.011 0.4788±0.016 0.4871±0.004 0.4586±0.005 0.4687±0.007 0.4595±0.009 0.4613±0.012 0.4567±0.009 0.4678±0.014
+Earthquakes 0.7434±0.004 0.7482±0.0 0.7458±0.004 0.753±0.004 0.7458±0.004 0.7482±0.0 0.7458±0.004 0.741±0.0 0.7482±0.0
+ElectricDevices 0.7424±0.004 0.7433±0.001 0.7491±0.003 0.7389±0.002 0.7388±0.004 0.7505±0.002 0.7641±0.002 0.7723±0.006 0.7435±0.005
+EthanolLevel 0.3793±0.014 0.3373±0.005 0.3687±0.005 0.4±0.005 0.336±0.011 0.4187±0.009 0.4207±0.009 0.358±0.016 0.3653±0.012
+FaceAll 0.7205±0.003 0.7178±0.002 0.7316±0.003 0.7312±0.002 0.7351±0.003 0.7243±0.002 0.7211±0.001 0.7195±0.003 0.7209±0.003
+FaceFour 0.9167±0.007 0.8864±0.02 0.9129±0.013 0.8712±0.017 0.9053±0.033 0.8977±0.02 0.8939±0.007 0.8598±0.017 0.9053±0.017
+FacesUCR 0.8439±0.006 0.8382±0.005 0.8636±0.004 0.8439±0.0 0.8564±0.007 0.838±0.004 0.8343±0.004 0.8324±0.002 0.8398±0.005
+FiftyWords 0.7106±0.001 0.7172±0.011 0.7304±0.007 0.7385±0.006 0.7033±0.0 0.704±0.005 0.6967±0.006 0.7077±0.01 0.7077±0.012
+Fish 0.9314±0.0 0.9219±0.003 0.9276±0.009 0.9162±0.009 0.9276±0.003 0.9333±0.009 0.9314±0.006 0.9295±0.003 0.941±0.007
+FordA 0.9303±0.0 0.9442±0.003 0.9333±0.001 0.9245±0.003 0.9482±0.002 0.9338±0.002 0.9265±0.001 0.9247±0.002 0.9301±0.004
+FordB 0.7979±0.003 0.8136±0.001 0.7992±0.004 0.7942±0.006 0.8235±0.002 0.7996±0.004 0.8021±0.005 0.7856±0.003 0.7988±0.006
+FreezerRegularTrain 0.9857±0.001 0.987±0.003 0.9942±0.001 0.9808±0.003 0.987±0.002 0.9863±0.001 0.988±0.001 0.9926±0.0 0.9863±0.002
+FreezerSmallTrain 0.935±0.004 0.963±0.013 0.954±0.003 0.8633±0.006 0.9157±0.009 0.9338±0.002 0.938±0.004 0.9637±0.003 0.9413±0.007
+Fungi 0.9427±0.028 0.9659±0.016 0.9355±0.023 0.9964±0.003 0.9552±0.011 0.9642±0.016 0.9283±0.019 0.9301±0.005 0.9014±0.006
+GestureMidAirD1 0.7128±0.018 0.7564±0.004 0.7308±0.013 0.7256±0.009 0.7282±0.004 0.6744±0.027 0.7385±0.013 0.7359±0.018 0.7256±0.019
+GestureMidAirD2 0.6154±0.013 0.6308±0.027 0.6231±0.008 0.6205±0.016 0.659±0.039 0.7154±0.027 0.7±0.013 0.6795±0.025 0.6308±0.008
+GestureMidAirD3 0.4385±0.013 0.4667±0.012 0.4436±0.004 0.4256±0.012 0.4282±0.016 0.4308±0.023 0.4769±0.02 0.4846±0.008 0.4333±0.016
+GesturePebbleZ1 0.9205±0.007 0.9205±0.003 0.9225±0.003 0.9244±0.0 0.9264±0.003 0.9244±0.0 0.9225±0.003 0.9264±0.003 0.9244±0.0
+GesturePebbleZ2 0.9114±0.011 0.9093±0.013 0.9072±0.004 0.9156±0.019 0.9093±0.007 0.903±0.016 0.9283±0.01 0.9072±0.016 0.9156±0.007
+GunPoint 0.9778±0.004 0.9756±0.004 0.9756±0.004 0.9822±0.004 0.98±0.0 0.9778±0.008 0.9933±0.0 0.98±0.007 0.9778±0.004
+GunPointAgeSpan 0.9842±0.003 0.9852±0.004 0.9863±0.005 0.9895±0.002 0.9831±0.005 0.9873±0.0 0.9873±0.0 0.9821±0.002 0.9821±0.002
+GunPointMaleVersusFemale 1.0±0.0 0.9979±0.002 1.0±0.0 0.9947±0.002 0.9979±0.002 0.9947±0.004 1.0±0.0 1.0±0.0 1.0±0.0
+GunPointOldVersusYoung 0.9968±0.0 0.9968±0.0 0.9989±0.002 0.9958±0.002 0.9968±0.0 0.9947±0.002 0.9968±0.0 0.9958±0.002 0.9968±0.0
+Ham 0.6698±0.031 0.6952±0.025 0.6698±0.024 0.7397±0.011 0.6762±0.01 0.6889±0.005 0.6825±0.011 0.6635±0.024 0.6667±0.016
+HandOutlines 0.9036±0.006 0.9144±0.004 0.9234±0.003 0.9216±0.003 0.9072±0.004 0.9189±0.0 0.8991±0.006 0.9117±0.006 0.9±0.003
+Haptics 0.5011±0.011 0.5584±0.015 0.4968±0.01 0.5141±0.008 0.553±0.011 0.5325±0.013 0.5476±0.016 0.5216±0.013 0.5206±0.01
+Herring 0.6302±0.018 0.6354±0.033 0.5885±0.018 0.6458±0.018 0.6094±0.041 0.6719±0.027 0.599±0.024 0.5938±0.016 0.6458±0.036
+HouseTwenty 0.9524±0.013 0.9636±0.005 0.9384±0.005 0.944±0.01 0.9552±0.005 0.9608±0.013 0.958±0.0 0.9636±0.005 0.9496±0.0
+InlineSkate 0.3855±0.005 0.4673±0.008 0.3848±0.009 0.3691±0.007 0.4412±0.001 0.4442±0.012 0.4091±0.007 0.4739±0.026 0.3867±0.004
+InsectEPGRegularTrain 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0
+InsectEPGSmallTrain 1.0±0.0 1.0±0.0 1.0±0.0 0.996±0.0 0.996±0.004 0.9866±0.014 0.996±0.007 0.992±0.007 1.0±0.0
+InsectWingbeatSound 0.6056±0.009 0.599±0.003 0.6231±0.005 0.6391±0.007 0.6485±0.007 0.6323±0.004 0.5909±0.003 0.5933±0.003 0.6114±0.004
+27
+
+Mantis: Lightweight Foundation Model for Time Series Classification
+Table 22.Self-ensembling and cross-model embedding fusion on UCR. The second part of the table.
+Mantis SE-Mantis Mantis & Mantis & Mantis & Mantis & Mantis & Mantis & Mantis &
+Catch22+ MOMENT TiRex Chronos2 TiViT-H TiConvNext NuTime
+ItalyPowerDemand 0.9248±0.004 0.943±0.004 0.943±0.001 0.9462±0.003 0.964±0.001 0.9559±0.004 0.8892±0.014 0.9329±0.004 0.9291±0.004
+LargeKitchenAppliances 0.7662±0.006 0.7884±0.018 0.8107±0.012 0.7822±0.007 0.7849±0.009 0.8462±0.009 0.8116±0.004 0.8596±0.002 0.7742±0.003
+Lightning2 0.7268±0.009 0.7432±0.009 0.7377±0.016 0.7705±0.016 0.7486±0.019 0.7377±0.0 0.7923±0.034 0.7596±0.041 0.7158±0.019
+Lightning7 0.7215±0.044 0.7397±0.036 0.7215±0.021 0.7808±0.014 0.7443±0.021 0.6986±0.027 0.7945±0.024 0.758±0.021 0.726±0.036
+Mallat 0.8887±0.002 0.9201±0.005 0.8984±0.013 0.9102±0.005 0.9026±0.01 0.9021±0.007 0.9154±0.01 0.8913±0.036 0.882±0.005
+Meat 0.9111±0.025 0.9167±0.017 0.95±0.017 0.9278±0.019 0.9111±0.01 0.9333±0.0 0.9278±0.01 0.9±0.0 0.9167±0.0
+MedicalImages 0.7522±0.006 0.7654±0.003 0.7566±0.003 0.7566±0.006 0.7522±0.005 0.7421±0.006 0.7575±0.008 0.7588±0.004 0.7623±0.001
+MelbournePedestrian 0.9513±0.001 0.9554±0.002 0.9587±0.002 0.956±0.002 0.9631±0.0 0.9634±0.002 0.9519±0.002 0.9505±0.001 0.9552±0.001
+MiddlePhalanxOutlineAgeGroup 0.5801±0.004 0.5996±0.023 0.5866±0.007 0.5801±0.004 0.5909±0.013 0.5649±0.017 0.5909±0.017 0.6234±0.019 0.5887±0.019
+MiddlePhalanxOutlineCorrect 0.8339±0.004 0.8499±0.004 0.8465±0.009 0.8763±0.006 0.8396±0.005 0.8694±0.006 0.8442±0.019 0.8431±0.017 0.8328±0.007
+MiddlePhalanxTW 0.5325±0.006 0.5519±0.017 0.5368±0.01 0.5628±0.025 0.5411±0.02 0.5584±0.011 0.5541±0.014 0.5606±0.016 0.5195±0.017
+MixedShapesRegularTrain 0.9467±0.0 0.9638±0.001 0.9478±0.0 0.9485±0.001 0.9577±0.001 0.9524±0.002 0.9535±0.002 0.9578±0.002 0.9491±0.001
+MixedShapesSmallTrain 0.9157±0.001 0.9457±0.0 0.9211±0.002 0.9146±0.002 0.9282±0.003 0.9181±0.003 0.9266±0.001 0.9203±0.003 0.9245±0.005
+MoteStrain 0.931±0.004 0.9481±0.01 0.939±0.004 0.9281±0.004 0.931±0.005 0.9321±0.002 0.9523±0.003 0.9502±0.005 0.9526±0.006
+NonInvasiveFetalECGThorax1 0.864±0.002 0.9045±0.003 0.9009±0.001 0.9116±0.005 0.8894±0.003 0.8741±0.001 0.884±0.002 0.8816±0.001 0.864±0.0
+NonInvasiveFetalECGThorax2 0.8867±0.0 0.9211±0.002 0.9264±0.004 0.9328±0.002 0.9101±0.001 0.9009±0.001 0.904±0.005 0.9006±0.001 0.8911±0.004
+OSULeaf 0.9353±0.002 0.9656±0.002 0.927±0.006 0.8953±0.002 0.9656±0.006 0.9366±0.005 0.9532±0.005 0.978±0.002 0.9339±0.007
+OliveOil 0.8667±0.033 0.8444±0.019 0.8667±0.0 0.9±0.0 0.8889±0.019 0.8444±0.019 0.8±0.033 0.8556±0.019 0.8889±0.019
+PLAID 0.8187±0.004 0.8218±0.004 0.8547±0.01 0.8299±0.006 0.8808±0.0 0.874±0.003 0.8876±0.005 0.897±0.006 0.8299±0.003
+PhalangesOutlinesCorrect 0.824±0.002 0.8287±0.003 0.831±0.003 0.845±0.004 0.8345±0.006 0.8399±0.003 0.8236±0.005 0.8174±0.003 0.8252±0.006
+Phoneme 0.3641±0.005 0.4223±0.008 0.3708±0.003 0.3367±0.003 0.3901±0.004 0.4023±0.004 0.379±0.005 0.3806±0.007 0.3588±0.003
+PickupGestureWiimoteZ 0.7867±0.031 0.7467±0.031 0.7333±0.012 0.7267±0.023 0.76±0.02 0.7133±0.042 0.84±0.02 0.8467±0.042 0.7467±0.012
+PigAirwayPressure 0.4904±0.017 0.5272±0.026 0.4808±0.021 0.3109±0.015 0.4968±0.015 0.4535±0.029 0.5561±0.003 0.625±0.021 0.5±0.01
+PigArtPressure 0.9343±0.003 0.9343±0.01 0.9199±0.006 0.7869±0.018 0.9487±0.019 0.9038±0.005 0.9103±0.012 0.9535±0.003 0.9375±0.013
+PigCVP 0.8974±0.02 0.8718±0.018 0.883±0.003 0.8285±0.027 0.9151±0.006 0.8622±0.015 0.8718±0.007 0.8606±0.005 0.9071±0.007
+Plane 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0
+PowerCons 0.9648±0.003 0.9667±0.006 0.9833±0.006 0.9759±0.014 0.963±0.003 0.9407±0.006 0.9278±0.02 0.9333±0.015 0.9593±0.008
+ProximalPhalanxOutlineAgeGroup 0.8293±0.005 0.839±0.005 0.8325±0.003 0.8374±0.003 0.8472±0.006 0.8423±0.003 0.8439±0.0 0.8439±0.008 0.8293±0.0
+ProximalPhalanxOutlineCorrect 0.8671±0.005 0.8866±0.0 0.8774±0.002 0.8694±0.0 0.8866±0.003 0.89±0.006 0.8694±0.007 0.8603±0.009 0.8729±0.006
+ProximalPhalanxTW 0.8211±0.016 0.8195±0.013 0.8195±0.0 0.8179±0.007 0.813±0.003 0.8098±0.005 0.8146±0.005 0.8033±0.006 0.8163±0.006
+RefrigerationDevices 0.5636±0.006 0.5369±0.015 0.5653±0.0 0.544±0.0 0.5627±0.007 0.5698±0.006 0.5627±0.005 0.5813±0.009 0.5547±0.007
+Rock 0.82±0.02 0.8467±0.031 0.8±0.02 0.8267±0.012 0.8667±0.012 0.84±0.02 0.8667±0.031 0.88±0.02 0.7867±0.042
+ScreenType 0.4596±0.014 0.4924±0.008 0.4524±0.004 0.4284±0.013 0.4773±0.005 0.4862±0.006 0.5778±0.013 0.5484±0.016 0.5031±0.01
+SemgHandGenderCh2 0.9139±0.006 0.9417±0.007 0.9294±0.001 0.9028±0.007 0.9433±0.004 0.9461±0.002 0.9067±0.003 0.9061±0.005 0.9189±0.004
+SemgHandMovementCh2 0.7311±0.008 0.7667±0.012 0.7689±0.006 0.6711±0.006 0.7556±0.002 0.763±0.008 0.7437±0.017 0.7756±0.008 0.74±0.006
+SemgHandSubjectCh2 0.8341±0.011 0.8437±0.006 0.863±0.001 0.8119±0.013 0.857±0.006 0.8674±0.007 0.8726±0.003 0.8867±0.006 0.8348±0.003
+ShakeGestureWiimoteZ 0.9333±0.012 0.9333±0.023 0.9267±0.012 0.9±0.0 0.9333±0.031 0.9267±0.031 0.9±0.02 0.8467±0.012 0.9267±0.023
+ShapeletSim 0.9593±0.003 0.9907±0.006 0.9852±0.003 0.9815±0.008 0.9685±0.008 1.0±0.0 1.0±0.0 1.0±0.0 0.9704±0.003
+ShapesAll 0.87±0.009 0.8811±0.003 0.8817±0.002 0.875±0.007 0.8811±0.005 0.8967±0.002 0.8939±0.004 0.88±0.004 0.8756±0.015
+SmallKitchenAppliances 0.8373±0.0 0.8213±0.005 0.8338±0.002 0.8187±0.009 0.8284±0.007 0.8311±0.004 0.8293±0.003 0.8249±0.003 0.8302±0.003
+SmoothSubspace 0.9511±0.004 0.9444±0.008 0.9622±0.008 0.9733±0.0 0.9556±0.008 0.9556±0.008 0.9533±0.007 0.9556±0.004 0.9444±0.01
+SonyAIBORobotSurface1 0.8231±0.011 0.8502±0.013 0.8286±0.009 0.8458±0.008 0.8342±0.02 0.7842±0.017 0.7965±0.012 0.7909±0.013 0.8192±0.004
+SonyAIBORobotSurface2 0.922±0.009 0.9503±0.005 0.936±0.005 0.844±0.006 0.8695±0.004 0.8961±0.024 0.9307±0.006 0.9307±0.003 0.9244±0.006
+StarLightCurves 0.9806±0.0 0.9805±0.0 0.9808±0.0 0.9816±0.001 0.98±0.0 0.981±0.0 0.9794±0.0 0.9806±0.0 0.9809±0.0
+Strawberry 0.9595±0.007 0.9514±0.003 0.9622±0.003 0.9631±0.003 0.9568±0.0 0.9559±0.002 0.9505±0.006 0.9486±0.003 0.9613±0.002
+SwedishLeaf 0.9547±0.004 0.9536±0.003 0.9563±0.004 0.9573±0.001 0.9589±0.004 0.96±0.003 0.96±0.003 0.9536±0.006 0.952±0.002
+Symbols 0.9698±0.005 0.9829±0.004 0.9729±0.005 0.9625±0.005 0.9715±0.008 0.9796±0.003 0.9822±0.003 0.9812±0.002 0.9715±0.006
+SyntheticControl 0.99±0.0 0.9889±0.002 0.9922±0.002 0.9911±0.002 0.9933±0.0 0.9933±0.003 0.9933±0.0 0.9967±0.0 0.9911±0.004
+ToeSegmentation1 0.9547±0.007 0.9561±0.008 0.9518±0.012 0.943±0.008 0.9635±0.014 0.9503±0.003 0.9532±0.003 0.9561±0.004 0.9459±0.005
+ToeSegmentation2 0.8821±0.004 0.8923±0.008 0.8795±0.004 0.8641±0.004 0.8949±0.004 0.8846±0.008 0.8641±0.012 0.8692±0.015 0.8692±0.0
+Trace 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0 1.0±0.0
+TwoLeadECG 0.9956±0.001 0.9965±0.001 0.9959±0.001 0.9871±0.001 0.9971±0.001 0.9959±0.001 0.9982±0.001 0.9886±0.004 0.9968±0.001
+TwoPatterns 0.9819±0.001 0.9822±0.001 0.9932±0.001 0.9863±0.002 0.9914±0.001 0.981±0.001 0.9908±0.001 0.9919±0.001 0.9839±0.001
+UMD 0.9815±0.004 0.9861±0.007 0.9931±0.0 0.9861±0.0 0.9861±0.007 0.9931±0.007 0.9861±0.007 0.9907±0.004 0.9815±0.011
+UWaveGestureLibraryAll 0.8848±0.001 0.9161±0.003 0.9415±0.001 0.9257±0.001 0.9261±0.003 0.9362±0.001 0.8969±0.001 0.9036±0.004 0.9093±0.002
+UWaveGestureLibraryX 0.813±0.001 0.826±0.003 0.8279±0.005 0.82±0.001 0.8183±0.004 0.818±0.004 0.8172±0.003 0.8268±0.001 0.8227±0.001
+UWaveGestureLibraryY 0.7572±0.001 0.7714±0.004 0.768±0.003 0.7498±0.001 0.7588±0.004 0.7687±0.001 0.7637±0.002 0.7799±0.003 0.7674±0.002
+UWaveGestureLibraryZ 0.7587±0.0 0.7658±0.001 0.7661±0.005 0.7657±0.003 0.7695±0.004 0.76±0.0 0.7626±0.004 0.7677±0.002 0.7618±0.003
+Wafer 0.9944±0.001 0.9985±0.001 0.9966±0.0 0.9951±0.0 0.9978±0.0 0.9942±0.0 0.9977±0.0 0.9992±0.0 0.9948±0.0
+Wine 0.8086±0.06 0.7037±0.074 0.821±0.011 0.8642±0.043 0.784±0.047 0.8704±0.0 0.784±0.021 0.7593±0.0 0.8148±0.032
+WordSynonyms 0.6181±0.006 0.6092±0.01 0.6374±0.011 0.6379±0.005 0.6019±0.007 0.605±0.017 0.5852±0.005 0.5977±0.018 0.6191±0.003
+Worms 0.7576±0.02 0.8182±0.013 0.7576±0.015 0.7619±0.02 0.8009±0.027 0.7662±0.013 0.8485±0.007 0.8182±0.0 0.7706±0.007
+WormsTwoClass 0.8182±0.013 0.8485±0.02 0.8182±0.013 0.8182±0.013 0.7965±0.027 0.8009±0.02 0.8268±0.007 0.8355±0.015 0.8009±0.007
+Yoga 0.848±0.003 0.8463±0.003 0.8532±0.007 0.8594±0.005 0.8418±0.004 0.8381±0.005 0.8342±0.003 0.8357±0.005 0.8541±0.006
+28

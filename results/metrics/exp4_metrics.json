@@ -1,0 +1,30 @@
+{
+  "overall": {
+    "mae_heuristic": 33.43789063365982,
+    "mae_ppg_fm": 16.692193989462545,
+    "r2_ppg_fm": 0.009510997068514548,
+    "mae_multimodal_fm": 16.187277646187507,
+    "r2_multimodal_fm": 0.048384441211004936,
+    "error_reduction_percent": 51.590015579832084
+  },
+  "by_activity": {
+    "walk": {
+      "num_samples": 129,
+      "mae_heuristic": 34.87407939204975,
+      "mae_ppg_fm": 14.83304103688956,
+      "mae_multimodal_fm": 14.885897707573836
+    },
+    "run": {
+      "num_samples": 94,
+      "mae_heuristic": 51.91472349488792,
+      "mae_ppg_fm": 27.856933928930026,
+      "mae_multimodal_fm": 26.98920401144436
+    },
+    "bike": {
+      "num_samples": 98,
+      "mae_heuristic": 13.824720850111417,
+      "mae_ppg_fm": 8.430410076931647,
+      "mae_multimodal_fm": 7.539287174218316
+    }
+  }
+}

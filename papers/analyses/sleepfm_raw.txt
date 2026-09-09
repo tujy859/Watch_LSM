@@ -1,0 +1,1922 @@
+--- Page 1 ---
+Gravitational wave signatures of
+cogenesis from a burdened PBH
+Basabendu Barman,a Md Riajul Haque b and ´Oscar Zapatac
+a Department of Physics, School of Engineering and Sciences, SRM University-AP, Amaravati
+522240, India
+b Centre for Strings, Gravitation and Cosmology, Department of Physics, Indian Institute of
+Technology Madras, Chennai 600036, India
+c Instituto de F´ ısica, Universidad de Antioquia
+Calle 70 # 52-21, Apartado A´ ereo 1226, Medell´ ın, Colombia
+E-mail: basabendu.b@srmap.edu.in, riaj.0009@gmail.com,
+oalberto.zapata@udea.edu.co
+Abstract. We explore the possibility of explaining the observed dark matter (DM) relic
+abundance, along with matter-antimatter asymmetry, entirely from the evaporation of pri-
+mordial black holes (PBH) beyond the semi-classical approximation. We find that, depending
+on the timing of modification to the semi-classical approximation and the efficiency of the
+backreaction, it is possible to produce the correct DM abundance for PBHs with masses
+≳O(103) g, whereas producing the right amount of baryon asymmetry requires light PBHs
+with masses ≲O(103) g, satisfying bounds on the PBH mass from the Cosmic Microwave
+Background and Big Bang Nucleosynthesis. However, in a simplistic scenario, achieving
+both simultaneously is not feasible, typically because of the stringent Lyman- α constraint
+on warm dark matter mass. In addition to DM and baryon asymmetry, we also investigate
+the impact of memory burden on dark radiation, evaporated from PBH, constrained by the
+effective number of relativistic degrees of freedom ∆ Neff. Furthermore, we demonstrate how
+induced gravitational waves from PBH density fluctuations can provide a window to test the
+memory-burden effects, thereby placing constraints on either the DM mass scale or the scale
+of leptogenesis.
+arXiv:2405.15858v2  [astro-ph.CO]  20 Aug 2024
+
+--- Page 2 ---
+Contents
+1 Introduction 1
+2 Effects of memory burden on PBH evaporation 2
+2.1 Dynamics of PBH evaporation 2
+2.2 The effect of memory-burden 4
+3 Particle production from memory-burdened PBH 6
+4 Cogenesis from memory-burdened PBH 10
+4.1 Production of dark matter 10
+4.2 Production of baryon asymmetry 12
+5 Dark radiation from memory-burdened PBH 15
+6 Induced gravitational wave from PBH density fluctuations 16
+7 Conclusions 20
+1 Introduction
+Originally introduced by Stephen Hawking, primordial black holes (PBHs) possess intriguing
+cosmic characteristics [1, 2]. PBHs with masses MBH ≳ 1015 g persist as stable entities in the
+contemporary Universe and are viable candidates for dark matter (DM) (for a comprehensive
+overview, see, for example, Ref. [ 3]). Conversely, primordial black holes must be considerably
+lighter to investigate particle production from its evaporation. Specifically, their formation
+mass should fall within a range permitting evaporation prior to Big Bang Nucleosynthesis
+(BBN), corresponding to MBH ≲ 109 g. Deviation from this criterion could introduce
+additional parameters, potentially disrupting the accurate prediction of BBN, crucially
+inferred from the measurement of ∆Neff [4]. Within this mass spectrum, PBHs can decay,
+thereby playing a pivotal role in generating not only Standard Model (SM) particles but also
+exotic new physics states, viz., DM. Various studies have explored DM production [ 5–36],
+baryon asymmetry [5, 30, 37–52] or cogenesis [5, 13, 15, 24, 25, 39, 41, 43, 44, 53–58], both in
+the standard radiation dominated background, as well as in an inflaton dominated background
+during reheating [59, 60]. It is crucial to mention here that the semi-classical phenomenon of
+PBH evaporation heavily relies on the assumption that during the evaporation process, the
+black hole remains classical till the end of its lifetime.
+In Ref. [ 61], it was demonstrated that Hawking’s semi-classical calculations become
+inaccurate when the black hole has shed approximately half of its original mass. Hawking’s
+approach overlooks the influence of emitted particles on the black hole, a neglect that becomes
+untenable as the energy of these particles approaches that of the black hole itself. Dvali et al.
+provided a pivotal realization that this influence results in a universal phenomenon termed
+burden, which effectively curtails further evaporation to a significant degree. At its core, the
+phenomenon of memory-burden [ 62–64] suggests that when a system bears a substantial load
+of quantum information, it becomes stabilized. Consequently, for the system to decay, it must
+transfer the memory pattern from one set of modes to another. As indicated in Ref. [ 65],
+– 1 –
+
+--- Page 3 ---
+this process becomes increasingly challenging as the system size expands. As a result, the
+quantum information retained in the memory acts back upon the system (formally called
+the backreaction), contributing to its stabilization, typically occurring no later than halfway
+through its decay.
+Motivated by this, in this study, we have delved into the potential for simultaneously
+generating observed DM abundance alongside baryon asymmetry (BAU) solely through PBH
+evaporation while considering the quantum effect of memory burden 1. While the DM could
+possess any intrinsic spin, we have adopted the standard approach of vanilla leptogenesis for
+generating baryon asymmetry. This involves the production of heavy right-handed neutrinos
+(RHN) during PBH evaporation, which subsequently undergoes CP-violating decay, leading
+to the observed matter-antimatter asymmetry. Finally, we discuss how such a framework
+might manifest in proposed gravitational wave (GW) detectors due to the presence of a
+detectable GW spectrum induced by fluctuations in the PBH number density [ 67–69]. It is
+essential to highlight that a precise comprehension of the evaporation process beyond the
+semi-classical realm remains elusive. Consequently, our findings should be interpreted as a
+preliminary indication of how the constraints on PBHs evolve beyond the framework provided
+by Hawking’s theory.
+The paper is organized as follows. In Sec. 2, we briefly discuss the dynamics of PBH
+evolution with the memory effect included. We then explain in detail the intricacies of particle
+production from PBH evaporation in Sec. 3. The parameter space satisfying observed DM and
+baryon abundance is elaborated in Sec. 4. The effect of PBH evaporation on dark radiation is
+discussed in Sec. 5. The observational aspect of the framework via induced GWs is discussed
+in Sec. 6. Finally, we conclude in Sec. 7.
+2 Effects of memory burden on PBH evaporation
+Before delving into the details of the memory burden, we begin reviewing some necessary
+details on PBH dynamics. We then provide a brief discussion on the memory burden effect,
+especially highlighting its effect on PBH evaporation. We consider for simplicity that the
+PBH forms by the collapse of a sharply peaked primordial spectrum and, therefore, the mass
+function of PBH is essentially monochromatic. Additionally, the PBHs are assumed to be of
+Schwarzschild type, i.e., without any spin and charge.
+2.1 Dynamics of PBH evaporation
+The mass of the PBH formed due to the gravitational collapse is closely related to the horizon
+size at the point of formation as [15, 39]
+Min = 4
+3πγ
+ 1
+H (Tin)
+3
+ρrad (Tin) , (2.1)
+whereH(Tin) corresponds to the Hubble rate during radiation domination at the time of PBH
+formation. Therefore, radiation temperature at the point of PBH formation
+Tin =
+1440γ2
+g⋆(Tin)
+1/4MP
+Min
+1/2
+MP. (2.2)
+1In Ref. [66] the parameter space for DM from memory-affected PBH has been explored.
+– 2 –
+
+--- Page 4 ---
+Here, γ represents the efficiency factor, which defines what fraction of the total mass inside
+the Hubble radius collapses to form PBHs. g⋆(Tin) is the relativistic degrees of freedom
+associated with the thermal bath at the point of formation. For the formation during standard
+domination γ∼ 0.2 [70]. The time of the PBH formation is given as
+tin =Min/(8πγM 2
+P ), (2.3)
+where we have considered H(t) = 1
+2t because of radiation dominated Universe.
+Given a PBH with mass MBH, the corresponding entropy, S, and Hawking temperature,
+TBH, reads
+TBH = M 2
+P
+MBH
+, S (MBH) = 1
+2
+MBH
+MP
+2
+= 1
+2
+MP
+TBH
+2
+, (2.4)
+where MP = 1/√8πGN≃ 2.4× 1018 GeV is the reduced Planck mass. Once PBH is formed,
+it can evaporate by emitting Hawking radiation [ 1, 2]. The mass loss rate for PBH can be
+parametrized as [71]
+dMBH
+dt =−ϵ M 4
+P
+M 2
+BH
+, with ϵ = 27
+4
+πg⋆,H(TBH)
+480 , (2.5)
+where
+g⋆,H(TBH)≡
+X
+i
+ωigi,H ;gi,H =
+
+
+
+1.82 for s = 0,
+1.0 for s = 1/2,
+0.41 for s = 1,
+0.05 for s = 2,
+(2.6)
+with ωi = 2si + 1 for massive particles of spin si, ωi = 2 for massless species with si > 0
+and ωi = 1 for si = 0. At temperatures TBH≫TEW≃ 160 GeV, PBH evaporation emits the
+full SM particle spectrum according to their g⋆,H weights, while at temperatures below the
+MeV scale, only photons and neutrinos are emitted. For TBH≫ 100 GeV (corresponding
+to MBH≪ 1011 g), the particle content of the SM corresponds to g⋆,H(TBH)≃ 106.75. The
+factor 27/4 accounts for the graybody factor 2. The negative sign on the right-hand side is
+due to the fact that the PBH mass decreases with time due to evaporation.
+On integrating Eq. (2.5) from the formation time tin, the PBH mass at any later time t
+can be obtained
+MBH(t) =Min[1− Γ0
+BH(t−tin)]1/3, (2.7)
+where Min is given by Eq. (2.1), and
+Γ0
+BH = 3ϵM 4
+P/M3
+in, (2.8)
+is the decay width associated with the PBH evaporation. The lifetime tev of the PBH can be
+obtained by substituting MBH(tev) = 0 in Eq. (2.7),
+tev = 1
+Γ0
+BH
+= M 3
+in
+3ϵM 4
+P
+≃ 2.5× 10−28
+Min
+1 g
+3
+s, (2.9)
+2Detailed expression for greybody factor can be found, for example, in Refs. [23, 29, 72].
+– 3 –
+
+--- Page 5 ---
+where we supposed tev≫tin. From Eq.(2.9), we recover that a PBH of mass ≳ 1015 g should
+not have decayed yet, whereas PBH of mass below ≲ 109 g should have decayed before the
+onset of BBN, which typically happens around time tBBN∼ 1 second. The initial PBH
+abundance is characterized by the dimensionless parameter β that is defined as
+β≡ ρBH (Tin)
+ρR (Tin) , (2.10)
+that corresponds to the ratio of the initial PBH energy density to the SM energy density at
+the time of formation. It is worth noting that the evaporation process outlined above operates
+under semi-classical assumptions. This means, as a black hole evaporates, it gradually reduces
+in size while adhering to consistent semi-classical relationships between its key parameters,
+such as mass, radius, and temperature, in other words, such a semi-classical process is self-
+similar in nature. Eventually, this process culminates in a final burst as MBH→ 0. However,
+the semi-classical approximation cannot hold throughout the entirety of the black hole’s
+lifetime.
+2.2 The effect of memory-burden
+For the purpose of our analysis, we consider that the semi-classical regime (Hawking’s
+approach) is valid until
+MBH =qMin. (2.11)
+In Refs. [65, 73], it has been proposed that the quantum effects start to become important
+when MBH = 1
+2Min or q = 1
+2. Since, because of evaporation, the PBH mass diminishes with
+time, the above relation implies q <1. We consider tq to be the time scale at which the
+semi-classical phase ends, beyond which the self-similar regime no longer remains valid. Then,
+from Eq. (2.7) we obtain
+tq = 1−q3
+Γ0
+BH
+. (2.12)
+As evident, with the substitution of q = 0, one recovers the full evaporation time tev. Once
+the mass of the PBH reaches qM in, the quantum memory effect starts dominating. This we
+consider to be the second phase of PBH evolution. In this regime, the evolution of the PBH
+mass, as given by Eq. (2.5), modifies to 3
+dMBH
+dt =− ϵ
+[S(MBH)]k
+M 4
+P
+M 2
+BH
+, (2.13)
+where S(MBH) is defined in Eq. (2.4). We emphasize that this is just a parametrization to
+capture the effect of memory burden on PBH evaporation 4. There are no such inherent
+constraints on k. Since we understand that the backreaction effect slows the decay due to the
+3Note that MBH being almost constant during the evaporation process, so during the memory burden phase
+S(MBH) ∼ S(q Min), which corresponds to the approximation made in Ref. [73].
+4It is important to note that Eq. (2.13) is based on assumptions derived from well-constructed toy models,
+that capture key properties of black hole dynamics, such as entropy production and breakdown of semiclassical
+approximation, etc., as outlined by Dvali et al. in Refs. [ 74, 75]. However, the present analysis does not account
+for the potential onset of classical instabilities that could lead to a faster decay of PBHs that hinder prolonged
+lifetime due to the memory burden effect.
+– 4 –
+
+--- Page 6 ---
+10-1 10 103 105 107 109
+10-29
+10-19
+10-9
+10
+Min[g]
+ΓBH
+k [GeV]
+CMB
+k=0k=1
+k=2
+q=0.01
+q=0.1
+q=1.0
+10-1 10 103 105 107 109
+10-29
+10-19
+10-9
+10
+Min[g]
+ΓBH
+k [GeV]
+CMB
+Figure 1. PBH decay width as a function of Min, following Eq. (2.14). In the left panel, we have
+chosen different values of k while fixing q = 0.5, while in the right panel, different values of q are
+considered for a fixed k = 1. The shaded region is discarded from CMB, which is calculated considering
+the maximum energy scale of inflation. All curves satisfy the BBN bound.
+excess entropy production surrounding the PBH, we consider k a positive value. Thus, the
+exponent determines the efficiency of the backreaction effect. Throughout our analysis, we
+choose k as a free parameter. Integrating Eq. (2.13) we obtain
+MBH =qM in
+h
+1− Γk
+BH(t−tq)
+i 1
+3+2k
+, (2.14)
+with
+Γk
+BH = 2k (3 + 2k)ϵMP
+ MP
+qMin
+3+2k
+. (2.15)
+From Eq. (2.14), we find that the second phase of evaporation takes place over a time∼ 1/Γk
+BH.
+The minimum allowed mass is set by the maximum energy of inflation, calculated assuming
+de-Sitter-like inflation by taking the restriction on the tensor to scale ratio r <0.036 from
+Planck together with the latest BICEP/Keck data [76–78]. The minimum allowed mass is
+roughly around∼ 0.5 g, which sets k ≲ 3 for complete evaporation before BBN.
+In Fig. 1 we show the variation of Γ k
+BH with Min. As one can see from the left panel, for
+a fixed q, a larger k results in late evaporation of the PBH since the total evaporation time is
+given by
+tk
+ev =tq + 1/Γk
+BH≃ 1/Γk
+BH. (2.16)
+Also note, for different k-values, the curves have different end-points such that the BBN
+bound is satisfied, i.e., tev ≲ 1 sec. Since a larger k results in longer PBH-lifetime, hence
+corresponding constraint on PBH mass from BBN is stronger. On the other hand, the
+dependence on q is rather mild for a fixed k as one can notice from the right panel of Fig. 1.
+The bottom line is, breakdown of the self-similar regime results in a suppressed PBH decay
+rate. The evolution of PBH mass as a function of cosmological time t is shown in Fig. 2, for
+different choices of k and a fixed q = 0.5. In the left panel we have considered Min = 1 g.
+Following the conclusions drawn from Fig. 1, here as well we find that a larger k results in a
+longer PBH lifetime. This effect becomes more prominent for heavier PBHs, as we see from
+the right panel, where Min = 105 g is considered. The vertical dashed lines in each figure
+denotes the PBH evaporation time, showing, for k> 3 and q = 0.5, PBH of mass 1 g remains
+stable even after BBN, while for Min = 105 g, this is true for k> 1.
+– 5 –
+
+--- Page 7 ---
+k=5
+k=3
+k=1
+k=0
+10-50 10-40 10-30 10-20 10-10 1
+0.4
+0.6
+0.8
+1.0
+t/t U
+MBH/Min
+tev~tBBN
+k=5
+k=3
+k=1
+k=0
+10-50 10-40 10-30 10-20 10-10 1
+0.4
+0.6
+0.8
+1.0
+t/t U
+MBH/Min
+tev~tBBN
+Figure 2. Evolution of PBH mass as a function of time for different choices of k. Here, tU∼ 4× 1017
+s in the horizontal axis correspond to the universe’s current age. We choose Min = 1 g in the left
+panel and Min = 105 g in the right panel while fixing q = 0.5 in either case. The vertical dashed lines
+indicate evaporation time corresponding to different choices of k.
+3 Particle production from memory-burdened PBH
+As advocated in the last section, the memory burden results in a complete breakdown of the
+semi-classical treatment. If the breakdown happens at tq, implying for MBH >qM in there
+exists the semi-classical evaporation phase, which we will now refer as ph-I (phase-I). Whereas
+for MBH < qMin we have a memory burden phase where the semi-classical approximation
+is no longer valid, we refer to this phase as ph-II (phase-II). In order to find the viable
+parameter space giving rise to observed DM relic abundance and correct baryon asymmetry,
+we first need to calculate the number of any massive species emitted during the process of PBH
+evanescence, which can further be utilized for the calculation of relevant relic abundances.
+ConsiderNj be the number of particle species j with mass mj and intrinsic spin gj, that
+is emitted from the evaporation of a single PBH. We divide Nj into two parts: (i) N1j denotes
+the number of particles emitted in ph-I and (ii) N2j is the number of particles emitted in
+ph-II. The emission rate of particle j with mass mj and internal degrees of freedom gj, per
+unit energy per unit time, due to Hawking radiation in ph-I is given by [28, 29, 42, 59, 79]
+d2N1j
+dEdt = 27
+4 πr 2
+S
+gj
+2π2
+E2
+exp(E/TBH)± 1 = 27
+4
+gj
+32π3
+(E/TBH)2
+exp(E/TBH)± 1, (3.1)
+where the Schwarzchild radius is given byrS =MBH/(4πM 2
+P ). The sign± is used for fermionic
+and bosonic particles, respectively. Integrating over Eq. (3.1) we find
+dN1j
+dt = 27
+4
+ξgjζ(3)
+16π3
+M 2
+P
+MBH
+, where ξ =
+(
+1 for bosons ,
+3
+4 for fermions , (3.2)
+which is the rate of emission of particles from a given PBH of mass MBH. In the ph-II,
+because of the suppressed evaporation rate, the emission rate is parametrized as
+d2N2j
+dEdt = 1
+[S(MBH)]k
+d2N1j
+dEdt , (3.3)
+that leads to
+dN2j
+dt = 27
+4
+ξgjζ(3) 2k
+16π3
+M 2+2k
+P
+M 1+2k
+BH
+. (3.4)
+– 6 –
+
+--- Page 8 ---
+Depending on the mass of the emitted particle relative to the PBH temperature at the
+point of formation, one should further distinguish two cases: (a) if mj <T in
+BH, the production
+of particles happens throughout the lifetime of the PBH, i.e., from the initial time tin to a
+final time t, and (b) for mj >T in
+BH, the evaporation begins from a time tj corresponding to
+whichmj =TBH(tj),
+tj≃
+
+
+
+tev
+
+1− M 6
+P
+M 3
+inm3
+j
+
+for tj <t q,
+tk
+ev
+
+1−
+ M 2
+P
+qMinmj
+3+2k
+for tj >t q,
+(3.5)
+where we have utilized Eq. (2.7) and Eq. (2.14).
+Let us now first consider the case mj <T in
+BH. In order to determine N1j produced during
+ph-I, we exploit Eq. (2.7) and integrate Eq. (3.2) in the limit tin≤t≤tq, which gives rise to
+N1j = 27
+128
+ξgjζ(3)
+π3
+(1−q2)
+2ϵ
+M 2
+in
+M 2
+P
+, (3.6)
+where we have ignored a term proportional to tin as tin≪tq. To compute the total number
+N2j during ph-II, we integrate Eq. (3.4) in the range [ tq, t],
+N2j = 27
+128
+ξgjζ(3)
+π3ϵ q2M 2
+in
+M 2
+P
+"
+1−
+
+1− t−tq
+tkev
+ 2
+3+2 k
+#
+, (3.7)
+where we have utilized Eq. (2.14). Note that the above expression simply vanishes for q = 0,
+implying the evaporation solely through only Hawking evaporation. For mj <T in
+BH, the total
+number of particles emitted by one PBH at the end of its lifetime is given by
+Nj
+
+mj<T in
+BH
+=N1j +N2j = 27
+128
+ξgjζ(3)
+π3ϵ
+M 2
+in
+M 2
+P
+"
+1−q2
+tq
+tkev
+ 2
+3+2 k
+#
+≃ 27
+128
+ξgjζ(3)
+π3ϵ
+M 2
+in
+M 2
+P
+, (3.8)
+where tq/tk
+ev≪ 1 is implied.
+In the reverse case, i.e., mj > Tin
+BH, we have two sub-cases corresponding to Eq. (3.5).
+Fortj <t q we thus obtain N1j by integrating Eq. (3.2) between [tj,tq], we have
+N1j = 27
+128
+ξgjζ(3)
+π3ϵ
+
+
+ 
+M 2
+P
+m2
+j
+!2
+−
+q2M 2
+in
+M 2
+P
+
+ , (3.9)
+while N2j remains same as that obtained in Eq. (3.7). For tj >t q, there is no production of
+particles during ph-I, implying N1j = 0, whereas
+N2j = 27
+128
+ξgjζ(3)
+π3ϵ
+q2M 2
+in
+M 2
+P
+"
+1− tj−tq
+tev
+ 2
+3+2k
+−
+
+1− t−tq
+tev
+ 2
+3+2k
+#
+, (3.10)
+– 7 –
+
+--- Page 9 ---
+10-1 10 103 105 107 10910-20
+10-17
+10-14
+10-11
+10-8
+10-5
+min [g]
+βc
+CMB
+k=0
+k=1
+k=3
+Figure 3. βc as function of Min, following Eq. (3.13), where different lines correspond different choices
+of k. Here we have chosen q = 0.5. The shaded region is disallowed by CMB bound on the scale of
+inflation. All curves satisfy BBN bounds.
+obtained by integrating within the range [tj, t]. In this case, setting t =tk
+ev >t j >>t q and
+utilizing Eq.(3.5), the total number of particles emitted from a single BH can be expressed as
+Nj
+
+mj>T in
+BH
+≃ 27
+128
+ξgjζ(3)
+π3ϵ
+MP
+mj
+2
+, (3.11)
+which will be the same in the case of tj <t q. We thus find,
+Nj≃ 27
+128
+ξgjζ(3)
+π3ϵ
+
+
+
+
+Min
+MP
+2
+, for mj <T in
+BH,
+
+MP
+mj
+2
+, for mj >T in
+BH.
+(3.12)
+It is crucial to note here that the above expression does not contain any information about
+the backreaction, which is expected since we are interested in production from complete
+evaporation. Once PBH completes its evaporation, the number of particles emitted from a
+PBH only depends on the mass of the BH and emitting particle; the underlying process is not
+important here.
+Since the PBH energy density scales like non-relativistic matter∼a−3, while the radiation
+energy density scales as ρR∼a−4, therefore, an initially radiation-dominated universe will
+eventually become matter-dominated if the PBHs have not evaporated by then. There exists
+a critical β value, above which PBHs come to dominate the energy content of the universe
+at some time tBH
+eq . This scenario corresponds to the so-called PBH domination. Utilizing
+Eq. (2.10), one can obtain the expression for critical β-valueβc as [15]
+βc =
+s
+tkev
+tin
+=
+ MP
+qM in
+1+k
+s
+(3 + 2k)2kϵ
+8q3πγ . (3.13)
+In Fig. 3, we show how βc varies with Min for different choices of k. Since increasing the k
+value of the memory burden parameter delays the evaporation process, for a given Min, a
+larger k results in smaller βc.
+– 8 –
+
+--- Page 10 ---
+Forβ >βc, there will be a PBH domination before PBH decays. Therefore,
+H(aev)2 = ρrad(aev)
+3M 2
+P
+≡
+2 Γk
+BH
+3
+2
+, (3.14)
+which results in an evaporation temperature,
+Tev =MP
+ 40
+π2g∗(Tev)
+1/4"
+2k (3 + 2k)ϵ
+ MP
+qM in
+3+2k#1/2
+, (3.15)
+where we have used Eq. (2.15) and the fact that in a matter (PBH)-dominated universe,
+H(tk
+ev) = 2/
+ 
+3tk
+ev
+
+. g∗(Tev) indicates the relativistic degrees of freedom associated with
+the thermal bath calculated at the end of evaporation. Evidently, for a given k and q, the
+evaporation temperature decreases with the increase in Min. Since we can grossly estimate
+that the energy density in BHs goes into radiation after evanescence, therefore at t =tk
+ev,
+ρBH
+3M 2
+P
+=
+2 Γk
+BH
+3
+2
+, (3.16)
+which leads to the PBH number density at the evaporation point
+nBH(aev) = 4
+3M 3
+P (3 + 2k)2 22kϵ2
+ MP
+qM in
+7+4k
+, (3.17)
+where Eq. (2.14) has been used.
+Gravity-mediated particle production from bath
+Pure gravitational production of particles is also feasible via 2-to-2 scattering of the bath
+particles via s-channel mediation of massless graviton. The interaction rate density for such a
+process reads [80–86]
+γ(T ) =ζ T 8
+M 4
+P
+, (3.18)
+with ζ≃ 1.9× 10−4 (real scalar), ζ≃ 1.1× 10−3 (Dirac fermion) or ζ≃ 2.3× 10−3 (vector
+boson). Such production is inevitable because of the democratic nature of gravitational
+coupling. The Boltzmann equation, therefore, reads
+˙nj + 3Hnj =γ(T ). (3.19)
+For temperatures much lower than the reheat temperature i.e., T≪TRH, the yield Y ≡nj/s
+can be analytically obtained by integrating Eq. (3.19),
+Y0 = 45ζ
+2π3g⋆s
+r10
+g⋆
+TRH
+MP
+3
+, (3.20)
+considering mj ≪ TRH. On the other hand, in the case where DM is heavier than the
+reheating temperature (but still lighter than the highest temperature reached by the SM
+thermal bath [87]), then the DM is produced during the reheating era, with a yield
+Y0 = 45ζ
+2π3g⋆s
+r10
+g⋆
+T 7
+RH
+M 3
+Pm4
+j
+. (3.21)
+– 9 –
+
+--- Page 11 ---
+Now, the particle produced via gravitational UV freeze-in shall undergo dilution due to
+evaporation of the PBH, that can be quantified as [25, 88]
+S(Tin)
+S(Tev)≃
+
+
+
+1, β <β c
+Tev/T BH
+eq , β >β c,
+(3.22)
+where we define S =a3s(T ), Tev is given by Eq. (3.15), and T BH
+eq is defined as the epoch of
+equality between SM radiation and the PBH energy densities ρR(T BH
+eq ) =ρBH(T BH
+eq ), and is
+given by
+T BH
+eq =βT in
+ g⋆(Tin)
+g⋆(T BHeq )
+ 
+g⋆s(T BH
+eq )
+g⋆s(Tin)
+!
+≃βT in (3.23)
+where g⋆s(T BH
+eq ) and g⋆(T BH
+eq ) are the relativistic DoFs associated with entropy and thermal
+bath, respectively calculated at the point of early radiation-matter equality. Following [30, 88],
+here we will consider TRH =Tin in order to perform a conservative analysis, where Tin is given
+by Eq. (2.2). The right relic abundance is satisfied via
+mDM×Y0× S(Tin)
+S(Tev) = ΩDMh2 1
+s0
+ρc
+h2 = 4.3× 10−10 GeV, (3.24)
+with s0 being the comoving entropy density at the present epoch and ρc being the critical
+energy density of the Universe. Note that since we assume that the PBHs are formed during
+a radiation-dominated era, TRH≥Tin.
+4 Cogenesis from memory-burdened PBH
+In this section, we discuss the possibility of simultaneously satisfying the observed relic
+abundance of dark matter and correct baryon asymmetry purely from PBH evaporation,
+considering the effect of memory burden. We concentrate on the scenario of PBH dominance
+before it evaporates, which means β > βc, such that the effect of PBH on the allowed
+parameter space becomes more pronounced.
+4.1 Production of dark matter
+We consider the production of dark matter (DM) purely from PBH evaporation, where the
+corresponding relic abundance today reads [39, 79]
+ΩDMh2 = 1.6× 108 g0
+gev
+nDM(aev)
+T 3ev
+mDM
+GeV , (4.1)
+where nDM(aev) is the number density of DM at the end of evaporation. Here gev≃ 106.7
+and g0≃ 3.91 are the effective numbers of light species for entropy at the end of evaporation
+and present-day, respectively. For complete evaporation, we can write
+nDM(aev) =NDMnBH(aev), (4.2)
+whereNDM is the total number of DM particles emitted from the evaporation of a single PBH
+and nBH(aev) is the PBH energy density at the point of evaporation. Since we are interested
+– 10 –
+
+--- Page 12 ---
+10-1 10 103 105 107 10910-3
+100
+103
+106
+109
+1012
+1015
+1018
+Min[g]
+mDM[GeV]
+CMB
+tev =tBBN
+mDM=Tin
+WDM
+10-1 10 103 105 107 10910-3
+100
+103
+106
+109
+1012
+1015
+1018
+Min[g]
+mDM[GeV]
+CMB
+tev =tBBN
+mDM=Tin
+WDM
+Figure 4 . The gray shaded region corresponds to scalar DM overdensity for {k, q} =
+{0.5, 0.5};{0.5, 0.05};{0, 1} (left panel) and {k, q} ={0.5, 0.5};{0.05, 0.5};{0, 1} (right panel),
+from darker to lighter considering β >βc. The pink-shaded region is disallowed from CMB constraint
+on the scale of the inflation. We show constraint from Ly- α on warm DM via the green-shaded region
+for each case. The black contours show correct DM abundance produced from a gravity-mediated
+process for {k, q} ={0.5, 0.05} ;{0.5, 0.5} ;{0, 1} shown via solid, dashed and dot-dashed curves
+respectively in the left panel and for {k, q} ={0.05, 0.5} ;{0.5, 0.5} ;{0, 1} shown via solid, dashed
+and dot-dashed curves respectively in the right panel.
+in the PBH-domination scenario, hence, using Eq. (3.17), together with Eq. (3.15), we obtain
+ΩDMh2
+0.12 =ξg DM
+h
+2k (3 + 2k)
+i1/2
+×
+
+
+
+2.85× 106× 1
+q2
+
+MP
+qM in
+ 2k+1
+2 mDM
+GeV for mDM<T in
+BH,
+1.64× 1043×
+
+MP
+qM in
+ 2k+5
+2 GeV
+mDM
+for mDM>T in
+BH,
+(4.3)
+where gDM is the intrinsic DoF for corresponding DM particle.
+If the DM is going to provide the full contribution to DM relic abundance, one has to
+ensure that it is cold enough in order not to disrupt the formation of large-scale structures. DM
+candidate, which is part of the thermal bath or produced from the thermal bath, should have
+a mass above a few keV in order to give required free-streaming of DM as constrained from
+Lyman (Ly)-α flux-power spectra [89, 90]. Such light DM mass is significantly constrained by
+the free streaming of the ultra-relativistically-emitted DM particles. Following Refs [ 15, 91],
+one can derive a lower bound on the DM mass originating from PBH evaporation as
+mDM ≳ 104⟨EDM(teq)⟩, (4.4)
+where⟨...⟩ stands for the average over PBH temperature. The average kinetic energy (KE) of
+the DM particles then reads
+⟨EDM(teq)≈⟨EDM(tev)⟩aev
+aeq
+≃δT BH
+Teq
+Tev
+g⋆s(Teq)
+g⋆s(Tev)
+1/3
+, (4.5)
+with Teq≃ 0.75 eV being the temperature at the epoch of late radiation-matter equality
+(RME), and TBH≃ 1/(qM in). Here g⋆s(Teq) and g⋆s(Tev) are the relativistic DoFs associated
+with entropy at the point of late radiation-matter equality and evaporation, respectively. To
+– 11 –
+
+--- Page 13 ---
+be conservative, we define the parameter δ≃ 1.3 such that ⟨EDM(tev)⟩≈ δT BH, following
+Refs. [12, 15]. Also, we assume entropy conservation from evaporation to RME. From Eq.(4.4),
+one then finds
+mDM ≳ 2.2× 10−5 GeV
+qM in
+MP
+ 2k+1
+2 1p
+2kϵ (2k + 3)
+g⋆s(Teq)
+g⋆s(Tev)
+1/3
+≳ 1.6 GeV
+Min
+10 g
+ q
+0.5
+
+, (4.6)
+where in the last line, we have used k = 0.5. Note that, for a given PBH mass, this bound
+becomes stronger with larger k and q, as in that case, the PBH evaporation is delayed; as a
+result, the average kinetic energy of the radiated particles increases at RME.
+In Fig. 4, we illustrate the relic density allowed parameter space in the bi-dimensional
+plane of [Min−mDM]. The gray-shaded region corresponds to DM overabundance. The
+region corresponding to k = 0, q= 1 is shown via the lighter gray shade (visible in the left
+panel). As one can see, with the quantum effects into play, the region of overabundance is
+reduced. This can be explained by the fact that the PBH of a given mass now evaporates
+over a longer period of time, injecting entropy into the bath that dilutes the excess DM
+abundance. The upper and lower boundaries correspond to mDM >T in
+BH and mDM <T in
+BH,
+respectively. The two boundaries show a discontinuity at PBH masses that correspond to
+Tev =TBBN since we are considering all PBHs evaporate before the onset of BBN. A large
+part of the parameter space is in tension with the WDM bound [cf. Eq. (4.4)], as shown by
+the green-shaded region. This typically allows the heavier mass regime, depending on the
+choice of k, qand Min in order to produce the right relic abundance. DM is produced only
+through gravity mediation, accounting for all the DM abundance that takes place along the
+black solid line. Since to the left of such a line, DM is overproduced, that region coincides
+with the region of overabundance for DM Hawking radiated from PBHs.
+4.2 Production of baryon asymmetry
+We consider the vanilla leptogenesis scenario, where the out-of-equilibrium production of
+RHNs results in the generation of baryon asymmetry via lepton asymmetry. The relevant
+interaction Lagrangian is given by
+L⊃− 1
+2
+X
+i
+MNiNc
+i Ni−yij
+NNi eH†Lj + h.c. ; (i = 1, 2, 3), (4.7)
+where the SM particle content is extended with the addition of three generations of right-
+handed neutrinos Ni, singlet under the SM gauge symmetry. The SM left-handed leptons
+doublets are identified as Li and eH = iσ 2H∗ where H represents the SM Higgs doublet.
+σi are the Pauli spin matrices. We assume the Majorana masses MNi to be hierarchical
+MN1≪MN2,3. We also consider lepton-number-violating interactions of N1 are rapid enough
+to wash out the asymmetry originating from the decay of the other two. Therefore, only the
+CP-violating asymmetry from the decay of N1 survives and is relevant for leptogenesis. Once
+right-handed neutrinos are produced from the evaporating PBHs, they can decay and result
+in a lepton asymmetry
+YL = nL
+s =ϵ∆L
+nN1
+s , (4.8)
+– 12 –
+
+--- Page 14 ---
+where the CP asymmetry generated from N1 decay reads [92]
+ϵ∆L≡ ΓN1→ℓiH− ΓN1→¯ℓi ¯H
+ΓN1→ℓiH + ΓN1→¯ℓi ¯H
+≃ 1
+8π
+1
+(y†
+NyN)11
+X
+j=2,3
+Im
+
+y†
+NyN
+2
+1j
+×F
+ 
+M 2
+Nj
+M 2
+N1
+!
+, (4.9)
+with
+F(x)≡√x
+ 1
+1−x + 1− (1 +x) log
+1 +x
+x
+
+. (4.10)
+This can be further simplified to [93, 94]
+|ϵ∆L|≃ 3δeff
+16π
+MN1mνi
+v2 ≃ 10−6δeff
+ MN1
+1010 GeV
+ mνi
+0.05 eV
+
+, (4.11)
+where i = 2, 3 for normal hierarchy (a similar CP-asymmetry parameter can be obtained for
+the inverted hierarchy with i = 1, 2) and δeff is the effective CP-violating phase
+δeff = 1
+(yN)2
+13
+Im(y†
+NyN)2
+13
+(y†
+NyN)11
+, (4.12)
+whereasv = 174 GeV is the Higgs vacuum expectation value. The produced lepton asymmetry
+is eventually converted to baryon asymmetry via electroweak sphaleron processes, leading to
+baryon number yield at the point of evaporation [37, 39, 43]
+YB(aev) =nB
+s
+
+aev
+=Njϵ∆Lasph
+nBH(aev)
+s(aev)
+=Y obs
+B
+δeff
+1
+ mν
+0.05 eV
+h
+2k (2k + 3)
+i 1
+2
+q− 2 k+5
+2
+×
+
+
+
+503.5×
+ MN1
+1012 GeV
+
+MP
+Min
+ 2 k+1
+2
+for MN1 <T in
+BH
+2.97× 1015
+
+1012 GeV
+MN1
+
+MP
+Min
+ 2k+5
+2
+for MN1 >T in
+BH,
+(4.13)
+where asph = 28/79 being the sphaleron conversion factor and Y obs
+B ≃ 8.7× 10−11 is the
+observed baryon asymmetry [76]. Following subsection 3, we see that right baryon asymmetry
+can also be produced from the CP-violating decay of the RHNs that are produced from the
+thermal bath mediated by gravity. In this case, the final asymmetry reads
+Y obs
+B =YN
+0 ϵ∆Lasph× S(Tin)
+S(Tev), (4.14)
+where YN
+0 is given by Eqs. (3.20) and (3.21), with mj→MN1.
+The gray shaded region in Fig. 5 shows the maximally available parameter space satisfying
+the observed baryon asymmetry, corresponding to δeff = 1. In either panel, the intermediate
+gray region corresponds to the k = 0, q= 1 case. Note that, for the same choice of k, an
+increase in q reduces the resulting parameter space. This is because, for the same PBH
+mass, a larger q results in a longer lifetime, hence a longer period of entropy injection and
+corresponding dilution of the asymmetry. An important constraint on the parameter space
+arises from the fact that if MN1 <T ev, then the RHNs produced from PBH evaporation are
+– 13 –
+
+--- Page 15 ---
+10-1 100 10 102 103
+109
+1012
+1014
+1016
+1018
+Min [g]
+MN1 [GeV]
+CMB
+MN1 <T
+ev
+MN1 =TBH
+in
+MN1 =T in
+10-1 100 10 102 103
+109
+1012
+1014
+1016
+1018
+Min [g]
+MN1 [GeV]
+CMB
+MN1 <T
+ev
+MN1 =T
+BH
+in
+MN1 =T in
+Figure 5 . The gray shaded region from lighter to darker corresponds to the maximum allowed
+parameter space during PBH domination for {k, q} = {0.5, 0.05};{0, 1};{0.5, 0.5} (left panel)
+and{k, q} ={0.05, 0.5};{0, 1};{0.5, 0.5} (right panel). The green shaded region corresponds to
+the maximally allowed parameter space for leptogenesis, where we only consider gravity-mediated
+production of the RHNs from the bath for {k, q} ={0.5, 0.05};{0, 1};{0.5, 0.5} in the left panel,
+and{k, q} ={0.05, 0.5};{0, 1};{0.5, 0.5} in the right panel, shown via dot-dashed, solid and dashed
+boundaries respectively.
+10-3 10-2 10-1 10010-1
+100
+k
+q
+YB
+0
+q>1
+BBN
+Figure 6. The blue shaded region corresponds to observed BAU for MN1 ={1012, 1013, 1014} GeV
+shown via lighter to darker shades of blue. Different contours satisfy total DM abundance for a scalar
+DM with mass mDM ={0.1, 1, 10, 100} MeV (shown via solid, dashed, dotted, and dot-dashed pattern
+respectively) produced from PBH evaporation. We consider Min = 10 g. The red-shaded region is
+disallowed from BBN bound on PBH lifetime, while the green-shaded region is forbidden as q >1.
+The whole DM parameter space is discarded from the WDM limit, which is not shown for clarity of
+the figure.
+in a therm bath, and then washout processes are in effect. It is worth mentioning here for
+k = 0.03 and q = 0.05, it is possible to obtain a viable parameter space for leptogenesis with
+Min≤ 103 g. Hence, to ensure non-thermal production of baryon asymmetry, one must follow
+MN1 >T ev. This forbids the blue-shaded region. As before, observed baryon asymmetry can
+– 14 –
+
+--- Page 16 ---
+also be produced due to the CP-violating decay of the RHNs emerging from the thermal
+bath, mediated by massless graviton. In this case, the maximum parameter space allowed is
+shown in the green-shaded region. Note that, in order to avoid washout due to inverse decay,
+one needs to have MN1 >T RH≡Tin, as indicated by the arrowhead along the blue-dashed
+line corresponding to MN1 =Tin. A larger q, hence a larger entropy dilution, also results in
+reduced parameter space for asymmetry produced via graviton exchange, as evident from the
+green shaded region with different boundary patterns.
+We depict a common parameter space in [ q−k] plane that yields the correct abundance
+for scalar dark matter (indicated by the black contours) and also gives rise to the observed
+baryon asymmetry (represented by the blue shaded region) in Fig. 6. While we observe
+that it is conceivable to achieve a simultaneous solution for both DM abundance and the
+baryon asymmetry with a DM mass of 0.1 MeV, all parameter regions allowed for DM relic
+density are invalidated by the warm DM constraint. We have selected the PBH mass to be
+Min = 10 g to ensure the generation of the correct baryon asymmetry [cf. Fig. 5]. For DM of
+mass ≳ 1012 GeV, although the WDM limit can be somewhat relaxed [cf. Fig. 4], but this
+necessitates massive PBHs ≳ 105 g, which renders the correct baryon asymmetry unattainable.
+Consequently, we conclude that for a given PBH mass, a parameter space where both the
+correct DM abundance and BAU can coexist is not achievable within the present framework.
+5 Dark radiation from memory-burdened PBH
+As we know, once PBHs are evaporated, along with the SM radiation, beyond the SM states,
+like the DM or the RHNs, can also be produced via Hawking radiation. Should there be
+additional light states with feeble coupling to the SM, known as “dark radiation” (DR), these
+particles will emerge through Hawking radiation, thereby influencing the radiation density of
+the universe during BBN and recombination. The contribution of the DR component to the
+effective number of relativistic degrees of freedom (DoF) is parametrized via
+Neff = ρDR(Teq)
+ρR(Teq)
+"
+Nν + 8
+7
+11
+4
+4/3#
+, (5.1)
+where Teq≃ 0.75 eV is the temperature at the late radiation-matter equality. Within the SM,
+taking the non-instantaneous neutrino decoupling into account, one finds Nν = 3.044 [95–103].
+Here, ρDR is the energy density of the dark radiation. Following Refs. [13] and [15], we see,
+∆Neff = ρDR(Tev)
+ρR(Tev)
+g⋆s(Teq)
+g⋆(Teq)
+g⋆s(Teq)
+g⋆s(Tev)
+ 1
+3
+"
+Nν + 8
+7
+11
+4
+4/3#
+. (5.2)
+In the case of PBH domination, this expression simplifies to
+∆Neff = gDR,H
+g⋆,H
+g⋆s(Teq)
+g⋆(Teq)
+g⋆s(Teq)
+g⋆s(Tev)
+ 1
+3
+"
+Nν + 8
+7
+11
+4
+4/3#
+≃ 0.07× gDR,H
+4
+106
+g⋆,H
+, (5.3)
+where we have considered k = 0.1, q= 0.5 and Min = 10 g. Here, gDR,H ={4, 2} for a
+Dirac and a Weyl fermion respectively, gDR,H = 1.82 for a scalar boson, gDR,H = 1.23 for a
+massive vector boson and gDR,H = 0.05 for a massless graviton [cf. Eq. (2.6)]. Present CMB
+measurement from Planck legacy data [ 76] provides ∆Neff≃ 0.34. On inclusion of baryon
+acoustic oscillation (BAO) data, the constraint becomes more stringent: Neff = 2.99± 0.17.
+– 15 –
+
+--- Page 17 ---
+100 104 10810-3
+10-2
+10-1
+1
+Min[g]
+ΔNeff
+k=0.5,q=0.5
+Planck
+Planck(+BAO)
+CMB-S4
+BBN
+CMB
+k=0.5
+k=1
+k=1.5
+k=2
+100 104 10810-3
+10-2
+10-1
+1
+Min[g]
+ΔNeff
+q=0.5
+Planck
+Planck
+(+BAO)
+CMB-S4
+CMB
+Figure 7. Contribution of dark radiation to ∆ Neff, produced from PBH evaporation. In the left
+panel, we show contribution due to a spin-1/2 Dirac fermion (red), spin-1/2 Weyl fermion (blue),
+spin-0 boson (green), spin-1 massive vector boson (orange), and massless spin-2 graviton (magenta),
+for k =q = 0.5. The red-shaded region corresponds to the PBH mass that evaporates after BBN. In
+the right panel, we illustrate the contribution to ∆Neff due to a spin-0 scalar boson for different choices
+of k at a fixed q = 0.5. For each k, the vertical dashed line shows the contour for tev =tBBN≃ 1 sec.
+Also shown are the present constraints from Planck and future CMB-S4 bound on ∆ Neff via black
+solid and gray broken horizontal lines, respectively.
+Upcoming CMB experiments like CMB-S4 [ 104] and CMB-HD [ 105] will be sensitive to a
+precision of ∆Neff≃ 0.06 and ∆Neff≃ 0.027, respectively.
+In the left panel of Fig. 7, we show contributions from different spins to DR, produced
+from PBH evaporation to ∆Neff. Here, we choose k =q = 0.5 as a benchmark value. Due
+to the highest number of degrees of freedom, a Dirac fermion (in red) has a maximum
+contribution to ∆Neff, while a graviton (in magenta) contribution is minimum. As we see,
+PLANCK+BAO data already excludes Dirac fermion as a viable DR candidate for PBH
+massesMin ≳ 107 g. Future experiments like CMB-S4 can effectively rule out all spins, leaving
+only graviton as a possible candidate for DR. In the right panel, we illustrate the effect of
+memory burden on ∆Neff for a fixed q, with different choices of k, considering a spin-0 boson
+contributing to the DR. In general, we expect Hawking evaporation to generate a sizable
+contribution to ∆Neff only if the early universe included a PBH-dominated era or if there
+exists a large number of light decoupled species, i.e., gDR,H≫ 1 (the typical example being
+the supersymmetric (SUSY) models).
+6 Induced gravitational wave from PBH density fluctuations
+PBHs can play as a source for primordial GWs in several ways, e.g., by inducing large
+curvature perturbation that is responsible for its formation [ 106–115], by radiating gravitons
+that constitute high-frequency GW [ 39], through PBH-merger [ 116] or by the fluctuation of
+PBH number density [67–69, 117–120]. Here we consider the last possibility. Our final goal
+is to establish a connection between the scale of (PBH-induced) leptogenesis with the GW
+amplitude and frequency, such that any potential detection of GW can be interpreted as a
+probe for the scale of leptogenesis itself.
+We consider a gas of PBHs having all the same mass randomly distributed in space, with
+a Poissonian spatial distribution [ 68]. These inhomogeneities in the distribution of PBHs lead
+to density fluctuations, which are isocurvature in nature. When PBHs become the dominant
+– 16 –
+
+--- Page 18 ---
+component of the Universe’s energy density, these isocurvature perturbations transition into
+adiabatic perturbations, which, in the second order, can generate GWs. Here, we closely follow
+Refs. [67–69] in estimating the modification to the curvature fluctuation due to the effect of
+the memory burden on the evaporation process. Considering a generic power spectrum in
+wavenumberK of fluctuations in gravitational potential Φ during the PBH-dominated stage
+can be expressed as
+PΦ(K) =AΦ
+ K
+KUV
+n
+Θ(KUV−K), (6.1)
+whereAΦ is the amplitude of the power spectrum with index n, and KUV represents the
+wavenumber corresponding to the cut-off scale. One can then calculate the induced GW
+spectrum for a given primordial spectrum of fluctuations by multiplying with the appropriate
+kernel and integrating across the internal momenta, as can be found in Refs. [ 67–69]. If we
+assume that the PBH decay process is instantaneous, the peak amplitude of the induced GWs
+at the evaporation end can be written as [69]
+Ωpeak
+GW, ev≃ q4
+24576
+√
+3π
+ 
+3 + 2k
+3
+p
+2(1 +k)
+!− 4
+3+2k
+ 
+KBH
+eq
+KUV
+!8KUV
+Kev
+7− 4
+3+2k
+, (6.2)
+where KBH
+eq is the wave number associated with the early radiation-matter equality. Now, let
+us calculate all the relevant wave numbers that we need to estimate the final GW spectrum.
+The description of the PBH gas in terms of a continuous fluid is only valid at scales larger
+than the mean separation distance Dmean, which imposes an ultra-violet (UV) cutoff in the
+power spectrum [68]
+KUV = ain
+Dmean
+=ain
+4πρ BH (Tin)
+3Min
+1/3
+=Kinγ−1/3β1/3, (6.3)
+where Kin =ainHin is the wave number defined at the formation point. Utilizing the fact
+that the comoving PBH number density is conserved, the momentum mode Kev =aevHev
+re-entering at the evaporation time can be expressed as
+Kev =
+Hev
+Hin
+1/3
+Kinβ1/3q1/3 =
+2k (3 + 2k)ϵ
+6πγ
+1/3 MP
+qM in
+ 2
+3 (1+k)
+Kinβ1/3. (6.4)
+Combining these expressions, we obtain 5
+KUV
+Kev
+≈ 4133e8k
+ 3
+3 + 2k
+ 1
+3
+qM in
+1 g
+ 2
+3 (1+k)
+. (6.5)
+The frequency fev =aevHev/(2π) can be estimated as
+fev =
+p
+g⋆(Tev)
+6
+√
+10MP
+g⋆s(T0)
+g⋆s(Tev)
+1/3
+TevT0≃ 963 Hze−12k
+r
+3 + 2k
+3
+qM in
+1 g
+−
+ 2
+3 +k
+
+, (6.6)
+5Note that our expression for KUV/Kev differs from Ref.[69] with a factor q1/3, which they claim will be
+present when memory effect takes place during PBH domination, i.e., tq > t BH
+eq . However, we found that
+KUV/Kev remains the same for both tq > t BH
+eq and tq < t BH
+eq .
+– 17 –
+
+--- Page 19 ---
+Figure 8. Induced GW spectrum at the present epoch, from PBH density fluctuations. We project
+future sensitivity curves from several low and high-frequency GW detectors, along with BBN bound
+on ∆Neff from present and future experiments, shown via the horizontal lines. In the right panel, we
+also compare the spectrum of induced GWs for k = 0, q= 1 scenario, as shown via the black lines.
+which leads to
+fUV≃ 4.8× 106 Hze−4k
+3 + 2k
+3
+ 1
+6
+qM in
+1 g
+−
+ 5
+6 +k
+3
+
+, (6.7)
+implying that the modified Hawking radiation typically leaves a high-frequency GW signature
+in the case of PBH reheating. The expression for the wave number kBH
+eq associated with
+the early radiation-matter equality solely depends on the fact that in which domination
+memory burden effect starts, which is decided by a β value,β⋆. Therefore, for β >β⋆, the
+memory burden effect starts during PBH domination. The time corresponding to the early
+radiation-PBH equality,tBH
+eq , obtained through the condition ρBH(tBH
+eq ) =ρR(tBH
+eq ), leads to
+β⋆ =
+s
+3ϵ
+16πγ (1−q3)S(Min)≃ 8.2× 10−6
+ 1 g
+Min
+
+1−
+ q
+0.5
+3−1/2
+, (6.8)
+under the condition tBH
+eq = tq, where S(Min) is given by Eq. (2.4). Now the mode KBH
+eq =
+aBH
+eq HBH
+eq can be written in terms of Kin as
+KBH
+eq =
+
+
+
+√
+2βK in, for β >β⋆,
+√
+2qβK in, for β <β⋆,
+(6.9)
+Note that
+√
+2 factor arises from the fact that at equality, the Hubble parameter has equal
+contribution from matter (PBH) and radiation energy densities. The induced GWs spectrum
+as a function of f can be written in terms of peak value as [69]
+ΩGW,ev(f)≈ Ωpeak
+GW,ev
+ f
+fUV
+ 11+10k
+3+2k
+I(f,k ), (6.10)
+where
+I(f,k ) =
+Z ξ0(f)
+ξ0(f)
+ds (1−s2)2 (1−c2
+ss2)−(1+ 2
+3+2k ), (6.11)
+– 18 –
+
+--- Page 20 ---
+with
+ξ0(f) =
+
+
+
+1, for fUV
+f ≥ 1+cs
+2cs ,
+2fUV
+f − 1
+cs, for 1+cs
+2cs ≥ fUV
+f ≥ 1
+2cs,
+0, for 1
+2cs ≥ fUV
+f ,
+(6.12)
+wherecs = 1/
+√
+3 is the sound speed during the radiation-dominated epoch. To find the above
+expression, we use the index of the power spectrum n =− 5
+3 + 4k
+9+6k. Upon substitution of the
+expression related to the wave numbers, Eqs. (6.5), (6.7), and (6.9) into (6.2), we have
+Ωpeak
+GW,ev≃ 4133− 4
+3+2k q4
+2.3× 10−20
+3 + 2k
+3
+− 7
+3 + 4
+9+6k
+β
+16
+3 e8k (7− 4
+3+2k )
+×
+qM in
+1 g
+ 2
+3 (1+k)(7− 4
+3+2k)
+
+
+
+1 for β >β⋆
+q8 for β <β⋆.
+(6.13)
+The peak of the amplitude is exponentially enhanced with k, but also sensitive to Min and β.
+We thus obtain the present-day GW spectral energy density as
+ΩGW,0h2(f)≃cg Ωrad,0h2 ΩGW,ev(f) = 1.62× 10−5 ΩGW,ev(f)h2, (6.14)
+where the present-day radiation energy density is Ω rad,0h2 = 4.16× 105 (i.e., including
+photons and all three species of neutrinos) and cg = (gk/g0) (gs0/gsk)4/3≃ 0.4, with (gk,g sk)
+and (g0,g s0) are the effective number of relativistic degrees of freedom associated with the
+radiation energy density and entropy when the wave number K re-enters the horizon and
+today, respectively. Note that for β >β⋆, where the memory burden effect starts during PBH
+domination, our analysis is only applicable for q >0.41 [69]. Otherwise, another intermediate
+radiation domination will arise during PBH domination, where our analysis fails to capture
+those possibilities.
+In Fig. 8, are displayed the projected sensitivity reach of several proposed GW experiments
+such as µ-ARES [121], LISA [122], Einstein Telescope (ET) [ 123–126], Cosmic Explorer [ 127,
+128] the Big Bang Observer (BBO) [ 129–131], and DECIGO [ 132, 133]. Using the present
+CMB measurement from Planck legacy data [ 76], we find Ω GW,0h2 ≲ 2× 10−6, with ∆Neff≃
+0.34. We show the present bound from Planck and future projection from CMB-S4 by the
+red solid and red dashed horizontal lines, respectively. We notice the induced GW spectrum
+has frequency dependency ∝ f
+11+10 k
+3+2k [cf. Eq. (6.10)] and the peak frequency is associated
+with the frequency fUV. Moreover, the spectrum drops sharply above the frequency scale
+2csfUV and goes to zero at the cutoff scale 2 fUV. Since fUV∝Kin and smaller mass BHs
+are formed earlier, thus with the decreases in the PBH mass, the peak frequency shifts more
+towards the end of the inflation, or in other words, to higher frequencies. In the right panel,
+we compare the corresponding GW spectrum from PBH density fluctuation for k = 0, q= 1,
+i.e., without taking the effect of memory burden into account. Here, we see that not only is
+the peak of the spectrum shifted to higher frequencies, but the peak amplitude is substantially
+suppressed. This is because for k = 0, there is no enhancement in the peak amplitude, as
+evident from Eq. (6.13). Also, in the absence of memory effect, fUV has no exponential
+suppression [cf. Eq. (6.7)], as a consequence, in this case, the cut-off frequency shifts towards a
+– 19 –
+
+--- Page 21 ---
+larger magnitude compared to the scenario with k> 0. We can, therefore, infer that inclusion
+of backreaction effects can actually enhance the detection potential for the induced GWs due
+to PBH density fluctuation.
+Both the GW energy density and the DM/BAU parameter space are controlled by the
+common set of parameters: {k, q} once we fixed the PBH parameters such as Min and β.
+In the case of PBH domination for a given k, q, and Min as we have seen before, one can
+choose the DM and RHN mass such that correct relic abundance and baryon asymmetry are
+produced. Here, we show that such combinations of k, q, and PBH parameters can potentially
+give rise to a detectable GW signal. A noteworthy feature here is the fact that parameters
+corresponding to the right BAU produce GW in the kHz-MHz frequency, while those that
+provide the right amount of DM give rise to GW ranging from mHz-kHz frequency. This is
+because, to produce right baryon asymmetry from PBH evaporation, typically very lighter
+PBHs Min < 103 g is required, for which fUV is higher, following Eq. (6.7). On the other
+hand, the production of observed DM abundance requires much heavier PBHs, Min > 103
+g, which leads to lower fUV. Let us recall that the value of k may be extracted by precisely
+measuring the slope of the spectrum, whereas Min may be extracted from the peak frequency.
+In summary, future detection of GW in either of these two frequency regimes may indicate
+the possibility of the production of cosmic relics, namely DM and baryon asymmetry, from
+the evanescence of a memory-affected PBH.
+7 Conclusions
+In this study, we have investigated the potential solutions to two enduring challenges in particle-
+cosmology: elucidating the abundance of dark matter (DM) and the dynamic generation of
+baryon asymmetry (BAU), solely through the evaporation process of primordial black holes
+(PBHs). Specifically, we have accounted for the impact of backreaction resulting from the
+emitted quanta during PBH evaporation, which gives rise to the so-called “memory burden”
+effect. This effectively diminishes the rate of PBH evaporation by inverse powers of the black
+hole entropy. Typically, when the energy of the emitted quanta reaches a level comparable
+to that of the PBH itself, Hawking’s semi-classical approach becomes inadequate, and the
+memory effect becomes significant. Given that for PBHs with masses greater than the Planck
+mass (MP ), the black hole entropy is considerable; the memory burden can substantially
+prolong the lifespan of the PBH [cf. Fig. 1 and Fig. 2].
+The inclusion of backreaction increases the viable parameter space for DM produced
+form PBH evaporation, that can make up all of the abundance [cf. Fig. 4]. However, the
+observed DM relic can only be produced from PBHs with masses ≳ 103 g, satisfying bound
+on warm DM due to Ly-α. On the other hand, generation of baryon asymmetry via vanilla
+leptogenesis requires light PBHs ≲ 103 g with corresponding right-handed neutrinos (RHN)
+having masses ≳ 1011 GeV [cf. Fig. 5]. Consequently, obeying all existing constraints from
+BBN, CMB, and WDM while simultaneously satisfying DM relic and BAU is not possible in
+the simplest framework [cf. Fig. 6]. In addition to the production from PBH evaporation,
+we also consider another inherent source of particle generation, namely, gravitational UV
+freeze-in. In this case, the cosmological relics are produced from the 2-to-2 scattering of the
+bath particles, mediated by graviton. Together, we explore the viable parameter space for
+DM and baryon asymmetry with a purely gravitational origin.
+Finally, we discuss the detectability of primordial gravitational waves (GW), originating
+from the induced PBH number density fluctuations. We find, future GW detectors can indeed
+– 20 –
+
+--- Page 22 ---
+probe such a spectrum [cf. Fig. 8], typically in the frequency range of mHz-MHz. Importantly,
+any detection of such spectrum paves the way to detect modified Hawking radiation, thereby
+constraining either the DM mass scale or the scale of leptogenesis.
+Acknowledgment
+MRH wishes to acknowledge support from the Science and Engineering Research Board
+(SERB), Government of India (GoI), for the SERB National Post-Doctoral fellowship, File
+Number: PDF/2022/002988. O.Z. has been partially supported by Sostenibilidad-UdeA, the
+UdeA/CODI Grants 2022-52380 and 2023-59130, and Ministerio de Ciencias Grant CD 82315
+CT ICETEX 2021-1080. The authors thank Guillem Dom` enech for useful communications,
+and Debasish Borah for providing comments on the manuscript.
+References
+[1] S. W. Hawking, Black hole explosions , Nature 248 (1974) 30–31.
+[2] S. W. Hawking, Particle Creation by Black Holes , Commun. Math. Phys. 43 (1975) 199–220.
+[Erratum: Commun.Math.Phys. 46, 206 (1976)].
+[3] B. Carr and F. Kuhnel, Primordial Black Holes as Dark Matter: Recent Developments , Ann.
+Rev. Nucl. Part. Sci. 70 (2020) 355–394, [ arXiv:2006.02838].
+[4] Planck Collaboration, N. Aghanim et al., Planck 2018 results. VI. Cosmological parameters ,
+Astron. Astrophys. 641 (2020) A6, [ arXiv:1807.06209]. [Erratum: Astron.Astrophys. 652, C4
+(2021)].
+[5] L. Morrison, S. Profumo, and Y. Yu, Melanopogenesis: Dark Matter of (almost) any Mass and
+Baryonic Matter from the Evaporation of Primordial Black Holes weighing a Ton (or less) ,
+JCAP 05 (2019) 005, [ arXiv:1812.10606].
+[6] P. Gondolo, P. Sandick, and B. Shams Es Haghi, Effects of primordial black holes on dark
+matter models, Phys. Rev. D 102 (2020), no. 9 095018, [ arXiv:2009.02424].
+[7] N. Bernal and O. Zapata, Dark Matter in the Time of Primordial Black Holes , JCAP 03 (2021)
+015, [arXiv:2011.12306].
+[8] A. M. Green, Supersymmetry and primordial black hole abundance constraints , Phys. Rev. D 60
+(1999) 063516, [ astro-ph/9903484].
+[9] M. Y. Khlopov, A. Barrau, and J. Grain, Gravitino production by primordial black hole
+evaporation and constraints on the inhomogeneity of the early universe , Class. Quant. Grav. 23
+(2006) 1875–1882, [ astro-ph/0406621].
+[10] D.-C. Dai, K. Freese, and D. Stojkovic, Constraints on dark matter particles charged under a
+hidden gauge group from primordial black holes , JCAP 06 (2009) 023, [ arXiv:0904.3331].
+[11] R. Allahverdi, J. Dent, and J. Osinski, Nonthermal production of dark matter from primordial
+black holes, Phys. Rev. D 97 (2018), no. 5 055013, [ arXiv:1711.10511].
+[12] O. Lennon, J. March-Russell, R. Petrossian-Byrne, and H. Tillim, Black Hole Genesis of Dark
+Matter, JCAP 04 (2018) 009, [ arXiv:1712.07664].
+[13] D. Hooper, G. Krnjaic, and S. D. McDermott, Dark Radiation and Superheavy Dark Matter
+from Black Hole Domination , JHEP 08 (2019) 001, [ arXiv:1905.01301].
+[14] A. Chaudhuri and A. Dolgov, PBH evaporation, baryon asymmetry,and dark matter ,
+arXiv:2001.11219.
+– 21 –
+
+--- Page 23 ---
+[15] I. Masina, Dark matter and dark radiation from evaporating primordial black holes , Eur. Phys.
+J. Plus 135 (2020), no. 7 552, [ arXiv:2004.04740].
+[16] I. Baldes, Q. Decant, D. C. Hooper, and L. Lopez-Honorez, Non-Cold Dark Matter from
+Primordial Black Hole Evaporation , JCAP 08 (2020) 045, [ arXiv:2004.14773].
+[17] N. Bernal and O. Zapata, Gravitational dark matter production: primordial black holes and UV
+freeze-in, Phys. Lett. B 815 (2021) 136129, [ arXiv:2011.02510].
+[18] N. Bernal and O. Zapata, Self-interacting Dark Matter from Primordial Black Holes , JCAP 03
+(2021) 007, [ arXiv:2010.09725].
+[19] B. C. Lacki and J. F. Beacom, Primordial Black Holes as Dark Matter: Almost All or Almost
+Nothing, Astrophys. J. Lett. 720 (2010) L67–L71, [ arXiv:1003.3466].
+[20] S. M. Boucenna, F. Kuhnel, T. Ohlsson, and L. Visinelli, Novel Constraints on Mixed
+Dark-Matter Scenarios of Primordial Black Holes and WIMPs , JCAP 07 (2018) 003,
+[arXiv:1712.06383].
+[21] J. Adamek, C. T. Byrnes, M. Gosenca, and S. Hotchkiss, WIMPs and stellar-mass primordial
+black holes are incompatible , Phys. Rev. D 100 (2019), no. 2 023506, [ arXiv:1901.08528].
+[22] B. Carr, F. Kuhnel, and L. Visinelli, Black holes and WIMPs: all or nothing or something else ,
+Mon. Not. Roy. Astron. Soc. 506 (2021), no. 3 3648–3661, [ arXiv:2011.01930].
+[23] I. Masina, Dark matter and dark radiation from evaporating Kerr primordial black holes ,
+arXiv:2103.13825.
+[24] N. Bernal, Y. F. Perez-Gonzalez, Y. Xu, and O. Zapata, ALP Dark Matter in a Primordial
+Black Hole Dominated Universe , arXiv:2110.04312.
+[25] N. Bernal, F. Hajkarim, and Y. Xu, Axion Dark Matter in the Time of Primordial Black Holes ,
+Phys. Rev. D 104 (2021) 075007, [ arXiv:2107.13575].
+[26] R. Samanta and F. R. Urban, Testing Super Heavy Dark Matter from Primordial Black Holes
+with Gravitational Waves , arXiv:2112.04836.
+[27] P. Sandick, B. S. Es Haghi, and K. Sinha, Asymmetric reheating by primordial black holes ,
+Phys. Rev. D 104 (2021), no. 8 083523, [ arXiv:2108.08329].
+[28] A. Cheek, L. Heurtier, Y. F. Perez-Gonzalez, and J. Turner, Primordial Black Hole Evaporation
+and Dark Matter Production: II. Interplay with the Freeze-In/Out Mechanism ,
+arXiv:2107.00016.
+[29] A. Cheek, L. Heurtier, Y. F. Perez-Gonzalez, and J. Turner, Primordial Black Hole Evaporation
+and Dark Matter Production: I. Solely Hawking radiation , arXiv:2107.00013.
+[30] B. Barman, D. Borah, S. J. Das, and R. Roshan, Non-thermal origin of asymmetric dark matter
+from inflaton and primordial black holes , JCAP 03 (2022), no. 03 031, [ arXiv:2111.08034].
+[31] D. Borah, S. Jyoti Das, R. Samanta, and F. R. Urban, PBH-infused seesaw origin of matter
+and unique gravitational waves , JHEP 03 (2023) 127, [ arXiv:2211.15726].
+[32] M. Chen, G. B. Gelmini, P. Lu, and V. Takhistov, Primordial Black Hole Neutrinogenesis of
+Sterile Neutrino Dark Matter , arXiv:2309.12258.
+[33] M. Chen, G. B. Gelmini, P. Lu, and V. Takhistov, Primordial Black Hole Sterile
+Neutrinogenesis: Sterile Neutrino Dark Matter Production Independent of Couplings ,
+arXiv:2312.12136.
+[34] T. Kim, P. Lu, D. Marfatia, and V. Takhistov, Regurgitated Dark Matter, arXiv:2309.05703.
+[35] T. C. Gehrman, B. Shams Es Haghi, K. Sinha, and T. Xu, Recycled Dark Matter,
+arXiv:2310.08526.
+– 22 –
+
+--- Page 24 ---
+[36] A. Chaudhuri, B. Coleppa, and K. Loho, Dark matter production from two evaporating PBH
+distributions, Phys. Rev. D 108 (2023), no. 3 035040, [ arXiv:2301.08588].
+[37] D. Baumann, P. J. Steinhardt, and N. Turok, Primordial Black Hole Baryogenesis ,
+hep-th/0703250.
+[38] A. Hook, Baryogenesis from Hawking Radiation , Phys. Rev. D 90 (2014), no. 8 083535,
+[arXiv:1404.0113].
+[39] T. Fujita, M. Kawasaki, K. Harigaya, and R. Matsuda, Baryon asymmetry, dark matter, and
+density perturbation from primordial black holes , Phys. Rev. D 89 (2014), no. 10 103501,
+[arXiv:1401.1909].
+[40] Y. Hamada and S. Iso, Baryon asymmetry from primordial black holes , PTEP 2017 (2017),
+no. 3 033B02, [ arXiv:1610.02586].
+[41] D. Hooper and G. Krnjaic, GUT Baryogenesis With Primordial Black Holes , Phys. Rev. D 103
+(2021), no. 4 043504, [ arXiv:2010.01134].
+[42] Y. F. Perez-Gonzalez and J. Turner, Assessing the tension between a black hole dominated early
+universe and leptogenesis , Phys. Rev. D 104 (2021), no. 10 103021, [ arXiv:2010.03565].
+[43] S. Datta, A. Ghosal, and R. Samanta, Baryogenesis from ultralight primordial black holes and
+strong gravitational waves from cosmic strings , JCAP 08 (2021) 021, [ arXiv:2012.14981].
+[44] S. Jyoti Das, D. Mahanta, and D. Borah, Low scale leptogenesis and dark matter in the
+presence of primordial black holes , JCAP 11 (2021) 019, [ arXiv:2104.14496].
+[45] N. Smyth, L. Santos-Olmsted, and S. Profumo, Gravitational Baryogenesis and Dark Matter
+from Light Black Holes , arXiv:2110.14660.
+[46] N. Bernal, C. S. Fong, Y. F. Perez-Gonzalez, and J. Turner, Rescuing High-Scale Leptogenesis
+using Primordial Black Holes , arXiv:2203.08823.
+[47] A. Ambrosone, R. Calabrese, D. F. G. Fiorillo, G. Miele, and S. Morisi, Towards baryogenesis
+via absorption from primordial black holes , Phys. Rev. D 105 (2022), no. 4 045001,
+[arXiv:2106.11980].
+[48] R. Calabrese, M. Chianese, J. Gunn, G. Miele, S. Morisi, and N. Saviano, Limits on light
+primordial black holes from high-scale leptogenesis , Phys. Rev. D 107 (2023), no. 12 123537,
+[arXiv:2305.13369].
+[49] R. Calabrese, M. Chianese, J. Gunn, G. Miele, S. Morisi, and N. Saviano, Impact of primordial
+black holes on heavy neutral leptons searches in the framework of resonant leptogenesis ,
+arXiv:2311.13276.
+[50] T. C. Gehrman, B. Shams Es Haghi, K. Sinha, and T. Xu, Baryogenesis, primordial black holes
+and MHz–GHz gravitational waves , JCAP 02 (2023) 062, [ arXiv:2211.08431].
+[51] T. C. Gehrman, B. Shams Es Haghi, K. Sinha, and T. Xu, The primordial black holes that
+disappeared: connections to dark matter and MHz-GHz gravitational Waves , JCAP 10 (2023)
+001, [arXiv:2304.09194].
+[52] K. Schmitz and X.-J. Xu, Wash-in leptogenesis after the evaporation of primordial black holes ,
+Phys. Lett. B 849 (2024) 138473, [ arXiv:2311.01089].
+[53] C. Lunardini and Y. F. Perez-Gonzalez, Dirac and Majorana neutrino signatures of primordial
+black holes, JCAP 08 (2020) 014, [ arXiv:1910.07864].
+[54] F. Schiavone, D. Montanino, A. Mirizzi, and F. Capozzi, Axion-like particles from primordial
+black holes shining through the Universe , JCAP 08 (2021) 063, [ arXiv:2107.03420].
+[55] N. Bernal, V. Mu˜ noz Albornoz, S. Palomares-Ruiz, and P. Villanueva-Domingo, Current and
+future neutrino limits on the abundance of primordial black holes , arXiv:2203.14979.
+– 23 –
+
+--- Page 25 ---
+[56] B. Barman, D. Borah, S. Jyoti Das, and R. Roshan, Gravitational wave signatures of a
+PBH-generated baryon-dark matter coincidence, Phys. Rev. D 107 (2023), no. 9 095002,
+[arXiv:2212.00052].
+[57] D. Borah, N. Das, S. Jyoti Das, and R. Samanta, Cogenesis of baryon and dark matter with
+PBH and QCD axion , arXiv:2403.02401.
+[58] M. Chianese, S. Datta, R. Samanta, and N. Saviano, Tomography of flavoured leptogenesis with
+primordial blue gravitational waves , arXiv:2405.00641.
+[59] M. R. Haque, E. Kpatcha, D. Maity, and Y. Mambrini, Primordial black hole versus inflaton ,
+Phys. Rev. D 109 (2024), no. 2 023521.
+[60] B. Barman, S. Jyoti Das, M. R. Haque, and Y. Mambrini, A Gravitational M´ enage ` a Trois:
+leptogenesis, primordial gravitational wave & PBH-induced reheating , arXiv:2403.05626.
+[61] G. Dvali, L. Eisemann, M. Michel, and S. Zell, Black hole metamorphosis and stabilization by
+memory burden, Phys. Rev. D 102 (2020), no. 10 103523, [ arXiv:2006.00011].
+[62] G. Dvali, A Microscopic Model of Holography: Survival by the Burden of Memory ,
+arXiv:1810.02336.
+[63] G. Dvali, L. Eisemann, M. Michel, and S. Zell, Universe’s Primordial Quantum Memories ,
+JCAP 03 (2019) 010, [ arXiv:1812.08749].
+[64] G. Dvali, J. S. Valbuena-Berm´ udez, and M. Zantedeschi,Memory Burden Effect in Black Holes
+and Solitons: Implications for PBH , arXiv:2405.13117.
+[65] A. Alexandre, G. Dvali, and E. Koutsangelas, New Mass Window for Primordial Black Holes as
+Dark Matter from Memory Burden Effect , arXiv:2402.14069.
+[66] M. R. Haque, S. Maity, D. Maity, and Y. Mambrini, Quantum effects on the evaporation of
+PBHs: contributions to dark matter , arXiv:2404.16815.
+[67] G. Dom` enech, C. Lin, and M. Sasaki, Gravitational wave constraints on the primordial black
+hole dominated early universe , JCAP 04 (2021) 062, [ arXiv:2012.08151]. [Erratum: JCAP 11,
+E01 (2021)].
+[68] T. Papanikolaou, V. Vennin, and D. Langlois, Gravitational waves from a universe filled with
+primordial black holes , JCAP 03 (2021) 053, [ arXiv:2010.11573].
+[69] S. Balaji, G. Dom` enech, G. Franciolini, A. Ganz, and J. Tr¨ ankle,Probing modified Hawking
+evaporation with gravitational waves from the primordial black hole dominated universe ,
+arXiv:2403.14309.
+[70] B. J. Carr and S. W. Hawking, Black holes in the early Universe , Mon. Not. Roy. Astron. Soc.
+168 (1974) 399–415.
+[71] J. H. MacGibbon, Quark and gluon jet emission from primordial black holes. 2. The Lifetime
+emission, Phys. Rev. D 44 (1991) 376–392.
+[72] J. Auffinger, I. Masina, and G. Orlando, Bounds on warm dark matter from Schwarzschild
+primordial black holes , Eur. Phys. J. Plus 136 (2021), no. 2 261, [ arXiv:2012.09867].
+[73] V. Thoss, A. Burkert, and K. Kohri, Breakdown of Hawking Evaporation opens new Mass
+Window for Primordial Black Holes as Dark Matter Candidate , arXiv:2402.17823.
+[74] G. Dvali and C. Gomez, Black Hole’s Quantum N-Portrait , Fortsch. Phys. 61 (2013) 742–767,
+[arXiv:1112.3359].
+[75] G. Dvali and C. Gomez, Black Holes as Critical Point of Quantum Phase Transition , Eur.
+Phys. J. C 74 (2014) 2752, [ arXiv:1207.4059].
+[76] Planck Collaboration, Y. Akrami et al., Planck 2018 results. X. Constraints on inflation ,
+Astron. Astrophys. 641 (2020) A10, [ arXiv:1807.06211].
+– 24 –
+
+--- Page 26 ---
+[77] BICEP, Keck Collaboration, P. A. R. Ade et al., Improved Constraints on Primordial
+Gravitational Waves using Planck, WMAP, and BICEP/Keck Observations through the 2018
+Observing Season, Phys. Rev. Lett. 127 (2021), no. 15 151301, [ arXiv:2110.00483].
+[78] M. Tristram et al., Improved limits on the tensor-to-scalar ratio using BICEP and Planck data ,
+Phys. Rev. D 105 (2022), no. 8 083524, [ arXiv:2112.07961].
+[79] M. Riajul Haque, E. Kpatcha, D. Maity, and Y. Mambrini, Primordial black hole reheating ,
+Phys. Rev. D 108 (2023), no. 6 063523, [ arXiv:2305.10518].
+[80] M. Garny, M. Sandora, and M. S. Sloth, Planckian Interacting Massive Particles as Dark
+Matter, Phys. Rev. Lett. 116 (2016), no. 10 101302, [ arXiv:1511.03278].
+[81] Y. Tang and Y.-L. Wu, On Thermal Gravitational Contribution to Particle Production and
+Dark Matter, Phys. Lett. B 774 (2017) 676–681, [ arXiv:1708.05138].
+[82] M. Garny, A. Palessandro, M. Sandora, and M. S. Sloth, Theory and Phenomenology of
+Planckian Interacting Massive Particles as Dark Matter , JCAP 02 (2018) 027,
+[arXiv:1709.09688].
+[83] N. Bernal, M. Dutra, Y. Mambrini, K. Olive, M. Peloso, and M. Pierre, Spin-2 Portal Dark
+Matter, Phys. Rev. D 97 (2018), no. 11 115020, [ arXiv:1803.01866].
+[84] B. Barman and N. Bernal, Gravitational SIMPs, JCAP 06 (2021) 011, [ arXiv:2104.10699].
+[85] B. Barman, N. Bernal, A. Das, and R. Roshan, Non-minimally coupled vector boson dark
+matter, JCAP 01 (2022), no. 01 047, [ arXiv:2108.13447].
+[86] M. R. Haque and D. Maity, Gravitational dark matter: Free streaming and phase space
+distribution, Phys. Rev. D 106 (2022), no. 2 023506, [ arXiv:2112.14668].
+[87] G. F. Giudice, E. W. Kolb, and A. Riotto, Largest temperature of the radiation era and its
+cosmological implications, Phys. Rev. D 64 (2001) 023508, [ hep-ph/0005123].
+[88] N. Bernal, Y. F. Perez-Gonzalez, and Y. Xu, Superradiant production of heavy dark matter
+from primordial black holes , Phys. Rev. D 106 (2022), no. 1 015020, [ arXiv:2205.11522].
+[89] V. Irˇ siˇ c et al.,New Constraints on the free-streaming of warm dark matter from intermediate
+and small scale Lyman-α forest data, Phys. Rev. D 96 (2017), no. 2 023522,
+[arXiv:1702.01764].
+[90] G. Ballesteros, M. A. G. Garcia, and M. Pierre, How warm are non-thermal relics? Lyman- α
+bounds on out-of-equilibrium dark matter , JCAP 03 (2021) 101, [ arXiv:2011.13458].
+[91] M. Fujii, K. Hamaguchi, and T. Yanagida, Leptogenesis with almost degenerate majorana
+neutrinos, Phys. Rev. D 65 (2002) 115012, [ hep-ph/0202210].
+[92] S. Davidson, E. Nardi, and Y. Nir, Leptogenesis, Phys. Rept. 466 (2008) 105–177,
+[arXiv:0802.2962].
+[93] K. Kaneta, Y. Mambrini, K. A. Olive, and S. Verner, Inflation and Leptogenesis in High-Scale
+Supersymmetry, Phys. Rev. D 101 (2020), no. 1 015002, [ arXiv:1911.02463].
+[94] R. T. Co, Y. Mambrini, and K. A. Olive, Inflationary Gravitational Leptogenesis,
+arXiv:2205.01689.
+[95] S. Dodelson and M. S. Turner, Nonequilibrium neutrino statistical mechanics in the expanding
+universe, Phys. Rev. D 46 (1992) 3372–3387.
+[96] S. Hannestad and J. Madsen, Neutrino decoupling in the early universe , Phys. Rev. D 52 (1995)
+1764–1769, [astro-ph/9506015].
+[97] A. D. Dolgov, S. H. Hansen, and D. V. Semikoz, Nonequilibrium corrections to the spectra of
+massless neutrinos in the early universe , Nucl. Phys. B 503 (1997) 426–444, [ hep-ph/9703315].
+– 25 –
+
+--- Page 27 ---
+[98] G. Mangano, G. Miele, S. Pastor, T. Pinto, O. Pisanti, and P. D. Serpico, Relic neutrino
+decoupling including flavor oscillations , Nucl. Phys. B 729 (2005) 221–234, [ hep-ph/0506164].
+[99] P. F. de Salas and S. Pastor, Relic neutrino decoupling with flavour oscillations revisited , JCAP
+07 (2016) 051, [ arXiv:1606.06986].
+[100] M. Escudero Abenza, Precision early universe thermodynamics made simple: Neff and neutrino
+decoupling in the Standard Model and beyond , JCAP 05 (2020) 048, [ arXiv:2001.04466].
+[101] K. Akita and M. Yamaguchi, A precision calculation of relic neutrino decoupling , JCAP 08
+(2020) 012, [ arXiv:2005.07047].
+[102] J. Froustey, C. Pitrou, and M. C. Volpe, Neutrino decoupling including flavour oscillations and
+primordial nucleosynthesis, JCAP 12 (2020) 015, [ arXiv:2008.01074].
+[103] J. J. Bennett, G. Buldgen, P. F. De Salas, M. Drewes, S. Gariazzo, S. Pastor, and Y. Y. Y.
+Wong, Towards a precision calculation of Neff in the Standard Model II: Neutrino decoupling in
+the presence of flavour oscillations and finite-temperature QED , JCAP 04 (2021) 073,
+[arXiv:2012.02726].
+[104] K. Abazajian et al., CMB-S4 Science Case, Reference Design, and Project Plan ,
+arXiv:1907.04473.
+[105] CMB-HD Collaboration, S. Aiola et al., Snowmass2021 CMB-HD White Paper ,
+arXiv:2203.05728.
+[106] D. Baumann, P. J. Steinhardt, K. Takahashi, and K. Ichiki, Gravitational Wave Spectrum
+Induced by Primordial Scalar Perturbations , Phys. Rev. D 76 (2007) 084019, [ hep-th/0703290].
+[107] J. R. Espinosa, D. Racco, and A. Riotto, A Cosmological Signature of the SM Higgs Instability:
+Gravitational Waves, JCAP 09 (2018) 012, [ arXiv:1804.07732].
+[108] G. Dom` enech,Induced gravitational waves in a general cosmological background , Int. J. Mod.
+Phys. D 29 (2020), no. 03 2050028, [ arXiv:1912.05583].
+[109] H. V. Ragavendra, P. Saha, L. Sriramkumar, and J. Silk, Primordial black holes and secondary
+gravitational waves from ultraslow roll and punctuated inflation , Phys. Rev. D 103 (2021), no. 8
+083510, [arXiv:2008.12202].
+[110] K. Inomata, K. Kohri, and T. Terada, Detected stochastic gravitational waves and subsolar-mass
+primordial black holes , Phys. Rev. D 109 (2024), no. 6 063506, [ arXiv:2306.17834].
+[111] G. Franciolini, A. Iovino, Junior., V. Vaskonen, and H. Veermae, Recent Gravitational Wave
+Observation by Pulsar Timing Arrays and Primordial Black Holes: The Importance of
+Non-Gaussianities, Phys. Rev. Lett. 131 (2023), no. 20 201401, [ arXiv:2306.17149].
+[112] H. Firouzjahi and A. Talebian, Induced gravitational waves from ultra slow-roll inflation and
+pulsar timing arrays observations , JCAP 10 (2023) 032, [ arXiv:2307.03164].
+[113] S. Heydari and K. Karami, Primordial black holes in non-canonical scalar field inflation driven
+by quartic potential in the presence of bump , JCAP 02 (2024) 047, [ arXiv:2309.01239].
+[114] S. Heydari and K. Karami, Primordial black holes and secondary gravitational waves from
+generalized power-law non-canonical inflation with quartic potential , Eur. Phys. J. C 84 (2024),
+no. 2 127, [ arXiv:2310.11030].
+[115] S. Maity, N. Bhaumik, M. R. Haque, D. Maity, and L. Sriramkumar, Constraining the history
+of reheating with the NANOGrav 15-year data , arXiv:2403.16963.
+[116] J. L. Zagorac, R. Easther, and N. Padmanabhan, GUT-Scale Primordial Black Holes: Mergers
+and Gravitational Waves , JCAP 06 (2019) 052, [ arXiv:1903.05053].
+[117] G. Dom` enech, V. Takhistov, and M. Sasaki,Exploring evaporating primordial black holes with
+gravitational waves, Phys. Lett. B 823 (2021) 136722, [ arXiv:2105.06816].
+– 26 –
+
+--- Page 28 ---
+[118] T. Papanikolaou, Gravitational waves induced from primordial black hole fluctuations: the effect
+of an extended mass function , JCAP 10 (2022) 089, [ arXiv:2207.11041].
+[119] N. Bhaumik, A. Ghoshal, and M. Lewicki, Doubly peaked induced stochastic gravitational wave
+background: testing baryogenesis from primordial black holes , JHEP 07 (2022) 130,
+[arXiv:2205.06260].
+[120] N. Bhaumik, A. Ghoshal, R. K. Jain, and M. Lewicki, Distinct signatures of spinning PBH
+domination and evaporation: doubly peaked gravitational waves, dark relics and CMB
+complementarity, JHEP 05 (2023) 169, [ arXiv:2212.00775].
+[121] A. Sesana et al., Unveiling the gravitational universe at µ-Hz frequencies, Exper. Astron. 51
+(2021), no. 3 1333–1383, [ arXiv:1908.11391].
+[122] LISA Collaboration, P. Amaro-Seoane et al., Laser Interferometer Space Antenna,
+arXiv:1702.00786.
+[123] M. Punturo et al., The Einstein Telescope: A third-generation gravitational wave observatory ,
+Class. Quant. Grav. 27 (2010) 194002.
+[124] S. Hild et al., Sensitivity Studies for Third-Generation Gravitational Wave Observatories , Class.
+Quant. Grav. 28 (2011) 094013, [ arXiv:1012.0908].
+[125] B. Sathyaprakash et al., Scientific Objectives of Einstein Telescope , Class. Quant. Grav. 29
+(2012) 124013, [ arXiv:1206.0331]. [Erratum: Class.Quant.Grav. 30, 079501 (2013)].
+[126] M. Maggiore et al., Science Case for the Einstein Telescope , JCAP 03 (2020) 050,
+[arXiv:1912.02622].
+[127] LIGO Scientific Collaboration, B. P. Abbott et al., Exploring the Sensitivity of Next
+Generation Gravitational Wave Detectors , Class. Quant. Grav. 34 (2017), no. 4 044001,
+[arXiv:1607.08697].
+[128] D. Reitze et al., Cosmic Explorer: The U.S. Contribution to Gravitational-Wave Astronomy
+beyond LIGO, Bull. Am. Astron. Soc. 51 (2019), no. 7 035, [ arXiv:1907.04833].
+[129] J. Crowder and N. J. Cornish, Beyond LISA: Exploring future gravitational wave missions ,
+Phys. Rev. D 72 (2005) 083005, [ gr-qc/0506015].
+[130] V. Corbin and N. J. Cornish, Detecting the cosmic gravitational wave background with the big
+bang observer, Class. Quant. Grav. 23 (2006) 2435–2446, [ gr-qc/0512039].
+[131] G. M. Harry, P. Fritschel, D. A. Shaddock, W. Folkner, and E. S. Phinney, Laser interferometry
+for the big bang observer , Class. Quant. Grav. 23 (2006) 4887–4894. [Erratum:
+Class.Quant.Grav. 23, 7361 (2006)].
+[132] Seiji Kawamura et al., The japanese space gravitational wave antenna: Decigo , Classical and
+Quantum Gravity 28 (apr, 2011) 094011.
+[133] DECIGO working group Collaboration, S. Kawamura, Primordial gravitational wave and
+DECIGO, PoS KMI2019 (2019) 019.
+– 27 –

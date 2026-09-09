@@ -1,0 +1,34 @@
+# Watch-LSM Downstream Fine-Tuning Configuration
+experiment_name: "watch_lsm_downstream_eval"
+seed: 42
+
+# Pretrained Weights
+pretrained_checkpoint: "models/checkpoints/pretrain/best_foundation_model.pt"
+freeze_backbone: false         # Set true for linear probe; false for full fine-tuning
+
+# Tasks Configuration
+tasks:
+  heart_rate:
+    enabled: true
+    loss_type: "L1Loss"
+    metric: "MAE_BPM"
+    head_hidden_dim: 64
+  step_cadence:
+    enabled: true
+    loss_type: "MSELoss"
+    metric: "MAE_SPM"
+    head_hidden_dim: 64
+  activity_state:
+    enabled: true
+    num_classes: 4             # 0: Rest/Sedentary, 1: Walk, 2: Run, 3: Bike/Exercise
+    loss_type: "CrossEntropyLoss"
+    metric: "Accuracy"
+    head_hidden_dim: 64
+
+# Training Hyperparameters
+training:
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 0.001
+  max_epochs: 30
+  save_dir: "models/checkpoints/downstream"

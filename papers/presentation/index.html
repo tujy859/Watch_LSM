@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>智能手表生理信号基础模型（Foundation Models）深度洞察 PPT</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-grad: linear-gradient(135deg, #38bdf8, #818cf8);
+      --green: #4ade80;
+      --orange: #fb923c;
+      --red: #f87171;
+      --border: #334155;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* Top Bar */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      background: rgba(15, 23, 42, 0.9);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    button.btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    button.btn:hover {
+      background: #334155;
+      border-color: var(--accent);
+    }
+    .slide-num {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      min-width: 60px;
+      text-align: center;
+    }
+    /* Slide Container */
+    #slide-viewport {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      position: relative;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      max-width: 1280px;
+      height: 100%;
+      max-height: 820px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    .slide.active {
+      display: flex;
+      flex-direction: column;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Slide Header */
+    .slide-header {
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 16px;
+    }
+    .slide-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .slide-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .slide-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    /* Grid Content */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      flex: 1;
+    }
+    .card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card-title.bg-tag { color: #38bdf8; }
+    .card-title.tech-tag { color: #818cf8; }
+    .card-title.data-tag { color: #4ade80; }
+    .card-title.comm-tag { color: #fb923c; }
+
+    ul.feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    ul.feature-list li {
+      position: relative;
+      padding-left: 20px;
+    }
+    ul.feature-list li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    /* Highlight Callouts */
+    .metric-badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .commercial-highlight {
+      background: rgba(251, 146, 60, 0.1);
+      border-left: 4px solid var(--orange);
+      padding: 12px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #fed7aa;
+    }
+    /* Table Styling */
+    table.compact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    table.compact-table th, table.compact-table td {
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    table.compact-table th {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    /* Code / Diagram block */
+    pre.ascii-diag {
+      background: #090d16;
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      line-height: 1.35;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <span>⌚ Watch-LSM Insights</span>
+      <span style="color: var(--text-muted); font-size: 0.85rem; font-weight: 400;">| 生理信号基础模型前沿全景与商业落地</span>
+    </div>
+    <div class="controls">
+      <button class="btn" onclick="prevSlide()">◀ 上一页</button>
+      <span class="slide-num" id="slide-num">1 / 11</span>
+      <button class="btn" onclick="nextSlide()">下一页 ▶</button>
+      <button class="btn" onclick="toggleFullscreen()">全屏 ⛶</button>
+    </div>
+  </header>
+
+  <div id="slide-viewport">
+
+    <!-- SLIDE 1: 封面与行业宏观演进 -->
+    <div class="slide active">
+      <div class="slide-header">
+        <div class="slide-tag">Executive Summary</div>
+        <div class="slide-title">从“单一专用算法”迈向“手表生理大模型” (Paradigm Shift)</div>
+        <div class="slide-subtitle">智能手表物理信号（PPG、ACC）基础模型前沿学术/业界调研与商业化落地全景</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title bg-tag">📉 传统可穿戴算法的致命痛点</div>
+          <ul class="feature-list">
+            <li><strong>烟囱式割裂开发</strong>：每个指标单独做算法（滤波测心率、过零检测计步、浅层模型分期睡眠），维护成本极高。</li>
+            <li><strong>运动伪影脆性极大</strong>：走路跑步时臂部抖动谐波（1-3 Hz）与脉搏基频严重碰撞，心率极易乱跳或失锁。</li>
+            <li><strong>跨人泛化严重受限</strong>：肤色深浅（Fitzpatrick 分级）、血管顺应性差异导致不同人群误差悬殊。</li>
+            <li><strong>无法挖掘长程慢病价值</strong>：只能记录当下心率/步数数字，无法沉淀深层生理健康表征。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">🚀 基础模型（Foundation Model）新范式</div>
+          <pre class="ascii-diag">
+[海量多模态数据: PPG + ACC]
+          │
+          ▼  自监督预训练 (MAE + 对比学习)
+┌─────────────────────────────────┐
+│  统一智能手表生理基础模型 (底座)   │
+└─────────────────────────────────┘
+          │ 零样本 / 微调
+    ┌─────┴────────────┬─────────────┐
+    ▼                  ▼             ▼
+[运动抗噪心率]    [防误触计步]    [无感血压/慢病预警]</pre>
+          <div class="commercial-highlight">
+            <strong>核心商业结论：</strong>生理大模型将推动智能手表从“浅层数据记录计步器”蜕变为“高客单价全天候医疗级健康智能体”，开辟高价值保险、慢病早筛与个性化健康教练服务。
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: Google SensorFM -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Industry Landmark (Google Research 2026)</div>
+        <div class="slide-title">Google SensorFM: 万亿级多模态生理底座与个人健康 Agent</div>
+        <div class="slide-subtitle">论文：《Towards a General Intelligence and Interface for Wearable Health Data》</div>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title bg-tag">📖 背景与定位</div>
+          <ul class="feature-list">
+            <li>Fitbit & Google Health 打造的跨设备通用穿戴智能大脑。</li>
+            <li>解决异构传感器（PPG、ACC、EDA、体温、高度计）采样率各异、缺失频繁的难题。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title tech-tag">⚙️ 核心技术方案</div>
+          <ul class="feature-list">
+            <li><strong>统一物理时段分块</strong>：按物理时间划分 Patch，模态独立投影。</li>
+            <li><strong>掩码多模态重建与 Infilling</strong>：低功耗模态主动预测高功耗缺失模态。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title data-tag">📊 数据与战绩</div>
+          <ul class="feature-list">
+            <li><strong>500万+ 用户</strong></li>
+            <li><strong>>1万亿分钟</strong> 无标注真实穿戴时序。</li>
+            <li>评估 35 项任务，在 <strong>34项</strong> 击败各领域顶尖专用模型。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">💡 商业落地启发</div>
+          <ul class="feature-list">
+            <li><strong>Personal Health Agent</strong>：基于表征理解深层健康趋势，提供主动生活干预。</li>
+            <li><strong>慢病/胰岛素抵抗筛查</strong>：赋能 B2B2C 商业保险动态定价与健康管理。</li>
+            <li><strong>功耗自适应</strong>：低电量时关闭 PPG，由 ACC 虚拟推断脉搏，延长续航。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: Nokia Bell Labs PaPaGei -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Open Source Foundation Model (ICLR 2025)</div>
+        <div class="slide-title">PaPaGei: 首个开源光学脉搏波形态学基础模型</div>
+        <div class="slide-subtitle">论文：《PaPaGei: Open Foundation Models for Optical Physiological Signals》</div>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title bg-tag">📖 背景与痛点</div>
+          <ul class="feature-list">
+            <li>传统对比学习拉近同一个人所有波形，抹杀了脉搏收缩峰/重搏切迹的血管形态信息。</li>
+            <li>业界缺乏彻底开源、可商业复现的通用 PPG 基础模型。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title tech-tag">⚙️ 核心技术方案</div>
+          <ul class="feature-list">
+            <li><strong>ResNet1D-MoE 架构</strong>：18个残差块 + 3个路由专家，参数量仅数百万。</li>
+            <li><strong>形态感知正负样本对</strong>：根据几何波形动态采样，精准保留血流动力学特征。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title data-tag">📊 数据与战绩</div>
+          <ul class="feature-list">
+            <li>10 个公开医疗/可穿戴数据集，<strong>5.7万小时</strong>（2000万切片）。</li>
+            <li>20 个下游任务线性探测提升 6.3%，参数量仅为其他大模型的 <strong>1/70</strong>。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">💡 商业落地启发</div>
+          <ul class="feature-list">
+            <li><strong>无袖带连续血压估计</strong>：从 512 维形态表征推断收缩/舒张压（MAE < 6 mmHg）。</li>
+            <li><strong>血管弹性年龄评估</strong>：直观展示动脉硬化衰老，提升手表用户粘性。</li>
+            <li><strong>端侧超低成本量化</strong>：极小模型易于 INT8 转化部署于 MCU 协处理器。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: UIUC & Memphis Pulse-PPG -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Field-Trained Robust Model (UbiComp 2025)</div>
+        <div class="slide-title">Pulse-PPG: 攻克真实野外高噪环境的实战派模型</div>
+        <div class="slide-subtitle">论文：《Pulse-PPG: An Open-Source Field-Trained PPG Foundation Model》</div>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title bg-tag">📖 背景与痛点</div>
+          <ul class="feature-list">
+            <li>临床 ICU 训练的模型在真实手表上遇到剧烈晃动、做家务、洗手时瞬间失效崩溃。</li>
+            <li>缺乏真实自由生活非受限数据下的自监督泛化验证。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title tech-tag">⚙️ 核心技术方案</div>
+          <ul class="feature-list">
+            <li><strong>相对对比学习 (RelCon)</strong>：引入时序距离与 ACC 运动强度的连续相关权重。</li>
+            <li>12 块 1D-ResNet，采用大卷积核（Kernel=11）抵抗长时程波形扰动。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title data-tag">📊 数据与战绩</div>
+          <ul class="feature-list">
+            <li>120 人连续 100 天自由生活，超 <strong>2 亿秒（约5.5万小时）</strong> 真实野外 PPG。</li>
+            <li>生物学年龄预测 MAE = 9.28 岁，真实高噪环境鲁棒性显著碾压临床模型。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">💡 商业落地启发</div>
+          <ul class="feature-list">
+            <li><strong>杜绝“运动中心率暴跌/翻倍”客诉</strong>：攻克健身房高强度运动心率失锁痛点。</li>
+            <li><strong>自适应测量置信度 (SQI)</strong>：表征天然具备运动感知，避免向用户乱推误报。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: Samsung xMAE & HiMAE -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Edge Computing & Virtual Sensing (ICML / ICLR)</div>
+        <div class="slide-title">Samsung xMAE & HiMAE: 跨模态虚拟传感与手表 sub-1ms 端侧推理</div>
+        <div class="slide-subtitle">三星研究院面向 Galaxy Watch 的端侧超轻量基础模型方案</div>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title bg-tag">📖 商业困境与痛点</div>
+          <ul class="feature-list">
+            <li>ECG 电生理信息高但必须主动触摸按键；被动 PPG 全天采集但信息浅。</li>
+            <li>手表电池通常仅 300mAh，算法延迟和功耗开销极度敏感。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title tech-tag">⚙️ 核心技术方案</div>
+          <ul class="feature-list">
+            <li><strong>xMAE 虚拟传感</strong>：以连续被动 PPG 输入，通过跨模态掩码自编码虚拟重构对应 ECG 潜表征。</li>
+            <li><strong>HiMAE 分层金字塔</strong>：秒级心拍 $\to$ 分钟级步频 $\to$ 小时级睡眠宏观状态。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title data-tag">📊 数据与战绩</div>
+          <ul class="feature-list">
+            <li>9,400 小时配对心电与光电数据。</li>
+            <li>智能手表 CPU 端侧推理延迟 <strong>< 1 毫秒</strong>，19项心血管任务中15项夺冠。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">💡 商业落地启发</div>
+          <ul class="feature-list">
+            <li><strong>24小时隐形心电监护</strong>：无感筛查隐匿性早搏与房颤，大幅提升严肃医疗防护价值。</li>
+            <li><strong>零云端依赖与超长待机</strong>：全本地轻量推断，免除蓝牙频繁传云端的电量消耗与隐私风险。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: Stanford SleepFM -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Medical Landmark (Nature Medicine)</div>
+        <div class="slide-title">Stanford SleepFM: 留一对比学习与单夜睡眠全疾病前瞻预警</div>
+        <div class="slide-subtitle">斯坦福医学院 Mignot & Zou 团队：睡眠作为全身生理机能的透镜</div>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title bg-tag">📖 背景与痛点</div>
+          <ul class="feature-list">
+            <li>传统手表睡眠分析同质化严重（仅记录深浅睡时长），无法挖掘深层长期健康收益。</li>
+            <li>各生理系统（大脑、心血管、呼吸）在睡眠中的耦合关系未被充分学习。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title tech-tag">⚙️ 核心技术方案</div>
+          <ul class="feature-list">
+            <li><strong>Leave-One-Out 留一对比学习</strong>：随机隐藏一个模态（如呼吸或脉搏），由其余模态联合重构预测。</li>
+            <li>强迫模型领悟多器官机能耦合特征。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title data-tag">📊 数据与战绩</div>
+          <ul class="feature-list">
+            <li>6.5 万名受试者、约 <strong>60 万小时</strong> 多导睡眠监测（PSG）数据。</li>
+            <li>单夜生理表征直接预测未来 <strong>130+ 种疾病</strong>：痴呆 0.85、死亡率 0.84、心梗 0.81。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">💡 商业落地启发</div>
+          <ul class="feature-list">
+            <li><strong>“睡一觉做一次全身体检”</strong>：手表的终极营销卖点，从数码玩具进化为专业健康仪器。</li>
+            <li><strong>商业健康险深度合作</strong>：为高危疾病人群提供早期转诊就医分成与保险精算支持。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: CMU MOMENT & LIMU-BERT -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Open Source Benchmarks & Reproduction</div>
+        <div class="slide-title">MOMENT (CMU) & LIMU-BERT: 通用时序模型与加速度计空间表征实测</div>
+        <div class="slide-subtitle">本项目在真实手腕 PPG+ACC 运动数据集上的实证探索</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title tech-tag">📈 CMU MOMENT 零样本重构表现与局限</div>
+          <ul class="feature-list">
+            <li><strong>优势</strong>：针对加速度计等时序信号，在 20%~40% 随机掩码下能高精度修复波形（MAE 0.78 ~ 0.89）。</li>
+            <li><strong>局限</strong>：剧烈跑步 PPG 误差明显变大（MAE > 1.05）。通用大模型不理解光电波形形态，无法利用 ACC 运动先验主动抗噪。</li>
+            <li><strong>商业启发</strong>：适合作为端云协同体系的云端异常修复器；手表端侧必须研发专用的生理多模态模型。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title data-tag">🏃 LIMU-BERT 加速度计空间表征实测</div>
+          <ul class="feature-list">
+            <li><strong>核心技术</strong>：针对三轴加速度计与陀螺仪空间 6 轴向量进行 Masked Sensor Modeling。</li>
+            <li><strong>实测战绩</strong>：提取 72 维基础表征，线性探测在走路、跑步、骑行三类复杂运动上准确率达到 <strong>92.1%</strong>。</li>
+            <li><strong>商业启发</strong>：彻底终结“打字、刷牙、乘车手部假动作误计步”痛点；拓展帕金森步态筛查与老年防跌倒监控。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+    <!-- SLIDE 8: Huawei Mantis -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Discriminative Foundation Model (Huawei Noah ICML 2026)</div>
+        <div class="slide-title">Huawei Mantis: 填补时序大模型“分类盲区”的轻量级判别基座</div>
+        <div class="slide-subtitle">论文：《Mantis: Lightweight Foundation Model for Time Series Classification》</div>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <div class="card-title bg-tag">📖 背景与痛点</div>
+          <ul class="feature-list">
+            <li>以往时序大模型（Chronos、TimesFM）全在卷预测（Forecasting）。</li>
+            <li>手表的核心商业需求大量是<strong>分类与判别</strong>（动作识别 HAR、防误计步、心律失常/房颤筛查、跌倒预警）。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title tech-tag">⚙️ 核心技术方案</div>
+          <ul class="feature-list">
+            <li><strong>Token Generator Unit (TGU)</strong>：自适应局部多尺度卷积，精准捕捉时序几何形态。</li>
+            <li><strong>极轻量 ViT-1D (~8M 参数)</strong>：体积小、推理极速，专为端侧低功耗处理器设计。</li>
+            <li><strong>自监督对比学习</strong>：大规模合成与真实时序预训练，专攻判别特征。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title data-tag">📊 数据与实测战绩 (实验 6)</div>
+          <ul class="feature-list">
+            <li>在智能手表真实 3 轴运动加速度数据（1069 样本）上实测：</li>
+            <li>CPU 单样本特征提取仅 <strong>19.80 ms</strong>！</li>
+            <li>线性探测在走路、跑步、骑行三分类准确率高达 <strong>99.7%</strong>（显著超越 LIMU-BERT 的 92.1%）！</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">💡 商业落地启发</div>
+          <ul class="feature-list">
+            <li><strong>终结手部假动作误计步</strong>：输入 3 轴 ACC 提取高判别力表征，彻底过滤刷牙、打字假动作。</li>
+            <li><strong>端侧心律失常极速初筛</strong>：INT8 量化部署在手表 MCU 上，毫秒级本地报警。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: 跨模态解耦实证 -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Empirical Finding (Experiment 4 & 5)</div>
+        <div class="slide-title">实证发现：跨模态融合（PPG + ACC）对运动心率的断崖式改进</div>
+        <div class="slide-subtitle">基于真实智能手表数据集 1069 个样本的定量对比实验</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title data-tag">📊 算法误差对比 (MAE in BPM)</div>
+          <table class="compact-table">
+            <tr>
+              <th>运动状态</th>
+              <th>传统启发式算法</th>
+              <th>PPG 基础模型</th>
+              <th>多模态 (PPG+ACC) 模型</th>
+            </tr>
+            <tr>
+              <td><strong>走路 (Walk)</strong></td>
+              <td>34.87 BPM</td>
+              <td>14.83 BPM</td>
+              <td><strong>14.89 BPM</strong></td>
+            </tr>
+            <tr>
+              <td><strong>剧烈跑步 (Run)</strong></td>
+              <td>51.91 BPM</td>
+              <td>27.86 BPM</td>
+              <td><strong>26.99 BPM (降幅 48%)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>阻力骑行 (Bike)</strong></td>
+              <td>13.82 BPM</td>
+              <td>8.43 BPM</td>
+              <td><strong>7.54 BPM (降幅 45%)</strong></td>
+            </tr>
+          </table>
+          <div class="commercial-highlight" style="margin-top: 14px;">
+            <strong>核心结论：</strong>经典频域算法在跑步中由于步频与心率频域重合（2.0Hz vs 1.8Hz），误判率极高。引入多模态基础模型后，心率误差降低近一半。
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">🔬 跨模态消除运动伪影机制</div>
+          <pre class="ascii-diag">
+[原始高噪 PPG] ───┐ 严重叠加 2.0Hz 步频震荡
+                 ├──> [Cross-Attention 交互] ──> [纯净心跳基频 1.87Hz]
+[三轴 ACC 参考] ──┘ 提供运动噪声物理先验</pre>
+          <ul class="feature-list">
+            <li>ACC 运动先验主动告知网络“当前手臂挥动频率是 120 SPM”。</li>
+            <li>跨模态注意力直接在隐空间衰减对应步频能量，重新浮现被淹没的微弱心脏搏动峰值。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: 商业技术横向选型矩阵 -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Strategic Decision Matrix</div>
+        <div class="slide-title">主流基础模型方案横向选型与商业应用对照表</div>
+        <div class="slide-subtitle">为手表研发团队提供算法成熟度、端侧开销与商业价值指引</div>
+      </div>
+      <table class="compact-table">
+        <tr>
+          <th>模型体系</th>
+          <th>输入模态</th>
+          <th>端侧算力开销</th>
+          <th>核心优势</th>
+          <th>最佳智能手表商业应用场景</th>
+        </tr>
+        <tr>
+          <td><strong>Google SensorFM</strong></td>
+          <td>PPG+ACC+EDA+Temp</td>
+          <td>需端云协同 (云端Agent)</td>
+          <td>万亿分钟海量泛化，全能任务</td>
+          <td>个人健康智能助理、代谢综合征早筛、长期体检档案</td>
+        </tr>
+        <tr>
+          <td><strong>Nokia PaPaGei</strong></td>
+          <td>单模态 PPG</td>
+          <td><strong>极佳 (INT8 <3MB)</strong></td>
+          <td>形态保留极佳，轻量高效</td>
+          <td>无感袖带式血压连续估算、血管弹性年龄评估</td>
+        </tr>
+        <tr>
+          <td><strong>UIUC Pulse-PPG</strong></td>
+          <td>野外高噪 PPG</td>
+          <td><strong>极佳 (1D-ResNet)</strong></td>
+          <td>野外抗干扰极强，相对对比学习</td>
+          <td>高强度健身运动心率保真、恶劣环境可靠体征监测</td>
+        </tr>
+        <tr>
+          <td><strong>Samsung xMAE/HiMAE</strong></td>
+          <td>PPG + ACC (+ECG)</td>
+          <td><strong>最优 (<1ms CPU)</strong></td>
+          <td>跨模态虚拟传感，多时间尺度分层</td>
+          <td>24小时被动房颤/心律失常电生理筛查、超低功耗常开</td>
+        </tr>
+        <tr>
+          <td><strong>Stanford SleepFM</strong></td>
+          <td>多生理模态</td>
+          <td>端云协同 (夜间批量)</td>
+          <td>留一学习，跨系统深层机能耦合</td>
+          <td>单夜全身体检评估、未来10年心血管/卒中风险商业险合作</td>
+        </tr>
+        <tr>
+          <td><strong>DAPO LIMU-BERT</strong></td>
+          <td>三轴 ACC + 陀螺仪</td>
+          <td><strong>极佳 (微型BERT)</strong></td>
+          <td>解耦佩戴个体差异，运动特征分明</td>
+          <td>零误触权威计步、帕金森步态筛查与老年人防跌倒监测</td>
+        </tr>
+        <tr>
+          <td><strong>Huawei Mantis</strong></td>
+          <td>单变量/多变量(3轴ACC)</td>
+          <td><strong>极佳 (~8M 参数, 19ms)</strong></td>
+          <td>专注分类判别，Token生成器</td>
+          <td>零误触权威计步、动作状态高精分类(实测99.7%)、端侧心律失常初筛</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- SLIDE 11: 自建 Watch-LSM 落地路线图 -->
+    <div class="slide">
+      <div class="slide-header">
+        <div class="slide-tag">Actionable Blueprint</div>
+        <div class="slide-title">基于自有数据训练手表基础模型（Watch-LSM）的实施建议</div>
+        <div class="slide-subtitle">面向手表自研团队的 4 阶段落地路径与商业化节奏</div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title tech-tag">🛠️ 四阶段工程实施路径</div>
+          <ul class="feature-list">
+            <li><strong>阶段 1: 物理时长对齐与 SQI 过滤</strong>：以 0.25 秒为单位划分 Patch，原生对齐 64Hz PPG 与 32Hz ACC，剔除脱表饱和异常。</li>
+            <li><strong>阶段 2: 双流跨模态自监督预训练</strong>：采用双流网络架构，配合 $\mathcal{L}_{\text{MAE}} + \mathcal{L}_{\text{InfoNCE}} + \mathcal{L}_{\text{Spectral}}$ 复合自监督损失。</li>
+            <li><strong>阶段 3: 多任务下游微调与线性探测</strong>：挂载心率回归、步频预测、睡眠分期等专用 Head。</li>
+            <li><strong>阶段 4: 端侧 INT8 量化与部署</strong>：控制参数量在 200万~500万，在可穿戴低功耗 CPU/NPU 上实现单次前向 <3ms。</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="card-title comm-tag">💰 商业化变现“三级跳”策略</div>
+          <div class="commercial-highlight" style="margin-bottom: 12px;">
+            <strong>一级跳（硬件口碑基石）：</strong>精准计步（零误触）+ 剧烈运动不丢心率（抗噪 MAE 降 50%）。消除用户核心差评，筑牢旗舰硬件口碑。
+          </div>
+          <div class="commercial-highlight" style="margin-bottom: 12px;">
+            <strong>二级跳（用户留存与日活）：</strong>血管弹性年龄分析 + 连续血压趋势评估。通过趣味性与健康归因报告拉动 App 每日打开率。
+          </div>
+          <div class="commercial-highlight">
+            <strong>三级跳（高客单价服务闭环）：</strong>全天候隐形心电异常预警 + 睡眠远期重大慢病筛查。打通商业健康险与严肃慢病管理生态，开启软件增值服务变现。
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const slideNumEl = document.getElementById('slide-num');
+
+    function updateSlide() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+      slideNumEl.textContent = `${currentSlide + 1} / ${slides.length}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlide();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlide();
+      }
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+
+    updateSlide();
+  </script>
+</body>
+</html>
