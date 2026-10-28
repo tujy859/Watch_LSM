@@ -9,17 +9,19 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-28（Asia/Shanghai，venv 与修复实施中）*
+*最后更新时间：2026-10-28（Asia/Shanghai，CPU/GPU venv 已验证，数据后台修复中）*
 
 > **最新实施状态优先于历史记录**：本机已恢复原 GitHub 提交历史与 `origin`，工作分支为 `codex/multi-device-repair`。用户已明确要求使用 **venv** 并授权修复代码、环境及数据；不要再按 Conda 环境迁移设计。PulseDB 正按 38 份修复 + 207 份补齐清单处理，最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交 Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
-- [x] **Windows/Python 3.12 独立 CPU venv 实测通过**：`pip check`、11 项测试、4 份模型精确哈希、checkpoint 严格加载与合成前后向均通过；真实 wrist 634 个训练窗口/435 个验证窗口完成一轮预训练及一轮下游心率训练。结果仅用于 smoke check，不是泛化评测。依赖锁定见 `requirements/locks/windows-py312-common.txt`，本机诊断见忽略的 `.local/doctor-cpu.json`。
+- [x] **Windows/Python 3.12 独立 CPU/GPU venv 实测通过**：CPU 构建及 CUDA 12.4 构建分别安装验证；当前 `.venv` 为 PyTorch `2.5.1+cu124`。`pip check`、13 项测试、4 份模型精确哈希、checkpoint 严格加载与 CPU/GPU 合成前后向均通过。真实 wrist 634/435 窗口完成 CPU、GPU 各一轮预训练及 CPU 一轮下游训练。结果仅用于 smoke check。公共锁已排除本机 wheel 地址和 Torch；更新用 `scripts/lock_environment.py`。
+- [x] **远端工作分支与多平台检查已就绪**：已推送 `codex/multi-device-repair` 并创建 [PR #1](https://github.com/tujy859/Watch_LSM/pull/1)。首轮 Windows/Linux、Python3.10/3.12 四组 CPU CI 均通过；后续更新以 PR 当前提交的检查为准。主分支尚未合并，其他设备应先检出该工作分支。
+- [x] **新设备完整 AAMI 文件清单已建立**：`pulsedb_recovery.json` 明确为本次迁移差集，不能代表空白设备的完整数据集；新设备使用 `pulsedb_aami.json` 的242份患者文件 + 官方测试索引（共243项）。测试防止把缺失差集误作完整定义；正式片段索引语义仍待加载器核验。
 - [x] **数据修复已持久化运行**：使用 venv 的 Windows 后台任务按明确清单处理，日志 `.local/data-transfer.log`、`.local/data-transfer.err.log`，状态 `scripts/data_status.py`。本机6份已验证文件在切换后台时复查并跳过；旧失败片段已续传。完整作业仍未完成。
 - [x] **恢复源码版本控制**：已在保留全部工作文件的前提下抓取原远端历史并重建本地索引，分支 `codex/multi-device-repair` 基于原 `main`。尚未合并任何远端分支。
-- [x] **venv 与 CPU/GPU 入口已实现**：新增 `pyproject.toml`、CPU/CUDA 12.4 PyTorch 构建清单、`scripts/bootstrap_env.py`、统一路径与设备选择、模型诊断脚本及 Windows/Linux CPU CI。实际依赖安装与设备验证仍在进行，以后续验证记录为准。
+- [x] **venv 与 CPU/GPU 入口已实现**：新增 `pyproject.toml`、CPU/CUDA 12.4 构建清单、安装/锁定/诊断脚本、统一路径与设备选择，以及 Windows/Linux CPU CI；安装结束必须通过实际反向步骤才能标记环境就绪。
 - [x] **数据修复工具与故障保护已实现**：`scripts/sync_pulsedb.py` 支持明确 profile、断点前缀校验、流式 SHA-256、本地复读、HDF5 首尾抽查、原子替换与进程锁；5 项恢复/失败保护测试已通过。245 份文件的实际修复补齐作业已启动，尚未完成；不以启动作业代替完成状态。
 - [x] **迁移代码问题已修复**：训练入口采用项目根目录/本机配置，支持显式设备、worker 与 CPU batch 默认值；预训练实际读取 YAML，微调缺失 checkpoint 时需显式 `--from_scratch`；清理旧硬编码路径与危险的默认全库同步入口。
 - [x] **多设备与云端源评估完成**：确认现有远端为 `tujy859/Watch_LSM`（main）。远端 86 份文件本机均存在，除 `.gitignore` 外内容一致或仅换行不同；11 份此前已有的本地同步/下载脚本与 AGENTS.md 未同步至远端。多设备方案见 [`docs/multi_device_and_data_plan_2026-10-28.md`](docs/multi_device_and_data_plan_2026-10-28.md)。本次未修改远端或建立新 Git 历史。
@@ -44,7 +46,7 @@
 
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
 - [ ] **完成已启动的分批修复**：以 `data_manifests/pulsedb_recovery.json` 和本机 `.local/` 状态为准完成38份修复及207份补齐；网络/DriveFS 中断通过重试与续传恢复，不要全量下载。完成后重新扫描 HDF5 并建立可用覆盖报告。
-- [ ] **完成 GPU venv 与多平台验证**：官方 CUDA 12.4 wheel 的 SHA-256 固定，正在缓存下载；安装后必须用实际合成反向验证，不能只检查 cuda_available。Windows/Linux CPU CI 已配置，其他设备与 MPS 仍需实际验证；上游 repos/ 历史快照还需独立版本核验。
+- [ ] **扩展其他硬件与上游验证**：本机 CPU/GPU 与 Windows/Linux CPU CI 已实测；其他具体 GPU、macOS MPS 仍需按实际设备验证。上游 repos/ 历史快照还需独立版本核验，不把核心库通过视为全部基模复现完成。
 - [ ] **修复历史实验解释与划分**：路径入口已处理；实验4的正式预训练权重接入、实验4/6受试者隔离划分与指标重测仍待独立研究任务，不把本轮环境恢复当成这些实验已经复现。
 - [ ] **核验官方索引的本地覆盖率**：AAMI 索引 1,340 条记录含 MIMIC 674 条、VitalDB 666 条；按 `Subj_Name` 下划线前缀映射患者文件名的初步推断，仅 185 条能找到本地文件。需正式核验名称和片段偏移映射；不得把本地子集结果称为完整官方 AAMI 测试。
 - [ ] **构建标准相对路径数据加载模块**：在 `watch_lsm/data/pulsedb.py` 中编写基于 `PROJECT_ROOT` 的 PulseDB Dataset 与 DataLoader，能一键读取 `AAMI_Test_Info.mat` 与本地 748 例患者的 10 秒波形切片。
@@ -52,7 +54,7 @@
 - [ ] **多模态 PPG+ECG 跨模态重构探索**：基于 `mimic_perform` 与 `pulsedb`，探索单模态 PPG 推理虚拟 ECG / 血压的生成网络。
 
 ### 3. 避坑指南与关键技术决议 (Critical Decisions & Caveats)
-- ⚠️ **文件数和总容量不能证明完整**：本机 PulseDB 总容量仍为 137.12 GiB，但 38 份 MAT 已截断；缺少源设备校验和，尚不能证明其余文件逐字节一致。BIDMC/WESAD 的 `.zip` 也不是有效 ZIP，不能当作可用数据集。
+- ⚠️ **文件数和总容量不能证明完整**：迁移初查发现38份截断 MAT，实际剩余错误随后台修复变化，以本机状态为准。原有可打开文件未全部对照云端哈希。BIDMC/WESAD 的 `.zip` 也不是有效 ZIP，不能当作可用数据集。
 - ⚠️ **不要直接复用现有指标作为泛化结论**：实验 4 未加载官方预训练权重；实验 4/6 随机划分具有重叠的滑窗，存在数据泄露风险。已有指标只是历史探索产物。
 - ⚠️ **切勿盲目全量下载 PulseDB**：PulseDB v2.0 全量 5,374 个未压缩 MAT 文件实际高达 **602.74 GB**！当前本地下载的 137.12 GB 精选集已包含上百万个样本，足够训练与评测。不要一次性全下以免撑爆磁盘。
 - ⚠️ **严格使用相对路径**：代码中严禁写入类似 `r"C:\Coding\Work\Watch_LSM\..."` 的绝对路径！统一使用 `Path(__file__).resolve().parents[...]` 定位项目根目录。

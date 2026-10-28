@@ -23,6 +23,19 @@ def write_waveform(path):
 
 
 class RecoveryTests(unittest.TestCase):
+    def test_fresh_machine_aami_profile_is_complete_not_only_recovery_delta(self):
+        root = Path(__file__).resolve().parents[1]
+        recovery = json.loads((root / "data_manifests/pulsedb_recovery.json").read_text(encoding="utf-8"))
+        full = json.loads((root / "data_manifests/pulsedb_aami.json").read_text(encoding="utf-8"))
+        delta_paths = {entry["path"] for entry in recovery["files"] if "aami" in entry["profiles"]}
+        all_paths = {entry["path"] for entry in full["files"]}
+        self.assertTrue(delta_paths < all_paths)
+        self.assertEqual(len([p for p in all_paths if p.startswith("Segment_Files/")]), 242)
+        self.assertIn("Info_Files/AAMI_Test_Info.mat", all_paths)
+        for entry in full["files"]:
+            safe_child(self.target, entry["path"])
+            self.assertGreater(entry["bytes"], 0)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.base = Path(self.temp.name)

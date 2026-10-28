@@ -17,9 +17,10 @@ from scripts.sync_pulsedb import exclusive_lock
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--verify-hdf5", action="store_true")
+    parser.add_argument("--manifest", type=Path, default=ROOT / "data_manifests/pulsedb_recovery.json")
     parser.add_argument("--output", type=Path, default=ROOT / ".local/data-status.json")
     args = parser.parse_args()
-    manifest = json.loads((ROOT / "data_manifests/pulsedb_recovery.json").read_text())
+    manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     entries = [e for e in manifest["files"] if {"repair", "aami"}.intersection(e["profiles"])]
     statuses = Counter()
     per_profile = {"repair": Counter(), "aami": Counter()}
@@ -28,7 +29,7 @@ def main():
     for entry in entries:
         path = data_path("pulsedb", entry["path"])
         state_path = ROOT / ".local/pulsedb-sync" / (hashlib.sha256(entry["path"].encode()).hexdigest() + ".json")
-        record = json.loads(state_path.read_text()) if state_path.is_file() else {}
+        record = json.loads(state_path.read_text(encoding="utf-8")) if state_path.is_file() else {}
         if record.get("status") == "verified" and path.is_file() and path.stat().st_size == entry["bytes"]:
             status = "verified"
             verified_bytes += entry["bytes"]

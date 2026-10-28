@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_url": "https://drive.google.com/drive/folders/10mz4mfBo6NczPNbbjX0a9tAKQSMugBjV",
-  "note": "aami is file coverage inferred from official AAMI_Test_Info; segment mapping is not yet implemented. Source stays read-only.",
+  "note": "Recovery delta for the 2026-10-28 migrated snapshot: 38 damaged patient files and 207 missing AAMI files. Fresh machines must use pulsedb_aami.json for complete AAMI file coverage. Segment mapping is not implemented. Source stays read-only.",
   "files": [
     {
       "path": "Segment_Files/PulseDB_MIMIC/p064377.mat",

@@ -4,13 +4,17 @@
 
 使用 Python 3.10-3.12。每台电脑创建自己的 `.venv`，不复制其他电脑的 Python 环境。
 
+本轮修复在 `codex/multi-device-repair`（[PR #1](https://github.com/tujy859/Watch_LSM/pull/1)）。合并前用下列分支安装；合并后可改用默认 `main`。
+
 ```powershell
-git clone https://github.com/tujy859/Watch_LSM.git
+git clone --branch codex/multi-device-repair https://github.com/tujy859/Watch_LSM.git
 cd Watch_LSM
 python scripts/bootstrap_env.py --backend cpu
 ```
 
 Windows/Linux NVIDIA 设备选择 `--backend cu124`。本项目先固定到 PyTorch 2.5.1，分别安装官方 CPU/CUDA 12.4 wheel。安装工具使用项目本地缓存与临时目录，并执行 `pip check`。`--backend auto` 根据可用的 `nvidia-smi` 选择；默认 `cpu` 避免在普通电脑上下载 CUDA 包。
+
+安装结束前会运行合成模型的前向、反向和优化步骤。缓存齐全时可用 `--torch-wheel <已核验wheel>` 与 `--wheelhouse <完整依赖目录>` 离线安装；已有独立 venv 会先检查解释器与隔离状态，再复用，不覆写正在被后台任务使用的 Python 可执行文件。
 
 macOS 使用 `--backend cpu` 安装 PyPI 构建；运行时 `auto` 可选择可用的 MPS。当前安装和测试方案明确区分：CPU/CUDA 为本机验证目标；MPS 为可选择路径，未在本机验证。较新的 NVIDIA 架构或其他加速器不应假定兼容该基线，需要另行选择和测试 PyTorch 版本。
 
@@ -59,9 +63,18 @@ Wrist 入口沿用早期小样例的记录划分，不是正式跨人评测协�
 
 共享的包兼容范围放在 `pyproject.toml`，CPU/CUDA 构建在 `requirements/torch-*.txt`。已验证的操作系统/Python 公共依赖锁定文件放 `requirements/locks/`，不包含 torch；每机完整 freeze 写入 `.local/`，不能将某机 CUDA freeze 直接当作其他平台安装清单。
 
+更新锁定版本时，在通过验证的 venv 中运行 `python scripts/lock_environment.py --write-shared`。该工具读取包名/版本，排除 Torch 与加速器组件；不要直接把含本机 wheel 地址的 `pip freeze` 结果提交为公共锁。
+
 ## PulseDB 修复与补齐
 
-`data_manifests/pulsedb_recovery.json` 是可共享的明确范围：38 份损坏文件、207 份 AAMI 测试所需缺失患者文件，以及 11 份官方索引。它只包含相对路径、预期字节和来源，不保存某台机器“已经完整”的假设。
+`data_manifests/pulsedb_recovery.json` 是本次迁移快照的修复差集：38 份损坏文件、207 份 AAMI 所需缺失患者文件，以及可选的 11 份官方索引。该差集适用于已有复制资产的本机，不能当作空白设备的完整数据集定义。
+
+全新设备使用 `data_manifests/pulsedb_aami.json`：完整列出 242 份患者文件与官方测试索引，不假定另一台设备已有的 35 份患者文件会自动存在。新设备对应命令：
+
+```powershell
+.venv\Scripts\python.exe scripts/sync_pulsedb.py --manifest data_manifests/pulsedb_aami.json --profile aami --workers 2
+.venv\Scripts\python.exe scripts/data_status.py --manifest data_manifests/pulsedb_aami.json
+```
 
 在本机配置中填写 `paths.pulsedb_source` 后：
 

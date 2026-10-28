@@ -22,11 +22,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source-root", type=Path, help="An offline project copy containing the manifest's relative paths")
     parser.add_argument("--verify-only", action="store_true")
+    parser.add_argument("--only", action="append", help="Select a manifest path or basename; repeat for multiple assets")
     args = parser.parse_args()
-    manifest = json.loads((ROOT / "data_manifests/model_assets.json").read_text())
+    manifest = json.loads((ROOT / "data_manifests/model_assets.json").read_text(encoding="utf-8"))
     errors = []
-    for entry in manifest["files"]:
-        target = model_path(*Path(entry["path"]).parts[1:])
+    selected = [entry for entry in manifest["files"] if not args.only
+                or entry["path"] in args.only or Path(entry["path"]).name in args.only]
+    if not selected:
+        parser.error("No model manifest entries match --only")
+    for entry in selected:
+        relative = Path(entry["path"]).relative_to("models").as_posix()
+        target = safe_child(model_path(), relative)
         if target.is_file() and target.stat().st_size == entry["bytes"] and file_hash(target) == entry["sha256"]:
             print("VERIFIED", entry["path"])
             continue

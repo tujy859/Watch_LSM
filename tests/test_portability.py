@@ -13,6 +13,17 @@ from watch_lsm.runtime import select_device
 
 
 class PortabilityTests(unittest.TestCase):
+    def test_shared_locks_never_pin_local_wheels_or_hardware_builds(self):
+        for path in (PROJECT_ROOT / "requirements/locks").glob("*.txt"):
+            for line in path.read_text(encoding="utf-8").splitlines():
+                if not line.strip() or line.startswith("#"):
+                    continue
+                self.assertNotIn(" @ ", line)
+                self.assertNotIn("file:", line)
+                name = line.split("==")[0].lower().replace("_", "-")
+                self.assertNotEqual(name, "torch")
+                self.assertFalse(name.startswith(("nvidia-", "triton", "pytorch-triton")))
+
     def test_default_paths_do_not_depend_on_working_directory(self):
         previous = Path.cwd()
         with tempfile.TemporaryDirectory() as temporary:

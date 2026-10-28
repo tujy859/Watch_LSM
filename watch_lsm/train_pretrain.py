@@ -62,7 +62,13 @@ def main():
     args.num_workers = args.num_workers if args.num_workers is not None else runtime.get("num_workers", 0)
     if args.epochs < 1 or args.batch_size < 1 or args.num_workers < 0 or args.lr <= 0:
         parser.error("epochs/batch_size/lr must be positive and num_workers nonnegative")
-    args.save_dir = project_path(args.save_dir) if args.save_dir else model_path("checkpoints", "pretrain")
+    configured_save = Path(training.get("save_dir", "models/checkpoints/pretrain"))
+    if args.save_dir:
+        args.save_dir = project_path(args.save_dir)
+    elif not configured_save.is_absolute() and configured_save.parts[0] == "models":
+        args.save_dir = model_path(*configured_save.parts[1:])
+    else:
+        args.save_dir = project_path(configured_save)
     seed_everything(config.get("seed", 42))
     os.makedirs(args.save_dir, exist_ok=True)
     print(f"Using device: {device}")
