@@ -8,10 +8,13 @@ import pandas as pd
 import scipy.signal
 import wfdb
 
-sys.path.append(os.path.abspath("."))
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from watch_lsm.models.backbone import WatchLSMModel
 from watch_lsm.models.heads import WatchLSMDownstreamModel
 from watch_lsm.data.dataset import SmartwatchDataset
+from watch_lsm.paths import data_path, model_path, project_path, machine_config
+from watch_lsm.runtime import select_device, seed_everything
 
 def load_downstream_data():
     records = [
@@ -29,6 +32,7 @@ def load_downstream_data():
     act_list = []
     
     for act_name, r, act_id in records:
+        r = str(data_path("wrist", Path(r).name))
         if os.path.exists(r + ".hea") and os.path.exists(r + ".dat"):
             rec = wfdb.rdrecord(r)
             fs = rec.fs
@@ -81,16 +85,29 @@ def main():
     parser.add_argument("--task", type=str, default="heart_rate", choices=["heart_rate", "cadence", "activity"])
     parser.add_argument("--freeze_backbone", action="store_true", help="Linear probing mode (freeze backbone)")
     parser.add_argument("--epochs", type=int, default=5)
-    parser.add_argument("--batch_size", type=int, default=32)
+    parser.add_argument("--batch_size", type=int)
     parser.add_argument("--lr", type=float, default=0.001)
-    parser.add_argument("--pretrained_ckpt", type=str, default="models/checkpoints/pretrain/best_foundation_model.pt")
+    parser.add_argument("--pretrained_ckpt", type=str)
+    parser.add_argument("--device", help="auto, cpu, cuda, cuda:0 or mps")
+    parser.add_argument("--num_workers", type=int)
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--from_scratch", action="store_true", help="Explicitly allow training without a checkpoint")
     args = parser.parse_args()
 
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = select_device(args.device)
+    runtime = machine_config().get("runtime", {})
+    args.batch_size = args.batch_size if args.batch_size is not None else runtime.get("batch_size", 8 if device.type == "cpu" else 32)
+    args.num_workers = args.num_workers if args.num_workers is not None else runtime.get("num_workers", 0)
+    args.pretrained_ckpt = project_path(args.pretrained_ckpt) if args.pretrained_ckpt else model_path("checkpoints", "pretrain", "best_foundation_model.pt")
+    if args.epochs < 1 or args.batch_size < 1 or args.num_workers < 0 or args.lr <= 0:
+        parser.error("epochs/batch_size/lr must be positive and num_workers nonnegative")
+    seed_everything(args.seed)
     print(f"Task: {args.task.upper()} | Linear Probe (Freeze): {args.freeze_backbone} | Device: {device}")
 
     # Load data
     ppg_list, acc_list, hr_list, cad_list, act_list = load_downstream_data()
+    if len(ppg_list) != 5:
+        raise RuntimeError("Expected all 5 wrist recordings. Check configured datasets directory.")
     train_ppg, train_acc = ppg_list[:3], acc_list[:3]
     val_ppg, val_acc = ppg_list[3:], acc_list[3:]
 
@@ -101,8 +118,8 @@ def main():
     train_ds = SmartwatchDataset(train_ppg, train_acc, hr_list=train_hr, cadence_list=train_cad, activity_list=train_act, is_training=True, augment=True)
     val_ds = SmartwatchDataset(val_ppg, val_acc, hr_list=val_hr, cadence_list=val_cad, activity_list=val_act, is_training=False, augment=False)
 
-    train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, drop_last=True)
-    val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False)
+    train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True, drop_last=False, num_workers=args.num_workers, pin_memory=device.type == "cuda")
+    val_loader = DataLoader(val_ds, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
 
     # Base Foundation Model
     foundation = WatchLSMModel(
@@ -114,12 +131,16 @@ def main():
         num_patches=32
     )
 
-    if os.path.exists(args.pretrained_ckpt):
+    if os.path.exists(args.pretrained_ckpt) and not args.from_scratch:
         print(f"Loading pretrained backbone weights from {args.pretrained_ckpt}...")
-        ckpt = torch.load(args.pretrained_ckpt, map_location="cpu")
+        ckpt = torch.load(args.pretrained_ckpt, map_location="cpu", weights_only=True)
+        if "model_config" in ckpt:
+            foundation = WatchLSMModel(**ckpt["model_config"])
         foundation.load_state_dict(ckpt["model_state_dict"])
+    elif args.from_scratch:
+        print("Explicit --from_scratch: using random initialization.")
     else:
-        print("No pretrained checkpoint found, training from scratch...")
+        raise FileNotFoundError(f"Checkpoint missing: {args.pretrained_ckpt}. Use --from_scratch explicitly to train without it.")
 
     # Downstream Model
     model = WatchLSMDownstreamModel(

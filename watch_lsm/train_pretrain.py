@@ -9,18 +9,21 @@ import pandas as pd
 import wfdb
 
 # Add current dir to path
-sys.path.append(os.path.abspath("."))
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from watch_lsm.models.backbone import WatchLSMModel
 from watch_lsm.models.losses import CompositePretrainLoss
 from watch_lsm.data.dataset import SmartwatchDataset
+from watch_lsm.paths import data_path, model_path, project_path, load_yaml, machine_config
+from watch_lsm.runtime import select_device, seed_everything
 
 def load_data_from_wrist():
     records = [
-        "datasets/wrist/s1_walk",
-        "datasets/wrist/s2_walk",
-        "datasets/wrist/s3_run",
-        "datasets/wrist/s5_run",
-        "datasets/wrist/s1_low_resistance_bike"
+        str(data_path("wrist", "s1_walk")),
+        str(data_path("wrist", "s2_walk")),
+        str(data_path("wrist", "s3_run")),
+        str(data_path("wrist", "s5_run")),
+        str(data_path("wrist", "s1_low_resistance_bike"))
     ]
     ppg_list = []
     acc_list = []
@@ -42,19 +45,33 @@ def load_data_from_wrist():
 def main():
     parser = argparse.ArgumentParser(description="Watch-LSM Self-Supervised Pretraining")
     parser.add_argument("--config", type=str, default="watch_lsm/configs/pretrain_config.yaml")
-    parser.add_argument("--epochs", type=int, default=5)
-    parser.add_argument("--batch_size", type=int, default=32)
-    parser.add_argument("--lr", type=float, default=0.0005)
-    parser.add_argument("--save_dir", type=str, default="models/checkpoints/pretrain")
+    parser.add_argument("--epochs", type=int)
+    parser.add_argument("--batch_size", type=int)
+    parser.add_argument("--lr", type=float)
+    parser.add_argument("--save_dir", type=str)
+    parser.add_argument("--device", help="auto, cpu, cuda, cuda:0 or mps")
+    parser.add_argument("--num_workers", type=int)
     args = parser.parse_args()
-
+    config = load_yaml(args.config)
+    training = config["training"]
+    runtime = machine_config().get("runtime", {})
+    device = select_device(args.device)
+    args.epochs = args.epochs if args.epochs is not None else training["max_epochs"]
+    args.batch_size = args.batch_size if args.batch_size is not None else runtime.get("batch_size", 8 if device.type == "cpu" else training["batch_size"])
+    args.lr = args.lr if args.lr is not None else training["learning_rate"]
+    args.num_workers = args.num_workers if args.num_workers is not None else runtime.get("num_workers", 0)
+    if args.epochs < 1 or args.batch_size < 1 or args.num_workers < 0 or args.lr <= 0:
+        parser.error("epochs/batch_size/lr must be positive and num_workers nonnegative")
+    args.save_dir = project_path(args.save_dir) if args.save_dir else model_path("checkpoints", "pretrain")
+    seed_everything(config.get("seed", 42))
     os.makedirs(args.save_dir, exist_ok=True)
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"Using device: {device}")
 
     # Load data
     print("Loading smartwatch pretraining recordings...")
     ppg_list, acc_list = load_data_from_wrist()
+    if len(ppg_list) != 5:
+        raise RuntimeError("Expected all 5 wrist recordings. Check the configured datasets directory.")
     print(f"Loaded {len(ppg_list)} long recording sessions.")
 
     # Split train / val
@@ -63,26 +80,28 @@ def main():
     val_ppg = ppg_list[3:]
     val_acc = acc_list[3:]
 
-    train_dataset = SmartwatchDataset(train_ppg, train_acc, window_sec=8.0, step_sec=2.0, augment=True)
-    val_dataset = SmartwatchDataset(val_ppg, val_acc, window_sec=8.0, step_sec=2.0, augment=False)
+    signals = config["signals"]
+    dataset_args = dict(window_sec=signals["window_duration_sec"], target_fs_ppg=signals["ppg"]["sampling_rate"], target_fs_acc=signals["acc"]["sampling_rate"], step_sec=2.0)
+    train_dataset = SmartwatchDataset(train_ppg, train_acc, **dataset_args, augment=True)
+    val_dataset = SmartwatchDataset(val_ppg, val_acc, **dataset_args, augment=False)
 
-    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, drop_last=True)
-    val_loader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False)
+    train_loader = DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, drop_last=False, num_workers=args.num_workers, pin_memory=device.type == "cuda")
+    val_loader = DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers)
 
     print(f"Train samples: {len(train_dataset)} | Val samples: {len(val_dataset)}")
 
     # Model initialization
-    model = WatchLSMModel(
-        hidden_dim=128,
-        n_layers=4,
-        n_heads=4,
-        ppg_patch_size=16, # 0.25s at 64Hz
-        acc_patch_size=8,   # 0.25s at 32Hz
-        num_patches=32
-    ).to(device)
+    patch_sec = signals["ppg"]["patch_len_sec"]
+    if patch_sec != signals["acc"]["patch_len_sec"]:
+        raise ValueError("PPG and ACC patch durations must match")
+    num_patches = int(signals["window_duration_sec"] / patch_sec)
+    model_config = {key: config["model"][key] for key in ["hidden_dim", "n_layers", "n_heads", "dropout"]}
+    model_config.update(ppg_patch_size=int(patch_sec * signals["ppg"]["sampling_rate"]), acc_patch_size=int(patch_sec * signals["acc"]["sampling_rate"]), num_patches=num_patches)
+    model = WatchLSMModel(**model_config).to(device)
 
-    criterion = CompositePretrainLoss(w_recon=1.0, w_cross=0.2, w_spectral=0.1)
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=0.01)
+    weights = config["ssl"]["loss_weights"]
+    criterion = CompositePretrainLoss(w_recon=weights["mae_recon"], w_cross=weights["cross_modal_infonce"], w_spectral=weights["spectral_fft"])
+    optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, weight_decay=training["weight_decay"])
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epochs)
 
     best_val_loss = float("inf")
@@ -100,9 +119,9 @@ def main():
             
             # Create random patch masks
             B = x_p.size(0)
-            N = 32
-            mask_p = (torch.rand(B, N, device=device) < 0.4).float()
-            mask_a = (torch.rand(B, N, device=device) < 0.3).float()
+            N = num_patches
+            mask_p = (torch.rand(B, N, device=device) < config["ssl"]["mask_ratio_ppg"]).float()
+            mask_a = (torch.rand(B, N, device=device) < config["ssl"]["mask_ratio_acc"]).float()
             
             optimizer.zero_grad()
             outputs = model(x_p, x_a, mask_ppg=mask_p, mask_acc=mask_a)
@@ -131,8 +150,8 @@ def main():
                 x_p = batch["ppg"].to(device)
                 x_a = batch["acc"].to(device)
                 B = x_p.size(0)
-                mask_p = (torch.rand(B, N, device=device) < 0.4).float()
-                mask_a = (torch.rand(B, N, device=device) < 0.3).float()
+                mask_p = (torch.rand(B, N, device=device) < config["ssl"]["mask_ratio_ppg"]).float()
+                mask_a = (torch.rand(B, N, device=device) < config["ssl"]["mask_ratio_acc"]).float()
                 outputs = model(x_p, x_a, mask_ppg=mask_p, mask_acc=mask_a)
                 val_losses = criterion(outputs, mask_ppg=mask_p, mask_acc=mask_a)
                 val_loss += val_losses["total_loss"].item()
@@ -147,7 +166,10 @@ def main():
                 "epoch": epoch,
                 "model_state_dict": model.state_dict(),
                 "optimizer_state_dict": optimizer.state_dict(),
-                "val_loss": val_loss
+                "val_loss": val_loss,
+                "model_config": model_config,
+                "config": config,
+                "device": str(device)
             }, ckpt_path)
             print(f"  -> Saved best foundation model checkpoint to {ckpt_path}")
 

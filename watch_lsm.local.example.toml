@@ -1,0 +1,12 @@
+# Copy to watch_lsm.local.toml on each machine; the real file is ignored by Git.
+# Relative paths resolve against the project root. Absolute paths are permitted
+# only in your ignored machine config or explicit command-line arguments.
+[paths]
+datasets = "datasets"
+models = "models"
+results = "results"
+# pulsedb_source = "<this machine's mounted PulseDB_v2_0 directory>"
+
+[runtime]
+device = "auto"  # auto, cpu, cuda, cuda:0, mps
+num_workers = 0  # Portable Windows default; tune per machine.
