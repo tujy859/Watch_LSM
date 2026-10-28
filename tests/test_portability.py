@@ -7,12 +7,23 @@ import unittest
 from unittest.mock import patch
 
 import torch
+from packaging.requirements import Requirement
 
 from watch_lsm.paths import data_path, PROJECT_ROOT, project_path
 from watch_lsm.runtime import select_device
 
 
 class PortabilityTests(unittest.TestCase):
+    def test_cpu_and_cuda_profiles_require_different_wheel_builds(self):
+        requirements = {}
+        for profile in ["cpu", "cu124"]:
+            path = PROJECT_ROOT / f"requirements/torch-{profile}.txt"
+            requirements[profile] = Requirement(next(line for line in path.read_text(encoding="utf-8").splitlines() if line.startswith("torch")))
+        self.assertIn("2.5.1+cpu", requirements["cpu"].specifier)
+        self.assertNotIn("2.5.1+cu124", requirements["cpu"].specifier)
+        self.assertIn("2.5.1+cu124", requirements["cu124"].specifier)
+        self.assertNotIn("2.5.1+cpu", requirements["cu124"].specifier)
+
     def test_shared_locks_never_pin_local_wheels_or_hardware_builds(self):
         for path in (PROJECT_ROOT / "requirements/locks").glob("*.txt"):
             for line in path.read_text(encoding="utf-8").splitlines():

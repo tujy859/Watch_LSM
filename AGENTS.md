@@ -16,7 +16,7 @@
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
-- [x] **Windows/Python 3.12 独立 CPU/GPU venv 实测通过**：CPU 构建及 CUDA 12.4 构建分别安装验证；当前 `.venv` 为 PyTorch `2.5.1+cu124`。`pip check`、13 项测试、4 份模型精确哈希、checkpoint 严格加载与 CPU/GPU 合成前后向均通过。真实 wrist 634/435 窗口完成 CPU、GPU 各一轮预训练及 CPU 一轮下游训练。结果仅用于 smoke check。公共锁已排除本机 wheel 地址和 Torch；更新用 `scripts/lock_environment.py`。
+- [x] **Windows/Python 3.12 独立 CPU/GPU venv 实测通过**：CPU 构建及 CUDA 12.4 构建分别安装验证；当前 `.venv` 为 PyTorch `2.5.1+cu124`。`pip check`、14 项测试、4 份模型精确哈希、checkpoint 严格加载与 CPU/GPU 合成前后向均通过。真实 wrist 634/435 窗口完成 CPU、GPU 各一轮预训练及 CPU 一轮下游训练。结果仅用于 smoke check。公共锁已排除本机 wheel 地址和 Torch；更新用 `scripts/lock_environment.py`。构建清单明确 pin 到 `+cpu`/`+cu124`，避免 pip 将另一构建误判为已满足。
 - [x] **远端工作分支与多平台检查已就绪**：已推送 `codex/multi-device-repair` 并创建 [PR #1](https://github.com/tujy859/Watch_LSM/pull/1)。首轮 Windows/Linux、Python3.10/3.12 四组 CPU CI 均通过；后续更新以 PR 当前提交的检查为准。主分支尚未合并，其他设备应先检出该工作分支。
 - [x] **新设备完整 AAMI 文件清单已建立**：`pulsedb_recovery.json` 明确为本次迁移差集，不能代表空白设备的完整数据集；新设备使用 `pulsedb_aami.json` 的242份患者文件 + 官方测试索引（共243项）。测试防止把缺失差集误作完整定义；正式片段索引语义仍待加载器核验。
 - [x] **数据修复已持久化运行**：使用 venv 的 Windows 后台任务按明确清单处理，日志 `.local/data-transfer.log`、`.local/data-transfer.err.log`，状态 `scripts/data_status.py`。本机6份已验证文件在切换后台时复查并跳过；旧失败片段已续传。完整作业仍未完成。

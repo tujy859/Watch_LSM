@@ -99,6 +99,8 @@ def main():
     check = "import torch; print(torch.__version__); assert torch.version.cuda == '12.4', 'Wrong torch CUDA build'; assert torch.cuda.is_available(), 'CUDA wheel installed but driver/device unavailable'"
     if backend == "cu124":
         run([python, "-c", check], env)
+    else:
+        run([python, "-c", "import torch; assert torch.version.cuda is None, 'CPU profile still has a CUDA build'"], env)
     # cuda_available alone does not catch missing NVRTC libraries or unsupported
     # kernels. Require one real model forward/backward before declaring readiness.
     device = "cuda" if backend == "cu124" else "cpu"
