@@ -9,13 +9,17 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-28（Asia/Shanghai，CPU/GPU venv 已验证，数据后台修复中）*
+*最后更新时间：2026-10-29 11:42（Asia/Shanghai，245/245修复补齐完成，完整AAMI文件清单复核通过）*
 
-> **最新实施状态优先于历史记录**：本机已恢复原 GitHub 提交历史与 `origin`，工作分支为 `codex/multi-device-repair`。用户已明确要求使用 **venv** 并授权修复代码、环境及数据；不要再按 Conda 环境迁移设计。PulseDB 正按 38 份修复 + 207 份补齐清单处理，最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交 Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
+> **最新实施状态优先于历史记录**：本机已恢复原 GitHub 提交历史与 `origin`，工作分支为 `codex/multi-device-repair`。用户已明确要求使用 **venv** 并授权修复代码、环境及数据；不要再按 Conda 环境迁移设计。PulseDB 的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交 Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **10月29日项目整体状态复核**：本轮迁移的代码入口、独立venv与245份数据修复补齐已完成；现有Watch-LSM为PPG+ACC自监督及心率/步频/活动下游原型，尚未具备完整PulseDB官方划分加载与血压评测闭环。核心14项测试及四组CPU CI的通过证据对应提交 `048e52f`；本轮未重复运行未改动的测试。GitHub实时确认PR #1仍为open draft、未合并，main仍为 `78650d4`；本地未提交修改仅交接文档AGENTS.md，最新数据完成状态尚未推送远端。研究优先级为核验1,340条AAMI片段映射、正式预训练基线接入、受试者隔离评测及指标重测。
+- [x] **10月29日数据修复补齐完成并复核**：单worker续传于06:00:44正常结束，AAMI作业207/207通过、失败0；结合首轮修复38份，总计245/245、48,372,845,860字节（45.05 GiB）已验证。11:42后台锁已释放，本地955份波形均通过HDF5打开检查；完整AAMI清单242份患者文件及官方测试索引共243项，文件大小及HDF5首尾波形/标签抽样均通过。报告 `.local/data-status.json`、`.local/aami-file-coverage.json`。现有原始文件未全部对照云端哈希，正式索引片段偏移语义尚未核验。
+- [x] **10月29日01:16 后台状态与续传复核**：首轮于00:24结束，最终181/245份通过（修复38/38、补齐143/207），剩余64份均为 DriveFS `Errno 22` 读取失败，未新增通过文件。本地891份波形重新执行 HDF5 打开检查全部通过。已保存首轮日志到 `.local/data-transfer-first-pass*.log`，并以单worker重新启动AAMI后台任务（PID604），锁已持有，正在本地复核并跳过已验证文件后重试失败项；降低并发能否改善云盘读取仍待观察。
+- [x] **21:48 本机数据进度复核**：38/38 份损坏文件已修复并验证；AAMI 缺失文件已补齐143/207份。总计181/245份通过校验，已验证约20.66 GiB/计划45.05 GiB；剩余64份中2份传输中、40份待处理、22份本轮重试耗尽（DriveFS 读取报 `Errno 22`）。后台锁仍持有且日志持续增长。本地891份波形 MAT 全部通过 HDF5 打开检查；该扫描不等于全部原有文件已对照云端哈希。
 - [x] **Windows/Python 3.12 独立 CPU/GPU venv 实测通过**：CPU 构建及 CUDA 12.4 构建分别安装验证；当前 `.venv` 为 PyTorch `2.5.1+cu124`。`pip check`、14 项测试、4 份模型精确哈希、checkpoint 严格加载与 CPU/GPU 合成前后向均通过。真实 wrist 634/435 窗口完成 CPU、GPU 各一轮预训练及 CPU 一轮下游训练。结果仅用于 smoke check。公共锁已排除本机 wheel 地址和 Torch；更新用 `scripts/lock_environment.py`。构建清单明确 pin 到 `+cpu`/`+cu124`，避免 pip 将另一构建误判为已满足。
 - [x] **远端工作分支与多平台检查已就绪**：已推送 `codex/multi-device-repair` 并创建 [PR #1](https://github.com/tujy859/Watch_LSM/pull/1)。首轮 Windows/Linux、Python3.10/3.12 四组 CPU CI 均通过；后续更新以 PR 当前提交的检查为准。主分支尚未合并，其他设备应先检出该工作分支。
 - [x] **新设备完整 AAMI 文件清单已建立**：`pulsedb_recovery.json` 明确为本次迁移差集，不能代表空白设备的完整数据集；新设备使用 `pulsedb_aami.json` 的242份患者文件 + 官方测试索引（共243项）。测试防止把缺失差集误作完整定义；正式片段索引语义仍待加载器核验。
@@ -45,10 +49,10 @@
 - [x] **D 盘根目录镜像备份已就绪**：已全量同步至 `D:\Watch_LSM`（139.41 GB，1,925 个核心文件，0 失败），并实测通过 HDF5 路径验证，可直接作为移动硬盘中转站或独立运行。
 
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
-- [ ] **完成已启动的分批修复**：以 `data_manifests/pulsedb_recovery.json` 和本机 `.local/` 状态为准完成38份修复及207份补齐；网络/DriveFS 中断通过重试与续传恢复，不要全量下载。完成后重新扫描 HDF5 并建立可用覆盖报告。
+- [x] **完成 AAMI 补齐及失败重试**：10月29日06:00全部完成，11:42复核修复38/38、补齐207/207通过，后台正常结束；955份波形HDF5打开检查及完整AAMI清单243项大小/首尾抽样均通过。无需再次启动下载；本机覆盖报告保存在 `.local/`。
 - [ ] **扩展其他硬件与上游验证**：本机 CPU/GPU 与 Windows/Linux CPU CI 已实测；其他具体 GPU、macOS MPS 仍需按实际设备验证。上游 repos/ 历史快照还需独立版本核验，不把核心库通过视为全部基模复现完成。
 - [ ] **修复历史实验解释与划分**：路径入口已处理；实验4的正式预训练权重接入、实验4/6受试者隔离划分与指标重测仍待独立研究任务，不把本轮环境恢复当成这些实验已经复现。
-- [ ] **核验官方索引的本地覆盖率**：AAMI 索引 1,340 条记录含 MIMIC 674 条、VitalDB 666 条；按 `Subj_Name` 下划线前缀映射患者文件名的初步推断，仅 185 条能找到本地文件。需正式核验名称和片段偏移映射；不得把本地子集结果称为完整官方 AAMI 测试。
+- [ ] **核验官方索引片段映射与有效覆盖率**：AAMI 索引1,340条记录含MIMIC674条、VitalDB666条；按 `Subj_Name` 下划线前缀映射的242份患者文件及测试索引已全部在本机通过大小与抽样验证。仍需正式核验名称和片段偏移映射，逐条确认1,340条记录可读取；文件齐全不能代替完整官方AAMI测试已复现。
 - [ ] **构建标准相对路径数据加载模块**：在 `watch_lsm/data/pulsedb.py` 中编写基于 `PROJECT_ROOT` 的 PulseDB Dataset 与 DataLoader，能一键读取 `AAMI_Test_Info.mat` 与本地 748 例患者的 10 秒波形切片。
 - [ ] **建立 AAMI 血压基准评测脚本**：编写 `scripts/evaluate_aami_bp.py`，加载 PaPaGei 或 Pulse-PPG 预训练表征，评估在 AAMI 标准测试集上的无校准（CalFree）与单点校准（CalBased）收缩压/舒张压 MAE 与 SD。
 - [ ] **多模态 PPG+ECG 跨模态重构探索**：基于 `mimic_perform` 与 `pulsedb`，探索单模态 PPG 推理虚拟 ECG / 血压的生成网络。
