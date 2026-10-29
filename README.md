@@ -1,5 +1,16 @@
 # 智能手表生理信号基础模型（Watch-LSM）调研、复现与自建准备项目
 
+当前采用 **Git 同步源码 + 每机独立 venv + 清单化本地数据缓存**。新设备从 [多设备开发指南](docs/DEVELOPMENT.md) 开始：
+
+```bash
+python scripts/bootstrap_env.py --backend cpu
+# Windows/Linux NVIDIA 使用 --backend cu124
+```
+
+Windows 验证：`.venv\Scripts\python.exe scripts/doctor.py --device cpu --train-step`。Linux/macOS 使用 `.venv/bin/python`。运行设备可选 `auto/cpu/cuda/mps`，路径与硬件偏好放入忽略的 `watch_lsm.local.toml`。
+
+下文保留早期调研与探索结果。实验 4 未加载官方预训练权重，实验 4/6 的窗口随机划分存在重叠泄露风险；旧指标不能作为正式跨人泛化或临床结论。PulseDB 加载与血压正式评测仍待实现。
+
 本项目全面调研了学术界与业界关于智能手表生理信号（基于 PPG 与 ACC 的心率、步数、运动、睡眠等）的基础模型（Foundation Models），下载并深入分析了权威前沿论文与开源资源；搭建了统一的深度学习复现环境；基于开源模型与真实智能手表多模态数据集完成了 5 项关键复现与实证探索实验；并最终研发了面向用户自有数据集的生产级生理信号基础模型框架 `watch_lsm`。
 
 ---

@@ -48,7 +48,7 @@ class SmartwatchDataset(Dataset):
             step_pts = int(step_sec * orig_fs)
             
             total_pts = len(p_sig)
-            for start in range(0, total_pts - win_pts, step_pts):
+            for start in range(0, total_pts - win_pts + 1, step_pts):
                 end = start + win_pts
                 p_win = p_sig[start:end]
                 a_win = a_sig[start:end]

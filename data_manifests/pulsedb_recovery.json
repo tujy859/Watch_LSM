@@ -1,0 +1,1800 @@
+{
+  "schema_version": 1,
+  "source_url": "https://drive.google.com/drive/folders/10mz4mfBo6NczPNbbjX0a9tAKQSMugBjV",
+  "note": "Recovery delta for the 2026-10-28 migrated snapshot: 38 damaged patient files and 207 missing AAMI files. Fresh machines must use pulsedb_aami.json for complete AAMI file coverage. Segment mapping is not implemented. Source stays read-only.",
+  "files": [
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p064377.mat",
+      "bytes": 764567938,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p067735.mat",
+      "bytes": 1949067688,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p068356.mat",
+      "bytes": 240945589,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p069006.mat",
+      "bytes": 415608099,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p071645.mat",
+      "bytes": 399702737,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p073302.mat",
+      "bytes": 299647922,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p078506.mat",
+      "bytes": 75046944,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p082973.mat",
+      "bytes": 352513594,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p085976.mat",
+      "bytes": 530121744,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p085980.mat",
+      "bytes": 269312563,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p086068.mat",
+      "bytes": 222876711,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p086078.mat",
+      "bytes": 89821792,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p086210.mat",
+      "bytes": 249924892,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p086220.mat",
+      "bytes": 254684612,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p086254.mat",
+      "bytes": 344440029,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p086300.mat",
+      "bytes": 340637701,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p086359.mat",
+      "bytes": 371656244,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088325.mat",
+      "bytes": 342258685,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088471.mat",
+      "bytes": 209687263,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088514.mat",
+      "bytes": 103230480,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088552.mat",
+      "bytes": 220197802,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088685.mat",
+      "bytes": 303049532,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088734.mat",
+      "bytes": 279509893,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088764.mat",
+      "bytes": 39047136,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088851.mat",
+      "bytes": 99492440,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p088883.mat",
+      "bytes": 253143453,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092239.mat",
+      "bytes": 74591336,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092247.mat",
+      "bytes": 305177615,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092278.mat",
+      "bytes": 126837912,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092317.mat",
+      "bytes": 303090977,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092420.mat",
+      "bytes": 98549672,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092455.mat",
+      "bytes": 843937516,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092525.mat",
+      "bytes": 361888416,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092651.mat",
+      "bytes": 133103856,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p095517.mat",
+      "bytes": 547486997,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p095708.mat",
+      "bytes": 789017383,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p095776.mat",
+      "bytes": 33035504,
+      "profiles": [
+        "repair"
+      ],
+      "sha256": "22fd132067eea6ddcc0bee69f72af48b73fbbc500d1ff05983b7478c52844332"
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p095839.mat",
+      "bytes": 496930358,
+      "profiles": [
+        "repair"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p008799.mat",
+      "bytes": 457632239,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p008848.mat",
+      "bytes": 393502507,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p009258.mat",
+      "bytes": 263261478,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p011342.mat",
+      "bytes": 1156251835,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p013593.mat",
+      "bytes": 637014605,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p014279.mat",
+      "bytes": 50656568,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p023100.mat",
+      "bytes": 236731470,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p027192.mat",
+      "bytes": 325566532,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p028338.mat",
+      "bytes": 375134054,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p028541.mat",
+      "bytes": 328291664,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p028762.mat",
+      "bytes": 310146149,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p029503.mat",
+      "bytes": 332821918,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p029530.mat",
+      "bytes": 333818485,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p029541.mat",
+      "bytes": 268552589,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p030170.mat",
+      "bytes": 2797536,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p030822.mat",
+      "bytes": 118531544,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p031911.mat",
+      "bytes": 329261400,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p040425.mat",
+      "bytes": 281263200,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p043482.mat",
+      "bytes": 355620638,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p043559.mat",
+      "bytes": 60552680,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p043571.mat",
+      "bytes": 1156128014,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p043827.mat",
+      "bytes": 863992,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p043946.mat",
+      "bytes": 2798624,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p044115.mat",
+      "bytes": 391815068,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p044126.mat",
+      "bytes": 246000012,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p044622.mat",
+      "bytes": 21014576,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p044653.mat",
+      "bytes": 2314984,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p044715.mat",
+      "bytes": 458024144,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p044735.mat",
+      "bytes": 231636617,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p045346.mat",
+      "bytes": 343051253,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p045583.mat",
+      "bytes": 513841807,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p045684.mat",
+      "bytes": 240248768,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p045703.mat",
+      "bytes": 1346597440,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p045736.mat",
+      "bytes": 757403402,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p045910.mat",
+      "bytes": 239100933,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p048038.mat",
+      "bytes": 48338240,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p048056.mat",
+      "bytes": 197128567,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p048774.mat",
+      "bytes": 312158776,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p048872.mat",
+      "bytes": 1374301511,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p049255.mat",
+      "bytes": 532801955,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p049622.mat",
+      "bytes": 73068088,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p052710.mat",
+      "bytes": 300690182,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p053015.mat",
+      "bytes": 330512058,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p053342.mat",
+      "bytes": 298778294,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p053348.mat",
+      "bytes": 270818403,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p055094.mat",
+      "bytes": 967277194,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p055260.mat",
+      "bytes": 278095038,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p055263.mat",
+      "bytes": 182680538,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p055337.mat",
+      "bytes": 160688991,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p055365.mat",
+      "bytes": 297822220,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p055853.mat",
+      "bytes": 204702737,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p056490.mat",
+      "bytes": 3036944,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p057171.mat",
+      "bytes": 374419810,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p057476.mat",
+      "bytes": 219386489,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p060343.mat",
+      "bytes": 225760198,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p060393.mat",
+      "bytes": 430972012,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p060641.mat",
+      "bytes": 5601008,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p060659.mat",
+      "bytes": 9454232,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p060949.mat",
+      "bytes": 226219280,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p061568.mat",
+      "bytes": 163110806,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p062824.mat",
+      "bytes": 3534696,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p062829.mat",
+      "bytes": 370785180,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p062965.mat",
+      "bytes": 329696935,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p062974.mat",
+      "bytes": 21147008,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p065006.mat",
+      "bytes": 92582112,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p065342.mat",
+      "bytes": 620228378,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p065393.mat",
+      "bytes": 1225928,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p065565.mat",
+      "bytes": 96204720,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p065611.mat",
+      "bytes": 120084664,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p065634.mat",
+      "bytes": 244556762,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p065675.mat",
+      "bytes": 3417832,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p071414.mat",
+      "bytes": 73049912,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p075354.mat",
+      "bytes": 2919496,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p076237.mat",
+      "bytes": 911937194,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p076253.mat",
+      "bytes": 44014016,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p076261.mat",
+      "bytes": 38989336,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p081247.mat",
+      "bytes": 8259216,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p085725.mat",
+      "bytes": 462507085,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p087965.mat",
+      "bytes": 500104,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p087969.mat",
+      "bytes": 668209511,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p092982.mat",
+      "bytes": 199611361,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p094046.mat",
+      "bytes": 277262968,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p094820.mat",
+      "bytes": 196318736,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p094897.mat",
+      "bytes": 303366283,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p096977.mat",
+      "bytes": 339792196,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p097932.mat",
+      "bytes": 268999447,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p098276.mat",
+      "bytes": 589722671,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p098514.mat",
+      "bytes": 205479200,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p099111.mat",
+      "bytes": 31460536,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p099659.mat",
+      "bytes": 22494824,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_MIMIC/p099666.mat",
+      "bytes": 620880,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000238.mat",
+      "bytes": 23274752,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000241.mat",
+      "bytes": 139556320,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000284.mat",
+      "bytes": 87915992,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000336.mat",
+      "bytes": 100946944,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000345.mat",
+      "bytes": 21676904,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000346.mat",
+      "bytes": 212639111,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000385.mat",
+      "bytes": 49490000,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000621.mat",
+      "bytes": 49934144,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000709.mat",
+      "bytes": 5517120,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000710.mat",
+      "bytes": 107920968,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000851.mat",
+      "bytes": 103320408,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000917.mat",
+      "bytes": 56719008,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p000946.mat",
+      "bytes": 155929171,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001068.mat",
+      "bytes": 104409648,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001071.mat",
+      "bytes": 112567784,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001075.mat",
+      "bytes": 64025944,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001105.mat",
+      "bytes": 4295872,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001106.mat",
+      "bytes": 5275024,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001176.mat",
+      "bytes": 164056624,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001177.mat",
+      "bytes": 51431640,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001191.mat",
+      "bytes": 207568780,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001238.mat",
+      "bytes": 1482896,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001449.mat",
+      "bytes": 59692824,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001562.mat",
+      "bytes": 63550000,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001564.mat",
+      "bytes": 12253640,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001574.mat",
+      "bytes": 8939792,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001576.mat",
+      "bytes": 27023312,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001628.mat",
+      "bytes": 1718848,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001659.mat",
+      "bytes": 149800000,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001665.mat",
+      "bytes": 29580912,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001666.mat",
+      "bytes": 2458712,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001669.mat",
+      "bytes": 75011448,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001673.mat",
+      "bytes": 236856790,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001715.mat",
+      "bytes": 191748538,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001760.mat",
+      "bytes": 10630016,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001783.mat",
+      "bytes": 142871400,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001821.mat",
+      "bytes": 112465848,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001926.mat",
+      "bytes": 59282088,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p001940.mat",
+      "bytes": 70482328,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002058.mat",
+      "bytes": 94101840,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002087.mat",
+      "bytes": 71460536,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002159.mat",
+      "bytes": 99576576,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002258.mat",
+      "bytes": 49432264,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002270.mat",
+      "bytes": 50606016,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002271.mat",
+      "bytes": 73724472,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002494.mat",
+      "bytes": 31990840,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002505.mat",
+      "bytes": 24219200,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002532.mat",
+      "bytes": 36315064,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002534.mat",
+      "bytes": 72737536,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002536.mat",
+      "bytes": 28844712,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002541.mat",
+      "bytes": 176132191,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002626.mat",
+      "bytes": 133713008,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002747.mat",
+      "bytes": 94507280,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002767.mat",
+      "bytes": 102646936,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p002995.mat",
+      "bytes": 19730152,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003039.mat",
+      "bytes": 41717384,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003088.mat",
+      "bytes": 111532800,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003138.mat",
+      "bytes": 135647680,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003227.mat",
+      "bytes": 29072528,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003284.mat",
+      "bytes": 33484672,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003311.mat",
+      "bytes": 7607768,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003383.mat",
+      "bytes": 7221416,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003421.mat",
+      "bytes": 50047512,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003429.mat",
+      "bytes": 47397632,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003568.mat",
+      "bytes": 196023457,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003660.mat",
+      "bytes": 112636040,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003661.mat",
+      "bytes": 107113056,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003722.mat",
+      "bytes": 183821261,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003832.mat",
+      "bytes": 57226448,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003833.mat",
+      "bytes": 77844056,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003841.mat",
+      "bytes": 151501800,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003942.mat",
+      "bytes": 80447784,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p003982.mat",
+      "bytes": 13586456,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004006.mat",
+      "bytes": 17584688,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004065.mat",
+      "bytes": 67922840,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004081.mat",
+      "bytes": 37608912,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004114.mat",
+      "bytes": 48043448,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004244.mat",
+      "bytes": 115256400,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004245.mat",
+      "bytes": 97984016,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004246.mat",
+      "bytes": 76119256,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004378.mat",
+      "bytes": 53729000,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004428.mat",
+      "bytes": 69275208,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004429.mat",
+      "bytes": 43977888,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004455.mat",
+      "bytes": 84597928,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004521.mat",
+      "bytes": 1838616,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004582.mat",
+      "bytes": 32482440,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004584.mat",
+      "bytes": 103032752,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004632.mat",
+      "bytes": 70158208,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004757.mat",
+      "bytes": 750600,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004759.mat",
+      "bytes": 26406016,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004809.mat",
+      "bytes": 38113160,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004829.mat",
+      "bytes": 82234400,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004831.mat",
+      "bytes": 64683728,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p004917.mat",
+      "bytes": 47777632,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005030.mat",
+      "bytes": 87502896,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005031.mat",
+      "bytes": 139389392,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005070.mat",
+      "bytes": 67491816,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005108.mat",
+      "bytes": 36885104,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005183.mat",
+      "bytes": 157956000,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005235.mat",
+      "bytes": 100710376,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005267.mat",
+      "bytes": 21187384,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005331.mat",
+      "bytes": 59281104,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005430.mat",
+      "bytes": 90980272,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005452.mat",
+      "bytes": 97269360,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005466.mat",
+      "bytes": 9052656,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005468.mat",
+      "bytes": 148728888,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005661.mat",
+      "bytes": 193825773,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005736.mat",
+      "bytes": 102455168,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005744.mat",
+      "bytes": 2578656,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005816.mat",
+      "bytes": 1720760,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005880.mat",
+      "bytes": 66758504,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005942.mat",
+      "bytes": 66119856,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005943.mat",
+      "bytes": 38593480,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p005958.mat",
+      "bytes": 114735424,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p006018.mat",
+      "bytes": 69163344,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Segment_Files/PulseDB_Vital/p006055.mat",
+      "bytes": 94000080,
+      "profiles": [
+        "aami"
+      ]
+    },
+    {
+      "path": "Info_Files/AAMI_Cal_Info.mat",
+      "bytes": 1505288008,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Info_Files/AAMI_Test_Info.mat",
+      "bytes": 4979402,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Info_Files/CalBased_Test_Info.mat",
+      "bytes": 396689373,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Info_Files/CalFree_Test_Info.mat",
+      "bytes": 441165843,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Info_Files/PulseDB_Info.mat",
+      "bytes": 2512289003,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Info_Files/Train_Info.mat",
+      "bytes": 3583749903,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Supplementary_Info_Files/VitalDB_AAMI_Cal_Info.mat",
+      "bytes": 278091470,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Supplementary_Info_Files/VitalDB_AAMI_Test_Info.mat",
+      "bytes": 2516008,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Supplementary_Info_Files/VitalDB_CalBased_Test_Info.mat",
+      "bytes": 204467185,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Supplementary_Info_Files/VitalDB_CalFree_Test_Info.mat",
+      "bytes": 226916254,
+      "profiles": [
+        "indices"
+      ]
+    },
+    {
+      "path": "Supplementary_Info_Files/VitalDB_Train_Info.mat",
+      "bytes": 1850390529,
+      "profiles": [
+        "indices"
+      ]
+    }
+  ]
+}

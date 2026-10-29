@@ -91,7 +91,8 @@ class WatchLSMModel(nn.Module):
         n_heads=4,
         ppg_patch_size=16,
         acc_patch_size=8,
-        num_patches=32
+        num_patches=32,
+        dropout=0.1
     ):
         super().__init__()
         self.tokenizer = MultiRatePatchTokenizer(
@@ -103,7 +104,8 @@ class WatchLSMModel(nn.Module):
         self.backbone = WatchLSMBackbone(
             hidden_dim=hidden_dim,
             n_layers=n_layers,
-            n_heads=n_heads
+            n_heads=n_heads,
+            dropout=dropout
         )
         
         # MAE Reconstruction Decoders

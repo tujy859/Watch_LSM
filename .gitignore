@@ -14,6 +14,16 @@ build/
 # Upstream cloned reference repositories (maintained externally)
 repos/
 
+# Large binary datasets & model weights (local physical assets, not in Git)
+datasets/
+models/weights/
+*.mat
+*.npz
+*.pt
+*.pkl
+*.zip
+*.part
+
 # IDE and operating system files
 .vscode/
 .idea/
@@ -21,3 +31,21 @@ repos/
 Thumbs.db
 *.swp
 *.bak
+
+# Machine-specific configuration, health reports, locks and transfer logs
+.local/
+watch_lsm.local.toml
+*.log
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+models/checkpoints/
+docs/source_assessment_*/
+docs/migration_audit_*.json
+docs/migration_pulsedb_errors_*.csv
+docs/remote_tree_*.json
+docs/remote_comparison_*.json
+docs/migration_status_*.md
+docs/multi_device_and_data_plan_*.md
+scripts/zenodo_api.json
+scripts/zenodo_6947692.html

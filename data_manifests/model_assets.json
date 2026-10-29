@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "note": "Hashes identify the copied local snapshots; upstream record links are provenance, not an assertion that upstream checksums were compared.",
+  "files": [
+    {
+      "path": "models/weights/papagei/papagei_s.pt",
+      "bytes": 23339216,
+      "sha256": "79d68671e51bdc951fee853e5a8241099e38148ff26ed888b843849332e0b988",
+      "source_record": "https://zenodo.org/records/13983110"
+    },
+    {
+      "path": "models/weights/papagei/papagei_p.pt",
+      "bytes": 20157510,
+      "sha256": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e",
+      "source_record": "https://zenodo.org/records/13983110"
+    },
+    {
+      "path": "models/weights/pulseppg/pulseppg/experiments/out/pulseppg/checkpoint_best.pkl",
+      "bytes": 342179330,
+      "sha256": "485ade5033b3baa9b82e252fc131042dda897d7bdfc0d1a030d9746a1e98857c",
+      "source_record": "https://zenodo.org/records/17345536"
+    },
+    {
+      "path": "models/checkpoints/pretrain/best_foundation_model.pt",
+      "bytes": 16833195,
+      "sha256": "72d207738ff6d4c7409f04d9b731c8da47b3ea7754daf0b8d24fcf7af3b00d75",
+      "legacy_git_source": {
+        "revision": "78650d43c6dc05a9e433de728464837f34f6628c",
+        "path": "models/checkpoints/pretrain/best_foundation_model.pt"
+      }
+    }
+  ]
+}

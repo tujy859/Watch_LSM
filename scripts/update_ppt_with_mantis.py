@@ -1,6 +1,7 @@
 import re
+from pathlib import Path
 
-ppt_path = "papers/WEARABLE_FOUNDATION_MODELS_PPT.md"
+ppt_path = Path(__file__).resolve().parents[1] / "papers/WEARABLE_FOUNDATION_MODELS_PPT.md"
 with open(ppt_path, "r", encoding="utf-8") as f:
     content = f.read()
 
@@ -21,7 +22,7 @@ mantis_slide = """
 - **多通道适配器 (Multichannel Projectors)**: 原生支持手腕 3 轴加速度计与多导联时序。
 
 #### 3. 实测数据与结果（本项目实验 6）
-- **图表**: [results/figures/exp6_mantis_clustering.png](file:///c:/Coding/Work/Watch_LSM/results/figures/exp6_mantis_clustering.png)
+- **图表**: [results/figures/exp6_mantis_clustering.png](../results/figures/exp6_mantis_clustering.png)
 - 在真实智能手表 3 轴加速度计数据（1069 个样本）上实测：
   - CPU 单样本特征提取延迟仅 **19.80 ms**！
   - 线性探测（Linear Probe）在走路、跑步、骑行三类运动上的分类准确率高达 **99.7%**（显著优于 LIMU-BERT 的 92.1%）！
@@ -48,9 +49,4 @@ content = content.replace(old_table_row, new_table_row)
 with open(ppt_path, "w", encoding="utf-8") as f:
     f.write(content)
 
-# Update artifact copy
-artifact_path = r"C:\Users\Jinying Tu\.gemini\antigravity\brain\7f13e813-10c0-487d-a558-ba07056f38c5\wearable_foundation_models_ppt.md"
-with open(artifact_path, "w", encoding="utf-8") as f:
-    f.write(content)
-
-print("Updated WEARABLE_FOUNDATION_MODELS_PPT.md and artifact with Mantis slide!")
+print("Updated project WEARABLE_FOUNDATION_MODELS_PPT.md with Mantis slide.")

@@ -1,0 +1,18 @@
+* text=auto eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.mat binary
+*.dat binary
+*.pt binary
+*.npz binary
+*.pdf binary
+*.png binary
+# Preserve upstream raw paper extraction bytes; no irrelevant normalization diff.
+papers/analyses/*_raw.txt -text
