@@ -2,6 +2,8 @@
 
 当前采用 **Git 同步源码 + 每机独立 venv + 清单化本地数据缓存**。新设备从 [多设备开发指南](docs/DEVELOPMENT.md) 开始：
 
+本项目默认直接在 `main` 开发。更换设备前提交并推送，另一台设备开始工作前先执行 `git pull --ff-only origin main`。
+
 ```bash
 python scripts/bootstrap_env.py --backend cpu
 # Windows/Linux NVIDIA 使用 --backend cu124

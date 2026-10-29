@@ -4,10 +4,10 @@
 
 使用 Python 3.10-3.12。每台电脑创建自己的 `.venv`，不复制其他电脑的 Python 环境。
 
-本轮修复在 `codex/multi-device-repair`（[PR #1](https://github.com/tujy859/Watch_LSM/pull/1)）。合并前用下列分支安装；合并后可改用默认 `main`。
+本项目由同一位开发者在多台设备上开发，默认直接使用 `main`。
 
 ```powershell
-git clone --branch codex/multi-device-repair https://github.com/tujy859/Watch_LSM.git
+git clone https://github.com/tujy859/Watch_LSM.git
 cd Watch_LSM
 python scripts/bootstrap_env.py --backend cpu
 ```
@@ -53,7 +53,19 @@ Wrist 入口沿用早期小样例的记录划分，不是正式跨人评测协�
 
 ## 源码与大资产同步
 
-源码通过分支、提交、GitHub PR 同步。开发前 pull，完成后提交到自己的工作分支并推送，其他设备拉取同一提交。不要用整目录同步覆盖正在开发的代码。
+源码默认直接在 `main` 提交和推送，不要求为日常修改创建分支、worktree 或 PR。各设备切换使用前先确认本地工作区状态；工作区干净后拉取远端最新提交，完成当前设备的修改后提交并推送，再切换到其他设备。
+
+```bash
+git status
+git switch main
+git pull --ff-only origin main
+# 修改并验证后，只暂存本次需要共享的源码或文档
+git add <本次修改的文件>
+git commit -m "说明本次修改"
+git push origin main
+```
+
+如果本机有未提交修改，先保留并处理这些修改，不直接覆盖。若不同设备已有各自的提交而无法快进，先获取远端更新并检查差异，合并或变基、解决冲突后再推送；不要强制推送覆盖另一台设备的提交。不要用整目录同步覆盖正在开发的代码。
 
 大资产保持在 Git 外，按 `data_manifests` 恢复到每机本地。现有上游 `repos/` 是历史复制的代码快照，缺少可证明的 commit 元数据；当前核心库不依赖它们。MOMENT、Mantis、PaPaGei 等独立复现实验还需专门的上游环境与版本核验，不能将核心 venv 验证称为所有上游实验复现成功。
 

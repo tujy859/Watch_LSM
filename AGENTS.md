@@ -9,24 +9,25 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-29 11:42（Asia/Shanghai，245/245修复补齐完成，完整AAMI文件清单复核通过）*
+*最后更新时间：2026-10-29（Asia/Shanghai，PR #1已合并，本地已切换main，后续直接在main开发）*
 
-> **最新实施状态优先于历史记录**：本机已恢复原 GitHub 提交历史与 `origin`，工作分支为 `codex/multi-device-repair`。用户已明确要求使用 **venv** 并授权修复代码、环境及数据；不要再按 Conda 环境迁移设计。PulseDB 的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交 Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
+> **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **PR #1已合并并切换main开发**：合并前最新PR提交 `a8bd7da` 的Windows/Linux、Python3.10/3.12四组CPU CI全部通过；GitHub以merge方式合入main，保留原提交历史，合并提交 `30aef2c`。本地已切换并跟踪 `origin/main`，配置 `pull.ff=only`；README及开发指南已改为同一开发者多设备直接main的流程。未删除历史工作分支。后续设备开始前先拉取，换设备前提交推送，避免覆盖另一台设备的工作。
 - [x] **10月29日项目整体状态复核**：本轮迁移的代码入口、独立venv与245份数据修复补齐已完成；现有Watch-LSM为PPG+ACC自监督及心率/步频/活动下游原型，尚未具备完整PulseDB官方划分加载与血压评测闭环。核心14项测试及四组CPU CI的通过证据对应提交 `048e52f`；本轮未重复运行未改动的测试。GitHub实时确认PR #1仍为open draft、未合并，main仍为 `78650d4`；本地未提交修改仅交接文档AGENTS.md，最新数据完成状态尚未推送远端。研究优先级为核验1,340条AAMI片段映射、正式预训练基线接入、受试者隔离评测及指标重测。
 - [x] **10月29日数据修复补齐完成并复核**：单worker续传于06:00:44正常结束，AAMI作业207/207通过、失败0；结合首轮修复38份，总计245/245、48,372,845,860字节（45.05 GiB）已验证。11:42后台锁已释放，本地955份波形均通过HDF5打开检查；完整AAMI清单242份患者文件及官方测试索引共243项，文件大小及HDF5首尾波形/标签抽样均通过。报告 `.local/data-status.json`、`.local/aami-file-coverage.json`。现有原始文件未全部对照云端哈希，正式索引片段偏移语义尚未核验。
 - [x] **10月29日01:16 后台状态与续传复核**：首轮于00:24结束，最终181/245份通过（修复38/38、补齐143/207），剩余64份均为 DriveFS `Errno 22` 读取失败，未新增通过文件。本地891份波形重新执行 HDF5 打开检查全部通过。已保存首轮日志到 `.local/data-transfer-first-pass*.log`，并以单worker重新启动AAMI后台任务（PID604），锁已持有，正在本地复核并跳过已验证文件后重试失败项；降低并发能否改善云盘读取仍待观察。
 - [x] **21:48 本机数据进度复核**：38/38 份损坏文件已修复并验证；AAMI 缺失文件已补齐143/207份。总计181/245份通过校验，已验证约20.66 GiB/计划45.05 GiB；剩余64份中2份传输中、40份待处理、22份本轮重试耗尽（DriveFS 读取报 `Errno 22`）。后台锁仍持有且日志持续增长。本地891份波形 MAT 全部通过 HDF5 打开检查；该扫描不等于全部原有文件已对照云端哈希。
 - [x] **Windows/Python 3.12 独立 CPU/GPU venv 实测通过**：CPU 构建及 CUDA 12.4 构建分别安装验证；当前 `.venv` 为 PyTorch `2.5.1+cu124`。`pip check`、14 项测试、4 份模型精确哈希、checkpoint 严格加载与 CPU/GPU 合成前后向均通过。真实 wrist 634/435 窗口完成 CPU、GPU 各一轮预训练及 CPU 一轮下游训练。结果仅用于 smoke check。公共锁已排除本机 wheel 地址和 Torch；更新用 `scripts/lock_environment.py`。构建清单明确 pin 到 `+cpu`/`+cu124`，避免 pip 将另一构建误判为已满足。
-- [x] **远端工作分支与多平台检查已就绪**：已推送 `codex/multi-device-repair` 并创建 [PR #1](https://github.com/tujy859/Watch_LSM/pull/1)。首轮 Windows/Linux、Python3.10/3.12 四组 CPU CI 均通过；后续更新以 PR 当前提交的检查为准。主分支尚未合并，其他设备应先检出该工作分支。
+- [x] **远端修复与多平台检查已就绪**：修复经 [PR #1](https://github.com/tujy859/Watch_LSM/pull/1) 合并至main；合并前最新提交的Windows/Linux、Python3.10/3.12四组CPU CI均通过。其他设备直接使用main。
 - [x] **新设备完整 AAMI 文件清单已建立**：`pulsedb_recovery.json` 明确为本次迁移差集，不能代表空白设备的完整数据集；新设备使用 `pulsedb_aami.json` 的242份患者文件 + 官方测试索引（共243项）。测试防止把缺失差集误作完整定义；正式片段索引语义仍待加载器核验。
-- [x] **数据修复已持久化运行**：使用 venv 的 Windows 后台任务按明确清单处理，日志 `.local/data-transfer.log`、`.local/data-transfer.err.log`，状态 `scripts/data_status.py`。本机6份已验证文件在切换后台时复查并跳过；旧失败片段已续传。完整作业仍未完成。
+- [x] **数据修复后台作业已完成**：使用venv的Windows后台任务按明确清单处理，日志 `.local/data-transfer.log`、`.local/data-transfer.err.log`，状态 `scripts/data_status.py`。245份修复补齐全部通过，后台正常结束。
 - [x] **恢复源码版本控制**：已在保留全部工作文件的前提下抓取原远端历史并重建本地索引，分支 `codex/multi-device-repair` 基于原 `main`。尚未合并任何远端分支。
 - [x] **venv 与 CPU/GPU 入口已实现**：新增 `pyproject.toml`、CPU/CUDA 12.4 构建清单、安装/锁定/诊断脚本、统一路径与设备选择，以及 Windows/Linux CPU CI；安装结束必须通过实际反向步骤才能标记环境就绪。
-- [x] **数据修复工具与故障保护已实现**：`scripts/sync_pulsedb.py` 支持明确 profile、断点前缀校验、流式 SHA-256、本地复读、HDF5 首尾抽查、原子替换与进程锁；5 项恢复/失败保护测试已通过。245 份文件的实际修复补齐作业已启动，尚未完成；不以启动作业代替完成状态。
+- [x] **数据修复工具与故障保护已实现**：`scripts/sync_pulsedb.py` 支持明确profile、断点前缀校验、流式SHA-256、本地复读、HDF5首尾抽查、原子替换与进程锁；恢复/失败保护测试已通过。245份实际修复补齐作业已完成并复核。
 - [x] **迁移代码问题已修复**：训练入口采用项目根目录/本机配置，支持显式设备、worker 与 CPU batch 默认值；预训练实际读取 YAML，微调缺失 checkpoint 时需显式 `--from_scratch`；清理旧硬编码路径与危险的默认全库同步入口。
 - [x] **多设备与云端源评估完成**：确认现有远端为 `tujy859/Watch_LSM`（main）。远端 86 份文件本机均存在，除 `.gitignore` 外内容一致或仅换行不同；11 份此前已有的本地同步/下载脚本与 AGENTS.md 未同步至远端。多设备方案见 [`docs/multi_device_and_data_plan_2026-10-28.md`](docs/multi_device_and_data_plan_2026-10-28.md)。本次未修改远端或建立新 Git 历史。
 - [x] **Google Drive 源已确认可访问**：连接器和经授权的 G 盘只读访问均正常；先前沙箱内无法访问盘符不代表未挂载。全量元数据扫描确认 5,361 份患者 MAT + 11 份索引，约 602.74 GiB；本机缺失 4,613 份患者文件，38 份损坏文件均存在云端更完整副本。清单位于 `docs/source_assessment_2026-10-28/`。
@@ -93,6 +94,8 @@
   MODELS_DIR = PROJECT_ROOT / "models"
   ```
 - **Git 版本控制红线**：
+  - 用户于2026-10-29明确指定：本项目仅一位开发者在多台设备上使用，后续默认直接在 `main` 修改、提交和推送，不自动创建工作分支、worktree 或 PR；另有用户明确要求时再采用其他流程。
+  - 每台设备开始前检查工作区并执行 `git pull --ff-only origin main`，切换设备前提交并推送；保留未提交修改，遇到分叉先检查并解决冲突，不强推覆盖其他设备的提交。
   - 严禁将 `datasets/`、`models/weights/` 等任何大于 10 MB 的二进制数据文件提交进 Git；
   - 所有的索引清单以极小的 JSON/CSV 保存在 `data_manifests/` 或 `docs/` 下。
 
