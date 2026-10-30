@@ -87,6 +87,8 @@ PPG-BP的7个对象均已完成线性评测：每项任务5种子、5个外层�
 
 所有后台Python进程仅在本机持续开机时运行；关闭电脑后需按状态恢复。这里没有创建定时自动化，也没有开启服务器费用。
 
+`scripts/continue_ppg_bench_mlp.py --after-pid <现有MLP启动器PID>`会等待当前PaPaGei-S队列退出，再在同一输出目录继续8份已就绪数据、全部7对象的MLP评测；保留原48次搜索及5折5种子，已完成任务按上游身份检查复用。其状态见`continuation.json`，不与当前MLP作业争用GPU。PID只用于本次等待，不应在重启后直接沿用旧值。当前已启动这一后续队列；DREAMT和RF不包含在其中。
+
 ## DREAMT需要用户完成的步骤
 
 1. [登录或找回PhysioNet账号](https://physionet.org/login/)，没有账号则注册。

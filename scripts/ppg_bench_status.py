@@ -58,6 +58,7 @@ def main():
     state["completed_evaluations"] = sum(item["completed"] for item in state["evaluations"])
     state["queued_evaluations_with_existing_manifests"] = sum(item["planned"] for item in state["evaluations"])
     state["automatic_continuation"] = read(local / "ppg-bench-auto/state.json", {})
+    state["mlp_continuation"] = read(local / "ppg-bench-neural-mlp/continuation.json", {})
     state["mlp_capacity_run"] = read(local / "ppg-bench-mlp-capacity/status.json", {"complete": False})
     state["adapted_precision_runs"] = []
     for path in (local / "ppg-bench-neural-fp32").rglob("status.json"):
