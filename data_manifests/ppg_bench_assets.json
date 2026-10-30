@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-10-30",
+  "upstream_revisions": {
+    "ppg-bench": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "anyppg": "661b877aa96eac3bba320a462cb2a3bfea991103",
+    "sigmappg": "b1cc8d90da3878958b890c6e352cd3ae2a644005",
+    "moment-benchmark": "38f7310ad594100747ca2a8357e9c7ca7d323e0e"
+  },
+  "note": "Author LFS SHA-256 was verified for SigmaPPG and MOMENT weights; AnyPPG is the exact file from the pinned author checkout. Existing PaPaGei and PulsePPG assets are defined in model_assets.json. Local files are not included in Git.",
+  "new_files": [
+    {
+      "path": "models/weights/anyppg/anyppg_ckpt.pth",
+      "bytes": 16375441,
+      "sha256": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa",
+      "source": "https://github.com/Ngk03/AnyPPG/blob/661b877aa96eac3bba320a462cb2a3bfea991103/load_anyppg/anyppg_ckpt.pth"
+    },
+    {
+      "path": "models/weights/sigmappg/sigma.pth",
+      "bytes": 363228975,
+      "sha256": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b",
+      "source": "https://huggingface.co/zonhengu/sigmappg"
+    },
+    {
+      "path": "models/weights/moment/MOMENT-1-small/model.safetensors",
+      "bytes": 151615328,
+      "sha256": "785e6c6f57ffa7cac7e2a1fff6369618d49f2f441563ddea76c866231e5aa877",
+      "source": "https://huggingface.co/AutonLab/MOMENT-1-small"
+    },
+    {
+      "path": "models/weights/moment/MOMENT-1-small/config.json",
+      "bytes": 947,
+      "sha256": "6456b8e6f017323e8ef372c338c993380e246cb6291ffb8ca21fe7dfc53d0a6f",
+      "source": "https://huggingface.co/AutonLab/MOMENT-1-small"
+    }
+  ],
+  "dataset_sources": {
+    "dalia": "https://archive.ics.uci.edu/dataset/495/ppg+dalia",
+    "dreamt": "https://physionet.org/content/dreamt/2.1.0/",
+    "wesad": "https://ubi29.informatik.uni-siegen.de/usi/data_wesad.html",
+    "ecsmp": "https://data.mendeley.com/datasets/vn5nknh3mn/2",
+    "ppgbp": "https://figshare.com/articles/dataset/PPG-BP_Database_zip/5459299/5",
+    "bidmc": "https://physionet.org/content/bidmc/1.0.0/",
+    "butppg": "https://physionet.org/content/butppg/2.0.0/",
+    "realworldppg": "https://data.mendeley.com/datasets/yynb8t9x3d/1",
+    "wildppg": "https://siplab.org/projects/WildPPG"
+  }
+}

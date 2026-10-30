@@ -1,0 +1,104 @@
+{
+  "checked_at": "2026-10-30T12:17:03.753850+00:00",
+  "scope": "PPG-BP, seven benchmark objects, linear only, all ten tasks",
+  "completed_evaluations": 1750,
+  "full_reproduction_complete": false,
+  "checks": [
+    "five seeds and five folds per model/task",
+    "218 subjects per outer partition",
+    "no train/test subject overlap",
+    "disjoint test folds covering all subjects per seed",
+    "prediction subjects agree with test split",
+    "finite numeric predictions and primary metrics",
+    "SBP/DBP subject-mean MAE recomputed from predictions"
+  ],
+  "artifact_set_sha256": "a4572d13720fe8f54b35b0a312aaa424192e328a072531f098870fc1c8491d24",
+  "artifact_hash_order": "CLI root order, sorted model run manifests, upstream job order, result then prediction SHA-256",
+  "environment_evidence": [
+    {
+      "model": "AnyPPG",
+      "run_manifest_sha256": "ed9469f1b58d0dfdd10cec676e996430d625da3558ee673377e32d9b96e281ee",
+      "upstream_code_sha256": "519a00f6683cff7dce213360ff2d0efe8c35645c90b1ec38170192ee0977e11d",
+      "versions": {
+        "numpy": "1.26.4",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "optuna": "4.9.0"
+      }
+    },
+    {
+      "model": "PaPaGei-P",
+      "run_manifest_sha256": "d79a3805604c32baf4256a2e6ed5163d4feb5ca64bd523e335f55455182730a6",
+      "upstream_code_sha256": "519a00f6683cff7dce213360ff2d0efe8c35645c90b1ec38170192ee0977e11d",
+      "versions": {
+        "numpy": "1.26.4",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "optuna": "4.9.0"
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "run_manifest_sha256": "2000e8cdddfa9d9da2c6bd15de29565eba298fd9ecd33985e45e6181bd3f3d10",
+      "upstream_code_sha256": "519a00f6683cff7dce213360ff2d0efe8c35645c90b1ec38170192ee0977e11d",
+      "versions": {
+        "numpy": "1.26.4",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "optuna": "4.9.0"
+      }
+    },
+    {
+      "model": "PRVCtrl",
+      "run_manifest_sha256": "a01d6c101d2e0a64015577c0d85b586077eac6fd0273182974757129bbfc59b5",
+      "upstream_code_sha256": "519a00f6683cff7dce213360ff2d0efe8c35645c90b1ec38170192ee0977e11d",
+      "versions": {
+        "numpy": "1.26.4",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "optuna": "4.9.0"
+      }
+    },
+    {
+      "model": "PulsePPG",
+      "run_manifest_sha256": "1e6b38a82c419ad5a022b97e52b7ec37121edc0002494bc1637a67eedc1f6310",
+      "upstream_code_sha256": "519a00f6683cff7dce213360ff2d0efe8c35645c90b1ec38170192ee0977e11d",
+      "versions": {
+        "numpy": "1.26.4",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "optuna": "4.9.0"
+      }
+    },
+    {
+      "model": "MOMENT-1-small",
+      "run_manifest_sha256": "f2070c43cbe6bba9b79198aaf3af86256faa02a69fef69b411fc7a756536219f",
+      "upstream_code_sha256": "519a00f6683cff7dce213360ff2d0efe8c35645c90b1ec38170192ee0977e11d",
+      "versions": {
+        "numpy": "1.26.4",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "optuna": "4.9.0"
+      }
+    },
+    {
+      "model": "SigmaPPG",
+      "run_manifest_sha256": "0b77f68565c70e5e2624e8c26a876aafdf35893425d70c4a514a5335ab9b68c9",
+      "upstream_code_sha256": "519a00f6683cff7dce213360ff2d0efe8c35645c90b1ec38170192ee0977e11d",
+      "versions": {
+        "numpy": "1.26.4",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.5.2",
+        "torch": "2.5.1+cu124",
+        "optuna": "4.9.0"
+      }
+    }
+  ],
+  "note": "Checkpoints and source revisions are separately recorded in data_manifests/ppg_bench_assets.json and model_assets.json. Raw data, split lists and predictions stay local; this summary is not the full-paper result."
+}

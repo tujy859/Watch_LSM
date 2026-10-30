@@ -9,13 +9,22 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-29（Asia/Shanghai，PR #1已合并，本地已切换main，后续直接在main开发）*
+*最后更新时间：2026-10-30（Asia/Shanghai，PPG-Bench全部模型及8份公开数据就绪，PPG-BP线性1750项已核查；其余评测后台继续）*
 
 > **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **10月30日20:30资源补齐与结果核查**：BUT-PPG的830对有效质量采集记录文件已补齐并按50名受试者完成预处理；ECSMP最终60人、WildPPG16人也均完成预处理。除DREAMT外的8份数据、50/64/100/125 Hz共32份输出全部就绪。新增`scripts/audit_ppg_bench_ppgbp.py`核查1750项完整线性结果的5折5种子、218人覆盖、受试者无交集、测试折互斥、预测身份/有限值及血压MAE重算，全部通过；70项汇总及产物集合哈希已保存到`docs/results/ppg_bench_ppgbp_linear/`。补充`docs/ppg_bench_setup.md`固定源码/独立环境/离线权重恢复说明，恢复工具现支持新增模型清单；4份新增权重/配置SHA-256复核通过。17项项目测试、benchmark环境pip check通过，上游源码未改动。实况计数已超过1840项，仍为部分评测，原始AMP/FP32分开记录。
+- [x] **10月30日正式复现资源与阶段结果**：5个专用PPG模型+PRV/MOMENT共7对象均通过真实PPG的GPU前向和小批量反向/优化检查。新增模型来源及哈希见`data_manifests/ppg_bench_assets.json`。PPG-BP的7对象、10任务、5种子×5折共1750个线性外层评测完成，收缩压/舒张压的全部均值与论文表1在两位小数上一致；其余线性任务及PaPaGei-S完整折数MLP继续后台运行。Dalia、BIDMC、WESAD、WildPPG、BUT-PPG、ECSMP官方原始数据均已补齐并完成4采样率预处理。最终使用原独立`.local/ppg-bench-venv` Python3.12，已补兼容的固定MOMENT源码0.1.5/Transformers4.54.1；不再使用此前准备但未完成的Python3.11环境，项目`.venv`未改装。17项测试通过。运行及完整限制见`docs/ppg_bench_reproduction.md`，实况用`python scripts/ppg_bench_status.py`；不能将此阶段等同于全篇复现完成。
+- [ ] **10月30日神经评测与外部条件**：原AMP微调首个候选在本机产生NaN，保留失败结果；FP32单候选诊断的3次验证重复通过，正式48次搜索的串行FP32队列已另行启动，精度与TPE并行调度差异单独记录，不计作原AMP设置已复现。Windows的Optuna数据库句柄导致完成目录改名失败已通过外层恢复完成文件/原CLI续跑处理，相关完整性保护测试通过。DREAMT2.1.0仍待用户登录注册并签署该项目协议；当前非管理员Windows未安装WSL，原cuML RF后端仍待Linux环境。用户偏好先用本机，确需时再评估AutoDL等租赁，尚未产生云服务器费用。
+- [x] **10月30日正式复现授权与范围**：用户明确要求补齐全部必要模型和数据、复现原工作，已覆盖此前“不自动运行全套”的限制；采用开源预训练权重，完整协议包含下游MLP和全量微调，不从头预训练基础模型。Python3.11和旧MOMENT包的准备方案已被上方最终Python3.12兼容环境取代；全部模型与8份公开数据已完成补齐，当前以顶部最新状态为准。DREAMT2.1.0当前要求为注册用户签署该项目数据协议，页面未列CITI或credential要求；用户尚未提供权限。优先本机，未开通付费服务器。
+- [x] **10月30日PPG-Bench首次GPU试跑通过**：按用户要求使用现有开源PaPaGei-S权重，不预训练/微调编码器，仅拟合Ridge预测头。独立`.local/ppg-bench-venv`安装固定版本官方源码（`repos/ppg-bench`，提交`2bca102b7be2c0a9816a3872314784d2ef92555b`）；项目原`.venv`未改装，两个环境pip check均通过。官方预处理完成218人/654片段；seed42/fold0训练174人522片段、测试44人132片段，受试者无交集。GPU严格加载及冻结推理成功，输入32×1×263、输出32×512且有限，权重文件运行前后哈希一致；GPU提取表征后CPU完成官方4折内部选参，alpha100。单折收缩压MAE15.2132 mmHg，常数基线16.5888 mmHg；仅为流程运行检查，不是完整论文复现或临床结论。原始结果`.local/ppg-bench-smoke/`，报告`docs/ppg_bench_smoke_2026-10-30.md`，可复用配置`watch_lsm/configs/ppg_bench_papagei_s.yaml`。调参有4条矩阵条件数警告，最终alpha100模型float64交叉诊断最大窗口预测差约0.000119 mmHg，未替换官方结果。未运行PRV/MOMENT、全折全种子或其他任务。
+- [x] **10月30日PPG-Bench资源实查**：用户确认调研仓名单错误将自行修改。当前本机PPG-BP的219人标签及657份波形已读通，231号2份波形为4200点，官方代码排除该受试者后为218人/654份；RealWorldPPG两份XLSX已读通35人/2074条300点有限记录。PaPaGei-S/P、Pulse-PPG三份权重重新计算SHA-256均匹配本地清单。PPG-DaLiA为8份活动MAT（各14或15条参与者数据），WildPPG为单份16条cell结构MAT，均非官方直接加载布局，语义等价性未核验；BIDMC/WESAD ZIP再次确认无效，DREAMT/ECSMP/BUT-PPG未找到。项目及默认缓存未发现AnyPPG/SigmaPPG/MOMENT-1-small权重；现有venv未安装ppg-bench/Optuna等依赖。硬件GTX1660SUPER 6GiB、内存约31.8GiB；完整RF需另外解决RAPIDS的Linux/WSL2环境。结论为资源足以推进部分任务接入，但完整论文复现尚未就绪。明细`docs/ppg_bench_integration_notes.md`、本机报告`.local/ppg-bench-resource-audit.json`；本轮未安装、改数据、运行benchmark或验证官方指标。
+- [x] **10月30日PPG-Bench核查**：从用户调研仓进一步阅读arXiv:2610.13435v1及官方 `mannas-ai/ppg-bench`（master提交 `2bca102b7be2c0a9816a3872314784d2ef92555b`）README和部分实现，新增 `docs/ppg_bench_integration_notes.md` 并从调研入口链接。确认17个主要+9个次要任务，68组结论仅对应17乘4；调研条目的9份数据集名单与原文/代码不一致，已在本地记录但未修改外部仓。官方含PaPaGei/PulsePPG适配器、受试者分组评测与简单对照；闭集身份识别按采集记录隔离是例外。当前标准接口为单通道PPG，Watch-LSM需明确单模态/缺失ACC方案或独立多模态扩展；套件没有PulseDB任务，不能替代官方AAMI工作。建议先做PPG-BP单任务线性运行检查再扩展。本轮未安装、下载数据、执行benchmark或验证适配成功。
+- [x] **10月30日调研知识入口与术语约定**：用户指定生理信号 recording 统一称“采集记录”，已加入下方行为规范并修正上一条交接措辞。核查用户维护的 `tujy859/Wearable-Physiological-Foundation-Models`，main参考提交为 `071cd9216d0eb2a262b959667ab33467b9fd1adf`；新增 `papers/README.md` 作为调研入口，连接已有综述、8份解析与外部模型/benchmark/数据集索引，并按任务映射本地实现和待验证项。根README与开工阅读规范已接入；后续选型、数据与评测设计需检查相关源更新并记录具体采用版本。本轮没有复制整仓、安装工具、自动同步或下载模型/数据，未逐项复核外部论文；PaPaGei/Pulse-PPG规模口径差异保留待核验。
+- [x] **10月30日架构与辅助工具评估**：本地main已执行 `git pull --ff-only origin main`，无远端更新；检查Git跟踪的48份Python文件，其中核心包12份。当前为PPG+ACC研究原型，包含数据预处理、多采样率tokenizer、4层跨模态backbone、自监督损失及心率/步频/活动任务头；PulseDB官方片段加载器与血压评测闭环仍未实现。新增确认：两个训练入口按采集记录前3/后2划分，受试者s1同时出现在训练和验证；Dataset预处理后全部驻内存且未保留受试者/片段身份；下游YAML尚未接入训练入口，预训练部分配置项尚未消费。建议优先补数据协议、防泄漏验证、统一模型适配和实验记录，再渐进接入Ruff及轻量依赖图；重型CodeGraph暂非优先事项。本轮只做静态核查及工具官方文档核对，未安装工具、改训练代码或重跑训练/测试。
 - [x] **PR #1已合并并切换main开发**：合并前最新PR提交 `a8bd7da` 的Windows/Linux、Python3.10/3.12四组CPU CI全部通过；GitHub以merge方式合入main，保留原提交历史，合并提交 `30aef2c`。本地已切换并跟踪 `origin/main`，配置 `pull.ff=only`；README及开发指南已改为同一开发者多设备直接main的流程。未删除历史工作分支。后续设备开始前先拉取，换设备前提交推送，避免覆盖另一台设备的工作。
 - [x] **10月29日项目整体状态复核**：本轮迁移的代码入口、独立venv与245份数据修复补齐已完成；现有Watch-LSM为PPG+ACC自监督及心率/步频/活动下游原型，尚未具备完整PulseDB官方划分加载与血压评测闭环。核心14项测试及四组CPU CI的通过证据对应提交 `048e52f`；本轮未重复运行未改动的测试。GitHub实时确认PR #1仍为open draft、未合并，main仍为 `78650d4`；本地未提交修改仅交接文档AGENTS.md，最新数据完成状态尚未推送远端。研究优先级为核验1,340条AAMI片段映射、正式预训练基线接入、受试者隔离评测及指标重测。
 - [x] **10月29日数据修复补齐完成并复核**：单worker续传于06:00:44正常结束，AAMI作业207/207通过、失败0；结合首轮修复38份，总计245/245、48,372,845,860字节（45.05 GiB）已验证。11:42后台锁已释放，本地955份波形均通过HDF5打开检查；完整AAMI清单242份患者文件及官方测试索引共243项，文件大小及HDF5首尾波形/标签抽样均通过。报告 `.local/data-status.json`、`.local/aami-file-coverage.json`。现有原始文件未全部对照云端哈希，正式索引片段偏移语义尚未核验。
@@ -50,6 +59,11 @@
 - [x] **D 盘根目录镜像备份已就绪**：已全量同步至 `D:\Watch_LSM`（139.41 GB，1,925 个核心文件，0 失败），并实测通过 HDF5 路径验证，可直接作为移动硬盘中转站或独立运行。
 
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
+- [x] **完成PPG-Bench最小评测试跑**：PaPaGei-S + PPG-BP收缩压单任务/单折/单种子，GPU提取特征、CPU线性拟合已通过；见`docs/ppg_bench_smoke_2026-10-30.md`。只验证冻结开源编码器路线，不代表自研Watch-LSM或全套benchmark已复现。
+- [ ] **执行已授权的PPG-Bench正式复现**：补齐官方9份数据集、5份专用PPG模型与PRV/MOMENT对照，保留原5折5种子、内部选参和4类下游协议。优先本机；DREAMT等待用户注册/协议权限，RF需解决Linux/cuML环境，后续更大算力再评估租赁。公开下载与环境工作已开始，继续检查`.local/ppg-bench-repro/`；原始数据、权重和实验产物不入Git，PulseDB官方评测独立保留。
+- [ ] **后台队列接棒与未完成项**：先运行`python scripts/ppg_bench_status.py`，查看`.local/ppg-bench-repro/downloads-v2.json`和`downloads-retry*.json`的最新时间；不要重复启动仍持锁的队列。公开下载与预处理已全部完成，无需重复启动下载；`.local/ppg-bench-auto`会在下载就绪后逐数据集续跑线性评测，当前Dalia较慢，BIDMC等后续数据已预处理完毕，会按队列继续评测。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP在`.local/ppg-bench-neural-mlp`，本机FP32适配微调在`.local/ppg-bench-neural-fp32`。仍需完成其余所有折/种子/任务、原始AMP微调稳定性与RF；DREAMT没有权限前不能声称资源已全齐。
+- [ ] **按调研入口推进具体选型**：后续开工先读 `papers/README.md`；涉及基模、数据集、benchmark或评测协议时，查阅用户调研仓相关最新内容，再核验原论文和官方实现，记录采用的提交与本地证据。现有历史分析无需整体复制或覆盖；持续自动同步尚未实施。
+- [ ] **统一研究数据与实验契约**：先明确样本的受试者ID、记录ID、片段位置、采样率、标签来源及官方split；修复现有wrist入口s1跨训练/验证的问题，为PulseDB加入按需读取及划分交集检查。统一基模输入/embedding接口，核对配置项实际消费情况，保存每次运行的有效配置、Git版本、数据划分与权重哈希、种子及指标。辅助工具接入仅为建议，尚未实施。
 - [x] **完成 AAMI 补齐及失败重试**：10月29日06:00全部完成，11:42复核修复38/38、补齐207/207通过，后台正常结束；955份波形HDF5打开检查及完整AAMI清单243项大小/首尾抽样均通过。无需再次启动下载；本机覆盖报告保存在 `.local/`。
 - [ ] **扩展其他硬件与上游验证**：本机 CPU/GPU 与 Windows/Linux CPU CI 已实测；其他具体 GPU、macOS MPS 仍需按实际设备验证。上游 repos/ 历史快照还需独立版本核验，不把核心库通过视为全部基模复现完成。
 - [ ] **修复历史实验解释与划分**：路径入口已处理；实验4的正式预训练权重接入、实验4/6受试者隔离划分与指标重测仍待独立研究任务，不把本轮环境恢复当成这些实验已经复现。
@@ -124,9 +138,10 @@
 
 ## 五、Agent 交互与协作行为规范 (Rules for Agents)
 
-1. **接盘第一步**：每次接到任务，通读本文件，明确当前处于哪一个工作节点；
+1. **接盘第一步**：每次接到任务，通读本文件，明确当前处于哪一个工作节点；开始或恢复开发时同时阅读 [调研与工程选型入口](papers/README.md)。用户维护的 [Wearable-Physiological-Foundation-Models](https://github.com/tujy859/Wearable-Physiological-Foundation-Models) 是长期领域参考源；涉及模型选型、数据集、benchmark与评测协议时按入口查阅相关最新资料，采用前核对原论文/官方实现并记录参考提交。访问失败时明确所用旧版本及限制，不把调研收录等同于本地实现完成；
 2. **代码编写规范**：
    - 保持文档与注释完整；
+   - **术语约定**：生理信号的 recording / record 统一称“采集记录”，record list 称“采集记录列表”，不称“录音”；受试者、采集记录与切片窗口是不同层级，描述划分时须明确层级；
    - 永远使用相对路径；
    - 输出数值与时间范围时，严禁使用单半角波浪号（使用 `-` 或 `～`），转义文本中的美元符号（`\$`）；
 3. **交接最后一步**：在向用户交付成果或会话结束前，**必须自动更新本文件【一、当前动态工作交接看板】中的状态与下一步待办**，为下一位 Agent 铺平道路。

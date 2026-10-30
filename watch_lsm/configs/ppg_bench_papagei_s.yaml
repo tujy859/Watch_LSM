@@ -1,0 +1,8 @@
+# Official PPG-Bench adapter; use a separate benchmark venv.
+# Paths are resolved relative to this YAML file by PPG-Bench.
+name: PaPaGei-S
+port: ppg_bench.encoders.papagei:PaPaGei_S_Port
+fs: 125
+embedding_dim: 512
+init:
+  ckpt_path: ../../models/weights/papagei/papagei_s.pt

@@ -1,5 +1,7 @@
 # 生理信号基础模型（Physiological Foundation Models）学术与业界全景调研
 
+> 本文保留早期调研记录。后续选型请先阅读 [调研与工程选型入口](README.md)，再查阅长期参考源与原始论文；本文数值和结论不代表已经核验的最新状态或本项目实测结果。
+
 ## 1. 调研背景与智能手表信号特性
 
 智能手表作为主流的消费级可穿戴设备，其核心物理传感器主要为 **光电容积脉搏波（Photoplethysmography, PPG）** 和 **三轴加速度计（3-Axis Accelerometer, ACC）**，部分设备还配备三轴陀螺仪（Gyroscope）、温度传感器（Skin Temp）和皮肤电反应（EDA）。

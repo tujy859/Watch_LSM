@@ -4,6 +4,10 @@
 
 本项目默认直接在 `main` 开发。更换设备前提交并推送，另一台设备开始工作前先执行 `git pull --ff-only origin main`。
 
+调研与工程选型从 [调研入口](papers/README.md) 开始：长期参考用户维护的 [Wearable-Physiological-Foundation-Models](https://github.com/tujy859/Wearable-Physiological-Foundation-Models)，按任务查阅模型、benchmark 与数据集；本项目保存实际接入状态及验证证据。
+
+PPG-Bench 正式复现进行中：[进度与运行说明](docs/ppg_bench_reproduction.md)。本机状态用 `python scripts/ppg_bench_status.py` 查看，数据、权重与完整实验输出不随Git分发。
+
 ```bash
 python scripts/bootstrap_env.py --backend cpu
 # Windows/Linux NVIDIA 使用 --backend cu124

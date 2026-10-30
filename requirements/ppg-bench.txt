@@ -1,0 +1,14 @@
+# Benchmark environment only; keep separate from the Watch-LSM core venv.
+# Install a matching Torch/TorchVision build first, then both pinned checkouts
+# listed in data_manifests/ppg_bench_assets.json as editable packages.
+numpy==1.26.4
+scipy==1.14.1
+scikit-learn==1.5.2
+PyYAML==6.0.3
+optuna==4.9.0
+einops==0.8.1
+timm==0.9.16
+transformers==4.54.1
+huggingface-hub==0.34.4
+safetensors==0.8.0
+filelock==4.2.4

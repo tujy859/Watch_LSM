@@ -22,11 +22,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source-root", type=Path, help="An offline project copy containing the manifest's relative paths")
     parser.add_argument("--verify-only", action="store_true")
+    parser.add_argument("--manifest", type=Path, default=ROOT / "data_manifests/model_assets.json", help="Core or PPG-Bench asset manifest")
     parser.add_argument("--only", action="append", help="Select a manifest path or basename; repeat for multiple assets")
     args = parser.parse_args()
-    manifest = json.loads((ROOT / "data_manifests/model_assets.json").read_text(encoding="utf-8"))
+    manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     errors = []
-    selected = [entry for entry in manifest["files"] if not args.only
+    selected = [entry for entry in manifest.get("files", manifest.get("new_files", [])) if not args.only
                 or entry["path"] in args.only or Path(entry["path"]).name in args.only]
     if not selected:
         parser.error("No model manifest entries match --only")
@@ -50,7 +51,7 @@ def main():
             process = subprocess.Popen(["git", "show", f"{source['revision']}:{source['path']}"], cwd=ROOT, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             stream = process.stdout
         else:
-            errors.append(entry["path"] + " (provide --source-root; provenance: " + entry["source_record"] + ")")
+            errors.append(entry["path"] + " (provide --source-root; provenance: " + entry.get("source_record", entry.get("source", "manifest")) + ")")
             continue
         with stream, partial.open("wb") as dest:
             for block in iter(lambda: stream.read(4 * 1024 * 1024), b""):

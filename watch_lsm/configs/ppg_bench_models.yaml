@@ -1,0 +1,44 @@
+# Pinned upstream adapters. Paths are relative to this file.
+- name: AnyPPG
+  port: ppg_bench.encoders.anyppg:AnyPPGPort
+  fs: 125
+  embedding_dim: 512
+  init:
+    source_root: ../../repos/anyppg
+    ckpt_path: ../../models/weights/anyppg/anyppg_ckpt.pth
+- name: PaPaGei-S
+  port: ppg_bench.encoders.papagei:PaPaGei_S_Port
+  fs: 125
+  embedding_dim: 512
+  init:
+    ckpt_path: ../../models/weights/papagei/papagei_s.pt
+- name: PaPaGei-P
+  port: ppg_bench.encoders.papagei:PaPaGei_P_Port
+  fs: 125
+  embedding_dim: 512
+  init:
+    ckpt_path: ../../models/weights/papagei/papagei_p.pt
+- name: PulsePPG
+  port: ppg_bench.encoders.pulseppg:PulsePPGPort
+  fs: 50
+  embedding_dim: 512
+  init:
+    ckpt_path: ../../models/weights/pulseppg/pulseppg/experiments/out/pulseppg/checkpoint_best.pkl
+- name: SigmaPPG
+  port: ppg_bench.encoders.sigmappg:SigmaPPGPort
+  fs: 50
+  embedding_dim: 360
+  init:
+    source_root: ../../repos/sigmappg
+    ckpt_path: ../../models/weights/sigmappg/sigma.pth
+- name: PRVCtrl
+  port: ppg_bench.encoders.prv:PRVCtrlPort
+  fs: 100
+  embedding_dim: 8
+  init: {}
+- name: MOMENT-1-small
+  port: ppg_bench.encoders.moment:MOMENTPort
+  fs: 64
+  embedding_dim: 512
+  init:
+    ckpt_path: ../../models/weights/moment/MOMENT-1-small
