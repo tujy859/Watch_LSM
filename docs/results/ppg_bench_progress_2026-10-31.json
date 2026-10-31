@@ -1,0 +1,1883 @@
+{
+  "captured_at": "2026-10-31T18:04:53+08:00",
+  "watch_lsm_revision": "91f4ab7b7e57f1efb3e1051ebcdcdb2c05b37eff",
+  "upstream_revision": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+  "models": [
+    "AnyPPG",
+    "PaPaGei-S",
+    "PaPaGei-P",
+    "PulsePPG",
+    "SigmaPPG",
+    "PRVCtrl",
+    "MOMENT-1-small"
+  ],
+  "counting_unit": "one model/task/method/outer seed/fold; five seeds x five folds = 25",
+  "completion_evidence": "published results.json in declared run.json jobs, excluding working directories; not a fresh prediction/metric audit",
+  "formal_completed": 3569,
+  "formal_planned": 14625,
+  "prv_finetune_report_cells_pending_protocol": 425,
+  "totals": {
+    "linear": {
+      "completed": 3412,
+      "planned": 4550
+    },
+    "rf": {
+      "completed": 0,
+      "planned": 4550
+    },
+    "mlp": {
+      "completed": 157,
+      "planned": 2975
+    },
+    "finetune": {
+      "completed": 0,
+      "planned": 2550
+    }
+  },
+  "datasets": [
+    {
+      "id": "ppgbp",
+      "name": "PPG-BP",
+      "data_ready": true,
+      "primary_tasks": 7,
+      "secondary_tasks": 3,
+      "tasks": [
+        {
+          "name": "ppgbp-age",
+          "dataset": "ppgbp",
+          "target": "age",
+          "task_type": "regression",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "年龄"
+        },
+        {
+          "name": "ppgbp-bmi",
+          "dataset": "ppgbp",
+          "target": "bmi",
+          "task_type": "regression",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "BMI"
+        },
+        {
+          "name": "ppgbp-sysbp",
+          "dataset": "ppgbp",
+          "target": "sysbp",
+          "task_type": "regression",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "收缩压"
+        },
+        {
+          "name": "ppgbp-diasbp",
+          "dataset": "ppgbp",
+          "target": "diasbp",
+          "task_type": "regression",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "舒张压"
+        },
+        {
+          "name": "ppgbp-hr",
+          "dataset": "ppgbp",
+          "target": "hr",
+          "task_type": "regression",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "心率"
+        },
+        {
+          "name": "ppgbp-hypertension",
+          "dataset": "ppgbp",
+          "target": "hypertension",
+          "task_type": "classification",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "高血压分级"
+        },
+        {
+          "name": "ppgbp-diabetes",
+          "dataset": "ppgbp",
+          "target": "diabetes",
+          "task_type": "classification",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "糖尿病分类"
+        },
+        {
+          "name": "ppgbp-hypertension-binary",
+          "dataset": "ppgbp",
+          "target": "hypertension_binary",
+          "task_type": "classification",
+          "eval_level": "subject",
+          "primary": false,
+          "label": "高血压二分类"
+        },
+        {
+          "name": "ppgbp-cerebral-infarction",
+          "dataset": "ppgbp",
+          "target": "cerebral_infarction",
+          "task_type": "classification",
+          "eval_level": "subject",
+          "primary": false,
+          "label": "脑梗死分类"
+        },
+        {
+          "name": "ppgbp-cerebrovascular-disease",
+          "dataset": "ppgbp",
+          "target": "cerebrovascular_disease",
+          "task_type": "classification",
+          "eval_level": "subject",
+          "primary": false,
+          "label": "脑血管疾病分类"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 1750,
+          "planned": 1750,
+          "state": "complete",
+          "by_model": {
+            "AnyPPG": 250,
+            "PaPaGei-S": 250,
+            "PaPaGei-P": 250,
+            "PulsePPG": 250,
+            "SigmaPPG": 250,
+            "PRVCtrl": 250,
+            "MOMENT-1-small": 250
+          },
+          "tasks": {
+            "ppgbp-age": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-bmi": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-sysbp": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-diasbp": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-hr": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-hypertension": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-diabetes": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-hypertension-binary": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-cerebral-infarction": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "ppgbp-cerebrovascular-disease": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 1750,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "ppgbp-age": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-bmi": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-sysbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-diasbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-hypertension": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-diabetes": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-hypertension-binary": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-cerebral-infarction": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-cerebrovascular-disease": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 157,
+          "planned": 1225,
+          "state": "partial",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 157,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "ppgbp-age": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-bmi": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-sysbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-diasbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-hypertension": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-diabetes": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 7,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 1050,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "ppgbp-age": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-bmi": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-sysbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-diasbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-hypertension": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "ppgbp-diabetes": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bidmc",
+      "name": "BIDMC",
+      "data_ready": true,
+      "primary_tasks": 2,
+      "secondary_tasks": 0,
+      "tasks": [
+        {
+          "name": "bidmc-resp",
+          "dataset": "bidmc",
+          "target": "resp",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": true,
+          "label": "呼吸率"
+        },
+        {
+          "name": "bidmc-spo2",
+          "dataset": "bidmc",
+          "target": "spo2",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": true,
+          "label": "血氧饱和度"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 350,
+          "planned": 350,
+          "state": "complete",
+          "by_model": {
+            "AnyPPG": 50,
+            "PaPaGei-S": 50,
+            "PaPaGei-P": 50,
+            "PulsePPG": 50,
+            "SigmaPPG": 50,
+            "PRVCtrl": 50,
+            "MOMENT-1-small": 50
+          },
+          "tasks": {
+            "bidmc-resp": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "bidmc-spo2": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 350,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "bidmc-resp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "bidmc-spo2": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 350,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "bidmc-resp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "bidmc-spo2": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 300,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "bidmc-resp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "bidmc-spo2": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "butppg",
+      "name": "BUT-PPG",
+      "data_ready": true,
+      "primary_tasks": 1,
+      "secondary_tasks": 3,
+      "tasks": [
+        {
+          "name": "butppg-glyc",
+          "dataset": "butppg",
+          "target": "glyc",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": true,
+          "label": "血糖"
+        },
+        {
+          "name": "butppg-sbp",
+          "dataset": "butppg",
+          "target": "sbp",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": false,
+          "label": "收缩压"
+        },
+        {
+          "name": "butppg-dbp",
+          "dataset": "butppg",
+          "target": "dbp",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": false,
+          "label": "舒张压"
+        },
+        {
+          "name": "butppg-spo2",
+          "dataset": "butppg",
+          "target": "spo2",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": false,
+          "label": "血氧饱和度"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 700,
+          "planned": 700,
+          "state": "complete",
+          "by_model": {
+            "AnyPPG": 100,
+            "PaPaGei-S": 100,
+            "PaPaGei-P": 100,
+            "PulsePPG": 100,
+            "SigmaPPG": 100,
+            "PRVCtrl": 100,
+            "MOMENT-1-small": 100
+          },
+          "tasks": {
+            "butppg-glyc": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "butppg-sbp": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "butppg-dbp": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            },
+            "butppg-spo2": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 700,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "butppg-glyc": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "butppg-sbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "butppg-dbp": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "butppg-spo2": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "butppg-glyc": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "butppg-glyc": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "realworldppg",
+      "name": "RealWorldPPG",
+      "data_ready": true,
+      "primary_tasks": 1,
+      "secondary_tasks": 0,
+      "tasks": [
+        {
+          "name": "realworldppg-identification",
+          "dataset": "realworldppg",
+          "target": "id",
+          "task_type": "classification",
+          "eval_level": "window",
+          "primary": true,
+          "label": "闭集身份识别"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 175,
+          "planned": 175,
+          "state": "complete",
+          "by_model": {
+            "AnyPPG": 25,
+            "PaPaGei-S": 25,
+            "PaPaGei-P": 25,
+            "PulsePPG": 25,
+            "SigmaPPG": 25,
+            "PRVCtrl": 25,
+            "MOMENT-1-small": 25
+          },
+          "tasks": {
+            "realworldppg-identification": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 25
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 175,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "realworldppg-identification": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "realworldppg-identification": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "realworldppg-identification": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "dalia",
+      "name": "PPG-DaLiA",
+      "data_ready": true,
+      "primary_tasks": 2,
+      "secondary_tasks": 0,
+      "tasks": [
+        {
+          "name": "dalia-hr",
+          "dataset": "dalia",
+          "target": "hr",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": true,
+          "label": "心率"
+        },
+        {
+          "name": "dalia-activity",
+          "dataset": "dalia",
+          "target": "activity",
+          "task_type": "classification",
+          "eval_level": "window",
+          "primary": true,
+          "label": "活动分类"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 132,
+          "planned": 350,
+          "state": "partial",
+          "by_model": {
+            "AnyPPG": 50,
+            "PaPaGei-S": 50,
+            "PaPaGei-P": 32,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dalia-hr": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "dalia-activity": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 7,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 350,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dalia-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "dalia-activity": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 350,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dalia-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "dalia-activity": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 300,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dalia-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            },
+            "dalia-activity": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ecsmp",
+      "name": "ECSMP",
+      "data_ready": true,
+      "primary_tasks": 1,
+      "secondary_tasks": 1,
+      "tasks": [
+        {
+          "name": "ecsmp-sds-subject",
+          "dataset": "ecsmp",
+          "target": "sds_class",
+          "task_type": "classification",
+          "eval_level": "subject",
+          "primary": true,
+          "label": "SDS抑郁筛查"
+        },
+        {
+          "name": "ecsmp-emotion-reg-cls",
+          "dataset": "ecsmp",
+          "target": "emotion_reg_cls",
+          "task_type": "regression-based-cls",
+          "eval_level": "window",
+          "primary": false,
+          "label": "情绪评分回归后分类"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 305,
+          "planned": 350,
+          "state": "partial",
+          "by_model": {
+            "AnyPPG": 50,
+            "PaPaGei-S": 50,
+            "PaPaGei-P": 50,
+            "PulsePPG": 50,
+            "SigmaPPG": 50,
+            "PRVCtrl": 50,
+            "MOMENT-1-small": 5
+          },
+          "tasks": {
+            "ecsmp-sds-subject": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 5
+            },
+            "ecsmp-emotion-reg-cls": {
+              "AnyPPG": 25,
+              "PaPaGei-S": 25,
+              "PaPaGei-P": 25,
+              "PulsePPG": 25,
+              "SigmaPPG": 25,
+              "PRVCtrl": 25,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 350,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "ecsmp-sds-subject": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "ecsmp-emotion-reg-cls": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "ecsmp-sds-subject": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "ecsmp-sds-subject": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wesad",
+      "name": "WESAD",
+      "data_ready": true,
+      "primary_tasks": 1,
+      "secondary_tasks": 2,
+      "tasks": [
+        {
+          "name": "wesad-4class",
+          "dataset": "wesad",
+          "target": "condition_4class",
+          "task_type": "classification",
+          "eval_level": "window",
+          "primary": true,
+          "label": "四分类情绪/压力状态"
+        },
+        {
+          "name": "wesad-valence-reg",
+          "dataset": "wesad",
+          "target": "valence_reg",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": false,
+          "label": "情绪效价回归"
+        },
+        {
+          "name": "wesad-arousal-reg",
+          "dataset": "wesad",
+          "target": "arousal_reg",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": false,
+          "label": "唤醒度回归"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 0,
+          "planned": 525,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wesad-4class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "wesad-valence-reg": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "wesad-arousal-reg": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 525,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wesad-4class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "wesad-valence-reg": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            },
+            "wesad-arousal-reg": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wesad-4class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wesad-4class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wildppg",
+      "name": "WildPPG",
+      "data_ready": true,
+      "primary_tasks": 1,
+      "secondary_tasks": 0,
+      "tasks": [
+        {
+          "name": "wildppg-hr",
+          "dataset": "wildppg",
+          "target": "hr",
+          "task_type": "regression",
+          "eval_level": "window",
+          "primary": true,
+          "label": "心率"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 0,
+          "planned": 175,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wildppg-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 175,
+          "state": "requires_linux_cuml",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wildppg-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "state": "queued",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wildppg-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "state": "original_cudnn_amp_failed",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "wildppg-hr": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "dreamt",
+      "name": "DREAMT",
+      "data_ready": false,
+      "primary_tasks": 1,
+      "secondary_tasks": 0,
+      "tasks": [
+        {
+          "name": "dreamt-sleep-5class",
+          "dataset": "dreamt",
+          "target": "sleep_5class",
+          "task_type": "classification",
+          "eval_level": "window",
+          "primary": true,
+          "label": "五分类睡眠分期"
+        }
+      ],
+      "methods": {
+        "linear": {
+          "completed": 0,
+          "planned": 175,
+          "state": "deferred",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dreamt-sleep-5class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 175,
+          "state": "deferred",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dreamt-sleep-5class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "state": "deferred",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dreamt-sleep-5class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "PRVCtrl": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "state": "deferred",
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          },
+          "tasks": {
+            "dreamt-sleep-5class": {
+              "AnyPPG": 0,
+              "PaPaGei-S": 0,
+              "PaPaGei-P": 0,
+              "PulsePPG": 0,
+              "SigmaPPG": 0,
+              "MOMENT-1-small": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "adapted_finetuning": {
+    "fp32_completed": 48,
+    "native_cuda_amp_completed": 1,
+    "scope": "PaPaGei-S / PPG-BP; native AMP only sysbp seed42 fold0",
+    "native_amp_trials": [
+      {
+        "repeat": "repeat0",
+        "trial_states": {
+          "COMPLETE": 13,
+          "PRUNED": 35
+        }
+      },
+      {
+        "repeat": "repeat1",
+        "trial_states": {
+          "COMPLETE": 15,
+          "PRUNED": 33
+        }
+      },
+      {
+        "repeat": "repeat2",
+        "trial_states": {
+          "COMPLETE": 15,
+          "PRUNED": 33
+        }
+      }
+    ],
+    "included_in_formal_total": false
+  },
+  "source_manifests": [
+    {
+      "path": ".local/ppg-bench-reproduction-py312/ppgbp/AnyPPG/linear/run.json",
+      "sha256": "ed9469f1b58d0dfdd10cec676e996430d625da3558ee673377e32d9b96e281ee"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/ppgbp/PaPaGei-P/linear/run.json",
+      "sha256": "d79a3805604c32baf4256a2e6ed5163d4feb5ca64bd523e335f55455182730a6"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/ppgbp/PaPaGei-S/linear/run.json",
+      "sha256": "2000e8cdddfa9d9da2c6bd15de29565eba298fd9ecd33985e45e6181bd3f3d10"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/ppgbp/PRVCtrl/linear/run.json",
+      "sha256": "a01d6c101d2e0a64015577c0d85b586077eac6fd0273182974757129bbfc59b5"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/ppgbp/PulsePPG/linear/run.json",
+      "sha256": "1e6b38a82c419ad5a022b97e52b7ec37121edc0002494bc1637a67eedc1f6310"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/realworldppg/AnyPPG/linear/run.json",
+      "sha256": "b927889ad979851659f461d4dec0268cfcf9eef01fb498477771c3bfa4d60bd0"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/realworldppg/PaPaGei-P/linear/run.json",
+      "sha256": "b1090cfb81470408d5cbcf526ecd61732e001d0556b8e490d72f76d094de6eb7"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/realworldppg/PaPaGei-S/linear/run.json",
+      "sha256": "6ca59fe44d9b419f0431825ec8d8d69e0f0e3f9d8e15f8c7549be71bac1bd595"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/realworldppg/PRVCtrl/linear/run.json",
+      "sha256": "a73266c31db3b2db46a1ca19da38fdff81c92a94094180ae6c61ad717fe6b833"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-py312/realworldppg/PulsePPG/linear/run.json",
+      "sha256": "51559131c67f9e1fa2ac58bdf66d526b7d5d8141b335c53c3f0cf8a36516fbc2"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-extra/ppgbp/MOMENT-1-small/linear/run.json",
+      "sha256": "f2070c43cbe6bba9b79198aaf3af86256faa02a69fef69b411fc7a756536219f"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-extra/ppgbp/SigmaPPG/linear/run.json",
+      "sha256": "0b77f68565c70e5e2624e8c26a876aafdf35893425d70c4a514a5335ab9b68c9"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-extra/realworldppg/MOMENT-1-small/linear/run.json",
+      "sha256": "6616f90fe16635e1ae0796664a98e1b58b1dcc5b9d928c3193270dc7fba50946"
+    },
+    {
+      "path": ".local/ppg-bench-reproduction-extra/realworldppg/SigmaPPG/linear/run.json",
+      "sha256": "a311440363061dbf6e170197b9024354222088bc9825d8db8730b25de7583450"
+    },
+    {
+      "path": ".local/ppg-bench-auto/bidmc/bidmc/AnyPPG/linear/run.json",
+      "sha256": "99283a4be57697548e4b1d0552e9faf97b173118b22336ac593292ed31ef081c"
+    },
+    {
+      "path": ".local/ppg-bench-auto/bidmc/bidmc/MOMENT-1-small/linear/run.json",
+      "sha256": "4fd4bae1c564550194061a6cc7e49f32044a951e6292d33d1b2d4dad3c25615e"
+    },
+    {
+      "path": ".local/ppg-bench-auto/bidmc/bidmc/PaPaGei-P/linear/run.json",
+      "sha256": "5594c9cfaebc2de188de9bfe056d02c02867e8b618e873a25e41e111f0fdd154"
+    },
+    {
+      "path": ".local/ppg-bench-auto/bidmc/bidmc/PaPaGei-S/linear/run.json",
+      "sha256": "86f15498e4193aee9094df0402c1bf5594d135807ec02a2dcb642e6aa1f31b5c"
+    },
+    {
+      "path": ".local/ppg-bench-auto/bidmc/bidmc/PRVCtrl/linear/run.json",
+      "sha256": "94904c52f593e7d0fbb5d91ce0e00df5963c2146af9df578c290860cf5d8f3eb"
+    },
+    {
+      "path": ".local/ppg-bench-auto/bidmc/bidmc/PulsePPG/linear/run.json",
+      "sha256": "601ebea1e03dd7381363b585d41caac531f074bab00210e97b494adcd3ea1723"
+    },
+    {
+      "path": ".local/ppg-bench-auto/bidmc/bidmc/SigmaPPG/linear/run.json",
+      "sha256": "dc55337bcd98b70396684cce6a965a78cb5081b2d2f11bd3091bf251a0357f49"
+    },
+    {
+      "path": ".local/ppg-bench-auto/butppg/butppg/AnyPPG/linear/run.json",
+      "sha256": "5d8ac58b61e6b0b9b337026a20aea3f52f593622bb4f3c2aec5c7f326b71651c"
+    },
+    {
+      "path": ".local/ppg-bench-auto/butppg/butppg/MOMENT-1-small/linear/run.json",
+      "sha256": "ecea247687be983b2f271b65ed34fa37e3aaa0237cbb259e468ec8010f2ffd8c"
+    },
+    {
+      "path": ".local/ppg-bench-auto/butppg/butppg/PaPaGei-P/linear/run.json",
+      "sha256": "dd71c550ec30433e974137f8f4c12b9a731f459fcb26b8e457bb661180680f18"
+    },
+    {
+      "path": ".local/ppg-bench-auto/butppg/butppg/PaPaGei-S/linear/run.json",
+      "sha256": "4518322fc81719426b88c50544943c38cae38e304050ff08542f8159f2f071b0"
+    },
+    {
+      "path": ".local/ppg-bench-auto/butppg/butppg/PRVCtrl/linear/run.json",
+      "sha256": "9930cd793c5ef83eb0c0a5f78fe1921c604ac0093da0ebdd83cb48a63b8580e5"
+    },
+    {
+      "path": ".local/ppg-bench-auto/butppg/butppg/PulsePPG/linear/run.json",
+      "sha256": "81aa8b3417090982dee7313df7aa741af89242720f0bcb83991a0b4c6a72ac4c"
+    },
+    {
+      "path": ".local/ppg-bench-auto/butppg/butppg/SigmaPPG/linear/run.json",
+      "sha256": "8c439fed6c9b66359b18585743aa2442f6e31cf0c06b34ec73de2e8b1f4fcf44"
+    },
+    {
+      "path": ".local/ppg-bench-auto/dalia/dalia/AnyPPG/linear/run.json",
+      "sha256": "463226f5613297aa935ea12e94ffa855af463de29f14982a27093e6b41159f99"
+    },
+    {
+      "path": ".local/ppg-bench-auto/dalia/dalia/PaPaGei-P/linear/run.json",
+      "sha256": "6442f73561115de301f3b867f92d517a10242f0a197152a8c5cb8305dcba2ce7"
+    },
+    {
+      "path": ".local/ppg-bench-auto/dalia/dalia/PaPaGei-S/linear/run.json",
+      "sha256": "761012dec83b65f1584c960ea7bede79f4722c01dd7a03faffca79176fe27c21"
+    },
+    {
+      "path": ".local/ppg-bench-auto/ecsmp/ecsmp/AnyPPG/linear/run.json",
+      "sha256": "e680b5d9bce3d42e3d1c7271af75a4e32ad1bd857de4f40db8f915a8cc956973"
+    },
+    {
+      "path": ".local/ppg-bench-auto/ecsmp/ecsmp/MOMENT-1-small/linear/run.json",
+      "sha256": "ff08fa1adb60f7079cb78fd26eaa462fc27adfb10c9d58f317aee3e49fcc2e33"
+    },
+    {
+      "path": ".local/ppg-bench-auto/ecsmp/ecsmp/PaPaGei-P/linear/run.json",
+      "sha256": "8620a3bc4a893a06fbd660d48c30fd4df71b1d5cd4aa5288bc867237f3c3cbff"
+    },
+    {
+      "path": ".local/ppg-bench-auto/ecsmp/ecsmp/PaPaGei-S/linear/run.json",
+      "sha256": "9f80e6a98d2318bf78f1dfd007c1f37d670ac4e74ee6713a61b392b0e81e1fb9"
+    },
+    {
+      "path": ".local/ppg-bench-auto/ecsmp/ecsmp/PRVCtrl/linear/run.json",
+      "sha256": "e38d104f630b34367ea22b2f4ac61591de126224ebaf8057d6b451ddd971d2d2"
+    },
+    {
+      "path": ".local/ppg-bench-auto/ecsmp/ecsmp/PulsePPG/linear/run.json",
+      "sha256": "35e0514b3954fa74f20c3fbb7478fd1483954b4e1381372861fd51841ff72ec9"
+    },
+    {
+      "path": ".local/ppg-bench-auto/ecsmp/ecsmp/SigmaPPG/linear/run.json",
+      "sha256": "5bdfb5884761e20f3b88c3bf04fd039716a3cce5aaec055b324fc93172c3316d"
+    },
+    {
+      "path": ".local/ppg-bench-neural-mlp/ppgbp/PaPaGei-S/mlp/run.json",
+      "sha256": "2d28f04a6137eea2bb1561c4bc3d86a551459ca25e80c161a30087adeae884bf"
+    }
+  ]
+}
