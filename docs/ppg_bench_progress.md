@@ -4,6 +4,14 @@
 
 全部7个模型/对照、8/9份数据已准备好。PPG-BP、BIDMC、BUT-PPG、RealWorldPPG的全部线性评测已完成；MLP和微调仍为部分完成，整篇论文复现尚未完成。
 
+## PPG-BP与PulseDB是两份独立数据集
+
+PPG-BP名称中的PPG指光电容积脉搏波，BP指血压。它由桂林人民医院采集，原始数据包括219人、每人3段2.1秒指尖PPG，共657段，采样率1000 Hz；血压标签来自上臂式电子血压计，没有连续ABP波形。详见[PPG-BP原始论文](https://pmc.ncbi.nlm.nih.gov/articles/PMC5827692/)。
+
+PulseDB则汇集MIMIC-III与VitalDB中的同步PPG、ECG和动脉血压ABP波形；公开全集包括5361人、5245454个10秒片段，统一采样率125 Hz，血压标签从ABP提取。全集规模不表示本机已下载全部数据。详见[PulseDB原始论文](https://pmc.ncbi.nlm.nih.gov/articles/PMC9944565/)。
+
+本项目PPG-Bench采用的是PPG-BP，按固定官方代码排除231号后使用218人、654段；此前1750项线性评测结果均属于这份数据。PulseDB属于本项目另行推进的血压评测路线，正式片段映射及完整评测闭环仍待完成，二者进度不能合并。
+
 ## 评测方法怎么区分
 
 | 方法 | 训练内容 |
