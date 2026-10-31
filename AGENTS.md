@@ -9,13 +9,14 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-31（Asia/Shanghai，18:04进度矩阵与26任务对照已更新；主队列3569项，原生CUDA/AMP完整搜索单折完成；DREAMT继续暂缓）*
+*最后更新时间：2026-10-31（Asia/Shanghai，修正进度矩阵首屏加载与窄屏显示；保留18:04快照，评测队列未改动；DREAMT继续暂缓）*
 
 > **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **10月31日进度可视化显示修正**：用户截图显示聊天中的嵌入区整块空白，本地独立预览可显示，不能仅凭截图确认宿主加载失败的具体原因。已将矩阵、默认数量、模型明细和时间改为直接写入首屏内容，脚本仅增强点击与选择恢复；初始化兼容立即执行/文档加载，忽略无效保存状态。完成状态改为中文“完成”，避免320px下100%断行。修订片段位于`.local/visualizations/ppg-bench-progress-fixed.html`，并同步修订此前线程可视化文件；新引用使用项目内ASCII路径。736px/320px无横向溢出、36单元格选择/数量/单选状态、异常保存状态和移除交互脚本后的完整首屏均已验证，证据`.local/visualizations/verification.json`及预览PNG。另准备仅监听127.0.0.1的独立预览`http://127.0.0.1:55688/`，不是公开部署，重启后需重新启动。保持2026-10-31 18:04:53进度快照，不将本轮显示修复当作新评测进度，也未改动活动worker、数据、权重或环境。
 - [x] **10月31日18:04任务与方法进度快照**：按声明的run.json及最终发布结果逐任务/模型/方法/种子/折去重统计，主队列3569/14625项：线性3412/4550、MLP157/2975，RF及默认cuDNN/AMP微调均0。PPG-BP1750/1750、BIDMC350/350、BUT-PPG700/700、RealWorldPPG175/175线性完成；Dalia132/350、ECSMP305/350，WESAD/WildPPG排队，DREAMT按用户意见暂缓。MLP157项均为PaPaGei-S的PPG-BP主要任务，单对象157/175；全部7对象范围157/1225。另有FP32微调48项及原生CUDA/AMP1项，不并入主队列。更新`docs/ppg_bench_reproduction.md`，明确四方法含义、9数据集17主要+9次要任务、平台差异及结果发布/指标审计区别；机器可读快照`docs/results/ppg_bench_progress_2026-10-31.json`。覆盖率24.4%不是计算用时进度；本轮只检查已发布结果及文档，不重新训练、改动活动worker或安装依赖。
 - [x] **10月31日WSL重新核查**：当前用户的`wsl --version/--status/--list --verbose`均明确报告未安装；当前账号无Lxss发行版注册项，无匹配WSL/Ubuntu/Debian等Appx与包目录，`.wslconfig`和`C:/Program Files/WSL`不存在。结论限定为本机当前无可用WSL，不推断用户历史上从未配置。未执行安装、启用系统特性或重启；证据`.local/wsl-audit-20261031.json`。
 - [x] **10月31日DREAMT直连下载器已准备**：按用户指定2.2.0获取官方MIT-LCP/physionet客户端0.2.1，提交`54ebd21308c368a9d1e8cfd8a673b111cacead0e`，安装至独立`.local/physionet-venv`。默认路由实测经过EFan TUN；新增下载器忽略系统代理，将源IP及IP_UNICAST_IF绑定到WLAN物理网卡，读取实际socket确认后获得HTTPS200；重试adapter也保留绑定，禁止跨源/代理回退。不改VPN或全局路由。新增`scripts/download_dreamt_direct.py`、交互启动器`scripts/start_dreamt_download.ps1`及10项认证/网卡/路径保护测试，全部36项项目测试通过，下载venv pip check通过。
