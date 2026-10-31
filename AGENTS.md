@@ -9,13 +9,16 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-31（Asia/Shanghai，复核PulseDB已有文件/抽样读取但正式加载与评测尚未实现；说明重心转向PPG-Bench后的独立任务缺口；队列未改动）*
+*最后更新时间：2026-10-31（Asia/Shanghai，本会话收尾；23:03主队列3979项，FP32另计69项；交接已整理，既有评测保留运行，临时预览服务关闭）*
+
+> **下一会话先读**：[2026-10-31会话交接](docs/session_handover_2026-10-31.md)。其中记录两条研究工作线、23:03更新快照、已有证据和问题、后台续接入口，以及PulseDB可以逐项验收的小里程碑。下方18:04及更早数字属于历史快照，不当作实时进度。
 
 > **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **10月31日本会话收尾与知识沉淀**：用户要求本session先收尾并整理可复用信息，未开展新实现或新实验。新增`docs/session_handover_2026-10-31.md`，汇总PPG-Bench/PulseDB边界、既有审计证据、精度/后端/PRV协议限制、DREAMT暂缓、远程优先普通文档、main/独立venv/采集记录术语等约定，并将PulseDB拆成索引映射、按需加载与划分检查、最小预测三个可验收阶段。23:03:13北京时间按已发布结果核实主队列3979/14625（线性3745、MLP234）；ECSMP成为第5份全部7对象线性完成的数据，Dalia142/350、WESAD278/525。MLP为PaPaGei-S的PPG-BP175项与RealWorldPPG25项、AnyPPG的PPG-BP34项；FP32微调69项及原生AMP单折1项另计。小型快照`docs/results/ppg_bench_handover_2026-10-31.json`，原18:04文件不覆盖。只核查结果存在性和进程，不新增指标审计；已有评测队列保持运行，机器可读进程表在`.local/ppg-bench-repro/session-close-processes.json`。核验命令后仅关闭本会话创建的55688临时预览服务（原PID34832及启动器3208），未停止评测或删除任何数据；重启后不得沿用旧PID。
 - [x] **10月31日PulseDB未完成正式评测的原因复核**：本机源码检索确认现有PulseDB工具以清单、同步、修复和只读检查为主，核心Dataset仍为wrist PPG+ACC，`watch_lsm/data/pulsedb.py`和`scripts/evaluate_aami_bp.py`均不存在。PulseDB并非未曾读取：10月29日既有覆盖报告确认AAMI清单243项文件大小及HDF5抽样通过；但1340条正式索引的片段映射、按需加载、官方训练/校准/测试隔离与预测闭环未完成，训练/校准数据覆盖亦不能由AAMI测试文件清单推定。前期38份修复/207份补齐已结束，之后开发重心转到不含PulseDB的PPG-Bench，独立实现没有继续落地。已在简表补充，不把现状归结为完全没读数据、权限限制或必须租服务器。本轮仅核查代码和既有报告，未重复扫描数据、启动PulseDB训练或改动现有队列。
 - [x] **10月31日PPG-BP与PulseDB概念澄清**：核对两份原始论文与固定上游预处理，明确PPG-BP为桂林219人/657段2.1秒指尖PPG及电子血压计标签，不含连续ABP；benchmark排除231号后218人/654段。PulseDB为MIMIC-III/VitalDB的同步PPG+ECG+ABP数据，公开全集5361人/5245454个10秒片段，非本机下载覆盖数。已在`docs/ppg_bench_progress.md`补充区别；PPG-BP的1750项线性结果不能视为PulseDB已评测，后者正式片段映射及完整评测闭环仍待完成。本轮不改动数据、训练队列或评测计数。
 - [x] **10月31日改用普通文档交付进度**：用户确认会话目录文件名引用仍未在远端显示，并要求改用文档等简单形式；内联可视化的端到端问题仍未解决，不再声称已修复。新增`docs/ppg_bench_progress.md`，以普通表格展示4种方法、9数据集/26任务、完成数、适配微调和已审计范围，并从完整报告链接；交付GitHub文档链接及回复内核心表格，不依赖本地路径、localhost或内联组件。沿用2026-10-31 18:04:53固定快照，不将旧计数称为实时进度。本轮只整理文档，不改动评测队列、数据、权重或依赖。
@@ -80,14 +83,14 @@
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
 - [x] **完成PPG-Bench最小评测试跑**：PaPaGei-S + PPG-BP收缩压单任务/单折/单种子，GPU提取特征、CPU线性拟合已通过；见`docs/ppg_bench_smoke_2026-10-30.md`。只验证冻结开源编码器路线，不代表自研Watch-LSM或全套benchmark已复现。
 - [ ] **执行已授权的PPG-Bench正式复现**：先推进已就绪8份数据、5份专用PPG模型与PRV/MOMENT对照，保留原5折5种子、内部选参和4类下游协议。优先本机；DREAMT已注册并验证网页登录，但2.2.0文件仍403，用户同意暂缓；RF需解决Linux/cuML环境，后续更大算力再评估租赁。继续检查`.local/ppg-bench-repro/`；原始数据、权重和实验产物不入Git，PulseDB官方评测独立保留，未补DREAMT前不能宣称全篇复现。
-- [ ] **后台队列接棒与未完成项**：先运行`python scripts/ppg_bench_status.py`，查看预处理、`automatic_continuation`、`mlp_continuation`与`adapted_backend_pilot`；不要重复启动仍持锁的队列。8份公开数据下载与预处理已完成，无需重复下载；`.local/ppg-bench-auto`的BIDMC/BUT-PPG完成，Dalia/ECSMP部分完成，WESAD/WildPPG排队。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP及7对象后续队列在`.local/ppg-bench-neural-mlp`，FP32适配微调在`.local/ppg-bench-neural-fp32`。原生AMP完整搜索单折已完成，后续先验证更多任务/对象再扩展，保持后端结果隔离；新增线性结果待扩大独立指标审计。仍需其余所有折/种子/任务、PRV报告复用规则、DREAMT与Linux/cuML RF，不能声称全篇完成。
+- [ ] **后台队列接棒与未完成项**：先运行`python scripts/ppg_bench_status.py`，查看预处理、`automatic_continuation`、`mlp_continuation`与`adapted_backend_pilot`；不要重复启动仍持锁的队列。8份公开数据下载与预处理已完成，无需重复下载；截至23:03，`.local/ppg-bench-auto`的BIDMC/BUT-PPG/ECSMP完成，Dalia/WESAD部分完成，WildPPG排队。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP及7对象后续队列在`.local/ppg-bench-neural-mlp`，FP32适配微调在`.local/ppg-bench-neural-fp32`。PaPaGei-S的PPG-BP/RealWorldPPG MLP均完成，全部公开数据MLP续跑已在运行。原生AMP完整搜索单折已完成，后续先验证更多任务/对象再扩展，保持后端结果隔离；新增线性结果待扩大独立指标审计。仍需其余所有折/种子/任务、PRV报告复用规则、DREAMT与Linux/cuML RF，不能声称全篇完成。
 - [ ] **按调研入口推进具体选型**：后续开工先读 `papers/README.md`；涉及基模、数据集、benchmark或评测协议时，查阅用户调研仓相关最新内容，再核验原论文和官方实现，记录采用的提交与本地证据。现有历史分析无需整体复制或覆盖；持续自动同步尚未实施。
 - [ ] **统一研究数据与实验契约**：先明确样本的受试者ID、记录ID、片段位置、采样率、标签来源及官方split；修复现有wrist入口s1跨训练/验证的问题，为PulseDB加入按需读取及划分交集检查。统一基模输入/embedding接口，核对配置项实际消费情况，保存每次运行的有效配置、Git版本、数据划分与权重哈希、种子及指标。辅助工具接入仅为建议，尚未实施。
 - [x] **完成 AAMI 补齐及失败重试**：10月29日06:00全部完成，11:42复核修复38/38、补齐207/207通过，后台正常结束；955份波形HDF5打开检查及完整AAMI清单243项大小/首尾抽样均通过。无需再次启动下载；本机覆盖报告保存在 `.local/`。
 - [ ] **扩展其他硬件与上游验证**：本机 CPU/GPU 与 Windows/Linux CPU CI 已实测；其他具体 GPU、macOS MPS 仍需按实际设备验证。上游 repos/ 历史快照还需独立版本核验，不把核心库通过视为全部基模复现完成。
 - [ ] **修复历史实验解释与划分**：路径入口已处理；实验4的正式预训练权重接入、实验4/6受试者隔离划分与指标重测仍待独立研究任务，不把本轮环境恢复当成这些实验已经复现。
 - [ ] **核验官方索引片段映射与有效覆盖率**：AAMI 索引1,340条记录含MIMIC674条、VitalDB666条；按 `Subj_Name` 下划线前缀映射的242份患者文件及测试索引已全部在本机通过大小与抽样验证。仍需正式核验名称和片段偏移映射，逐条确认1,340条记录可读取；文件齐全不能代替完整官方AAMI测试已复现。
-- [ ] **构建标准相对路径数据加载模块**：在 `watch_lsm/data/pulsedb.py` 中编写基于 `PROJECT_ROOT` 的 PulseDB Dataset 与 DataLoader，能一键读取 `AAMI_Test_Info.mat` 与本地 748 例患者的 10 秒波形切片。
+- [ ] **构建标准相对路径数据加载模块**：在 `watch_lsm/data/pulsedb.py` 中编写基于 `PROJECT_ROOT` 的 PulseDB Dataset 与 DataLoader；先完成官方索引到实际片段的逐条核验，再按需读取本机已验证覆盖的患者文件，不硬编码早期748人的规模。验收步骤见本次会话交接。
 - [ ] **建立 AAMI 血压基准评测脚本**：编写 `scripts/evaluate_aami_bp.py`，加载 PaPaGei 或 Pulse-PPG 预训练表征，评估在 AAMI 标准测试集上的无校准（CalFree）与单点校准（CalBased）收缩压/舒张压 MAE 与 SD。
 - [ ] **多模态 PPG+ECG 跨模态重构探索**：基于 `mimic_perform` 与 `pulsedb`，探索单模态 PPG 推理虚拟 ECG / 血压的生成网络。
 
@@ -146,7 +149,7 @@
 ### 2. 本地数据集大账本 (`datasets/`)
 | 数据集名称 | 存放路径 | 规模与内容 | 适用场景 |
 | :--- | :--- | :--- | :--- |
-| **PulseDB v2.0** | `datasets/pulsedb/` | **137.12 GB 本地物理资产**<br>- 748 例 MIMIC-III ICU 患者连续对齐切片<br>- 11/11 份全量官方评测与训练索引（全部通过 HDF5 校验） | 连续血压金标准评测、AAMI 医疗标准认证、跨人群无校准泛化测试 |
+| **PulseDB v2.0** | `datasets/pulsedb/` | 2026-10-29核查：955份患者波形文件通过HDF5打开检查；完整AAMI文件清单243项通过大小及首尾抽样。此前748份/137.12 GB属于补齐前历史规模；正式片段映射及训练/校准覆盖仍待核验 | 血压估计、官方AAMI数据划分评测与跨人群无校准泛化研究 |
 | **MIMIC-PERForm** | `datasets/mimic_perform/` | 400 位重症监护患者，每人 **10 分钟连续未切片** 125 Hz PPG+ECG+Resp（共 268 MB） | 长程连续时序自监督、呼吸率估计、PPG 跨模态生成 ECG |
 | **VitalDB 1-min** | `datasets/vitaldb_1min/` | 50 例手术患者，**9,994 个 1 分钟窗口**（166.6 小时 PPG+ECG，没有 ABP；连续块经筛选，不能假定整例无间断） | 长窗口表征与 PPG/ECG 配对研究 |
 | **WildPPG** | `datasets/wildppg/` | 216 小时自由生活非受限多部位 PPG + 3D IMU（602 MB） | 穿戴真实运动抗噪、多身体部位（腕/胸/头/踝）域适应 |

@@ -1,0 +1,565 @@
+{
+  "captured_at": "2026-10-31T23:03:13+08:00",
+  "upstream_revision": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+  "source_status_sha256": "aa95e4a71d6d3050bd04e5a5fcc976c1ba4887c86e69f09db1b9dde4c88013bb",
+  "counting_basis": "Published results files for declared outer model/task/method/seed/fold jobs; not a fresh metric or prediction audit.",
+  "completed_evaluations": 3979,
+  "planned_independent_evaluations": 14625,
+  "prv_finetune_report_cells_pending_protocol": 425,
+  "totals": {
+    "linear": {
+      "completed": 3745,
+      "planned": 4550
+    },
+    "rf": {
+      "completed": 0,
+      "planned": 4550
+    },
+    "mlp": {
+      "completed": 234,
+      "planned": 2975
+    },
+    "finetune": {
+      "completed": 0,
+      "planned": 2550
+    }
+  },
+  "datasets": [
+    {
+      "id": "ppgbp",
+      "name": "PPG-BP",
+      "methods": {
+        "linear": {
+          "completed": 1750,
+          "planned": 1750,
+          "by_model": {
+            "AnyPPG": 250,
+            "PaPaGei-S": 250,
+            "PaPaGei-P": 250,
+            "PulsePPG": 250,
+            "SigmaPPG": 250,
+            "PRVCtrl": 250,
+            "MOMENT-1-small": 250
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 1750,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 209,
+          "planned": 1225,
+          "by_model": {
+            "AnyPPG": 34,
+            "PaPaGei-S": 175,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 1050,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "bidmc",
+      "name": "BIDMC",
+      "methods": {
+        "linear": {
+          "completed": 350,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 50,
+            "PaPaGei-S": 50,
+            "PaPaGei-P": 50,
+            "PulsePPG": 50,
+            "SigmaPPG": 50,
+            "PRVCtrl": 50,
+            "MOMENT-1-small": 50
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 300,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "butppg",
+      "name": "BUT-PPG",
+      "methods": {
+        "linear": {
+          "completed": 700,
+          "planned": 700,
+          "by_model": {
+            "AnyPPG": 100,
+            "PaPaGei-S": 100,
+            "PaPaGei-P": 100,
+            "PulsePPG": 100,
+            "SigmaPPG": 100,
+            "PRVCtrl": 100,
+            "MOMENT-1-small": 100
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 700,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "realworldppg",
+      "name": "RealWorldPPG",
+      "methods": {
+        "linear": {
+          "completed": 175,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 25,
+            "PaPaGei-S": 25,
+            "PaPaGei-P": 25,
+            "PulsePPG": 25,
+            "SigmaPPG": 25,
+            "PRVCtrl": 25,
+            "MOMENT-1-small": 25
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 25,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 25,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "dalia",
+      "name": "PPG-DaLiA",
+      "methods": {
+        "linear": {
+          "completed": 142,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 50,
+            "PaPaGei-S": 50,
+            "PaPaGei-P": 42,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 300,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "ecsmp",
+      "name": "ECSMP",
+      "methods": {
+        "linear": {
+          "completed": 350,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 50,
+            "PaPaGei-S": 50,
+            "PaPaGei-P": 50,
+            "PulsePPG": 50,
+            "SigmaPPG": 50,
+            "PRVCtrl": 50,
+            "MOMENT-1-small": 50
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 350,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "wesad",
+      "name": "WESAD",
+      "methods": {
+        "linear": {
+          "completed": 278,
+          "planned": 525,
+          "by_model": {
+            "AnyPPG": 75,
+            "PaPaGei-S": 75,
+            "PaPaGei-P": 75,
+            "PulsePPG": 53,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 525,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "wildppg",
+      "name": "WildPPG",
+      "methods": {
+        "linear": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "dreamt",
+      "name": "DREAMT",
+      "methods": {
+        "linear": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "rf": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "mlp": {
+          "completed": 0,
+          "planned": 175,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "PRVCtrl": 0,
+            "MOMENT-1-small": 0
+          }
+        },
+        "finetune": {
+          "completed": 0,
+          "planned": 150,
+          "by_model": {
+            "AnyPPG": 0,
+            "PaPaGei-S": 0,
+            "PaPaGei-P": 0,
+            "PulsePPG": 0,
+            "SigmaPPG": 0,
+            "MOMENT-1-small": 0
+          }
+        }
+      }
+    }
+  ],
+  "adapted_finetuning": {
+    "fp32": [
+      {
+        "path": ".local/ppg-bench-neural-fp32/ppgbp/PaPaGei-S/finetune",
+        "precision": "float32",
+        "completed": 69,
+        "planned": 175,
+        "complete": false,
+        "upstream_reported_completed": 68,
+        "summary_may_lag": true
+      }
+    ],
+    "native_cuda_amp": {
+      "completed": 1,
+      "planned": 1,
+      "complete": true,
+      "upstream_reported_completed": 1,
+      "summary_may_lag": false
+    },
+    "included_in_main_total": false
+  },
+  "dreamt_phase": "deferred_by_user",
+  "full_reproduction_complete": false
+}
