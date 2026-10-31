@@ -32,7 +32,7 @@ def published_status(directory):
 
 def main():
     local = ROOT / ".local"
-    state = {"checked_at": datetime.now(timezone.utc).isoformat(), "full_paper_evaluations_planned": 15050, "full_reproduction_complete": False}
+    state = {"checked_at": datetime.now(timezone.utc).isoformat(), "full_paper_evaluations_planned": 14625, "nominal_report_cells": 15050, "prv_finetune_report_cells_pending": 425, "plan_note": "Exclude 17*25 parameter-free PRV finetuning cells from independent computations. Paper control reuse still needs protocol confirmation.", "full_reproduction_complete": False}
     state["downloads"] = read(local / "ppg-bench-repro/downloads-v2.json", {})
     for retry_path in (local / "ppg-bench-repro").glob("downloads-retry*.json"):
         retry = read(retry_path, {})
@@ -76,6 +76,8 @@ def main():
     state["automatic_continuation"] = read(local / "ppg-bench-auto/state.json", {})
     state["mlp_continuation"] = read(local / "ppg-bench-neural-mlp/continuation.json", {})
     state["mlp_capacity_run"] = read(local / "ppg-bench-mlp-capacity/status.json", {"complete": False})
+    state["amp_kernel_diagnostic"] = read(local / "ppg-bench-amp-kernel-diagnostic/report.json", {})
+    state["adapted_backend_pilot"] = {"status": published_status(local / "ppg-bench-amp-native-pilot"), "backend": read(local / "ppg-bench-amp-native-pilot/backend-profile.json", {}), "finalization": read(local / "ppg-bench-repro/amp-native-pilot-finalization.json", {})}
     state["adapted_precision_runs"] = []
     for path in (local / "ppg-bench-neural-fp32").rglob("run.json"):
         value = published_status(path.parent)
@@ -86,7 +88,7 @@ def main():
     temporary = target.with_suffix(".tmp.json")
     temporary.write_text(json.dumps(state, indent=2), encoding="utf-8")
     temporary.replace(target)
-    print(json.dumps({"completed_evaluations": state["completed_evaluations"], "full_paper_evaluations_planned": 15050, "all_models_passed": all(v.get("status") == "passed" for v in state["model_validation"].get("models", {}).values()) and len(state["model_validation"].get("models", {})) == 7, "downloads": {k: v["status"] for k, v in state["downloads"].get("datasets", {}).items()}, "full_reproduction_complete": False, "report": str(target)}, indent=2))
+    print(json.dumps({"completed_evaluations": state["completed_evaluations"], "full_paper_evaluations_planned": state["full_paper_evaluations_planned"], "prv_report_cells_pending": 425, "all_models_passed": all(v.get("status") == "passed" for v in state["model_validation"].get("models", {}).values()) and len(state["model_validation"].get("models", {})) == 7, "downloads": {k: v["status"] for k, v in state["downloads"].get("datasets", {}).items()}, "full_reproduction_complete": False, "report": str(target)}, indent=2))
 
 
 if __name__ == "__main__":

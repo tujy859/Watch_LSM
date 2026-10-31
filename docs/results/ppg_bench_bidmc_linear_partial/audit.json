@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-31T02:55:18.869410+00:00",
+  "scope": "BIDMC, AnyPPG and PaPaGei-S, linear only, two tasks, five seeds and five folds",
+  "completed_evaluations": 100,
+  "full_reproduction_complete": false,
+  "checks": [
+    "train/test groups disjoint with 53 total subjects",
+    "25 seed/fold evaluations for each task and model",
+    "prediction subjects within outer test split",
+    "finite predictions and labels",
+    "window-level MAE recomputed from predictions",
+    "all four task/model means and 95% CI match paper Table 1 rounded to two decimals"
+  ],
+  "paper": "https://arxiv.org/html/2610.13435v1",
+  "evidence": [
+    {
+      "model": "AnyPPG",
+      "completed_evaluations": 50,
+      "manifest_sha256": "99283a4be57697548e4b1d0552e9faf97b173118b22336ac593292ed31ef081c",
+      "result_prediction_set_sha256": "870d637e8f729e8181290b87b42a673334847180ddc5d9e5bbb9a3d6715f7edf"
+    },
+    {
+      "model": "PaPaGei-S",
+      "completed_evaluations": 50,
+      "manifest_sha256": "86f15498e4193aee9094df0402c1bf5594d135807ec02a2dcb642e6aa1f31b5c",
+      "result_prediction_set_sha256": "f374382f57036532646d594fb2cf646dc845aa55303bc48233c06e0298711fe3"
+    }
+  ]
+}

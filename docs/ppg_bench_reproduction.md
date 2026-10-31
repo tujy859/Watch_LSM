@@ -23,7 +23,9 @@ PPG-BP的7个对象均已完成线性评测：每项任务5种子、5个外层�
 
 可随Git查看的全部70项模型/任务汇总见[summary.csv](results/ppg_bench_ppgbp_linear/summary.csv)，逐项核查证据见[audit.json](results/ppg_bench_ppgbp_linear/audit.json)。已检查1,750项评测的五折五种子覆盖、218人划分、训练/测试受试者无交集、各折测试集不重叠、预测受试者身份与有限值；SBP/DBP的MAE已从保存的预测按受试者取均值后重算一致。校验记录含产物集合哈希；原始划分和预测文件仍留本机，不随Git发布。
 
-完整7对象、26任务、规定方法/种子/折数对应15,050个外层评测（每个对象2,150个）；次要任务仅用线性/RF。一个神经评测内部还可能包含3次验证重复与各48次搜索，不能把外层计数当作训练次数。
+10月31日新增BIDMC阶段结果：AnyPPG与PaPaGei-S各完成2任务×25折种子，共100项线性评测。已核查53人划分无交集、预测身份和有限值，并从窗口预测重算MAE；四组均值和Student-t 95%置信区间均与[论文表1](https://arxiv.org/html/2610.13435v1)在两位小数上一致：AnyPPG呼吸率2.56±0.18、SpO2 2.85±0.17；PaPaGei-S分别2.44±0.08、2.54±0.06。精确数值及证据见[AnyPPG](results/ppg_bench_bidmc_linear_partial/AnyPPG.csv)、[PaPaGei-S](results/ppg_bench_bidmc_linear_partial/PaPaGei-S.csv)和[100项核查记录](results/ppg_bench_bidmc_linear_partial/audit.json)。BIDMC其余对象仍在运行，本段不是全部模型已完成的声明。
+
+7对象、26任务、规定方法/种子/折数的组合原先按15,050个名义报告格估算。10月31日进一步核验发现，PRV编码器参数数目为0，上游`build_finetune_model`明确拒绝无参数编码器，因此不能给它安排17任务×25折种子的425项编码器微调。排除这部分后，独立计算计划为14,625项；425个PRV报告格另列为协议核验项，不自动计为完成。[论文表10/11](https://arxiv.org/html/2610.13435v1)的PRV均值和置信区间一致，这支持复用MLP对照的推断，但本项目尚未把该推断当作已确认的逐折复用规则。启动器会将PRV微调标记为`requires_prv_protocol_clarification`，不会伪造训练。次要任务仅用线性/RF；一个神经外层评测内部还可能包含3次验证重复与各48次搜索，外层计数不能当作训练次数。
 
 ## 资源与环境
 
@@ -53,8 +55,11 @@ PPG-BP的7个对象均已完成线性评测：每项任务5种子、5个外层�
 
 - 原始冻结MLP协议的一项收缩压外层评测已完成：48次候选搜索、3次验证重复，单折单种子MAE15.2036 mmHg。正式5折5种子MLP队列已启动；相同身份的已完成试跑任务通过完整运行身份比对后复用。
 - 原始AMP微调在本机第一项候选出现NaN，保留在`.local/ppg-bench-finetune-capacity/`及对应日志，未跳过失败后伪装成功。
+- 10月31日进一步定位：使用原先失败的PaPaGei-S收缩压候选、seed42/fold0，仅在外层训练集内划分417个训练窗口和105个验证窗口。cuDNN9.1的FP16路径在`basicblock_list.17.conv2.conv`首先出现非有限输出；对相同输入和权重，原生CUDA FP16和cuDNN FP32均有限，输出最大绝对值分别6.16797和6.16845，二者最大绝对差0.002214。关闭cuDNN、保持AMP的单候选，以及FP32对照，都完成15轮验证。证据见[同层计算对比](results/ppg_bench_amp_diagnostic/kernel-comparison.json)及[15轮精度对照](results/ppg_bench_amp_diagnostic/precision-comparison.json)。这将问题定位到本机这一cuDNN/FP16计算路径，尚不能推断其他显卡或软件版本的行为；全程未使用外层测试集选方案。
+- 已另行启动原生CUDA卷积的AMP试跑：PaPaGei-S收缩压、seed42/fold0，仍保留48次候选搜索、3次验证重复和15轮上限，尚待完成。输出`.local/ppg-bench-amp-native-pilot/`含独立`backend-profile.json`及`execution-profile.json`，不并入原始cuDNN或FP32的结果计数。该试跑只改变卷积后端、候选并行数和评估批量；不从通过单候选诊断推断完整微调已复现。
 - FP32、单候选并行的诊断中，同一候选的3次验证重复已完成。该诊断只搜索1个候选，不计入完整复现。另已启动保持48次搜索的本机FP32微调队列，输出`.local/ppg-bench-neural-fp32/`；其精度与串行TPE调度差异单独记录，不计为原始AMP设置完成。
 - `scripts/ppg_bench_neural_worker.py`可显式记录候选并行数、评估批量、精度与诊断预算；训练批量候选、学习率、epoch和正式搜索次数不会被隐式缩减。FP32结果不得与原始AMP结果混为同一配置。
+- `scripts/run_ppg_bench.py --convolution-backend native --neural-trial-workers 1`通过独立后端启动器设置`cudnn.enabled=False`，其余精度仍由`--precision`明确控制；改变后端时必须使用新输出目录，不替换已运行配置。
 - Windows下已完成的Optuna数据库句柄可能导致工作目录改名失败。启动器会在子进程退出后确认结果及预测文件齐全，再发布并按上游机制续跑；不改动已完成预测或指标。相关缺失预测/未知任务保护测试已添加。
 - 原生Windows没有cuML，当前进程没有管理员权限且未安装WSL。官方RF仍待兼容Linux环境；不能改成scikit-learn RF后直接当作论文后端已复现。
 
@@ -80,12 +85,15 @@ PPG-BP的7个对象均已完成线性评测：每项任务5种子、5个外层�
 
 - `.local/ppg-bench-reproduction-py312/`：5个对象的PPG-BP/RealWorldPPG线性队列。
 - `.local/ppg-bench-reproduction-extra/`：SigmaPPG、MOMENT的对应线性队列。
-- `.local/ppg-bench-auto/`：新数据下载完成后，自动预处理和执行7对象线性队列；当前处理Dalia。
+- `.local/ppg-bench-auto/`：已就绪数据的7对象线性队列；当前并行处理Dalia与BIDMC，后续BUT-PPG/ECSMP/WESAD/WildPPG排队。
 - `.local/ppg-bench-neural-mlp/`：PaPaGei-S完整折数MLP队列。
 - `.local/ppg-bench-neural-fp32/`：有明确精度差异的本机微调队列。
+- `.local/ppg-bench-amp-native-pilot/`：保留AMP、改变卷积后端的完整搜索单外层试跑，独立计数。
 - `.local/ppg-bench-repro/`：下载、模型/梯度验证、环境和故障日志。
 
 所有后台Python进程仅在本机持续开机时运行；关闭电脑后需按状态恢复。这里没有创建定时自动化，也没有开启服务器费用。
+
+线性续跑器支持`--parallel-datasets 2`。本次在保留Dalia子队列的情况下替换旧协调进程，以`--adopt dalia=<已核实的活动启动器PID>`接管等待，不重新训练Dalia；BIDMC进入第二个并行位置。并行只涉及独立数据集，模型内部划分、搜索和指标不变。`--adopt`必须使用当次核实的PID，不能从旧交接或上次开机盲目复制。协调器确认全部7对象的目标scope完成后才标记数据集完成，进程退出本身不能作为成功证据。状态中已就绪但暂未运行的数据标记`queued`。
 
 `scripts/continue_ppg_bench_mlp.py --after-pid <现有MLP启动器PID>`会等待当前PaPaGei-S队列退出，再在同一输出目录继续8份已就绪数据、全部7对象的MLP评测；保留原48次搜索及5折5种子，已完成任务按上游身份检查复用。其状态见`continuation.json`，不与当前MLP作业争用GPU。PID只用于本次等待，不应在重启后直接沿用旧值。当前已启动这一后续队列；DREAMT和RF不包含在其中。
 

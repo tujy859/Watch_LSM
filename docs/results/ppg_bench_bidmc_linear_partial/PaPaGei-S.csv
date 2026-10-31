@@ -1,0 +1,5 @@
+model,task,method,metric,mean,ci95,n_seeds,n_folds
+PaPaGei-S,bidmc-resp,linear,mae,2.4406251430511476,0.08012137361693965,5,25
+PaPaGei-S,bidmc-spo2,linear,mae,2.540328364372253,0.05945558545781075,5,25
+TrainMean,bidmc-resp,linear,mae,2.3496032857894895,0.057562480205187616,5,25
+TrainMean,bidmc-spo2,linear,mae,2.5103799724578857,0.042232507257372966,5,25

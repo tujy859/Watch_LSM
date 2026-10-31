@@ -1,0 +1,5 @@
+model,task,method,metric,mean,ci95,n_seeds,n_folds
+AnyPPG,bidmc-resp,linear,mae,2.5576087284088134,0.18403002028072285,5,25
+AnyPPG,bidmc-spo2,linear,mae,2.8523629283905025,0.1710679672386477,5,25
+TrainMean,bidmc-resp,linear,mae,2.3496032857894895,0.057562480205187616,5,25
+TrainMean,bidmc-spo2,linear,mae,2.5103799724578857,0.042232507257372966,5,25

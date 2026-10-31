@@ -1,0 +1,239 @@
+{
+  "diagnostic_only": true,
+  "created_at": "2026-10-31T02:39:42.248655+00:00",
+  "task": "ppgbp-sysbp",
+  "seed": 42,
+  "fold": 0,
+  "params": {
+    "activation": "gelu",
+    "batch_size": 1024,
+    "batchnorm_mode": "train",
+    "encoder_lr_ratio": 0.1,
+    "encoder_weight_decay_ratio": 1.0,
+    "head_dropout": 0.3,
+    "head_lr": 0.001,
+    "head_weight_decay": 0.0,
+    "hidden_dim": 256
+  },
+  "train_windows": 417,
+  "validation_windows": 105,
+  "outer_test_used": false,
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "torch": "2.5.1+cu124",
+  "cudnn": 90100,
+  "bf16_supported": true,
+  "modes": {
+    "amp_cudnn": {
+      "amp": true,
+      "cudnn_enabled": true,
+      "epochs": [],
+      "status": "failed",
+      "first_nonfinite_module": {
+        "name": "encoder.encoder.basicblock_list.17.conv2.conv",
+        "type": "Conv1d",
+        "dtype": "torch.float16",
+        "shape": [
+          417,
+          512,
+          1
+        ],
+        "input_max_abs": 10.7890625
+      },
+      "error": "FloatingPointError: First non-finite activation: encoder.encoder.basicblock_list.17.conv2.conv"
+    },
+    "amp_native": {
+      "amp": true,
+      "cudnn_enabled": false,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 17289.236328125,
+          "validation_mae": 122.78678507315261,
+          "gradient_scale": 32768.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 17289.359375,
+          "validation_mae": 122.78817441378321,
+          "gradient_scale": 16384.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 17286.083984375,
+          "validation_mae": 122.79347983811583,
+          "gradient_scale": 8192.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 17290.43359375,
+          "validation_mae": 122.80133426929159,
+          "gradient_scale": 4096.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 17286.751953125,
+          "validation_mae": 122.81426753859435,
+          "gradient_scale": 2048.0
+        },
+        {
+          "epoch": 6,
+          "train_loss": 17285.412109375,
+          "validation_mae": 122.82893073803612,
+          "gradient_scale": 1024.0
+        },
+        {
+          "epoch": 7,
+          "train_loss": 17287.501953125,
+          "validation_mae": 122.8529421548226,
+          "gradient_scale": 512.0
+        },
+        {
+          "epoch": 8,
+          "train_loss": 17287.3359375,
+          "validation_mae": 122.87269917223603,
+          "gradient_scale": 256.0
+        },
+        {
+          "epoch": 9,
+          "train_loss": 17288.353515625,
+          "validation_mae": 122.89825589188507,
+          "gradient_scale": 128.0
+        },
+        {
+          "epoch": 10,
+          "train_loss": 17289.091796875,
+          "validation_mae": 122.41542882663863,
+          "gradient_scale": 128.0
+        },
+        {
+          "epoch": 11,
+          "train_loss": 17068.712890625,
+          "validation_mae": 121.76125977465085,
+          "gradient_scale": 128.0
+        },
+        {
+          "epoch": 12,
+          "train_loss": 16835.12890625,
+          "validation_mae": 120.8864047220775,
+          "gradient_scale": 128.0
+        },
+        {
+          "epoch": 13,
+          "train_loss": 16580.326171875,
+          "validation_mae": 119.74785923617226,
+          "gradient_scale": 128.0
+        },
+        {
+          "epoch": 14,
+          "train_loss": 16266.5283203125,
+          "validation_mae": 118.31531053951808,
+          "gradient_scale": 128.0
+        },
+        {
+          "epoch": 15,
+          "train_loss": 15902.4228515625,
+          "validation_mae": 118.00255150113787,
+          "gradient_scale": 64.0
+        }
+      ],
+      "status": "passed"
+    },
+    "fp32_cudnn": {
+      "amp": false,
+      "cudnn_enabled": true,
+      "epochs": [
+        {
+          "epoch": 1,
+          "train_loss": 17289.2421875,
+          "validation_mae": 123.11825104503494,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 2,
+          "train_loss": 17068.83984375,
+          "validation_mae": 123.23542522586816,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 16834.646484375,
+          "validation_mae": 123.03559650636412,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 16573.36328125,
+          "validation_mae": 122.46054739302822,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 16269.9736328125,
+          "validation_mae": 121.44084167512399,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 6,
+          "train_loss": 15905.93359375,
+          "validation_mae": 119.91891072137015,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 7,
+          "train_loss": 15501.47265625,
+          "validation_mae": 117.84134779657636,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 8,
+          "train_loss": 15012.724609375,
+          "validation_mae": 115.11783090318953,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 9,
+          "train_loss": 14489.794921875,
+          "validation_mae": 111.77336480276925,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 10,
+          "train_loss": 13909.6884765625,
+          "validation_mae": 107.9847023010254,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 11,
+          "train_loss": 13281.6865234375,
+          "validation_mae": 104.07811856951032,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 12,
+          "train_loss": 12591.0029296875,
+          "validation_mae": 100.08504371643066,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 13,
+          "train_loss": 11878.5849609375,
+          "validation_mae": 96.03335500444685,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 14,
+          "train_loss": 11159.2265625,
+          "validation_mae": 91.86971021379743,
+          "gradient_scale": 1.0
+        },
+        {
+          "epoch": 15,
+          "train_loss": 10365.51953125,
+          "validation_mae": 87.59714159284319,
+          "gradient_scale": 1.0
+        }
+      ],
+      "status": "passed"
+    }
+  }
+}

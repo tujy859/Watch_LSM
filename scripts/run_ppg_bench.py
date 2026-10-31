@@ -31,6 +31,16 @@ def write_json(path, value):
     temporary.replace(path)
 
 
+def validate_backend_scope(destination, backend):
+    """Never combine default-cuDNN results and native-CUDA results in one run."""
+    recorded = (destination / "backend-profile.json").is_file()
+    existing = (destination / "run.json").is_file() or (destination / "execution-profile.json").is_file()
+    if backend == "upstream" and recorded:
+        raise ValueError("Output has an adapted backend profile; use a separate output")
+    if backend == "native" and existing and not recorded:
+        raise ValueError("Existing output has no native backend profile; use a fresh output")
+
+
 def recover_completed_jobs(destination):
     """Publish fully written jobs after a Windows rename/SQLite-handle failure.
 
@@ -75,9 +85,12 @@ def main():
     parser.add_argument("--neural-trial-workers", type=int, help="Explicit local execution profile; preserves HPO budgets/grids")
     parser.add_argument("--evaluation-batch-size", type=int, default=32)
     parser.add_argument("--precision", choices=["upstream", "float32"], default="upstream")
+    parser.add_argument("--convolution-backend", choices=["upstream", "native"], default="upstream")
     args = parser.parse_args()
     if args.precision != "upstream" and args.neural_trial_workers is None:
         parser.error("A precision override requires an explicit --neural-trial-workers execution profile")
+    if args.convolution_backend != "upstream" and args.neural_trial_workers is None:
+        parser.error("A backend override requires an explicit --neural-trial-workers execution profile")
     args.output = args.output.resolve()
     args.output.mkdir(parents=True, exist_ok=True)
     state_path = args.output / f"{args.stage}-status.json"
@@ -106,6 +119,7 @@ def main():
         models = [m for m in models if m["name"] in args.models]
     rates = sorted({m["fs"] for m in models})
     state = {"upstream_revision": revision, "started_at": datetime.now(timezone.utc).isoformat(), "scope": {"datasets": args.datasets, "models": [m["name"] for m in models], "methods": args.methods if args.stage == "run" else []}, "full_seeds": [42, 43, 44, 45, 46], "full_folds": [0, 1, 2, 3, 4], "jobs": {}}
+    state["execution"] = {"precision": args.precision, "convolution_backend": args.convolution_backend, "neural_trial_workers": args.neural_trial_workers}
     environment = os.environ.copy()
     environment.update({"OMP_NUM_THREADS": "4", "MKL_NUM_THREADS": "4", "OPENBLAS_NUM_THREADS": "4", "CUBLAS_WORKSPACE_CONFIG": ":4096:8", "PYTHONUNBUFFERED": "1"})
     for dataset in args.datasets:
@@ -138,13 +152,18 @@ def main():
                 job_id = f"{dataset}__{name}__{method}"
                 if not (prepared / "preprocessing.json").is_file():
                     state["jobs"][job_id] = {"status": "missing_processed_data"}
+                elif method == "finetune" and model["port"] == "ppg_bench.encoders.prv:PRVCtrlPort":
+                    state["jobs"][job_id] = {"status": "requires_prv_protocol_clarification", "note": "PRV has no trainable encoder. Paper finetuning control values match its MLP column; do not invent encoder training or count reused cells as independent evaluations."}
                 elif method == "rf" and importlib.util.find_spec("cuml") is None:
                     state["jobs"][job_id] = {"status": "requires_cuml_environment"}
                 else:
                     destination = args.output / dataset / name / method
+                    if method in ("mlp", "finetune"):
+                        validate_backend_scope(destination, args.convolution_backend)
                     head = [sys.executable, "-m", "ppg_bench", "run"]
                     if method in ("mlp", "finetune") and args.neural_trial_workers is not None:
-                        head = [sys.executable, str(ROOT / "scripts/ppg_bench_neural_worker.py"), "--trial-workers", str(args.neural_trial_workers), "--evaluation-batch-size", str(args.evaluation_batch_size), "--precision", args.precision]
+                        worker = "ppg_bench_backend_worker.py" if args.convolution_backend == "native" else "ppg_bench_neural_worker.py"
+                        head = [sys.executable, str(ROOT / "scripts" / worker), "--trial-workers", str(args.neural_trial_workers), "--evaluation-batch-size", str(args.evaluation_batch_size), "--precision", args.precision]
                     command = [*head, "--model", str(config_path), "--datasets", dataset, "--methods", method, "--processed", str(args.processed), "--output", str(destination), "--device", args.device, "--batch-size", str(args.batch_size)]
                     print(job_id, flush=True)
                     state["jobs"][job_id] = {"status": "running", "output": str(destination.relative_to(args.output))}
@@ -169,7 +188,7 @@ def main():
                 write_json(state_path, state)
     state["finished_at"] = datetime.now(timezone.utc).isoformat()
     state["scope_complete"] = bool(state["jobs"]) and all(v["status"] == "complete" for v in state["jobs"].values())
-    state["full_reproduction_complete"] = (args.stage == "run" and state["scope_complete"] and set(args.datasets) == set(RAW_ROOTS) and len(models) == 7 and set(args.methods) == {"linear", "rf", "mlp", "finetune"} and args.precision == "upstream")
+    state["full_reproduction_complete"] = (args.stage == "run" and state["scope_complete"] and set(args.datasets) == set(RAW_ROOTS) and len(models) == 7 and set(args.methods) == {"linear", "rf", "mlp", "finetune"} and args.precision == "upstream" and args.convolution_backend == "upstream")
     write_json(state_path, state)
     return 0 if state["scope_complete"] else 1
 

@@ -1,0 +1,53 @@
+{
+  "diagnostic_only": true,
+  "created_at": "2026-10-31T02:41:48.116607+00:00",
+  "source_sha256": "4759b64613f966e126c24bd4667259246b6f2564bc4fb14fca20892eb41dc97b",
+  "task": "ppgbp-sysbp",
+  "seed": 42,
+  "fold": 0,
+  "params": {
+    "activation": "gelu",
+    "batch_size": 1024,
+    "batchnorm_mode": "train",
+    "encoder_lr_ratio": 0.1,
+    "encoder_weight_decay_ratio": 1.0,
+    "head_dropout": 0.3,
+    "head_lr": 0.001,
+    "head_weight_decay": 0.0,
+    "hidden_dim": 256
+  },
+  "train_windows": 417,
+  "validation_windows": 105,
+  "outer_test_used": false,
+  "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+  "torch": "2.5.1+cu124",
+  "cudnn": 90100,
+  "bf16_supported": true,
+  "modes": {
+    "amp_cudnn": {
+      "amp": true,
+      "cudnn_enabled": true,
+      "epochs": [],
+      "status": "failed",
+      "first_nonfinite_module": {
+        "name": "encoder.encoder.basicblock_list.17.conv2.conv",
+        "type": "Conv1d",
+        "dtype": "torch.float16",
+        "shape": [
+          417,
+          512,
+          1
+        ],
+        "input_max_abs": 10.7890625
+      },
+      "same_convolution_comparison": {
+        "native_fp16_finite": true,
+        "cudnn_fp32_finite": true,
+        "native_max_abs": 6.16796875,
+        "fp32_max_abs": 6.168454170227051,
+        "native_fp16_vs_fp32_max_abs_error": 0.0022144317626953125
+      },
+      "error": "FloatingPointError: First non-finite activation: encoder.encoder.basicblock_list.17.conv2.conv"
+    }
+  }
+}

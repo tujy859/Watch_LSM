@@ -26,6 +26,8 @@
 
 调研仓已在 README 的关联工程中链接 Watch_LSM，本项目通过本入口建立反向导航。
 
+2026-10-31增量核查：调研仓main已到[`bb994f2c341ff1405c32092f6e60a2617842b050`](https://github.com/tujy859/Wearable-Physiological-Foundation-Models/tree/bb994f2c341ff1405c32092f6e60a2617842b050)，本次仅复核`docs/models/smartwatch_models.md`的PPG-Bench章节，9份数据集名单已与原论文/官方代码一致。上表其他历史核查范围不扩展；实验上游实现仍固定到`2bca102b7be2c0a9816a3872314784d2ef92555b`。本轮新增的本机AMP计算路径和PRV微调协议问题记录在正式复现进度中，未修改外部调研仓。
+
 ## 按任务查阅
 
 | 本项目任务 | 调研仓入口 | 本地衔接与待验证事项 |

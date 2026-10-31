@@ -9,13 +9,18 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-31（Asia/Shanghai，发现昨晚后台队列已中断并恢复；修正进度统计缓存滞后，20项测试通过）*
+*最后更新时间：2026-10-31（Asia/Shanghai，定位AMP异常的本机cuDNN/FP16卷积路径；线性数据集并行推进，26项测试通过）*
 
 > **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **10月31日新增BIDMC指标复现与核查**：AnyPPG和PaPaGei-S各完成呼吸率/SpO2两任务×5种子×5折，共100项线性评测；53人训练/测试组无交集、五折五种子、预测身份与有限值、窗口MAE重算全部通过。四组均值及Student-t 95% CI均与论文表1保留两位小数一致：AnyPPG为2.56±0.18 / 2.85±0.17，PaPaGei-S为2.44±0.08 / 2.54±0.06。精确数值、原始结果/预测集合哈希和运行清单哈希已保存`docs/results/ppg_bench_bidmc_linear_partial/`。正式完成数已超过2050，FP32另计；其余BIDMC对象和原生AMP完整HPO仍运行，不把本阶段当作全篇完成。
+- [x] **10月31日AMP数值路径定位**：用原PaPaGei-S收缩压失败候选、seed42/fold0的417训练/105验证窗口定位到`basicblock_list.17.conv2.conv`，本机Torch2.5.1+cu124/cuDNN9.1在FP16下首先出现非有限输出。同层相同输入和权重改用原生CUDA FP16或cuDNN FP32均有限，输出最大绝对值6.16797/6.16845、两者最大差0.002214。原生AMP与FP32单候选均完成15轮；不涉及外层测试集，不等于完整HPO已完成。新增`scripts/diagnose_ppg_bench_amp.py`，证据保存在`docs/results/ppg_bench_amp_diagnostic/`。未更改上游源码、权重或安装新依赖。
+- [ ] **10月31日完整搜索AMP试跑进行中**：原生CUDA卷积、保留AMP的PaPaGei-S收缩压单外层试跑在`.local/ppg-bench-amp-native-pilot/`，保持48候选、3次验证重复、15轮上限；启动器PID31376/计算进程28472，当前首重复仍在搜索。独立`backend-profile.json`记录后端，`execution-profile.json`记录精度与候选并行数；不计入原始cuDNN或FP32结果。PID35668等待该试跑退出后检查/恢复已完整保存的Windows工作目录并刷新原CLI汇总，状态`.local/ppg-bench-repro/amp-native-pilot-finalization.json`。若真实训练失败，不自动重试掩盖错误；先查搜索数据库与日志。新增后端隔离保护，禁止在原始/替代后端间混用同一输出目录。
+- [x] **10月31日线性并行与进度**：替换旧线性协调器（24208/20624已退出），保留活动Dalia启动器12264继续计算，不重复训练；新协调器PID35804以`--parallel-datasets 2 --adopt dalia=12264`运行，BIDMC启动器38328进入第二位置。协调器支持明确接管并核验全部7对象scope，进程退出本身不作为成功证据；状态已区分queued与缺数据。BIDMC AnyPPG完整50项已完成，PaPaGei-S继续；正式结果计数已超过2030，FP32适配结果单独计数。新增6项队列/后端保护测试与原20项测试均通过，PRV跳过策略实际CLI检查通过。
+- [ ] **10月31日全套计划与PRV协议澄清**：官方PRV编码器实际0参数，微调构建器拒绝无参数编码器；论文表10/11的PRV均值与置信区间一致，支持复用MLP对照的推断，但未确认逐折复用规则。此前15050是名义报告格数，不能全当独立训练；扣除PRV的17×25=425个微调报告格后，独立计算计划改为14625，425项复用/协议核验单列，不自动计完成。启动器标记`requires_prv_protocol_clarification`，不会启动不存在的PRV编码器训练。本轮增量核查用户调研仓main `bb994f2c341ff1405c32092f6e60a2617842b050`的PPG-Bench章节，数据名单已校正；benchmark仍固定`2bca102...`。DREAMT权限、Linux/cuML RF及其余全部折数仍待完成。
 - [x] **10月31日完全访问与临时目录复核**：当前收到的执行配置已为danger-full-access/never，与用户所述完全访问一致；上一轮工具配置为workspace-write，界面与当时执行配置为何不一致尚无证据，不归因于用户修改设置。此前测试报错的3个系统临时目录（tmpv5qa7b8k、tmpxa0n_ylu、tmpmlc65fqt）复核均已不存在，清理时间/机制未确认。本轮在普通用户Temp新建独立测试目录，读写及自动清理均通过；不需要迁移临时目录。项目内5份中断评测归档全部保留，其中3份线性工作目录为空、MLP归档3份文件320892字节、FP32归档5份文件666284字节，合计987176字节；不与系统测试临时目录混淆，未修改原始数据、模型权重或已完成评测结果。
 - [x] **10月31日进度复核与中断恢复**：实际系统只读检查确认原6个Python队列均已退出，日志最后更新于10月30日20:40左右；退出原因未确认，不能声称一直在运行或归因于权限变化。按已发布的结果文件核实为1859项正式评测（PPG-BP线性1750、RealWorldPPG线性68、Dalia线性29、PaPaGei-S MLP12），另有FP32适配微调2项，不纳入原始精度统计。发现上游status.json比最终结果目录滞后，已修改`scripts/ppg_bench_status.py`按run.json中的已发布结果计数，排除.working及未知任务，保留原摘要计数供比较；新增3项测试，全部20项测试通过。
 - [x] **10月31日本机队列已恢复**：将5份未完成任务目录完整归档到`.local/ppg-bench-interrupted/2026-10-31/`，已完成结果未改动；记录`.local/ppg-bench-repro/interrupted-20261031.json`。已获准在受限环境外恢复后台进程：主线性PID4728、补充线性31804、自动线性24208、MLP28676、FP32微调6040、MLP后续队列27172（等待新MLP PID28676）。进程映射及日志见`.local/ppg-bench-repro/resume-20261031.json`和`20261031-101225-*.log`；恢复后神经搜索数据库持续更新，6份入口错误日志为空。旧PID均失效；新PID也仅对本次开机有效。DREAMT权限、Linux/cuML RF、原AMP NaN仍未解决，不能声称完整复现完成。
@@ -66,7 +71,7 @@
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
 - [x] **完成PPG-Bench最小评测试跑**：PaPaGei-S + PPG-BP收缩压单任务/单折/单种子，GPU提取特征、CPU线性拟合已通过；见`docs/ppg_bench_smoke_2026-10-30.md`。只验证冻结开源编码器路线，不代表自研Watch-LSM或全套benchmark已复现。
 - [ ] **执行已授权的PPG-Bench正式复现**：补齐官方9份数据集、5份专用PPG模型与PRV/MOMENT对照，保留原5折5种子、内部选参和4类下游协议。优先本机；DREAMT等待用户注册/协议权限，RF需解决Linux/cuML环境，后续更大算力再评估租赁。公开下载与环境工作已开始，继续检查`.local/ppg-bench-repro/`；原始数据、权重和实验产物不入Git，PulseDB官方评测独立保留。
-- [ ] **后台队列接棒与未完成项**：先运行`python scripts/ppg_bench_status.py`，查看下载、预处理和`mlp_continuation`；不要重复启动仍持锁的队列。公开下载与预处理已全部完成，无需重复启动下载；`.local/ppg-bench-auto`逐数据集续跑线性评测，当前Dalia较慢，BIDMC等后续数据已预处理完毕，会按队列继续评测。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP及7对象后续队列在`.local/ppg-bench-neural-mlp`，本机FP32适配微调在`.local/ppg-bench-neural-fp32`。仍需完成其余所有折/种子/任务、原始AMP微调稳定性与RF；DREAMT没有权限前不能声称资源已全齐。
+- [ ] **后台队列接棒与未完成项**：先运行`python scripts/ppg_bench_status.py`，查看预处理、`automatic_continuation`、`mlp_continuation`与`adapted_backend_pilot`；不要重复启动仍持锁的队列。公开下载与预处理已全部完成，无需重复下载；`.local/ppg-bench-auto`当前并行Dalia和BIDMC，随后继续BUT-PPG/ECSMP/WESAD/WildPPG。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP及7对象后续队列在`.local/ppg-bench-neural-mlp`，FP32适配微调在`.local/ppg-bench-neural-fp32`。优先核查原生AMP完整搜索试跑结束后的3重复/48候选及有限值，再决定后续全折策略；保持后端结果隔离。仍需完成其余所有折/种子/任务、PRV报告复用规则、DREAMT与Linux/cuML RF，不能声称全篇完成。
 - [ ] **按调研入口推进具体选型**：后续开工先读 `papers/README.md`；涉及基模、数据集、benchmark或评测协议时，查阅用户调研仓相关最新内容，再核验原论文和官方实现，记录采用的提交与本地证据。现有历史分析无需整体复制或覆盖；持续自动同步尚未实施。
 - [ ] **统一研究数据与实验契约**：先明确样本的受试者ID、记录ID、片段位置、采样率、标签来源及官方split；修复现有wrist入口s1跨训练/验证的问题，为PulseDB加入按需读取及划分交集检查。统一基模输入/embedding接口，核对配置项实际消费情况，保存每次运行的有效配置、Git版本、数据划分与权重哈希、种子及指标。辅助工具接入仅为建议，尚未实施。
 - [x] **完成 AAMI 补齐及失败重试**：10月29日06:00全部完成，11:42复核修复38/38、补齐207/207通过，后台正常结束；955份波形HDF5打开检查及完整AAMI清单243项大小/首尾抽样均通过。无需再次启动下载；本机覆盖报告保存在 `.local/`。
