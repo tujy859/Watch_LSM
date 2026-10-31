@@ -9,13 +9,17 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-30（Asia/Shanghai，PPG-Bench全部模型及8份公开数据就绪，PPG-BP线性1750项已核查；其余评测后台继续）*
+*最后更新时间：2026-10-31（Asia/Shanghai，发现昨晚后台队列已中断并恢复；修正进度统计缓存滞后，20项测试通过）*
 
 > **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **10月31日完全访问与临时目录复核**：当前收到的执行配置已为danger-full-access/never，与用户所述完全访问一致；上一轮工具配置为workspace-write，界面与当时执行配置为何不一致尚无证据，不归因于用户修改设置。此前测试报错的3个系统临时目录（tmpv5qa7b8k、tmpxa0n_ylu、tmpmlc65fqt）复核均已不存在，清理时间/机制未确认。本轮在普通用户Temp新建独立测试目录，读写及自动清理均通过；不需要迁移临时目录。项目内5份中断评测归档全部保留，其中3份线性工作目录为空、MLP归档3份文件320892字节、FP32归档5份文件666284字节，合计987176字节；不与系统测试临时目录混淆，未修改原始数据、模型权重或已完成评测结果。
+- [x] **10月31日进度复核与中断恢复**：实际系统只读检查确认原6个Python队列均已退出，日志最后更新于10月30日20:40左右；退出原因未确认，不能声称一直在运行或归因于权限变化。按已发布的结果文件核实为1859项正式评测（PPG-BP线性1750、RealWorldPPG线性68、Dalia线性29、PaPaGei-S MLP12），另有FP32适配微调2项，不纳入原始精度统计。发现上游status.json比最终结果目录滞后，已修改`scripts/ppg_bench_status.py`按run.json中的已发布结果计数，排除.working及未知任务，保留原摘要计数供比较；新增3项测试，全部20项测试通过。
+- [x] **10月31日本机队列已恢复**：将5份未完成任务目录完整归档到`.local/ppg-bench-interrupted/2026-10-31/`，已完成结果未改动；记录`.local/ppg-bench-repro/interrupted-20261031.json`。已获准在受限环境外恢复后台进程：主线性PID4728、补充线性31804、自动线性24208、MLP28676、FP32微调6040、MLP后续队列27172（等待新MLP PID28676）。进程映射及日志见`.local/ppg-bench-repro/resume-20261031.json`和`20261031-101225-*.log`；恢复后神经搜索数据库持续更新，6份入口错误日志为空。旧PID均失效；新PID也仅对本次开机有效。DREAMT权限、Linux/cuML RF、原AMP NaN仍未解决，不能声称完整复现完成。
+- [x] **10月31日操作权限澄清与统计修复保存**：上一轮为受限操作权限，系统进程检查和系统临时目录测试曾被拦截；获准在受限环境外重试后成功。这与benchmark依赖损坏是不同问题；后续优先将临时文件放项目`.local/`，不要把操作权限限制笼统称为评测环境故障。当前已恢复完全访问，状态统计修复、新增3项测试及交接更新一并按main流程保存；已检查远端无更新。本轮没有重装依赖、重新下载数据或租用服务器。
 - [x] **10月30日源码与后续MLP队列已保存**：上述资源接入、核查脚本及PPG-BP汇总已以`314a782`推送main。新增`scripts/continue_ppg_bench_mlp.py`，本机PID22356等待现有MLP启动器PID31908退出后，在同一`.local/ppg-bench-neural-mlp`目录续跑8份已就绪数据、全部7对象的原始MLP协议；已完成任务按上游运行身份复用，不额外并行占用GPU。状态`continuation.json`、日志`continuation.log`及`.local/ppg-bench-repro/mlp-continuation*.log`；关机后PID失效，重启时须先查活动进程再恢复，不照抄旧PID。该队列不含DREAMT/RF，也不代表原始AMP微调已解决。
 - [x] **10月30日20:30资源补齐与结果核查**：BUT-PPG的830对有效质量采集记录文件已补齐并按50名受试者完成预处理；ECSMP最终60人、WildPPG16人也均完成预处理。除DREAMT外的8份数据、50/64/100/125 Hz共32份输出全部就绪。新增`scripts/audit_ppg_bench_ppgbp.py`核查1750项完整线性结果的5折5种子、218人覆盖、受试者无交集、测试折互斥、预测身份/有限值及血压MAE重算，全部通过；70项汇总及产物集合哈希已保存到`docs/results/ppg_bench_ppgbp_linear/`。补充`docs/ppg_bench_setup.md`固定源码/独立环境/离线权重恢复说明，恢复工具现支持新增模型清单；4份新增权重/配置SHA-256复核通过。17项项目测试、benchmark环境pip check通过，上游源码未改动。实况计数已超过1840项，仍为部分评测，原始AMP/FP32分开记录。
 - [x] **10月30日正式复现资源与阶段结果**：5个专用PPG模型+PRV/MOMENT共7对象均通过真实PPG的GPU前向和小批量反向/优化检查。新增模型来源及哈希见`data_manifests/ppg_bench_assets.json`。PPG-BP的7对象、10任务、5种子×5折共1750个线性外层评测完成，收缩压/舒张压的全部均值与论文表1在两位小数上一致；其余线性任务及PaPaGei-S完整折数MLP继续后台运行。Dalia、BIDMC、WESAD、WildPPG、BUT-PPG、ECSMP官方原始数据均已补齐并完成4采样率预处理。最终使用原独立`.local/ppg-bench-venv` Python3.12，已补兼容的固定MOMENT源码0.1.5/Transformers4.54.1；不再使用此前准备但未完成的Python3.11环境，项目`.venv`未改装。17项测试通过。运行及完整限制见`docs/ppg_bench_reproduction.md`，实况用`python scripts/ppg_bench_status.py`；不能将此阶段等同于全篇复现完成。
