@@ -5,7 +5,8 @@
     "ppg-bench": "2bca102b7be2c0a9816a3872314784d2ef92555b",
     "anyppg": "661b877aa96eac3bba320a462cb2a3bfea991103",
     "sigmappg": "b1cc8d90da3878958b890c6e352cd3ae2a644005",
-    "moment-benchmark": "38f7310ad594100747ca2a8357e9c7ca7d323e0e"
+    "moment-benchmark": "38f7310ad594100747ca2a8357e9c7ca7d323e0e",
+    "physionet-client": "54ebd21308c368a9d1e8cfd8a673b111cacead0e"
   },
   "note": "Author LFS SHA-256 was verified for SigmaPPG and MOMENT weights; AnyPPG is the exact file from the pinned author checkout. Existing PaPaGei and PulsePPG assets are defined in model_assets.json. Local files are not included in Git.",
   "new_files": [
@@ -34,6 +35,9 @@
       "source": "https://huggingface.co/AutonLab/MOMENT-1-small"
     }
   ],
+  "additional_dataset_sources": {
+    "dreamt_user_requested_2.2.0": "https://physionet.org/content/dreamt/2.2.0/"
+  },
   "dataset_sources": {
     "dalia": "https://archive.ics.uci.edu/dataset/495/ppg+dalia",
     "dreamt": "https://physionet.org/content/dreamt/2.1.0/",

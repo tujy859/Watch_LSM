@@ -75,6 +75,7 @@ def main():
     state["queued_evaluations_with_existing_manifests"] = sum(item["planned"] for item in state["evaluations"])
     state["automatic_continuation"] = read(local / "ppg-bench-auto/state.json", {})
     state["mlp_continuation"] = read(local / "ppg-bench-neural-mlp/continuation.json", {})
+    state["dreamt_download"] = read(local / "dreamt-download-status.json", {})
     state["mlp_capacity_run"] = read(local / "ppg-bench-mlp-capacity/status.json", {"complete": False})
     state["amp_kernel_diagnostic"] = read(local / "ppg-bench-amp-kernel-diagnostic/report.json", {})
     state["adapted_backend_pilot"] = {"status": published_status(local / "ppg-bench-amp-native-pilot"), "backend": read(local / "ppg-bench-amp-native-pilot/backend-profile.json", {}), "finalization": read(local / "ppg-bench-repro/amp-native-pilot-finalization.json", {})}
@@ -83,7 +84,7 @@ def main():
         value = published_status(path.parent)
         if value:
             state["adapted_precision_runs"].append({"path": path.parent.relative_to(ROOT).as_posix(), "precision": "float32", **value})
-    state["remaining_external_requirements"] = ["DREAMT 2.1.0: user must log in and sign the dataset agreement", "Official RF: a compatible Linux/cuML environment", "Original AMP finetuning produced NaNs on this GPU; Float32 runs are tracked separately, not counted as original-precision reproduction"]
+    state["remaining_external_requirements"] = ["DREAMT 2.2.0: website login verified but file manifest still HTTP 403; deferred by user, version compatibility with the pinned 2.1.0 benchmark remains explicit", "Official RF: a compatible Linux/cuML environment", "Original AMP finetuning produced NaNs on this GPU; Float32 runs are tracked separately, not counted as original-precision reproduction"]
     target = local / "ppg-bench-status.json"
     temporary = target.with_suffix(".tmp.json")
     temporary.write_text(json.dumps(state, indent=2), encoding="utf-8")

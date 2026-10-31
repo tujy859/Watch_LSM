@@ -41,7 +41,7 @@ PPG-BP的7个对象均已完成线性评测：每项任务5种子、5个外层�
 | WildPPG | 官方原始归档已补齐，16人、4种采样率已预处理；不使用早期汇总MAT替代 |
 | BUT-PPG | 830对有效质量采集记录文件已补齐，按50名受试者分组、4种采样率已预处理 |
 | ECSMP | 原始PPG/EEG与标签已补齐，60人、4种采样率已预处理；按官方解析规则跳过039（缺失SDS）及042/048/064（视频起点数异常） |
-| DREAMT 2.1.0 | 等待用户账号和该项目数据协议授权 |
+| DREAMT | 用户已完成注册/申请并指定2.2.0；直连和网页登录验证通过，但文件清单仍403，尚未下载数据。用户表示可暂缓，已退出密码会话；2.2.0将独立保存 |
 
 新增原始数据均保存在`datasets/ppg_bench_raw/`，不覆盖早期变体与无效ZIP。预处理在`datasets/ppg_bench_processed/`，包含50/64/100/125 Hz版本。下载完成不等于预处理或评测完成；机器状态和后续校验优先于本表快照。
 
@@ -97,12 +97,26 @@ PPG-BP的7个对象均已完成线性评测：每项任务5种子、5个外层�
 
 `scripts/continue_ppg_bench_mlp.py --after-pid <现有MLP启动器PID>`会等待当前PaPaGei-S队列退出，再在同一输出目录继续8份已就绪数据、全部7对象的MLP评测；保留原48次搜索及5折5种子，已完成任务按上游身份检查复用。其状态见`continuation.json`，不与当前MLP作业争用GPU。PID只用于本次等待，不应在重启后直接沿用旧值。当前已启动这一后续队列；DREAMT和RF不包含在其中。
 
-## DREAMT需要用户完成的步骤
+## DREAMT 2.2.0下载与账号验证
 
-1. [登录或找回PhysioNet账号](https://physionet.org/login/)，没有账号则注册。
-2. 打开[DREAMT2.1.0](https://physionet.org/content/dreamt/2.1.0/)，在页面底部按提示签署该项目数据使用协议。该版本页面只列出注册账号和项目协议，没有列CITI或credential培训要求。
-3. 确认能访问`data_64Hz`目录。不要在聊天或Git里提供密码；下载凭据应仅在本机安全设置。
+用户于10月31日告知已注册账号、完成数据集申请，并明确要求下载[DREAMT2.2.0](https://physionet.org/content/dreamt/2.2.0/)。该版本官方说明修正了ACC与PSG数据对齐，可能影响睡眠标注；与此前固定的2.1.0不是同一数据版本。下载保存到`datasets/ppg_bench_raw/dreamt-2.2.0/`，不覆盖`dreamt/`或静默触发原2.1.0队列。后续需明确记录版本差异及预处理位置，再开展2.2.0评测。
+
+采用官方[MIT-LCP/physionet](https://github.com/MIT-LCP/physionet)客户端0.2.1，源码固定`54ebd21308c368a9d1e8cfd8a673b111cacead0e`，独立环境`.local/physionet-venv`，不修改benchmark环境。新设备需先获取该固定源码并安装到新venv；本机完整依赖清单见`.local/physionet-environment-freeze.txt`。
+
+当前Windows默认路由经过EFan TUN，因此只设置`--noproxy`不能证明绕过VPN。`scripts/download_dreamt_direct.py`使用忽略系统代理的Requests会话，将IPv4源地址与`IP_UNICAST_IF`一起绑定到指定物理网卡；预检读取实际socket的本地地址和网卡索引。官方客户端下载函数更换重试adapter时，也保留该绑定。拒绝代理参数与跨源重定向，直连失败时停止，不回退VPN；不修改全局路由或VPN配置。WLAN直连PhysioNet的HTTPS预检已实测200。
+
+Windows交互启动（本机网络接口为WLAN，其他设备可用`-InterfaceAlias`指定）：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start_dreamt_download.ps1
+```
+
+程序先验证直连，再在该终端隐藏输入密码。密码只留在当前进程内存，不写入命令参数、环境变量、聊天或状态文件。优先下载`data_64Hz/`，随后继续其余文件；沿用官方SHA-256、续传和失败重试。数据文件访问被拒绝时，程序进一步验证普通网页登录；若登录成功但文件仍403，则等待用户在网页确认该版本协议/权限后按回车重试，不自动签署协议，不将登录成功当作数据权限已获批。
+
+下载状态位于`.local/dreamt-download-status.json`，取得权限后才会生成`.local/dreamt-2.2.0-manifest.json`校验清单。`source.json`仅在全部下载成功后生成。本轮Basic认证及普通网页登录后的文件清单请求均返回403，网页登录已确认成功；尚不能下载该版本文件，也不能从登录成功推断已具备项目访问权限。用户表示该数据集可暂缓，已退出等待重试的密码会话，未下载数据、未保存密码或Cookie。后续需要时在新本机终端输入凭据并核验项目协议状态。
+
+对当前Watch-LSM研究优先级的判断：DREAMT对睡眠分期和夜间PPG+ACC迁移有价值，100Hz文件还包含同步PSG/ECG等参考信号；但没有本项目血压评测所需的连续ABP标签，也不是剧烈运动抗伪影数据。当前可优先推进其余8份数据与PulseDB血压闭环；完整PPG-Bench报告须明确暂缺睡眠分期任务。官方目录是`data_64Hz`和`data_100Hz`：前者仅穿戴信号及睡眠标签，后者额外包含PSG信号；不能把重采样后的统一频率理解为所有传感器的原生采样率。
 
 自动续跑器要求数据目录存在上游下载器完成后生成的`source.json`。手动下载到一半时只有若干CSV不会触发新的队列；完整下载后再按官方清单核对并预处理。
 
-为匹配benchmark使用2.1.0，不自动替换成更新版本。RF环境、原始AMP微调数值稳定性和完整计算预算仍需处理，整篇复现保持未完成状态。
+用户指定的2.2.0按独立版本下载；原论文结果对照仍须说明数据版本不同。RF环境、AMP适配试跑和完整计算预算仍需处理，整篇复现保持未完成状态。
