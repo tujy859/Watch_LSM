@@ -9,7 +9,7 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-10-31（Asia/Shanghai，本会话收尾；23:03主队列3979项，FP32另计69项；交接已整理，既有评测保留运行，临时预览服务关闭）*
+*最后更新时间：2026-11-04（Asia/Shanghai，PPG噪声处理资源范围核对；本轮不刷新评测计数或进程状态，下列10月31日进度仍为历史快照）*
 
 > **下一会话先读**：[2026-10-31会话交接](docs/session_handover_2026-10-31.md)。其中记录两条研究工作线、23:03更新快照、已有证据和问题、后台续接入口，以及PulseDB可以逐项验收的小里程碑。下方18:04及更早数字属于历史快照，不当作实时进度。
 
@@ -18,6 +18,7 @@
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **11月4日PPG噪声处理资源范围核对**：核对本仓代码、清单、本机文件与调研仓`229db45b5e1a4cb86c52e491da66dc5ea99c4b57`相关索引，详见`papers/README.md`新增专题。DaLiA/WESAD/BUT-PPG已接入下游PPG-Bench，尚无独立去噪/伪影检测/SQI评测；DaLiA和WESAD各15份受试者PKL及4采样率输出存在。BUT-PPG完整标注含Good830/Poor3058，本机Good830对PPG文件齐全、Poor0对，下载与预处理均主动过滤质量1，因此此前就绪仅指benchmark所需子集，不能直接做Good/Poor分类。TROIKA已有调研及查找脚本，未发现数据或正式接入；EPFL Synthetic、MIMIC-III-Ext-PPG及SEGADE在本轮所查旧索引中未检出，现已登记候选。用户提供的伪影benchmark提交`b307686...`完整树只有README，不能视为可运行代码；SEGADE原仓确有代码和DaLiA/WESAD/TROIKA标注文件元数据，但未下载或验证映射。EPFL直访超时，仅确认官方搜索摘要，未复核340条版本；MIMIC-III-Ext-PPG官方说明已核对，不与现有MIMIC-PERForm/PulseDB混同。仅文档更新，无新训练、下载或队列操作。
 - [x] **10月31日本会话收尾与知识沉淀**：用户要求本session先收尾并整理可复用信息，未开展新实现或新实验。新增`docs/session_handover_2026-10-31.md`，汇总PPG-Bench/PulseDB边界、既有审计证据、精度/后端/PRV协议限制、DREAMT暂缓、远程优先普通文档、main/独立venv/采集记录术语等约定，并将PulseDB拆成索引映射、按需加载与划分检查、最小预测三个可验收阶段。23:03:13北京时间按已发布结果核实主队列3979/14625（线性3745、MLP234）；ECSMP成为第5份全部7对象线性完成的数据，Dalia142/350、WESAD278/525。MLP为PaPaGei-S的PPG-BP175项与RealWorldPPG25项、AnyPPG的PPG-BP34项；FP32微调69项及原生AMP单折1项另计。小型快照`docs/results/ppg_bench_handover_2026-10-31.json`，原18:04文件不覆盖。只核查结果存在性和进程，不新增指标审计；已有评测队列保持运行，机器可读进程表在`.local/ppg-bench-repro/session-close-processes.json`。核验命令后仅关闭本会话创建的55688临时预览服务（原PID34832及启动器3208），未停止评测或删除任何数据；重启后不得沿用旧PID。
 - [x] **10月31日PulseDB未完成正式评测的原因复核**：本机源码检索确认现有PulseDB工具以清单、同步、修复和只读检查为主，核心Dataset仍为wrist PPG+ACC，`watch_lsm/data/pulsedb.py`和`scripts/evaluate_aami_bp.py`均不存在。PulseDB并非未曾读取：10月29日既有覆盖报告确认AAMI清单243项文件大小及HDF5抽样通过；但1340条正式索引的片段映射、按需加载、官方训练/校准/测试隔离与预测闭环未完成，训练/校准数据覆盖亦不能由AAMI测试文件清单推定。前期38份修复/207份补齐已结束，之后开发重心转到不含PulseDB的PPG-Bench，独立实现没有继续落地。已在简表补充，不把现状归结为完全没读数据、权限限制或必须租服务器。本轮仅核查代码和既有报告，未重复扫描数据、启动PulseDB训练或改动现有队列。
 - [x] **10月31日PPG-BP与PulseDB概念澄清**：核对两份原始论文与固定上游预处理，明确PPG-BP为桂林219人/657段2.1秒指尖PPG及电子血压计标签，不含连续ABP；benchmark排除231号后218人/654段。PulseDB为MIMIC-III/VitalDB的同步PPG+ECG+ABP数据，公开全集5361人/5245454个10秒片段，非本机下载覆盖数。已在`docs/ppg_bench_progress.md`补充区别；PPG-BP的1750项线性结果不能视为PulseDB已评测，后者正式片段映射及完整评测闭环仍待完成。本轮不改动数据、训练队列或评测计数。
@@ -81,6 +82,7 @@
 - [x] **D 盘根目录镜像备份已就绪**：已全量同步至 `D:\Watch_LSM`（139.41 GB，1,925 个核心文件，0 失败），并实测通过 HDF5 路径验证，可直接作为移动硬盘中转站或独立运行。
 
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
+- [ ] **PPG噪声处理候选协议**：如后续开展该方向，先核验SEGADE标注到DaLiA受试者/原始时间轴的映射，再为BUT-PPG补齐Poor子集并独立建立SQI任务；EPFL配对去噪、TROIKA强运动、MIMIC-III-Ext-PPG临床泛化按需求扩展。不能把已有PPG-Bench下游结果当成去噪结果，也不能直接运行只有README的伪影benchmark。此项为调研建议，尚未启动实施。
 - [x] **完成PPG-Bench最小评测试跑**：PaPaGei-S + PPG-BP收缩压单任务/单折/单种子，GPU提取特征、CPU线性拟合已通过；见`docs/ppg_bench_smoke_2026-10-30.md`。只验证冻结开源编码器路线，不代表自研Watch-LSM或全套benchmark已复现。
 - [ ] **执行已授权的PPG-Bench正式复现**：先推进已就绪8份数据、5份专用PPG模型与PRV/MOMENT对照，保留原5折5种子、内部选参和4类下游协议。优先本机；DREAMT已注册并验证网页登录，但2.2.0文件仍403，用户同意暂缓；RF需解决Linux/cuML环境，后续更大算力再评估租赁。继续检查`.local/ppg-bench-repro/`；原始数据、权重和实验产物不入Git，PulseDB官方评测独立保留，未补DREAMT前不能宣称全篇复现。
 - [ ] **后台队列接棒与未完成项**：先运行`python scripts/ppg_bench_status.py`，查看预处理、`automatic_continuation`、`mlp_continuation`与`adapted_backend_pilot`；不要重复启动仍持锁的队列。8份公开数据下载与预处理已完成，无需重复下载；截至23:03，`.local/ppg-bench-auto`的BIDMC/BUT-PPG/ECSMP完成，Dalia/WESAD部分完成，WildPPG排队。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP及7对象后续队列在`.local/ppg-bench-neural-mlp`，FP32适配微调在`.local/ppg-bench-neural-fp32`。PaPaGei-S的PPG-BP/RealWorldPPG MLP均完成，全部公开数据MLP续跑已在运行。原生AMP完整搜索单折已完成，后续先验证更多任务/对象再扩展，保持后端结果隔离；新增线性结果待扩大独立指标审计。仍需其余所有折/种子/任务、PRV报告复用规则、DREAMT与Linux/cuML RF，不能声称全篇完成。

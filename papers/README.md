@@ -72,6 +72,37 @@
 
 领域事实通过原始来源核验；本项目是否已实现、已下载或已通过评测，则由本地代码与证据确认。调研仓内容作为参考资料读取，不改变本项目操作约定。
 
+## PPG 噪声处理资源核对（2026-11-04）
+
+本次核对回答“哪些资源已经进入本项目视野”，不代表启动去噪实验。检查了本仓调研、脚本、清单、当前数据目录和固定 PPG-Bench 实现；本机只读统计文件与元数据，没有重新加载全部波形或刷新评测进度。
+
+外部调研仓参考提交为 [`229db45b5e1a4cb86c52e491da66dc5ea99c4b57`](https://github.com/tujy859/Wearable-Physiological-Foundation-Models/tree/229db45b5e1a4cb86c52e491da66dc5ea99c4b57)，本轮读取 `data/datasets.yaml`、`docs/datasets/wearable_datasets.md` 和 `docs/models/smartwatch_models.md`。其中已收录 DaLiA、WESAD、TROIKA、BUT-PPG；这些入口未检出 EPFL Synthetic、MIMIC-III-Ext-PPG、SEGADE 或用户给出的伪影检测 benchmark。此结论限定于上述检查范围。
+
+| 资源 | 本轮核对前的覆盖 | 当前本机资产与任务 | 距离噪声评测的缺口 |
+| :--- | :--- | :--- | :--- |
+| EPFL Synthetic PPG | 本仓及上述外部索引未检出 | 未发现对应数据、加载器或评测入口 | 可补成对波形重建测试，但不能用单一基础波形的多个噪声版本证明跨人泛化 |
+| PPG-DaLiA | 已调研、下载并接入 PPG-Bench | 官方布局15份受试者PKL，50/64/100/125 Hz输出各15人；任务为心率、活动分类 | 未接入SEGADE逐点伪影标签；原始数据和标签对齐需另外核验；现有任务不提供干净PPG重建真值 |
+| TROIKA / IEEE SPC 2015 | 调研仓已收录，本仓有[`find_troika.py`](../scripts/find_troika.py)查找入口 | 本次未发现对应数据目录或正式加载器；不在固定PPG-Bench的9数据集名单中 | 尚未接入强运动HR评测；正式采用时区分经典12人数据与竞赛其他部分 |
+| WESAD | 已调研、下载并接入 PPG-Bench | 15份受试者PKL，4种采样率输出各15人；任务为状态四分类、效价和唤醒度回归 | 尚无独立去噪、质量标签或ECG参考HR评价流程；状态标签不是噪声标签 |
+| BUT-PPG v2.0 | 已调研、部分下载并接入 PPG-Bench | 完整3,888行质量标注；本机830/830条Good的PPG文件对，Poor为0/3,058；预处理各采样率覆盖50人 | 当前仅有Good波形，无法直接进行Good/Poor分类；已有任务为血糖、收缩压、舒张压、SpO2回归 |
+| MIMIC-III-Ext-PPG v1.1.0 | 本仓及上述外部索引未检出 | 未发现对应资产、清单或加载器；已有MIMIC-PERForm、PulseDB不等于此数据集 | 新的临床泛化候选；需独立准入、数据身份及划分核验 |
+| SEGADE标注 / PPG Artifact Detection Benchmark | 本次新增关注 | 未发现本地标注、适配或运行结果 | SEGADE存在公开代码与标注文件；用户给出的benchmark当前只有README，不能直接运行 |
+
+### 两个影响实验设计的实际缺口
+
+**BUT-PPG已有资源只覆盖质量通过的子集。** [`download_ppg_bench.py`](../scripts/download_ppg_bench.py)与固定上游下载器都只下载 `Quality == 1` 的PPG；上游预处理再次执行同一过滤。本轮按 `quality-hr-ann.csv` 逐ID检查 `.dat/.hea` 文件对，得到Good 830、Poor 0，不能将此前“PPG-Bench数据就绪”理解为全部3,888条质量分类资源就绪。PhysioNet v2.0说明共有50人，Good/Poor依据HR是否可可靠估计；外部调研索引仍写48人，应按官方版本纠正，尚未修改外部仓。[官方说明](https://physionet.org/content/butppg/2.0.0/)
+
+**DaLiA的现有任务不能直接代替伪影检测。** 固定PPG-Bench提交仍为 `2bca102b7be2c0a9816a3872314784d2ef92555b`，其DaLiA预处理采用8秒窗口、2秒步长，并排除低振幅与混合活动窗口；SEGADE说明采用30秒片段和逐点二值mask。需要从原始数据恢复受试者与片段位置，核验标注映射及覆盖，再建立独立评测。现有PPG-Bench处理产物仅含任务所需PPG与标签，ACC辅助方案也需另外接入。[PPG-Bench预处理](https://github.com/mannas-ai/ppg-bench/blob/2bca102b7be2c0a9816a3872314784d2ef92555b/ppg_bench/preprocess.py)、[SEGADE说明](https://github.com/chengstark/Segade)
+
+### 新来源核验与采用边界
+
+- [PPG Artifact Detection Benchmark](https://github.com/marcellosicbaldi/PPG_artifact_detection_benchmark/tree/b307686fb8274caa3cd531e5e0be4a8c54574607)：核对main提交 `b307686fb8274caa3cd531e5e0be4a8c54574607` 的完整Git树，只有一个 `README.md`。README描述50种算法综述、SEGADE标注、LOSO及6种比较方法，但其中列出的 `src/`、`scripts/` 和结果目录实际未发布；不能把说明当成已经可复现的实现或已核验结果。
+- [SEGADE原项目](https://github.com/chengstark/Segade)：完整Git树 `f5b2ad6e180a1474bc47d6c5ec5d482edaed6797` 确实列有DaLiA训练/测试、WESAD、TROIKA的 `scaled_ppgs.npy` 和 `seg_labels.npy`，以及评测代码。本次只核对README与文件元数据，没有下载数组、验证标签内容或验证受试者独立性；不能直接假定其既有折文件符合新的LOSO协议。伪影mask也不等于干净波形真值。
+- [EPFL Synthetic官方入口](https://www.epfl.ch/labs/esl/index-html/datasets/ppgdataset/)：官方搜索摘要确认一段72秒、250 Hz同步PPG/ECG基础采集记录。页面直接访问超时，本轮未复核“340条合成版本”或下载包内容。可作为成对去噪的小型补充候选，不标记为本机可用。
+- [MIMIC-III-Ext-PPG v1.1.0](https://physionet.org/content/mimic-iii-ext-ppg/1.1.0/)：官方页面确认6,189名患者、约630万个30秒片段、同步信号按可用性提供及信号质量指标，采用Credentialed Access。它是独立发布的数据资源，既有MIMIC-PERForm/PulseDB文件不能算作已经接入它，也不构成其访问授权。
+
+按本项目现有资产，建议优先核验SEGADE到DaLiA原始时间轴的映射，其次为BUT-PPG补齐Poor子集并建立独立质量任务，再增加EPFL配对波形测试与TROIKA强运动外部测试；MIMIC-III-Ext-PPG留作临床扩展。已有WildPPG和PhysioNet wrist也可纳入运动鲁棒性设计，但历史wrist划分问题仍需修复。上述为后续候选顺序，本轮仅核查并登记，没有下载新数据、安装依赖、修改评测代码或操作既有队列。
+
 ## 维护方式
 
 目前采用“外部参考源链接 + 本地任务导航 + 决策版本记录”。领域综述继续在调研仓维护，本项目保存与自身实现相关的分析与结论。
