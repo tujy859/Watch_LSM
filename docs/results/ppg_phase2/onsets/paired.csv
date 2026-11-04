@@ -1,0 +1,185 @@
+dataset,group,comparator,metric,duration_s,n_subjects,n_finite_subjects,difference,ci95_low,ci95_high,support,n_supported,n_eligible,participant_mean_coverage
+EMBC21,all,SmallCNN,f1_25ms,0,7,7,0.0031099306677686567,-0.004489230877949295,0.013919311140389991,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,precision_25ms,0,7,7,0.005485724643644861,-0.005337429108933042,0.020423204475668207,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,recall_25ms,0,7,7,0.0005136209615523381,-0.00397018266518176,0.0065290907928306895,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,f1_50ms,0,7,7,0.00426786215589844,-0.0006408431389393705,0.010610613950983474,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,precision_50ms,0,7,7,0.007074973418590187,-2.8325068126603243e-05,0.01811660728364703,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,recall_50ms,0,7,7,0.0011909154084864815,-0.0030568761222896645,0.0048779481281108995,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,f1_100ms,0,7,7,0.0036360140341900526,-0.00043092218934595735,0.010252441051864403,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,precision_100ms,0,7,7,0.006538854957830941,-0.0005774635927736162,0.018348870626506048,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,recall_100ms,0,7,7,0.00045246746589823673,-0.0025728251161310895,0.0029983942321806394,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,SmallCNN,matched_rr_mae_ms,0,7,7,-0.005227221492390133,-0.27751339285612237,0.21249657494463747,common consecutive expert-reference PP intervals at 50ms,19070,20498,0.9426468194062301
+EMBC21,all,SmallCNN,matched_rr_coverage,0,7,7,0.008293396198362049,-0.0030596759797941416,0.021457725841833745,common complete annotated support; failure/coverage differences retained,20498,20498,1.0
+EMBC21,all,SmallCNN,mean_pp_ms_mae,60,7,7,-5.120174379401563,-13.206505798782292,-0.43243450681358053,common finite continuous PRV windows,175,175,1.0
+EMBC21,all,SmallCNN,mean_pp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,175,175,1.0
+EMBC21,all,SmallCNN,sdpp_ms_mae,60,7,7,-14.087445917801048,-28.427684259311064,-2.1720342145021925,common finite continuous PRV windows,175,175,1.0
+EMBC21,all,SmallCNN,sdpp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,175,175,1.0
+EMBC21,all,SmallCNN,rmssd_ms_mae,60,7,7,-16.936895061552068,-37.850359482295666,-2.11882135394116,common finite continuous PRV windows,175,175,1.0
+EMBC21,all,SmallCNN,rmssd_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,175,175,1.0
+EMBC21,all,SmallCNN,mean_pp_ms_mae,300,7,2,3.5217909134021,0.03733977650512088,7.006242050299079,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,all,SmallCNN,mean_pp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,all,SmallCNN,sdpp_ms_mae,300,7,2,-44.01060315834913,-88.45831328577214,0.4371069690738878,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,all,SmallCNN,sdpp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,all,SmallCNN,rmssd_ms_mae,300,7,2,-62.12370268988469,-125.71622212174861,1.4688167419792393,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,all,SmallCNN,rmssd_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,all,MSPTD,f1_25ms,0,7,7,0.006442934465242911,-0.004442889525870416,0.015715248831122092,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,precision_25ms,0,7,7,-0.0026645131127754746,-0.011563461360599908,0.004457077596268598,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,recall_25ms,0,7,7,0.015523004868974621,0.0010151284107027259,0.02925437332410587,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,f1_50ms,0,7,7,0.012811520096170401,0.008571722000446138,0.017631359637606425,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,precision_50ms,0,7,7,0.0025545179645829635,0.0005669332738011004,0.004717312089393902,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,recall_50ms,0,7,7,0.023042894073996494,0.013270224213646811,0.0343179384236386,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,f1_100ms,0,7,7,0.01351864487016084,0.008403248331649802,0.020810090069102265,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,precision_100ms,0,7,7,0.0030981489019028213,0.0007345922733604317,0.005569192308058746,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,recall_100ms,0,7,7,0.023915142352978393,0.013164018327192575,0.037720169501017864,common complete annotated support; failure/coverage differences retained,20725,20725,1.0
+EMBC21,all,MSPTD,matched_rr_mae_ms,0,7,7,0.3488566669383159,0.2037114614243078,0.529993378560841,common consecutive expert-reference PP intervals at 50ms,18498,20498,0.9174893905311962
+EMBC21,all,MSPTD,matched_rr_coverage,0,7,7,0.029242292968101626,0.016712456391051615,0.04216177975431877,common complete annotated support; failure/coverage differences retained,20498,20498,1.0
+EMBC21,all,MSPTD,mean_pp_ms_mae,60,7,7,-2.421866530464041,-8.153216715487615,2.4839309734592447,common finite continuous PRV windows,175,175,1.0
+EMBC21,all,MSPTD,mean_pp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,175,175,1.0
+EMBC21,all,MSPTD,sdpp_ms_mae,60,7,7,-11.80264436779654,-26.139808387072467,-2.6050089677948547,common finite continuous PRV windows,175,175,1.0
+EMBC21,all,MSPTD,sdpp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,175,175,1.0
+EMBC21,all,MSPTD,rmssd_ms_mae,60,7,7,-19.189818966718708,-36.8914573159503,-7.535637181869059,common finite continuous PRV windows,175,175,1.0
+EMBC21,all,MSPTD,rmssd_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,175,175,1.0
+EMBC21,all,MSPTD,mean_pp_ms_mae,300,7,2,11.208035950929286,-3.71343071850589,26.129502620364462,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,all,MSPTD,mean_pp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,all,MSPTD,sdpp_ms_mae,300,7,2,-4.838836792543372,-17.0682617408279,7.390588155741156,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,all,MSPTD,sdpp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,all,MSPTD,rmssd_ms_mae,300,7,2,-15.269945912164737,-32.76324530085145,2.2233534765219787,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,all,MSPTD,rmssd_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,rest,SmallCNN,f1_25ms,0,7,7,-0.00012712884808354006,-0.006657504812257227,0.009080229482230973,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,precision_25ms,0,7,7,0.0016269707137892236,-0.007642255174614816,0.014659089972083443,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,recall_25ms,0,7,7,-0.002093627183619305,-0.006253870650513368,0.002988225823269408,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,f1_50ms,0,7,7,0.0032824367158850493,-0.00026405648513546813,0.007702047199379122,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,precision_50ms,0,7,7,0.005428897205143105,-0.0012171380194272757,0.014571229093468403,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,recall_50ms,0,7,7,0.0008707788085386177,-0.002199223986015924,0.004128007203789982,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,f1_100ms,0,7,7,0.002836657625106146,-0.00010795498632175184,0.007414116544986233,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,precision_100ms,0,7,7,0.005059668421937756,-0.0016164738403963627,0.014865010908659755,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,recall_100ms,0,7,7,0.0003384991281577384,-0.001301139513107809,0.002595434618749337,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,SmallCNN,matched_rr_mae_ms,0,7,7,-0.07558262626764642,-0.44804535311450905,0.24314340932274653,common consecutive expert-reference PP intervals at 50ms,13962,14833,0.9542377508486201
+EMBC21,rest,SmallCNN,matched_rr_coverage,0,7,7,0.0075826455570818475,-2.14884979338351e-05,0.01708670028628702,common complete annotated support; failure/coverage differences retained,14833,14833,1.0
+EMBC21,rest,SmallCNN,mean_pp_ms_mae,60,7,7,-4.927776939638139,-12.758308719970795,-0.49153505495083477,common finite continuous PRV windows,159,159,1.0
+EMBC21,rest,SmallCNN,mean_pp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,159,159,1.0
+EMBC21,rest,SmallCNN,sdpp_ms_mae,60,7,7,-14.395947782736773,-31.324124511276096,-1.293262252077662,common finite continuous PRV windows,159,159,1.0
+EMBC21,rest,SmallCNN,sdpp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,159,159,1.0
+EMBC21,rest,SmallCNN,rmssd_ms_mae,60,7,7,-17.42380018070752,-41.86966748682447,-1.3877959845359147,common finite continuous PRV windows,159,159,1.0
+EMBC21,rest,SmallCNN,rmssd_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,159,159,1.0
+EMBC21,rest,SmallCNN,mean_pp_ms_mae,300,7,2,3.5217909134021,0.03733977650512088,7.006242050299079,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,rest,SmallCNN,mean_pp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,rest,SmallCNN,sdpp_ms_mae,300,7,2,-44.01060315834913,-88.45831328577214,0.4371069690738878,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,rest,SmallCNN,sdpp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,rest,SmallCNN,rmssd_ms_mae,300,7,2,-62.12370268988469,-125.71622212174861,1.4688167419792393,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,rest,SmallCNN,rmssd_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,rest,MSPTD,f1_25ms,0,7,7,-0.0068461798759148805,-0.018418572054176168,0.0024126671997308146,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,precision_25ms,0,7,7,-0.012510507094666628,-0.02354341459183768,-0.002185938041056379,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,recall_25ms,0,7,7,-0.0010658519519259255,-0.014965329820110562,0.01033253480689619,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,f1_50ms,0,7,7,0.0026636119001075703,-0.00016769969450085892,0.00562013143466944,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,precision_50ms,0,7,7,-0.0038862268100938895,-0.011065163341092357,0.0026364173347987797,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,recall_50ms,0,7,7,0.009351853789431739,0.0041182801889435,0.016439918219280765,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,f1_100ms,0,7,7,0.004591886474764987,-6.445837256850519e-05,0.009860553905057181,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,precision_100ms,0,7,7,-0.0020805063556344878,-0.007944832024891062,0.003678002280519748,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,recall_100ms,0,7,7,0.011406735002379922,0.0041272721949918234,0.022236416453517056,common complete annotated support; failure/coverage differences retained,14952,14952,1.0
+EMBC21,rest,MSPTD,matched_rr_mae_ms,0,7,7,0.33985873863171057,0.17607552551151054,0.5749027364497822,common consecutive expert-reference PP intervals at 50ms,13869,14833,0.9490536240398528
+EMBC21,rest,MSPTD,matched_rr_coverage,0,7,7,0.008016607468052312,0.002533900094194229,0.01447856688966999,common complete annotated support; failure/coverage differences retained,14833,14833,1.0
+EMBC21,rest,MSPTD,mean_pp_ms_mae,60,7,7,0.05943334908998613,-4.280756901620802,5.370608179790942,common finite continuous PRV windows,159,159,1.0
+EMBC21,rest,MSPTD,mean_pp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,159,159,1.0
+EMBC21,rest,MSPTD,sdpp_ms_mae,60,7,7,-5.593916152891991,-14.975144521955858,1.5366098622415352,common finite continuous PRV windows,159,159,1.0
+EMBC21,rest,MSPTD,sdpp_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,159,159,1.0
+EMBC21,rest,MSPTD,rmssd_ms_mae,60,7,7,-10.248361685584511,-20.793215704735893,-2.635808236457209,common finite continuous PRV windows,159,159,1.0
+EMBC21,rest,MSPTD,rmssd_ms_coverage,60,7,7,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,159,159,1.0
+EMBC21,rest,MSPTD,mean_pp_ms_mae,300,7,2,11.208035950929286,-3.71343071850589,26.129502620364462,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,rest,MSPTD,mean_pp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,rest,MSPTD,sdpp_ms_mae,300,7,2,-4.838836792543372,-17.0682617408279,7.390588155741156,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,rest,MSPTD,sdpp_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,rest,MSPTD,rmssd_ms_mae,300,7,2,-15.269945912164737,-32.76324530085145,2.2233534765219787,common finite continuous PRV windows,4,4,0.2857142857142857
+EMBC21,rest,MSPTD,rmssd_ms_coverage,300,7,2,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,4,4,0.2857142857142857
+EMBC21,squat,SmallCNN,f1_25ms,0,7,7,0.0007629652978789243,-0.012300092454806042,0.01382586998886648,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,precision_25ms,0,7,7,0.004829296303098442,-0.009955633999879912,0.020029287921610527,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,recall_25ms,0,7,7,-0.0034952450736264185,-0.017661664967809108,0.011919153386761892,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,f1_50ms,0,7,7,0.007605348837421906,-0.0029749790229573058,0.024642021619436294,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,precision_50ms,0,7,7,0.012063264157619031,-0.002903639293993259,0.03796680086770271,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,recall_50ms,0,7,7,0.0029418315279636153,-0.003244361047931069,0.010855448179665132,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,f1_100ms,0,7,7,0.006022216432062609,-0.004664731999445012,0.022516051773314234,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,precision_100ms,0,7,7,0.010755431839808824,-0.004863725108410758,0.03628909084836134,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,recall_100ms,0,7,7,0.0010702401863097613,-0.004830751819377406,0.007655981696320043,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,SmallCNN,matched_rr_mae_ms,0,7,7,0.5247439995245473,-0.08504315302026408,1.2028239131146674,common consecutive expert-reference PP intervals at 50ms,2086,2285,0.9041708745262103
+EMBC21,squat,SmallCNN,matched_rr_coverage,0,7,7,0.01614612856345735,-0.002060261488880039,0.0464076319398181,common complete annotated support; failure/coverage differences retained,2285,2285,1.0
+EMBC21,squat,SmallCNN,mean_pp_ms_mae,60,7,1,-0.5483143259848475,nan,nan,common finite continuous PRV windows,2,2,0.14285714285714285
+EMBC21,squat,SmallCNN,mean_pp_ms_coverage,60,7,1,0.0,nan,nan,common complete annotated support; failure/coverage differences retained,2,2,0.14285714285714285
+EMBC21,squat,SmallCNN,sdpp_ms_mae,60,7,1,-5.108154280181985,nan,nan,common finite continuous PRV windows,2,2,0.14285714285714285
+EMBC21,squat,SmallCNN,sdpp_ms_coverage,60,7,1,0.0,nan,nan,common complete annotated support; failure/coverage differences retained,2,2,0.14285714285714285
+EMBC21,squat,SmallCNN,rmssd_ms_mae,60,7,1,-15.074058912922844,nan,nan,common finite continuous PRV windows,2,2,0.14285714285714285
+EMBC21,squat,SmallCNN,rmssd_ms_coverage,60,7,1,0.0,nan,nan,common complete annotated support; failure/coverage differences retained,2,2,0.14285714285714285
+EMBC21,squat,SmallCNN,mean_pp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,squat,SmallCNN,mean_pp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,squat,SmallCNN,sdpp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,squat,SmallCNN,sdpp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,squat,SmallCNN,rmssd_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,squat,SmallCNN,rmssd_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,squat,MSPTD,f1_25ms,0,7,7,0.012259914112479826,-0.005731150352335972,0.030945532059129848,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,precision_25ms,0,7,7,-0.0016204368710534306,-0.013964512103156926,0.010146451609643305,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,recall_25ms,0,7,7,0.025388049093022138,0.001664405905841921,0.05088333008261762,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,f1_50ms,0,7,7,0.015977256662262938,0.0002939811677065775,0.035130072401062334,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,precision_50ms,0,7,7,0.0011979671658300303,-0.00865081970882886,0.011385868653310498,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,recall_50ms,0,7,7,0.02993491460823066,0.008260685888737533,0.05759265674685321,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,f1_100ms,0,7,7,0.015196649528924458,-0.004615656857405773,0.03743432275547742,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,precision_100ms,0,7,7,0.00029130386506063096,-0.012749814167774987,0.01264355782625766,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,recall_100ms,0,7,7,0.029272714472734225,0.003265411562566252,0.06010669828097216,common complete annotated support; failure/coverage differences retained,2355,2355,1.0
+EMBC21,squat,MSPTD,matched_rr_mae_ms,0,7,7,0.8172708984948717,0.13996421408935517,1.863787290616104,common consecutive expert-reference PP intervals at 50ms,1981,2285,0.8677460894663823
+EMBC21,squat,MSPTD,matched_rr_coverage,0,7,7,0.03496293405804778,-0.006513622521750568,0.08467538298280457,common complete annotated support; failure/coverage differences retained,2285,2285,1.0
+EMBC21,squat,MSPTD,mean_pp_ms_mae,60,7,1,-42.424493593630075,nan,nan,common finite continuous PRV windows,2,2,0.14285714285714285
+EMBC21,squat,MSPTD,mean_pp_ms_coverage,60,7,1,0.0,nan,nan,common complete annotated support; failure/coverage differences retained,2,2,0.14285714285714285
+EMBC21,squat,MSPTD,sdpp_ms_mae,60,7,1,-56.13086852121804,nan,nan,common finite continuous PRV windows,2,2,0.14285714285714285
+EMBC21,squat,MSPTD,sdpp_ms_coverage,60,7,1,0.0,nan,nan,common complete annotated support; failure/coverage differences retained,2,2,0.14285714285714285
+EMBC21,squat,MSPTD,rmssd_ms_mae,60,7,1,-83.72459746805791,nan,nan,common finite continuous PRV windows,2,2,0.14285714285714285
+EMBC21,squat,MSPTD,rmssd_ms_coverage,60,7,1,0.0,nan,nan,common complete annotated support; failure/coverage differences retained,2,2,0.14285714285714285
+EMBC21,squat,MSPTD,mean_pp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,squat,MSPTD,mean_pp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,squat,MSPTD,sdpp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,squat,MSPTD,sdpp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,squat,MSPTD,rmssd_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,squat,MSPTD,rmssd_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,step,SmallCNN,f1_25ms,0,7,7,0.017944172754007632,-0.0012862240800540453,0.04295438368371042,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,precision_25ms,0,7,7,0.02285956227201456,0.0007100158574203334,0.05109534236661655,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,recall_25ms,0,7,7,0.012963621764630047,-0.004990052976161999,0.03496593434826372,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,f1_50ms,0,7,7,0.008081354011258233,-0.004740836106372516,0.02113177212660441,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,precision_50ms,0,7,7,0.013505209953386998,0.001368298504754062,0.029168416411254307,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,recall_50ms,0,7,7,0.00255844006120847,-0.012774903978232919,0.014202319537552703,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,f1_100ms,0,7,7,0.0070736299105944745,-0.005211941331322741,0.021247379125091115,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,precision_100ms,0,7,7,0.012603603584305281,0.0007467806712073264,0.030054713182470976,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,recall_100ms,0,7,7,0.0014344082924062165,-0.013458016742835326,0.01284082909826483,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,SmallCNN,matched_rr_mae_ms,0,7,7,0.13864555685715932,-0.295281010810156,0.5237037967742529,common consecutive expert-reference PP intervals at 50ms,3022,3380,0.908308023152556
+EMBC21,step,SmallCNN,matched_rr_coverage,0,7,7,0.009676465388053715,-0.02306416295576876,0.03743073551002813,common complete annotated support; failure/coverage differences retained,3380,3380,1.0
+EMBC21,step,SmallCNN,mean_pp_ms_mae,60,7,4,-14.027551881915507,-28.73642663607211,0.6813228722410969,common finite continuous PRV windows,14,14,0.5714285714285714
+EMBC21,step,SmallCNN,mean_pp_ms_coverage,60,7,4,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,14,14,0.5714285714285714
+EMBC21,step,SmallCNN,sdpp_ms_mae,60,7,4,-25.072973760742265,-43.451551400883375,-6.694396120601149,common finite continuous PRV windows,14,14,0.5714285714285714
+EMBC21,step,SmallCNN,sdpp_ms_coverage,60,7,4,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,14,14,0.5714285714285714
+EMBC21,step,SmallCNN,rmssd_ms_mae,60,7,4,-24.41314199079763,-42.568475862511285,-6.7274900664558475,common finite continuous PRV windows,14,14,0.5714285714285714
+EMBC21,step,SmallCNN,rmssd_ms_coverage,60,7,4,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,14,14,0.5714285714285714
+EMBC21,step,SmallCNN,mean_pp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,step,SmallCNN,mean_pp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,step,SmallCNN,sdpp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,step,SmallCNN,sdpp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,step,SmallCNN,rmssd_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,step,SmallCNN,rmssd_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,step,MSPTD,f1_25ms,0,7,7,0.06146308551314835,0.024924637016452263,0.10744719942461997,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,precision_25ms,0,7,7,0.04179625867366665,0.01588677035270993,0.07696960580320326,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,recall_25ms,0,7,7,0.079975197402092,0.03337148680730361,0.13435238513085712,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,f1_50ms,0,7,7,0.057787540154506475,0.024095651984960824,0.09673662465039283,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,precision_50ms,0,7,7,0.036325988320901136,0.014113029146881556,0.06299421802982416,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,recall_50ms,0,7,7,0.07797732257561762,0.032572388865597324,0.1275734882202882,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,f1_100ms,0,7,7,0.05328071255166099,0.020910490564490698,0.0925463245133689,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,precision_100ms,0,7,7,0.03123572749661926,0.010952208835292085,0.058445283932976086,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,recall_100ms,0,7,7,0.07401524895918639,0.029291838738542405,0.12507657197531596,common complete annotated support; failure/coverage differences retained,3418,3418,1.0
+EMBC21,step,MSPTD,matched_rr_mae_ms,0,7,7,0.18076297848364767,-0.21401966273057615,0.5557983223733897,common consecutive expert-reference PP intervals at 50ms,2648,3380,0.804739105712742
+EMBC21,step,MSPTD,matched_rr_coverage,0,7,7,0.11681982999966564,0.04587561341063454,0.1884858666828666,common complete annotated support; failure/coverage differences retained,3380,3380,1.0
+EMBC21,step,MSPTD,mean_pp_ms_mae,60,7,4,-26.427136051318787,-43.56076906664191,-14.144080535023292,common finite continuous PRV windows,14,14,0.5714285714285714
+EMBC21,step,MSPTD,mean_pp_ms_coverage,60,7,4,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,14,14,0.5714285714285714
+EMBC21,step,MSPTD,sdpp_ms_mae,60,7,4,-82.17451125138038,-130.12860072551678,-48.99985988905462,common finite continuous PRV windows,14,14,0.5714285714285714
+EMBC21,step,MSPTD,sdpp_ms_coverage,60,7,4,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,14,14,0.5714285714285714
+EMBC21,step,MSPTD,rmssd_ms_mae,60,7,4,-120.63679514356777,-182.02304025966697,-73.7239878725214,common finite continuous PRV windows,14,14,0.5714285714285714
+EMBC21,step,MSPTD,rmssd_ms_coverage,60,7,4,0.0,0.0,0.0,common complete annotated support; failure/coverage differences retained,14,14,0.5714285714285714
+EMBC21,step,MSPTD,mean_pp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,step,MSPTD,mean_pp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,step,MSPTD,sdpp_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,step,MSPTD,sdpp_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0
+EMBC21,step,MSPTD,rmssd_ms_mae,300,7,0,nan,nan,nan,common finite continuous PRV windows,0,0,0.0
+EMBC21,step,MSPTD,rmssd_ms_coverage,300,7,0,nan,nan,nan,common complete annotated support; failure/coverage differences retained,0,0,0.0

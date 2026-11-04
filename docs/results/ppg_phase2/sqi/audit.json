@@ -1,0 +1,16 @@
+{
+  "status": "complete",
+  "verified_results": 60,
+  "expected_results": 60,
+  "complete_held_out_predictions_per_seed_per_method": 3888,
+  "participants": 50,
+  "bootstrap_replicates": 2000,
+  "protocol_sha256": "cf9e7cc19c3160df61c74aa41272c78474afce066f2ee2a236097ace0c7807e9",
+  "summary_files_sha256": {
+    "summary.csv": "2d90271138187c92b050bc7d3acafdb4719b63817c7f6aec85415f0d2df6724e",
+    "paired.csv": "4711cc5b8e01c893cd84c86727b5bf89d20bfb1a396e6de38885429194b285b7",
+    "seed_scores.csv": "726c1a6e5611266c866bb67e46bf3eb23eb591ec229798495c18454633b1d301",
+    "per_subject.csv": "9978820ab17e6e865342d8d411bb5730cbe195d3b56334daaea4c3367e9918d9",
+    "predictions.csv": "f65c68a78ece3ba00c70652b33b8116f0e4e1b67b1de68de3636655328a46f70"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "status": "passed",
+  "scope": "CPU-only independent input/target/time-index replay on five systematic cache rows and one preselected test acquisition; no fitting, threshold or delay selection",
+  "protocol_sha256": "f6000d397fae8aa94ce47e70b3771c101f793febf6e1f35155a82bcd3763f9f6",
+  "script_sha256": "b5bb11851145de16c96984d0e73ef6563eeec04dac43492dceb03ca6e59d7e71",
+  "checks": {
+    "code_sha256_match": {
+      "run_ppg_onset_poc.py": true,
+      "ppg_embc21_data.py": true,
+      "ppg_onset_baseline.py": true,
+      "ppg_beat_models.py": true,
+      "ppg_beat_metrics.py": true,
+      "run_ppg_beat_poc.py": true
+    },
+    "data_manifest_sha256_match": true,
+    "five_systematic_cache_rows": [
+      {
+        "row": 0,
+        "record_id": "S1_rest1",
+        "start_s": 0.0,
+        "fully_within_single_annotated_region": true,
+        "input64_exact": true,
+        "input125_exact": true,
+        "target_max_difference": 0.0
+      },
+      {
+        "row": 644,
+        "record_id": "S2_rest1",
+        "start_s": 480.0,
+        "fully_within_single_annotated_region": true,
+        "input64_exact": true,
+        "input125_exact": true,
+        "target_max_difference": 0.0
+      },
+      {
+        "row": 1288,
+        "record_id": "S3_squat3",
+        "start_s": 18.0,
+        "fully_within_single_annotated_region": true,
+        "input64_exact": true,
+        "input125_exact": true,
+        "target_max_difference": 0.0
+      },
+      {
+        "row": 1932,
+        "record_id": "S5_step4",
+        "start_s": 36.0,
+        "fully_within_single_annotated_region": true,
+        "input64_exact": true,
+        "input125_exact": true,
+        "target_max_difference": 0.0
+      },
+      {
+        "row": 2576,
+        "record_id": "S7_step5",
+        "start_s": 36.0,
+        "fully_within_single_annotated_region": true,
+        "input64_exact": true,
+        "input125_exact": true,
+        "target_max_difference": 0.0
+      }
+    ],
+    "prediction_replay": [
+      {
+        "method": "AnyPPG",
+        "prediction_sha256": "88887ebe3d4e65a35139efc4a6b08298171738ec7e67cd3ebd4a85bbb8ef7958",
+        "record_id": "S1_rest1",
+        "frame_start_s": [
+          0,
+          6,
+          60,
+          294,
+          582
+        ],
+        "start_matches": true,
+        "end_matches": true,
+        "cpu_vs_saved_gpu_probability_max_difference": 5.811452865600586e-06,
+        "probability_length_matches": true,
+        "event_times_exact": true
+      },
+      {
+        "method": "SmallCNN",
+        "prediction_sha256": "f131a86c389936146796f139f13829397a7697eb14b07624f5ccdb80b05c24c7",
+        "record_id": "S1_rest1",
+        "frame_start_s": [
+          0,
+          6,
+          60,
+          294,
+          582
+        ],
+        "start_matches": true,
+        "end_matches": true,
+        "cpu_vs_saved_gpu_probability_max_difference": 1.043081283569336e-06,
+        "probability_length_matches": true,
+        "event_times_exact": true
+      },
+      {
+        "method": "MSPTDfast",
+        "prediction_sha256": "e4ae282e823987c0996ff54659c14758f048c53e9b6b342d7e0fcf9976335a20",
+        "record_id": "S1_rest1",
+        "frame_start_s": [
+          0,
+          6,
+          60,
+          294,
+          582
+        ],
+        "start_matches": true,
+        "end_matches": true,
+        "event_times_exact": true
+      }
+    ]
+  }
+}

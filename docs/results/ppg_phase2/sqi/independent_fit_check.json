@@ -1,0 +1,6 @@
+{
+  "job": "fold0-seed42",
+  "method": "AnyPPG",
+  "independent_fit_max_probability_difference": 3.3306690738754696e-16,
+  "pass": true
+}

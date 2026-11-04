@@ -1,0 +1,10 @@
+{
+  "checked_seed_method_metrics": 36,
+  "max_difference": 1.787459069646502e-14,
+  "sklearn_independent_functions": [
+    "roc_auc_score",
+    "balanced_accuracy_score",
+    "f1_score"
+  ],
+  "pass": true
+}

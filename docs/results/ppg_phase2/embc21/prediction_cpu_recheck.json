@@ -1,0 +1,39 @@
+{
+  "review": "Independent CPU forward and explicitly reconstructed 400-to-64/125Hz sampling, 8s frames / 6s core timeline against published GPU outputs",
+  "results": [
+    {
+      "method": "SmallCNN",
+      "record": "S1_squat1",
+      "probability_count": 3840,
+      "published_probability_count": 3840,
+      "maximum_probability_difference": 6.258487701416016e-06,
+      "event_times_exactly_equal": true,
+      "published_event_count": 100,
+      "cpu_event_count": 100,
+      "start_s": 1.0,
+      "end_s": 61.0,
+      "expected_end_s": 61,
+      "head_sha256": "cddb4d0c4290888bb47051d18bf6bdb94c3cf13162ec81234fe6ff57a5eafce0"
+    },
+    {
+      "method": "AnyPPG",
+      "record": "S1_squat1",
+      "probability_count": 3840,
+      "published_probability_count": 3840,
+      "maximum_probability_difference": 3.427267074584961e-06,
+      "event_times_exactly_equal": true,
+      "published_event_count": 99,
+      "cpu_event_count": 99,
+      "start_s": 1.0,
+      "end_s": 61.0,
+      "expected_end_s": 61,
+      "head_sha256": "b24307aa550edb7359ce8a0d4f9f1cbdcaafed0c11b9a2000235d1d00187205f"
+    },
+    {
+      "method": "MSPTDfast",
+      "record": "S1_squat1",
+      "events_exactly_equal": true
+    }
+  ],
+  "protocol_sha256": "f6000d397fae8aa94ce47e70b3771c101f793febf6e1f35155a82bcd3763f9f6"
+}

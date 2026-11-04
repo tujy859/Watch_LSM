@@ -1,0 +1,66 @@
+{
+  "selection_policy": "first sorted record per activity, middle 10s; first artifact interval; first source NaN",
+  "selections": [
+    {
+      "record_id": "S1_rest1",
+      "start_s": 291.485,
+      "end_s": 301.485
+    },
+    {
+      "record_id": "S1_squat1",
+      "start_s": 26.05875,
+      "end_s": 36.05875
+    },
+    {
+      "record_id": "S1_step1",
+      "start_s": 37.00125,
+      "end_s": 47.00125
+    },
+    {
+      "record_id": "S1_rest1",
+      "start_s": 13,
+      "end_s": 23
+    },
+    {
+      "record_id": "S2_squat3",
+      "start_s": 0.8,
+      "end_s": 1.2
+    }
+  ],
+  "figure_sha256": "36e417d6dcf3e2be5cec932bd471bd13a6c18e85f21f85d381c46a2b83deff2f",
+  "manifest_sha256": "c2742969260a0816fdfae53c679e41da42eb4935e2e83844745637d0fe682c69",
+  "single_rater": true,
+  "inter_rater_reliability_available": false,
+  "original_nan_count": 39,
+  "source_coverage_review": "All source labels inside expert artifact intervals preserved but excluded from valid event references; unlabeled areas never negatives",
+  "window_counts_by_subject": {
+    "S1": {
+      "60": 30,
+      "300": 1
+    },
+    "S2": {
+      "60": 21,
+      "300": 0
+    },
+    "S3": {
+      "60": 20,
+      "300": 0
+    },
+    "S4": {
+      "60": 21,
+      "300": 0
+    },
+    "S5": {
+      "60": 21,
+      "300": 0
+    },
+    "S6": {
+      "60": 25,
+      "300": 0
+    },
+    "S7": {
+      "60": 20,
+      "300": 2
+    }
+  }
+}

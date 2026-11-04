@@ -1,0 +1,13 @@
+{
+  "source_files": 528,
+  "hash_failures": [],
+  "all_native_finite_samples_unchanged": true,
+  "missing_samples_excluded": true,
+  "artifact_endpoints_excluded": true,
+  "relative_label_coordinates_checked": true,
+  "python310_ast": true,
+  "source_archive_bytes": 30057275,
+  "source_archive_sha256": "e47bd63ca722895f4072f29ebd9822751396883fb238b039c64041512d031e8e",
+  "annotation_archive_bytes": 358199,
+  "annotation_archive_sha256": "6ceee248965d53822055b59ecfecdbae3a434941ea67ab71be9812e34ff45886"
+}

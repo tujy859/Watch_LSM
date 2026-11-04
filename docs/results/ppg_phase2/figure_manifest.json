@@ -1,0 +1,10 @@
+{
+  "inputs_sha256": {
+    "docs/results/ppg_hr_poc/per_subject.csv": "548f5cf28183e430124232030b9898ff79f103ddd3001d4bd2458ff4657c7d2b",
+    "docs/results/ppg_phase2/onsets/summary.csv": "b3f31c46cfa1eca551a8e6558996f63bc4edb6e0ded5971ad0956b38ec9ccdaf",
+    "docs/results/ppg_phase2/sqi/summary.csv": "2d90271138187c92b050bc7d3acafdb4719b63817c7f6aec85415f0d2df6724e",
+    "docs/results/ppg_phase2/transfer/strata.csv": "bf261dbc3355fc7e48f026de0eee2619f1fdfee57e7d05c6eb33eb63d12c52e5"
+  },
+  "script_sha256": "693608ae5dbf5c84da3b126de963c89e02811b7db5b1b6d1d00e7b7536e9a52e",
+  "design": "Task-separated grouped bars with original units, direction arrows and participant intervals; no composite score."
+}

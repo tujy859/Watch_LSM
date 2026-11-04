@@ -1,0 +1,260 @@
+{
+  "audit_scope": "CPU-only read-only replay; no fitting, lag optimization or protocol modification",
+  "job": "Dalia-fold0-seed42-labelsfull",
+  "prediction_subject": "S14",
+  "protocol_sha256": "26687dc4e14817e21479fb375e42f330b09ae0132ade40e849332023dff4c661",
+  "script_sha256": "50638df84b891b3f3be0ea900713b85f46424c0a20a4150ccebc85e0bd0cef0e",
+  "device": "cpu",
+  "torch_version": "2.5.1+cu124",
+  "alignment_interpretation": "Registered ECG-event pilot is diagnostic only. Training-only wide-lag check found unresolved cross-signal registration; numerical replay does not validate physiological alignment.",
+  "alignment_diagnostic_sha256": "b7186ebec18123a53bfff78434b89350aa4dff5dae7cbe3a3a3ce656374d9f7f",
+  "checks": {
+    "registered_code": {
+      "run_ppg_beat_poc.py": true,
+      "ppg_beat_models.py": true,
+      "ppg_beat_metrics.py": true
+    },
+    "anyppg_preprocessing": {
+      "comparison": "Fixed PPG-Bench AnyPPGPort.prepare_batch versus pilot anyppg_input",
+      "max_absolute_difference": 1.1920928955078125e-07
+    },
+    "anyppg_feature_flow": {
+      "stage_shapes": [
+        [
+          5,
+          64,
+          250
+        ],
+        [
+          5,
+          160,
+          125
+        ],
+        [
+          5,
+          160,
+          63
+        ],
+        [
+          5,
+          400,
+          32
+        ],
+        [
+          5,
+          400,
+          16
+        ],
+        [
+          5,
+          512,
+          8
+        ]
+      ],
+      "official_hook_vs_manual_stage_max_difference": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "last_stage_mean_vs_official_embedding_max_difference": 0.0,
+      "encoder_is_eval": true,
+      "encoder_frozen": true
+    },
+    "AnyPPG_prediction_replay": {
+      "head_sha256_matches_fit": true,
+      "prediction_sha256": "d4731e3de948771bbc6ae9f15c43d530107ced1abed7155adcd39461f3660d29",
+      "cpu_vs_saved_gpu_center_prob_max_absolute_difference": 1.7881393432617188e-07,
+      "saved_event_times_exactly_equal_recomputed_peaks": true,
+      "saved_probability_length": 572928,
+      "expected_probability_length": 572928,
+      "saved_start_s": 1.0,
+      "saved_end_s": 8953.0,
+      "expected_start_s": 1.0,
+      "expected_end_s": 8953.0
+    },
+    "SmallCNN_prediction_replay": {
+      "head_sha256_matches_fit": true,
+      "prediction_sha256": "cf397170e41d581d2f3328d2b014ff428882dcac8ffc7494fb4d02fcacd42118",
+      "cpu_vs_saved_gpu_center_prob_max_absolute_difference": 1.7881393432617188e-07,
+      "saved_event_times_exactly_equal_recomputed_peaks": true,
+      "saved_probability_length": 572928,
+      "expected_probability_length": 572928,
+      "saved_start_s": 1.0,
+      "saved_end_s": 8953.0,
+      "expected_start_s": 1.0,
+      "expected_end_s": 8953.0
+    },
+    "cached_inputs_and_targets": [
+      {
+        "row": 0,
+        "subject": "S1",
+        "start_s": 0.0,
+        "target_max_difference": 0.0,
+        "native64_exact": true,
+        "resampled125_exact": true
+      },
+      {
+        "row": 255,
+        "subject": "S1",
+        "start_s": 9204.0,
+        "target_max_difference": 0.0,
+        "native64_exact": true,
+        "resampled125_exact": true
+      },
+      {
+        "row": 256,
+        "subject": "S10",
+        "start_s": 0.0,
+        "target_max_difference": 0.0,
+        "native64_exact": true,
+        "resampled125_exact": true
+      },
+      {
+        "row": 1920,
+        "subject": "S2",
+        "start_s": 4110.0,
+        "target_max_difference": 0.0,
+        "native64_exact": true,
+        "resampled125_exact": true
+      },
+      {
+        "row": 3839,
+        "subject": "S9",
+        "start_s": 8550.0,
+        "target_max_difference": 0.0,
+        "native64_exact": true,
+        "resampled125_exact": true
+      }
+    ],
+    "cached_stages": [
+      {
+        "stage": 0,
+        "cpu_vs_saved_gpu_max_absolute_difference": 1.3828277587890625e-05
+      },
+      {
+        "stage": 1,
+        "cpu_vs_saved_gpu_max_absolute_difference": 1.239776611328125e-05
+      },
+      {
+        "stage": 2,
+        "cpu_vs_saved_gpu_max_absolute_difference": 1.3589859008789062e-05
+      },
+      {
+        "stage": 3,
+        "cpu_vs_saved_gpu_max_absolute_difference": 1.430511474609375e-05
+      },
+      {
+        "stage": 4,
+        "cpu_vs_saved_gpu_max_absolute_difference": 1.4781951904296875e-05
+      },
+      {
+        "stage": 5,
+        "cpu_vs_saved_gpu_max_absolute_difference": 1.4781951904296875e-05
+      }
+    ],
+    "full_contiguous_window_boundaries": [
+      {
+        "duration_s": 60,
+        "candidate_windows": 149,
+        "fully_inside_inference_windows": 148,
+        "excluded_edge_window_starts_s": [
+          0.0
+        ],
+        "rr_never_bridges_disjoint_windows": true,
+        "comment": "Only complete windows contained in [1, 1+6*n_frames) are scored. The initial [0,duration) window is excluded, not shortened or filled."
+      },
+      {
+        "duration_s": 300,
+        "candidate_windows": 29,
+        "fully_inside_inference_windows": 28,
+        "excluded_edge_window_starts_s": [
+          0.0
+        ],
+        "rr_never_bridges_disjoint_windows": true,
+        "comment": "Only complete windows contained in [1, 1+6*n_frames) are scored. The initial [0,duration) window is excluded, not shortened or filled."
+      }
+    ],
+    "source_only_registration": [
+      {
+        "job": "Dalia-fold0-seed42-labelsfull",
+        "delay_s": 0.59375,
+        "exactly_training_subjects": true,
+        "validation_intersection": [],
+        "test_intersection": []
+      },
+      {
+        "job": "Dalia-fold1-seed42-labelsfull",
+        "delay_s": 0.046875,
+        "exactly_training_subjects": true,
+        "validation_intersection": [],
+        "test_intersection": []
+      },
+      {
+        "job": "Dalia-fold2-seed42-labelsfull",
+        "delay_s": 0.59375,
+        "exactly_training_subjects": true,
+        "validation_intersection": [],
+        "test_intersection": []
+      },
+      {
+        "job": "Dalia-fold3-seed42-labelsfull",
+        "delay_s": 0.59375,
+        "exactly_training_subjects": true,
+        "validation_intersection": [],
+        "test_intersection": []
+      },
+      {
+        "job": "Dalia-fold4-seed42-labelsfull",
+        "delay_s": 0.59375,
+        "exactly_training_subjects": true,
+        "validation_intersection": [],
+        "test_intersection": []
+      },
+      {
+        "job": "Dalia-to-WildPPG-seed42",
+        "delay_s": 0.59375,
+        "exactly_training_subjects": true,
+        "validation_intersection": [],
+        "test_intersection": []
+      }
+    ],
+    "delay_direction": {
+      "formula": "aligned_prediction_s = ppg_detection_s - source_training_delay_s, before cropping",
+      "synthetic_reference_s": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "synthetic_later_ppg_s": [
+        1.25,
+        2.25,
+        3.25
+      ],
+      "source_delay_s": 0.25,
+      "subtraction_recovers_reference": true
+    },
+    "semantic_limitations": {
+      "target_is_ecg_event_not_annotated_ppg_peak": true,
+      "reference_qrs_audit_does_not_establish_ppg_ecg_millisecond_alignment": true,
+      "wild_automated_ecg_not_manual_truth": true,
+      "small_cnn_convolutional_receptive_field_samples": 71,
+      "small_cnn_convolutional_receptive_field_s": 1.109375,
+      "small_cnn_normalization": "Input normalization and GroupNorm use whole-frame summary statistics, so strict mathematical dependency is global; the local convolution path spans 71 samples.",
+      "rr_statistics_are_raw_intervals_not_adjudicated_normal_nn_intervals": true,
+      "source_only_delay_is_registration_convention_not_estimated_physiological_pat": true
+    }
+  },
+  "replayed_frame_start_s": [
+    0,
+    6,
+    300,
+    4476,
+    8946
+  ],
+  "implementation_checks_passed": true,
+  "scientific_interpretation_status": "blocked_for_absolute_ppg_beat_ranking_by_unresolved_cross_signal_registration",
+  "elapsed_seconds": 0.7349999999860302
+}

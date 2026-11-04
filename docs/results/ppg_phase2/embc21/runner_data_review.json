@@ -1,0 +1,144 @@
+{
+  "runner_sha256": "f92203f667b6bfa6793fb0dc7b4af89c114d72ac020502bc2a2f6105de76963b",
+  "adapter_sha256": "48b6ccd64c1591a90a878d485b2f92c0ed1a66a55ad41fedd24c83b845b6e179",
+  "manifest_sha256": "c2742969260a0816fdfae53c679e41da42eb4935e2e83844745637d0fe682c69",
+  "records_validated": 105,
+  "training_frames": 2577,
+  "all_frame_starts_equal_independent_native_mask": true,
+  "all_training_contexts_exclude_artifacts_and_missing_samples": true,
+  "LOSO_seven_test_people_exactly_once": true,
+  "jobs": [
+    {
+      "id": "EMBC21-fold0-seed42",
+      "train": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S2"
+      ],
+      "test": [
+        "S1"
+      ],
+      "train_frames": 1280,
+      "validation_frames": 128
+    },
+    {
+      "id": "EMBC21-fold1-seed42",
+      "train": [
+        "S1",
+        "S3",
+        "S4",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S5"
+      ],
+      "test": [
+        "S2"
+      ],
+      "train_frames": 1280,
+      "validation_frames": 128
+    },
+    {
+      "id": "EMBC21-fold2-seed42",
+      "train": [
+        "S1",
+        "S2",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S6"
+      ],
+      "test": [
+        "S3"
+      ],
+      "train_frames": 1280,
+      "validation_frames": 128
+    },
+    {
+      "id": "EMBC21-fold3-seed42",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S7"
+      ],
+      "test": [
+        "S4"
+      ],
+      "train_frames": 1280,
+      "validation_frames": 128
+    },
+    {
+      "id": "EMBC21-fold4-seed42",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S4"
+      ],
+      "test": [
+        "S5"
+      ],
+      "train_frames": 1280,
+      "validation_frames": 128
+    },
+    {
+      "id": "EMBC21-fold5-seed42",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S6"
+      ],
+      "train_frames": 1280,
+      "validation_frames": 128
+    },
+    {
+      "id": "EMBC21-fold6-seed42",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S7"
+      ],
+      "train_frames": 1280,
+      "validation_frames": 128
+    }
+  ],
+  "frame_target_coordinate_max_error_s": 0.002000000000000668,
+  "flattened_core_offset_check": true,
+  "review_limitations": [
+    "Independent read-only CPU protocol/data audit; no trained prediction available at time of this check",
+    "Cached frozen representations from all people permitted because encoder is fixed; training/validation indices explicitly exclude test people"
+  ]
+}

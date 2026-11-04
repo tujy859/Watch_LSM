@@ -1,0 +1,18 @@
+{
+  "full_records": 3888,
+  "layouts": {
+    "sample_channels": 48,
+    "rgb_channels": 3840
+  },
+  "legacy_total": 48,
+  "legacy_quality_good": 35,
+  "legacy_digital_constant": 48,
+  "legacy_physical_constant": 0,
+  "old_good_subset_present": 830,
+  "old_good_rgb_green_selected": 795,
+  "old_upstream_issue": "sample_channels decoded as constant raw ADC values; RGB channels selected green while quality annotations used red",
+  "old_files_modified": false,
+  "wfdb_independent_checked_records": 3888,
+  "wfdb_maximum_absolute_difference": 0.0,
+  "wfdb_version": "4.1.2"
+}

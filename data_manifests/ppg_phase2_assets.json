@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-04",
+  "purpose": "Phase-two wrist onset/PRV and auxiliary smartphone SQI PoC; no foundation pretraining",
+  "datasets": [
+    {
+      "dataset": "BUT-PPG full v2",
+      "local_root": "datasets/ppg_bench_raw/butppg-full-v2",
+      "download_cli_available": true,
+      "download_command": "python scripts/ppg_sqi_poc.py --stage download --raw datasets/ppg_bench_raw/butppg-full-v2",
+      "prepare_command": "python scripts/ppg_sqi_poc.py --stage prepare --raw datasets/ppg_bench_raw/butppg-full-v2 --output .local/ppg-phase2/sqi",
+      "official_url": "https://physionet.org/content/butppg/2.0.0/",
+      "archive_url": "https://physionet-open.s3.amazonaws.com/butppg/butppg-2.0.0.zip",
+      "archive_sha256": "9b910fc884f63eca1c5d3a00c5710f838e0053dce94f8a02196bd0adc2ffa33c",
+      "note": "Use full-v2 destination; legacy PPG-Bench downloader and prior raw subset intentionally select quality-1 records only."
+    },
+    {
+      "dataset": "EMBC21 annotations + Biagetti raw PPG",
+      "local_root": "datasets/embc21",
+      "download_cli_available": false,
+      "adapter_cli": "python scripts/ppg_embc21_data.py --data-root datasets/embc21 --output-dir .local/ppg-phase2/embc21",
+      "adapter_limitation": "Reads, validates and audits already extracted public data; does not download archives. No new downloader was added in this evidence-copy task.",
+      "landing_page": "https://www.eti.uni-siegen.de/ubicomp/home/datasets/embc21/index.html",
+      "annotation_archive": {
+        "url": "https://www.eti.uni-siegen.de/ubicomp/home/datasets/embc21/ppgopt_annot.zip",
+        "bytes": 358199,
+        "sha256": "6ceee248965d53822055b59ecfecdbae3a434941ea67ab71be9812e34ff45886",
+        "extract_to": "datasets/embc21/",
+        "expected_folder": "ppgopt_annot/"
+      },
+      "raw_supplement": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6971339/supplementaryFiles",
+        "outer_archive_sha256": "1c220fceb907ad89100cb4d2e586aab2e2f8e85f13a84be87549fd4c8c0b88d9",
+        "member": "mmc1.zip",
+        "member_sha256": "e47bd63ca722895f4072f29ebd9822751396883fb238b039c64041512d031e8e",
+        "member_bytes": 30057275,
+        "save_member_as": "datasets/embc21/PPG_ACC_dataset.zip",
+        "extract_member_to": "datasets/embc21/",
+        "expected_folder": "PPG_ACC_dataset/"
+      },
+      "license": "Annotations: scientific non-commercial use, cite Wolling et al. 2021 and Biagetti et al. 2020. Original paper/supplement: CC BY 4.0."
+    },
+    {
+      "dataset": "DaLiA/WildPPG existing inputs",
+      "download_cli_available": true,
+      "download_command": "python scripts/download_ppg_bench.py --datasets dalia wildppg",
+      "reference_command": "python scripts/ppg_beat_reference_audit.py --output .local/ppg-phase2/reference-v3",
+      "note": "Raw inputs already existed. Reference audit also needs existing processed subject identities and the phase-one official WildPPG reference cache; see project phase-one reproduction instructions. This copy operation did not redownload or recompute references."
+    }
+  ],
+  "evidence_manifest": "docs/results/ppg_phase2/evidence_copy_manifest.json",
+  "note": "EMBC21 archive recovery is described explicitly; no automatic downloader for that dataset. Original datasets and checkpoint files remain untracked."
+}

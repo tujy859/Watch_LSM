@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "metric_imports": "No production scoring or event-metric module imported",
+  "method": "Independent sorted greedy maximum match count; unique-neighborhood consecutive PP intervals; direct numpy PP formulas and participant means",
+  "record_method_predictions": 315,
+  "intervals_all_three_tolerances": 702,
+  "consecutive_pp_intervals_checked": 702,
+  "consecutive_pp_intervals_ambiguous_not_recomputed": 0,
+  "prv_windows_all_methods": 537,
+  "scalar_comparisons": 17073,
+  "maximum_absolute_float_difference": 5.684341886080802e-14,
+  "script_sha256": "4cb2e30a23b838b9da65045ec0ffe178ae30c2a2e7a56c44103479b3d5182cb8",
+  "production_audit_sha256": "c02596472cb680e3fbd4602da54dc7577933049c66f3244c9fcb4717e53d09ec",
+  "protocol_sha256": "f6000d397fae8aa94ce47e70b3771c101f793febf6e1f35155a82bcd3763f9f6",
+  "tables_sha256": {
+    "intervals.csv": "b169ebd36f89ed12f580b1723df17ff47e397691ff7f44979a77b349555accc2",
+    "prv_windows.csv": "644dec0d209db52590b66de1f0436e3de12b03bc5ec40518d1b3218e12eef9d2",
+    "per_subject.csv": "b1d246132803a4978b5f645d2c5eb61c446c021ec1a9c21ab6c03271cc1da669",
+    "summary.csv": "b3f31c46cfa1eca551a8e6558996f63bc4edb6e0ded5971ad0956b38ec9ccdaf"
+  }
+}

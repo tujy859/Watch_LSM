@@ -1,0 +1,7 @@
+{
+  "job": "fold0-seed42",
+  "max_cpu_vs_cuda_probability_difference": 1.1980533599853516e-05,
+  "best_epoch": 20,
+  "epochs": 20,
+  "parameters": 27065
+}

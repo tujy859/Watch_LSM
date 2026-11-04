@@ -1,0 +1,35 @@
+{
+  "checked_date": "2026-11-04",
+  "dalia": {
+    "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6679242/",
+    "section": "2.2.4 Data Synchronisation and Ground Truth Generation",
+    "findings": [
+      "Authors report initial automated ECG R-peak detection followed by manual addition and removal of peaks.",
+      "Start and end double-tap acceleration patterns align devices and correct drift; no millisecond precision guarantee is reported.",
+      "Released PKLs contain rpeaks in the 700 Hz chest ECG time base; this work retains original annotations, reports duplicate entries, and derives a unique-event view without using PPG predictions.",
+      "No beat-type labels establish normal-to-normal intervals; no independent expert re-adjudication was performed in this PoC."
+    ],
+    "supporting_documentation": "https://ppg-beats.readthedocs.io/en/latest/datasets/ppg_dalia/"
+  },
+  "wildppg": {
+    "source": "https://arxiv.org/html/2412.17540v1",
+    "sections": [
+      "3.1.3 Synchronization",
+      "3.3.1 Ground Truth"
+    ],
+    "findings": [
+      "Cross-device offline alignment is reported with approximately 33 ms accuracy.",
+      "Baseline reference beats are automatic ECG detections; no manually adjudicated PPG peak truth is published.",
+      "This work retains the original official unfiltered ECG peak sequence for interval calculation. It does not concatenate quotient-filtered peaks.",
+      "WFDB XQRS agreement in fixed blocks is a conservative ECG-only availability screen. Agreement does not prove correctness, and disagreement can reject usable ECG."
+    ]
+  },
+  "supplementary": {
+    "capnobase": "https://ppg-beats.readthedocs.io/en/latest/datasets/capnobase/",
+    "notes": [
+      "42 mostly high-quality anaesthesia acquisitions including adults and children; sensor/site differs from wrist PPG.",
+      "Official converter says PPG peak annotations exist but their manual status was not verified in this review, so no data were downloaded or claimed as manual PPG truth.",
+      "BUT-PPG full resource was provisioned by the parallel SQI task; not required to replace DaLiA wrist reference."
+    ]
+  }
+}

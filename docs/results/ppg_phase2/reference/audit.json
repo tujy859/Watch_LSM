@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "verified_output_files": 124,
+  "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+  "by_dataset": {
+    "Dalia": {
+      "subjects": 15,
+      "duration_s": 129489.0,
+      "original_annotations": 192229,
+      "canonical_events": 192225,
+      "duplicate_annotations": 4,
+      "detector_audit": {
+        "reference_beats": 19903,
+        "xqrs_beats": 19892,
+        "matched_beats": 19748,
+        "pooled_f1": 0.99248649327805
+      },
+      "windows": {
+        "60": {
+          "total": 2150,
+          "accepted": 2121
+        },
+        "300": {
+          "total": 425,
+          "accepted": 406
+        }
+      }
+    },
+    "WildPPG": {
+      "subjects": 16,
+      "duration_s": 780432.0,
+      "original_annotations": 1027609,
+      "canonical_events": 1027602,
+      "duplicate_annotations": 7,
+      "detector_audit": {
+        "reference_beats": 1027602,
+        "xqrs_beats": 1026847,
+        "matched_beats": 931681,
+        "pooled_f1": 0.9069886865042647
+      },
+      "windows": {
+        "60": {
+          "total": 12999,
+          "accepted": 9483
+        },
+        "300": {
+          "total": 2592,
+          "accepted": 1640
+        }
+      }
+    }
+  },
+  "checks": [
+    "31 subject manifests present, code digests equal final implementation",
+    "All 124 output files agree with registered SHA256",
+    "Canonical peaks equal exact unique original annotations; sampling-rate conversion exact",
+    "All original annotation arrays and rejection reasons retained"
+  ],
+  "warning": "DaLiA detector agreement is sampled 15 minutes per person; Wild agreement covers the full ECG and is not equivalent to accuracy."
+}

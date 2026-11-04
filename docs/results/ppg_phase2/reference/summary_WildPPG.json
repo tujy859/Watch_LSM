@@ -1,0 +1,712 @@
+{
+  "complete_requested_scope": true,
+  "datasets": [
+    "WildPPG"
+  ],
+  "subject_count": 16,
+  "by_subject": [
+    {
+      "dataset": "WildPPG",
+      "subject": "an0",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_an0.mat",
+        "source_sha256": "ff5169418d86beaf8ea841c52ba8d694ee4c3892837f48f8196421385a894a25",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "c56e3bb741d23a63a9795184a8fae466af43d28b3786b7ccfa76c3c22f0973df"
+      },
+      "duration_s": 44368.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 57090,
+      "n_original_annotations": 57090,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 57090,
+        "xqrs_beats": 67711,
+        "matched_beats": 55148
+      },
+      "windows": {
+        "60": {
+          "total": 739,
+          "accepted": 434
+        },
+        "300": {
+          "total": 147,
+          "accepted": 58
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "6e42dcad1a7193a5bdb00949af3594b34d636bda0ae5b6f912afa133cfb492eb",
+        "ppg_native.npy": "0786c3fbdc947eb9a1f732d2fa821390a28339d207dc538245180e31604e2fa4",
+        "windows.csv": "b2af398e5bc596f867803612a6892c31fd839a70dc2a311b67ac01c94968a19e",
+        "detector_audit.json": "dd88148e038cc881df5bd4ff6e816fd2a785f414b0a8f92d83d43fea928fe36f"
+      },
+      "elapsed_seconds": 12.327999999979511
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "e61",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_e61.mat",
+        "source_sha256": "2d1500baf936d85f15291f7da85268ef000446ada5c7f876ffba3b0ca6b8fa2a",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "e6972b025ba74766fd352037872aa7430cce3f63ab7a7ae58e8af926712f2209"
+      },
+      "duration_s": 44456.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 63710,
+      "n_original_annotations": 63710,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 63710,
+        "xqrs_beats": 64959,
+        "matched_beats": 57915
+      },
+      "windows": {
+        "60": {
+          "total": 740,
+          "accepted": 502
+        },
+        "300": {
+          "total": 148,
+          "accepted": 85
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "3e021e5144ea443c4f2a74d9d1c4915683b231d48dc9d2b91c194fe26279e58b",
+        "ppg_native.npy": "a2e986de34b4264c3c85f246330f7a8867c98bbd5cc24244e7eaf8c3431706b7",
+        "windows.csv": "b0910db42e3d80f47459a49ec4e0d828f5e48367c5ad4f9c5a6b5b288d3adb0e",
+        "detector_audit.json": "5a42abb6b00b14f0fbac1d98b597d68ca6b77c8c5ebd03b62a9d24458977031a"
+      },
+      "elapsed_seconds": 13.186999999976251
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "fex",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_fex.mat",
+        "source_sha256": "c59f56e989d3df6638290e2839bee42c113ee30813a344c6f71fc348e34a3cb1",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "4fb7e163635f548b2beb8ac5f3b210c8bbd09cc14e7c7df60910380e902ea336"
+      },
+      "duration_s": 48144.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 51536,
+      "n_original_annotations": 51539,
+      "duplicate_annotation_count": 3,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 51536,
+        "xqrs_beats": 40345,
+        "matched_beats": 26103
+      },
+      "windows": {
+        "60": {
+          "total": 802,
+          "accepted": 211
+        },
+        "300": {
+          "total": 160,
+          "accepted": 25
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "03be5eef195712685eaca849f0797d17feae35fbe425e68891864007c3f9319f",
+        "ppg_native.npy": "47890ed263764dca9d52ad677cb3b49df9ed76c3f347368ac3b1bf29948698b0",
+        "windows.csv": "969236c7fb3bfcea51d592bbbcf71fdf5c8fa412216f55b66187b1dbf3eda7c1",
+        "detector_audit.json": "1c68225c3a2c724175d34b20315edfcf177fd237e27ca45e837fff353221535a"
+      },
+      "elapsed_seconds": 27.71799999999348
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "k2s",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_k2s.mat",
+        "source_sha256": "a09fa1c0e6a32664806392cb76d3fc477e5cf759699462ad2b7ed8304208d17a",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "444f9aea3139b34c31fb88049a8c2c839f1636424d2b98f527e2633593357537"
+      },
+      "duration_s": 54832.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 68558,
+      "n_original_annotations": 68558,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 68558,
+        "xqrs_beats": 68556,
+        "matched_beats": 68213
+      },
+      "windows": {
+        "60": {
+          "total": 913,
+          "accepted": 899
+        },
+        "300": {
+          "total": 182,
+          "accepted": 178
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "bd6a8bce45d0e1032293ede41ccb7b10dc5920191887ade6d4ba6d56b2d2e596",
+        "ppg_native.npy": "0324e359d818d3b771517c38109b90a6c816aaca2df8d64c20cdc6862361ba94",
+        "windows.csv": "923cafccb6c78996f13a720175fabd5f0a55e042fb2827f502cda6a5076e25fd",
+        "detector_audit.json": "8db07ca1f948045be0ceb7af22847b6a00a43d44054f739eb29745dff8f75623"
+      },
+      "elapsed_seconds": 14.25
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "kjd",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_kjd.mat",
+        "source_sha256": "67271481074610f74aac2d8dad101e3cbbff949757761e8b5f40863b856e9123",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "7832a4ea84180ee6d6e795d4cf3675a9dd4f5ce810fc0fcb658239e7e633f8d8"
+      },
+      "duration_s": 48200.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 61168,
+      "n_original_annotations": 61168,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 61168,
+        "xqrs_beats": 58588,
+        "matched_beats": 48471
+      },
+      "windows": {
+        "60": {
+          "total": 803,
+          "accepted": 398
+        },
+        "300": {
+          "total": 160,
+          "accepted": 51
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "1fd4ce8318ae07158fc31edef8fe69b1a6d80eb83e6614aa0a9762ab3867856d",
+        "ppg_native.npy": "067cba0343a7a1d5c94cbe5953715d498ba8fa779076df4fb47dd7d7dc64f2dc",
+        "windows.csv": "5b9f8d970a6cd5e0d32a8f0d25bcb369744c9655175bf57bf92925f500e65a8e",
+        "detector_audit.json": "73a582de464355a14b86122a29e60f544f990e6095f9e200b73f586ed71a5954"
+      },
+      "elapsed_seconds": 17.26500000001397
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "l38",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_l38.mat",
+        "source_sha256": "86f2e6cf02977c78a455cbe49b3fe990d33ae2719c00f7f23ecb8020869fd1e5",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "9f96d661bad3fa364f8876d683b49d6f4d4d7fb940b41927b5a41a41821e4c55"
+      },
+      "duration_s": 47952.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 60754,
+      "n_original_annotations": 60754,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 60754,
+        "xqrs_beats": 60783,
+        "matched_beats": 60691
+      },
+      "windows": {
+        "60": {
+          "total": 799,
+          "accepted": 792
+        },
+        "300": {
+          "total": 159,
+          "accepted": 156
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "e039a951b7eeec70d60abcf787871427c04b00b7383f7907578efac9160b1128",
+        "ppg_native.npy": "cd9f2fadc5ba6e613956eda26b214e34bcd48c20ea750e4686edc23131b8e4a6",
+        "windows.csv": "d19c1f88971cabe73e23e5d9dca01960335a6306afa800d716191d17ce3ef8c4",
+        "detector_audit.json": "6a61479c0e9b9c0a6b9fe2fc5f465daeb68433d975a4e3745cb1952e33784ded"
+      },
+      "elapsed_seconds": 12.704000000027008
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "n31",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_n31.mat",
+        "source_sha256": "9a453f4e4d964b694ca0da7070500ad3bb35f05f352b9bf574c0feb7db040117",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "79b7e9d56d18512117b61b53a3100550f826759b2f821b5c8620173752ed0b3b"
+      },
+      "duration_s": 47680.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 63260,
+      "n_original_annotations": 63260,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 63260,
+        "xqrs_beats": 63807,
+        "matched_beats": 61543
+      },
+      "windows": {
+        "60": {
+          "total": 794,
+          "accepted": 674
+        },
+        "300": {
+          "total": 158,
+          "accepted": 118
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "183fd2b32f429e1403dd18e8287d40e7591220c5ae049f838ba4f733753c169b",
+        "ppg_native.npy": "4c859554eece6c502c66c2c0d10cf5add5ef04719761f194b385027ee22dc59a",
+        "windows.csv": "aaf1643ddadc35b8a69be54b2091e2951d111361bb3757ca7b3905ebd347852e",
+        "detector_audit.json": "249e10eb0c5515fc5188b7274e37101cbbf2883efdb7b19b56e9bfbda35ea381"
+      },
+      "elapsed_seconds": 11.25
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "ngh",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ngh.mat",
+        "source_sha256": "1982c3c55d316014480b752d805ca12bb1587917a8b57da74f5de6cdb9530738",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "fd64d09dbbd193311218dbb650287354251d5ffbe43afb152dd0f438fd8248f3"
+      },
+      "duration_s": 52880.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 63947,
+      "n_original_annotations": 63948,
+      "duplicate_annotation_count": 1,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 63947,
+        "xqrs_beats": 62759,
+        "matched_beats": 54871
+      },
+      "windows": {
+        "60": {
+          "total": 881,
+          "accepted": 515
+        },
+        "300": {
+          "total": 176,
+          "accepted": 75
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "ad7fe91c5ff9c938a0711d62e585893d434efb7332e2a40f992706a19dbf4ba0",
+        "ppg_native.npy": "8c7d24820467f1c9d1721debc95909a3f321895a0bd7583b11d16d17a03d462c",
+        "windows.csv": "010b06ecfc637781d331500581e7ae4817945ba76747f1f5a1f4cb775772813a",
+        "detector_audit.json": "df60e74d60f94aec85672b3e94d812316738b4e159902b3590752c20c46a9123"
+      },
+      "elapsed_seconds": 14.437000000034459
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "p5d",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p5d.mat",
+        "source_sha256": "8dcbb9738feafbe1882746de3af6629de6aea65183fe834455664fa7ca0351fb",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "a1ff878106e9f58bac052be69e18c7ff5dd69ebef0b5a4ff350d201b699a2bab"
+      },
+      "duration_s": 52064.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 77786,
+      "n_original_annotations": 77788,
+      "duplicate_annotation_count": 2,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 77786,
+        "xqrs_beats": 75580,
+        "matched_beats": 54053
+      },
+      "windows": {
+        "60": {
+          "total": 867,
+          "accepted": 206
+        },
+        "300": {
+          "total": 173,
+          "accepted": 17
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "98bab71dd682de1bba581e8079ee427b5f93fa8fc5629d74d3345cb015d1ace5",
+        "ppg_native.npy": "9a6552636d7e36be04e29cf80ba0cbb0037cafbdc84c5f81f9872d23c9c052e1",
+        "windows.csv": "c5d13e078385d52400a486d1ba5737e83a41dfd6e8bc86277c8c40cd6c75cc58",
+        "detector_audit.json": "8665a9386860942d5ad1ffc7be9b4ea9514f3186ab9a8f7058b5a4beef0821f0"
+      },
+      "elapsed_seconds": 15.48399999999674
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "p9p",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p9p.mat",
+        "source_sha256": "ad4cc58916c0de65878bbb7d9484e370854f22d9e3ec0e061ec16dd62e62eca4",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "e39bf96d0f80e5855cda1d458100e6bcab92e68fcf85e733f3c4928b5bda4cb5"
+      },
+      "duration_s": 45016.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 73231,
+      "n_original_annotations": 73232,
+      "duplicate_annotation_count": 1,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 73231,
+        "xqrs_beats": 76166,
+        "matched_beats": 67133
+      },
+      "windows": {
+        "60": {
+          "total": 750,
+          "accepted": 426
+        },
+        "300": {
+          "total": 150,
+          "accepted": 66
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "f2e7bd3cd1bed16c4419ab227ac255fe4c5a09f62f548ec6d130493c4e543707",
+        "ppg_native.npy": "27a5eac2f2db6a587d2c8e49fab77b639d5d859b81b66acc4476d5d386917fe6",
+        "windows.csv": "9d866824273c0de3988285d391555ef20ea4163820bacad37b77f7ac46958176",
+        "detector_audit.json": "38cc53c708278d480389a5e7bd58b98a95305857c7b8adda726be1f7531f6833"
+      },
+      "elapsed_seconds": 10.827999999979511
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "qm9",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_qm9.mat",
+        "source_sha256": "ef288b66de55a01a7b1a3bc0927e0eed16637f0d0d0d55d30fba717bad8568cf",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "7073539c740e44660faad4d1e6fabfea3183d795269baf408312d2b87d3a2b18"
+      },
+      "duration_s": 47392.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 72894,
+      "n_original_annotations": 72894,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 72894,
+        "xqrs_beats": 72301,
+        "matched_beats": 67357
+      },
+      "windows": {
+        "60": {
+          "total": 789,
+          "accepted": 581
+        },
+        "300": {
+          "total": 157,
+          "accepted": 95
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "7d1a5b9a580906854ce05be223736fd4bfbbf73f000f82de0aacc42c05bddf29",
+        "ppg_native.npy": "cc4d52a270be97b2fe98554855a4cfecd7d8336a2b6fe53fef20c1cb87f0c02b",
+        "windows.csv": "61d10e78e519be5d037716dbb44d8f9c98e20256cac0100eb81eea56f4a34db8",
+        "detector_audit.json": "9d4ba9a59624e247e4ee03b55d0ea95f56206ded2b31086ac394482363c86041"
+      },
+      "elapsed_seconds": 12.702999999979511
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "ssx",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ssx.mat",
+        "source_sha256": "8621c948f845d552581b59b35874445098786312393c932c5906bef1863870b6",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "ba64c3ce2e08bfa46497f3f88f8939f8a7b8a0f89fea2612bdbaf1c426d8c535"
+      },
+      "duration_s": 45592.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 68646,
+      "n_original_annotations": 68646,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 68646,
+        "xqrs_beats": 69419,
+        "matched_beats": 67587
+      },
+      "windows": {
+        "60": {
+          "total": 759,
+          "accepted": 674
+        },
+        "300": {
+          "total": 151,
+          "accepted": 120
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "afa1395a63b4877e02f2e3196e67694601e1fa6562afd0f3a29915ac985ac9c5",
+        "ppg_native.npy": "ed8a4e77a988cc872a3fff25c74c46ef8772314a2821ae62cea5e84e7911b1f6",
+        "windows.csv": "9396f465da20d7af93fa7a79efd3e8c1588036830ecbf98e1a797a717ebd0f78",
+        "detector_audit.json": "6c7a86c6a81cc1286fd4d6b4749aceea5c133a2d0256f1479dcb481768a3c888"
+      },
+      "elapsed_seconds": 10.90600000001723
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "trh",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_trh.mat",
+        "source_sha256": "d86bbb489a4487296dff44f5178e1994948788ace36968c1a5b0a48c232c6fa9",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "57a540a0acaed5d78c3fe8dab42071b68239037aecaafc091738103d031bbb70"
+      },
+      "duration_s": 51824.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 70026,
+      "n_original_annotations": 70026,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 70026,
+        "xqrs_beats": 70332,
+        "matched_beats": 69574
+      },
+      "windows": {
+        "60": {
+          "total": 863,
+          "accepted": 828
+        },
+        "300": {
+          "total": 172,
+          "accepted": 161
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "9832ac584c1e644974137d719e3e2a22fdd7953e18e07d88dca7c924950cee99",
+        "ppg_native.npy": "ccb45d2c28c274314e2cedbc91d9b2c4750e205004c2f1dff1d174d88c6d3bce",
+        "windows.csv": "19cc7c84a3b01cb657671edfe3de4d80882b28e50ff8f8c35ccb92b8fbda03f4",
+        "detector_audit.json": "71e2bf53d5a5b4e62e450fccf8fe4a36f2498c06eb1ae2bc9e0b17a3b29179f4"
+      },
+      "elapsed_seconds": 12.422000000020489
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "tz8",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_tz8.mat",
+        "source_sha256": "12e0068c480eecb0702d0014ee492f935324015063fcd0d3054e2c3a2525ae2a",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "65441eae571c39c82c27b59d242f8298e088c405418be2edb841d1ff61f41c4f"
+      },
+      "duration_s": 52280.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 65088,
+      "n_original_annotations": 65088,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 65088,
+        "xqrs_beats": 65194,
+        "matched_beats": 63845
+      },
+      "windows": {
+        "60": {
+          "total": 871,
+          "accepted": 786
+        },
+        "300": {
+          "total": 174,
+          "accepted": 143
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "d33b7bd168b4515caf4fa3707187a60c02e22a0ad74aec1ee407a7c47aed2d29",
+        "ppg_native.npy": "6048fd6cda64872c7d230bcad976bd12ecd8e364822ce939f97b0335e45ab975",
+        "windows.csv": "a9f266f1e44e9143be706dce9384ecc28a5a33d62cd68a4f807c69cccedbd1a2",
+        "detector_audit.json": "512af617bd31c76983390889e7c8c36aed859996e632216dda03070b0c665ad7"
+      },
+      "elapsed_seconds": 12.875
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "u7y",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_u7y.mat",
+        "source_sha256": "8d5b8439ea66234da07004bb0e12e18752fba594425daa1141fc37adaa7b0001",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "cda5baa4ed9689517c435979defb7baf1e4fbfff07c227800bf4809075c39b5f"
+      },
+      "duration_s": 47712.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 54997,
+      "n_original_annotations": 54997,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 54997,
+        "xqrs_beats": 55352,
+        "matched_beats": 54495
+      },
+      "windows": {
+        "60": {
+          "total": 795,
+          "accepted": 743
+        },
+        "300": {
+          "total": 159,
+          "accepted": 138
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "c87c52e7a5adccc1eee71e2517c8694b9783c1ff558a7aa9def74fb9075e1fdc",
+        "ppg_native.npy": "e110d24cf00879f65d35e133d0fb2251449ea93476357ec879bd278baa5b1e70",
+        "windows.csv": "7a9ef85969353f26899faf0fa6f19b7e045a443451b59a578db0787137d85a2b",
+        "detector_audit.json": "d6f4554e19b596923b348e5d5abdcefe0d256b47122eba655b9ecc082fd3bc10"
+      },
+      "elapsed_seconds": 11.25
+    },
+    {
+      "dataset": "WildPPG",
+      "subject": "w4p",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_w4p.mat",
+        "source_sha256": "9ded5fb6ee4d57627f98aaaa1854c2ecff599caeb7649de2f449892ab2613ec3",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2",
+        "phase1_reference_sha256": "5ee40f49449920bdb377b5b1c3a14d5a30b9f3a2c67e8e94920ff63c460c97db"
+      },
+      "duration_s": 50040.0,
+      "ecg_fs": 128,
+      "ppg_fs": 128,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "int32",
+      "n_reference_beats": 54911,
+      "n_original_annotations": 54911,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "entire native ECG; fixed 300-second cores, 5-second real ECG context each side, WFDB XQRS defaults reset each core",
+      "detector_agreement": {
+        "reference_beats": 54911,
+        "xqrs_beats": 54995,
+        "matched_beats": 54682
+      },
+      "windows": {
+        "60": {
+          "total": 834,
+          "accepted": 814
+        },
+        "300": {
+          "total": 166,
+          "accepted": 154
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "a0c194b6e06479a8df5509c469457f351a19ad876bf1c1958eb50beadd56ead2",
+        "ppg_native.npy": "5b1ddad2f272d45b4e97878dd557cc610ea419f24000f46faa5288b80123e19e",
+        "windows.csv": "ad9848a02268921d212b6aa3dd376e085a40ff03e7788ea22368a2d216afdf0b",
+        "detector_audit.json": "abd6cab095c42212a20f3fd884f8c3658eadbf0dee056dad71a532d51966d0b7"
+      },
+      "elapsed_seconds": 11.703000000037719
+    }
+  ],
+  "protocol": {
+    "durations_s": [
+      60,
+      300
+    ],
+    "main_prv_duration_s": 300,
+    "wild_xqrs_block_s": 300,
+    "wild_xqrs_context_s": 5,
+    "reference_peak_source": {
+      "Dalia": "Released manually corrected ECG rpeaks, native 700 Hz indices",
+      "WildPPG": "Unfiltered original official ECG Pan-Tompkins peaks, native 128 Hz indices; NOT human labels"
+    },
+    "interval_definition": "Only consecutive peaks both inside each complete [start,end) interval; never concatenate filtered peaks or bridge removed intervals",
+    "quality_selection": "ECG only. At least 20 intervals, all 0.3 to 2.0 s, first/last peak within 2 s of boundaries. Wild additionally requires XQRS agreement F1 >=0.95 at 50 ms. DaLiA manual annotations remain primary regardless of sampled detector agreement.",
+    "no_editing": "All raw R peaks and intervals are retained. Only exact duplicate annotation timestamps are collapsed into a canonical event view; affected windows are excluded even after collapse. No detector disagreement is corrected or replaced.",
+    "limitations": [
+      "No PPG systolic-peak manual ground truth in either dataset.",
+      "ECG-to-PPG pulse arrival delay makes absolute PPG-peak error against R times invalid without an explicitly declared mapping.",
+      "Wild cross-device synchronization accuracy is approximately 33 ms in its paper; automatic detector consensus is not verified accuracy.",
+      "XQRS can miss clear ECG beats after large artifacts even with block resets. Rejection means detector disagreement, not proven corrupt ECG; reference selection is conservative.",
+      "No normal/ectopic rhythm annotations: these are RR variability statistics, not clinically verified NN HRV.",
+      "Quality criteria select reference availability and may exclude physiological irregularity; report coverage.",
+      "SDNN and RMSSD from 60 s are exploratory short-window estimates; primary comparison uses 300 s."
+    ]
+  },
+  "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6679242/",
+    "https://ppg-beats.readthedocs.io/en/latest/datasets/ppg_dalia/",
+    "https://arxiv.org/html/2412.17540v1",
+    "https://wfdb.readthedocs.io/en/latest/processing.html#wfdb.processing.xqrs_detect"
+  ]
+}

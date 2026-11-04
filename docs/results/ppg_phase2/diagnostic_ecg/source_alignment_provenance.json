@@ -1,0 +1,116 @@
+{
+  "diagnostic_sha256": "b7186ebec18123a53bfff78434b89350aa4dff5dae7cbe3a3a3ce656374d9f7f",
+  "diagnostic_script_sha256": "dcf025e12900de69272ff503aaa7529307c866f36c3d656d80b753dafed37c73",
+  "protocol_sha256": "26687dc4e14817e21479fb375e42f330b09ae0132ade40e849332023dff4c661",
+  "code_sha256": {
+    "ppg_beat_metrics.py": "9f041e5cb36d00a6a6f4be70ea5493675b8c4c89521889745e8f9fff502eaf18",
+    "ppg_beat_reference_audit.py": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc"
+  },
+  "input_sources": {
+    "S4": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+        "source_sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "811a2cfbac8ebf5cb560e6c14fb0e6c3d30ef2c72ddf3c3a8195558a46b36a43",
+      "quality_windows_sha256": "2ed2df5ffb83dfa2eeced6ca28a2397b0531e1ca5fcd28abf836d6dc42553355"
+    },
+    "S3": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+        "source_sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "073bbda554fea0a2fcd4f59a2c5948ef644af9da3e065b0caae16842380f4fdf",
+      "quality_windows_sha256": "ae35c4f37cbdf980fedcc3df5859325daa04712d9cd7b1227748c7a227b94d14"
+    },
+    "S9": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+        "source_sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "80a1a09808fd1f0cf12276262d532e1894a2d2a914e8df8432c698706218d284",
+      "quality_windows_sha256": "e2ff14e42fc0ef2fc9537fc15b82ef2a82c7deb5f95d9646089e29fc23e93ab2"
+    },
+    "S12": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+        "source_sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "bf38fbcefc177000dd2ff1cc228d5b69f12006f3d594ab00f3d8f840465fe735",
+      "quality_windows_sha256": "cd7b9fbb97f1f62ab5d474321bc3ae22adc3df37ecc79ba344727e1fb110e361"
+    },
+    "S11": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+        "source_sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "4921b2f23a00fbef51e75b5baa557f8c7e22f8b5ad0cd965f42f0b556ad6afbc",
+      "quality_windows_sha256": "f0c226468e4638f2de8afc2d69de0babd04f7b83dd97aca7fba9f91ea2c690a9"
+    },
+    "S13": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+        "source_sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "5a79d61d53d6b6961688c80e33737ed204ae81893ca9915204719b17621708ae",
+      "quality_windows_sha256": "152238fb7d63f00bd24bd247e34449b1101a1c8b270ad80020ccc75246db60d7"
+    },
+    "S8": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+        "source_sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "9c155e698efe022325bee0b4f3dd8eeb43c75ad3af474556c96f0bcb47cfda5d",
+      "quality_windows_sha256": "3f6260dcd177b6303835df0c147ba3ec171d3621879bb6b67a6fe6f05f723570"
+    },
+    "S10": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+        "source_sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "b80c08bb9c86b42396077d85a4600635ec3743ed9b05715044d5be5aca44a65f",
+      "quality_windows_sha256": "14c177f8ffa5658f6156cebb7a390a2492599cb218d1c2a9c21e45ad394259cb"
+    },
+    "S6": {
+      "source_identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+        "source_sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "manifest_sha256": "c63ce4c371c22ad2f129eb08a26c3720943c8f5853c78f3806f6b2df3b53e5e4",
+      "quality_windows_sha256": "051687ae194f578d774e11d282b1988de055550fca8a2531625c3460447562b3"
+    }
+  },
+  "official_alignment_evidence": {
+    "collation_url": "https://raw.githubusercontent.com/peterhcharlton/info/master/collating_datasets/collate_ppg_dalia_dataset.m",
+    "collation_finding": "Original BVP and ECG/rpeaks copied directly; no fixed cross-signal timing offset in collation. Activity-specific segment cropping uses a common time origin.",
+    "assessment_url": "https://raw.githubusercontent.com/peterhcharlton/ppg-beats/main/source/assess_beat_detectors.m",
+    "assessment_finding": "Default max_lag=10 s, lag_int=.02 s. Each participant and each PPG detector is aligned independently against ECG; per-test reference alignment is not the source-only registration protocol of this pilot.",
+    "align_url": "https://raw.githubusercontent.com/peterhcharlton/ppg-beats/main/source/align_ppg_ecg_beats.m",
+    "algorithm_finding": "Candidate shifts span -max_lag to +max_lag. ECG times use (index-1)/fs and detected ECG event locations shift by the selected lag.",
+    "locally_released_snapshot_sha256": {
+      "assess_beat_detectors.m": "161c2161d6dde5914dbd6a8dba956ec11eaaf1bfd057ce1475b7087a41c032b7",
+      "align_ppg_ecg_beats.m": "97a5778dd73a89810e8461822bf5296de574beb68e4af35059b7da7471917a0f"
+    },
+    "verified_utc_date": "2026-11-04",
+    "manufacturer_latency": "No primary evidence establishing a fixed manufacturer delay was found. No such attribution is made."
+  },
+  "interpretation": "Training-only diagnostic does not resolve heartbeat-period aliases or prove unique physical offset. No correction is applied and no performance result after lag optimization is treated as held-out accuracy."
+}

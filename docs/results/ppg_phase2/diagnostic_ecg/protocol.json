@@ -1,0 +1,281 @@
+{
+  "version": "cardiac-event-poc-v1",
+  "jobs": [
+    {
+      "id": "Dalia-fold0-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S4",
+        "S3",
+        "S9",
+        "S12",
+        "S11",
+        "S13",
+        "S8",
+        "S10",
+        "S6"
+      ],
+      "validation": [
+        "S1",
+        "S7",
+        "S2"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S5",
+        "S4",
+        "S15",
+        "S7",
+        "S8",
+        "S14",
+        "S11",
+        "S1",
+        "S9"
+      ],
+      "validation": [
+        "S10",
+        "S2",
+        "S3"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S13",
+        "S1",
+        "S11",
+        "S7",
+        "S3",
+        "S10",
+        "S14",
+        "S15",
+        "S6"
+      ],
+      "validation": [
+        "S5",
+        "S2",
+        "S12"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S4",
+        "S6",
+        "S11",
+        "S1",
+        "S14",
+        "S2",
+        "S9",
+        "S5",
+        "S13"
+      ],
+      "validation": [
+        "S15",
+        "S12",
+        "S8"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S10",
+        "S4",
+        "S14",
+        "S5",
+        "S12",
+        "S6",
+        "S13",
+        "S3",
+        "S9"
+      ],
+      "validation": [
+        "S8",
+        "S7",
+        "S15"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-to-WildPPG-seed42",
+      "scenario": "transfer",
+      "source": "Dalia",
+      "target": "WildPPG",
+      "fold": -1,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S12",
+        "S1",
+        "S6",
+        "S9",
+        "S5",
+        "S14",
+        "S11",
+        "S13",
+        "S7",
+        "S10",
+        "S8",
+        "S3"
+      ],
+      "validation": [
+        "S15",
+        "S2",
+        "S4"
+      ],
+      "test": [
+        "an0",
+        "e61",
+        "fex",
+        "k2s",
+        "kjd",
+        "l38",
+        "n31",
+        "ngh",
+        "p5d",
+        "p9p",
+        "qm9",
+        "ssx",
+        "trh",
+        "tz8",
+        "u7y",
+        "w4p"
+      ]
+    }
+  ],
+  "declared_before_model_results": true,
+  "models": [
+    "AnyPPG",
+    "SmallCNN",
+    "Elgendi"
+  ],
+  "target": "ECG-referenced cardiac events from PPG, not PPG systolic-peak ground truth",
+  "reference_manifests": {
+    "Dalia/S1/manifest.json": "f4b4a4bfc17d7ce369c7837083d2c4b368ae70a91d5021a634d56dfe4b0d6351",
+    "Dalia/S10/manifest.json": "b80c08bb9c86b42396077d85a4600635ec3743ed9b05715044d5be5aca44a65f",
+    "Dalia/S11/manifest.json": "4921b2f23a00fbef51e75b5baa557f8c7e22f8b5ad0cd965f42f0b556ad6afbc",
+    "Dalia/S12/manifest.json": "bf38fbcefc177000dd2ff1cc228d5b69f12006f3d594ab00f3d8f840465fe735",
+    "Dalia/S13/manifest.json": "5a79d61d53d6b6961688c80e33737ed204ae81893ca9915204719b17621708ae",
+    "Dalia/S14/manifest.json": "69150bc1a82fcdce418f058cdb6820d49bfb17f506bad063bdd24a2b130fd633",
+    "Dalia/S15/manifest.json": "3347e75c9ffe157b31a341a607e8703fb296414d2e6c1e56a7374293eee8a226",
+    "Dalia/S2/manifest.json": "7f1e3c75663882fa31f619f6aabbb150290f9286264d16cdf6f4cefd3420a618",
+    "Dalia/S3/manifest.json": "073bbda554fea0a2fcd4f59a2c5948ef644af9da3e065b0caae16842380f4fdf",
+    "Dalia/S4/manifest.json": "811a2cfbac8ebf5cb560e6c14fb0e6c3d30ef2c72ddf3c3a8195558a46b36a43",
+    "Dalia/S5/manifest.json": "7d59a5f3225da8aec45d204e8c47246cab61d798d5741ce7b1f5945d7870b43f",
+    "Dalia/S6/manifest.json": "c63ce4c371c22ad2f129eb08a26c3720943c8f5853c78f3806f6b2df3b53e5e4",
+    "Dalia/S7/manifest.json": "be6359972c24ea3bc3d28c217e4ab024b509345231ddce8ac284161bca5caff2",
+    "Dalia/S8/manifest.json": "9c155e698efe022325bee0b4f3dd8eeb43c75ad3af474556c96f0bcb47cfda5d",
+    "Dalia/S9/manifest.json": "80a1a09808fd1f0cf12276262d532e1894a2d2a914e8df8432c698706218d284",
+    "WildPPG/an0/manifest.json": "4004ae7d8028d25625bbceaf083e879da2a9e2099864ec611d10a0170d57cfcb",
+    "WildPPG/e61/manifest.json": "a7da0a41edaab0144d8ac2617796727d7633e6c4863558cb19b955057c5694b4",
+    "WildPPG/fex/manifest.json": "2d6e96d27006e6dbbfc32b72698cb1d14dbd033b9564292c0c7d9324c4a0b9a3",
+    "WildPPG/k2s/manifest.json": "6db42339ea228872662c4796c90f0bff28c0d6f2acb1c8cadfd54321ce1182a7",
+    "WildPPG/kjd/manifest.json": "e9fc1c2d67c0e6c8478a452703d68186458dc6ffef51c7e950de3f35a2251ec6",
+    "WildPPG/l38/manifest.json": "fa263b5f5cb90096712d5cbc59f4a026ef7e2d08edb189144e072cddb8a3f9c4",
+    "WildPPG/n31/manifest.json": "3ac4fb7450e33972d7c71a99692a17aaa2dd38bdae1629a6dc5fc6e37b8ad7fa",
+    "WildPPG/ngh/manifest.json": "125ad19507f261477c53152d0d91e913be9eedd1e3744479a783d3bd14a4f1a6",
+    "WildPPG/p5d/manifest.json": "2ca3f43bd927f0b2d7c15f7e0cccb9c82fb8144af337e5d8974650a537979100",
+    "WildPPG/p9p/manifest.json": "ef302a5ef5f08dd1463b0d2891771f93099d944c4ba80fa3bfbc1265f81ab4c0",
+    "WildPPG/qm9/manifest.json": "607c1a870f01eaf008e2d9b73e0ceb2c2b662a0a7917e9ad94259d7af10dcb85",
+    "WildPPG/ssx/manifest.json": "80402f7abf481550f958420545dc2f49c745349e8f79c09e40c60e5c5c48bbe0",
+    "WildPPG/trh/manifest.json": "185a99a019ad28b786465d249fed47e428f948851d0abe5dc5acb1ce5f07bf01",
+    "WildPPG/tz8/manifest.json": "9fbc65106dbd4ee8c6a1f5423cf291024f920d0a606046c2d648385f90bd41d1",
+    "WildPPG/u7y/manifest.json": "ddf39a543dd9d496c8e9814501db751b891eeb5abc88e7cc6e5837327bb0a0fb",
+    "WildPPG/w4p/manifest.json": "852f236ec42f8585ccfa69a8dd858fb94266a183afd367725fcf23e7900189a5"
+  },
+  "reference_policy": "DaLiA manually corrected R peaks for training; WildPPG external test only",
+  "windows": "8 s input, center 6 s scored; 6 s stride; no synthetic joins",
+  "sampling": "Up to 256 uniformly spaced frames per train person; every other cached frame for validation (up to 128); full test duration. Frames containing duplicate ECG annotation timestamps are excluded before sampling.",
+  "ecg_target": {
+    "gaussian_sigma_s": 0.04,
+    "output_fs": 64,
+    "positive_weight": 5.0
+  },
+  "architecture": "AnyPPG six frozen temporal stages + 8-channel per-stage projections + small decoder; dense small CNN",
+  "parameters": {
+    "AnyPPG_head": 26737,
+    "SmallCNN": 17353
+  },
+  "fit": {
+    "seed": 42,
+    "epochs": 20,
+    "patience": 5,
+    "batch": 64,
+    "adam_lr": 0.001,
+    "selection": "validation person-mean event F1 at 100 ms, epoch and threshold; no refit",
+    "thresholds": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+    ],
+    "nms_distance_s": 0.28,
+    "precision": "FP32"
+  },
+  "traditional": "Elgendi-style PPG peaks; source-training-only fixed global PAT, 0 to 0.6 s step1/64; no test alignment",
+  "metrics": "F1 at 50/100/150ms; adjacent matched RR errors; continuous 300s RR SDNN/RMSSD agreement, 60s exploratory",
+  "limitation": "No arrhythmia annotations: RR, not NN; PRV/HRV physiological differences remain. Single training seed, exploratory subject bootstrap.",
+  "code_sha256": {
+    "run_ppg_beat_poc.py": "f041feecd9bcc1af621919b572af206772979cf0ee60594936cc6c3b5901579f",
+    "ppg_beat_models.py": "f8e3909a0e657a4a8e37b62ec85058f8b967a1a89a25dfa3e84335f7a07daec6",
+    "ppg_beat_metrics.py": "9f041e5cb36d00a6a6f4be70ea5493675b8c4c89521889745e8f9fff502eaf18"
+  },
+  "weight_sha256": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa",
+  "encoder_source_sha256": "c974c38fe5e213f3155b9e0cdb0a4b7f4324f19e47e479614617cbfcba86b1fc",
+  "phase1_protocol_sha256": "70759d1692ae19d282457ae6a3487565b640daf236901a01424c95ee18ead7a6"
+}

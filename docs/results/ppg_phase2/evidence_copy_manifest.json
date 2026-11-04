@@ -1,0 +1,462 @@
+{
+  "created_at_utc": "2026-11-04T06:14:22.580605+00:00",
+  "scope": "Completed phase-two lightweight evidence snapshots, copied byte-for-byte and rehashed, including the final manual-onset study. Large raw waveforms, probability arrays and weights remain local.",
+  "files": [
+    {
+      "source": ".local/ppg-phase2/transfer/calibration.csv",
+      "destination": "docs/results/ppg_phase2/transfer/calibration.csv",
+      "bytes": 2315,
+      "sha256": "4b9fb3841478e267cdd3b644d5980a21891b4e15c92728de9f5399594b399a38"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/calibration_by_seed.csv",
+      "destination": "docs/results/ppg_phase2/transfer/calibration_by_seed.csv",
+      "bytes": 6641,
+      "sha256": "b20ae6aa0a5800a2508339179dcf2ef875ccf27b6c866e4a737220ef7d1fd19b"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/feature_distance_by_subject.csv",
+      "destination": "docs/results/ppg_phase2/transfer/feature_distance_by_subject.csv",
+      "bytes": 1476,
+      "sha256": "d06615533f07d69e65eecfb4bcdbef516eb7a1fd1298ad21365fd37ea29e9f0a"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/feature_distance_by_subject_seed.csv",
+      "destination": "docs/results/ppg_phase2/transfer/feature_distance_by_subject_seed.csv",
+      "bytes": 4922,
+      "sha256": "0ca2a111a45d841f6b8884cf74e6d78a4e30070e5e24ef8e4b5f63477f6ea5f8"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/hr_distribution_bins.csv",
+      "destination": "docs/results/ppg_phase2/transfer/hr_distribution_bins.csv",
+      "bytes": 455,
+      "sha256": "bdbcd162d0ae86a3d7dc0e5dbef72f8b90ace1f02c78adfc14106185dae856e0"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/hr_distributions.csv",
+      "destination": "docs/results/ppg_phase2/transfer/hr_distributions.csv",
+      "bytes": 7298,
+      "sha256": "9e477ed53ad506ff2d7a459983845be315e6de3c9fa51829f18cf679ed3f111c"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/source_training_ranges.csv",
+      "destination": "docs/results/ppg_phase2/transfer/source_training_ranges.csv",
+      "bytes": 908,
+      "sha256": "2fad69272c39cfd5c39ac47c6142f08ca7a64cdbafacbd6f8c49c72f425588c3"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/strata.csv",
+      "destination": "docs/results/ppg_phase2/transfer/strata.csv",
+      "bytes": 14917,
+      "sha256": "bf261dbc3355fc7e48f026de0eee2619f1fdfee57e7d05c6eb33eb63d12c52e5"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/strata_by_seed.csv",
+      "destination": "docs/results/ppg_phase2/transfer/strata_by_seed.csv",
+      "bytes": 43545,
+      "sha256": "b0922dfc06ccdf90a857141941ad7e6dab070ae40356548b08f4deb207e438fe"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/subject_penalties.csv",
+      "destination": "docs/results/ppg_phase2/transfer/subject_penalties.csv",
+      "bytes": 8801,
+      "sha256": "f43b427b18ee688f9def418b401fff1b2a6ec3df6663bd141cf7800791034697"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/subject_penalties_by_seed.csv",
+      "destination": "docs/results/ppg_phase2/transfer/subject_penalties_by_seed.csv",
+      "bytes": 25908,
+      "sha256": "9e8633d79ab35dbd7225d9a5f87b7ec69b96cde8384a7579ad4b528148267091"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/traditional_strata.csv",
+      "destination": "docs/results/ppg_phase2/transfer/traditional_strata.csv",
+      "bytes": 3098,
+      "sha256": "b1f38021e008c34ca2959e0429a4707297b2a2ab298c87b6eb7b2b76ca28c75e"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/transfer_summary.csv",
+      "destination": "docs/results/ppg_phase2/transfer/transfer_summary.csv",
+      "bytes": 560,
+      "sha256": "68e0261205b4b98f0628b90c31fd2c5fd59267eed7acb593e9b61dacd1e6d513"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/protocol.json",
+      "destination": "docs/results/ppg_phase2/transfer/protocol.json",
+      "bytes": 1314,
+      "sha256": "2435f2c861ad9d44864253ff07abd3b54f2ae8721fe712a94195c35cd8db3577"
+    },
+    {
+      "source": ".local/ppg-phase2/transfer/audit.json",
+      "destination": "docs/results/ppg_phase2/transfer/audit.json",
+      "bytes": 43758,
+      "sha256": "f7b1509551421db83de922ddff1698869fbaca35b8870ef732f16905eeb75f48"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/protocol.json",
+      "destination": "docs/results/ppg_phase2/sqi/protocol.json",
+      "bytes": 16381,
+      "sha256": "cf9e7cc19c3160df61c74aa41272c78474afce066f2ee2a236097ace0c7807e9"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/summary.csv",
+      "destination": "docs/results/ppg_phase2/sqi/summary.csv",
+      "bytes": 1420,
+      "sha256": "2d90271138187c92b050bc7d3acafdb4719b63817c7f6aec85415f0d2df6724e"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/paired.csv",
+      "destination": "docs/results/ppg_phase2/sqi/paired.csv",
+      "bytes": 852,
+      "sha256": "4711cc5b8e01c893cd84c86727b5bf89d20bfb1a396e6de38885429194b285b7"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/seed_scores.csv",
+      "destination": "docs/results/ppg_phase2/sqi/seed_scores.csv",
+      "bytes": 1234,
+      "sha256": "726c1a6e5611266c866bb67e46bf3eb23eb591ec229798495c18454633b1d301"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/per_subject.csv",
+      "destination": "docs/results/ppg_phase2/sqi/per_subject.csv",
+      "bytes": 47034,
+      "sha256": "9978820ab17e6e865342d8d411bb5730cbe195d3b56334daaea4c3367e9918d9"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/audit.json",
+      "destination": "docs/results/ppg_phase2/sqi/audit.json",
+      "bytes": 777,
+      "sha256": "aadda45fb5226e10fe65100470b90944bd5aa37ed6b4b628cfb64a7f4035b44f"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/independent_fit_check.json",
+      "destination": "docs/results/ppg_phase2/sqi/independent_fit_check.json",
+      "bytes": 142,
+      "sha256": "823fc60b2ee37e29212b5ea5d38c68fd03a5a675f31c5a967b88edbc2618b2e5"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/independent_metrics_check.json",
+      "destination": "docs/results/ppg_phase2/sqi/independent_metrics_check.json",
+      "bytes": 216,
+      "sha256": "625b2fd7c51fb07b9f45a6d7ed700563a3062643999c14e2d248f6605baf93cf"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/cnn_cpu_recheck.json",
+      "destination": "docs/results/ppg_phase2/sqi/cnn_cpu_recheck.json",
+      "bytes": 160,
+      "sha256": "6e111817aaaebbdb69edf92d231fa12696e8cee80defeafdff9111f47bb7267f"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/environment.json",
+      "destination": "docs/results/ppg_phase2/sqi/environment.json",
+      "bytes": 727,
+      "sha256": "08a944f56ae7a74534962d4504ab497e91a24f0d074e121ad61f9a24fe61316a"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/data_manifest.json",
+      "destination": "docs/results/ppg_phase2/sqi/data_manifest.json",
+      "bytes": 765284,
+      "sha256": "237d209fb90c33f2df44e42eb67bb913b5776617d30495f6c718c7c94e07123b"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/feature_manifest.json",
+      "destination": "docs/results/ppg_phase2/sqi/feature_manifest.json",
+      "bytes": 3407,
+      "sha256": "98029fc97df868e94f6b95e80ab5638cbff4f27f406638eed4735f5759823321"
+    },
+    {
+      "source": ".local/ppg-phase2/sqi/legacy_input_audit.json",
+      "destination": "docs/results/ppg_phase2/sqi/legacy_input_audit.json",
+      "bytes": 593,
+      "sha256": "c3128ceefe031f2e6204843a33e222ab0ef33ede5a56abcd1901ba51c44570cc"
+    },
+    {
+      "source": ".local/ppg-phase2/research/butppg_full_checksum_audit.json",
+      "destination": "docs/results/ppg_phase2/sqi/butppg_full_checksum_audit.json",
+      "bytes": 140,
+      "sha256": "418a58747fcd356e5328df8d4ff904275741b60bddd12ed48a7922cfb3429750"
+    },
+    {
+      "source": ".local/ppg-phase2/reference-v3/audit.json",
+      "destination": "docs/results/ppg_phase2/reference/audit.json",
+      "bytes": 1763,
+      "sha256": "51cb47fb7a61bdb54c5b6081b7ba556edc04c54be2c552e46ac3a840e41d5562"
+    },
+    {
+      "source": ".local/ppg-phase2/reference-v3/coverage.csv",
+      "destination": "docs/results/ppg_phase2/reference/coverage.csv",
+      "bytes": 1788,
+      "sha256": "5adaabe247d0b1c5c8dad50ed88e71842acc5bb8460ef7a3bbc0ad42861f347d"
+    },
+    {
+      "source": ".local/ppg-phase2/reference-v3/source_notes.json",
+      "destination": "docs/results/ppg_phase2/reference/source_notes.json",
+      "bytes": 2188,
+      "sha256": "3e174c6e1788f1eaf5d9fb16e7cb9d0c3b3edc9584804931cb8922f1c9582567"
+    },
+    {
+      "source": ".local/ppg-phase2/reference-v3/summary_Dalia.json",
+      "destination": "docs/results/ppg_phase2/reference/summary_Dalia.json",
+      "bytes": 25230,
+      "sha256": "69e0c6b95f93dd432bf5ed2e15f076fe6802afeff99af7626ae5630ce265277a"
+    },
+    {
+      "source": ".local/ppg-phase2/reference-v3/summary_WildPPG.json",
+      "destination": "docs/results/ppg_phase2/reference/summary_WildPPG.json",
+      "bytes": 29347,
+      "sha256": "2f9e531513f37c174c359bc0f22c50609037151ebdaf59eba067d130c54d98e1"
+    },
+    {
+      "source": "datasets/embc21/manifest.json",
+      "destination": "docs/results/ppg_phase2/embc21/manifest.json",
+      "bytes": 95204,
+      "sha256": "c2742969260a0816fdfae53c679e41da42eb4935e2e83844745637d0fe682c69"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/record_audit.csv",
+      "destination": "docs/results/ppg_phase2/embc21/record_audit.csv",
+      "bytes": 7124,
+      "sha256": "9cdfc9eb3cf622e6f780cf12db88cf0c1f6474a023e66512449f5cfef6224f07"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/eligible_windows.csv",
+      "destination": "docs/results/ppg_phase2/embc21/eligible_windows.csv",
+      "bytes": 91304,
+      "sha256": "5d4a5059175d616fd0f15aad848b264b861415c55674987350227c0496522fd1"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/reference_examples.png",
+      "destination": "docs/results/ppg_phase2/embc21/reference_examples.png",
+      "bytes": 471152,
+      "sha256": "36e417d6dcf3e2be5cec932bd471bd13a6c18e85f21f85d381c46a2b83deff2f"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/reference_examples.json",
+      "destination": "docs/results/ppg_phase2/embc21/reference_examples.json",
+      "bytes": 1481,
+      "sha256": "23c8121e2dcbc3a2d2ea465825056bf5f81d9536609898d62c762f75a32fde62"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/independent_verify.json",
+      "destination": "docs/results/ppg_phase2/embc21/independent_verify.json",
+      "bytes": 521,
+      "sha256": "5da8f7772dd1cf5ece421b68639cd80630cb57bc8515c173f631c5b310e9507e"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/runner_data_review.json",
+      "destination": "docs/results/ppg_phase2/embc21/runner_data_review.json",
+      "bytes": 3032,
+      "sha256": "28f6c985bccaa397359c12d3673508c7824c813e541ba445e1299fd96f346c9b"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/prediction_cpu_recheck.json",
+      "destination": "docs/results/ppg_phase2/embc21/prediction_cpu_recheck.json",
+      "bytes": 1353,
+      "sha256": "60517cc8876996ac527dfc106d87032d17b5df8e45d6ef1cea1d469b72b8951b"
+    },
+    {
+      "source": ".local/ppg-phase2/embc21/audit.json",
+      "destination": "docs/results/ppg_phase2/embc21/audit.json",
+      "bytes": 95204,
+      "sha256": "c2742969260a0816fdfae53c679e41da42eb4935e2e83844745637d0fe682c69"
+    },
+    {
+      "source": ".local/ppg-phase2/beats/protocol.json",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/protocol.json",
+      "bytes": 8830,
+      "sha256": "26687dc4e14817e21479fb375e42f330b09ae0132ade40e849332023dff4c661"
+    },
+    {
+      "source": ".local/ppg-phase2/beats/summary/audit.json",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/audit.json",
+      "bytes": 45872,
+      "sha256": "200e249b3906a7fcd93c52efb7c412ead19ab884edd3acf572c824a7dc6e9f89"
+    },
+    {
+      "source": ".local/ppg-phase2/beats/summary/summary.csv",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/summary.csv",
+      "bytes": 72358,
+      "sha256": "49bf8fdcbf4e3c0ad5225700120ec5d646da86dd6655f99ab48b754f1bd82b32"
+    },
+    {
+      "source": ".local/ppg-phase2/beats/summary/paired.csv",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/paired.csv",
+      "bytes": 52762,
+      "sha256": "88860ce56bb7e76ea3e3f7201d586eb754469d75b7c9477dfd64ceef10ead24e"
+    },
+    {
+      "source": ".local/ppg-phase2/beats/summary/per_subject.csv",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/per_subject.csv",
+      "bytes": 292023,
+      "sha256": "f0435ae78c108f983a5e8d3665ef18e0a0327281689710b2562113c0d5d71ff5"
+    },
+    {
+      "source": ".local/ppg-phase2/beats/summary/paired_per_subject.csv",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/paired_per_subject.csv",
+      "bytes": 642393,
+      "sha256": "7bbc103ba8fbe5a08c593b93eb659692503e6cce09dfa34372a7f5490ea0187a"
+    },
+    {
+      "source": ".local/ppg-phase2/beat_independent_check.json",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/beat_independent_check.json",
+      "bytes": 8288,
+      "sha256": "528262c23ba6ff2a431a0821598c4c9e61deaa95c85c8852c1a50bc51bbd43c7"
+    },
+    {
+      "source": ".local/ppg-phase2/source_alignment_diagnostic.json",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/source_alignment_diagnostic.json",
+      "bytes": 219308,
+      "sha256": "b7186ebec18123a53bfff78434b89350aa4dff5dae7cbe3a3a3ce656374d9f7f"
+    },
+    {
+      "source": ".local/ppg-phase2/source_alignment_provenance.json",
+      "destination": "docs/results/ppg_phase2/diagnostic_ecg/source_alignment_provenance.json",
+      "bytes": 7143,
+      "sha256": "8f1e07f40a715c31cbcc958c7b65733cd11207a2ff2dcccdd06374720bfecde8"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/audit.json",
+      "destination": "docs/results/ppg_phase2/onsets/audit.json",
+      "bytes": 85382,
+      "sha256": "c02596472cb680e3fbd4602da54dc7577933049c66f3244c9fcb4717e53d09ec"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/coverage.csv",
+      "destination": "docs/results/ppg_phase2/onsets/coverage.csv",
+      "bytes": 30683,
+      "sha256": "e3b4f4bf0f0690079196a878025ef480f0836a0687e86496f10ecdd1bfab9f6b"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/execution_audit.json",
+      "destination": "docs/results/ppg_phase2/onsets/execution_audit.json",
+      "bytes": 69720,
+      "sha256": "c6f4a99bf0993dff4661f50553d82543149889a6ff06711a7a83f7336d6ffebc"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/independent_metric_check.json",
+      "destination": "docs/results/ppg_phase2/onsets/independent_metric_check.json",
+      "bytes": 1239,
+      "sha256": "a49518a3ac22873481a95024d1b406296e4078da1383329819e17cfc6d3f67ae"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/independent_metric_check.py",
+      "destination": "docs/results/ppg_phase2/onsets/independent_metric_check.py",
+      "bytes": 7571,
+      "sha256": "4cb2e30a23b838b9da65045ec0ffe178ae30c2a2e7a56c44103479b3d5182cb8"
+    },
+    {
+      "source": ".local/ppg-phase2/onset_independent_check.json",
+      "destination": "docs/results/ppg_phase2/onsets/independent_runner_check.json",
+      "bytes": 3492,
+      "sha256": "3239dbf30ac5fc47053228b258c2578f5a4b47450a5ef8a30b661691f159c0e2"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/intervals.csv",
+      "destination": "docs/results/ppg_phase2/onsets/intervals.csv",
+      "bytes": 193237,
+      "sha256": "b169ebd36f89ed12f580b1723df17ff47e397691ff7f44979a77b349555accc2"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/paired.csv",
+      "destination": "docs/results/ppg_phase2/onsets/paired.csv",
+      "bytes": 30692,
+      "sha256": "ccede6fddc7f0cbd6cc45204ea3adc1cf15e15beb3103affcd6bf297e055b09d"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/paired_per_subject.csv",
+      "destination": "docs/results/ppg_phase2/onsets/paired_per_subject.csv",
+      "bytes": 165658,
+      "sha256": "1691042cd6b90a45b852574158beac16c8411763206b56aef8e795367b9de493"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/per_subject.csv",
+      "destination": "docs/results/ppg_phase2/onsets/per_subject.csv",
+      "bytes": 297665,
+      "sha256": "b1d246132803a4978b5f645d2c5eb61c446c021ec1a9c21ab6c03271cc1da669"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/protocol.json",
+      "destination": "docs/results/ppg_phase2/onsets/protocol.json",
+      "bytes": 127743,
+      "sha256": "f6000d397fae8aa94ce47e70b3771c101f793febf6e1f35155a82bcd3763f9f6"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/prv_windows.csv",
+      "destination": "docs/results/ppg_phase2/onsets/prv_windows.csv",
+      "bytes": 120402,
+      "sha256": "644dec0d209db52590b66de1f0436e3de12b03bc5ec40518d1b3218e12eef9d2"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/reference_support.csv",
+      "destination": "docs/results/ppg_phase2/onsets/reference_support.csv",
+      "bytes": 1022,
+      "sha256": "ce84178ec58e8759e19f2de629777ce634f7d36a534da8228c3f16ff10cd6c6c"
+    },
+    {
+      "source": ".local/ppg-phase2/onsets/summary/summary.csv",
+      "destination": "docs/results/ppg_phase2/onsets/summary.csv",
+      "bytes": 51329,
+      "sha256": "b3f31c46cfa1eca551a8e6558996f63bc4edb6e0ded5971ad0956b38ec9ccdaf"
+    }
+  ],
+  "file_count": 66,
+  "total_bytes": 4365786,
+  "missing_requested_files": [],
+  "excluded": [
+    "window-level diagnostic ECG CSV",
+    "SQI predictions/rows/waveforms/embeddings/models",
+    "all training weights and raw waveforms",
+    "onsets results (handled separately)",
+    "downloaded paper PDFs, archive ZIPs and webpage HTML"
+  ],
+  "dataset_restore_notes": [
+    {
+      "dataset": "BUT-PPG full v2",
+      "local_root": "datasets/ppg_bench_raw/butppg-full-v2",
+      "download_cli_available": true,
+      "download_command": "python scripts/ppg_sqi_poc.py --stage download --raw datasets/ppg_bench_raw/butppg-full-v2",
+      "prepare_command": "python scripts/ppg_sqi_poc.py --stage prepare --raw datasets/ppg_bench_raw/butppg-full-v2 --output .local/ppg-phase2/sqi",
+      "official_url": "https://physionet.org/content/butppg/2.0.0/",
+      "archive_url": "https://physionet-open.s3.amazonaws.com/butppg/butppg-2.0.0.zip",
+      "archive_sha256": "9b910fc884f63eca1c5d3a00c5710f838e0053dce94f8a02196bd0adc2ffa33c",
+      "note": "Use full-v2 destination; legacy PPG-Bench downloader and prior raw subset intentionally select quality-1 records only."
+    },
+    {
+      "dataset": "EMBC21 annotations + Biagetti raw PPG",
+      "local_root": "datasets/embc21",
+      "download_cli_available": false,
+      "adapter_cli": "python scripts/ppg_embc21_data.py --data-root datasets/embc21 --output-dir .local/ppg-phase2/embc21",
+      "adapter_limitation": "Reads, validates and audits already extracted public data; does not download archives. No new downloader was added in this evidence-copy task.",
+      "landing_page": "https://www.eti.uni-siegen.de/ubicomp/home/datasets/embc21/index.html",
+      "annotation_archive": {
+        "url": "https://www.eti.uni-siegen.de/ubicomp/home/datasets/embc21/ppgopt_annot.zip",
+        "bytes": 358199,
+        "sha256": "6ceee248965d53822055b59ecfecdbae3a434941ea67ab71be9812e34ff45886",
+        "extract_to": "datasets/embc21/",
+        "expected_folder": "ppgopt_annot/"
+      },
+      "raw_supplement": {
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6971339/supplementaryFiles",
+        "outer_archive_sha256": "1c220fceb907ad89100cb4d2e586aab2e2f8e85f13a84be87549fd4c8c0b88d9",
+        "member": "mmc1.zip",
+        "member_sha256": "e47bd63ca722895f4072f29ebd9822751396883fb238b039c64041512d031e8e",
+        "member_bytes": 30057275,
+        "save_member_as": "datasets/embc21/PPG_ACC_dataset.zip",
+        "extract_member_to": "datasets/embc21/",
+        "expected_folder": "PPG_ACC_dataset/"
+      },
+      "license": "Annotations: scientific non-commercial use, cite Wolling et al. 2021 and Biagetti et al. 2020. Original paper/supplement: CC BY 4.0."
+    },
+    {
+      "dataset": "DaLiA/WildPPG existing inputs",
+      "download_cli_available": true,
+      "download_command": "python scripts/download_ppg_bench.py --datasets dalia wildppg",
+      "reference_command": "python scripts/ppg_beat_reference_audit.py --output .local/ppg-phase2/reference-v3",
+      "note": "Raw inputs already existed. Reference audit also needs existing processed subject identities and the phase-one official WildPPG reference cache; see project phase-one reproduction instructions. This copy operation did not redownload or recompute references."
+    }
+  ],
+  "limitations": [
+    "Copy identity verifies exact bytes, not scientific validity of superseded diagnostic ECG results. diagnostic_ecg remains a timing-confounded diagnostic only.",
+    "Source evidence may mention absolute paths or .local outputs on the execution machine; their quoted input hashes are retained unchanged."
+  ]
+}

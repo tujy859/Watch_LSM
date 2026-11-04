@@ -1,0 +1,33 @@
+{
+  "version": "hr-transfer-diagnosis-v1",
+  "analysis_status": "post_hoc_descriptive",
+  "no_refitting_or_target_label_selection": true,
+  "models": [
+    "AnyPPG",
+    "SmallCNN",
+    "MOMENT-1-small",
+    "TrainMean"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "hr_bins_bpm": [
+    "<60",
+    "[60,80)",
+    "[80,100)",
+    "[100,120)",
+    ">=120"
+  ],
+  "motion": "original within-dataset ACC RMS terciles; raw units not compared across devices",
+  "primary_pair": "transfer versus within-Wild on identical valid-reference windows and participants",
+  "feature_distance": "AnyPPG diagonal standardized RMS; source-training subject-balanced mean/std, validation participant-weighted 95th percentile",
+  "inference": "exploratory paired participant bootstrap after averaging seed errors; not causal, not multiplicity-adjusted",
+  "limitations": [
+    "Reference availability selection and automatic Wild ECG errors may affect estimates.",
+    "Within-Wild uses target training labels; comparison measures transfer penalty, not matched training population or cost.",
+    "HR/ACC strata and embedding distance are correlated descriptions, not identified causal mechanisms.",
+    "Embedding RMS is a simple distance proxy, not a calibrated out-of-distribution detector."
+  ]
+}

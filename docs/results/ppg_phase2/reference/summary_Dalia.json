@@ -1,0 +1,655 @@
+{
+  "complete_requested_scope": true,
+  "datasets": [
+    "Dalia"
+  ],
+  "subject_count": 15,
+  "by_subject": [
+    {
+      "dataset": "Dalia",
+      "subject": "S1",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+        "source_sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 9212.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 11431,
+      "n_original_annotations": 11431,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1066,
+        "xqrs_beats": 1067,
+        "matched_beats": 1061
+      },
+      "windows": {
+        "60": {
+          "total": 153,
+          "accepted": 153
+        },
+        "300": {
+          "total": 30,
+          "accepted": 30
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "5f10162203dfaa2ee635a809d88c876a8bfa5e8fef120ff10d49cbb6aa30ec76",
+        "ppg_native.npy": "9a653509ef55330f0c8e29c34e832e4b91944f921d12ac096f52d7ee5c97c5bc",
+        "windows.csv": "bcfa407e7002e2977597a0aef9d664e8661ca33ac47b2e416afa2f5ee6817bba",
+        "detector_audit.json": "045425531cb6ee78f7b9cbb09d0f7be9ec01ea7dacce8b687d1c95f526d21057"
+      },
+      "elapsed_seconds": 7.01500000001397
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S10",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+        "source_sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 10648.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 15495,
+      "n_original_annotations": 15495,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1334,
+        "xqrs_beats": 1310,
+        "matched_beats": 1293
+      },
+      "windows": {
+        "60": {
+          "total": 177,
+          "accepted": 166
+        },
+        "300": {
+          "total": 35,
+          "accepted": 29
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "9e3671836e79c443c068251aca68ed9c745faef7d97005c20c654fcc3ad0735a",
+        "ppg_native.npy": "5b179540d664a84e9de013ed2c5a01639b552631b90036b9c639d9dc8c64c66d",
+        "windows.csv": "14c177f8ffa5658f6156cebb7a390a2492599cb218d1c2a9c21e45ad394259cb",
+        "detector_audit.json": "440e9be7f43262cf3a7b8abd6cf3059d6fd837958e67192726563c8dc704b14d"
+      },
+      "elapsed_seconds": 7.73399999999674
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S11",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+        "source_sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 9048.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 15445,
+      "n_original_annotations": 15445,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1520,
+        "xqrs_beats": 1521,
+        "matched_beats": 1518
+      },
+      "windows": {
+        "60": {
+          "total": 150,
+          "accepted": 149
+        },
+        "300": {
+          "total": 30,
+          "accepted": 29
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "fc8c3caaf9763e1a71a6f7afc3c62dae6d8a1ee8a63437e40323bf8af628fa40",
+        "ppg_native.npy": "494678f306ac7f15fc5f96415501f8759b4b0a9b67ecec16b6043aad73cb18ed",
+        "windows.csv": "f0c226468e4638f2de8afc2d69de0babd04f7b83dd97aca7fba9f91ea2c690a9",
+        "detector_audit.json": "6102d052b442e5a88306c2be61f2783830b2ed4ae9b35669a47024a1f91822c6"
+      },
+      "elapsed_seconds": 7.01500000001397
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S12",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+        "source_sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 7914.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 9402,
+      "n_original_annotations": 9402,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1059,
+        "xqrs_beats": 1066,
+        "matched_beats": 1056
+      },
+      "windows": {
+        "60": {
+          "total": 131,
+          "accepted": 130
+        },
+        "300": {
+          "total": 26,
+          "accepted": 25
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "f0c3d498ae3cd1ef49e04bdfb3d65bde6144b4c87fa26529ec2339f7f2a37cef",
+        "ppg_native.npy": "b93b7e12a44ab7fe16a630181919eb5e83b7ee75bf21c4faee211a6f23cfb305",
+        "windows.csv": "cd7b9fbb97f1f62ab5d474321bc3ae22adc3df37ecc79ba344727e1fb110e361",
+        "detector_audit.json": "c2012947e876c0e78a82075da198a354d48504b91986a4353d2ebd12ff7822a5"
+      },
+      "elapsed_seconds": 6.5
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S13",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+        "source_sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 9136.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 13536,
+      "n_original_annotations": 13536,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1309,
+        "xqrs_beats": 1311,
+        "matched_beats": 1308
+      },
+      "windows": {
+        "60": {
+          "total": 152,
+          "accepted": 152
+        },
+        "300": {
+          "total": 30,
+          "accepted": 30
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "c5f79d06ce70fff3356106e6fc1489edcad7532ddbbb3c6d2328f57b0cd19390",
+        "ppg_native.npy": "182825df7a0fa150d216c73cac84039d3c0fa1d6b5fa17fe86b44a43ee4dee23",
+        "windows.csv": "152238fb7d63f00bd24bd247e34449b1101a1c8b270ad80020ccc75246db60d7",
+        "detector_audit.json": "0eaf9fca6f8ed3c1a72c224babe1b94fec781fbf91259106d6f8c5a2b292b1e0"
+      },
+      "elapsed_seconds": 7.14000000001397
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S14",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+        "source_sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 8958.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 13274,
+      "n_original_annotations": 13275,
+      "duplicate_annotation_count": 1,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1308,
+        "xqrs_beats": 1314,
+        "matched_beats": 1279
+      },
+      "windows": {
+        "60": {
+          "total": 149,
+          "accepted": 140
+        },
+        "300": {
+          "total": 29,
+          "accepted": 25
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "e03e26e2df5a30eadb08404e070e1ab9abbc028af2ef8b49303f20f49f1adf34",
+        "ppg_native.npy": "8b2b07b50cfa12581af2299d35951d3ec48e1486f899bc563bf829e8dc3d7d5f",
+        "windows.csv": "37d133f47d09313ecc603e339ff567177a301491a83533dbee0a3decbd8a4300",
+        "detector_audit.json": "28b95e1692bed776ccea63037c5abd7d93b64dae138a6dfb08553d59186c2edd"
+      },
+      "elapsed_seconds": 6.85899999999674
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S15",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+        "source_sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 7939.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 10514,
+      "n_original_annotations": 10514,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1184,
+        "xqrs_beats": 1179,
+        "matched_beats": 1179
+      },
+      "windows": {
+        "60": {
+          "total": 132,
+          "accepted": 132
+        },
+        "300": {
+          "total": 26,
+          "accepted": 26
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "5b30b5fdcbd009425036e3306cd7c9bb691f0c9bd8dc8427333839f18a8fa83b",
+        "ppg_native.npy": "b27eeddc051df47c2bd0f410d3c263d490b07b8a302d78fd5cb56647c2ad80aa",
+        "windows.csv": "33ddedc17e025bd8a092f5e00a195b21df8863c6884b3cbf20a253e86b55064e",
+        "detector_audit.json": "e83c2e7c34b173051b7b3fc99c88164209ef4923d51d690aa1f094847317962b"
+      },
+      "elapsed_seconds": 6.375
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S2",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+        "source_sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 8205.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 11247,
+      "n_original_annotations": 11247,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1238,
+        "xqrs_beats": 1239,
+        "matched_beats": 1236
+      },
+      "windows": {
+        "60": {
+          "total": 136,
+          "accepted": 136
+        },
+        "300": {
+          "total": 27,
+          "accepted": 27
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "4d966ba9ea6da4e90362d1ec2faeb2db13dbdabd996295829dfa34e5d1e12e23",
+        "ppg_native.npy": "59084be6e0b8234ce9eda47bf322ce64f844740310bee36b9d30bf8ef35fc1fb",
+        "windows.csv": "51e0b0caf690d99b3b6b2343b61a97ed40e1565412dcbd37133c4456619d6c12",
+        "detector_audit.json": "903c4d9f8109dcadbce971dddcb446182f2b1a962da069995f02581c3039c6a4"
+      },
+      "elapsed_seconds": 6.437000000034459
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S3",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+        "source_sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 8741.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 12928,
+      "n_original_annotations": 12928,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1324,
+        "xqrs_beats": 1324,
+        "matched_beats": 1321
+      },
+      "windows": {
+        "60": {
+          "total": 145,
+          "accepted": 145
+        },
+        "300": {
+          "total": 29,
+          "accepted": 29
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "ec4bd768cd5ff73abe8bce906682758ddc238da2daf77c92d0584ba6eb87f442",
+        "ppg_native.npy": "f40ea332cf1cd33ddc7659a10c61e23f3b27b09bc684f4ba80afc8e1fbe9f241",
+        "windows.csv": "ae35c4f37cbdf980fedcc3df5859325daa04712d9cd7b1227748c7a227b94d14",
+        "detector_audit.json": "4a05f4256a013b7de501330072e49d15dc98d6de2826e1f41b7da07865920a39"
+      },
+      "elapsed_seconds": 6.5939999999827705
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S4",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+        "source_sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 9150.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 13364,
+      "n_original_annotations": 13364,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1301,
+        "xqrs_beats": 1305,
+        "matched_beats": 1296
+      },
+      "windows": {
+        "60": {
+          "total": 152,
+          "accepted": 152
+        },
+        "300": {
+          "total": 30,
+          "accepted": 30
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "9213b751dc3d15d38da102404fbfd4d3f79f64e244d84d32dea2a26239d5b0a8",
+        "ppg_native.npy": "9345c942745b584fd6772288f65445811bea01edd19146d3b96dc3189d8d9691",
+        "windows.csv": "2ed2df5ffb83dfa2eeced6ca28a2397b0531e1ca5fcd28abf836d6dc42553355",
+        "detector_audit.json": "bc7de4de8e6a00f1d8e7b14e6a04b3bb7c5087a076058ac88e69dfdda0808ec0"
+      },
+      "elapsed_seconds": 6.563000000023749
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S5",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+        "source_sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 9305.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 19506,
+      "n_original_annotations": 19506,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1859,
+        "xqrs_beats": 1858,
+        "matched_beats": 1856
+      },
+      "windows": {
+        "60": {
+          "total": 155,
+          "accepted": 154
+        },
+        "300": {
+          "total": 31,
+          "accepted": 30
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "525e384a6c43c2a30276e5b1b6f640af732526c73ece0b86d058977217b64a43",
+        "ppg_native.npy": "627f9336f762175653fecbe0ca03bca6d6b93f51ae654e19f846ab4c4269a547",
+        "windows.csv": "fa2e09e4b1c7f3d5b81d6863f8197fda1c38c8bfa67865135a107f0d7fad1428",
+        "detector_audit.json": "ebd4e5756fa5e4a041fd1fe67e4b5287fa22dbc92555acfd3fa4569a6b523aaa"
+      },
+      "elapsed_seconds": 6.9060000000172295
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S6",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+        "source_sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 5250.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 10436,
+      "n_original_annotations": 10439,
+      "duplicate_annotation_count": 3,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1784,
+        "xqrs_beats": 1774,
+        "matched_beats": 1754
+      },
+      "windows": {
+        "60": {
+          "total": 87,
+          "accepted": 83
+        },
+        "300": {
+          "total": 17,
+          "accepted": 13
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "339018356422948bec2fee3f40a1f72957f7e545f3657598333a09f54ed5eb8a",
+        "ppg_native.npy": "c790039c5ced180d2c6622edaf2e69c4347d28a30061cf9543e015188d8f3569",
+        "windows.csv": "051687ae194f578d774e11d282b1988de055550fca8a2531625c3460447562b3",
+        "detector_audit.json": "67007aa2f5e1f6d031ddb21d78ad77ea574522bef34fd076f7c55f276a7cbd5e"
+      },
+      "elapsed_seconds": 5.282000000006519
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S7",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+        "source_sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 9343.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 13415,
+      "n_original_annotations": 13415,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1210,
+        "xqrs_beats": 1216,
+        "matched_beats": 1202
+      },
+      "windows": {
+        "60": {
+          "total": 155,
+          "accepted": 154
+        },
+        "300": {
+          "total": 31,
+          "accepted": 30
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "785f2ac301a44783b104842eb41f547decda644bef1b0674a867160784f31413",
+        "ppg_native.npy": "0fa02fcded4e1d60ed418140f630b635471786b68ce61db9f5c1cf141831a98a",
+        "windows.csv": "5fdb1f1de8fe3f68f90a7bd414cb4b2442a9a372e01a0d43e7a5dbd786f6b4fb",
+        "detector_audit.json": "bb8b5ea5ac07b95ecb2d89d62b7048f7a98cf66a50aac7bae4fccd8c6fb13cca"
+      },
+      "elapsed_seconds": 6.6560000000172295
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S8",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+        "source_sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 8080.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 9798,
+      "n_original_annotations": 9798,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1072,
+        "xqrs_beats": 1077,
+        "matched_beats": 1065
+      },
+      "windows": {
+        "60": {
+          "total": 134,
+          "accepted": 134
+        },
+        "300": {
+          "total": 26,
+          "accepted": 26
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "62cc27e8c27e948bfc26ccc417b744d58e8d600c29331ed392ab47dec4db14f0",
+        "ppg_native.npy": "e4355bff5ab58dad23f9adf6bed4c60dabc4f1bc9d8ad90e8ce8990215aa0f05",
+        "windows.csv": "3f6260dcd177b6303835df0c147ba3ec171d3621879bb6b67a6fe6f05f723570",
+        "detector_audit.json": "d23a0a5ae47b5aaaef7a822cb0f4f15c4ec508c620b2f07e59cf4cd64195fbc0"
+      },
+      "elapsed_seconds": 6.3439999999827705
+    },
+    {
+      "dataset": "Dalia",
+      "subject": "S9",
+      "identity": {
+        "source": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+        "source_sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56",
+        "script_sha256": "9e23295e5a6c3f7590d050b9f8f84a3ca95cafc3238675261f120f1ca50f12bc",
+        "wfdb_version": "4.1.2"
+      },
+      "duration_s": 8560.0,
+      "ecg_fs": 700,
+      "ppg_fs": 64,
+      "ppg_dtype": "float64",
+      "ecg_dtype": "float64",
+      "n_reference_beats": 12434,
+      "n_original_annotations": 12434,
+      "duplicate_annotation_count": 0,
+      "xqrs_scope": "15 uniformly spaced complete 60-second windows; 5-second ECG-only context",
+      "detector_agreement": {
+        "reference_beats": 1335,
+        "xqrs_beats": 1331,
+        "matched_beats": 1324
+      },
+      "windows": {
+        "60": {
+          "total": 142,
+          "accepted": 141
+        },
+        "300": {
+          "total": 28,
+          "accepted": 27
+        }
+      },
+      "outputs_sha256": {
+        "beats.npz": "4f87a00a10d69db03b0454bdcd23266349b0f62e8bb90a5e3e438f444cfdb42a",
+        "ppg_native.npy": "6e9515efafe26419ef99721c6ca7bedbd2f425dba740bd38585566072bdb9b60",
+        "windows.csv": "e2ff14e42fc0ef2fc9537fc15b82ef2a82c7deb5f95d9646089e29fc23e93ab2",
+        "detector_audit.json": "d2cfc854d5d5cf3ecda4f21b3fb414777b2afb3244d69393394bb562725dce18"
+      },
+      "elapsed_seconds": 6.39100000000326
+    }
+  ],
+  "protocol": {
+    "durations_s": [
+      60,
+      300
+    ],
+    "main_prv_duration_s": 300,
+    "wild_xqrs_block_s": 300,
+    "wild_xqrs_context_s": 5,
+    "reference_peak_source": {
+      "Dalia": "Released manually corrected ECG rpeaks, native 700 Hz indices",
+      "WildPPG": "Unfiltered original official ECG Pan-Tompkins peaks, native 128 Hz indices; NOT human labels"
+    },
+    "interval_definition": "Only consecutive peaks both inside each complete [start,end) interval; never concatenate filtered peaks or bridge removed intervals",
+    "quality_selection": "ECG only. At least 20 intervals, all 0.3 to 2.0 s, first/last peak within 2 s of boundaries. Wild additionally requires XQRS agreement F1 >=0.95 at 50 ms. DaLiA manual annotations remain primary regardless of sampled detector agreement.",
+    "no_editing": "All raw R peaks and intervals are retained. Only exact duplicate annotation timestamps are collapsed into a canonical event view; affected windows are excluded even after collapse. No detector disagreement is corrected or replaced.",
+    "limitations": [
+      "No PPG systolic-peak manual ground truth in either dataset.",
+      "ECG-to-PPG pulse arrival delay makes absolute PPG-peak error against R times invalid without an explicitly declared mapping.",
+      "Wild cross-device synchronization accuracy is approximately 33 ms in its paper; automatic detector consensus is not verified accuracy.",
+      "XQRS can miss clear ECG beats after large artifacts even with block resets. Rejection means detector disagreement, not proven corrupt ECG; reference selection is conservative.",
+      "No normal/ectopic rhythm annotations: these are RR variability statistics, not clinically verified NN HRV.",
+      "Quality criteria select reference availability and may exclude physiological irregularity; report coverage.",
+      "SDNN and RMSSD from 60 s are exploratory short-window estimates; primary comparison uses 300 s."
+    ]
+  },
+  "sources": [
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6679242/",
+    "https://ppg-beats.readthedocs.io/en/latest/datasets/ppg_dalia/",
+    "https://arxiv.org/html/2412.17540v1",
+    "https://wfdb.readthedocs.io/en/latest/processing.html#wfdb.processing.xqrs_detect"
+  ]
+}

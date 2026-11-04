@@ -1,0 +1,42 @@
+{
+  "identity": {
+    "data_manifest_sha256": "237d209fb90c33f2df44e42eb67bb913b5776617d30495f6c718c7c94e07123b",
+    "weights_sha256": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa",
+    "config_sha256": "c4e2da6132ad8e419a0af9e58208f5d53aa2c795151cee42964ae6aa8e4b15db",
+    "source_files_sha256": {
+      "repos/ppg-bench/ppg_bench/__init__.py": "a929c8dfcfd34d3897b32d8f244467333dd522d3347a220caa5b8ec00a130a52",
+      "repos/ppg-bench/ppg_bench/__main__.py": "2e1ac655b7416dd52599c31ad74ed7da93fe0bf3a80c39c672978c89f194deb5",
+      "repos/ppg-bench/ppg_bench/classical.py": "9f6cbc9b9ef8cfdc06dbbdc029a8a8b0062e9d029e8a5d6209352d7baf151ed3",
+      "repos/ppg-bench/ppg_bench/datasets.py": "159c2647b0f573a3d267ed1d1821c577ce103cf6d7f2bb2fbb7e057292a0de28",
+      "repos/ppg-bench/ppg_bench/download.py": "b2e24f1b89c243b5711e7c27bcfdd6129520e965cd8abbcf0c94525564cae8b6",
+      "repos/ppg-bench/ppg_bench/encoders/__init__.py": "141a0f9a254630f1672fd441e3674e9b1460e75cf6c7764b88999658c733aff0",
+      "repos/ppg-bench/ppg_bench/encoders/anyppg.py": "2bfe92d1ebd063f45486454bd6b9d25321320f15c87d904777795512abfab5e8",
+      "repos/ppg-bench/ppg_bench/encoders/moment.py": "76774ac9fe7613f8a1db0328e3f4e2ab9a36a08e743562583c1fbce93bacfcd3",
+      "repos/ppg-bench/ppg_bench/encoders/papagei.py": "19dd199cd7038652e3dddafb4a8e72d088ef6a077859f4c52946cf320c2fd12a",
+      "repos/ppg-bench/ppg_bench/encoders/papagei_net.py": "41480af3e7c6963f8f96e416de1fecfe08d707a4d31f1dfc1439f6e45fde68e5",
+      "repos/ppg-bench/ppg_bench/encoders/prv.py": "e1d3724dd2d1fa0c8166387f8ea1b954d4615dbe10399cdb2e97a7f4f93403c5",
+      "repos/ppg-bench/ppg_bench/encoders/pulseppg.py": "f933eda2a9f6849f1b329bf57ba31f332b7acb3d7cfaafeac9b40c877cb2ed12",
+      "repos/ppg-bench/ppg_bench/encoders/pulseppg_net.py": "18f93d282acbffbddb94acb0e2d63971c04f82d77fe54ca4cb36fd3934f005d6",
+      "repos/ppg-bench/ppg_bench/encoders/sigmappg.py": "0955ce0d1de82f763698add6ae94ef606ce02797e407b50e65c07567364032ee",
+      "repos/ppg-bench/ppg_bench/models.py": "8b4a80128cfb8ec6a92fa5efda1a61aef7e8bee792524093c95a719a8efec08a",
+      "repos/ppg-bench/ppg_bench/neural.py": "ad587de430ffe38b737328ce9a2f9187fb1c57e7dda9dfc09cf1ad7c505548dd",
+      "repos/ppg-bench/ppg_bench/preprocess.py": "b3acf8f72a63f52ccfdb83935cfb023137cc09d020395a5c11376f6513966632",
+      "repos/ppg-bench/ppg_bench/protocol.py": "6cd2455ac5507ad81ad9825fff7283bdfcb0004c501e0baaeedfd75a047f56db",
+      "repos/ppg-bench/ppg_bench/run.py": "cd64c5f7735668ea7aefdcf3771a2dc7592de981b548691071ef9958994dfb27",
+      "repos/ppg-bench/ppg_bench/search.py": "b6fe2efa6694ead049796c6449e6d95a4725d1c13e4f1b91b62db61fb4f62817",
+      "repos/ppg-bench/ppg_bench/templates/examples/model.py": "98cdc5e5b3ade407b944e09f7aef126f234ee29fad9a67502129997e272822f2"
+    },
+    "anyppg_source_sha256": {
+      "repos/anyppg/load_anyppg/demo_load_anyppg.py": "f6aca5bac8a9a00f5ee02aa7899011951631602065dc0bd18a20408f2fe0efe8",
+      "repos/anyppg/load_anyppg/resnet1d.py": "c974c38fe5e213f3155b9e0cdb0a4b7f4324f19e47e479614617cbfcba86b1fc"
+    },
+    "precision": "FP32",
+    "device": "cuda",
+    "code_sha256": "7188be2e0ef894076ff638c86c303d1700ceef60a769adbf7c32d440cb1adf78"
+  },
+  "features_sha256": "537f4669d59d624527f3e90e6f26a4f84f19b68fe81f0c649ed924407fa9fc3e",
+  "shape": [
+    3888,
+    512
+  ]
+}

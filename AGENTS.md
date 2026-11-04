@@ -9,17 +9,20 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-11-04（Asia/Shanghai，第一阶段腕部HR PoC完成，12:23正式审计558/558通过；下面10月31日进程及数量仍为历史快照）*
+*最后更新时间：2026-11-04（Asia/Shanghai，第二阶段逐搏/PRV、迁移诊断与SQI完成，综合图已生成；旧10月31日进程及数量仅历史快照）*
 
 > **当前目标优先级**：用户明确先建立面向手表PPG的基础模型评测体系，再开展训练；项目为科学严谨、工程轻量的PoC。任务覆盖信号处理、HR/逐搏/PRV与健康表征；“基模更强”为待检验假设。具体实验顺序建议见[评测PoC讨论稿](docs/ppg_evaluation_poc_plan.md)，不把生产级架构或全套PPG-Bench跑完作为首个结论的前置条件。
 
-> **下一会话先读**：[腕部HR第一阶段结果](docs/ppg_hr_poc_phase1.md)及`docs/results/ppg_hr_poc/`。本轮PoC已完成，无须恢复其训练。原PPG-Bench/PulseDB历史工作线再读[2026-10-31会话交接](docs/session_handover_2026-10-31.md)；其中的进程与进度快照不能当实时状态，旧全套队列本轮启动前已确认不在运行，也未恢复。
+> **下一会话先读**：[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[腕部HR第一阶段结果](docs/ppg_hr_poc_phase1.md)。两阶段PoC均已完成，无须恢复训练。第二阶段共享证据在`docs/results/ppg_phase2/`，原始数据与概率/权重在`.local/ppg-phase2/`及数据目录。原PPG-Bench/PulseDB历史工作线再读[2026-10-31交接](docs/session_handover_2026-10-31.md)，旧全套队列本轮未恢复，不照搬历史PID。
 
 > **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **11月4日第二阶段逐搏/PRV与综合图完成**：补齐EMBC21/Biagetti腕部400Hz数据及单专家onset：7人105采集记录、21806原始/21508有效标注，正确排除人工伪影与39孤立缺样；固定7折LOSO（5train/1val/1test），AnyPPG冻结六层时序特征+26737参数头、17353参数CNN、MSPTDfast风格传统算法，14神经拟合+7传统配置、315预测全部审计通过。实际评分20725点，F1±50ms为Any .97899/CNN .97472/传统 .96618；Any−CNN差CI跨0，成功匹配间期MAE三者约16ms，传统略低但覆盖也低。60秒RMSSD误差19.13/36.07/38.32ms、SDPP9.73/23.82/21.53ms；175窗中159静息，蹲起仅1人/2窗、踏步4人/14窗；300秒仅2人4窗，不能称标准HRV人群验证。独立17073标量复算最大差5.68e-14、CPU概率差<6.3e-6且事件完全一致，149项本机测试通过。综合PNG/SVG、原始量纲分面图及复现证据在`docs/results/ppg_phase2/`；图可仅用Git内统计重绘。未开展基模预训练或编码器微调，无新依赖、旧队列未恢复。
+- [x] **11月4日跨域HR下降与完整SQI完成**：相同Wild测试窗口上，Any迁移相对域内MAE增加6.53bpm[3.77,9.20]，CNN增加4.37[3.49,5.21]；Any低HR60–80贡献5.64、低ACC贡献4.04bpm，不能归因单纯剧烈运动或已证明硬件因果。完整BUT-PPG v2的3888条红通道/50人（830Good/3058Poor）已独立补齐，5折3种子60结果通过，Any/CNN/手工SQI AUROC .8723/.8340/.8528；Any−CNN CI>0，Any−手工CI跨0。手机HR可读性辅助域，不等于腕部形态质量。旧Good子集35条早期编码物理值读取及另795条RGB绿/红通道不一致问题已记录；旧数据和结果未覆盖。数据恢复清单`data_manifests/ppg_phase2_assets.json`，详细说明见第二阶段报告。
+- [x] **11月4日ECG参考审计与同步限制已登记**：最终参考为`.local/ppg-phase2/reference-v3/`，DaLiA原峰重复4条、Wild7条，原列表保留、受影响PRV窗排除；31人124输出哈希通过。DaLiA人工ECG峰独立抽查F1 .99249，Wild全长自动双检测器一致性.90699；Wild300秒可用1640/2592，严格.99门槛1343窗。可靠ECG峰不代表PPG毫秒配准；仅源训练人51片段诊断出现1.75–2.45秒最优偏移，且不恒定、有周期混叠。严格ECG事件试跑`.local/ppg-phase2/beats/`保留作同步诊断，不能进入有效PPG提点排名；未使用测试标签对齐或据此调整最终人工onset协议。新主参考是PPG自身单专家起始点，PRV算法一致性不等于ECG HRV。
 - [x] **11月4日第一阶段腕部HR PoC完成**：按用户授权完成DaLiA/WildPPG、传统Welch/Elgendi式峰检测、27,065参数CNN、三PPG基模及MOMENT冻结Ridge对照，未开展基模预训练或编码器微调。93组受试者split对应372次Ridge、93次CNN、93份常数对照共558结果，另4份传统输出；12:23正式独立审计627文件通过，558/558、8/8特征缓存、缺项0。全预算域内MAE：DaLiA AnyPPG7.88/CNN7.24，Wild Any11.18/CNN11.50；迁移Any17.72/CNN15.87/MOMENT16.00 bpm。Any相对CNN在3人总标签预算（含验证）有更明确收益：DaLiA差−1.94、Wild差−2.87 bpm；不支持所有基模或跨数据集普遍更强，探索性人级bootstrap未做多重比较校正。完整表/曲线/限制见`docs/ppg_hr_poc_phase1.md`，共享统计与协议见`docs/results/ppg_hr_poc/`，全部逐窗预测/权重/表征留`.local/ppg-hr-poc/`。78项本机测试通过，3项真实Ridge独立sklearn重拟合最大测试预测差5.05e-12 bpm。未改旧结果、安装依赖或恢复旧队列；现有数据足够本阶段，无新增数据下载。
 - [x] **11月4日腕部样本及Wild参考纠正**：旧DaLiA三模型75项HR线性结果审计通过，Wild此前无已发布HR结果。新DaLiA64697窗补回831个跨活动窗和8个低幅窗；Wild从97554候选窗按原始官方ECG函数重算94744有效窗，修正固定上游移植漏掉100峰后阈值权重切换及RR均值取整差异。五个参考函数与当前官方源码语法树一致；相比旧参考新增1335有效窗、失去552窗、共同有效窗中3640标签改变。旧benchmark数据未覆盖，新PoC旧视图保存在`.local/ppg-hr-poc/data/WildPPG-before-reference-audit/`；以后恢复原Wild benchmark时须注明已知参考差异，不混用新旧标签。三采样率波形与时间逐行核对、4模型8组特征完成；DaLiA Any/PaPaGei-S的旧63858窗缓存经全波形身份及各45窗GPU重算后复用，839窗新增前向。Wild为自动ECG参考可用范围，ACC三分位仅为活动强度代理，不能声称真实去噪/逐搏/HRV能力。
 - [x] **11月4日评测优先的PoC目标与讨论路线**：用户明确以手表PPG基模评测为当前目标，训练后置，科学严谨但保持工程轻量。已参考调研仓`229db45...`、PPG-Bench和模型原论文，形成`docs/ppg_evaluation_poc_plan.md`：建议首里程碑为DaLiA/WildPPG腕部HR、强对照、少标签与单向跨数据集迁移，再扩质量检测/逐搏PRV/去噪；冻结编码器的任务头拟合属于评测适配，非重新预训练。明确全局embedding不能代替波形/心搏输出，PRV不直接等同ECG HRV，指端临床BP不单独证明腕部能力；AnyPPG预训练含PulseDB、PaPaGei与其源队列可能重合。更新项目使命与调研入口；具体组合为讨论建议，本轮只读研究及文档更新，未启动实验、下载或调整已有队列。
@@ -87,11 +90,12 @@
 - [x] **D 盘根目录镜像备份已就绪**：已全量同步至 `D:\Watch_LSM`（139.41 GB，1,925 个核心文件，0 失败），并实测通过 HDF5 路径验证，可直接作为移动硬盘中转站或独立运行。
 
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
-- [ ] **优先形成手表PPG评测PoC首个闭环**：按用户当前“先评测、后训练”目标推进；建议先复核DaLiA/WildPPG现有预测与划分，固定相同测试样本，比较2-3个已有冻结PPG编码器、传统算法/特征、MOMENT及小型监督基线，报告逐人差值/覆盖率/少标签/跨数据集结果。具体方案见讨论稿；不以证明预设胜出为验收条件，不自动扩大为生产平台或全量训练工程。
-- [ ] **PPG噪声处理候选协议**：如后续开展该方向，先核验SEGADE标注到DaLiA受试者/原始时间轴的映射，再为BUT-PPG补齐Poor子集并独立建立SQI任务；EPFL配对去噪、TROIKA强运动、MIMIC-III-Ext-PPG临床泛化按需求扩展。不能把已有PPG-Bench下游结果当成去噪结果，也不能直接运行只有README的伪影benchmark。此项为调研建议，尚未启动实施。
+- [x] **完成手表PPG评测PoC首两阶段**：HR/少标签/单向迁移、人工腕部onset/60秒PRV、手机SQI及综合图已完成；结论以两阶段报告为准，不以预设胜出为验收条件。
+- [ ] **优先验证PRV收益与迁移解释**：下一研究扩展可补独立腕部人工标注、训练种子和同架构随机权重消融；跨域HR在新的开发集检验低HR覆盖和校准。DaLiA/Wild的ECG到PPG毫秒对齐未解决，不恢复旧ECG试跑作为有效提点排名。保持评测优先，不自动预训练。
+- [ ] **后续去噪/健康任务按可靠标签推进**：BUT完整SQI已完成，不再重复补Poor；SEGADE到DaLiA时间轴、EPFL配对去噪、TROIKA强运动及疾病标签仍需任务化核验。PulseDB映射及预训练患者重合边界未解决，暂不把既有指端血压结果当成手表血压能力。
 - [x] **完成PPG-Bench最小评测试跑**：PaPaGei-S + PPG-BP收缩压单任务/单折/单种子，GPU提取特征、CPU线性拟合已通过；见`docs/ppg_bench_smoke_2026-10-30.md`。只验证冻结开源编码器路线，不代表自研Watch-LSM或全套benchmark已复现。
 - [ ] **执行已授权的PPG-Bench正式复现**：先推进已就绪8份数据、5份专用PPG模型与PRV/MOMENT对照，保留原5折5种子、内部选参和4类下游协议。优先本机；DREAMT已注册并验证网页登录，但2.2.0文件仍403，用户同意暂缓；RF需解决Linux/cuML环境，后续更大算力再评估租赁。继续检查`.local/ppg-bench-repro/`；原始数据、权重和实验产物不入Git，PulseDB官方评测独立保留，未补DREAMT前不能宣称全篇复现。
-- [ ] **后台队列接棒与未完成项**：先运行`python scripts/ppg_bench_status.py`，查看预处理、`automatic_continuation`、`mlp_continuation`与`adapted_backend_pilot`；不要重复启动仍持锁的队列。8份公开数据下载与预处理已完成，无需重复下载；截至23:03，`.local/ppg-bench-auto`的BIDMC/BUT-PPG/ECSMP完成，Dalia/WESAD部分完成，WildPPG排队。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP及7对象后续队列在`.local/ppg-bench-neural-mlp`，FP32适配微调在`.local/ppg-bench-neural-fp32`。PaPaGei-S的PPG-BP/RealWorldPPG MLP均完成，全部公开数据MLP续跑已在运行。原生AMP完整搜索单折已完成，后续先验证更多任务/对象再扩展，保持后端结果隔离；新增线性结果待扩大独立指标审计。仍需其余所有折/种子/任务、PRV报告复用规则、DREAMT与Linux/cuML RF，不能声称全篇完成。
+- [ ] **历史全套队列接棒（非当前优先）**：以下为10月31日历史状态，11月4日确认原队列未运行且未恢复；若以后恢复，先运行`python scripts/ppg_bench_status.py`，查看预处理、`automatic_continuation`、`mlp_continuation`与`adapted_backend_pilot`；不要重复启动仍持锁的队列。8份公开数据下载与预处理已完成，无需重复下载；截至23:03，`.local/ppg-bench-auto`的BIDMC/BUT-PPG/ECSMP完成，Dalia/WESAD部分完成，WildPPG排队。正式线性输出在`.local/ppg-bench-reproduction-py312`与`...-extra`，MLP及7对象后续队列在`.local/ppg-bench-neural-mlp`，FP32适配微调在`.local/ppg-bench-neural-fp32`。PaPaGei-S的PPG-BP/RealWorldPPG MLP均完成，全部公开数据MLP续跑已在运行。原生AMP完整搜索单折已完成，后续先验证更多任务/对象再扩展，保持后端结果隔离；新增线性结果待扩大独立指标审计。仍需其余所有折/种子/任务、PRV报告复用规则、DREAMT与Linux/cuML RF，不能声称全篇完成。
 - [ ] **按调研入口推进具体选型**：后续开工先读 `papers/README.md`；涉及基模、数据集、benchmark或评测协议时，查阅用户调研仓相关最新内容，再核验原论文和官方实现，记录采用的提交与本地证据。现有历史分析无需整体复制或覆盖；持续自动同步尚未实施。
 - [ ] **统一研究数据与实验契约**：先明确样本的受试者ID、记录ID、片段位置、采样率、标签来源及官方split；修复现有wrist入口s1跨训练/验证的问题，为PulseDB加入按需读取及划分交集检查。统一基模输入/embedding接口，核对配置项实际消费情况，保存每次运行的有效配置、Git版本、数据划分与权重哈希、种子及指标。辅助工具接入仅为建议，尚未实施。
 - [x] **完成 AAMI 补齐及失败重试**：10月29日06:00全部完成，11:42复核修复38/38、补齐207/207通过，后台正常结束；955份波形HDF5打开检查及完整AAMI清单243项大小/首尾抽样均通过。无需再次启动下载；本机覆盖报告保存在 `.local/`。
