@@ -16,3 +16,6 @@
 *.png binary
 # Preserve upstream raw paper extraction bytes; no irrelevant normalization diff.
 papers/analyses/*_raw.txt -text
+# These exported evidence files carry byte-level hashes used by the PoC audit.
+docs/results/ppg_hr_poc/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
+docs/results/ppg_hr_poc/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol

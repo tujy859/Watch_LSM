@@ -1,0 +1,8 @@
+{
+  "tests_run": 78,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "environment": "project .venv; optional benchmark and WildPPG source assets available"
+}

@@ -1,0 +1,164 @@
+{
+  "Dalia/AnyPPG.json": {
+    "status": "complete",
+    "identity_sha256": "cf926e9b6d7a6e9f8b523d95cd4339837ca22550f96c968288535caf934d04a4",
+    "shape": [
+      64697,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "75f5b2236b544e34e36a4ef061af0ff3c91442d694dffa3b9f223d71e109f076",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "AnyPPG",
+    "sampling_rate_hz": 125,
+    "weight_files_sha256": {
+      "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39",
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  },
+  "Dalia/MOMENT-1-small.json": {
+    "status": "complete",
+    "identity_sha256": "5728abc12120decba53f15b8a8272c276228a2a78b9c22798163482cb15233b3",
+    "shape": [
+      64697,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "b9e5e9577d5cad434f59aa9ab17d34a4b374d2d724a2d1a368aecb1d970b5c70",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "MOMENT-1-small",
+    "sampling_rate_hz": 64,
+    "weight_files_sha256": {
+      "models/weights/moment/MOMENT-1-small/config.json": "6456b8e6f017323e8ef372c338c993380e246cb6291ffb8ca21fe7dfc53d0a6f",
+      "models/weights/moment/MOMENT-1-small/model.safetensors": "785e6c6f57ffa7cac7e2a1fff6369618d49f2f441563ddea76c866231e5aa877"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": null,
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  },
+  "Dalia/PaPaGei-S.json": {
+    "status": "complete",
+    "identity_sha256": "c6447265e36344da132c7e824e30b6e6d01b7454881955da29fda3e9d0715812",
+    "shape": [
+      64697,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "94942a798406db548512ad8ee9add05ed6f130232a3258db01d3b1d129f990af",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "PaPaGei-S",
+    "sampling_rate_hz": 125,
+    "weight_files_sha256": {
+      "models/weights/papagei/papagei_s.pt": "79d68671e51bdc951fee853e5a8241099e38148ff26ed888b843849332e0b988"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": null,
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  },
+  "Dalia/PulsePPG.json": {
+    "status": "complete",
+    "identity_sha256": "c72e8b2dfd03618a7c20983d75756cc899e3b03530a5e6d7c3d80d13d6a4a108",
+    "shape": [
+      64697,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "376d190eaa619f5c393cbc137522015f40bba4bfeabcd561d26e7a15e2d06854",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "PulsePPG",
+    "sampling_rate_hz": 50,
+    "weight_files_sha256": {
+      "models/weights/pulseppg/pulseppg/experiments/out/pulseppg/checkpoint_best.pkl": "485ade5033b3baa9b82e252fc131042dda897d7bdfc0d1a030d9746a1e98857c"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": null,
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  },
+  "WildPPG/AnyPPG.json": {
+    "status": "complete",
+    "identity_sha256": "57cd116ce72c4f85b0cb321dc3c39be0a0b846cede85294c4757ea1c0ad4c67e",
+    "shape": [
+      94744,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "29c3f22cd1ac68c1ea43b7325d2d12293671de0c058913f0179e02d186a4e777",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "AnyPPG",
+    "sampling_rate_hz": 125,
+    "weight_files_sha256": {
+      "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39",
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  },
+  "WildPPG/MOMENT-1-small.json": {
+    "status": "complete",
+    "identity_sha256": "28bae437d7f83b865fd8e7f35385624a5ce5c0bcc878c22d0ffe574e0f02e5f3",
+    "shape": [
+      94744,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "e2ee072db6c498639be17cb2b72c53d43560bfef6bc7334054b671a8f342f9e7",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "MOMENT-1-small",
+    "sampling_rate_hz": 64,
+    "weight_files_sha256": {
+      "models/weights/moment/MOMENT-1-small/config.json": "6456b8e6f017323e8ef372c338c993380e246cb6291ffb8ca21fe7dfc53d0a6f",
+      "models/weights/moment/MOMENT-1-small/model.safetensors": "785e6c6f57ffa7cac7e2a1fff6369618d49f2f441563ddea76c866231e5aa877"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": null,
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  },
+  "WildPPG/PaPaGei-S.json": {
+    "status": "complete",
+    "identity_sha256": "8471a0ba130b6c5226d3c2f17908f7fddfe1f0068336dc26c058d58f3bdb420c",
+    "shape": [
+      94744,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "c3ee90cdfc8ca8497e3c0d95eb42568e8d8c9887e32d8633798e724f92bf63c8",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "PaPaGei-S",
+    "sampling_rate_hz": 125,
+    "weight_files_sha256": {
+      "models/weights/papagei/papagei_s.pt": "79d68671e51bdc951fee853e5a8241099e38148ff26ed888b843849332e0b988"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": null,
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  },
+  "WildPPG/PulsePPG.json": {
+    "status": "complete",
+    "identity_sha256": "5468d6ac17ded370112a98cd8189fb958b0078b89558d5b64d7419c6d6e8a621",
+    "shape": [
+      94744,
+      512
+    ],
+    "dtype": "float32",
+    "features_sha256": "d86267b7a76ea2ec356d596030d8d185a183d8973742f441ad6cbcd98fa671e7",
+    "freeze_verified": "eval mode; requires_grad false; torch.inference_mode; no optimizer",
+    "model": "PulsePPG",
+    "sampling_rate_hz": 50,
+    "weight_files_sha256": {
+      "models/weights/pulseppg/pulseppg/experiments/out/pulseppg/checkpoint_best.pkl": "485ade5033b3baa9b82e252fc131042dda897d7bdfc0d1a030d9746a1e98857c"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "additional_source_sha256": null,
+    "extraction_script_sha256": "2dd2e08345867342b5ddceb963e7637aba2a5fd965c572b706c3525e88b2ef77",
+    "normalization": "Native port unchanged. PulsePPG uses complete unlabeled subject recording statistics; this is offline inference."
+  }
+}

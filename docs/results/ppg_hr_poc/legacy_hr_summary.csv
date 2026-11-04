@@ -1,0 +1,4 @@
+dataset,model,method,outer_evaluations,complete_5_seeds_5_folds,window_mae_mean_over_folds_seeds_bpm,subject_macro_mae_bpm,training_mean_baseline_window_mae_bpm
+dalia,AnyPPG,linear,25,True,7.388636708654449,7.4947475993549,18.23483176113012
+dalia,PaPaGei-P,linear,25,True,11.683490161536625,11.851984094372535,18.23483176113012
+dalia,PaPaGei-S,linear,25,True,13.727161659347821,13.982699150038858,18.23483176113012

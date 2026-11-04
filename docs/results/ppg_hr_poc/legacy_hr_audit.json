@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-11-04T03:56:10.459204+00:00",
+  "passed_existing_artifact_checks": true,
+  "scope": "Existing published DaLiA/WildPPG HR linear outputs only; missing runs remain missing",
+  "completed_evaluations": 75,
+  "full_scope_complete": false,
+  "missing_runs": [
+    {
+      "dataset": "dalia",
+      "model": "PulsePPG"
+    },
+    {
+      "dataset": "dalia",
+      "model": "SigmaPPG"
+    },
+    {
+      "dataset": "dalia",
+      "model": "PRVCtrl"
+    },
+    {
+      "dataset": "dalia",
+      "model": "MOMENT-1-small"
+    },
+    {
+      "dataset": "wildppg",
+      "model": "AnyPPG"
+    },
+    {
+      "dataset": "wildppg",
+      "model": "PaPaGei-S"
+    },
+    {
+      "dataset": "wildppg",
+      "model": "PaPaGei-P"
+    },
+    {
+      "dataset": "wildppg",
+      "model": "PulsePPG"
+    },
+    {
+      "dataset": "wildppg",
+      "model": "SigmaPPG"
+    },
+    {
+      "dataset": "wildppg",
+      "model": "PRVCtrl"
+    },
+    {
+      "dataset": "wildppg",
+      "model": "MOMENT-1-small"
+    }
+  ],
+  "summary": [
+    {
+      "dataset": "dalia",
+      "model": "AnyPPG",
+      "method": "linear",
+      "outer_evaluations": 25,
+      "complete_5_seeds_5_folds": true,
+      "window_mae_mean_over_folds_seeds_bpm": 7.388636708654449,
+      "subject_macro_mae_bpm": 7.4947475993549,
+      "training_mean_baseline_window_mae_bpm": 18.23483176113012
+    },
+    {
+      "dataset": "dalia",
+      "model": "PaPaGei-P",
+      "method": "linear",
+      "outer_evaluations": 25,
+      "complete_5_seeds_5_folds": true,
+      "window_mae_mean_over_folds_seeds_bpm": 11.683490161536625,
+      "subject_macro_mae_bpm": 11.851984094372535,
+      "training_mean_baseline_window_mae_bpm": 18.23483176113012
+    },
+    {
+      "dataset": "dalia",
+      "model": "PaPaGei-S",
+      "method": "linear",
+      "outer_evaluations": 25,
+      "complete_5_seeds_5_folds": true,
+      "window_mae_mean_over_folds_seeds_bpm": 13.727161659347821,
+      "subject_macro_mae_bpm": 13.982699150038858,
+      "training_mean_baseline_window_mae_bpm": 18.23483176113012
+    }
+  ],
+  "artifact_set_sha256": "219365d043df4dc93820de7ed6b1cc1c36efbb8001d7e6339e97681ac9f0b66a",
+  "checks": [
+    "manifest source file sizes and modification times unchanged",
+    "fixed upstream subject splits independently reproduced",
+    "no train/test overlap; complete folds cover each subject once per seed",
+    "ordered prediction subjects and labels match finite-label source rows",
+    "finite predictions and recomputed window HR MAE",
+    "constant training-mean baseline recomputed",
+    "canonical cached features have finite values and expected dimensions"
+  ],
+  "limitations": [
+    "Only published linear results were audited; absence is not a measured failure.",
+    "Processed DaLiA excludes windows according to upstream preprocessing; this is not all raw motion data.",
+    "Repeated overlapping windows and seeds are not independent subjects; no population CI is claimed here.",
+    "The original inner CV implementation was not rerun; outer splits and saved artifacts were checked.",
+    "Original run dataset fingerprints use size and mtime, not waveform content hashes. Canonical feature export hashes are included."
+  ]
+}

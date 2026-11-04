@@ -1,0 +1,55 @@
+{
+  "status": "complete",
+  "audited_at": "2026-11-04T04:23:14.802334+00:00",
+  "protocol_sha256": "70759d1692ae19d282457ae6a3487565b640daf236901a01424c95ee18ead7a6",
+  "registered_splits": 93,
+  "expected_learned_results": 558,
+  "completed_learned_results": 558,
+  "missing_artifacts": [],
+  "verified_feature_caches": 8,
+  "verified_file_count": 627,
+  "feature_metadata_sha256": {
+    "Dalia/AnyPPG": "8663fb9fe46db145489e9bfe142c2d03c197c4570ae7cd65f1d1a229484fffe3",
+    "Dalia/MOMENT-1-small": "f35d7e23051ebdd6fe59cb55e4daa60c7f69afdd77389794061297d596a1c076",
+    "Dalia/PaPaGei-S": "32f5603916c1a1f3ad24b0df769f2a4912ab03e82b13f4e77078965be7fbc344",
+    "Dalia/PulsePPG": "ab4da9d27d984d90eee80d7fb96c97c9aefff28d5e6703c6d023d051605333e2",
+    "WildPPG/AnyPPG": "0d4703253e3cde89a70e1e1567c87333766ad4b897ee2176fff9a16ad95cdf60",
+    "WildPPG/MOMENT-1-small": "ad1b3cad4b2b82f6176e2365bddef698c5371375d432b3cac558e5502629466f",
+    "WildPPG/PaPaGei-S": "3a950d9f8b32cd9841b7306d1fb3f227ad05ca7ffb5864b60dc7bcc2587af02c",
+    "WildPPG/PulsePPG": "5f5f348844bb641ef7f58b864f2762648eeb4449e686483307dc7448884a1dd9"
+  },
+  "verified_artifact_set_sha256": "045b69d282ecf8e32f4b2f0516dee31244f31753f29810fd43bbeefd12fab3bc",
+  "checks": [
+    "registered code/data hashes",
+    "subject split isolation, outer coverage and budget nesting",
+    "complete feature hashes/inputs/weights and finite values",
+    "completion identity and prediction hashes",
+    "exact prediction row/subject/start/reference alignment",
+    "finite learned predictions and stored MAE recomputation"
+  ],
+  "estimand": "Within each participant compute window MAE per seed, average seeds, then average participants equally. Traditional missing outputs remain in coverage; conditional MAE is labelled explicitly.",
+  "paired_estimand": "For each participant/seed use common finite windows, subtract control MAE from foundation MAE, average seeds, bootstrap participants only.",
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 20261104,
+  "inference_note": "Exploratory percentile intervals, no multiplicity adjustment. Partial results may have unequal seed coverage; do not treat as final evidence.",
+  "strata_note": "Motion terciles are within-dataset descriptive ACC strata; activity only in Dalia. official_include=1 is legacy benchmark-window sensitivity; zero is added-window stratum.",
+  "traditional_note": "Traditional predictions reused across seeds/budgets and transfer; n_subjects and unique_windows never count this reuse as new observations.",
+  "dataset_counts": {
+    "Dalia": {
+      "subjects": 15,
+      "windows": 64697
+    },
+    "WildPPG": {
+      "subjects": 16,
+      "windows": 94744
+    }
+  },
+  "table_sha256": {
+    "summary.csv": "195fd7960863bfa88a72174b86d99bac8bf0e308fa79ff3b35592daf7a3f2b9e",
+    "per_subject.csv": "548f5cf28183e430124232030b9898ff79f103ddd3001d4bd2458ff4657c7d2b",
+    "strata.csv": "85fdeda12fcdf656045210ace3d60c0b02d1330cea9f71eddec096d1dcbbecb6",
+    "paired.csv": "39245ca90b61a9dba5a24b431860a65a36748107bff147da13658ab661206602",
+    "paired_per_subject.csv": "229fa68b8cb779681283457b4e4fa15e8c776eb88245223dab1213b553d438ee",
+    "per_subject_strata.csv": "a7e3bc95541c5479b3fd269b77ccb98c8e36cfa782a8a4cdbb32fc80d73b7ef7"
+  }
+}

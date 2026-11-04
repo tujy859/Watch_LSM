@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "url": "https://github.com/eth-siplab/WildPPG/blob/main/src/supervised_baselines/data_preprocessing.py",
+  "functions": [
+    "panPeakDetect",
+    "pan_tompkins_detector",
+    "quotient_filter",
+    "butter_bandpass",
+    "butter_bandpass_filter"
+  ],
+  "all_five_function_asts_identical": true,
+  "local_sha256": "ff5675ddb50040ed0aec96aa3d375660a432849eefb2f6295dbf520717a05fcc",
+  "remote_sha256": "47d60c39a10db1364ba1a33fb094d035b5dc8869738c3b8615a3b7d74f77c6c6"
+}

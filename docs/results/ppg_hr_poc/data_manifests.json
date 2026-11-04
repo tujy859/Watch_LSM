@@ -1,0 +1,507 @@
+{
+  "Dalia": {
+    "dataset": "Dalia",
+    "subjects": [
+      "S1",
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S15",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "windows": 64697,
+    "coverage": [
+      {
+        "subject": "S1",
+        "candidate_windows": 4603,
+        "included": 4603,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4551,
+        "additional_windows": 52
+      },
+      {
+        "subject": "S10",
+        "candidate_windows": 5321,
+        "included": 5321,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 5270,
+        "additional_windows": 51
+      },
+      {
+        "subject": "S11",
+        "candidate_windows": 4521,
+        "included": 4521,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4460,
+        "additional_windows": 61
+      },
+      {
+        "subject": "S12",
+        "candidate_windows": 3954,
+        "included": 3954,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 3894,
+        "additional_windows": 60
+      },
+      {
+        "subject": "S13",
+        "candidate_windows": 4565,
+        "included": 4565,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4505,
+        "additional_windows": 60
+      },
+      {
+        "subject": "S14",
+        "candidate_windows": 4476,
+        "included": 4476,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4425,
+        "additional_windows": 51
+      },
+      {
+        "subject": "S15",
+        "candidate_windows": 3966,
+        "included": 3966,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 3905,
+        "additional_windows": 61
+      },
+      {
+        "subject": "S2",
+        "candidate_windows": 4099,
+        "included": 4099,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4039,
+        "additional_windows": 60
+      },
+      {
+        "subject": "S3",
+        "candidate_windows": 4367,
+        "included": 4367,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4307,
+        "additional_windows": 60
+      },
+      {
+        "subject": "S4",
+        "candidate_windows": 4572,
+        "included": 4572,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4521,
+        "additional_windows": 51
+      },
+      {
+        "subject": "S5",
+        "candidate_windows": 4649,
+        "included": 4649,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4597,
+        "additional_windows": 52
+      },
+      {
+        "subject": "S6",
+        "candidate_windows": 2622,
+        "included": 2622,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 2582,
+        "additional_windows": 40
+      },
+      {
+        "subject": "S7",
+        "candidate_windows": 4668,
+        "included": 4668,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4607,
+        "additional_windows": 61
+      },
+      {
+        "subject": "S8",
+        "candidate_windows": 4037,
+        "included": 4037,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 3978,
+        "additional_windows": 59
+      },
+      {
+        "subject": "S9",
+        "candidate_windows": 4277,
+        "included": 4277,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 4217,
+        "additional_windows": 60
+      }
+    ],
+    "sources": [
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+        "bytes": 1454035828,
+        "sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+        "bytes": 1668779257,
+        "sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+        "bytes": 1418155321,
+        "sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+        "bytes": 1235620519,
+        "sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+        "bytes": 1422151676,
+        "sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+        "bytes": 1399178026,
+        "sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+        "bytes": 1242403295,
+        "sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+        "bytes": 1276598361,
+        "sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+        "bytes": 1365790643,
+        "sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+        "bytes": 1435645404,
+        "sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+        "bytes": 1459596295,
+        "sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+        "bytes": 825860436,
+        "sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+        "bytes": 1465092431,
+        "sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+        "bytes": 1263659052,
+        "sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+        "bytes": 1346572259,
+        "sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56"
+      }
+    ],
+    "hashes": {
+      "x50.npy": "9f5214242b5a99ca160b92058706bf0573b3db4a1e80150dc712686f6660befd",
+      "x64.npy": "d2a12213b81008bd3acad3b8853f8389ebd9a220c2c7463d22eb6b4af2a79c03",
+      "x125.npy": "f38cea3500b9a69a86b3e2376761a61809960172d4510bf4eb98f17ae39c9b18",
+      "rows.npz": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134"
+    },
+    "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+    "motion_terciles": [
+      0.17819540202617642,
+      0.4205671548843384
+    ],
+    "motion_note": "Within-dataset unlabeled acceleration terciles for descriptive reporting only; ACC is never model input",
+    "pulseppg_normalization": "Retain upstream whole-subject unlabeled mean/std; offline record normalization, not online inference"
+  },
+  "WildPPG": {
+    "dataset": "WildPPG",
+    "subjects": [
+      "an0",
+      "e61",
+      "fex",
+      "k2s",
+      "kjd",
+      "l38",
+      "n31",
+      "ngh",
+      "p5d",
+      "p9p",
+      "qm9",
+      "ssx",
+      "trh",
+      "tz8",
+      "u7y",
+      "w4p"
+    ],
+    "windows": 94744,
+    "coverage": [
+      {
+        "subject": "an0",
+        "candidate_windows": 5546,
+        "included": 5512,
+        "invalid_reference_or_signal": 34,
+        "legacy_included": 5503,
+        "additional_windows": 9,
+        "old_valid_now_excluded": 3
+      },
+      {
+        "subject": "e61",
+        "candidate_windows": 5557,
+        "included": 5441,
+        "invalid_reference_or_signal": 116,
+        "legacy_included": 5364,
+        "additional_windows": 77,
+        "old_valid_now_excluded": 37
+      },
+      {
+        "subject": "fex",
+        "candidate_windows": 6018,
+        "included": 4850,
+        "invalid_reference_or_signal": 1168,
+        "legacy_included": 4360,
+        "additional_windows": 490,
+        "old_valid_now_excluded": 189
+      },
+      {
+        "subject": "k2s",
+        "candidate_windows": 6854,
+        "included": 6852,
+        "invalid_reference_or_signal": 2,
+        "legacy_included": 6849,
+        "additional_windows": 3,
+        "old_valid_now_excluded": 1
+      },
+      {
+        "subject": "kjd",
+        "candidate_windows": 6025,
+        "included": 5701,
+        "invalid_reference_or_signal": 324,
+        "legacy_included": 5554,
+        "additional_windows": 147,
+        "old_valid_now_excluded": 58
+      },
+      {
+        "subject": "l38",
+        "candidate_windows": 5994,
+        "included": 5994,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 5994,
+        "additional_windows": 0,
+        "old_valid_now_excluded": 0
+      },
+      {
+        "subject": "n31",
+        "candidate_windows": 5960,
+        "included": 5940,
+        "invalid_reference_or_signal": 20,
+        "legacy_included": 5939,
+        "additional_windows": 1,
+        "old_valid_now_excluded": 14
+      },
+      {
+        "subject": "ngh",
+        "candidate_windows": 6610,
+        "included": 6450,
+        "invalid_reference_or_signal": 160,
+        "legacy_included": 6357,
+        "additional_windows": 93,
+        "old_valid_now_excluded": 41
+      },
+      {
+        "subject": "p5d",
+        "candidate_windows": 6508,
+        "included": 5669,
+        "invalid_reference_or_signal": 839,
+        "legacy_included": 5328,
+        "additional_windows": 341,
+        "old_valid_now_excluded": 150
+      },
+      {
+        "subject": "p9p",
+        "candidate_windows": 5627,
+        "included": 5549,
+        "invalid_reference_or_signal": 78,
+        "legacy_included": 5450,
+        "additional_windows": 99,
+        "old_valid_now_excluded": 30
+      },
+      {
+        "subject": "qm9",
+        "candidate_windows": 5924,
+        "included": 5877,
+        "invalid_reference_or_signal": 47,
+        "legacy_included": 5812,
+        "additional_windows": 65,
+        "old_valid_now_excluded": 24
+      },
+      {
+        "subject": "ssx",
+        "candidate_windows": 5699,
+        "included": 5690,
+        "invalid_reference_or_signal": 9,
+        "legacy_included": 5682,
+        "additional_windows": 8,
+        "old_valid_now_excluded": 2
+      },
+      {
+        "subject": "trh",
+        "candidate_windows": 6478,
+        "included": 6475,
+        "invalid_reference_or_signal": 3,
+        "legacy_included": 6475,
+        "additional_windows": 0,
+        "old_valid_now_excluded": 1
+      },
+      {
+        "subject": "tz8",
+        "candidate_windows": 6535,
+        "included": 6526,
+        "invalid_reference_or_signal": 9,
+        "legacy_included": 6525,
+        "additional_windows": 1,
+        "old_valid_now_excluded": 2
+      },
+      {
+        "subject": "u7y",
+        "candidate_windows": 5964,
+        "included": 5963,
+        "invalid_reference_or_signal": 1,
+        "legacy_included": 5962,
+        "additional_windows": 1,
+        "old_valid_now_excluded": 0
+      },
+      {
+        "subject": "w4p",
+        "candidate_windows": 6255,
+        "included": 6255,
+        "invalid_reference_or_signal": 0,
+        "legacy_included": 6255,
+        "additional_windows": 0,
+        "old_valid_now_excluded": 0
+      }
+    ],
+    "sources": [
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_an0.mat",
+        "bytes": 1114535248,
+        "sha256": "ff5169418d86beaf8ea841c52ba8d694ee4c3892837f48f8196421385a894a25"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_e61.mat",
+        "bytes": 1116745592,
+        "sha256": "2d1500baf936d85f15291f7da85268ef000446ada5c7f876ffba3b0ca6b8fa2a"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_fex.mat",
+        "bytes": 1209388200,
+        "sha256": "c59f56e989d3df6638290e2839bee42c113ee30813a344c6f71fc348e34a3cb1"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_k2s.mat",
+        "bytes": 1377390928,
+        "sha256": "a09fa1c0e6a32664806392cb76d3fc477e5cf759699462ad2b7ed8304208d17a"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_kjd.mat",
+        "bytes": 1210794920,
+        "sha256": "67271481074610f74aac2d8dad101e3cbbff949757761e8b5f40863b856e9123"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_l38.mat",
+        "bytes": 1204565328,
+        "sha256": "86f2e6cf02977c78a455cbe49b3fe990d33ae2719c00f7f23ecb8020869fd1e5"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_n31.mat",
+        "bytes": 1197732472,
+        "sha256": "9a453f4e4d964b694ca0da7070500ad3bb35f05f352b9bf574c0feb7db040117"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ngh.mat",
+        "bytes": 1328356472,
+        "sha256": "1982c3c55d316014480b752d805ca12bb1587917a8b57da74f5de6cdb9530738"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p5d.mat",
+        "bytes": 1307858600,
+        "sha256": "8dcbb9738feafbe1882746de3af6629de6aea65183fe834455664fa7ca0351fb"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p9p.mat",
+        "bytes": 1130812792,
+        "sha256": "ad4cc58916c0de65878bbb7d9484e370854f22d9e3ec0e061ec16dd62e62eca4"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_qm9.mat",
+        "bytes": 1190497912,
+        "sha256": "ef288b66de55a01a7b1a3bc0927e0eed16637f0d0d0d55d30fba717bad8568cf"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ssx.mat",
+        "bytes": 1145281912,
+        "sha256": "8621c948f845d552581b59b35874445098786312393c932c5906bef1863870b6"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_trh.mat",
+        "bytes": 1301829752,
+        "sha256": "d86bbb489a4487296dff44f5178e1994948788ace36968c1a5b0a48c232c6fa9"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_tz8.mat",
+        "bytes": 1313284472,
+        "sha256": "12e0068c480eecb0702d0014ee492f935324015063fcd0d3054e2c3a2525ae2a"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_u7y.mat",
+        "bytes": 1198536312,
+        "sha256": "8d5b8439ea66234da07004bb0e12e18752fba594425daa1141fc37adaa7b0001"
+      },
+      {
+        "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_w4p.mat",
+        "bytes": 1257015672,
+        "sha256": "9ded5fb6ee4d57627f98aaaa1854c2ecff599caeb7649de2f449892ab2613ec3"
+      }
+    ],
+    "hashes": {
+      "rows.npz": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+      "x50.npy": "9028748982c1bb0d97d8ed48a9c5efa7c5cbd35a59f923d708ece320faf303bc",
+      "stats50.npy": "1e786492390cad40e430eeacace14c0c283f2944da9b6903361debad0b966180",
+      "x64.npy": "d560d4323bc77012bf262f44208066e58cdd92163cf3cc4b90c20321d9ea488d",
+      "stats64.npy": "2c06230cd8ef4b16266a4ae58ac61e139b176948bac56e18d9cfeac9fbe957fa",
+      "x125.npy": "417fd1ef16dc7e32d443b2d1181bed83b880c2e79067932efcfe215c52dedd0c",
+      "stats125.npy": "d7e1aeeb1c2d7ad52560fb4bb6532f3aeaa3898390b1fc40b4c7b029ea6d9747"
+    },
+    "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+    "motion_terciles": [
+      0.06528761982917786,
+      0.26689812541007996
+    ],
+    "motion_note": "Within-dataset unlabeled acceleration terciles for descriptive reporting only; ACC is never model input",
+    "pulseppg_normalization": "Retain upstream whole-subject unlabeled mean/std; offline record normalization, not online inference",
+    "reference_correction": {
+      "reference_summary_sha256": "7c1d47b0a4b53a8573f8e1f18963b6400198e82edeeea1d478cb3d4ad7113541",
+      "correction_script_sha256": "c3b001930cd36a5ff0a96efe34c623d402b01fa077c321be0a610172d9445980"
+    },
+    "reference_note": "Automatic sternum ECG RR references from unmodified official WildPPG functions; not manually adjudicated ECG truth",
+    "prior_manifest_sha256": "96b74f642dea3c628001a3123db05a9378bd8a0ad16020b78e3ddbfd124af758"
+  }
+}

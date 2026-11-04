@@ -1,0 +1,194 @@
+{
+  "checked_at": "2026-11-04T04:12:55.786940+00:00",
+  "passed": true,
+  "method": "Independent sklearn StandardScaler(sample_weight) then Ridge(solver=cholesky,fit_intercept=True,sample_weight); no runner fitting helper imported",
+  "versions": {
+    "numpy": "1.26.4",
+    "sklearn": "1.5.2"
+  },
+  "cpu_threads": 2,
+  "precision": "float64",
+  "tolerances": {
+    "coefficient": {
+      "atol": 1e-07,
+      "rtol": 1e-07
+    },
+    "intercept_predictions_validation_mae": {
+      "atol": 1e-06,
+      "rtol": 1e-07
+    },
+    "summary_reconstruction": {
+      "atol": 1e-10,
+      "rtol": 0
+    }
+  },
+  "ridge_checks": [
+    {
+      "job": "Dalia-fold0-seed42-labelsfull",
+      "model": "AnyPPG",
+      "alpha": 1000.0,
+      "train_subjects": [
+        "S4",
+        "S3",
+        "S9",
+        "S12",
+        "S11",
+        "S13",
+        "S8",
+        "S10",
+        "S6"
+      ],
+      "validation_subjects": [
+        "S1",
+        "S7",
+        "S2"
+      ],
+      "test_subjects": [
+        "S14",
+        "S15",
+        "S5"
+      ],
+      "train_windows": 38236,
+      "validation_windows": 13370,
+      "test_windows": 13091,
+      "maximum_coefficient_absolute_difference": 1.1194864479868727e-12,
+      "intercept_absolute_difference": 3.709033080667723e-12,
+      "maximum_prediction_absolute_difference_bpm": 3.90087961932295e-12,
+      "validation_macro_mae_absolute_difference_bpm": 1.7763568394002505e-14,
+      "passed": true,
+      "artifact_sha256": {
+        "complete.json": "842b46232e10c69b4da3b3489e4066288ab6e4f3478b69bcc27186e12e7e7412",
+        "ridge.npz": "f6c50cc75078434c1e9e693d59ac0ed1f2ed12095903568379e7e951e14e4b2a",
+        "predictions.npz": "c6c0c972d83102ee3f0b661540a145ffca27ba8784197cb74a4439178c36fe62"
+      }
+    },
+    {
+      "job": "WildPPG-fold0-seed42-labelsfull",
+      "model": "AnyPPG",
+      "alpha": 1000.0,
+      "train_subjects": [
+        "qm9",
+        "p9p",
+        "w4p",
+        "kjd",
+        "fex",
+        "ngh",
+        "u7y",
+        "e61",
+        "trh"
+      ],
+      "validation_subjects": [
+        "an0",
+        "tz8",
+        "p5d"
+      ],
+      "test_subjects": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ],
+      "train_windows": 52561,
+      "validation_windows": 17707,
+      "test_windows": 24476,
+      "maximum_coefficient_absolute_difference": 1.864730592160413e-12,
+      "intercept_absolute_difference": 1.5489831639570184e-12,
+      "maximum_prediction_absolute_difference_bpm": 4.959588295605499e-12,
+      "validation_macro_mae_absolute_difference_bpm": 4.973799150320701e-14,
+      "passed": true,
+      "artifact_sha256": {
+        "complete.json": "aa180610180301a025d1dbbb028a9c13fbafb3cd9897ff27bdf4fda6d730c220",
+        "ridge.npz": "78aabbc1ffb3aeb0a63f2698385cce0a169eca495d2f16c721de006c1f3f29d0",
+        "predictions.npz": "87ffcf857d3e58c3c8427d0fc6195ab557b00cc7d82af68340045ada51199177"
+      }
+    },
+    {
+      "job": "Dalia-to-WildPPG-seed42",
+      "model": "AnyPPG",
+      "alpha": 1000.0,
+      "train_subjects": [
+        "S12",
+        "S1",
+        "S6",
+        "S9",
+        "S5",
+        "S14",
+        "S11",
+        "S13",
+        "S7",
+        "S10",
+        "S8",
+        "S3"
+      ],
+      "validation_subjects": [
+        "S15",
+        "S2",
+        "S4"
+      ],
+      "test_subjects": [
+        "an0",
+        "e61",
+        "fex",
+        "k2s",
+        "kjd",
+        "l38",
+        "n31",
+        "ngh",
+        "p5d",
+        "p9p",
+        "qm9",
+        "ssx",
+        "trh",
+        "tz8",
+        "u7y",
+        "w4p"
+      ],
+      "train_windows": 52060,
+      "validation_windows": 12637,
+      "test_windows": 94744,
+      "maximum_coefficient_absolute_difference": 1.103450664174943e-12,
+      "intercept_absolute_difference": 1.2931877790833823e-12,
+      "maximum_prediction_absolute_difference_bpm": 5.044853423896711e-12,
+      "validation_macro_mae_absolute_difference_bpm": 7.993605777301127e-15,
+      "passed": true,
+      "artifact_sha256": {
+        "complete.json": "3db7b716fff26cc5d638cfa7f3a5d7b694b261e884e1367d64a69c552fecb30d",
+        "ridge.npz": "84dffe71fba2313baeb926ca8c79ed9a9d31efb0e1c963162e95e49ea4f66ebb",
+        "predictions.npz": "5a0d526111ec5a3567e823802254afab87ca932b257f6991cc80d25a45dffa31"
+      }
+    }
+  ],
+  "summary_check": {
+    "scenario": "within",
+    "dataset": "Dalia",
+    "budget": "full",
+    "model": "AnyPPG",
+    "independent_subject_macro_mae_bpm": 7.876036012128476,
+    "saved_subject_macro_mae_bpm": 7.876036012128476,
+    "paired_control": "welch",
+    "independent_paired_delta_bpm": -9.520942687327345,
+    "saved_paired_delta_bpm": -9.520942687327345,
+    "independent_ci95_bpm": [
+      -13.355623390496259,
+      -6.2146483642372266
+    ],
+    "saved_ci95_bpm": [
+      -13.355623390496259,
+      -6.2146483642372266
+    ],
+    "subjects": 15,
+    "seeds_per_subject": 3,
+    "bootstrap_samples": 10000,
+    "summary_snapshot_study_complete": false,
+    "passed": true
+  },
+  "statistical_review": {
+    "primary_metric_matches_plan": true,
+    "paired_common_window_estimand_matches_plan": true,
+    "bootstrap_unit_matches_plan": "participant; seed MAEs/differences averaged first",
+    "coverage_handling": "failed traditional estimates retained in coverage and conditional MAE is explicit",
+    "partial_snapshot_caution": "Current snapshot is partial; do not present partial columns as final model comparisons. Formal summary enforces all 558 learned results.",
+    "inference_limit": "Participant bootstrap conditions on the trained folds/selected models; it does not repeat fitting/model selection or account for shared-training-fold uncertainty. Intervals are exploratory and unadjusted for multiple comparisons, as registered.",
+    "artifact_limit": "The primary metric audit hashes predictions; ridge.npz coefficients are not hashed in complete.json. Selected coefficient files are independently fitted and hashed here."
+  }
+}
