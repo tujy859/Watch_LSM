@@ -2,6 +2,8 @@
 
 本目录保存 Watch-LSM 的论文、历史调研和项目相关分析。用户维护的 [Wearable-Physiological-Foundation-Models](https://github.com/tujy859/Wearable-Physiological-Foundation-Models) 是本项目长期参考的领域调研与资源索引；本项目记录具体采用理由、实现状态和实测证据。
 
+2026-11-04用户明确当前定位为**先评测、后训练的手表PPG研究PoC**。任务、强对照、数据边界及最小里程碑建议见[评测PoC讨论稿](../docs/ppg_evaluation_poc_plan.md)；调研仓中的生产级架构建议不作为本项目当前必做项。
+
 ## 开工阅读顺序
 
 1. 阅读根目录 [AGENTS.md](../AGENTS.md)，确认当前实现状态、未完成任务和数据限制。
