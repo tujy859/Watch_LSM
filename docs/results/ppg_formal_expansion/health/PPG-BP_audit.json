@@ -1,0 +1,73 @@
+{
+  "dataset": "PPG-BP",
+  "status": "complete_audited",
+  "people": 218,
+  "results": 1470,
+  "prediction_files": 1470,
+  "patient_folds": 5,
+  "initialization_seeds": [
+    42,
+    43,
+    44
+  ],
+  "protocol": {
+    "version": "formal-health-v1",
+    "split_seed": 20261105,
+    "five_folds": "test fold k, validation fold (k+1)%5, other three train",
+    "initialization_seeds": [
+      42,
+      43,
+      44
+    ],
+    "pca_components": 8,
+    "ridge_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "mlp_hidden": 16,
+    "mlp_epochs": 100,
+    "mlp_lr": 0.01,
+    "mlp_weight_decay": 0.0001,
+    "mlp_selection": "lowest validation MAE; earliest epoch breaks ties",
+    "equal_head_width": "zero-pad all input groups to twice the full fused dimension after training-only missing flags/scaling",
+    "primary_comparison": "demographics+traditional+embedding vs demographics+traditional, linear head",
+    "secondary_comparison": "same input groups with fixed small MLP; standalone and demographic-only increment",
+    "testing_unit": "one person, seed-averaged absolute error; no windows as independent observations",
+    "multiple_comparisons": "Holm across six pretrained-model fusion increments separately for each of SDS, SBP, DBP; other comparisons exploratory",
+    "bootstrap": "10000 paired person resamples, percentile 95% intervals; fixed split uncertainty not fully represented",
+    "permutation": "100000 paired person sign flips, two-sided; overlapping training folds can induce dependent errors",
+    "encoders_frozen": true,
+    "pretraining": false
+  },
+  "maximum_mae_recalculation_difference": 0.0,
+  "maximum_saved_model_reconstruction_difference": 1.403066796967778e-05,
+  "maximum_independent_ridge_refit_difference": 9.947598300641403e-14,
+  "maximum_pca_reconstruction_difference": 1.4210854715202004e-14,
+  "every_person_tested_once_per_seed_per_method": true,
+  "source_manifest_sha256": "932332dc323ed43d4fe8f495d2bae8ef47f614b61fd1f7610a58c5dd5424f341",
+  "raw_source_files_rehashed": 655,
+  "person_feature_aggregation_independently_rebuilt": true,
+  "raw_results_sha256": "10de0b7676bad2dcd24e5e29bcf25a9f4d30bb191949d554ca7db540445cd6e9",
+  "limitations": [
+    "Finger auxiliary domain, not wrist blood pressure validation",
+    "One cuff label per person, no continuous ABP",
+    "Source clips shortened from 2.1 to 2.0 s for complete common model patches; not numerically interchangeable with old protocol",
+    "Traditional baseline includes independently recorded table HR",
+    "Pretraining overlap with source patients not certified"
+  ],
+  "interval_interpretation": "Exploratory paired person bootstrap; seeds averaged inside people, split is fixed, shared training folds induce dependence",
+  "feature_caches": {
+    "AnyPPG-random-frozen__seed42.npz": "52f0d8b23c206d740ef7a2b7a168a56dbde7f75ce4d5a6767cc7165867eddba4",
+    "AnyPPG-random-frozen__seed43.npz": "b822e4cba5287b4c89401b708910a8c194c3579d83ddd6c915e3706f4b28158d",
+    "AnyPPG-random-frozen__seed44.npz": "6ef1abcd157459a2e6112e103aafcaf6f5ba40e6e35258e989d598df46d1595f",
+    "AnyPPG__seed42.npz": "ad2a4e2e8bbb9b64e48f7db62bd9eba0eed1a85111b1c7664a1c69f2c8c501ed",
+    "MOMENT-1-small__seed42.npz": "a778c6e04d36d71b9b78210dc856aca6cd40ca8ec4ae47772744449ee39e97ad",
+    "PaPaGei-P__seed42.npz": "c55e5b407a2fcd99adf30480fd40d9f45bce6ed145f373cae60749d36625bcca",
+    "PaPaGei-S__seed42.npz": "2c24093e305c3ffc1493ac520d60e20a928823f45b8296093e6691ce7b5b0b56",
+    "PulsePPG__seed42.npz": "5d14c48d7299fd050724380461dddd70409dbe95f24cdb07a2e3b5664dd6eb79",
+    "SigmaPPG__seed42.npz": "863674a31992eabb7d0202a5fb489b32711aca17b9b43aaffd9de3a5c3924e85"
+  }
+}

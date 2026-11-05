@@ -23,5 +23,4 @@ docs/results/ppg_phase2/**/*.json -text whitespace=trailing-space,space-before-t
 docs/results/ppg_phase2/**/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
 docs/results/ppg_expansion_pilot/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
 docs/results/ppg_expansion_pilot/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
-docs/results/ppg_formal_expansion/**/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
-docs/results/ppg_formal_expansion/**/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
+docs/results/ppg_formal_expansion/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

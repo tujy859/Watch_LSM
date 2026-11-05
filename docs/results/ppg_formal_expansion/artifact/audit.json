@@ -1,0 +1,891 @@
+{
+  "status": "passed",
+  "runs": 105,
+  "neural_heads_cpu_replayed": 75,
+  "traditional_outputs_replayed": 30,
+  "source": {
+    "all_4305_full_30s_mappings_rechecked": true,
+    "maximum_mapping_point_error": 0.0,
+    "all_center_waveforms_and_point_labels_checked": true,
+    "raw_people": 15,
+    "uniqueness": "Published map has no duplicate person/start; preparation searched every candidate in all 15 sources"
+  },
+  "source_protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+  "outputs_sha256": {
+    "fold0-seed42/AnyPPG": {
+      "prediction_sha256": "b13a88bf5948e7e01671c5a0a0edcb219256b06af088ccfeb740a5ea2dd8d602",
+      "metadata_sha256": "f74716cde2b4b7e240e3eea2f249cdb04361023d83051072de41310fbb922d76",
+      "head_sha256": "f2104a61a7e1d183b42353ff6c4c153fc1fc9e8ba130bb39297b086942bea0cf"
+    },
+    "fold0-seed42/PaPaGei-S": {
+      "prediction_sha256": "e1f577014b55102a210bfe06304671a8bfe9489a76f43b654aca0669af7fffd0",
+      "metadata_sha256": "f2c58c6dc8164d0a62a0e373715d9ff2ae7ac36e86ec4512525ae418e3bd0614",
+      "head_sha256": "8450cb5efacf3dc13249fdd6c1f0bab7be3201e2e85c1439075368b0f44866c9"
+    },
+    "fold0-seed42/PaPaGei-P": {
+      "prediction_sha256": "28b38eb92c51fca866b5f4282405ba9be818d3a9616f93048e8b4324e5f6ebaf",
+      "metadata_sha256": "738ee95c99bac297a93ef51d037cd27cfe67cde81835dbda225ff5c83e3695a5",
+      "head_sha256": "6304fa93c25e36bb9bcaa339dd96c0ad1457992b8f8b965bf3c279ff2ac2ecf9"
+    },
+    "fold0-seed42/AnyPPG-random-frozen": {
+      "prediction_sha256": "c98d46e29eb4c5f5aa619b742f2d9c04dec101f14884557d54f9b4543cc9f8be",
+      "metadata_sha256": "c83ecb27a3e671b93a528a6bbfd14604c7639be13b8e8727925da81106253421",
+      "head_sha256": "be4f894de519e7335163708f84e3b60bdba479973867dd5be3787652a17019b3"
+    },
+    "fold0-seed42/SmallCNN": {
+      "prediction_sha256": "f7677a291da63ce48a42c7379aa979a9735b243fd8b81e0558a6baa1df686fda",
+      "metadata_sha256": "aa8d4b0845cccfa297b23fda9f7f8f015f4b9d262e926878f908587618d5aff9",
+      "head_sha256": "bf7c102dd2c8f4240941070d395be72fb8b32bef52837ef4a15242c990bf0afb"
+    },
+    "fold0-seed42/HandFeatures": {
+      "prediction_sha256": "d3a277b1722fffa41fccd8e02a0c1a4e061ac4ed0038e6ffeca6b8f10d33d494",
+      "metadata_sha256": "0cc9e1734b5444bbdedb8d86c8ad5db32b4edd6a2291727711187c7d9205cb8f",
+      "model_sha256": "6278f8c1ad1f7b1a7e00db3020c44eec93f50750cbe8d237f008d3ee60b32f54"
+    },
+    "fold0-seed42/TrainPrior": {
+      "prediction_sha256": "a518c0ac971fe6a8472e76912cbca099c5abc23cbea3919de0e17e68f38bbaef",
+      "metadata_sha256": "a3f9c685e171a4b3655ef9524ca5b191b29bc5a4d39c80a110dae2ce59141920"
+    },
+    "fold0-seed43/AnyPPG": {
+      "prediction_sha256": "442d3a659f848f6296996dc46af75d5960bbfc271933265bbb20af0b714fd323",
+      "metadata_sha256": "815c2a795f936961865279fdeeadf4818a5a61372ee67074246ed11dd2dc1135",
+      "head_sha256": "e5442ed8007c14b842b85f74dcaeddf93e2f20123a1fb22bd86459c2fff9b11a"
+    },
+    "fold0-seed43/PaPaGei-S": {
+      "prediction_sha256": "15add49149c75ad86cac4e0e96ef33a5f0d1a8f9d879044d71e5795273d806af",
+      "metadata_sha256": "5aee5ae0431ceefc5026e5aaa3b21c9c1a59aa0c1871d24762fa87fd69e84e5e",
+      "head_sha256": "48ac11109d0ea0c28eac394818b4dae40e539a0507b85454646da634b1384f10"
+    },
+    "fold0-seed43/PaPaGei-P": {
+      "prediction_sha256": "0d72806ab2931f0f19b7eebb24d6fa50c33b29e70355f7f0c22c3c81351d1f4c",
+      "metadata_sha256": "52fcd16967a3fb0bc50818d4bcd657110d8b886130412ffda3a7bfa7a3535030",
+      "head_sha256": "be4a54cfa28bf02f2641bf13a8bc9820b8f6bff973aca50ed7f372f72d7bed3d"
+    },
+    "fold0-seed43/AnyPPG-random-frozen": {
+      "prediction_sha256": "10638ae5eed5d51b11ee7df7981f63d88ce2d503d8fd000bdd0dd1fe5b77ac66",
+      "metadata_sha256": "2dc47a94bfe747461111c6dfef756eabf22cc14b45b67c26f4100247cacf9593",
+      "head_sha256": "0632c2a0bf80056c379e43fbc3fc5eea624ec7f5d2c38d97aefecaa6db29fe23"
+    },
+    "fold0-seed43/SmallCNN": {
+      "prediction_sha256": "94136563b3f4e924070b615ff0fab4c79c46c3a4643db39e652db7c3ac18ca90",
+      "metadata_sha256": "70175ddf9d4311c315318513d2640466fd1d448aa0760bc8c5d834ed3cd8269d",
+      "head_sha256": "066708aca9d66de14b536892b0680d08b34e66374d5f97582739a8dd4ec46e48"
+    },
+    "fold0-seed43/HandFeatures": {
+      "prediction_sha256": "818bb62bb714da7fac471c5fb174aa1a57f5c9345e86b2a9127034c46fbb4754",
+      "metadata_sha256": "fde59f78ac728ee60eab0f89bf4c0f102fe78572dd9067cff990b9d078c507ae",
+      "model_sha256": "0f4bdc79fee77f5b1a5774e2962e292f746a81f81ee52f88a0cb4c04e9802ff8"
+    },
+    "fold0-seed43/TrainPrior": {
+      "prediction_sha256": "92b5bc1810bc5f65568e866a5c783769e0e37b16035412f42f34b1caa45c9f19",
+      "metadata_sha256": "df7c274c49249d22090b2cbf8d599edc031855409328cb0e4a9ab5a326b2d779"
+    },
+    "fold0-seed44/AnyPPG": {
+      "prediction_sha256": "ba53d8d08d9383d62dd462c6ea099f9f3a5048da9d9bfb698e9e6fdcc7b1f9c0",
+      "metadata_sha256": "09d67f6bf7db7af0a0e8ddcb6f01a26e1a47ddf64bc6d1f3a4532fb359053158",
+      "head_sha256": "a49a5812b4abd665f9266f04d7e596da15b6709eb131c6b65513a378dfdf6eb0"
+    },
+    "fold0-seed44/PaPaGei-S": {
+      "prediction_sha256": "297d4a55d7de2b99234eee27157d45cca086ff70f72655335121d4cf52afecac",
+      "metadata_sha256": "866df7617182e09927be786d10cb1aa11538b17d68d3519c819bbf98fb9573db",
+      "head_sha256": "c7749cbba715a466754f3bbfcb9be1a77a25554a99aebad1f841470972cf2ba4"
+    },
+    "fold0-seed44/PaPaGei-P": {
+      "prediction_sha256": "c3c14ed68a066b28ba73b25ab31638c4575b59c384f402b0f940e0afb4abf8e1",
+      "metadata_sha256": "fa88e94a51272b7fc440895d31257de48d4fcd38c4c7c5bc97b06de8a3d0d0c2",
+      "head_sha256": "7f49e89e20d73d1cc7d4da5edaf588f3bed81a554f057d85b60fec7bf422e90b"
+    },
+    "fold0-seed44/AnyPPG-random-frozen": {
+      "prediction_sha256": "968820fd1c2fd6cd5ae4d9a0b81221090df99648b0ae7e8c215344f476e7b50a",
+      "metadata_sha256": "c061d10fc7663bc17700f75b6132981c335256e1823b75b950dcf19346efa610",
+      "head_sha256": "ec9514f3da7dd55ca7246f9fc726198c49be8c78975f93a68d60fa2686280d73"
+    },
+    "fold0-seed44/SmallCNN": {
+      "prediction_sha256": "1f115edcd6dd5b7aa01cc7a549396dade3a6cc48f4d87f6ac8b4a788ac38db0d",
+      "metadata_sha256": "3fa17ceec3d17c34412cc6c5b56e8d0f0211b382dca49a9f1d39d71e303b4cdc",
+      "head_sha256": "ba5e918588c57106d81cd7ce0f249a8fbfd0dfefd2a50a9f36b11f86ebe1c0f5"
+    },
+    "fold0-seed44/HandFeatures": {
+      "prediction_sha256": "b111e69a71b4ec5c8a6989f463ad77ff21f266b30856524cb81fc8e45901a4fe",
+      "metadata_sha256": "985648bcfe94cdaba185efdd68905f585bc29883609230f40f5752cefe11f36c",
+      "model_sha256": "4868fa0ae196a493a53a05b3b7ea1cc4c26a7590dcfc6701a82ae0b718937473"
+    },
+    "fold0-seed44/TrainPrior": {
+      "prediction_sha256": "16f1470c9adc6dab54a811a128ab266a97bc0c1360feaf457e27314ece404d5a",
+      "metadata_sha256": "b48cca9bcf86f8df565ecbe335da8917fe56121e964ea0c7641c0a27507d3637"
+    },
+    "fold1-seed42/AnyPPG": {
+      "prediction_sha256": "3900cc97ec65571037ba798b0bfbd88d23d6fcbc492c6f8cd72463ea054ac509",
+      "metadata_sha256": "edb63fb025cb1e1ffee0b99755b3f2d6144a19c178dac5b3a431085794a27111",
+      "head_sha256": "f233ca1385d6ac02ccb7a215feb3d166e2ee0659f3a664a6406862147dcb4d87"
+    },
+    "fold1-seed42/PaPaGei-S": {
+      "prediction_sha256": "6840c8a2dd0b84989efdd803fcc7082ce0e11a438e6eb2e86d14410491be531a",
+      "metadata_sha256": "868df703645ae4b43f0aea1874c683188fc888041addf4917b6bd9fbd9dc99e0",
+      "head_sha256": "92e4524ba14879dfea2dad14b25cbeb52ce8276753792ba357f2eb3ca33d3935"
+    },
+    "fold1-seed42/PaPaGei-P": {
+      "prediction_sha256": "3bbd6e4ec33090997e9f51de1638be28699e48c497305a6d9c62c067629457a1",
+      "metadata_sha256": "fd1b6ba0404f5d7a76d38d429afdc4571f5786c8e3a63c017ddf4283c3b3783e",
+      "head_sha256": "6c6f2d6fd2f5cec236ba318b91901dff5f7a9fcaac98806b8fd5a3a866bce294"
+    },
+    "fold1-seed42/AnyPPG-random-frozen": {
+      "prediction_sha256": "17f4c96a0d6332ee4f3cada17d0f3d89f97b4bd0792345a029afdb191d0ae387",
+      "metadata_sha256": "ccb2f109a507ace7b7a45bd67a8463e55e3b61ea224fd2f25aa711526ddf86ae",
+      "head_sha256": "e8343612c149b5da2fc4f6bcf6db911465a3fd98a6dabdc399fc2ba63f54d23c"
+    },
+    "fold1-seed42/SmallCNN": {
+      "prediction_sha256": "06471352e66b6cf3d423b3c9743a5cd3cfdb6fe61012bc0ec6ff66f310627e2b",
+      "metadata_sha256": "9b49ad005acbadc1d4369f564672c9e47589c10cfd5244c3963f60cb79b8e2ef",
+      "head_sha256": "3557cf48683a466b10732f2825e8c0db97a06d95628a0866192da7875411de1e"
+    },
+    "fold1-seed42/HandFeatures": {
+      "prediction_sha256": "747be6c4f41f5ee4aa55a6ef90aa6321c28114596c254d9b58451486fda8e7f7",
+      "metadata_sha256": "50190be9752526867dc7c7b070959d307732caebbfc779fd9dee2c4db4589bbb",
+      "model_sha256": "03a006b4e8bc3d091a251782ca3602428ab05a7a5c375d55cdded842360701e5"
+    },
+    "fold1-seed42/TrainPrior": {
+      "prediction_sha256": "423a04fa489b8be1f54337118931b4bb1f3b507515315cf1a0b3834c10a0177a",
+      "metadata_sha256": "ea54edb6433eb58c4978a9dc72824cb615d5d934b6493069c41cbe55c19459cb"
+    },
+    "fold1-seed43/AnyPPG": {
+      "prediction_sha256": "86ff22c7bc01f7d286bf602de6150f26ef5f0e73c90d43266fbc38b7d9207c82",
+      "metadata_sha256": "a294422bc18f2a263c39f86965772fe8ef7f0494c21859081f34cfc9fda8184b",
+      "head_sha256": "ce1c0c7e814d380448419a738c562285b3b65c7135c66f4711301d4013c04516"
+    },
+    "fold1-seed43/PaPaGei-S": {
+      "prediction_sha256": "5985ad4603b3ee2d2023b1169c51cd2253a6ea10d5ccfdf7f3f9d1d1524a00e9",
+      "metadata_sha256": "47cf2d6993b74c4682c05a2f2417cf9ea0b3292639827d4001f5f73e175b3731",
+      "head_sha256": "0e5563a86dec0d3c3e88f062d29b946c881f9043779a01a564f69ce3215ff643"
+    },
+    "fold1-seed43/PaPaGei-P": {
+      "prediction_sha256": "808d66c1817251e240fff8af335a3c5b3e4775ca02acd9a4a76e26af2dc4e5b1",
+      "metadata_sha256": "2eee3b01e15c320f895641ce0b07d465e2b614fdb04e3aa893b5c2fb78d3535a",
+      "head_sha256": "2135f98d8dde1460e1e30a1d59e1464e7caf710dc952c44558d2c0d80778cd0e"
+    },
+    "fold1-seed43/AnyPPG-random-frozen": {
+      "prediction_sha256": "4576200f486ddfdff8b3d3d764cb2f407a8b91107ef879f369eabbb0d925b396",
+      "metadata_sha256": "5962263057f7060e4bd2f25c0186a2e2c44d3732691ed5c2fcb8ac2039217546",
+      "head_sha256": "0ef3e3c542c0d0196f93b9fd969a651e0897c4abda7d684f33ccbe755635b4d0"
+    },
+    "fold1-seed43/SmallCNN": {
+      "prediction_sha256": "f631d5b32a08279a864c72eed4479e368bc89fcbd3521473c5f35723869ab0cd",
+      "metadata_sha256": "200187c062b806eeea8ac9cb9fd36292ea5a10b4fd66671627fa856f43f832c2",
+      "head_sha256": "b5e21958c8405bdd8a31cf48329057cf18630e1d0eb7d36d1ae37067f5fd10a9"
+    },
+    "fold1-seed43/HandFeatures": {
+      "prediction_sha256": "dfe4ab9417817bb8a5197ef0cce74f573836371a18b4e68e3d1549283fb9fb0d",
+      "metadata_sha256": "a1f5face791aa1d8e63dff819b157c6932be095a3b7f6393e3724dd84fe348c6",
+      "model_sha256": "a5550044539e50a10d4ab5ad1940f9a2c3b3df9ad8db537c8254be0a36e0fdff"
+    },
+    "fold1-seed43/TrainPrior": {
+      "prediction_sha256": "203bd01d81edae33bd5f02352a72d749b55c1762183cc5121bab3ef7d84baf20",
+      "metadata_sha256": "a3dbf33aa745d067ebb40fd47294d8c4c0ac09fb7ae8db3ea6c097d8efaf591f"
+    },
+    "fold1-seed44/AnyPPG": {
+      "prediction_sha256": "67696b3bf2b1d3902069ac20d880d2e9afc4d851cd68ec1fe9b9330cbd14fecb",
+      "metadata_sha256": "7e2cc6791afba65ec7f9ef668724ab961566619b5979a4ebc01f371eee500a64",
+      "head_sha256": "24c00060a3e4a588f128fde534b0b480bfcbc89ebbfc8c6025acdf7e1c7361a6"
+    },
+    "fold1-seed44/PaPaGei-S": {
+      "prediction_sha256": "c40839a757bdb7449b8ac73fc36c3a9e65f3e7011d32b0e1d0cfe7c0ff8a9ee4",
+      "metadata_sha256": "3366fdda3e206a471e9d84092fa01e1fabac997f1084c7ff86d47eb96f70dac4",
+      "head_sha256": "9cd00726b9d6f0aab94339a19707da6b10809e878375f23c5041355678ef47d5"
+    },
+    "fold1-seed44/PaPaGei-P": {
+      "prediction_sha256": "e5c65f1e4b4ae230ead875c7e050230f6cd01662b3dff8d686f07522ce6bcd34",
+      "metadata_sha256": "854c831522c68df754e7a6e22b54b87d478dff9743da9f190aa30159263424d4",
+      "head_sha256": "7c567b243a92ed315cd5cafec498ee368b23fb9d75c26f63fbdb3805128bbee8"
+    },
+    "fold1-seed44/AnyPPG-random-frozen": {
+      "prediction_sha256": "658ab6e46fd3f61f1f8948a078eb9f99c6f50fdf064651dc3b4c592ddadc3c85",
+      "metadata_sha256": "2626b7d2edc75eb790370ca0495663425001de3711412ec49086877e17fe3651",
+      "head_sha256": "c74bed9ff6f3b74758f3cd58d48e6a57bca45ff3ab50dee70bb97c442315792c"
+    },
+    "fold1-seed44/SmallCNN": {
+      "prediction_sha256": "1f42a4f833e8b72b98714fbe3f9bec5aead826973df67da9cf55bc872ac16a6d",
+      "metadata_sha256": "626472dbbe53890997a51df99fa939b4a42a20ded507bcce88ef1d6377da2515",
+      "head_sha256": "b400bdcf2601dae4fe8dd994b903813533657f4601431866455543b2cafd28c6"
+    },
+    "fold1-seed44/HandFeatures": {
+      "prediction_sha256": "a55fa7eb15ca213da6bc10efe2395d071074d570a0916df019e8ff63e24834ad",
+      "metadata_sha256": "d9ba1e17a0e15733f3e49829109709474619726b9b7f99037a8952db660f4ee9",
+      "model_sha256": "1138ad6ffeef40c6909e790c7a164fd318122d281fa2d59898b982420fc37b9c"
+    },
+    "fold1-seed44/TrainPrior": {
+      "prediction_sha256": "dcd9bb59fb48175f48023343a6d4e704ff98c39ea70de020bc1ecde52c1aeb93",
+      "metadata_sha256": "e308756f91dd9b57e59ed7620556c74a0276158cf6b4d2bb2c20ba19fd5e5602"
+    },
+    "fold2-seed42/AnyPPG": {
+      "prediction_sha256": "4c380f3e679d361e0fda26eac25f31db081271c04da8e35301c05e52dcf08622",
+      "metadata_sha256": "14e3e5a2ffb0e2f9504a688d1bfb0b8481560fdd9bb32c4c6e49b111d3073126",
+      "head_sha256": "6a6faec38ce71d1820c37ef8097f3104a3ea1e1777468ad5b2eeb87a1c2000a7"
+    },
+    "fold2-seed42/PaPaGei-S": {
+      "prediction_sha256": "7465874d079ca78d738244d71aae45bc8c7554ee04a33a644c3734a5408d6c98",
+      "metadata_sha256": "8f4e8e02832430694fd6a5a48fb8f20571f58c012cf12b0299166cf4e283a26b",
+      "head_sha256": "f49219fd12084cfe7f754c512332ccb93da3ea9b13a8d87a48bddf5e3887503c"
+    },
+    "fold2-seed42/PaPaGei-P": {
+      "prediction_sha256": "dc619403345eca0619bdeff671178980fcc964fc9b939bc12c4c17b877f716b1",
+      "metadata_sha256": "345afa6e0be039a40ab12f62278d5c4cd81a5db23e419195395d04dc64cf9375",
+      "head_sha256": "cd3612a9f8c2808e7cbb0e43556b33a6294bce03b564ca224618b8c71a0c37de"
+    },
+    "fold2-seed42/AnyPPG-random-frozen": {
+      "prediction_sha256": "00c9877c6314aa2323f86b27372ea17597f36d4098d497d324b7edbacb4baff8",
+      "metadata_sha256": "5d962068cef94d794972d0a8dd96e80e1d6943952e77a9d1788d4c6901182b66",
+      "head_sha256": "4de539b8db437819012c5876c434b7e50f95b9c946723980a6de6543bb2c626a"
+    },
+    "fold2-seed42/SmallCNN": {
+      "prediction_sha256": "a416f4075ad1581450770cf6778163b3ebe1f601aabfaeda0a48362eb62af3e7",
+      "metadata_sha256": "c19800a49b90364795b9f2cdfda77a5bc8516076a6d495bdb7986ddde73326ec",
+      "head_sha256": "62d3f31e6dd1e7ae7ca43455d173384454ec5272860a4bf2829f4b55832c997e"
+    },
+    "fold2-seed42/HandFeatures": {
+      "prediction_sha256": "c5964244d06c6cb36e7149e3c3f5576d094d0908488d2bf51d35dc2bad55f532",
+      "metadata_sha256": "1b28de68e8d0bf59caefa31550ab756dac91ff0fca6b10fa9eca55db1ea41a80",
+      "model_sha256": "6407d3ccb88e04f6be594eff8d373ca5a2966a8fdea738c1a8ec1c16a6ea2b48"
+    },
+    "fold2-seed42/TrainPrior": {
+      "prediction_sha256": "583a880f5fd61413b84afc0530f1636c934c88353f64ad8819d5f0b16136e2e1",
+      "metadata_sha256": "c3101cd9a6bf01e70975fcb49b9b5aacf63964551ab53c15687a2b4b147b143d"
+    },
+    "fold2-seed43/AnyPPG": {
+      "prediction_sha256": "adef4671f5503d1e77e7a5e3f00b6ee61ed407ddec47477fa569e66ff7f51107",
+      "metadata_sha256": "d70ef64dec8402c3fbe1da2dbef764341ab117955ba2e2101ed2e3d575407a11",
+      "head_sha256": "4f1bfe1d6a647fed195284e39bb2e27227a31fce66c94253cd6cd2b5bd413e29"
+    },
+    "fold2-seed43/PaPaGei-S": {
+      "prediction_sha256": "9aa867c5d11dadeb0945b30e652f20d0f773349a0df3dab0eb02b0124ad7740c",
+      "metadata_sha256": "2aa0c16df17963c21ffdc012bdbeaddd2f8200c22bceceb7b937b41cd269927f",
+      "head_sha256": "e4ab3bbdbfdc178214d83ed623a7014cca51dd57c2eceab2c9b461c80bfaafae"
+    },
+    "fold2-seed43/PaPaGei-P": {
+      "prediction_sha256": "f96d1276b5d8c4270f53478acbf3284b3c91c5df580f0aa477134e5625072c56",
+      "metadata_sha256": "d4f7acbf7e46ca4dd838fb63be975a0a24bc541203abfa49f36a078ec68e3559",
+      "head_sha256": "69285a19fcbff30457968dca163d64ddf96082cd76f0b836b3f3089ac930638c"
+    },
+    "fold2-seed43/AnyPPG-random-frozen": {
+      "prediction_sha256": "1a70a4cef09fca0c724a6de26bd76c4e9e4b61147f93c11a2f41ae1a81b52172",
+      "metadata_sha256": "4a42a1927122f84a8e528789bd9bf696388b05916a5c49f929d269907b982dd1",
+      "head_sha256": "f629220c2c6092cfb6195feb6d188697394c4b6a4b0893e124277f855acfebd0"
+    },
+    "fold2-seed43/SmallCNN": {
+      "prediction_sha256": "bbd7019313dc9251341737477bca1e06d2a3a8130fb4cfb3c0e44dc8d398d233",
+      "metadata_sha256": "630fc7b5156bc66f272af84042feb731a11cafee0a2617535d4fa4773c54b854",
+      "head_sha256": "dd3c7b42731d1f2ac637d4ecf9c259a4c1fd77698c24d273e543deeaefdd5a34"
+    },
+    "fold2-seed43/HandFeatures": {
+      "prediction_sha256": "167e032b989f7c3e78a4b8a5f451a715fbd2b01ed6d4299c323c6ac82000a473",
+      "metadata_sha256": "2cf573ab91314558f36ba7c0ecdb1bf2ee827213bc2015fb921842df7689f890",
+      "model_sha256": "9757417ed96398a7d9052efc345978eba4d1ed0255255ea65b082ecde4f5e3e0"
+    },
+    "fold2-seed43/TrainPrior": {
+      "prediction_sha256": "d4daf7f657c433faf795b0e543c17f00d9af44448a67d65c8ebb062926352bdb",
+      "metadata_sha256": "00f6f7213037ff7084af36bce9b8a2005b5d47bc8a1c88d840edf5f0065a01bf"
+    },
+    "fold2-seed44/AnyPPG": {
+      "prediction_sha256": "d9e142ad50bd1de62e56e801a481f1caa79cc2466054282120216ce053218d98",
+      "metadata_sha256": "1884c79fd4f6c2d66faa75463630842182a53387e2c2d9344a45c64b6ed608a5",
+      "head_sha256": "dd9b537a825c4e7cf1d56cfa32e874b280a5e4a645667b5976be0baf2542df0d"
+    },
+    "fold2-seed44/PaPaGei-S": {
+      "prediction_sha256": "90f2b8fb86a2e05b3aa5fa4f4740f33063755ada5d30d0f8e0a667a1cc7b9ad2",
+      "metadata_sha256": "8d220fe19c9b604cec4ff3d07dd4160a414662a0b342a08649fbaf339fc7f989",
+      "head_sha256": "20fe7c152874df22ead5acf903cb8be2cbd75bf888a61a38432b29e98eab87ae"
+    },
+    "fold2-seed44/PaPaGei-P": {
+      "prediction_sha256": "b309181f1d8fbda2786bf1e344e52a6693413e6654a60f6754a5548b0240dbba",
+      "metadata_sha256": "3852bf7d5ac3dd77775e867e2e6af5d4b74da88e8d9553a38df3e89be203e033",
+      "head_sha256": "2160a9bfb7cca86959b4ba889f5f5bc1bf44a82b8a11147c29d1712a549244a2"
+    },
+    "fold2-seed44/AnyPPG-random-frozen": {
+      "prediction_sha256": "c6fd05fc9c302283b6b5720aac286faf72196efbeeb89cf5311e584ccff55d0d",
+      "metadata_sha256": "50e61c316b2ad83db6c9eb629448e945b15cf0a3087e709f68b1b17e5a2c07bd",
+      "head_sha256": "8902deee6d1c46d26fb4424ff5a3f8e94cd681dbe0ee19f0a2529d616c8a87a6"
+    },
+    "fold2-seed44/SmallCNN": {
+      "prediction_sha256": "81ecb28670d11a505188cb1e11b8928a17a3d9476490c233f25bf442723466ea",
+      "metadata_sha256": "cb69cbf8bd9d4eff97a55eebc867c588d3f6667200a19a5042e25560899b4651",
+      "head_sha256": "866cb957544a06667d45d5f1b3dedb5e20e3f933023efd9329fb0d38994077d2"
+    },
+    "fold2-seed44/HandFeatures": {
+      "prediction_sha256": "be97a43bd73f9851c724950389e1cc57bf7d48910e205fe82d57df8d97b9edc0",
+      "metadata_sha256": "47833136abc99420be89f921ca2b56a006c3ae92af1d232eef5d26874d9a3fa5",
+      "model_sha256": "a3912dee93909e97e1ea0277d0417d296856ebb60905a8c812d26cf3e0b0b5a4"
+    },
+    "fold2-seed44/TrainPrior": {
+      "prediction_sha256": "4bd7a492e0c19ab6b479c5fd01a4dea7b11aac927ea706d27935d5447b57908c",
+      "metadata_sha256": "b05fdf17d583e41769d107a0d1a2a67357d3c7c433748ae07fa5d5be2a270ade"
+    },
+    "fold3-seed42/AnyPPG": {
+      "prediction_sha256": "9c1bfd3ba746114ca5ac4d442ea0a1d5ea41b975f4c1f1a16c80ee9b81b00c9e",
+      "metadata_sha256": "062b0fcc625d7530923bdcd34d3d7e065e1f3566f1fb982d84b4f517ee6853ad",
+      "head_sha256": "76c819a167e042605f0087d4cc8f1d6faee1066f360da1b310280efe1eed980d"
+    },
+    "fold3-seed42/PaPaGei-S": {
+      "prediction_sha256": "962a5882701153ab311d76d1a13ee3818a905a4b9ef0d26e7eafbb28120560b8",
+      "metadata_sha256": "1f18ab3326392e6f536bc0d39296f28a7f564cdc084f100987aaa1fbdc0cbf28",
+      "head_sha256": "36b693edbb2a7722117451ce291e205fd8956e0617dcdbb70a9b06a10e064ed3"
+    },
+    "fold3-seed42/PaPaGei-P": {
+      "prediction_sha256": "8e15eac91c87e81a13268ff1bb0d9a3a1bd093154c6faac75d65d45f97cfd3eb",
+      "metadata_sha256": "ccb6d6d9fcddd6e26eb522fe1d04db87bb0eae0333ff1bbf69d5e615f23ff304",
+      "head_sha256": "518a44a4797f121e2e497573a8ccc3ae4481f85345b6368bd73679f1df3ee183"
+    },
+    "fold3-seed42/AnyPPG-random-frozen": {
+      "prediction_sha256": "401ab5032a55d39eb4f67241512a62c5a440c751d91ee022906b280b60dc69e9",
+      "metadata_sha256": "3330f8d34b3ba1be493004835c325fa6f10c8e3b7853c382f5e896a9bb7ce924",
+      "head_sha256": "9587181ac20241bb2055d4fda7ab57d11b0e32c7a8b277f7895e51cc12cc8496"
+    },
+    "fold3-seed42/SmallCNN": {
+      "prediction_sha256": "b74bb8c7ceada7976f7938948398f3af92e20146a798f6658f00692ffd88161f",
+      "metadata_sha256": "f6e50c2733854cbf64404a903f12209651404a31c86b870f2f1aa5f1d218c531",
+      "head_sha256": "98e119bbfe84b2d849a4c27212b85f787da6d55d36e472b127665cff9f4029dd"
+    },
+    "fold3-seed42/HandFeatures": {
+      "prediction_sha256": "d17f81e81e64b581e8530f9c0d2c8bf5bcb709e32d943c73b852579014891733",
+      "metadata_sha256": "0e32e265f195e77faec1b5c29274f8faf125bf523032148038d1d2440a3da9ff",
+      "model_sha256": "a667575bd6ed5fe9520b995770ef9f61a6d4896fef138b52e92a2ced63993192"
+    },
+    "fold3-seed42/TrainPrior": {
+      "prediction_sha256": "2bcf7fd847d632bbc36007513f0e64bf8e59acea182ef6699621adfd8dc250db",
+      "metadata_sha256": "c65a041bae4a5ab359baf9fdf0a8d679516296b655f8ba6f960a27b9e8ee9646"
+    },
+    "fold3-seed43/AnyPPG": {
+      "prediction_sha256": "36d211fe0b22db53bffc9d4e625262299135f3dc58b982528f4e097975a4ca22",
+      "metadata_sha256": "869f0308080d9ee5caa868583d4f9f5afed6b0821584d49f9868f52ad711c484",
+      "head_sha256": "fb14908f68052858e1df1bb8eb365cce31b553b300c3a7a205b0e8e013b56274"
+    },
+    "fold3-seed43/PaPaGei-S": {
+      "prediction_sha256": "c19df1a13d07fea1a8d3e1aca2ea47aa82a709b4b162313e6101435071ce9e7e",
+      "metadata_sha256": "a59bf5847ccdaef5f1b3e43f62081cfd5076961c3f7ce1d1f139a72c6a89f9a1",
+      "head_sha256": "beb1e5b6c75bebb7ad908a8c1f666b7132fbbd9fbde3809cd1d8f0412ad8c2c8"
+    },
+    "fold3-seed43/PaPaGei-P": {
+      "prediction_sha256": "f716da0b62aa6808a20b161a775c1d9a006cc88e795f15465838cf02a213f5a9",
+      "metadata_sha256": "ed398723302189a14f6864f15974d8ec241e40a1300272898d45e7d9b755e6e6",
+      "head_sha256": "c90a64bd555c015fa0b155c7721c0e07a74687fa317460b089402670e56bc62e"
+    },
+    "fold3-seed43/AnyPPG-random-frozen": {
+      "prediction_sha256": "31a29149b0a9b88c5efcd81a89d19c56855babe35526f929d55d2243df1d4b2e",
+      "metadata_sha256": "d313cecee3ccb484ec30e250588b1fa71a0f85c5412dc0c6569d43bbe6e3e9ee",
+      "head_sha256": "00dd991e89d7c55e0513400c3fda9c9a0176581e2d007cdef056dd12a86cac8d"
+    },
+    "fold3-seed43/SmallCNN": {
+      "prediction_sha256": "89e97cd15ea21731eca12b18296ed70b0dde6bef1e71601a3cc1109b4d1fa8d4",
+      "metadata_sha256": "d9a9b796abaa6a81837e72206c700840c4a62270610fa777159f797d523b6516",
+      "head_sha256": "cb60e11eb4f9f6856a1576dec19d8203d2bfcfcf7debc677d2216903e1f5f4ab"
+    },
+    "fold3-seed43/HandFeatures": {
+      "prediction_sha256": "7d21eda09c742d4ba020e82ac21a6d91bfe163888d5a69e2c22cfb62da6564bd",
+      "metadata_sha256": "a9b311dcc3ac9eff005eadfa615b131ecd1953cfc2b42e479cae28f9476a81cf",
+      "model_sha256": "93b56310fd9e5dde16ca8ad10d8a0e02bfdd2d849851958e5f788a8db132d274"
+    },
+    "fold3-seed43/TrainPrior": {
+      "prediction_sha256": "bc96dd468b13ec4576fe6c6c33b203abe705b36c80b6566007dd3c78ba2da2a6",
+      "metadata_sha256": "f6c906e5135cf880241da104d572c75f2c8bdd34b3aacd17c51fee4b32eda805"
+    },
+    "fold3-seed44/AnyPPG": {
+      "prediction_sha256": "0c1a0faacfaa50d0d9ac5dbb7f03b80d490a9a3da5e8d8e0807c79f96204724a",
+      "metadata_sha256": "b55fea6dfa0127958fdc8d18a350afcf4a7011b35b9f31b5db628b1df0fa9691",
+      "head_sha256": "1fe3aafaaf8f970b14322bbb7c52369e55bdca7ae42ec6efecc8e70c6dd4e6c9"
+    },
+    "fold3-seed44/PaPaGei-S": {
+      "prediction_sha256": "65df4092344363bcadf67791211c3cec4ef385d08ef38ba47902ad05ee00d14c",
+      "metadata_sha256": "2c20874f66536b5c484cd3027e1b6f96aa83877c4a340abfb51ce11f521262a8",
+      "head_sha256": "a95e0df90be3ae59708e2d84cea2f6f3d115d1607bf42ab77f8180d8fa44a9cc"
+    },
+    "fold3-seed44/PaPaGei-P": {
+      "prediction_sha256": "e5cfb90ca2ccaf6fbdfeb9539d7f24644cd9845fde929f26d8ce8d226216e6e6",
+      "metadata_sha256": "f0a9d70767aea7a209fe57cbc7c6df0557030020112c7359c02ece78761939a5",
+      "head_sha256": "2f8ded2cf7a914af56dcbd240ebff0100cfd8cc720da2117dfd88f2134c9a8be"
+    },
+    "fold3-seed44/AnyPPG-random-frozen": {
+      "prediction_sha256": "a6971bdac1e09396d9d19af5af32dd66086bf79afa7859b31dcc2a29c7534d2d",
+      "metadata_sha256": "955b75151e21199339001061c73bd50df4f3895396fe12e3cb3ec217ceadd2b6",
+      "head_sha256": "eb9c6e96fa9004f5b631df81344c31daf876fcfe63e4d1dc260f4390850b25d7"
+    },
+    "fold3-seed44/SmallCNN": {
+      "prediction_sha256": "9c36c460cef303f817bf2c515d53eecd3aa69b8b0016714c3727ce286cfb6f20",
+      "metadata_sha256": "c30f05955c50b901f7b94868086e8dc105306b013573b0dadf077818c70de955",
+      "head_sha256": "261d385612b19c4f16020c48044f0b15266dc1534ecb257d56439f7a91e15c41"
+    },
+    "fold3-seed44/HandFeatures": {
+      "prediction_sha256": "9aff23144c2a4251b751df13e7008ad4d349ad77edec665cef4fe4b1169ca720",
+      "metadata_sha256": "4ad58f7c6b02e0778cda5092846b347ea4cd861398796b1972415a77dac9e00d",
+      "model_sha256": "c44c88d93ad6312920b02dda5ddb5ba37ee8ad89f729a2faf4a6cb52469fa750"
+    },
+    "fold3-seed44/TrainPrior": {
+      "prediction_sha256": "f6d2add93e1835d21b815b9e7e9864fb43717c8ebf7d2135451a7eaa028a842c",
+      "metadata_sha256": "05f2fec6afcbe45da0903db9f6bfb658b14fcd0dfdf89467676b76717a9d0363"
+    },
+    "fold4-seed42/AnyPPG": {
+      "prediction_sha256": "3a4061d32d4ad0572ef4e6d67d0717d3c1f65799930c841d0895de95b8f9edd9",
+      "metadata_sha256": "2b9c63b269c3c130fc9b863239c5a30a8432c1c37b408e13f5a8bb6af6d22a93",
+      "head_sha256": "f7fcc666b432aad370b84ac2d7043ce2a2057c672883344599d4fed470b180f2"
+    },
+    "fold4-seed42/PaPaGei-S": {
+      "prediction_sha256": "72aa53744ab41dbe927b3750a9dc0d1564508db14596f1d0972d290e0ee75e8b",
+      "metadata_sha256": "2c4e3b442a34fd9f1e9ec2aa929430783ee9ba90965e720ee6d5c3ac0057fd67",
+      "head_sha256": "491a8319d7ddb6298027693e7e40e2f36970a6a1e13fbc3c56d721872da21682"
+    },
+    "fold4-seed42/PaPaGei-P": {
+      "prediction_sha256": "278c822ca79cbbd9775b6717f86aa3cd64fc48dcb13fb50b3a15be28ef3a80af",
+      "metadata_sha256": "a711975155e3417336209bc86e2d32b53dfabd64184e096fd5982283e4fb95fc",
+      "head_sha256": "6ca603186166e09260ff60362bef2e282d85533acc82d15b9ff531ce311ffa57"
+    },
+    "fold4-seed42/AnyPPG-random-frozen": {
+      "prediction_sha256": "b149203f075d8cbde4accac8546739ba26f56a346a371fa587e4e2f0fabcbe29",
+      "metadata_sha256": "bf6ee198165f518ef75ba21d464665e17c897a35bfa9fd8d5a6fe584a675a618",
+      "head_sha256": "205af7b97329274477f86347762ba23de736e765b4e197341db737d5119fa3dd"
+    },
+    "fold4-seed42/SmallCNN": {
+      "prediction_sha256": "f9856fa32715afb23c57d60ae7a3801391e8dac5fa5f05f4088ec8ae0a42c9bd",
+      "metadata_sha256": "40ef23a9ef32cfcaa05f9d417972c294a60a6977e3ad609d766ed310841d785f",
+      "head_sha256": "377e63299635f7502d4878d9f97f2143d746116957aa49d2297d38dd2a749b13"
+    },
+    "fold4-seed42/HandFeatures": {
+      "prediction_sha256": "28bb419694de6ccf02eb8f9ce559dd4f9b9273487a6a3eceb51609877c73bfb7",
+      "metadata_sha256": "8b94ef3843a59b993df072b9aa6028a0ca2ee14e69c9d4433d31ef15ceb08c28",
+      "model_sha256": "b0306a7882d4bf00d2aba575bf16a24e4997faf57f47831ded5a5f7b9cb78179"
+    },
+    "fold4-seed42/TrainPrior": {
+      "prediction_sha256": "c5e3391128f1d1988c1aa987d1521a4ce442807c72bbe693ce7c6026d57e3569",
+      "metadata_sha256": "539560a5df8e97f8ddec5a27abd08c3d138d1efd79311ee5de3ba9bb5484e6f3"
+    },
+    "fold4-seed43/AnyPPG": {
+      "prediction_sha256": "cab1cfa77013fb22b7eb6b0ef26541451a054b54db2aeea4acb2e77b54ba0475",
+      "metadata_sha256": "49fd5bce3eb2a5afbedcf72e97c7c8228c01e13825c3361148ecc9b421647619",
+      "head_sha256": "211a4d7d129dfa7ab3900b334f9677837b244a3229a7bf4d4cdcae7f298d4219"
+    },
+    "fold4-seed43/PaPaGei-S": {
+      "prediction_sha256": "1e27be58d5a3824c92a12949a43c48fdf1c561f47d2dc23f27052f89cd813513",
+      "metadata_sha256": "47f7653328eb457ca1add72575d936babdc24ca5442fc89c80fe647f5324f796",
+      "head_sha256": "4a372d6b50180d776308ce65ba3dd30d580dc7ceee5bbb3bd2d41eb35705dbf0"
+    },
+    "fold4-seed43/PaPaGei-P": {
+      "prediction_sha256": "3a824306eca211cbb586e29dbc7216c1d7b850e208f0f8833092978d9a019ea2",
+      "metadata_sha256": "90fdcee1d3e6f68c52159af425576b713d3f48053956f2c9b9aab9f98f9cf3c2",
+      "head_sha256": "b468d8dde2938910b8a9c6c7bd30b59582221e0b8f5304ba20bfc9362fbbdd97"
+    },
+    "fold4-seed43/AnyPPG-random-frozen": {
+      "prediction_sha256": "7e637b1521124ff8fb8f4c8e7d801ffa47c5eddc82a5c7700a47f14792a4217b",
+      "metadata_sha256": "21469062493f542e25032d15ef6bb7154bfd0e827c0fc83e607e3583a9d2a1a7",
+      "head_sha256": "ce14ff30adf21484cbb2ec0bcff075b4f6113732710da8f71df57b84de4cd3e7"
+    },
+    "fold4-seed43/SmallCNN": {
+      "prediction_sha256": "d08b6c3f0513eabf8f5358ecc52ce5b50c323592ea159898a5225be4950a1534",
+      "metadata_sha256": "30b200097de37ee100d98a5b52b32cf58920c6cc2fc0b2665afa179b97f5f956",
+      "head_sha256": "bd176ddad652dadd7567750b919ee8b5dedda510e982626d0dc0450265a4c2ec"
+    },
+    "fold4-seed43/HandFeatures": {
+      "prediction_sha256": "f7f7bb96bc60977d8f6189dc49a5d0b43511e3cffa43976ecca6be4eeedf80a5",
+      "metadata_sha256": "98b6863384782fa522928ffb0c368bd8f1da6de5cd1efb8d4e444eaeec1b669f",
+      "model_sha256": "c47aa0c919a107c5382d370c7ce44cbe6fc67daceac09108f97d8a3f04201a15"
+    },
+    "fold4-seed43/TrainPrior": {
+      "prediction_sha256": "dcc145bb279e73b2904d29229b5f7a9a8d0a1c63572742c2425353ab4cd073a8",
+      "metadata_sha256": "e7d0b63b785bc90a4216b466313c7ef90e00ee44eae5be1ce7f3893a82c2242a"
+    },
+    "fold4-seed44/AnyPPG": {
+      "prediction_sha256": "4267a6cc01d516241960cb78307d38eff5f3836dc79517a50da87d165193841e",
+      "metadata_sha256": "35b0456a865fee70e98028739aed686fcff2786f2fb3258603b0ef099c4f4fb5",
+      "head_sha256": "b1c5709ad05b18467cb386fcf2ea9ba61733a3bc55a83a99fab5698037c1996e"
+    },
+    "fold4-seed44/PaPaGei-S": {
+      "prediction_sha256": "40723617005129590239e791b3a68ac5397560ac19e5c800fe2980fb39363f87",
+      "metadata_sha256": "6c4a65dd9783f277b7e2c4923c5467629c66850cfad443419dc21853ddcda9d7",
+      "head_sha256": "6e66d157c60c4ff140eeefefb191ad69f7be38b976048058174d1d1f75324365"
+    },
+    "fold4-seed44/PaPaGei-P": {
+      "prediction_sha256": "0068c9b2cce0ecf22fea0768e012948f666650d7a7e05a2cd55096104bf5bb9d",
+      "metadata_sha256": "2d2fce2b8a7d649ba6f0a68796792f56e99cfa2f5dba0cf6617019142e571be3",
+      "head_sha256": "43e76f9e50b1a5f5126fac193a18d81f273dd52773d85a19ef7b49b145a31466"
+    },
+    "fold4-seed44/AnyPPG-random-frozen": {
+      "prediction_sha256": "8d3ea7916b18a96267bb019c2bbba46eeb219ef2525ebc63c1a8a60af6015f37",
+      "metadata_sha256": "81bf1a88424b1f7414d1a96bb9a67dff45aa3ecc6d63fe2cad68faf8920c7362",
+      "head_sha256": "3b9a76b7e290633448f3bcafc58f45a2dd204f8a09719d22ae0422dc6147760e"
+    },
+    "fold4-seed44/SmallCNN": {
+      "prediction_sha256": "a9dec799958b2e26eeb606f8bec2b52a32676e9b3cfde0dcccbfec7f5a766e46",
+      "metadata_sha256": "42921a970af368354b9430c8ee5e2b5a51edc91f7338ad0d594a1c7bf342ab6f",
+      "head_sha256": "28e9ca6cf2eb1b7c2448df9a7957dde1ebd6d8bf861b3d548da65c5e905e5642"
+    },
+    "fold4-seed44/HandFeatures": {
+      "prediction_sha256": "79e4752d8a0840cdee773040657f649134f48a1e516c007cc875b8fda9efb43e",
+      "metadata_sha256": "82bc654ea228afa82980b3aba8691b59e48937213de6079600236c3838d79111",
+      "model_sha256": "d4d199fb1e454d03a57b6911caf55b5ca16611b2327094af51bfaf2cb463c25b"
+    },
+    "fold4-seed44/TrainPrior": {
+      "prediction_sha256": "e42984a2b9fe505b52735a7edb0b6ce9cda8c97e9be9a4213609f30dff2ea0ec",
+      "metadata_sha256": "544baaf42982123e31fc12e99476021374e6da4efca97fbf9358dfba201c07a8"
+    }
+  },
+  "feature_caches": {
+    "AnyPPG": {
+      "metadata_sha256": "2bc0daa2f23a2801586ce65af34cedfb741571961087e7e4106039bcb505ee67",
+      "protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+      "encoder": {
+        "method": "AnyPPG",
+        "random_seed": null,
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "checkpoint_sha256": {
+          "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+        },
+        "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+        "encoder_parameters": 4044272,
+        "encoder_trainable_parameters": 0,
+        "input_fs": 125,
+        "input_samples": 1000,
+        "output_fs": 64,
+        "output_samples": 512,
+        "taps": "all six AnyPPG stage_list outputs",
+        "channels": [
+          64,
+          160,
+          160,
+          400,
+          400,
+          512
+        ],
+        "preprocessing": "AnyPPG original onset PoC Butterworth 0.5-8Hz and NumPy per-window zscore",
+        "device": "cpu",
+        "precision": "FP32; no autocast",
+        "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa"
+      },
+      "files_sha256": {
+        "stage0.npy": "8f4c7c524d2124aff3bb1ff14408802201fd330a62df822659f0bc7ac914cf54",
+        "stage1.npy": "f12bc96935dfb8270805746cf1bac7b96f1dca5d8d256e152a17694ea2a0c84d",
+        "stage2.npy": "91a5c186816956dace972d443d8e3915e22ce1d1176d785b2c6b15dd195bb184",
+        "stage3.npy": "43cc098c6937a028a8584d6a80e1db18cc118a6a1e4cc6f5a2fcd35d6bf7e230",
+        "stage4.npy": "acc26d53fdba5c0265f36e565095362ac175a63798c59003fed93ad20e90296f",
+        "stage5.npy": "41116bb09f259e68ca8812b33a54380a66fdfbafebd71a1c00ec18a506b0ffda"
+      }
+    },
+    "PaPaGei-S": {
+      "metadata_sha256": "601896a81d367d90e42c3df46177b789d57e69b170ef0fb9efa53c354f632079",
+      "protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+      "encoder": {
+        "method": "PaPaGei-S",
+        "random_seed": null,
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "checkpoint_sha256": {
+          "models/weights/papagei/papagei_s.pt": "79d68671e51bdc951fee853e5a8241099e38148ff26ed888b843849332e0b988"
+        },
+        "state_before_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+        "encoder_parameters": 5785612,
+        "encoder_trainable_parameters": 0,
+        "input_fs": 125,
+        "input_samples": 1000,
+        "output_fs": 64,
+        "output_samples": 512,
+        "taps": [
+          0,
+          3,
+          7,
+          11,
+          15,
+          17
+        ],
+        "channels": [
+          32,
+          32,
+          64,
+          128,
+          256,
+          512
+        ],
+        "preprocessing": "Pinned official PaPaGei 0.5-12Hz Chebyshev II plus smoothing and per-window zscore",
+        "device": "cpu",
+        "precision": "FP32; no autocast",
+        "state_after_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175"
+      },
+      "files_sha256": {
+        "stage0.npy": "f0e67efc578a6da48edeea69842c52260f57f760699fc014cab6190eacc33409",
+        "stage1.npy": "991de5a2d7a64b76ed81638b64300565b6322fbbb015a5807292c0895c0ee977",
+        "stage2.npy": "bd704dccaced65b9ae22aa01ffd1912aad0f8aaaf56b2e277829ef68ec852481",
+        "stage3.npy": "dd16fd490ca3519e45a2ac7ecbf4cb8a6b16d788fceb3797b5e2756d4b4453d8",
+        "stage4.npy": "07073faaf9629d10883b15c28ff9976d41425004d1b40af51528d6b527bf6b52",
+        "stage5.npy": "9662ec4cbfd41ab0c32242522a1a2390d29da0beadeda64d8e21c0d2a578c643"
+      }
+    },
+    "PaPaGei-P": {
+      "metadata_sha256": "b9e8ee9ec415b36fd207320aa1c97528d19536b49132897fea658957835ca535",
+      "protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+      "encoder": {
+        "method": "PaPaGei-P",
+        "random_seed": null,
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "checkpoint_sha256": {
+          "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+        },
+        "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+        "encoder_parameters": 4993024,
+        "encoder_trainable_parameters": 0,
+        "input_fs": 125,
+        "input_samples": 1000,
+        "output_fs": 64,
+        "output_samples": 512,
+        "taps": [
+          0,
+          3,
+          7,
+          11,
+          15,
+          17
+        ],
+        "channels": [
+          32,
+          32,
+          64,
+          128,
+          256,
+          512
+        ],
+        "preprocessing": "Pinned official PaPaGei 0.5-12Hz Chebyshev II plus smoothing and per-window zscore",
+        "device": "cpu",
+        "precision": "FP32; no autocast",
+        "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1"
+      },
+      "files_sha256": {
+        "stage0.npy": "5e99dc79d2e22449547915f89a0232c44763d385f11bc7b8746ef392af069b3f",
+        "stage1.npy": "f58316c00367006580b94ac3c12215f86fb39532d7270f3978f719a2ae9120da",
+        "stage2.npy": "19451f2c50fee65d1096d122f060b9bef8c99cdfa63567a5e1682d7e980e8eba",
+        "stage3.npy": "59858e95e76fdbca9a93d55d92e9d5bcdd67ca065bb6971ec9dae22c8a335c41",
+        "stage4.npy": "d0fa2460799019e204db2a1f4927c2b761b5eafc9d6a351303e7c37956876245",
+        "stage5.npy": "ed594602f7402fbc24b9290ce0fcce0a7611f9d4888d417f0f859e0c9cc958e3"
+      }
+    },
+    "AnyPPG-random-frozen-seed42": {
+      "metadata_sha256": "bb380867ac5f6ad97f4bbe7a99a513429923b489c3b47f623fb78f902508593f",
+      "protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+      "encoder": {
+        "method": "AnyPPG-random-frozen",
+        "random_seed": 42,
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "checkpoint_sha256": {},
+        "state_before_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+        "encoder_parameters": 4044272,
+        "encoder_trainable_parameters": 0,
+        "input_fs": 125,
+        "input_samples": 1000,
+        "output_fs": 64,
+        "output_samples": 512,
+        "taps": "all six AnyPPG stage_list outputs",
+        "channels": [
+          64,
+          160,
+          160,
+          400,
+          400,
+          512
+        ],
+        "preprocessing": "AnyPPG original onset PoC Butterworth 0.5-8Hz and NumPy per-window zscore",
+        "device": "cpu",
+        "precision": "FP32; no autocast",
+        "state_after_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad"
+      },
+      "files_sha256": {
+        "stage0.npy": "c1513a42be8d27702a48a024f7278430ffe0aca60b3b3af17ba6c76f4b794331",
+        "stage1.npy": "f8f76436b9177fc2447cfd5efb51df7996eab3f1b18312c0680774dcbe944bdb",
+        "stage2.npy": "bfaeb1b1340beab0e8a01c73c43fc253f151254ed6f444b6d4268bd6f7ea1b8b",
+        "stage3.npy": "1793ff7c06bc4d6173a8e1bb3956bd4f7524c55876771a069ba89c2b5c65b188",
+        "stage4.npy": "ac6fd00ec8c3db9e6df9240dd50ea9e8baeb9693302c9f27902533bff4217a87",
+        "stage5.npy": "8d3ca3e5ffaf30f0e5c4d729af11e446b20316c2f652f3c8d5ee1c3128c94c16"
+      }
+    },
+    "AnyPPG-random-frozen-seed43": {
+      "metadata_sha256": "7e18fb7fc225595767e4f732146b3d827851d2e0fd421c70372be79b5d2be273",
+      "protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+      "encoder": {
+        "method": "AnyPPG-random-frozen",
+        "random_seed": 43,
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "checkpoint_sha256": {},
+        "state_before_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+        "encoder_parameters": 4044272,
+        "encoder_trainable_parameters": 0,
+        "input_fs": 125,
+        "input_samples": 1000,
+        "output_fs": 64,
+        "output_samples": 512,
+        "taps": "all six AnyPPG stage_list outputs",
+        "channels": [
+          64,
+          160,
+          160,
+          400,
+          400,
+          512
+        ],
+        "preprocessing": "AnyPPG original onset PoC Butterworth 0.5-8Hz and NumPy per-window zscore",
+        "device": "cpu",
+        "precision": "FP32; no autocast",
+        "state_after_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0"
+      },
+      "files_sha256": {
+        "stage0.npy": "d91a4097479ddba9756630511c71673394a05d346705b500179c95193ca1516c",
+        "stage1.npy": "216bc522bc254aa206f8c1e60b89d152d4d98f7867ca259763fed7fcdd9adead",
+        "stage2.npy": "3175a5827d446d64002e6d9c9c310bbe2f5b9793bb36921261f9bb2a7c7b7ad2",
+        "stage3.npy": "a4832aa20b9462238bea9ed84f6d561f6551056b4450725e228339459b542a14",
+        "stage4.npy": "3995bca1b051ff586cc27812e013850b8b548d9dea0d98d9026c11860f7a28ed",
+        "stage5.npy": "3458ae4d99070657fc040767be999883d02109ebc9ff155dcb012d2deaec05a0"
+      }
+    },
+    "AnyPPG-random-frozen-seed44": {
+      "metadata_sha256": "d775b7d67a0f45c24eadfdc0901ab90b97eb9edc6e9c3702c8635f4f104a10d6",
+      "protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+      "encoder": {
+        "method": "AnyPPG-random-frozen",
+        "random_seed": 44,
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "checkpoint_sha256": {},
+        "state_before_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+        "encoder_parameters": 4044272,
+        "encoder_trainable_parameters": 0,
+        "input_fs": 125,
+        "input_samples": 1000,
+        "output_fs": 64,
+        "output_samples": 512,
+        "taps": "all six AnyPPG stage_list outputs",
+        "channels": [
+          64,
+          160,
+          160,
+          400,
+          400,
+          512
+        ],
+        "preprocessing": "AnyPPG original onset PoC Butterworth 0.5-8Hz and NumPy per-window zscore",
+        "device": "cpu",
+        "precision": "FP32; no autocast",
+        "state_after_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6"
+      },
+      "files_sha256": {
+        "stage0.npy": "e058faf8e2ef6551ec5345f50e1aeaa6b68b91380d784afa821bb369bbf03c7d",
+        "stage1.npy": "88648102df846dddbe9fb25c44ec44c39bed743fa42bea873c548149a70fd592",
+        "stage2.npy": "968380370acce2f81deb627241d0327c8687a7f961ddc0a8c111140fcb0edf7b",
+        "stage3.npy": "9b1933d7a051da28ec80f9b99ad57b8c9b0ca042b17dfc01b3ee6a4680ce8092",
+        "stage4.npy": "0866a61af6504ee77434f05ed2bda201c83cdc2ab2734d4836ae94c6483a78f5",
+        "stage5.npy": "9d113e39342a94768eadc5f3c1a500b4e8c3872b2c473f8edbfc32fb2b3363e1"
+      }
+    }
+  },
+  "maximum_cpu_probability_error": 2.9772520065307617e-05,
+  "maximum_validation_f1_error": 0.0,
+  "cpu_threshold_decisions_changed": 0,
+  "participants": 15,
+  "records": 4305,
+  "point_labels_per_record": 384,
+  "smallcnn_cuda_crosschecks": [
+    {
+      "job": "fold0-seed42",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 4.976987838745117e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold0-seed43",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 8.657574653625488e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold0-seed44",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 4.738569259643555e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold1-seed42",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 2.3126602172851562e-05,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold1-seed43",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 2.8908252716064453e-05,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold1-seed44",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 6.258487701416016e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold2-seed42",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 1.1622905731201172e-05,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold2-seed43",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 1.615285873413086e-05,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold2-seed44",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 3.2186508178710938e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold3-seed42",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 3.159046173095703e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold3-seed43",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 8.225440979003906e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold3-seed44",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 2.682209014892578e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold4-seed42",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 9.357929229736328e-06,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold4-seed43",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 2.9772520065307617e-05,
+      "cpu_decisions_changed": 0
+    },
+    {
+      "job": "fold4-seed44",
+      "maximum_cuda_probability_error": 0.0,
+      "maximum_cpu_probability_error": 1.3917684555053711e-05,
+      "cpu_decisions_changed": 0
+    }
+  ],
+  "cpu_tolerance_note": "FP32 CPU/CUDA convolution differences allowed up to 5e-5 in probability, with discrete threshold changes counted explicitly. All 15 SmallCNN CUDA predictions can be crosschecked with --cuda-crosscheck.",
+  "statistics": {
+    "estimand": "Average 3 seed scores within person, then equal mean over 15 people",
+    "bootstrap_replicates": 10000,
+    "bootstrap_unit": "participant with all seeds and points together",
+    "exact_signflip_assignments": 32768,
+    "primary_tests": 4,
+    "multiplicity": "Holm across the 4 primary tests"
+  },
+  "selection_check": "All saved heads replayed on validation and test; validation threshold and best saved epoch history checked. Historical nonselected epoch states were not saved and cannot be independently replayed.",
+  "limitations": [
+    "Fixed center 6s score covers 20% of annotated time; no claim of full-duration coverage.",
+    "Public SEGADE waveforms already have per-30s causal filtering and min-max scaling; this is artifact detection on released signals, not raw-signal denoising.",
+    "No individual point is an independent statistical unit; 15 participant inference remains exploratory.",
+    "HandFeatures model hashes are recorded at audit time; original completion metadata did not bind model.npz hashes. Saved-model replay independently validates their predictions."
+  ],
+  "audit_code_sha256": "9a0eba319ee9b2e14c3c5d86b40934eb5c6b54947561576468977a047acb048c"
+}

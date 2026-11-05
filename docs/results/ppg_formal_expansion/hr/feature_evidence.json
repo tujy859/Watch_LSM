@@ -1,0 +1,1413 @@
+[
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/Dalia/AnyPPG.npy",
+    "model": "AnyPPG",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "75f5b2236b544e34e36a4ef061af0ff3c91442d694dffa3b9f223d71e109f076",
+    "source_metadata_sha256": "8663fb9fe46db145489e9bfe142c2d03c197c4570ae7cd65f1d1a229484fffe3",
+    "reused": true,
+    "shape": [
+      64697,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/WildPPG/AnyPPG.npy",
+    "model": "AnyPPG",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "29c3f22cd1ac68c1ea43b7325d2d12293671de0c058913f0179e02d186a4e777",
+    "source_metadata_sha256": "0d4703253e3cde89a70e1e1567c87333766ad4b897ee2176fff9a16ad95cdf60",
+    "reused": true,
+    "shape": [
+      94744,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/Dalia/PaPaGei-S.npy",
+    "model": "PaPaGei-S",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "94942a798406db548512ad8ee9add05ed6f130232a3258db01d3b1d129f990af",
+    "source_metadata_sha256": "32f5603916c1a1f3ad24b0df769f2a4912ab03e82b13f4e77078965be7fbc344",
+    "reused": true,
+    "shape": [
+      64697,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/WildPPG/PaPaGei-S.npy",
+    "model": "PaPaGei-S",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "c3ee90cdfc8ca8497e3c0d95eb42568e8d8c9887e32d8633798e724f92bf63c8",
+    "source_metadata_sha256": "3a950d9f8b32cd9841b7306d1fb3f227ad05ca7ffb5864b60dc7bcc2587af02c",
+    "reused": true,
+    "shape": [
+      94744,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/Dalia/PaPaGei-P.npy",
+    "model": "PaPaGei-P",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "71c2489f00bc0a40e8d13ffcc9ef2e9a96dd167c0d980b97d17d46101c40cf56",
+    "shape": [
+      64697,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "Dalia",
+      "model": "PaPaGei-P",
+      "seed": null,
+      "data": {
+        "manifest_sha256": "1a2c664d27ef7ffd477487c64af2d393c747a736d2fe920c29dffa15fc94cb82",
+        "files_sha256": {
+          "rows.npz": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+          "x125.npy": "f38cea3500b9a69a86b3e2376761a61809960172d4510bf4eb98f17ae39c9b18",
+          "stats125.npy": "43eb18f98d53e000990b21736254328089c7e0cb596414edf711595cb94f5840"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+            "bytes": 1454035828,
+            "sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+            "bytes": 1668779257,
+            "sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+            "bytes": 1418155321,
+            "sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+            "bytes": 1235620519,
+            "sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+            "bytes": 1422151676,
+            "sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+            "bytes": 1399178026,
+            "sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+            "bytes": 1242403295,
+            "sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+            "bytes": 1276598361,
+            "sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+            "bytes": 1365790643,
+            "sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+            "bytes": 1435645404,
+            "sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+            "bytes": 1459596295,
+            "sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+            "bytes": 825860436,
+            "sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+            "bytes": 1465092431,
+            "sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+            "bytes": 1263659052,
+            "sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+            "bytes": 1346572259,
+            "sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {
+        "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+      },
+      "config": {
+        "name": "PaPaGei-P",
+        "port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\papagei\\papagei_p.pt",
+          "target_fs": 125
+        }
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 4993024,
+    "encoder_state_before": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+    "encoder_state_after": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 11.188000000023749
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/WildPPG/PaPaGei-P.npy",
+    "model": "PaPaGei-P",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "0d23f08fcf8b32ec8980cbf16f6a6f329547b13990b5a8841b8a01c0fecfadf5",
+    "shape": [
+      94744,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "WildPPG",
+      "model": "PaPaGei-P",
+      "seed": null,
+      "data": {
+        "manifest_sha256": "ae25681180ad35c34f5c12f390b2506fd5cb014b9a98807dfc093dd7496a479e",
+        "files_sha256": {
+          "rows.npz": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+          "x125.npy": "417fd1ef16dc7e32d443b2d1181bed83b880c2e79067932efcfe215c52dedd0c",
+          "stats125.npy": "d7e1aeeb1c2d7ad52560fb4bb6532f3aeaa3898390b1fc40b4c7b029ea6d9747"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_an0.mat",
+            "bytes": 1114535248,
+            "sha256": "ff5169418d86beaf8ea841c52ba8d694ee4c3892837f48f8196421385a894a25"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_e61.mat",
+            "bytes": 1116745592,
+            "sha256": "2d1500baf936d85f15291f7da85268ef000446ada5c7f876ffba3b0ca6b8fa2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_fex.mat",
+            "bytes": 1209388200,
+            "sha256": "c59f56e989d3df6638290e2839bee42c113ee30813a344c6f71fc348e34a3cb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_k2s.mat",
+            "bytes": 1377390928,
+            "sha256": "a09fa1c0e6a32664806392cb76d3fc477e5cf759699462ad2b7ed8304208d17a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_kjd.mat",
+            "bytes": 1210794920,
+            "sha256": "67271481074610f74aac2d8dad101e3cbbff949757761e8b5f40863b856e9123"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_l38.mat",
+            "bytes": 1204565328,
+            "sha256": "86f2e6cf02977c78a455cbe49b3fe990d33ae2719c00f7f23ecb8020869fd1e5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_n31.mat",
+            "bytes": 1197732472,
+            "sha256": "9a453f4e4d964b694ca0da7070500ad3bb35f05f352b9bf574c0feb7db040117"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ngh.mat",
+            "bytes": 1328356472,
+            "sha256": "1982c3c55d316014480b752d805ca12bb1587917a8b57da74f5de6cdb9530738"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p5d.mat",
+            "bytes": 1307858600,
+            "sha256": "8dcbb9738feafbe1882746de3af6629de6aea65183fe834455664fa7ca0351fb"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p9p.mat",
+            "bytes": 1130812792,
+            "sha256": "ad4cc58916c0de65878bbb7d9484e370854f22d9e3ec0e061ec16dd62e62eca4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_qm9.mat",
+            "bytes": 1190497912,
+            "sha256": "ef288b66de55a01a7b1a3bc0927e0eed16637f0d0d0d55d30fba717bad8568cf"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ssx.mat",
+            "bytes": 1145281912,
+            "sha256": "8621c948f845d552581b59b35874445098786312393c932c5906bef1863870b6"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_trh.mat",
+            "bytes": 1301829752,
+            "sha256": "d86bbb489a4487296dff44f5178e1994948788ace36968c1a5b0a48c232c6fa9"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_tz8.mat",
+            "bytes": 1313284472,
+            "sha256": "12e0068c480eecb0702d0014ee492f935324015063fcd0d3054e2c3a2525ae2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_u7y.mat",
+            "bytes": 1198536312,
+            "sha256": "8d5b8439ea66234da07004bb0e12e18752fba594425daa1141fc37adaa7b0001"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_w4p.mat",
+            "bytes": 1257015672,
+            "sha256": "9ded5fb6ee4d57627f98aaaa1854c2ecff599caeb7649de2f449892ab2613ec3"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {
+        "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+      },
+      "config": {
+        "name": "PaPaGei-P",
+        "port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\papagei\\papagei_p.pt",
+          "target_fs": 125
+        }
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 4993024,
+    "encoder_state_before": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+    "encoder_state_after": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 15.40600000001723
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/Dalia/PulsePPG.npy",
+    "model": "PulsePPG",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "376d190eaa619f5c393cbc137522015f40bba4bfeabcd561d26e7a15e2d06854",
+    "source_metadata_sha256": "ab4da9d27d984d90eee80d7fb96c97c9aefff28d5e6703c6d023d051605333e2",
+    "reused": true,
+    "shape": [
+      64697,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/WildPPG/PulsePPG.npy",
+    "model": "PulsePPG",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "d86267b7a76ea2ec356d596030d8d185a183d8973742f441ad6cbcd98fa671e7",
+    "source_metadata_sha256": "5f5f348844bb641ef7f58b864f2762648eeb4449e686483307dc7448884a1dd9",
+    "reused": true,
+    "shape": [
+      94744,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/Dalia/SigmaPPG.npy",
+    "model": "SigmaPPG",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "0f8850f9d693bde2e05d8c7b1e7ce194050a4b401842357cf74e772bbf416ade",
+    "shape": [
+      64697,
+      360
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "Dalia",
+      "model": "SigmaPPG",
+      "seed": null,
+      "data": {
+        "manifest_sha256": "1a2c664d27ef7ffd477487c64af2d393c747a736d2fe920c29dffa15fc94cb82",
+        "files_sha256": {
+          "rows.npz": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+          "x50.npy": "9f5214242b5a99ca160b92058706bf0573b3db4a1e80150dc712686f6660befd",
+          "stats50.npy": "fde85eaef34488b430e3c9da053edd19c13cc4d29df95eb4e1844e28d7cd1498"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+            "bytes": 1454035828,
+            "sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+            "bytes": 1668779257,
+            "sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+            "bytes": 1418155321,
+            "sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+            "bytes": 1235620519,
+            "sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+            "bytes": 1422151676,
+            "sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+            "bytes": 1399178026,
+            "sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+            "bytes": 1242403295,
+            "sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+            "bytes": 1276598361,
+            "sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+            "bytes": 1365790643,
+            "sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+            "bytes": 1435645404,
+            "sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+            "bytes": 1459596295,
+            "sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+            "bytes": 825860436,
+            "sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+            "bytes": 1465092431,
+            "sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+            "bytes": 1263659052,
+            "sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+            "bytes": 1346572259,
+            "sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {
+        "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+      },
+      "config": {
+        "name": "SigmaPPG",
+        "port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+        "fs": 50,
+        "embedding_dim": 360,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\sigmappg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\sigmappg\\sigma.pth",
+          "target_fs": 50
+        },
+        "source_sha256": "28d52b55828c19bb8fcc2075351981619ccbdb14f88ef0e39eddd6c07c3e551f"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 29700928,
+    "encoder_state_before": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+    "encoder_state_after": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 18.60899999999674
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/WildPPG/SigmaPPG.npy",
+    "model": "SigmaPPG",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "55cb802309a21676d7b76852d86af44993ab97be65ff2deab7604b0e1d3bc043",
+    "shape": [
+      94744,
+      360
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "WildPPG",
+      "model": "SigmaPPG",
+      "seed": null,
+      "data": {
+        "manifest_sha256": "ae25681180ad35c34f5c12f390b2506fd5cb014b9a98807dfc093dd7496a479e",
+        "files_sha256": {
+          "rows.npz": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+          "x50.npy": "9028748982c1bb0d97d8ed48a9c5efa7c5cbd35a59f923d708ece320faf303bc",
+          "stats50.npy": "1e786492390cad40e430eeacace14c0c283f2944da9b6903361debad0b966180"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_an0.mat",
+            "bytes": 1114535248,
+            "sha256": "ff5169418d86beaf8ea841c52ba8d694ee4c3892837f48f8196421385a894a25"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_e61.mat",
+            "bytes": 1116745592,
+            "sha256": "2d1500baf936d85f15291f7da85268ef000446ada5c7f876ffba3b0ca6b8fa2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_fex.mat",
+            "bytes": 1209388200,
+            "sha256": "c59f56e989d3df6638290e2839bee42c113ee30813a344c6f71fc348e34a3cb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_k2s.mat",
+            "bytes": 1377390928,
+            "sha256": "a09fa1c0e6a32664806392cb76d3fc477e5cf759699462ad2b7ed8304208d17a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_kjd.mat",
+            "bytes": 1210794920,
+            "sha256": "67271481074610f74aac2d8dad101e3cbbff949757761e8b5f40863b856e9123"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_l38.mat",
+            "bytes": 1204565328,
+            "sha256": "86f2e6cf02977c78a455cbe49b3fe990d33ae2719c00f7f23ecb8020869fd1e5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_n31.mat",
+            "bytes": 1197732472,
+            "sha256": "9a453f4e4d964b694ca0da7070500ad3bb35f05f352b9bf574c0feb7db040117"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ngh.mat",
+            "bytes": 1328356472,
+            "sha256": "1982c3c55d316014480b752d805ca12bb1587917a8b57da74f5de6cdb9530738"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p5d.mat",
+            "bytes": 1307858600,
+            "sha256": "8dcbb9738feafbe1882746de3af6629de6aea65183fe834455664fa7ca0351fb"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p9p.mat",
+            "bytes": 1130812792,
+            "sha256": "ad4cc58916c0de65878bbb7d9484e370854f22d9e3ec0e061ec16dd62e62eca4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_qm9.mat",
+            "bytes": 1190497912,
+            "sha256": "ef288b66de55a01a7b1a3bc0927e0eed16637f0d0d0d55d30fba717bad8568cf"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ssx.mat",
+            "bytes": 1145281912,
+            "sha256": "8621c948f845d552581b59b35874445098786312393c932c5906bef1863870b6"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_trh.mat",
+            "bytes": 1301829752,
+            "sha256": "d86bbb489a4487296dff44f5178e1994948788ace36968c1a5b0a48c232c6fa9"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_tz8.mat",
+            "bytes": 1313284472,
+            "sha256": "12e0068c480eecb0702d0014ee492f935324015063fcd0d3054e2c3a2525ae2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_u7y.mat",
+            "bytes": 1198536312,
+            "sha256": "8d5b8439ea66234da07004bb0e12e18752fba594425daa1141fc37adaa7b0001"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_w4p.mat",
+            "bytes": 1257015672,
+            "sha256": "9ded5fb6ee4d57627f98aaaa1854c2ecff599caeb7649de2f449892ab2613ec3"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {
+        "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+      },
+      "config": {
+        "name": "SigmaPPG",
+        "port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+        "fs": 50,
+        "embedding_dim": 360,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\sigmappg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\sigmappg\\sigma.pth",
+          "target_fs": 50
+        },
+        "source_sha256": "28d52b55828c19bb8fcc2075351981619ccbdb14f88ef0e39eddd6c07c3e551f"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 29700928,
+    "encoder_state_before": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+    "encoder_state_after": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 26.81300000002375
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/Dalia/MOMENT-1-small.npy",
+    "model": "MOMENT-1-small",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "b9e5e9577d5cad434f59aa9ab17d34a4b374d2d724a2d1a368aecb1d970b5c70",
+    "source_metadata_sha256": "f35d7e23051ebdd6fe59cb55e4daa60c7f69afdd77389794061297d596a1c076",
+    "reused": true,
+    "shape": [
+      64697,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-hr-poc/features/WildPPG/MOMENT-1-small.npy",
+    "model": "MOMENT-1-small",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "e2ee072db6c498639be17cb2b72c53d43560bfef6bc7334054b671a8f342f9e7",
+    "source_metadata_sha256": "ad1b3cad4b2b82f6176e2365bddef698c5371375d432b3cac558e5502629466f",
+    "reused": true,
+    "shape": [
+      94744,
+      512
+    ]
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/Dalia/AnyPPG-random-frozen-seed42.npy",
+    "model": "AnyPPG-random-frozen",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "88288c42c9f106b00422a026cd8e54d445139e147bab5c797f26d73122092afd",
+    "shape": [
+      64697,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "Dalia",
+      "model": "AnyPPG-random-frozen",
+      "seed": 42,
+      "data": {
+        "manifest_sha256": "1a2c664d27ef7ffd477487c64af2d393c747a736d2fe920c29dffa15fc94cb82",
+        "files_sha256": {
+          "rows.npz": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+          "x125.npy": "f38cea3500b9a69a86b3e2376761a61809960172d4510bf4eb98f17ae39c9b18",
+          "stats125.npy": "43eb18f98d53e000990b21736254328089c7e0cb596414edf711595cb94f5840"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+            "bytes": 1454035828,
+            "sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+            "bytes": 1668779257,
+            "sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+            "bytes": 1418155321,
+            "sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+            "bytes": 1235620519,
+            "sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+            "bytes": 1422151676,
+            "sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+            "bytes": 1399178026,
+            "sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+            "bytes": 1242403295,
+            "sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+            "bytes": 1276598361,
+            "sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+            "bytes": 1365790643,
+            "sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+            "bytes": 1435645404,
+            "sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+            "bytes": 1459596295,
+            "sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+            "bytes": 825860436,
+            "sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+            "bytes": 1465092431,
+            "sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+            "bytes": 1263659052,
+            "sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+            "bytes": 1346572259,
+            "sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {},
+      "config": {
+        "name": "AnyPPG",
+        "port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\anyppg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\anyppg\\anyppg_ckpt.pth",
+          "target_fs": 125
+        },
+        "source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 4044272,
+    "encoder_state_before": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+    "encoder_state_after": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 17.030999999959022
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/WildPPG/AnyPPG-random-frozen-seed42.npy",
+    "model": "AnyPPG-random-frozen",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "0ef1adccb28dc1c7266062bc36b0e72bf2c9f0f6b7e5d06af8336d8aa42b3a9c",
+    "shape": [
+      94744,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "WildPPG",
+      "model": "AnyPPG-random-frozen",
+      "seed": 42,
+      "data": {
+        "manifest_sha256": "ae25681180ad35c34f5c12f390b2506fd5cb014b9a98807dfc093dd7496a479e",
+        "files_sha256": {
+          "rows.npz": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+          "x125.npy": "417fd1ef16dc7e32d443b2d1181bed83b880c2e79067932efcfe215c52dedd0c",
+          "stats125.npy": "d7e1aeeb1c2d7ad52560fb4bb6532f3aeaa3898390b1fc40b4c7b029ea6d9747"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_an0.mat",
+            "bytes": 1114535248,
+            "sha256": "ff5169418d86beaf8ea841c52ba8d694ee4c3892837f48f8196421385a894a25"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_e61.mat",
+            "bytes": 1116745592,
+            "sha256": "2d1500baf936d85f15291f7da85268ef000446ada5c7f876ffba3b0ca6b8fa2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_fex.mat",
+            "bytes": 1209388200,
+            "sha256": "c59f56e989d3df6638290e2839bee42c113ee30813a344c6f71fc348e34a3cb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_k2s.mat",
+            "bytes": 1377390928,
+            "sha256": "a09fa1c0e6a32664806392cb76d3fc477e5cf759699462ad2b7ed8304208d17a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_kjd.mat",
+            "bytes": 1210794920,
+            "sha256": "67271481074610f74aac2d8dad101e3cbbff949757761e8b5f40863b856e9123"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_l38.mat",
+            "bytes": 1204565328,
+            "sha256": "86f2e6cf02977c78a455cbe49b3fe990d33ae2719c00f7f23ecb8020869fd1e5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_n31.mat",
+            "bytes": 1197732472,
+            "sha256": "9a453f4e4d964b694ca0da7070500ad3bb35f05f352b9bf574c0feb7db040117"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ngh.mat",
+            "bytes": 1328356472,
+            "sha256": "1982c3c55d316014480b752d805ca12bb1587917a8b57da74f5de6cdb9530738"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p5d.mat",
+            "bytes": 1307858600,
+            "sha256": "8dcbb9738feafbe1882746de3af6629de6aea65183fe834455664fa7ca0351fb"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p9p.mat",
+            "bytes": 1130812792,
+            "sha256": "ad4cc58916c0de65878bbb7d9484e370854f22d9e3ec0e061ec16dd62e62eca4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_qm9.mat",
+            "bytes": 1190497912,
+            "sha256": "ef288b66de55a01a7b1a3bc0927e0eed16637f0d0d0d55d30fba717bad8568cf"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ssx.mat",
+            "bytes": 1145281912,
+            "sha256": "8621c948f845d552581b59b35874445098786312393c932c5906bef1863870b6"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_trh.mat",
+            "bytes": 1301829752,
+            "sha256": "d86bbb489a4487296dff44f5178e1994948788ace36968c1a5b0a48c232c6fa9"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_tz8.mat",
+            "bytes": 1313284472,
+            "sha256": "12e0068c480eecb0702d0014ee492f935324015063fcd0d3054e2c3a2525ae2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_u7y.mat",
+            "bytes": 1198536312,
+            "sha256": "8d5b8439ea66234da07004bb0e12e18752fba594425daa1141fc37adaa7b0001"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_w4p.mat",
+            "bytes": 1257015672,
+            "sha256": "9ded5fb6ee4d57627f98aaaa1854c2ecff599caeb7649de2f449892ab2613ec3"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {},
+      "config": {
+        "name": "AnyPPG",
+        "port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\anyppg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\anyppg\\anyppg_ckpt.pth",
+          "target_fs": 125
+        },
+        "source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 4044272,
+    "encoder_state_before": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+    "encoder_state_after": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 24.79599999997299
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/Dalia/AnyPPG-random-frozen-seed43.npy",
+    "model": "AnyPPG-random-frozen",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "7a81ebf415b0b466eb54045ab60059be32a00aa56c0b392b9824026bcac121b4",
+    "shape": [
+      64697,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "Dalia",
+      "model": "AnyPPG-random-frozen",
+      "seed": 43,
+      "data": {
+        "manifest_sha256": "1a2c664d27ef7ffd477487c64af2d393c747a736d2fe920c29dffa15fc94cb82",
+        "files_sha256": {
+          "rows.npz": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+          "x125.npy": "f38cea3500b9a69a86b3e2376761a61809960172d4510bf4eb98f17ae39c9b18",
+          "stats125.npy": "43eb18f98d53e000990b21736254328089c7e0cb596414edf711595cb94f5840"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+            "bytes": 1454035828,
+            "sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+            "bytes": 1668779257,
+            "sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+            "bytes": 1418155321,
+            "sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+            "bytes": 1235620519,
+            "sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+            "bytes": 1422151676,
+            "sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+            "bytes": 1399178026,
+            "sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+            "bytes": 1242403295,
+            "sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+            "bytes": 1276598361,
+            "sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+            "bytes": 1365790643,
+            "sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+            "bytes": 1435645404,
+            "sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+            "bytes": 1459596295,
+            "sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+            "bytes": 825860436,
+            "sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+            "bytes": 1465092431,
+            "sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+            "bytes": 1263659052,
+            "sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+            "bytes": 1346572259,
+            "sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {},
+      "config": {
+        "name": "AnyPPG",
+        "port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\anyppg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\anyppg\\anyppg_ckpt.pth",
+          "target_fs": 125
+        },
+        "source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 4044272,
+    "encoder_state_before": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+    "encoder_state_after": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 17.23499999998603
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/WildPPG/AnyPPG-random-frozen-seed43.npy",
+    "model": "AnyPPG-random-frozen",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "439782fc0eeb6c6af0ae4b5d46f23a6615d2661a2f0e7986cd80fc77ff3cff78",
+    "shape": [
+      94744,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "WildPPG",
+      "model": "AnyPPG-random-frozen",
+      "seed": 43,
+      "data": {
+        "manifest_sha256": "ae25681180ad35c34f5c12f390b2506fd5cb014b9a98807dfc093dd7496a479e",
+        "files_sha256": {
+          "rows.npz": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+          "x125.npy": "417fd1ef16dc7e32d443b2d1181bed83b880c2e79067932efcfe215c52dedd0c",
+          "stats125.npy": "d7e1aeeb1c2d7ad52560fb4bb6532f3aeaa3898390b1fc40b4c7b029ea6d9747"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_an0.mat",
+            "bytes": 1114535248,
+            "sha256": "ff5169418d86beaf8ea841c52ba8d694ee4c3892837f48f8196421385a894a25"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_e61.mat",
+            "bytes": 1116745592,
+            "sha256": "2d1500baf936d85f15291f7da85268ef000446ada5c7f876ffba3b0ca6b8fa2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_fex.mat",
+            "bytes": 1209388200,
+            "sha256": "c59f56e989d3df6638290e2839bee42c113ee30813a344c6f71fc348e34a3cb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_k2s.mat",
+            "bytes": 1377390928,
+            "sha256": "a09fa1c0e6a32664806392cb76d3fc477e5cf759699462ad2b7ed8304208d17a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_kjd.mat",
+            "bytes": 1210794920,
+            "sha256": "67271481074610f74aac2d8dad101e3cbbff949757761e8b5f40863b856e9123"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_l38.mat",
+            "bytes": 1204565328,
+            "sha256": "86f2e6cf02977c78a455cbe49b3fe990d33ae2719c00f7f23ecb8020869fd1e5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_n31.mat",
+            "bytes": 1197732472,
+            "sha256": "9a453f4e4d964b694ca0da7070500ad3bb35f05f352b9bf574c0feb7db040117"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ngh.mat",
+            "bytes": 1328356472,
+            "sha256": "1982c3c55d316014480b752d805ca12bb1587917a8b57da74f5de6cdb9530738"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p5d.mat",
+            "bytes": 1307858600,
+            "sha256": "8dcbb9738feafbe1882746de3af6629de6aea65183fe834455664fa7ca0351fb"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p9p.mat",
+            "bytes": 1130812792,
+            "sha256": "ad4cc58916c0de65878bbb7d9484e370854f22d9e3ec0e061ec16dd62e62eca4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_qm9.mat",
+            "bytes": 1190497912,
+            "sha256": "ef288b66de55a01a7b1a3bc0927e0eed16637f0d0d0d55d30fba717bad8568cf"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ssx.mat",
+            "bytes": 1145281912,
+            "sha256": "8621c948f845d552581b59b35874445098786312393c932c5906bef1863870b6"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_trh.mat",
+            "bytes": 1301829752,
+            "sha256": "d86bbb489a4487296dff44f5178e1994948788ace36968c1a5b0a48c232c6fa9"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_tz8.mat",
+            "bytes": 1313284472,
+            "sha256": "12e0068c480eecb0702d0014ee492f935324015063fcd0d3054e2c3a2525ae2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_u7y.mat",
+            "bytes": 1198536312,
+            "sha256": "8d5b8439ea66234da07004bb0e12e18752fba594425daa1141fc37adaa7b0001"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_w4p.mat",
+            "bytes": 1257015672,
+            "sha256": "9ded5fb6ee4d57627f98aaaa1854c2ecff599caeb7649de2f449892ab2613ec3"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {},
+      "config": {
+        "name": "AnyPPG",
+        "port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\anyppg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\anyppg\\anyppg_ckpt.pth",
+          "target_fs": 125
+        },
+        "source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "90d85d86acc0c76eddfef836eed5fd89c373325d5e935eac968af43b4d03851c"
+    },
+    "encoder_parameters": 4044272,
+    "encoder_state_before": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+    "encoder_state_after": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 24.875
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/Dalia/AnyPPG-random-frozen-seed44.npy",
+    "model": "AnyPPG-random-frozen",
+    "dataset": "Dalia",
+    "rows_sha256": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "features_sha256": "733f0595d5f559b38e15f62db2c40f631bd82465ff2e1c5bdbe9b14212a7e603",
+    "shape": [
+      64697,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "Dalia",
+      "model": "AnyPPG-random-frozen",
+      "seed": 44,
+      "data": {
+        "manifest_sha256": "1a2c664d27ef7ffd477487c64af2d393c747a736d2fe920c29dffa15fc94cb82",
+        "files_sha256": {
+          "rows.npz": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+          "x125.npy": "f38cea3500b9a69a86b3e2376761a61809960172d4510bf4eb98f17ae39c9b18",
+          "stats125.npy": "43eb18f98d53e000990b21736254328089c7e0cb596414edf711595cb94f5840"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+            "bytes": 1454035828,
+            "sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+            "bytes": 1668779257,
+            "sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+            "bytes": 1418155321,
+            "sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+            "bytes": 1235620519,
+            "sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+            "bytes": 1422151676,
+            "sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+            "bytes": 1399178026,
+            "sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+            "bytes": 1242403295,
+            "sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+            "bytes": 1276598361,
+            "sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+            "bytes": 1365790643,
+            "sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+            "bytes": 1435645404,
+            "sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+            "bytes": 1459596295,
+            "sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+            "bytes": 825860436,
+            "sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+            "bytes": 1465092431,
+            "sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+            "bytes": 1263659052,
+            "sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+            "bytes": 1346572259,
+            "sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {},
+      "config": {
+        "name": "AnyPPG",
+        "port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\anyppg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\anyppg\\anyppg_ckpt.pth",
+          "target_fs": 125
+        },
+        "source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "1751af05163160115e1ce2889068bc60ee62339f68453485ec571a31785db4b2"
+    },
+    "encoder_parameters": 4044272,
+    "encoder_state_before": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+    "encoder_state_after": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 17.20299999997951
+  },
+  {
+    "status": "complete",
+    "path": ".local/ppg-formal-expansion/hr/features/WildPPG/AnyPPG-random-frozen-seed44.npy",
+    "model": "AnyPPG-random-frozen",
+    "dataset": "WildPPG",
+    "rows_sha256": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+    "features_sha256": "e86795e49fc6b9b5131ec273aa504012284a697ef4b4a512b3e94b0b7cf00920",
+    "shape": [
+      94744,
+      512
+    ],
+    "reused": false,
+    "identity": {
+      "dataset": "WildPPG",
+      "model": "AnyPPG-random-frozen",
+      "seed": 44,
+      "data": {
+        "manifest_sha256": "ae25681180ad35c34f5c12f390b2506fd5cb014b9a98807dfc093dd7496a479e",
+        "files_sha256": {
+          "rows.npz": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a",
+          "x125.npy": "417fd1ef16dc7e32d443b2d1181bed83b880c2e79067932efcfe215c52dedd0c",
+          "stats125.npy": "d7e1aeeb1c2d7ad52560fb4bb6532f3aeaa3898390b1fc40b4c7b029ea6d9747"
+        },
+        "preparation_sha256": "6673b927439f82c1d1cc6f35060369122c3f41e48b09a13fd86f22295721cdfb",
+        "raw_sources": [
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_an0.mat",
+            "bytes": 1114535248,
+            "sha256": "ff5169418d86beaf8ea841c52ba8d694ee4c3892837f48f8196421385a894a25"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_e61.mat",
+            "bytes": 1116745592,
+            "sha256": "2d1500baf936d85f15291f7da85268ef000446ada5c7f876ffba3b0ca6b8fa2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_fex.mat",
+            "bytes": 1209388200,
+            "sha256": "c59f56e989d3df6638290e2839bee42c113ee30813a344c6f71fc348e34a3cb1"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_k2s.mat",
+            "bytes": 1377390928,
+            "sha256": "a09fa1c0e6a32664806392cb76d3fc477e5cf759699462ad2b7ed8304208d17a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_kjd.mat",
+            "bytes": 1210794920,
+            "sha256": "67271481074610f74aac2d8dad101e3cbbff949757761e8b5f40863b856e9123"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_l38.mat",
+            "bytes": 1204565328,
+            "sha256": "86f2e6cf02977c78a455cbe49b3fe990d33ae2719c00f7f23ecb8020869fd1e5"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_n31.mat",
+            "bytes": 1197732472,
+            "sha256": "9a453f4e4d964b694ca0da7070500ad3bb35f05f352b9bf574c0feb7db040117"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ngh.mat",
+            "bytes": 1328356472,
+            "sha256": "1982c3c55d316014480b752d805ca12bb1587917a8b57da74f5de6cdb9530738"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p5d.mat",
+            "bytes": 1307858600,
+            "sha256": "8dcbb9738feafbe1882746de3af6629de6aea65183fe834455664fa7ca0351fb"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_p9p.mat",
+            "bytes": 1130812792,
+            "sha256": "ad4cc58916c0de65878bbb7d9484e370854f22d9e3ec0e061ec16dd62e62eca4"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_qm9.mat",
+            "bytes": 1190497912,
+            "sha256": "ef288b66de55a01a7b1a3bc0927e0eed16637f0d0d0d55d30fba717bad8568cf"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_ssx.mat",
+            "bytes": 1145281912,
+            "sha256": "8621c948f845d552581b59b35874445098786312393c932c5906bef1863870b6"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_trh.mat",
+            "bytes": 1301829752,
+            "sha256": "d86bbb489a4487296dff44f5178e1994948788ace36968c1a5b0a48c232c6fa9"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_tz8.mat",
+            "bytes": 1313284472,
+            "sha256": "12e0068c480eecb0702d0014ee492f935324015063fcd0d3054e2c3a2525ae2a"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_u7y.mat",
+            "bytes": 1198536312,
+            "sha256": "8d5b8439ea66234da07004bb0e12e18752fba594425daa1141fc37adaa7b0001"
+          },
+          {
+            "path": "datasets/ppg_bench_raw/wildppg/WildPPG/data/WildPPG_Part_w4p.mat",
+            "bytes": 1257015672,
+            "sha256": "9ded5fb6ee4d57627f98aaaa1854c2ecff599caeb7649de2f449892ab2613ec3"
+          }
+        ]
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "weights": {},
+      "config": {
+        "name": "AnyPPG",
+        "port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+        "fs": 125,
+        "embedding_dim": 512,
+        "init": {
+          "source_root": "C:\\Coding\\Watch_LSM\\repos\\anyppg",
+          "ckpt_path": "C:\\Coding\\Watch_LSM\\models\\weights\\anyppg\\anyppg_ckpt.pth",
+          "target_fs": 125
+        },
+        "source_sha256": "093e6f66de241ff8c28b244f9a7d14e756ba40fe71a6afe3cafd5ea3dfebca39"
+      },
+      "device": "cuda",
+      "precision": "float32",
+      "deterministic_cudnn": true,
+      "extractor_sha256": "1751af05163160115e1ce2889068bc60ee62339f68453485ec571a31785db4b2"
+    },
+    "encoder_parameters": 4044272,
+    "encoder_state_before": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+    "encoder_state_after": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+    "encoder_trainable_parameters": 0,
+    "elapsed_current_seconds": 26.125
+  }
+]

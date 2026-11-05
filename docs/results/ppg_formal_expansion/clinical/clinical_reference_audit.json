@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "independent_implementation": true,
+  "checks": [
+    {
+      "dataset": "BIDMC",
+      "rows_independently_reread": 735,
+      "records": 53,
+      "patients": 46,
+      "max_manual_reference_error": 3.552713678800501e-14,
+      "waveforms_exact_float32_match": true,
+      "five_fold_patient_separation": true,
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "rows_sha256": "11a5e4ca3d4d7e35c712b1a8c83af26f9e89b398273b68c8901edba9eed252c4"
+    },
+    {
+      "dataset": "PulseDB",
+      "rows_independently_reread": 8100,
+      "patient_files": 162,
+      "max_raw_ABP_reference_error_mmhg": 8.526512829121202e-14,
+      "official_index_checks": 8100,
+      "waveforms_exact_float32_match": true,
+      "time_axes_checked": 8100,
+      "aami_patient_exclusion_checked": 242,
+      "split_patient_overlap": [],
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "rows_sha256": "10184b9f8a16c9d4a19a64ddfa8d0624862bc567c8676fda4f0c99b897fc4aeb"
+    }
+  ],
+  "code_sha256": "f37b61362c483a9efabd5897dd0b94f6ba5152d06e93e00cbf28f924b61e80e7"
+}

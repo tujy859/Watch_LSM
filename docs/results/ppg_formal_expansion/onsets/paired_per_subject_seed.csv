@@ -1,0 +1,169 @@
+dataset,group,subject,comparator,metric,duration_s,difference,n_common_supported,n_eligible,common_support_fraction,support,method,seed
+EMBC21,all,S1,SmallCNN,f1_50ms,0,0.0030687086024037136,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-75.14244904809227,42,42,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S1,SmallCNN,f1_50ms,0,-0.014919125891124208,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,42
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-66.56174063426289,42,42,1.0,common finite continuous PRV windows,PaPaGei-S,42
+EMBC21,all,S1,SmallCNN,f1_50ms,0,-0.030723254538876588,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,42
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-64.25258100556123,42,42,1.0,common finite continuous PRV windows,PaPaGei-P,42
+EMBC21,all,S1,AnyPPG-random-frozen,f1_50ms,0,0.008967769122394942,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S1,AnyPPG-random-frozen,rmssd_ms_mae,60,-1.3100880811497493,42,42,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S2,SmallCNN,f1_50ms,0,0.021522165446254626,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,-31.021401059708612,28,28,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S2,SmallCNN,f1_50ms,0,-0.014249579672764412,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,42
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,8.002361777830272,28,28,1.0,common finite continuous PRV windows,PaPaGei-S,42
+EMBC21,all,S2,SmallCNN,f1_50ms,0,-0.008340294968643969,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,42
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,1.4948945431319167,28,28,1.0,common finite continuous PRV windows,PaPaGei-P,42
+EMBC21,all,S2,AnyPPG-random-frozen,f1_50ms,0,0.028814083842525373,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S2,AnyPPG-random-frozen,rmssd_ms_mae,60,-45.67764400246838,28,28,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S3,SmallCNN,f1_50ms,0,0.0002231642503792708,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,-0.4393034815176958,19,19,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S3,SmallCNN,f1_50ms,0,0.0,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,42
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,0.08453817999573905,19,19,1.0,common finite continuous PRV windows,PaPaGei-S,42
+EMBC21,all,S3,SmallCNN,f1_50ms,0,-0.0015613547785909843,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,42
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,0.14124965470081183,19,19,1.0,common finite continuous PRV windows,PaPaGei-P,42
+EMBC21,all,S3,AnyPPG-random-frozen,f1_50ms,0,0.0002231642503792708,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S3,AnyPPG-random-frozen,rmssd_ms_mae,60,-0.1282420263362291,19,19,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S4,SmallCNN,f1_50ms,0,0.007751700628498948,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,-4.367588681730628,21,21,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S4,SmallCNN,f1_50ms,0,0.0007112762038293807,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,42
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,-2.952042057312739,21,21,1.0,common finite continuous PRV windows,PaPaGei-S,42
+EMBC21,all,S4,SmallCNN,f1_50ms,0,0.0014414929718397085,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,42
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,-2.502003047195384,21,21,1.0,common finite continuous PRV windows,PaPaGei-P,42
+EMBC21,all,S4,AnyPPG-random-frozen,f1_50ms,0,0.010930285182790489,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S4,AnyPPG-random-frozen,rmssd_ms_mae,60,-1.3554325938901175,21,21,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.002542537461554417,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,-2.917512413091292,20,20,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.007391019723191672,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,42
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,4.706650848539598,20,20,1.0,common finite continuous PRV windows,PaPaGei-S,42
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.012898182528825464,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,42
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,15.391390268320118,20,20,1.0,common finite continuous PRV windows,PaPaGei-P,42
+EMBC21,all,S5,AnyPPG-random-frozen,f1_50ms,0,0.006165513736066663,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S5,AnyPPG-random-frozen,rmssd_ms_mae,60,-21.606564613929752,20,20,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S6,SmallCNN,f1_50ms,0,0.0031750643142738344,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,-3.4513436694617123,24,24,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S6,SmallCNN,f1_50ms,0,-0.0013721434032558655,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,42
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,-1.8875372669333805,24,24,1.0,common finite continuous PRV windows,PaPaGei-S,42
+EMBC21,all,S6,SmallCNN,f1_50ms,0,-0.0037361729752191097,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,42
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,0.22121278564235722,24,24,1.0,common finite continuous PRV windows,PaPaGei-P,42
+EMBC21,all,S6,AnyPPG-random-frozen,f1_50ms,0,0.007935941405591618,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S6,AnyPPG-random-frozen,rmssd_ms_mae,60,-5.768199786553114,24,24,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.003323230688966894,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,-1.2186670772622632,21,21,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.0044507555102734075,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,42
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,6.075888256953793,21,21,1.0,common finite continuous PRV windows,PaPaGei-S,42
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.007853086398352582,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,42
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,10.718329674003167,21,21,1.0,common finite continuous PRV windows,PaPaGei-P,42
+EMBC21,all,S7,AnyPPG-random-frozen,f1_50ms,0,0.002087596001018266,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,42
+EMBC21,all,S7,AnyPPG-random-frozen,rmssd_ms_mae,60,-11.50795945986088,21,21,1.0,common finite continuous PRV windows,AnyPPG,42
+EMBC21,all,S1,SmallCNN,f1_50ms,0,0.01106031915085759,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-156.99421012841762,42,42,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S1,SmallCNN,f1_50ms,0,-0.01589782350624791,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,43
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-136.9950454072807,42,42,1.0,common finite continuous PRV windows,PaPaGei-S,43
+EMBC21,all,S1,SmallCNN,f1_50ms,0,-0.014294813767799952,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,43
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-140.46783735485693,42,42,1.0,common finite continuous PRV windows,PaPaGei-P,43
+EMBC21,all,S1,AnyPPG-random-frozen,f1_50ms,0,0.02758904955976238,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S1,AnyPPG-random-frozen,rmssd_ms_mae,60,-10.984550303452682,42,42,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S2,SmallCNN,f1_50ms,0,0.005594883222088565,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,-52.714092992703286,28,28,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S2,SmallCNN,f1_50ms,0,-0.02945019541817595,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,43
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,-29.684284040964894,28,28,1.0,common finite continuous PRV windows,PaPaGei-S,43
+EMBC21,all,S2,SmallCNN,f1_50ms,0,-0.03330076443490593,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,43
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,-32.435551856281606,28,28,1.0,common finite continuous PRV windows,PaPaGei-P,43
+EMBC21,all,S2,AnyPPG-random-frozen,f1_50ms,0,0.04341039847797312,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S2,AnyPPG-random-frozen,rmssd_ms_mae,60,-24.835294540746442,28,28,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S3,SmallCNN,f1_50ms,0,0.0004459308807134299,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,-0.11468005259763944,19,19,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S3,SmallCNN,f1_50ms,0,-0.0017798510435960146,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,43
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,-1.6182769136220174,19,19,1.0,common finite continuous PRV windows,PaPaGei-S,43
+EMBC21,all,S3,SmallCNN,f1_50ms,0,0.0006687968717212778,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,43
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,-0.553939257039387,19,19,1.0,common finite continuous PRV windows,PaPaGei-P,43
+EMBC21,all,S3,AnyPPG-random-frozen,f1_50ms,0,0.00022316433905467115,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S3,AnyPPG-random-frozen,rmssd_ms_mae,60,-0.057029091312046296,19,19,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S4,SmallCNN,f1_50ms,0,-0.00024136502217186884,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,0.46770510266717175,21,21,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S4,SmallCNN,f1_50ms,0,-0.0014525450952542762,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,43
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,0.6443395396414389,21,21,1.0,common finite continuous PRV windows,PaPaGei-S,43
+EMBC21,all,S4,SmallCNN,f1_50ms,0,-0.0055722288386044205,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,43
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,1.5996123553245,21,21,1.0,common finite continuous PRV windows,PaPaGei-P,43
+EMBC21,all,S4,AnyPPG-random-frozen,f1_50ms,0,0.01798167604363532,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S4,AnyPPG-random-frozen,rmssd_ms_mae,60,-0.8416330142625515,21,21,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S5,SmallCNN,f1_50ms,0,0.00022114329864453275,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,-4.886123793788289,20,20,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.0036443756290773788,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,43
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,0.9620019663142678,20,20,1.0,common finite continuous PRV windows,PaPaGei-S,43
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.002544909755979541,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,43
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,10.578070489442473,20,20,1.0,common finite continuous PRV windows,PaPaGei-P,43
+EMBC21,all,S5,AnyPPG-random-frozen,f1_50ms,0,0.010431994846264225,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S5,AnyPPG-random-frozen,rmssd_ms_mae,60,-22.804286909560126,20,20,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S6,SmallCNN,f1_50ms,0,0.004548929858352979,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,-3.6066457568772705,24,24,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S6,SmallCNN,f1_50ms,0,-0.00018851185734880538,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,43
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,-4.3620029866322225,24,24,1.0,common finite continuous PRV windows,PaPaGei-S,43
+EMBC21,all,S6,SmallCNN,f1_50ms,0,-0.0029370473220733384,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,43
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,0.1306844751541174,24,24,1.0,common finite continuous PRV windows,PaPaGei-P,43
+EMBC21,all,S6,AnyPPG-random-frozen,f1_50ms,0,0.00832719181549546,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S6,AnyPPG-random-frozen,rmssd_ms_mae,60,-14.299353600341519,24,24,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S7,SmallCNN,f1_50ms,0,0.00165342123917267,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,-5.070411738169621,21,21,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.0027301536178705454,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,43
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,-0.7772952774606556,21,21,1.0,common finite continuous PRV windows,PaPaGei-S,43
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.006539984708823332,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,43
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,1.2453828269662648,21,21,1.0,common finite continuous PRV windows,PaPaGei-P,43
+EMBC21,all,S7,AnyPPG-random-frozen,f1_50ms,0,0.006239780864721989,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,43
+EMBC21,all,S7,AnyPPG-random-frozen,rmssd_ms_mae,60,-7.144763270986803,21,21,1.0,common finite continuous PRV windows,AnyPPG,43
+EMBC21,all,S1,SmallCNN,f1_50ms,0,0.011036371225840447,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-149.41298736596178,42,42,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S1,SmallCNN,f1_50ms,0,-0.00644195315688989,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,44
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-144.20439730016219,42,42,1.0,common finite continuous PRV windows,PaPaGei-S,44
+EMBC21,all,S1,SmallCNN,f1_50ms,0,-0.000586819839802244,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,44
+EMBC21,all,S1,SmallCNN,rmssd_ms_mae,60,-151.40831626569116,42,42,1.0,common finite continuous PRV windows,PaPaGei-P,44
+EMBC21,all,S1,AnyPPG-random-frozen,f1_50ms,0,0.008478900078741525,4558,4558,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S1,AnyPPG-random-frozen,rmssd_ms_mae,60,-4.932744869295896,42,42,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S2,SmallCNN,f1_50ms,0,-0.0060132606023424184,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,-21.320137852124276,28,28,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S2,SmallCNN,f1_50ms,0,-0.030394179406739275,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,44
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,9.853801872114227,28,28,1.0,common finite continuous PRV windows,PaPaGei-S,44
+EMBC21,all,S2,SmallCNN,f1_50ms,0,-0.03679165862863032,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,44
+EMBC21,all,S2,SmallCNN,rmssd_ms_mae,60,-0.3674590610091461,28,28,1.0,common finite continuous PRV windows,PaPaGei-P,44
+EMBC21,all,S2,AnyPPG-random-frozen,f1_50ms,0,0.024166014534700242,3832,3832,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S2,AnyPPG-random-frozen,rmssd_ms_mae,60,-25.552235858607084,28,28,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S3,SmallCNN,f1_50ms,0,-0.0002227666303341591,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,-1.9901870588437234,19,19,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S3,SmallCNN,f1_50ms,0,-0.001114429581738463,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,44
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,-1.4226418782895636,19,19,1.0,common finite continuous PRV windows,PaPaGei-S,44
+EMBC21,all,S3,SmallCNN,f1_50ms,0,-0.0013360045477200932,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,44
+EMBC21,all,S3,SmallCNN,rmssd_ms_mae,60,-1.8066147486219184,19,19,1.0,common finite continuous PRV windows,PaPaGei-P,44
+EMBC21,all,S3,AnyPPG-random-frozen,f1_50ms,0,0.0006697914318211096,2243,2243,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S3,AnyPPG-random-frozen,rmssd_ms_mae,60,-0.45801439630464325,19,19,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S4,SmallCNN,f1_50ms,0,0.0016948524546778199,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,-2.881167732899945,21,21,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S4,SmallCNN,f1_50ms,0,-0.004612765206651659,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,44
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,-1.5109231462553576,21,21,1.0,common finite continuous PRV windows,PaPaGei-S,44
+EMBC21,all,S4,SmallCNN,f1_50ms,0,-0.005102677258017052,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,44
+EMBC21,all,S4,SmallCNN,rmssd_ms_mae,60,-2.2518718299386697,21,21,1.0,common finite continuous PRV windows,PaPaGei-P,44
+EMBC21,all,S4,AnyPPG-random-frozen,f1_50ms,0,0.005096556954174103,2062,2062,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S4,AnyPPG-random-frozen,rmssd_ms_mae,60,-0.8872301660204395,21,21,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.003701815593520341,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,0.771680468144585,20,20,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.007600975349635886,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,44
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,6.663227782301462,20,20,1.0,common finite continuous PRV windows,PaPaGei-S,44
+EMBC21,all,S5,SmallCNN,f1_50ms,0,-0.02105971552306274,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,44
+EMBC21,all,S5,SmallCNN,rmssd_ms_mae,60,32.2956124959678,20,20,1.0,common finite continuous PRV windows,PaPaGei-P,44
+EMBC21,all,S5,AnyPPG-random-frozen,f1_50ms,0,0.004811678728333213,2556,2556,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S5,AnyPPG-random-frozen,rmssd_ms_mae,60,-18.56129842446102,20,20,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S6,SmallCNN,f1_50ms,0,0.0025674701477352846,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,1.7450854340081328,24,24,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S6,SmallCNN,f1_50ms,0,-0.0007957651522699782,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,44
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,5.699856622415624,24,24,1.0,common finite continuous PRV windows,PaPaGei-S,44
+EMBC21,all,S6,SmallCNN,f1_50ms,0,-0.004139508918873269,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,44
+EMBC21,all,S6,SmallCNN,rmssd_ms_mae,60,10.360635803185138,24,24,1.0,common finite continuous PRV windows,PaPaGei-P,44
+EMBC21,all,S6,AnyPPG-random-frozen,f1_50ms,0,0.003959452592409818,2524,2524,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S6,AnyPPG-random-frozen,rmssd_ms_mae,60,-3.9524217068082934,24,24,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.001278644419033803,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,-1.2208569265367961,21,21,1.0,common finite continuous PRV windows,AnyPPG,44
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.0014135650250263199,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-S,44
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,1.6871517505460463,21,21,1.0,common finite continuous PRV windows,PaPaGei-S,44
+EMBC21,all,S7,SmallCNN,f1_50ms,0,-0.010954532544576234,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,PaPaGei-P,44
+EMBC21,all,S7,SmallCNN,rmssd_ms_mae,60,2.4677439586170076,21,21,1.0,common finite continuous PRV windows,PaPaGei-P,44
+EMBC21,all,S7,AnyPPG-random-frozen,f1_50ms,0,0.005586107344203284,2950,2950,1.0,common complete annotated support; failure/coverage differences retained,AnyPPG,44
+EMBC21,all,S7,AnyPPG-random-frozen,rmssd_ms_mae,60,-5.8275559384046876,21,21,1.0,common finite continuous PRV windows,AnyPPG,44

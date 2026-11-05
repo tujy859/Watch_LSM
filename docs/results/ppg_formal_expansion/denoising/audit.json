@@ -1,0 +1,39 @@
+{
+  "status": "complete_audited",
+  "fitted_heads": 84,
+  "EMBC21_test_windows_per_method_seed": 504,
+  "EPFL_test_windows_per_head": 3060,
+  "metric_arrays_recomputed": 840,
+  "CPU_waveforms_recomputed": 252,
+  "maximum_metric_difference": 1.6653345369377348e-15,
+  "maximum_CPU_waveform_difference": 1.9073486328125e-06,
+  "subject_separation_verified": true,
+  "every_pair_tested_once_per_method_seed": true,
+  "raw_pair_reconstruction": {
+    "EMBC21": {
+      "pairs": 504,
+      "raw_reference_max_difference": 0.0,
+      "inference_input_max_difference": 0.0,
+      "manual_reference_hr_max_difference": 0.0,
+      "realized_snr_max_difference_db": 1.2725651465927967e-07
+    },
+    "EPFL": {
+      "pairs": 3060,
+      "raw_reference_max_difference": 0.0,
+      "inference_input_max_difference": 0.0,
+      "manual_reference_hr_max_difference": 0.0,
+      "realized_snr_max_difference_db": 0.0
+    }
+  },
+  "metrics_independent_numpy_implementation": true,
+  "source_files_rehashed": 446,
+  "EPFL_population_CI": false,
+  "EPFL_underlying_people": 1,
+  "limitations": [
+    "Resting reference signals are not guaranteed clean",
+    "Noise is synthetic",
+    "EMBC only7people, exploratory paired inference with shared training folds",
+    "EPFL340 copies share one clean waveform and cannot establish population generalization",
+    "Downstream HR is a fixed algorithm, not a learned clinical measurement"
+  ]
+}

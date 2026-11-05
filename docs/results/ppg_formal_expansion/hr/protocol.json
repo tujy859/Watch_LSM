@@ -1,0 +1,2475 @@
+{
+  "version": "formal-hr-extension-v1",
+  "models": [
+    "AnyPPG",
+    "PaPaGei-S",
+    "PaPaGei-P",
+    "PulsePPG",
+    "SigmaPPG",
+    "MOMENT-1-small"
+  ],
+  "methods": [
+    "AnyPPG",
+    "PaPaGei-S",
+    "PaPaGei-P",
+    "PulsePPG",
+    "SigmaPPG",
+    "MOMENT-1-small",
+    "AnyPPG-random-frozen"
+  ],
+  "heads": [
+    "Native-Ridge",
+    "PCA16-Ridge",
+    "PCA16-MLP"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "jobs": [
+    {
+      "id": "Dalia-fold0-seed42-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "S4",
+        "S3"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed42-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "S4",
+        "S3",
+        "S9",
+        "S12"
+      ],
+      "validation": [
+        "S1",
+        "S7"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S4",
+        "S3",
+        "S9",
+        "S12",
+        "S11",
+        "S13",
+        "S8",
+        "S10",
+        "S6"
+      ],
+      "validation": [
+        "S1",
+        "S7",
+        "S2"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed43-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "S7",
+        "S11"
+      ],
+      "validation": [
+        "S8"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed43-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "S7",
+        "S11",
+        "S9",
+        "S2"
+      ],
+      "validation": [
+        "S8",
+        "S4"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed43-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "S7",
+        "S11",
+        "S9",
+        "S2",
+        "S10",
+        "S13",
+        "S3",
+        "S1",
+        "S12"
+      ],
+      "validation": [
+        "S8",
+        "S4",
+        "S6"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed44-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "S8",
+        "S12"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed44-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "S8",
+        "S12",
+        "S11",
+        "S6"
+      ],
+      "validation": [
+        "S1",
+        "S7"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold0-seed44-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 0,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "S8",
+        "S12",
+        "S11",
+        "S6",
+        "S2",
+        "S10",
+        "S3",
+        "S9",
+        "S4"
+      ],
+      "validation": [
+        "S1",
+        "S7",
+        "S13"
+      ],
+      "test": [
+        "S14",
+        "S15",
+        "S5"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed42-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "S5",
+        "S4"
+      ],
+      "validation": [
+        "S10"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed42-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "S5",
+        "S4",
+        "S15",
+        "S7"
+      ],
+      "validation": [
+        "S10",
+        "S2"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S5",
+        "S4",
+        "S15",
+        "S7",
+        "S8",
+        "S14",
+        "S11",
+        "S1",
+        "S9"
+      ],
+      "validation": [
+        "S10",
+        "S2",
+        "S3"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed43-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "S15",
+        "S14"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed43-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "S15",
+        "S14",
+        "S3",
+        "S2"
+      ],
+      "validation": [
+        "S1",
+        "S7"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed43-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "S15",
+        "S14",
+        "S3",
+        "S2",
+        "S11",
+        "S10",
+        "S8",
+        "S4",
+        "S5"
+      ],
+      "validation": [
+        "S1",
+        "S7",
+        "S9"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed44-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "S14",
+        "S10"
+      ],
+      "validation": [
+        "S2"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed44-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "S14",
+        "S10",
+        "S8",
+        "S11"
+      ],
+      "validation": [
+        "S2",
+        "S15"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold1-seed44-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 1,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "S14",
+        "S10",
+        "S8",
+        "S11",
+        "S5",
+        "S7",
+        "S4",
+        "S9",
+        "S1"
+      ],
+      "validation": [
+        "S2",
+        "S15",
+        "S3"
+      ],
+      "test": [
+        "S12",
+        "S13",
+        "S6"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed42-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "S13",
+        "S1"
+      ],
+      "validation": [
+        "S5"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed42-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "S13",
+        "S1",
+        "S11",
+        "S7"
+      ],
+      "validation": [
+        "S5",
+        "S2"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S13",
+        "S1",
+        "S11",
+        "S7",
+        "S3",
+        "S10",
+        "S14",
+        "S15",
+        "S6"
+      ],
+      "validation": [
+        "S5",
+        "S2",
+        "S12"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed43-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "S12",
+        "S7"
+      ],
+      "validation": [
+        "S2"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed43-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "S12",
+        "S7",
+        "S3",
+        "S14"
+      ],
+      "validation": [
+        "S2",
+        "S15"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed43-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "S12",
+        "S7",
+        "S3",
+        "S14",
+        "S11",
+        "S10",
+        "S13",
+        "S6",
+        "S5"
+      ],
+      "validation": [
+        "S2",
+        "S15",
+        "S1"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed44-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "S5",
+        "S10"
+      ],
+      "validation": [
+        "S12"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed44-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "S5",
+        "S10",
+        "S3",
+        "S13"
+      ],
+      "validation": [
+        "S12",
+        "S11"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold2-seed44-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 2,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "S5",
+        "S10",
+        "S3",
+        "S13",
+        "S15",
+        "S6",
+        "S2",
+        "S7",
+        "S14"
+      ],
+      "validation": [
+        "S12",
+        "S11",
+        "S1"
+      ],
+      "test": [
+        "S4",
+        "S8",
+        "S9"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed42-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "S4",
+        "S6"
+      ],
+      "validation": [
+        "S15"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed42-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "S4",
+        "S6",
+        "S11",
+        "S1"
+      ],
+      "validation": [
+        "S15",
+        "S12"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S4",
+        "S6",
+        "S11",
+        "S1",
+        "S14",
+        "S2",
+        "S9",
+        "S5",
+        "S13"
+      ],
+      "validation": [
+        "S15",
+        "S12",
+        "S8"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed43-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "S2",
+        "S15"
+      ],
+      "validation": [
+        "S4"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed43-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "S2",
+        "S15",
+        "S6",
+        "S9"
+      ],
+      "validation": [
+        "S4",
+        "S5"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed43-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "S2",
+        "S15",
+        "S6",
+        "S9",
+        "S12",
+        "S11",
+        "S13",
+        "S1",
+        "S8"
+      ],
+      "validation": [
+        "S4",
+        "S5",
+        "S14"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed44-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "S11",
+        "S5"
+      ],
+      "validation": [
+        "S14"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed44-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "S11",
+        "S5",
+        "S4",
+        "S6"
+      ],
+      "validation": [
+        "S14",
+        "S13"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold3-seed44-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 3,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "S11",
+        "S5",
+        "S4",
+        "S6",
+        "S8",
+        "S15",
+        "S12",
+        "S1",
+        "S2"
+      ],
+      "validation": [
+        "S14",
+        "S13",
+        "S9"
+      ],
+      "test": [
+        "S10",
+        "S3",
+        "S7"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed42-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "S10",
+        "S4"
+      ],
+      "validation": [
+        "S8"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed42-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "S10",
+        "S4",
+        "S14",
+        "S5"
+      ],
+      "validation": [
+        "S8",
+        "S7"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed42-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S10",
+        "S4",
+        "S14",
+        "S5",
+        "S12",
+        "S6",
+        "S13",
+        "S3",
+        "S9"
+      ],
+      "validation": [
+        "S8",
+        "S7",
+        "S15"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed43-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "S6",
+        "S13"
+      ],
+      "validation": [
+        "S14"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed43-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "S6",
+        "S13",
+        "S8",
+        "S7"
+      ],
+      "validation": [
+        "S14",
+        "S5"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed43-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "S6",
+        "S13",
+        "S8",
+        "S7",
+        "S15",
+        "S9",
+        "S10",
+        "S3",
+        "S4"
+      ],
+      "validation": [
+        "S14",
+        "S5",
+        "S12"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed44-labels3",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "S5",
+        "S12"
+      ],
+      "validation": [
+        "S13"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed44-labels6",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "S5",
+        "S12",
+        "S3",
+        "S10"
+      ],
+      "validation": [
+        "S13",
+        "S9"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "Dalia-fold4-seed44-labelsfull",
+      "scenario": "within",
+      "source": "Dalia",
+      "target": "Dalia",
+      "fold": 4,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "S5",
+        "S12",
+        "S3",
+        "S10",
+        "S15",
+        "S14",
+        "S4",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S13",
+        "S9",
+        "S8"
+      ],
+      "test": [
+        "S1",
+        "S11",
+        "S2"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed42-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "qm9",
+        "p9p"
+      ],
+      "validation": [
+        "an0"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed42-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "qm9",
+        "p9p",
+        "w4p",
+        "kjd"
+      ],
+      "validation": [
+        "an0",
+        "tz8"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed42-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "qm9",
+        "p9p",
+        "w4p",
+        "kjd",
+        "fex",
+        "ngh",
+        "u7y",
+        "e61",
+        "trh"
+      ],
+      "validation": [
+        "an0",
+        "tz8",
+        "p5d"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed43-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "tz8",
+        "fex"
+      ],
+      "validation": [
+        "u7y"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed43-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "tz8",
+        "fex",
+        "w4p",
+        "p5d"
+      ],
+      "validation": [
+        "u7y",
+        "qm9"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed43-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "tz8",
+        "fex",
+        "w4p",
+        "p5d",
+        "e61",
+        "ngh",
+        "p9p",
+        "an0",
+        "kjd"
+      ],
+      "validation": [
+        "u7y",
+        "qm9",
+        "trh"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed44-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "u7y",
+        "kjd"
+      ],
+      "validation": [
+        "an0"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed44-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "u7y",
+        "kjd",
+        "fex",
+        "trh"
+      ],
+      "validation": [
+        "an0",
+        "tz8"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold0-seed44-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 0,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "u7y",
+        "kjd",
+        "fex",
+        "trh",
+        "p5d",
+        "e61",
+        "p9p",
+        "w4p",
+        "qm9"
+      ],
+      "validation": [
+        "an0",
+        "tz8",
+        "ngh"
+      ],
+      "test": [
+        "k2s",
+        "l38",
+        "n31",
+        "ssx"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed42-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "ssx",
+        "p5d"
+      ],
+      "validation": [
+        "e61"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed42-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "ssx",
+        "p5d",
+        "l38",
+        "trh"
+      ],
+      "validation": [
+        "e61",
+        "n31"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed42-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "ssx",
+        "p5d",
+        "l38",
+        "trh",
+        "tz8",
+        "k2s",
+        "fex",
+        "an0",
+        "u7y",
+        "w4p"
+      ],
+      "validation": [
+        "e61",
+        "n31",
+        "ngh"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed43-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "l38",
+        "k2s"
+      ],
+      "validation": [
+        "an0"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed43-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "l38",
+        "k2s",
+        "ngh",
+        "n31"
+      ],
+      "validation": [
+        "an0",
+        "trh"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed43-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "l38",
+        "k2s",
+        "ngh",
+        "n31",
+        "fex",
+        "e61",
+        "tz8",
+        "p5d",
+        "u7y",
+        "ssx"
+      ],
+      "validation": [
+        "an0",
+        "trh",
+        "w4p"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed44-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "l38",
+        "e61"
+      ],
+      "validation": [
+        "ssx"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed44-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "l38",
+        "e61",
+        "n31",
+        "u7y"
+      ],
+      "validation": [
+        "ssx",
+        "k2s"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold1-seed44-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 1,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "l38",
+        "e61",
+        "n31",
+        "u7y",
+        "trh",
+        "ngh",
+        "tz8",
+        "p5d",
+        "w4p",
+        "an0"
+      ],
+      "validation": [
+        "ssx",
+        "k2s",
+        "fex"
+      ],
+      "test": [
+        "kjd",
+        "p9p",
+        "qm9"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed42-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "kjd",
+        "an0"
+      ],
+      "validation": [
+        "tz8"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed42-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "kjd",
+        "an0",
+        "fex",
+        "ssx"
+      ],
+      "validation": [
+        "tz8",
+        "p5d"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed42-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "kjd",
+        "an0",
+        "fex",
+        "ssx",
+        "ngh",
+        "p9p",
+        "e61",
+        "l38",
+        "n31",
+        "qm9"
+      ],
+      "validation": [
+        "tz8",
+        "p5d",
+        "k2s"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed43-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "k2s",
+        "n31"
+      ],
+      "validation": [
+        "ssx"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed43-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "k2s",
+        "n31",
+        "ngh",
+        "an0"
+      ],
+      "validation": [
+        "ssx",
+        "fex"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed43-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "k2s",
+        "n31",
+        "ngh",
+        "an0",
+        "l38",
+        "p5d",
+        "e61",
+        "kjd",
+        "qm9",
+        "p9p"
+      ],
+      "validation": [
+        "ssx",
+        "fex",
+        "tz8"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed44-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "fex",
+        "k2s"
+      ],
+      "validation": [
+        "e61"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed44-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "fex",
+        "k2s",
+        "p5d",
+        "qm9"
+      ],
+      "validation": [
+        "e61",
+        "n31"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold2-seed44-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 2,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "fex",
+        "k2s",
+        "p5d",
+        "qm9",
+        "kjd",
+        "an0",
+        "ssx",
+        "ngh",
+        "tz8",
+        "l38"
+      ],
+      "validation": [
+        "e61",
+        "n31",
+        "p9p"
+      ],
+      "test": [
+        "trh",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed42-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "l38",
+        "p9p"
+      ],
+      "validation": [
+        "trh"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed42-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "l38",
+        "p9p",
+        "n31",
+        "k2s"
+      ],
+      "validation": [
+        "trh",
+        "u7y"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed42-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "l38",
+        "p9p",
+        "n31",
+        "k2s",
+        "an0",
+        "ssx",
+        "ngh",
+        "w4p",
+        "qm9",
+        "kjd"
+      ],
+      "validation": [
+        "trh",
+        "u7y",
+        "fex"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed43-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "k2s",
+        "n31"
+      ],
+      "validation": [
+        "p9p"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed43-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "k2s",
+        "n31",
+        "qm9",
+        "ssx"
+      ],
+      "validation": [
+        "p9p",
+        "ngh"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed43-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "k2s",
+        "n31",
+        "qm9",
+        "ssx",
+        "u7y",
+        "l38",
+        "fex",
+        "kjd",
+        "an0",
+        "trh"
+      ],
+      "validation": [
+        "p9p",
+        "ngh",
+        "w4p"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed44-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "l38",
+        "fex"
+      ],
+      "validation": [
+        "ssx"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed44-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "l38",
+        "fex",
+        "kjd",
+        "u7y"
+      ],
+      "validation": [
+        "ssx",
+        "p9p"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold3-seed44-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 3,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "l38",
+        "fex",
+        "kjd",
+        "u7y",
+        "w4p",
+        "qm9",
+        "n31",
+        "k2s",
+        "an0",
+        "ngh"
+      ],
+      "validation": [
+        "ssx",
+        "p9p",
+        "trh"
+      ],
+      "test": [
+        "e61",
+        "p5d",
+        "tz8"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed42-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 42,
+      "budget": "3",
+      "train": [
+        "qm9",
+        "w4p"
+      ],
+      "validation": [
+        "p9p"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed42-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 42,
+      "budget": "6",
+      "train": [
+        "qm9",
+        "w4p",
+        "tz8",
+        "l38"
+      ],
+      "validation": [
+        "p9p",
+        "e61"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed42-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "qm9",
+        "w4p",
+        "tz8",
+        "l38",
+        "n31",
+        "k2s",
+        "ssx",
+        "kjd",
+        "p5d",
+        "u7y"
+      ],
+      "validation": [
+        "p9p",
+        "e61",
+        "trh"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed43-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 43,
+      "budget": "3",
+      "train": [
+        "trh",
+        "u7y"
+      ],
+      "validation": [
+        "qm9"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed43-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 43,
+      "budget": "6",
+      "train": [
+        "trh",
+        "u7y",
+        "kjd",
+        "l38"
+      ],
+      "validation": [
+        "qm9",
+        "k2s"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed43-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "trh",
+        "u7y",
+        "kjd",
+        "l38",
+        "ssx",
+        "tz8",
+        "w4p",
+        "e61",
+        "p5d",
+        "p9p"
+      ],
+      "validation": [
+        "qm9",
+        "k2s",
+        "n31"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed44-labels3",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 44,
+      "budget": "3",
+      "train": [
+        "qm9",
+        "k2s"
+      ],
+      "validation": [
+        "kjd"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed44-labels6",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 44,
+      "budget": "6",
+      "train": [
+        "qm9",
+        "k2s",
+        "p5d",
+        "e61"
+      ],
+      "validation": [
+        "kjd",
+        "w4p"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "WildPPG-fold4-seed44-labelsfull",
+      "scenario": "within",
+      "source": "WildPPG",
+      "target": "WildPPG",
+      "fold": 4,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "qm9",
+        "k2s",
+        "p5d",
+        "e61",
+        "n31",
+        "l38",
+        "p9p",
+        "tz8",
+        "ssx",
+        "trh"
+      ],
+      "validation": [
+        "kjd",
+        "w4p",
+        "u7y"
+      ],
+      "test": [
+        "an0",
+        "fex",
+        "ngh"
+      ]
+    },
+    {
+      "id": "Dalia-to-WildPPG-seed42",
+      "scenario": "transfer",
+      "source": "Dalia",
+      "target": "WildPPG",
+      "fold": -1,
+      "seed": 42,
+      "budget": "full",
+      "train": [
+        "S12",
+        "S1",
+        "S6",
+        "S9",
+        "S5",
+        "S14",
+        "S11",
+        "S13",
+        "S7",
+        "S10",
+        "S8",
+        "S3"
+      ],
+      "validation": [
+        "S15",
+        "S2",
+        "S4"
+      ],
+      "test": [
+        "an0",
+        "e61",
+        "fex",
+        "k2s",
+        "kjd",
+        "l38",
+        "n31",
+        "ngh",
+        "p5d",
+        "p9p",
+        "qm9",
+        "ssx",
+        "trh",
+        "tz8",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "Dalia-to-WildPPG-seed43",
+      "scenario": "transfer",
+      "source": "Dalia",
+      "target": "WildPPG",
+      "fold": -1,
+      "seed": 43,
+      "budget": "full",
+      "train": [
+        "S2",
+        "S5",
+        "S7",
+        "S10",
+        "S9",
+        "S14",
+        "S6",
+        "S4",
+        "S13",
+        "S15",
+        "S1",
+        "S12"
+      ],
+      "validation": [
+        "S11",
+        "S3",
+        "S8"
+      ],
+      "test": [
+        "an0",
+        "e61",
+        "fex",
+        "k2s",
+        "kjd",
+        "l38",
+        "n31",
+        "ngh",
+        "p5d",
+        "p9p",
+        "qm9",
+        "ssx",
+        "trh",
+        "tz8",
+        "u7y",
+        "w4p"
+      ]
+    },
+    {
+      "id": "Dalia-to-WildPPG-seed44",
+      "scenario": "transfer",
+      "source": "Dalia",
+      "target": "WildPPG",
+      "fold": -1,
+      "seed": 44,
+      "budget": "full",
+      "train": [
+        "S13",
+        "S8",
+        "S3",
+        "S12",
+        "S7",
+        "S11",
+        "S6",
+        "S14",
+        "S10",
+        "S15",
+        "S9",
+        "S2"
+      ],
+      "validation": [
+        "S1",
+        "S4",
+        "S5"
+      ],
+      "test": [
+        "an0",
+        "e61",
+        "fex",
+        "k2s",
+        "kjd",
+        "l38",
+        "n31",
+        "ngh",
+        "p5d",
+        "p9p",
+        "qm9",
+        "ssx",
+        "trh",
+        "tz8",
+        "u7y",
+        "w4p"
+      ]
+    }
+  ],
+  "old_protocol_sha256": "70759d1692ae19d282457ae6a3487565b640daf236901a01424c95ee18ead7a6",
+  "data_rows_sha256": {
+    "Dalia": "20bc42bb14b6fcd186a3ab774c0f8dfc59197087dd3f2264bb7c89185808b134",
+    "WildPPG": "55e862709865ba0721b58f9f1b06411baf28f0c0f6b32feb009e104919d0cd5a"
+  },
+  "data_manifest_sha256": {
+    "Dalia": "1a2c664d27ef7ffd477487c64af2d393c747a736d2fe920c29dffa15fc94cb82",
+    "WildPPG": "ae25681180ad35c34f5c12f390b2506fd5cb014b9a98807dfc093dd7496a479e"
+  },
+  "random_encoder": "Fresh official AnyPPG constructor for each seed 42/43/44; paired to each split seed; no checkpoint or encoder optimization",
+  "projection": "Training windows only: unweighted feature StandardScaler, exact covariance-eigendecomposition PCA16, output StandardScaler. Person-level sufficient statistics are algebraically equivalent to stacking all training windows. PCA sign is fixed by largest loading.",
+  "ridge": {
+    "alphas": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "fit": "person-balanced feature standardization and squared loss; select validation person MAE; no train+validation refit"
+  },
+  "mlp": {
+    "width": 16,
+    "parameters": 289,
+    "epochs": 40,
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "fit": "full-batch person-balanced squared error; training target mean/std scaling; validation person MAE selects epoch; seed equals split seed"
+  },
+  "input": "All original finite eight-second windows; native fixed preprocessing. PulsePPG whole-record unlabeled normalization remains offline.",
+  "encoder_optimization": false,
+  "primary_comparisons": "Within each of 7 scenarios: six pretrained versus SmallCNN using PCA16-MLP; AnyPPG pretrained versus seed-matched random using PCA16-MLP. Paired person-level differences, Holm across these 7 planned comparisons within scenario.",
+  "secondary": "Native Ridge, PCA16 Ridge, head changes and traditional comparisons are descriptive/exploratory; bootstrap resamples people after averaging the 3 seed errors."
+}

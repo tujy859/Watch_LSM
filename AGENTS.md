@@ -9,19 +9,23 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-11-05（Asia/Shanghai，用户已批准四步正式评测，优先六模型/统一预测器/随机对照；SpO2从正式范围移除，旧队列不恢复）*
+*最后更新时间：2026-11-05（Asia/Shanghai，四步正式评测及20面板综合图完成；六模型/统一预测器/随机对照已补齐，保留阴性结论；无预训练，旧队列不恢复）*
 
 > **当前目标优先级**：用户明确先建立面向手表PPG的基础模型评测体系，再开展训练；项目为科学严谨、工程轻量的PoC。任务覆盖信号处理、HR/逐搏/PRV与健康表征；“基模更强”为待检验假设。具体实验顺序建议见[评测PoC讨论稿](docs/ppg_evaluation_poc_plan.md)，不把生产级架构或全套PPG-Bench跑完作为首个结论的前置条件。
 
-> **最新执行授权（11月5日用户明确）**：已批准四步正式评测，先补六模型、统一预测器与随机初始化对照，再推进腕部健康与临床辅助、逐搏/伪影/去噪。ECSMP SDS为腕部健康信息增量主任务，PPG-BP连续血压为补充；不开展基模预训练或编码器微调，不恢复历史全套队列。用户质疑单路PPG血氧任务后，经原理及本机标签分布复核，SpO2移出本轮正式范围与综合性能图，旧复现/pilot保留。说明标签用量时直接写训练/验证人数。
+> **最新执行授权（11月5日用户明确）**：四步正式评测已实施，先补六模型、统一预测器与随机初始化对照，再推进腕部健康与临床辅助、逐搏/伪影/去噪。ECSMP SDS为腕部健康信息增量主任务，PPG-BP袖带血压连续数值预测为补充（不是连续ABP波形）；不开展基模预训练或编码器微调，不恢复历史全套队列。用户质疑单路PPG血氧任务后，经原理及本机标签分布复核，SpO2移出本轮正式范围与综合性能图，旧复现/pilot保留。说明标签用量时直接写训练/验证人数。
 
-> **下一会话先读**：[扩展方案、覆盖图与小样本证据](docs/ppg_expansion_plan_and_pilot.md)、[模型覆盖、选型与论文对照](docs/ppg_model_scope_and_literature_analysis.md)、[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[腕部HR第一阶段结果](docs/ppg_hr_poc_phase1.md)。两阶段PoC已完成，第三阶段仅小样本；新增共享证据在`docs/results/ppg_expansion_pilot/`，原始输入/预测在`.local/ppg-expansion-pilot/`。原PPG-Bench/PulseDB历史工作线再读[2026-10-31交接](docs/session_handover_2026-10-31.md)，旧全套队列本轮未恢复，不照搬历史PID。
+> **下一会话先读**：[正式扩展结果与综合图](docs/ppg_formal_expansion_results.md)。四步正式扩展完成，无须恢复拟合；共享证据在`docs/results/ppg_formal_expansion/`，输入/特征/权重/逐窗预测在`.local/ppg-formal-expansion/`。历史[扩展方案与小样本](docs/ppg_expansion_plan_and_pilot.md)、[模型选型与论文](docs/ppg_model_scope_and_literature_analysis.md)、[第二阶段](docs/ppg_phase2_results.md)、[第一阶段HR](docs/ppg_hr_poc_phase1.md)数值保留，不混用协议。原PPG-Bench/PulseDB历史工作线再读[2026-10-31交接](docs/session_handover_2026-10-31.md)，旧全套队列本轮未恢复，不照搬历史PID。
 
-> **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。11月5日已跑通官方索引的128段小样本映射与预测，完整覆盖映射及正式基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
+> **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。11月5日正式扩展已完成官方Train/CalFree患者隔离的100训练/20验证/42测试MIMIC患者、8100段映射与评测；完整AAMI及VitalDB覆盖仍未完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **11月5日四步正式扩展完成**：新增`docs/ppg_formal_expansion_results.md`及20面板原始量纲综合PNG/SVG、预测器敏感性图、健康信息增量图。HR 1953份读出结果（含372旧原维线性复用）、分类765份、SDS/PPG-BP2205份、辅助年龄705份、临床606份、伪影105份、合成去噪84头；逐搏1890评分记录输出/1680唯一预测文件、91新增神经拟合，计数口径不同不相加冒充独立实验。241项本机测试通过，所有数据和结果独立审计见共享目录。保持全部编码器冻结，无预训练/微调/新依赖/云费用；历史队列未恢复。
+- [x] **11月5日正式结果与科学边界**：统一16维MLP下Any在Wild的2训练+1验证比CNN低2.64bpm，Holm p=.00146；六个同数据集场景均优于随机Any，迁移未通过校正。WESAD Any/MOMENT相对传统特征平衡准确率+.055/+.067；BUT Any AUROC .872对传统.851差CI跨0，ECSMP刺激近机会水平。ECSMP60人SDS主要对照MAE6.9166，PaPaGei-P融合6.8419但差CI跨0；PPG-BP六模型未显示SBP稳定增量，DBP融合反而更差。年龄严格移除年龄协变量，传统10.05岁/Pulse融合9.88岁，未确认增量。PulseDB固定MIMIC子集非AAMI，BIDMC按46真实患者重新评测，强均值对照有竞争力，不能推广到腕部疾病/临床测量。
+- [x] **11月5日逐点与去噪正式扩展**：EMBC21三种子Any/P-S/P-P/random/CNN/传统F1±50ms为.97885/.96903/.96622/.96780/.97613/.96618；60sRMSSD20.52/28.53/30.34/31.40/45.08/38.32ms。仅7人、8主比较Holm全部>=.125，保留探索性方向而不称确证。92962标量独立复算最大4.55e-13、CPU事件一致。SEGADE全部4305条逐点匹配原DaLiA，中央6秒评分共7.175h（原标注20%）；Any/P-S/P-P伪影F1 .862/.853/.850均优于手工.822，Any优于随机.849，校正通过；CNN均值.869更高。合成去噪84头及257040条EPFL外部预测完成，EMBC NRMSE Any1.016/P-S.979/random.943/CNN.812/filter1.279，EPFL滤波.239最好；不支持预训练去噪普遍优势，EPFL仅1原始人。
+- [x] **11月5日CI旧失败已修复**：用户链接run42027216305对应旧7cb3948，CPU单元测试导入可选ppg_bench失败。5b9faf4已隔离小预测器CPU检查与评测专用依赖；run42035847292的Windows/Linux、Python3.10/3.12四组全部通过。旧run保持红色属于历史，不应误认当前代码仍失败。正式扩展提交还须核查自身新CI。
 - [x] **11月5日扩展方案与小样本流程完成，正式运行待确认**：六模型Any/PaPaGei-S/P/Pulse/Sigma/MOMENT及随机Any同架构，在DaLiA/Wild各6人144窗完成36份预测；训练集PCA16后17参数线性头/289参数MLP，全部预测与独立重拟合通过。PulseDB新增按需加载器，官方Train的8训练/4验证患者和CalFree另4患者，每人8段共128段；位置/患者/标签独立核验通过，Any/P/Sigma真实前向，AAMI只验读2条映射。新增BIDMC人工呼吸/SpO2、WESAD状态、ECSMP刺激、BUT小样本共25项指标独立通过；ECSMP连续120秒SDS（18/6/6人）和PPG-BP血压增量（40/10/10人）两模型24组小头通过，未取得正式收益结论。补齐111个文件179.6MB：EPFL340 noisy/1 clean、SEGADE数组、BIDMC人工呼吸与Fix；SEGADE抽24条全部唯一映射、全1920点误差0，完整4305行仍待核验，公开波形已逐段滤波/min-max。186项本机测试通过；新模型覆盖图/正式HR全模型图及通俗术语说明见`docs/ppg_expansion_plan_and_pilot.md`。既有两阶段数值未改，仅跨任务图标题改用人数。无新依赖、预训练或完整扩展；须等待用户确认。
 - [x] **11月5日BIDMC患者身份纠正**：新官方Fix确认53条采集记录来自46真实患者，重复为s03386(06–09)、s11342(20–23)、s25323(38–39)。旧Any/PaPaGei-S已审计100项中92项存在患者级训练/测试交叉（25划分/种子中23种），此前53编号无交集仅为记录级检查，不能继续当严格跨患者结论。原数值/预测保留，旧报告已加纠正。新59窗小样本按原始患者分组，并对两标注CSV的一基采样点减1后归窗；人工呼吸参考独立差2.13e-14。证据`docs/results/ppg_expansion_pilot/bidmc_identity_audit.json`及`additional_tasks_independent_check.json`。旧BIDMC数值复现仍成立，不代表模型严格跨患者泛化。
 - [x] **11月5日模型范围与Apple/Google论文对照复核**：新增`docs/ppg_model_scope_and_literature_analysis.md`，明确第一阶段AnyPPG/PaPaGei-S/Pulse-PPG加MOMENT、第二阶段仅AnyPPG基模案例、历史PPG-BP另含PaPaGei-P/SigmaPPG；后两者实际已评，不是因性能差或无法运行被排除。补充Pulse-PPG在Wild三人预算相对CNN减少1.84bpm[0.64,3.16]，Any两域收益更一致。Apple ICLR2024主要是人级健康信息与人口学/HR统计对照，不提供逐搏或HRV误差结论；PaPaGei-P的同人对比路线值得补入。LSM的线性/小卷积头差异说明当前Ridge结果不是能力上限；SensorFM/WBM为派生指标的长时建模，不能作为原始PPG去噪证据。调研仓参考`0cdfed1a0b552de39b30d3fcb011c6e3a2e2baf7`；建议补模型矩阵、受控任务头/随机骨干消融、一个健康信息增量任务，均为后续方案。本轮仅分析及文档更新，未启动评测、预训练、下载或恢复旧队列，未改实验结果。

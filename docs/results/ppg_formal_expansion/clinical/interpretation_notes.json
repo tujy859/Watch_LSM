@@ -1,0 +1,20 @@
+{
+  "completed_outputs": 606,
+  "BIDMC_outputs": 450,
+  "PulseDB_outputs": 156,
+  "scope": "Six pretrained encoders plus three seed-matched random AnyPPG encoders; Native-Ridge, PCA16-Ridge, PCA16-MLP; hand features with same heads, small CNN, train mean; four fixed PPG respiratory modulation methods.",
+  "primary_result": "No one of the 21 prespecified model-vs-CNN / pretrained-Any-vs-random comparisons passes Holm correction within target at 0.05.",
+  "respiration_interpretation": "Train-only patient mean MAE is 2.3884 breaths/min, below all controlled MLP foundation-model means. Current evidence does not establish useful respiratory information beyond this constant baseline.",
+  "respiration_interface_limit": "The common protocol averages four 8-second embeddings over 32 seconds. It preserves observation coverage but discards ordering and cross-piece respiratory modulation. This is a test of this frozen representation/aggregation interface, not an architecture-wide impossibility result.",
+  "blood_pressure_interpretation": "Some point estimates are better than the small CNN, but intervals/multiplicity do not support a universal gain; handcrafted morphology is competitive. The official BP target is reproducible from ABP peaks/troughs, but inputs are clinical finger PPG and all selected patients come from MIMIC.",
+  "cohort": "PulseDB uses 100 training,20 validation,42 unseen CalFree test patients; 50 segments/person; 242 AAMI patients and four pilot-exposed test patients excluded. Bounded 50000-row local-availability search found only42 of the requested maximum50 eligible CalFree patients.",
+  "pretraining_exposure": "AnyPPG pretraining includes PulseDB and other encoder source cohorts may overlap; downstream split disjointness does not prove unseen-at-pretraining patients.",
+  "traditional_methods": "All four respiratory variants are reported. Median fusion was fixed as the primary conventional method before formal learned comparisons; the lower observed baseline-modulation error was not used for post hoc model selection.",
+  "reference_audit": "All735 BIDMC rows and8100 PulseDB rows independently reread. Model audit reloaded606 outputs;18 real-data Ridge checks used float64 matching production sufficient-statistics precision. Initial audit with sklearn preserving float32 showed conditioning error, so only independent verification precision was corrected; trained models and predictions were unchanged.",
+  "SpO2": "Removed from new formal training and performance comparison. Historical replication and pilot results preserved.",
+  "sources": {
+    "BIDMC": "https://physionet.org/content/bidmc/1.0.0/",
+    "RR_paper": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6051482/",
+    "PulseDB_mapping": "https://github.com/pulselabteam/PulseDB/blob/db0824f18d9a462458e46fe94c31283a93a5c0d5/Generate_Subsets.m"
+  }
+}

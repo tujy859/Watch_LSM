@@ -1,0 +1,856 @@
+[
+  {
+    "dataset": "BIDMC",
+    "name": "AnyPPG-random-frozen-seed42",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "AnyPPG-random-frozen",
+      "seed": 42,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "91a367fa4b54b69f1d91cf6eafd6a7c6d3a4d4aefe5d25ce50765a42ef21c80c",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": true,
+      "seed": 42,
+      "pretrained_weights_loaded": false,
+      "random_initialization": "Fresh official Net1D constructor, including fresh BatchNorm buffers; no checkpoint read",
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+      "state_after_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+      "checkpoint_sha256": {},
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9be0fc3d45b993e0021099dffff71eef56918cc486c905ec5fbc2cfb5f9a1dc8",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 1.5160000000032596
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "AnyPPG-random-frozen-seed43",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "AnyPPG-random-frozen",
+      "seed": 43,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "804c363c79dc4074b44f028227ccfdf1668b37cbd2bdcffc7b85c6b446387126",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": true,
+      "seed": 43,
+      "pretrained_weights_loaded": false,
+      "random_initialization": "Fresh official Net1D constructor, including fresh BatchNorm buffers; no checkpoint read",
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+      "state_after_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+      "checkpoint_sha256": {},
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9be0fc3d45b993e0021099dffff71eef56918cc486c905ec5fbc2cfb5f9a1dc8",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 1.2189999999827705
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "AnyPPG-random-frozen-seed44",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "AnyPPG-random-frozen",
+      "seed": 44,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "18ef4d9d77eacaf38fa3aa0fb3cbfe35d018968da66cd3e190efe6d0f5d002dd",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": true,
+      "seed": 44,
+      "pretrained_weights_loaded": false,
+      "random_initialization": "Fresh official Net1D constructor, including fresh BatchNorm buffers; no checkpoint read",
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+      "state_after_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+      "checkpoint_sha256": {},
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9be0fc3d45b993e0021099dffff71eef56918cc486c905ec5fbc2cfb5f9a1dc8",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 1.4369999999762513
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "AnyPPG",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "AnyPPG",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "6d42842442a50f21f99cd2c27525d60c8529895c615758dd3c37d71f8aa8bc7e",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "checkpoint_sha256": {
+        "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9be0fc3d45b993e0021099dffff71eef56918cc486c905ec5fbc2cfb5f9a1dc8",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 1.5469999999622814
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "MOMENT-1-small",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "MOMENT-1-small",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "e2804d688481babed70088c7435b7ed2166d8c4a54bc460086d35c7582b7599d",
+    "encoder": {
+      "model": "MOMENT-1-small",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 64,
+      "native_input_samples": 512,
+      "native_used_samples": 512,
+      "encoder_parameters": 35337408,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+      "state_after_sha256": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+      "checkpoint_sha256": {
+        "models/weights/moment/MOMENT-1-small/config.json": "6456b8e6f017323e8ef372c338c993380e246cb6291ffb8ca21fe7dfc53d0a6f",
+        "models/weights/moment/MOMENT-1-small/model.safetensors": "785e6c6f57ffa7cac7e2a1fff6369618d49f2f441563ddea76c866231e5aa877"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.moment:MOMENTPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "725852fcf10a706afd5f6d75a9bc914c4c90fd1a2a7044664a0bdff4db3a3d21",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 6.546999999962281
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "PaPaGei-P",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "PaPaGei-P",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "897702387e457e1b9a6d15ab8d9f20f5632d8cc3e5808d37859a0f0eae4edd9d",
+    "encoder": {
+      "model": "PaPaGei-P",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4993024,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9be0fc3d45b993e0021099dffff71eef56918cc486c905ec5fbc2cfb5f9a1dc8",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 0.8440000000409782
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "PaPaGei-S",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "PaPaGei-S",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "65224f445f97404703ea5214668ea73065cd527a0e587c15fb4f8bb08674dba7",
+    "encoder": {
+      "model": "PaPaGei-S",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 5785612,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+      "state_after_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_s.pt": "79d68671e51bdc951fee853e5a8241099e38148ff26ed888b843849332e0b988"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.papagei:PaPaGei_S_Port",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9be0fc3d45b993e0021099dffff71eef56918cc486c905ec5fbc2cfb5f9a1dc8",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 1.0160000000032596
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "PulsePPG",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "PulsePPG",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      512
+    ],
+    "features_sha256": "8503899796615694c5d7554379e4ae77ee1bbe897001ea0a69c332b52e7d1b7e",
+    "encoder": {
+      "model": "PulsePPG",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        2940,
+        512
+      ],
+      "native_fs": 50,
+      "native_input_samples": 400,
+      "native_used_samples": 400,
+      "encoder_parameters": 28497920,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "ee536dc4194480b6b8384cfed18b1f9d292f433381b47d76f9d10b24896ce98f",
+      "state_after_sha256": "ee536dc4194480b6b8384cfed18b1f9d292f433381b47d76f9d10b24896ce98f",
+      "checkpoint_sha256": {
+        "models/weights/pulseppg/pulseppg/experiments/out/pulseppg/checkpoint_best.pkl": "485ade5033b3baa9b82e252fc131042dda897d7bdfc0d1a030d9746a1e98857c"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.pulseppg:PulsePPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "f535e0e896aa1b944b869e814872bca1814d3b8671f0b5a6097058cabbb089a5",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 2.4219999999622814
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "BIDMC",
+    "name": "SigmaPPG",
+    "identity": {
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1",
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "method": "SigmaPPG",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      735,
+      360
+    ],
+    "features_sha256": "508baa3bdd74099030574b1c17086eaefa06e855589fe441046a20061fda90aa",
+    "encoder": {
+      "model": "SigmaPPG",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        2940,
+        360
+      ],
+      "native_fs": 50,
+      "native_input_samples": 400,
+      "native_used_samples": 400,
+      "encoder_parameters": 29700928,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+      "state_after_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+      "checkpoint_sha256": {
+        "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "f535e0e896aa1b944b869e814872bca1814d3b8671f0b5a6097058cabbb089a5",
+      "record_statistics_sha256": "83c236c0f3d2e0e422f68667d86bd909007231c9c2623567ee30f3a8f527774b",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 4.64100000000326
+    },
+    "views_per_observation": 4
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "AnyPPG-random-frozen-seed42",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "AnyPPG-random-frozen",
+      "seed": 42,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "dd4f31114e71795ca7290a418b5497cc475e5040e0fcfed80bb8f5241a1b5e47",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": true,
+      "seed": 42,
+      "pretrained_weights_loaded": false,
+      "random_initialization": "Fresh official Net1D constructor, including fresh BatchNorm buffers; no checkpoint read",
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+      "state_after_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+      "checkpoint_sha256": {},
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "755d8f4316c765d8a44c1090a7f21b5f56b597ba81c510ed32f7c61b98ab1163",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 6.5310000000172295
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "AnyPPG-random-frozen-seed43",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "AnyPPG-random-frozen",
+      "seed": 43,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "5f75cb4b57bf4f36f096db0f556db3de10ce3c91e0abeeaba608312dc452feda",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": true,
+      "seed": 43,
+      "pretrained_weights_loaded": false,
+      "random_initialization": "Fresh official Net1D constructor, including fresh BatchNorm buffers; no checkpoint read",
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+      "state_after_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+      "checkpoint_sha256": {},
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "755d8f4316c765d8a44c1090a7f21b5f56b597ba81c510ed32f7c61b98ab1163",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 6.51500000001397
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "AnyPPG-random-frozen-seed44",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "AnyPPG-random-frozen",
+      "seed": 44,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "5e27327b1e4b2776d318a88abeabe494ef80359eb786ff65c7cc1cecd3db47d9",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": true,
+      "seed": 44,
+      "pretrained_weights_loaded": false,
+      "random_initialization": "Fresh official Net1D constructor, including fresh BatchNorm buffers; no checkpoint read",
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+      "state_after_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+      "checkpoint_sha256": {},
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "755d8f4316c765d8a44c1090a7f21b5f56b597ba81c510ed32f7c61b98ab1163",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 6.546999999962281
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "AnyPPG",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "AnyPPG",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "729b8834e2eac5de2dc0f54e1c67229461790f2a6f853ce14708b52a22724980",
+    "encoder": {
+      "model": "AnyPPG",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "checkpoint_sha256": {
+        "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "755d8f4316c765d8a44c1090a7f21b5f56b597ba81c510ed32f7c61b98ab1163",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 6.657000000006519
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "MOMENT-1-small",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "MOMENT-1-small",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "e40f2a2269bbbcabb6cec229bb4979045f19348dba2c4bbf66336c3ec1f437e9",
+    "encoder": {
+      "model": "MOMENT-1-small",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 64,
+      "native_input_samples": 512,
+      "native_used_samples": 512,
+      "encoder_parameters": 35337408,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+      "state_after_sha256": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+      "checkpoint_sha256": {
+        "models/weights/moment/MOMENT-1-small/config.json": "6456b8e6f017323e8ef372c338c993380e246cb6291ffb8ca21fe7dfc53d0a6f",
+        "models/weights/moment/MOMENT-1-small/model.safetensors": "785e6c6f57ffa7cac7e2a1fff6369618d49f2f441563ddea76c866231e5aa877"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.moment:MOMENTPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "dfa4966958e8f7826b4cead83e56bf0d46f936042eb8662c06c30965548459e5",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 18.530999999959022
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "PaPaGei-P",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "PaPaGei-P",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "fc97697d832af325ca90f85d8a8161f4b4a760696ba8ed1ea81ad01297906367",
+    "encoder": {
+      "model": "PaPaGei-P",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 4993024,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "755d8f4316c765d8a44c1090a7f21b5f56b597ba81c510ed32f7c61b98ab1163",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 4.469000000040978
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "PaPaGei-S",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "PaPaGei-S",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "0f60fab7e4c803b3e213f530437cbe517603dc3aa07547d20417227348be2ee4",
+    "encoder": {
+      "model": "PaPaGei-S",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1000,
+      "native_used_samples": 1000,
+      "encoder_parameters": 5785612,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+      "state_after_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_s.pt": "79d68671e51bdc951fee853e5a8241099e38148ff26ed888b843849332e0b988"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.papagei:PaPaGei_S_Port",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "755d8f4316c765d8a44c1090a7f21b5f56b597ba81c510ed32f7c61b98ab1163",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 4.813000000023749
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "PulsePPG",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "PulsePPG",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      512
+    ],
+    "features_sha256": "4494ef907bb8f9f843a35288d56bbbe5540245eded8b5112ad9720ce9040cff0",
+    "encoder": {
+      "model": "PulsePPG",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        16200,
+        512
+      ],
+      "native_fs": 50,
+      "native_input_samples": 400,
+      "native_used_samples": 400,
+      "encoder_parameters": 28497920,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "ee536dc4194480b6b8384cfed18b1f9d292f433381b47d76f9d10b24896ce98f",
+      "state_after_sha256": "ee536dc4194480b6b8384cfed18b1f9d292f433381b47d76f9d10b24896ce98f",
+      "checkpoint_sha256": {
+        "models/weights/pulseppg/pulseppg/experiments/out/pulseppg/checkpoint_best.pkl": "485ade5033b3baa9b82e252fc131042dda897d7bdfc0d1a030d9746a1e98857c"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.pulseppg:PulsePPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9b56888e705f9e8f30a14ee880069171ff93518b3e4c55107e81545854ca04a1",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 10.327999999979511
+    },
+    "views_per_observation": 2
+  },
+  {
+    "dataset": "PulseDB",
+    "name": "SigmaPPG",
+    "identity": {
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261",
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "method": "SigmaPPG",
+      "seed": null,
+      "extractor_sha256": "a5cced0aa51c19d75fac7392ec9b35ca4bfeef07b8d16110176fdf499b1dd49c"
+    },
+    "shape": [
+      8100,
+      360
+    ],
+    "features_sha256": "fa7477b7c31dbb967aa62ad80287c4583fb2f753936018868a7cc394220bb851",
+    "encoder": {
+      "model": "SigmaPPG",
+      "random_init": false,
+      "seed": 42,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        16200,
+        360
+      ],
+      "native_fs": 50,
+      "native_input_samples": 400,
+      "native_used_samples": 400,
+      "encoder_parameters": 29700928,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+      "state_after_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+      "checkpoint_sha256": {
+        "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+      "device": "cuda",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "9b56888e705f9e8f30a14ee880069171ff93518b3e4c55107e81545854ca04a1",
+      "record_statistics_sha256": "73e78e8997363b5c9dc317a7e6d69ef9655ecf6f89ff308d6c58eeecf434b874",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+      "elapsed_seconds": 6.98399999999674
+    },
+    "views_per_observation": 2
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "reference_people_EMBC21": 7,
+  "rest_clips_per_person": 24,
+  "noise_realizations_per_clip": 3,
+  "EMBC21_pairs": 504,
+  "EPFL_underlying_people": 1,
+  "EPFL_noisy_copies": 340,
+  "EPFL_window_pairs": 3060,
+  "full_annotation_and_finite_window_policy": true,
+  "clean_used_for_input_normalization": false,
+  "data_sha256": {
+    "EMBC21": "dd8a5aff30c6bce62070788b24f9374f91194419e33fd1132cfc29be38323fae",
+    "EPFL": "c5d28f59931ff02151f35d5d79bddbcd0e824b3b03dda6f3dde623edc604c368"
+  },
+  "source_note": "EMBC raw reference may retain residual noise; expert validity is an onset-annotation judgement, not proof of noise-free morphology"
+}

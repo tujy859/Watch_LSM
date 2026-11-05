@@ -1,0 +1,189 @@
+{
+  "status": "protocol_locked_before_formal_features_and_fits",
+  "protocol": {
+    "version": "formal-health-v1",
+    "split_seed": 20261105,
+    "five_folds": "test fold k, validation fold (k+1)%5, other three train",
+    "initialization_seeds": [
+      42,
+      43,
+      44
+    ],
+    "pca_components": 8,
+    "ridge_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "mlp_hidden": 16,
+    "mlp_epochs": 100,
+    "mlp_lr": 0.01,
+    "mlp_weight_decay": 0.0001,
+    "mlp_selection": "lowest validation MAE; earliest epoch breaks ties",
+    "equal_head_width": "zero-pad all input groups to twice the full fused dimension after training-only missing flags/scaling",
+    "primary_comparison": "demographics+traditional+embedding vs demographics+traditional, linear head",
+    "secondary_comparison": "same input groups with fixed small MLP; standalone and demographic-only increment",
+    "testing_unit": "one person, seed-averaged absolute error; no windows as independent observations",
+    "multiple_comparisons": "Holm across six pretrained-model fusion increments separately for each of SDS, SBP, DBP; other comparisons exploratory",
+    "bootstrap": "10000 paired person resamples, percentile 95% intervals; fixed split uncertainty not fully represented",
+    "permutation": "100000 paired person sign flips, two-sided; overlapping training folds can induce dependent errors",
+    "encoders_frozen": true,
+    "pretraining": false
+  },
+  "cnn_protocol": {
+    "epochs": 40,
+    "patience": 10,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "person_batch": 12,
+    "embedding_dimension": 16,
+    "head_hidden": 16,
+    "loss": "one standardized squared error per person after averaging that person's clip embeddings",
+    "features": "same four-block SmallHRCNN convolutional backbone with fixed adaptive pooling, new 16D projection",
+    "input": "all common observed clips, resampled to 64 Hz and independently z-scored; no synthetic padding",
+    "selection": "validation person MAE; earliest epoch ties; no refit on validation people"
+  },
+  "models": [
+    "AnyPPG",
+    "PaPaGei-S",
+    "PaPaGei-P",
+    "PulsePPG",
+    "SigmaPPG",
+    "MOMENT-1-small",
+    "AnyPPG-random-frozen",
+    "SmallCNN",
+    "shared_control",
+    "train_mean"
+  ],
+  "datasets": {
+    "ECSMP": {
+      "people": 60,
+      "input_shape": [
+        900,
+        1000
+      ],
+      "fs": 125,
+      "targets": [
+        "sds_self_report_score"
+      ],
+      "covariates": [
+        "age_years",
+        "male_indicator"
+      ],
+      "traditional_columns": 15,
+      "inventory": {
+        "eligible_people": 60,
+        "age_range": [
+          18.0,
+          28.0
+        ],
+        "sex_counts": {
+          "Female": 41,
+          "Male": 19
+        },
+        "sds_range": [
+          28.75,
+          66.25
+        ],
+        "observation": "One continuous 120 s neutral raw BVP interval, 15 nonoverlapping 8 s clips; 2 s extra context only for conventional peak filtering"
+      },
+      "limitations": [
+        "Self-reported SDS symptoms, not clinical depression diagnosis",
+        "Only 60 young people aged 18-28",
+        "Traditional PRV estimates have no ECG validation",
+        "Stimulus timing uses source metadata, not new annotations",
+        "Pretraining overlap not certified"
+      ],
+      "fold_counts": [
+        {
+          "train": 36,
+          "validation": 12,
+          "test": 12
+        },
+        {
+          "train": 36,
+          "validation": 12,
+          "test": 12
+        },
+        {
+          "train": 36,
+          "validation": 12,
+          "test": 12
+        },
+        {
+          "train": 36,
+          "validation": 12,
+          "test": 12
+        },
+        {
+          "train": 36,
+          "validation": 12,
+          "test": 12
+        }
+      ]
+    },
+    "PPG-BP": {
+      "people": 218,
+      "input_shape": [
+        654,
+        250
+      ],
+      "fs": 125,
+      "targets": [
+        "cuff_sbp_mmhg",
+        "cuff_dbp_mmhg"
+      ],
+      "covariates": [
+        "age_years",
+        "male_indicator",
+        "bmi_kg_m2"
+      ],
+      "traditional_columns": 11,
+      "inventory": {
+        "eligible_people": 218,
+        "raw_people": 219,
+        "excluded_ids": [
+          "231"
+        ],
+        "disease_labels_used": false,
+        "observation": "First 2.0 s of each of three separate 2.1 s fingertip clips; total 6.0 s, never joined for PRV"
+      },
+      "limitations": [
+        "Finger auxiliary domain, not wrist blood pressure validation",
+        "One cuff label per person, no continuous ABP",
+        "Source clips shortened from 2.1 to 2.0 s for complete common model patches; not numerically interchangeable with old protocol",
+        "Traditional baseline includes independently recorded table HR",
+        "Pretraining overlap with source patients not certified"
+      ],
+      "fold_counts": [
+        {
+          "train": 130,
+          "validation": 44,
+          "test": 44
+        },
+        {
+          "train": 130,
+          "validation": 44,
+          "test": 44
+        },
+        {
+          "train": 131,
+          "validation": 43,
+          "test": 44
+        },
+        {
+          "train": 132,
+          "validation": 43,
+          "test": 43
+        },
+        {
+          "train": 131,
+          "validation": 44,
+          "test": 43
+        }
+      ]
+    }
+  }
+}

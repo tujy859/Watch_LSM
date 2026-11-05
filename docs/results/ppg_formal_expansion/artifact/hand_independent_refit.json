@@ -1,0 +1,475 @@
+{
+  "status": "passed",
+  "jobs": 15,
+  "candidate_refits": 60,
+  "results": [
+    {
+      "job": "fold0-seed42",
+      "selected_C": 0.01,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8454753320362083,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8447573484448175,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8446021967921099,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8445824031696464,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "6278f8c1ad1f7b1a7e00db3020c44eec93f50750cbe8d237f008d3ee60b32f54",
+      "prediction_sha256": "d3a277b1722fffa41fccd8e02a0c1a4e061ac4ed0038e6ffeca6b8f10d33d494"
+    },
+    {
+      "job": "fold0-seed43",
+      "selected_C": 0.01,
+      "threshold": 0.2,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8130522442457409,
+          "threshold": 0.2
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8127697845353626,
+          "threshold": 0.2
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.812728823656585,
+          "threshold": 0.2
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8127323616135236,
+          "threshold": 0.2
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "0f4bdc79fee77f5b1a5774e2962e292f746a81f81ee52f88a0cb4c04e9802ff8",
+      "prediction_sha256": "818bb62bb714da7fac471c5fb174aa1a57f5c9345e86b2a9127034c46fbb4754"
+    },
+    {
+      "job": "fold0-seed44",
+      "selected_C": 0.01,
+      "threshold": 0.4,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8211964999949496,
+          "threshold": 0.4
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8205449690241213,
+          "threshold": 0.4
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8204343471247801,
+          "threshold": 0.4
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8204431885225724,
+          "threshold": 0.4
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "4868fa0ae196a493a53a05b3b7ea1cc4c26a7590dcfc6701a82ae0b718937473",
+      "prediction_sha256": "b111e69a71b4ec5c8a6989f463ad77ff21f266b30856524cb81fc8e45901a4fe"
+    },
+    {
+      "job": "fold1-seed42",
+      "selected_C": 0.01,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8511398320178966,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8510434608479538,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8510239126074021,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8510220230802675,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "03a006b4e8bc3d091a251782ca3602428ab05a7a5c375d55cdded842360701e5",
+      "prediction_sha256": "747be6c4f41f5ee4aa55a6ef90aa6321c28114596c254d9b58451486fda8e7f7"
+    },
+    {
+      "job": "fold1-seed43",
+      "selected_C": 0.1,
+      "threshold": 0.4,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.811614767440156,
+          "threshold": 0.4
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.811634623129367,
+          "threshold": 0.4
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8116138720100531,
+          "threshold": 0.4
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8116138720100531,
+          "threshold": 0.4
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "a5550044539e50a10d4ab5ad1940f9a2c3b3df9ad8db537c8254be0a36e0fdff",
+      "prediction_sha256": "dfe4ab9417817bb8a5197ef0cce74f573836371a18b4e68e3d1549283fb9fb0d"
+    },
+    {
+      "job": "fold1-seed44",
+      "selected_C": 0.01,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8724565600300461,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8716822293400202,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8716747476632184,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.871572305835392,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "1138ad6ffeef40c6909e790c7a164fd318122d281fa2d59898b982420fc37b9c",
+      "prediction_sha256": "a55fa7eb15ca213da6bc10efe2395d071074d570a0916df019e8ff63e24834ad"
+    },
+    {
+      "job": "fold2-seed42",
+      "selected_C": 0.01,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8599355038444987,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8593972162343754,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8592147268157643,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8592817880369005,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "6407d3ccb88e04f6be594eff8d373ca5a2966a8fdea738c1a8ec1c16a6ea2b48",
+      "prediction_sha256": "c5964244d06c6cb36e7149e3c3f5576d094d0908488d2bf51d35dc2bad55f532"
+    },
+    {
+      "job": "fold2-seed43",
+      "selected_C": 10.0,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8668907539113295,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8679444216582812,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8680373064801775,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8680445858117322,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "9757417ed96398a7d9052efc345978eba4d1ed0255255ea65b082ecde4f5e3e0",
+      "prediction_sha256": "167e032b989f7c3e78a4b8a5f451a715fbd2b01ed6d4299c323c6ac82000a473"
+    },
+    {
+      "job": "fold2-seed44",
+      "selected_C": 0.01,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8292458188928142,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8283793359452575,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8282420413000143,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8282416724070017,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "a3912dee93909e97e1ea0277d0417d296856ebb60905a8c812d26cf3e0b0b5a4",
+      "prediction_sha256": "be97a43bd73f9851c724950389e1cc57bf7d48910e205fe82d57df8d97b9edc0"
+    },
+    {
+      "job": "fold3-seed42",
+      "selected_C": 1.0,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8441322207337844,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8441112923072086,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8441614565070626,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8441525358402853,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "a667575bd6ed5fe9520b995770ef9f61a6d4896fef138b52e92a2ced63993192",
+      "prediction_sha256": "d17f81e81e64b581e8530f9c0d2c8bf5bcb709e32d943c73b852579014891733"
+    },
+    {
+      "job": "fold3-seed43",
+      "selected_C": 1.0,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8056867276689023,
+          "threshold": 0.4
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.805596544677735,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8057535027557927,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8057313862325629,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "93b56310fd9e5dde16ca8ad10d8a0e02bfdd2d849851958e5f788a8db132d274",
+      "prediction_sha256": "7d21eda09c742d4ba020e82ac21a6d91bfe163888d5a69e2c22cfb62da6564bd"
+    },
+    {
+      "job": "fold3-seed44",
+      "selected_C": 0.01,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.8417376660142241,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.8415017400837025,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.8415283228211171,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.8415176285905371,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "c44c88d93ad6312920b02dda5ddb5ba37ee8ad89f729a2faf4a6cb52469fa750",
+      "prediction_sha256": "9aff23144c2a4251b751df13e7008ad4d349ad77edec665cef4fe4b1169ca720"
+    },
+    {
+      "job": "fold4-seed42",
+      "selected_C": 10.0,
+      "threshold": 0.4,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.7799967148068679,
+          "threshold": 0.4
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.7807256761825606,
+          "threshold": 0.4
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.7808207068893007,
+          "threshold": 0.4
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.780825205374731,
+          "threshold": 0.4
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "b0306a7882d4bf00d2aba575bf16a24e4997faf57f47831ded5a5f7b9cb78179",
+      "prediction_sha256": "28bb419694de6ccf02eb8f9ce559dd4f9b9273487a6a3eceb51609877c73bfb7"
+    },
+    {
+      "job": "fold4-seed43",
+      "selected_C": 0.01,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.7904644808921697,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.789133030545922,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.7889761321350713,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.7889687741577092,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "c47aa0c919a107c5382d370c7ce44cbe6fc67daceac09108f97d8a3f04201a15",
+      "prediction_sha256": "f7f7bb96bc60977d8f6189dc49a5d0b43511e3cffa43976ecca6be4eeedf80a5"
+    },
+    {
+      "job": "fold4-seed44",
+      "selected_C": 10.0,
+      "threshold": 0.3,
+      "candidates": [
+        {
+          "C": 0.01,
+          "validation_f1": 0.7775563741055137,
+          "threshold": 0.3
+        },
+        {
+          "C": 0.1,
+          "validation_f1": 0.7792849832659222,
+          "threshold": 0.3
+        },
+        {
+          "C": 1.0,
+          "validation_f1": 0.7794119335567459,
+          "threshold": 0.3
+        },
+        {
+          "C": 10.0,
+          "validation_f1": 0.779452920293522,
+          "threshold": 0.3
+        }
+      ],
+      "maximum_probability_error": 0.0,
+      "maximum_validation_metric_error": 0.0,
+      "model_sha256": "d4d199fb1e454d03a57b6911caf55b5ca16611b2327094af51bfaf2cb463c25b",
+      "prediction_sha256": "79e4752d8a0840cdee773040657f649134f48a1e516c007cc875b8fda9efb43e"
+    }
+  ],
+  "audit_code_sha256": "1371e0a2f42cd1dd1f9c002f2e4a3283cefbb58df2d71a2a509c4f88118c2acb",
+  "protocol_sha256": "28256c1bcaf5a9a85b1bd04da0332c1e5a61821d2112781e0eb72e1d90f6adfd",
+  "limitation": "Label-free descriptor function reused; all sampling, scaling, sample weights, sklearn fitting and validation selection independently reconstructed."
+}

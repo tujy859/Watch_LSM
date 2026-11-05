@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "dataset": "WESAD",
+  "source": {
+    "all_labels_checked": 3274,
+    "raw_waveforms_checked": 3274,
+    "maximum_waveform_error": 0.0,
+    "raw_source_sha256": {
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S10\\S10.pkl": "41da29c68366f33650f3d41a6be78107bf6942929c3bb0ef46238078ddddee9f",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S11\\S11.pkl": "f39557a8d660b10154936f51debf2926aea7ebb9b26a168858f59502f914d8f7",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S13\\S13.pkl": "772fb490f19b279e49367271e009fc10d3a3ca1e3456df0d68b9063a73992066",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S14\\S14.pkl": "e7bd33c57538319a25c6d53e6a9fb6c1abd12800cfc64bb63275d89de8d2fd60",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S15\\S15.pkl": "1ea573bc6b45ba79fb134f9460d691b86176f60dce23420dc514c28017d4049c",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S16\\S16.pkl": "f65cf40cada75c3e9f5813276d7dcc90359c3b06dec41d68656c0a6e61dbc575",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S17\\S17.pkl": "3315796a75227d54d7b0056736f671484fd2fb85afffa65818fd76aeff2920fa",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S2\\S2.pkl": "36ef5e8afc0f91998eefba7c12fc9fa97b7b07198cbec0126917d7abb436ca23",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S3\\S3.pkl": "5c8bd4a82af029c082e610bca28a011fca2ae3b23e14a18458ebb5990be4015e",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S4\\S4.pkl": "0f0740a79388723360ff12b4f47c465665ea7827d1399b18ac43908daac17900",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S5\\S5.pkl": "74bd187e3a9c1ca4259af52d04974c8e7ff7dc49ceea7e269f499ca98fe6d8ec",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S6\\S6.pkl": "8aa9bf57b69f4fe5bce06c550230857627c3f05befa2f787151646bb29ee8f62",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S7\\S7.pkl": "9cb62705ae7f53dca327a9a00a6f9fdabf5128d449174ab37594658e912cb6d8",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S8\\S8.pkl": "dac1141dac11d56b3641be982f45da63f05e9d74154f59e6ea0cdcf47fc72710",
+      "datasets\\ppg_bench_raw\\wesad\\WESAD\\S9\\S9.pkl": "24dc004e201bd541f092989443f0a29ebf89e4a227a80bb6b6d1987255039544"
+    },
+    "eeg_timing_note": "ECSMP reproduces released EEG latency/fs clock; not independent hardware synchronization validation"
+  },
+  "independent_refits": [
+    {
+      "method": "AnyPPG",
+      "job": "fold0-seed42",
+      "selected_C": 0.01,
+      "maximum_probability_error": 1.3322676295501878e-15,
+      "pipeline": "Independent sklearn StandardScaler/full-SVD PCA16/StandardScaler/logistic; training and validation only"
+    },
+    {
+      "method": "PaPaGei-P",
+      "job": "fold0-seed42",
+      "selected_C": 10.0,
+      "maximum_probability_error": 1.021405182655144e-14,
+      "pipeline": "Independent sklearn StandardScaler/full-SVD PCA16/StandardScaler/logistic; training and validation only"
+    }
+  ],
+  "held_out_outputs_checked": 255,
+  "maximum_sklearn_metric_difference": 2.220446049250313e-16,
+  "independent_random_block_statistic_checks": 30,
+  "maximum_resampled_metric_difference": 1.887379141862766e-15,
+  "statistical_review": "Bootstrap resamples people with all records and seeds together; paired permutation swaps complete person prediction blocks before recomputing pooled metric; seven primary tests use Holm per dataset.",
+  "observation_review": "All methods observe the same ten seconds via starts 0 and 2 seconds, each eight seconds. Mean FM embeddings / mean CNN logits; neither test labels nor test cohort fits PCA.",
+  "limitations": [
+    "ECSMP is six stimulus identities, not six verified felt-emotion diagnoses.",
+    "WESAD is three laboratory states, not an independent clinical stress diagnosis.",
+    "BUT labels reflect HR readability, not morphological fidelity.",
+    "Intervals use 1000 participant bootstrap replicates; p values use 2000 random swaps, so exploratory precision is finite."
+  ],
+  "protocol_sha256": "13b12536f0d22243a1d3848707227780caa286d8d69dad94de5613007a8b4aaa",
+  "audit_code_sha256": "beb82e0640583860b56a05d114130aba8c5c0befc2b3c27f78ccaf9fd7d44171"
+}

@@ -1,0 +1,22 @@
+{
+  "decision": "Remove SpO2 prediction from new formal evaluation and performance comparison; retain historical replication/pilot outputs",
+  "facts": [
+    {
+      "claim": "BIDMC provides one exported PPG/Pleth waveform at125Hz and monitor physiological numerics including SpO2 at1Hz; documentation does not provide wavelength-separated raw red/infrared optics or raw AC/DC calibration.",
+      "source": "https://physionet.org/content/bidmc/1.0.0/"
+    },
+    {
+      "claim": "Standard pulse oximetry exploits different absorption at red and infrared wavelengths and the ratio of pulsatile-to-DC ratios, with device calibration.",
+      "source": "https://www.analog.com/en/resources/technical-articles/guidelines-for-spo2-measurement--maxim-integrated.html"
+    },
+    {
+      "claim": "An oxygen saturation accuracy study compares simultaneous pulse oximeter estimates with arterial blood co-oximetry, not only another monitor numeric.",
+      "source": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/pulse-oximeters-premarket-notification-submissions-510ks-guidance-industry-and-food-and-drug"
+    }
+  ],
+  "inference": "A single exported waveform may statistically correlate with monitor oxygen saturation through patient state, pulse morphology, acquisition processing or cohort composition. This does not establish identifiable optical oxygen-saturation measurement or transportability to a wrist sensor. The claim is not that every conceivable single-wavelength inference is mathematically impossible under additional assumptions.",
+  "dataset_diagnostic": "See spo2_scope_audit.json: source numerics concentrated near normal values and few independent low-reading patients. Constant baseline does not use PPG. Not directly comparable to old windowed model results.",
+  "future_valid_scope": "Only reconsider as a separate oxygen-related hypothesis with suitable multiwavelength raw signals, clearly defined calibrated references, sufficiently diverse low-saturation episodes, patient-independent testing and device transfer.",
+  "RR_reference_source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6051482/",
+  "RR_note": "The manual two-annotator mean inter-breath-rate and <=2 breaths/min agreement rule follows the dataset paper; our nonoverlapping 32s sampling differs from its overlapping-window protocol."
+}

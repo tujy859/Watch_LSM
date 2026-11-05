@@ -1,0 +1,4611 @@
+{
+  "version": "formal-manual-onset-extension-v1",
+  "models": [
+    "AnyPPG",
+    "PaPaGei-S",
+    "PaPaGei-P",
+    "AnyPPG-random-frozen",
+    "SmallCNN",
+    "MSPTDfast"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "jobs": [
+    {
+      "id": "EMBC21-fold0-seed42",
+      "fold": 0,
+      "seed": 42,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S2"
+      ],
+      "test": [
+        "S1"
+      ]
+    },
+    {
+      "id": "EMBC21-fold0-seed43",
+      "fold": 0,
+      "seed": 43,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S2"
+      ],
+      "test": [
+        "S1"
+      ]
+    },
+    {
+      "id": "EMBC21-fold0-seed44",
+      "fold": 0,
+      "seed": 44,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S3",
+        "S4",
+        "S5",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S2"
+      ],
+      "test": [
+        "S1"
+      ]
+    },
+    {
+      "id": "EMBC21-fold1-seed42",
+      "fold": 1,
+      "seed": 42,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S3",
+        "S4",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S5"
+      ],
+      "test": [
+        "S2"
+      ]
+    },
+    {
+      "id": "EMBC21-fold1-seed43",
+      "fold": 1,
+      "seed": 43,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S3",
+        "S4",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S5"
+      ],
+      "test": [
+        "S2"
+      ]
+    },
+    {
+      "id": "EMBC21-fold1-seed44",
+      "fold": 1,
+      "seed": 44,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S3",
+        "S4",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S5"
+      ],
+      "test": [
+        "S2"
+      ]
+    },
+    {
+      "id": "EMBC21-fold2-seed42",
+      "fold": 2,
+      "seed": 42,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S6"
+      ],
+      "test": [
+        "S3"
+      ]
+    },
+    {
+      "id": "EMBC21-fold2-seed43",
+      "fold": 2,
+      "seed": 43,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S6"
+      ],
+      "test": [
+        "S3"
+      ]
+    },
+    {
+      "id": "EMBC21-fold2-seed44",
+      "fold": 2,
+      "seed": 44,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S6"
+      ],
+      "test": [
+        "S3"
+      ]
+    },
+    {
+      "id": "EMBC21-fold3-seed42",
+      "fold": 3,
+      "seed": 42,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S7"
+      ],
+      "test": [
+        "S4"
+      ]
+    },
+    {
+      "id": "EMBC21-fold3-seed43",
+      "fold": 3,
+      "seed": 43,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S7"
+      ],
+      "test": [
+        "S4"
+      ]
+    },
+    {
+      "id": "EMBC21-fold3-seed44",
+      "fold": 3,
+      "seed": 44,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S7"
+      ],
+      "test": [
+        "S4"
+      ]
+    },
+    {
+      "id": "EMBC21-fold4-seed42",
+      "fold": 4,
+      "seed": 42,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S4"
+      ],
+      "test": [
+        "S5"
+      ]
+    },
+    {
+      "id": "EMBC21-fold4-seed43",
+      "fold": 4,
+      "seed": 43,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S4"
+      ],
+      "test": [
+        "S5"
+      ]
+    },
+    {
+      "id": "EMBC21-fold4-seed44",
+      "fold": 4,
+      "seed": 44,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S1",
+        "S2",
+        "S3",
+        "S6",
+        "S7"
+      ],
+      "validation": [
+        "S4"
+      ],
+      "test": [
+        "S5"
+      ]
+    },
+    {
+      "id": "EMBC21-fold5-seed42",
+      "fold": 5,
+      "seed": 42,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S6"
+      ]
+    },
+    {
+      "id": "EMBC21-fold5-seed43",
+      "fold": 5,
+      "seed": 43,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S6"
+      ]
+    },
+    {
+      "id": "EMBC21-fold5-seed44",
+      "fold": 5,
+      "seed": 44,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S7"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S6"
+      ]
+    },
+    {
+      "id": "EMBC21-fold6-seed42",
+      "fold": 6,
+      "seed": 42,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S7"
+      ]
+    },
+    {
+      "id": "EMBC21-fold6-seed43",
+      "fold": 6,
+      "seed": 43,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S7"
+      ]
+    },
+    {
+      "id": "EMBC21-fold6-seed44",
+      "fold": 6,
+      "seed": 44,
+      "scenario": "within",
+      "source": "EMBC21",
+      "target": "EMBC21",
+      "train": [
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "validation": [
+        "S1"
+      ],
+      "test": [
+        "S7"
+      ]
+    }
+  ],
+  "old_protocol_sha256": "f6000d397fae8aa94ce47e70b3771c101f793febf6e1f35155a82bcd3763f9f6",
+  "records": {
+    "S1_rest1": {
+      "record_id": "S1_rest1",
+      "subject": "S1",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 592.97,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            237188
+          ],
+          "sha256": "31d92a7f9baaa86a739db1acb26c206a6cdfd3f1b5810c76b1639b37c701c49c"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            237188
+          ],
+          "sha256": "31d92a7f9baaa86a739db1acb26c206a6cdfd3f1b5810c76b1639b37c701c49c"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            631
+          ],
+          "sha256": "233e63c2a71fc38859c7953ce4b8566dcbc46b561d07826495171a60c23b2d55"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            7,
+            2
+          ],
+          "sha256": "eb0d035de9d806451818adca73543b76da161704dd111c3ce75d8d10df99eb6f"
+        }
+      },
+      "record_sha256": "ac96aa7232a1520d41ab1b65a83e35eaa54b73cbb3fad59eee60f9c5abe4e6ab"
+    },
+    "S1_rest2": {
+      "record_id": "S1_rest2",
+      "subject": "S1",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 531.765,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            212706
+          ],
+          "sha256": "471495eec5183d598f7456005593ccb8c54ceef85ed918e2acc0af8729e5dc52"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            212706
+          ],
+          "sha256": "471495eec5183d598f7456005593ccb8c54ceef85ed918e2acc0af8729e5dc52"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            574
+          ],
+          "sha256": "243375036792b4a90c6953a639ebd24b088c32ad8d85311e3647c0d110fd84e4"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            7,
+            2
+          ],
+          "sha256": "7cb8c18a893677b350572895dc3f611f8f0a5eed26941ca7f73fad29a000c718"
+        }
+      },
+      "record_sha256": "7b1e458580ff9a9d8c07635281070d8994a98ba1c88773c86a04868c6fec0840"
+    },
+    "S1_rest3": {
+      "record_id": "S1_rest3",
+      "subject": "S1",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 576.585,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            230634
+          ],
+          "sha256": "54096e1aff4c331e1e65f59fd3e3607c4fad4353c21797ee4a61a165a7e21243"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            230634
+          ],
+          "sha256": "54096e1aff4c331e1e65f59fd3e3607c4fad4353c21797ee4a61a165a7e21243"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            584
+          ],
+          "sha256": "c33586be217a3a2c64baa244a4a5aef4cbcdafecaf6a09c501838a1da40d6f5e"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            7,
+            2
+          ],
+          "sha256": "d605103847c238b18696488ca01e32c57e2498c5d9930b69b55323c7c243ec66"
+        }
+      },
+      "record_sha256": "621090dee16b8ac58b064a42ea908b4d3509758a740e12ccc5f8baa4bd54bfde"
+    },
+    "S1_rest4": {
+      "record_id": "S1_rest4",
+      "subject": "S1",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 570.4,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            228160
+          ],
+          "sha256": "5899c346cf4b7513b6449a6a43fba7994ddc8d10894a8eebf2397a2383d70cd2"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            228160
+          ],
+          "sha256": "5899c346cf4b7513b6449a6a43fba7994ddc8d10894a8eebf2397a2383d70cd2"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            711
+          ],
+          "sha256": "c2ad72c4b71a2100b663a5001ff76056d429882cf0860991e2497178639ba235"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            10,
+            2
+          ],
+          "sha256": "f3cdbb2932002ea3059708938a8c9d9a154ba7f34e22c2d5059bd901b9c2a302"
+        }
+      },
+      "record_sha256": "09f2bb03ec80b8de6b6d661584ddfc300fc86623ef0e179faf5d668e0d49ee71"
+    },
+    "S1_rest5": {
+      "record_id": "S1_rest5",
+      "subject": "S1",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 999.9775,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            399991
+          ],
+          "sha256": "3ad90c05d1d35f18dc95a58dd408023e0804bd47a7c38eb3a7edfc1782fd8b30"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            399991
+          ],
+          "sha256": "3ad90c05d1d35f18dc95a58dd408023e0804bd47a7c38eb3a7edfc1782fd8b30"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            868
+          ],
+          "sha256": "24c826770473fecd6596608ffb5a02e2eca7ce674405c11a82dcfc3e24b1f141"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            10,
+            2
+          ],
+          "sha256": "345b4e9475f82452eb1563d00cb609be18ed7e181a9e5c217f61716cb05447d0"
+        }
+      },
+      "record_sha256": "34439de30709ee00503f092ea55359b6408b10799d3f1c432a3f9a5002bb65bb"
+    },
+    "S1_squat1": {
+      "record_id": "S1_squat1",
+      "subject": "S1",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 62.1175,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24847
+          ],
+          "sha256": "87aea80aa4e6ed9706ff8961894af4ffe3a18a9e0cc0326a254d8344bb35181c"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24847
+          ],
+          "sha256": "87aea80aa4e6ed9706ff8961894af4ffe3a18a9e0cc0326a254d8344bb35181c"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            104
+          ],
+          "sha256": "420878df87d2802f747f8c8ce89cbbc84495aa7718071c7027d3139c05b9c922"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "c17f1975d05779953271f64889ceb3892da516b791d3d476cd5ddce6ab457b6c"
+        }
+      },
+      "record_sha256": "f5015ec2a822834f03fa150419c29c10e9dd08a07eaa3fb7a1e298ce11618ec6"
+    },
+    "S1_squat2": {
+      "record_id": "S1_squat2",
+      "subject": "S1",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 59.3825,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23753
+          ],
+          "sha256": "a7b4b52c8cb0c1cd3ce717211ba478d5788b5613f178dfc1cf9b5dbcf107dd36"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23753
+          ],
+          "sha256": "a7b4b52c8cb0c1cd3ce717211ba478d5788b5613f178dfc1cf9b5dbcf107dd36"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            101
+          ],
+          "sha256": "323a834068e550ff1b1d3f1e87797d1891b82065fc15f7e73e1e3ac2ed0423dd"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "1857770154d9bd93f66e70b0273dc2947a4d6a989343b7d81bd923c971c39d48"
+        }
+      },
+      "record_sha256": "b5627ed20cf67b46b6fd3ecf73f2ae0d2e01c582c27dbe2fab0e763117e38852"
+    },
+    "S1_squat3": {
+      "record_id": "S1_squat3",
+      "subject": "S1",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 69.015,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            27606
+          ],
+          "sha256": "0540d8a70ec71e758d93eb7af5174c650aadf7629a248b01aa4acacc39c1cc15"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            27606
+          ],
+          "sha256": "0540d8a70ec71e758d93eb7af5174c650aadf7629a248b01aa4acacc39c1cc15"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            112
+          ],
+          "sha256": "9dd0e9029082345a16ad21032fc9405029c9d91b201d6a275289e69cdfe06ec8"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "e08c8824ae9130e4cf9a54dee5ddfff862ebc1f150931a8451eacac39d59da6e"
+        }
+      },
+      "record_sha256": "f4c4c21a323fd37b67ead0a79e0229a5e54568a4ea489d843fb34d3730ac0f91"
+    },
+    "S1_squat4": {
+      "record_id": "S1_squat4",
+      "subject": "S1",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 61.2725,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24509
+          ],
+          "sha256": "7be5b3909c9ebf84e073d23ea9640284c5e6e61b15a396c93a9b7f7be4aacdf0"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24509
+          ],
+          "sha256": "7be5b3909c9ebf84e073d23ea9640284c5e6e61b15a396c93a9b7f7be4aacdf0"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            100
+          ],
+          "sha256": "7e3d09e4646e1c1f2442a6db67a1c0357f3055d95c63fd59928fd02c67ffca6d"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            2
+          ],
+          "sha256": "4e755de6a69dd5e49509cab49acb2dfe70ee77811c16b426cedf0c1f1baf70c7"
+        }
+      },
+      "record_sha256": "20fe117e542b6870430c605eb6faf6f5a53ce442c4656839ff9edb518e19d84d"
+    },
+    "S1_squat5": {
+      "record_id": "S1_squat5",
+      "subject": "S1",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 59.81,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23924
+          ],
+          "sha256": "d8574049838ba078526e8b39c8fd20e098cd25c30f2fe2021317705160396995"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23924
+          ],
+          "sha256": "d8574049838ba078526e8b39c8fd20e098cd25c30f2fe2021317705160396995"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            102
+          ],
+          "sha256": "260fd95133b3c70ce713280af1842f1d98dab36615508616ffefb293ccf9a928"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "9b4b1fc489037baae4ba09f34b24fb5c9cb35aa90c96162d2a1050163adcfea9"
+        }
+      },
+      "record_sha256": "a1f8e09d91a050e50fd36118736dd4b520ced05a4c343676f949c09eab6f2a2b"
+    },
+    "S1_step1": {
+      "record_id": "S1_step1",
+      "subject": "S1",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 84.0025,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            33601
+          ],
+          "sha256": "1017c633ff473934be7654ae7af8a25817c9898f18a2e5db15d3e240db81f145"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            33601
+          ],
+          "sha256": "1017c633ff473934be7654ae7af8a25817c9898f18a2e5db15d3e240db81f145"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            160
+          ],
+          "sha256": "b1f7ae6c158b6900e786c7f347f403aed81d0ecddd1e75051da25263233355b1"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "fbef46c94b41d48ed40f7340776aeb8860bfd845c8e22bb7b08402d3aa7c3c10"
+        }
+      },
+      "record_sha256": "104120332d842a7ba8d689b81ce5506aa0443a814b54696c71b80060c2199f8c"
+    },
+    "S1_step2": {
+      "record_id": "S1_step2",
+      "subject": "S1",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 76.5675,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            30627
+          ],
+          "sha256": "73548c1c859e22cab6ac8e94e7a51992b9f07e47f753eb33939549cd324729d0"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            30627
+          ],
+          "sha256": "73548c1c859e22cab6ac8e94e7a51992b9f07e47f753eb33939549cd324729d0"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            144
+          ],
+          "sha256": "9f5977811b7ffed7bba78447746685ffba178421d9daad756bbe9f08bd5a144b"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "953e3acb2338cb414f929c64938a6e3d460100baad595b9b94a2d92187dbb7a8"
+        }
+      },
+      "record_sha256": "ea9f350d52281f48483af379f93af08a93e0ca545f572d426cf3541a17478484"
+    },
+    "S1_step3": {
+      "record_id": "S1_step3",
+      "subject": "S1",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 68.1775,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            27271
+          ],
+          "sha256": "07851599978f5204a52d92421bd99427f9c04eb3a58e9098375b5209d4b272bd"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            27271
+          ],
+          "sha256": "07851599978f5204a52d92421bd99427f9c04eb3a58e9098375b5209d4b272bd"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            116
+          ],
+          "sha256": "5afc1fad2e5bab161eab497e6b59c5542ec577f4f0b8d5ed8ddf456393892807"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            2
+          ],
+          "sha256": "581754bf076ef1a497112e4fb3c3b02166c377940b76226d497486db200275ad"
+        }
+      },
+      "record_sha256": "689bf2c153c95d387ce3f9b5ccd4053e06c5d0cb5c0d9d26882d16f0ad84df01"
+    },
+    "S1_step4": {
+      "record_id": "S1_step4",
+      "subject": "S1",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 106.165,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            42466
+          ],
+          "sha256": "546a84c1e95d3dbfdc97b017a2320abd8e67bc1ed3ac86b3df9d65450adde3cf"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            42466
+          ],
+          "sha256": "546a84c1e95d3dbfdc97b017a2320abd8e67bc1ed3ac86b3df9d65450adde3cf"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            198
+          ],
+          "sha256": "9c26cab4213d3c694077c202d69cc7cec60d194eb4ba0ffebbfe6f07c84187c5"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "fe608d3279a804595778d3d99dcd280ed938745d326f0f534bb53eea60cf72cc"
+        }
+      },
+      "record_sha256": "3d961644e58783f02f43b176e0a2063d13525c62337cef2dd49a21ff0b925f41"
+    },
+    "S1_step5": {
+      "record_id": "S1_step5",
+      "subject": "S1",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 108.0775,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            43231
+          ],
+          "sha256": "5640bb88f88414492e84d10ca6c482b6ca71d7ee708d8d8c1ff87f08967a9a9c"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            43231
+          ],
+          "sha256": "5640bb88f88414492e84d10ca6c482b6ca71d7ee708d8d8c1ff87f08967a9a9c"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            164
+          ],
+          "sha256": "c77f4cca9bb88ca4406d99c2cb51d024c07759517a9fe608427a8337d229cd2f"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            3,
+            2
+          ],
+          "sha256": "94bc3896207cf77b12a6f95db591e5494a95e656c2158a5ba7d7d81361fe1b4e"
+        }
+      },
+      "record_sha256": "8ad4be44550fb7283919cc9c039e0a411cd3b5a8ffec640aa081c9dd4179a2dc"
+    },
+    "S2_rest1": {
+      "record_id": "S2_rest1",
+      "subject": "S2",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 648.41,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            259364
+          ],
+          "sha256": "a621ba600a37a617142628c3866b683009bc1a753384ae6441e05a7a75e669f0"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            259364
+          ],
+          "sha256": "a621ba600a37a617142628c3866b683009bc1a753384ae6441e05a7a75e669f0"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            621
+          ],
+          "sha256": "00f1990dc8694efbf3052e8adb565b45eb1894654b1e624277b71b3f38afe115"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            11,
+            2
+          ],
+          "sha256": "ef8fe7ab20d0f94ec7d583b79157bb78eec2545e45bd81feed90bfe9f2786382"
+        }
+      },
+      "record_sha256": "677488f8d8404c83747216ae9ac0f039b3bf28191bd9c8fc1d59b74572fcd177"
+    },
+    "S2_rest2": {
+      "record_id": "S2_rest2",
+      "subject": "S2",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 553.775,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            221510
+          ],
+          "sha256": "01e509e4c9a53ac05fbbf02997df258c14aee249949710713f93a47b28592a38"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            221510
+          ],
+          "sha256": "01e509e4c9a53ac05fbbf02997df258c14aee249949710713f93a47b28592a38"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            523
+          ],
+          "sha256": "afc53a11e38e86d678fc125beae7d0a355fda830273c51761739e95039305270"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            9,
+            2
+          ],
+          "sha256": "317f9d32a47e6b713245f4140076d6d02c374bac189383eedf77697143290109"
+        }
+      },
+      "record_sha256": "c6afc1a2d29ccd14123f553485bbd14f4aff3bd108c931a26d6e510868ad264e"
+    },
+    "S2_rest3": {
+      "record_id": "S2_rest3",
+      "subject": "S2",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 555.91,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            222364
+          ],
+          "sha256": "869462aa9ac1b9e1353023f77809dda08ebf5516e69ff20c606a1f7ded033334"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            222364
+          ],
+          "sha256": "869462aa9ac1b9e1353023f77809dda08ebf5516e69ff20c606a1f7ded033334"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            429
+          ],
+          "sha256": "1c7a0c4f0ad80f5c247eaed613de6a21aa6f427423b756ba69586a50fa4bc4a2"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            19,
+            2
+          ],
+          "sha256": "b8186df7dbf19a4f247ee92874f7928f77bdfbdf1fa33eca73fcea8dc0650e69"
+        }
+      },
+      "record_sha256": "d63f0f70759e9f02c7fbe67e322a177f405cd9f5ab3598408657f559c06092b6"
+    },
+    "S2_rest4": {
+      "record_id": "S2_rest4",
+      "subject": "S2",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 685.5025,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            274201
+          ],
+          "sha256": "3912f380b2153675d482c0f7558a0140c9b40a4d1c31913bb33a0a3e020d1276"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            274201
+          ],
+          "sha256": "3912f380b2153675d482c0f7558a0140c9b40a4d1c31913bb33a0a3e020d1276"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            826
+          ],
+          "sha256": "efa77dc15437b18250a55282c8f59003dd2b93acd2a6980e705ce49a0ab27841"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            11,
+            2
+          ],
+          "sha256": "2fa9c4c017e66b34165822a9d2f5b462bd417cec9e3d3a0ba659d1587af6cc6b"
+        }
+      },
+      "record_sha256": "e02c127dea780aecd92948d0a831c66f1ada23c326b65679cdc3e4bba8ec353f"
+    },
+    "S2_rest5": {
+      "record_id": "S2_rest5",
+      "subject": "S2",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 519.2075,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            207683
+          ],
+          "sha256": "8d23752fb1c31dec7b3a4735ace1e2780f9ec73465e06c812db6653158566f16"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            207683
+          ],
+          "sha256": "8d23752fb1c31dec7b3a4735ace1e2780f9ec73465e06c812db6653158566f16"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            587
+          ],
+          "sha256": "a8fdba6aeabb6d70f1116665ab302a28a349ca376da4e5dad0261c4b097e6f96"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            8,
+            2
+          ],
+          "sha256": "581fec1c7a2f2c3c4dd589193d088eead6c38843a02d905a78c3ae0ce9f3aec0"
+        }
+      },
+      "record_sha256": "f9aebec8bf51585c955b0069b005ee2a60542605cffd77d520cccf5a808321a1"
+    },
+    "S2_squat1": {
+      "record_id": "S2_squat1",
+      "subject": "S2",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 43.7025,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17481
+          ],
+          "sha256": "214dcf7d8b9b5fca0905e779e6700ded45e11c5b559a692448d94c2cff4ccefb"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17481
+          ],
+          "sha256": "214dcf7d8b9b5fca0905e779e6700ded45e11c5b559a692448d94c2cff4ccefb"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            59
+          ],
+          "sha256": "a764f36542e03a338f9b822ba44c7957de7ed43690a3c08bee81abed2b1f7d6f"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0d8efbfa6bf9a6dcfa515e1947bddd7bbab1414aa44ba998bf4a2ea34db6e252"
+        }
+      },
+      "record_sha256": "1efb4eb2dd294586f5b2117a457b71583e1c9537c760688a56e3315f82156482"
+    },
+    "S2_squat2": {
+      "record_id": "S2_squat2",
+      "subject": "S2",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 42.96,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17184
+          ],
+          "sha256": "5af057e1b509399546778c426e21a71bfd91c40d9a3e76c4a374e795b466e9fe"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17184
+          ],
+          "sha256": "5af057e1b509399546778c426e21a71bfd91c40d9a3e76c4a374e795b466e9fe"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            72
+          ],
+          "sha256": "de04ba4bdd5dbe79a2705744843c9a1d5fa2a7e0f9efd2696e010ccea3498a97"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "bc0ba080e8968ccfd0f9f0d18ef476eda535277073e1cb30798a491c193be465"
+        }
+      },
+      "record_sha256": "a256e732d2bcd6cbb3ab91cd6f8603b79faee7b9451e145415582babc4aa307e"
+    },
+    "S2_squat3": {
+      "record_id": "S2_squat3",
+      "subject": "S2",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 39.815,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            15926
+          ],
+          "sha256": "7f9ec485d0417bc976ab5398dace86c0a70e5318adc0b558e37aaf59504a29a4"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            15926
+          ],
+          "sha256": "dfa1c0aeceb1bd849e51e8e8b0593808eea23cd463f13f3659faa21a886354af"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            63
+          ],
+          "sha256": "9422c0e033a61acb9142704ec9c6dcccc35004121c829c1dcf69c216f0e6e3ac"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            40,
+            2
+          ],
+          "sha256": "dadbd479a5ea40f2d842aa77b0ebb9b3c314f60601c4fd1c610adacce30e422f"
+        }
+      },
+      "record_sha256": "77359b7d5a4825ae17b75138928b93d3a2a50a1cd9b52fb4a05c7a588852e2d5"
+    },
+    "S2_squat4": {
+      "record_id": "S2_squat4",
+      "subject": "S2",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 47.04,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18816
+          ],
+          "sha256": "202c84b322ae636c4e6b81e76591ac264dfb360147e652a6b13dad827fcd595f"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18816
+          ],
+          "sha256": "202c84b322ae636c4e6b81e76591ac264dfb360147e652a6b13dad827fcd595f"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            76
+          ],
+          "sha256": "7ec8a707632787c072b8e6dc241c107e86a7fef32c045881c63d066a1e6d0072"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "31f997f3099f4a53d1a1ea3c0a91de63742584e6a4991ca1365d0e0b9e556241"
+        }
+      },
+      "record_sha256": "20c92453ef3507d8f80f072ab534bd7e1a8ecc7dd0b6f930b78478b3f57ad339"
+    },
+    "S2_squat5": {
+      "record_id": "S2_squat5",
+      "subject": "S2",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 43.28,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17312
+          ],
+          "sha256": "0888017889d6eab105028139af49d1df05d4075c598e59bde1c8187b3df2c27f"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17312
+          ],
+          "sha256": "0888017889d6eab105028139af49d1df05d4075c598e59bde1c8187b3df2c27f"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            69
+          ],
+          "sha256": "017e660ea7f54b9591adfe8cd34530d80a4f957453ddfd8735cc4501bd9c9659"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "7647d4ea21d7aaa4fbc1b7d912ce7b94a8c6e251e25ef61536cc258ccf6924b0"
+        }
+      },
+      "record_sha256": "81fa26c0411a89648bcf92a6b9ce1802aaa96955f38949ef240ce6093d978b6d"
+    },
+    "S2_step1": {
+      "record_id": "S2_step1",
+      "subject": "S2",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 62.72,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            25088
+          ],
+          "sha256": "ed84d21dda493b740f722262c949c10557a8cc24b18425739e6a3624d4f7f074"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            25088
+          ],
+          "sha256": "ed84d21dda493b740f722262c949c10557a8cc24b18425739e6a3624d4f7f074"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            94
+          ],
+          "sha256": "77e55c3f9ff64a76738243cd85e28c72f4e71e11a9aebe4b096da22d1300f9ec"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "699fb5005c936236cafafa5e38db2fc221f20465a2496d0ae46499b91a02a632"
+        }
+      },
+      "record_sha256": "1ecc182f5d73e66848dac2b915e6e68d50cd3394db7da6706ba38329ac19dfa8"
+    },
+    "S2_step2": {
+      "record_id": "S2_step2",
+      "subject": "S2",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 74.505,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            29802
+          ],
+          "sha256": "2aefd760670ddeb9d6313a1aa091df36bde157dfca36815e2aeb4a3a3746e262"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            29802
+          ],
+          "sha256": "2aefd760670ddeb9d6313a1aa091df36bde157dfca36815e2aeb4a3a3746e262"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            115
+          ],
+          "sha256": "2ad77be2d13db9cd0b424689025a8e2f006886a7beb5a1af4390bb063f5391c8"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "7d5e4fde6c7d92be67d51f45c571fe889256ffd86b4a64d06eb2664f9c43c287"
+        }
+      },
+      "record_sha256": "eadb949d3da8d7be17e567dbcd89e1ab9afc40ca915cdbf941d0c0fe2d4f9eda"
+    },
+    "S2_step3": {
+      "record_id": "S2_step3",
+      "subject": "S2",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 72.2925,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            28917
+          ],
+          "sha256": "0776afc6e265d78a41284e9412c988b6681c96b6187997dd3b3344ad1824adcb"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            28917
+          ],
+          "sha256": "0776afc6e265d78a41284e9412c988b6681c96b6187997dd3b3344ad1824adcb"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            108
+          ],
+          "sha256": "e67ac53d07b34e61a745c850fe6174e99501fef4316354fd8cb2940231cd3faf"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "03a894054c028dfbf87aa028a2ce893690d3a20243000ad97f9c5de19dcc82fb"
+        }
+      },
+      "record_sha256": "7bf563dce76a85ccf2f7f5189b061cac948c384955fe1bbcd88ac4ffecdc47be"
+    },
+    "S2_step4": {
+      "record_id": "S2_step4",
+      "subject": "S2",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 94.595,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            37838
+          ],
+          "sha256": "30a2bbef5d59e3fd1acaf4cbe80b79f212d4c45edeb1d621331dcd706d62f9d9"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            37838
+          ],
+          "sha256": "30a2bbef5d59e3fd1acaf4cbe80b79f212d4c45edeb1d621331dcd706d62f9d9"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            145
+          ],
+          "sha256": "924ba16e359753c9469ec394963fd74a3df424a6a13d5466dceddc87d0a5a2c6"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0f7654917ce963994e99a19a97bd17a5b34cc9a620289b8258a3d07a2784e104"
+        }
+      },
+      "record_sha256": "08243e5bf7e0bee53a345390cced29b0498a24b2b4100f682bd165577ea4130f"
+    },
+    "S2_step5": {
+      "record_id": "S2_step5",
+      "subject": "S2",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 93.5025,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            37401
+          ],
+          "sha256": "6846d9f481d78d3217698d01f08609365804e017c3e88befa2b29d3b0f5c9ffb"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            37401
+          ],
+          "sha256": "6846d9f481d78d3217698d01f08609365804e017c3e88befa2b29d3b0f5c9ffb"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            147
+          ],
+          "sha256": "e22c28df9f342a277e2a0cba53cf2951fa9efb116f6e1ed90578c3f2e09be735"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "3a3be2ba74cec04d78b61f1c86bf34b1dbda7d7baaf27a072b09441fc334e5b2"
+        }
+      },
+      "record_sha256": "d5938a95f06e1dc083cf769903ad04dfa538b9a9c6d8f05f4aed3dbe32a9f52f"
+    },
+    "S3_rest1": {
+      "record_id": "S3_rest1",
+      "subject": "S3",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 283.44,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            113376
+          ],
+          "sha256": "3300750177c848d3a4f92482eed7e7be52f2e0ec36b1f20737c1adead613f878"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            113376
+          ],
+          "sha256": "3300750177c848d3a4f92482eed7e7be52f2e0ec36b1f20737c1adead613f878"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            319
+          ],
+          "sha256": "90f7a19c3b5d2cd1c61a346cfbd20bd7aefe740aaeb1ba3557267a8c43c82f5a"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "a6dfb5d23bcfa9cd3670d740ad787f144abdfe38295ad133526fa5e4941d55bf"
+        }
+      },
+      "record_sha256": "43e9ab495266c068bdf6ebf86acc6ed9b3ed3bc17aa28adb999fc6c37ed982f4"
+    },
+    "S3_rest2": {
+      "record_id": "S3_rest2",
+      "subject": "S3",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 273.83,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            109532
+          ],
+          "sha256": "0aa7e085c4c357b9758272e53af0842cdf42d4ca98b959de7ac4b29ab1892118"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            109532
+          ],
+          "sha256": "0aa7e085c4c357b9758272e53af0842cdf42d4ca98b959de7ac4b29ab1892118"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            316
+          ],
+          "sha256": "585f126ebe61425249872158653edb8e5cb128aa51516e9bbd1601a30eb7e13d"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "1391bc894f8705e05ad09b114543e30475cd98a371005a87a4b51d2aa4d29683"
+        }
+      },
+      "record_sha256": "c1c0a6b28b7588dc6e7ea27574d92999e07d314d8d0595e32692d43bed1d1ee8"
+    },
+    "S3_rest3": {
+      "record_id": "S3_rest3",
+      "subject": "S3",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 225.905,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            90362
+          ],
+          "sha256": "b89c8f5514df5b83d4f8cd1057501da5194066f4905706404969d8ea206a871b"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            90362
+          ],
+          "sha256": "b89c8f5514df5b83d4f8cd1057501da5194066f4905706404969d8ea206a871b"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            272
+          ],
+          "sha256": "087b1e5a0f4564924c5e8f0a1d4167570b3de639970a6e4121dc5d9552ebf0da"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "9c0c7ea2a028f1542a52783b464ee62d3441ca6d3f917bbba1e7d10f8397cf0a"
+        }
+      },
+      "record_sha256": "4db73204890142f2e2e75b0ae1a9ff8e025d16a999571457157cd606a1c44271"
+    },
+    "S3_rest4": {
+      "record_id": "S3_rest4",
+      "subject": "S3",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 262.265,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            104906
+          ],
+          "sha256": "cd4dbc09c90ddc566be028d86b15f5ab5be562e211ca18b908f6e01e42e90ce7"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            104906
+          ],
+          "sha256": "cd4dbc09c90ddc566be028d86b15f5ab5be562e211ca18b908f6e01e42e90ce7"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            308
+          ],
+          "sha256": "cc95bc04cfaeeafd2f0f9fc39f1ec5c992e7565ef7f1185046d8d986cbdcbfb0"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "f48f346bc6424da4e30aa65af01185617b05e1763723c59f0870a18a64b146b7"
+        }
+      },
+      "record_sha256": "a3e8b637b00b8f7fee21fcf645dfaacca05e08b3df55cb868d9ea930db79ef86"
+    },
+    "S3_rest5": {
+      "record_id": "S3_rest5",
+      "subject": "S3",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 278.4,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111360
+          ],
+          "sha256": "c115f1acc1313215d754e2774e8e65139659553d5e2ea33b6fdfdb4084d20e4e"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111360
+          ],
+          "sha256": "c115f1acc1313215d754e2774e8e65139659553d5e2ea33b6fdfdb4084d20e4e"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            339
+          ],
+          "sha256": "143c30acd80d89ee5fc8f7b28f3806dedc808aec41abb9c649ed5f83cb2c500f"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "2ccbe02587c5296f2e54d6bda217839ba2de661c5387c1c59314d117d70473e5"
+        }
+      },
+      "record_sha256": "2e32ec335cbe660ec8ac8dd68c91724e1c77ce5eed1d4dcf937b338678681774"
+    },
+    "S3_squat1": {
+      "record_id": "S3_squat1",
+      "subject": "S3",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 48.88,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19552
+          ],
+          "sha256": "17ba56d0731c677a36480dbfe3b4de90704816b2e54dc8dd8e3e850215193320"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19552
+          ],
+          "sha256": "17ba56d0731c677a36480dbfe3b4de90704816b2e54dc8dd8e3e850215193320"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            78
+          ],
+          "sha256": "1b8706e2c26e530893c85d5dc953149ad3ad26e6f2497f49446719e58bd01264"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "c2e35576d1dd20b1986a857714a405abdeedc2637b797b54e2238e603b2b0097"
+        }
+      },
+      "record_sha256": "8d277c73d26564ee5e9a07af30968a7f007d80f9123b33798f3b457a21042180"
+    },
+    "S3_squat2": {
+      "record_id": "S3_squat2",
+      "subject": "S3",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 42.5525,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17021
+          ],
+          "sha256": "40af5147a4a2c365e0dd08df06ece39623383af3b7aa516fbecde1cd32f67688"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17021
+          ],
+          "sha256": "40af5147a4a2c365e0dd08df06ece39623383af3b7aa516fbecde1cd32f67688"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            70
+          ],
+          "sha256": "0d08843545bafe76233bc5bd57dcd37cc1afede4f2732cd0c8124a6115c2191e"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "11981372f5ef1a71003a4309c3941cd8c16234ae3fc707501c07252fb9330262"
+        }
+      },
+      "record_sha256": "9ed865f8d2869a450802cdfaa186995f346f6f32dbdbe53841f0eca5ec87a84f"
+    },
+    "S3_squat3": {
+      "record_id": "S3_squat3",
+      "subject": "S3",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 44.8625,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17945
+          ],
+          "sha256": "f1d967ee84655ccc0d0fc8e13070af909d6a617ed76260ac06dd14482062e1f1"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17945
+          ],
+          "sha256": "f1d967ee84655ccc0d0fc8e13070af909d6a617ed76260ac06dd14482062e1f1"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            71
+          ],
+          "sha256": "05c7365d48460a6a1579d4c9430708bc191f950480566d3b30f3aded3ca615d0"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "4dbd13cd05cd70a37541a7ca2facb7ae282288976bfc03cb01d54b6d4c042529"
+        }
+      },
+      "record_sha256": "8ff3f1421c1383bf2492aa717f6b078f1fd21108d3da1fb1ceb780bf40de3904"
+    },
+    "S3_squat4": {
+      "record_id": "S3_squat4",
+      "subject": "S3",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 45.92,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18368
+          ],
+          "sha256": "398292f20a2f2feb76bcaed3cbe66334223f444d9a2cbf57d9a3cea974cef9e8"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18368
+          ],
+          "sha256": "398292f20a2f2feb76bcaed3cbe66334223f444d9a2cbf57d9a3cea974cef9e8"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            75
+          ],
+          "sha256": "c9021a9d1bd366a9f1cf6ff17972bdbd979e7a19d3f954499dd8b1796970a198"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "015c70d8c3b598ed494897cca51abfcd75146f159d6af9b51e49f85244d32e09"
+        }
+      },
+      "record_sha256": "9063fe49b5a62060386e9c38fcf57b4ae6fa5eca8112ca1a20024f4ed7a3c38b"
+    },
+    "S3_squat5": {
+      "record_id": "S3_squat5",
+      "subject": "S3",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 49.28,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19712
+          ],
+          "sha256": "102b7fcf4ff93cf61134a7337899a060e470cbb9ec66fc18392343454479376e"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19712
+          ],
+          "sha256": "102b7fcf4ff93cf61134a7337899a060e470cbb9ec66fc18392343454479376e"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            83
+          ],
+          "sha256": "f7472f58e15a83ad0f4db2700dd79e3a85b66974bfa187a6fad93c3b1bc38ac3"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "e42c84e83c9c7807138c83281b3831381e54e44c070ac2fe3ffafaca6b691ec6"
+        }
+      },
+      "record_sha256": "e066e990e203e4fbd6b9d7b3885bd504d35f8aa3c88c3fceb99a5e55a171110d"
+    },
+    "S3_step1": {
+      "record_id": "S3_step1",
+      "subject": "S3",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 60.56,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24224
+          ],
+          "sha256": "3757b107e500a1a7f1a43b6f6c1d3f236a7df217b551a4d281705c3964739e65"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24224
+          ],
+          "sha256": "3757b107e500a1a7f1a43b6f6c1d3f236a7df217b551a4d281705c3964739e65"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            92
+          ],
+          "sha256": "a250ed434f5a726427e8563f7f30a73d7588e57679c88c96935a4c394713ed31"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "ec5b2a6a25eac2b13ea6c885672710f2fd8562b2a2cd074657363dea7e860500"
+        }
+      },
+      "record_sha256": "ad2a290591d4c1ab37f3dfac9276578c26ca55f04b499499a807e1f6ce3d42c4"
+    },
+    "S3_step2": {
+      "record_id": "S3_step2",
+      "subject": "S3",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 58.64,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23456
+          ],
+          "sha256": "0d38db5c50267ef224bf4f4454528e59eafaaf850e7b8da26e6fe43100baddf5"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23456
+          ],
+          "sha256": "0d38db5c50267ef224bf4f4454528e59eafaaf850e7b8da26e6fe43100baddf5"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            91
+          ],
+          "sha256": "32b680fe68ec9f00b200a44e51cb7a144101a9a4850bc18ddb2678d327cfc730"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "4da0f2aa086de8d735aeaa3c3b8c5fe3e75077f0b1ab360aacd84afef180757b"
+        }
+      },
+      "record_sha256": "7c4da480581e02724911201c90e79b06355ebf7a0ba041428e3e0bebaf0c01f8"
+    },
+    "S3_step3": {
+      "record_id": "S3_step3",
+      "subject": "S3",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 48.8,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19520
+          ],
+          "sha256": "22adaffc7a2176aabecbb3ed07d0581f2bdcce9020ed28d5d0701c197b2274ee"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19520
+          ],
+          "sha256": "22adaffc7a2176aabecbb3ed07d0581f2bdcce9020ed28d5d0701c197b2274ee"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            79
+          ],
+          "sha256": "c9e6a88080c4d93ef4b008471d5e731af9136c0e9a07bd5db16cd71ad1eacc6e"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "5e329682fba30b176bd159f3e78439e9e7ea53576a6738cd717f9bb1a6b02f3c"
+        }
+      },
+      "record_sha256": "5245969f8674fafc1e19c20d7a3da2f05edcd3c84007e934f3dee3472d36bf35"
+    },
+    "S3_step4": {
+      "record_id": "S3_step4",
+      "subject": "S3",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 52.32,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20928
+          ],
+          "sha256": "77d2f75a037c882e7a35f7c4325a8f35996f327166a42356e856df29eb87f365"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20928
+          ],
+          "sha256": "77d2f75a037c882e7a35f7c4325a8f35996f327166a42356e856df29eb87f365"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            80
+          ],
+          "sha256": "97568d8e759643e250c115f420ccd079c8b2606ed0d012151407a3fb2bc318f7"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "453cd47589051011d5663e454e94c0a28730cc22854983fb40bfaaff015244c4"
+        }
+      },
+      "record_sha256": "7e68553d8f72771375454452a4f0ee55b5a3779a7f9307d9c93b3a0c1a9e983c"
+    },
+    "S3_step5": {
+      "record_id": "S3_step5",
+      "subject": "S3",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 50.72,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20288
+          ],
+          "sha256": "1b1d6e16ca0cfd1650ffb328df0fde1da417b7abf47beaf140a05d48f7641a5f"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20288
+          ],
+          "sha256": "1b1d6e16ca0cfd1650ffb328df0fde1da417b7abf47beaf140a05d48f7641a5f"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            78
+          ],
+          "sha256": "e7ae053457d27295cd673a1d6fcd4a94f0ec96f1a4a9d129b55854c0a594f583"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "362385c53d53a702aa0002dcdc750aee4a1efdcef2d4f7e1a1ab18ced2c0a218"
+        }
+      },
+      "record_sha256": "28a0582669135a40beaac085efe621c021b6aeea6a968ae6d51eb750b5ca56dc"
+    },
+    "S4_rest1": {
+      "record_id": "S4_rest1",
+      "subject": "S4",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 265.04,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            106016
+          ],
+          "sha256": "e78ed8a80e9638042f7d5f7c7880f68be253f47f74bd5806546d14924eef956d"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            106016
+          ],
+          "sha256": "e78ed8a80e9638042f7d5f7c7880f68be253f47f74bd5806546d14924eef956d"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            290
+          ],
+          "sha256": "5d2e6b7f99a1fe01fe5dddf46dd0b442b8bee03ac5d1d44749f6a0e533239858"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "4d6f6255091360e509a737028706f54ccce8e778c8a934cdfc5d2e6cf06f23a6"
+        }
+      },
+      "record_sha256": "4ac5a6b6edc860089d187c2ba937a025cb681fb13f5c1c1fc075a1f4631c1457"
+    },
+    "S4_rest2": {
+      "record_id": "S4_rest2",
+      "subject": "S4",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 277.7675,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111107
+          ],
+          "sha256": "26154707bcbd3812baddeb8ef552a12b796b560cb23945b47c3a48871c6732ad"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111107
+          ],
+          "sha256": "26154707bcbd3812baddeb8ef552a12b796b560cb23945b47c3a48871c6732ad"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            307
+          ],
+          "sha256": "1b0e8b0321df55e40222fbd65e0e55195c03a1bd83f15b9d5ff6337836937942"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "a32983b2b506e9f6285346b11e6a19bc0778264ea7d14494b4b600ee3cfcbc6b"
+        }
+      },
+      "record_sha256": "732fe58a810fd7d7e58ad327667baf6d54cb93d83070c38ca1a7b14dc57fb3f7"
+    },
+    "S4_rest3": {
+      "record_id": "S4_rest3",
+      "subject": "S4",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 271.245,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            108498
+          ],
+          "sha256": "bff0a369fb028e7ff0257682da772020c12385ca172bdd74dd14e3b1b468ea9d"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            108498
+          ],
+          "sha256": "bff0a369fb028e7ff0257682da772020c12385ca172bdd74dd14e3b1b468ea9d"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            297
+          ],
+          "sha256": "31be93eb7ee23595e7d5f4eb84a23216a585c8def537680e5880c29bd0d60d11"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "54d0ab5b444c4834238e60f76b1569c2df4f29e9122c160d9787316df6f5868e"
+        }
+      },
+      "record_sha256": "1c4cc15d51a69e4f7121d306287590cfae51003d85dc2a0980028b17112480e8"
+    },
+    "S4_rest4": {
+      "record_id": "S4_rest4",
+      "subject": "S4",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 287.27,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114908
+          ],
+          "sha256": "bea3a1396d1924a9a90f2f8dcad8e019a29c4f6bef9ac3072a808ce0c18b68bd"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114908
+          ],
+          "sha256": "bea3a1396d1924a9a90f2f8dcad8e019a29c4f6bef9ac3072a808ce0c18b68bd"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            319
+          ],
+          "sha256": "5c777baeb8f988eaf627fc98ff0ace2d7d2051d6e88e6448148831d493449a01"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "1be02a3630ca48b714d568d98871bce9ef453bfaf4a0629deaea5830d56b5c6f"
+        }
+      },
+      "record_sha256": "9cdc5769b3ceba0de45c50aee2457455242b6bb14c3a53f7e30d38f3b014cdd8"
+    },
+    "S4_rest5": {
+      "record_id": "S4_rest5",
+      "subject": "S4",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 260.6,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            104240
+          ],
+          "sha256": "b7e79836c0e59911b5511e9e2b9ae3f6996a08535b74899e10869081aedb74e9"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            104240
+          ],
+          "sha256": "b7e79836c0e59911b5511e9e2b9ae3f6996a08535b74899e10869081aedb74e9"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            294
+          ],
+          "sha256": "f9040c644d7a3f1da2c40b30c3074575f6168681219dbefed06a3c0d264536cd"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "bb3738eace5fc5c823fb603124f0bccf1b1cba4a642950efc7d850caab1476da"
+        }
+      },
+      "record_sha256": "af4fb9f0c2fbfb34a9e52b1bea5af6f8d6033dd9379a1d14e2c04c24941b94e5"
+    },
+    "S4_squat1": {
+      "record_id": "S4_squat1",
+      "subject": "S4",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 51.8225,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20729
+          ],
+          "sha256": "457632ae38abc78039863991417e33ce232e28b609ee8a995c11e99adb146dc6"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20729
+          ],
+          "sha256": "457632ae38abc78039863991417e33ce232e28b609ee8a995c11e99adb146dc6"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            68
+          ],
+          "sha256": "dd673ef6e302e39672e7dd01af8b7ceb9c8668e715ef7d4bb19d1baffab8d313"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "fe32b297fb150905f3542fa0da9d0587cb22b3fd7d06137771cfe814eb25d249"
+        }
+      },
+      "record_sha256": "9452f9a685cda78f3098a4dff62d660f8b0a4c610ad39817e8886ec571612268"
+    },
+    "S4_squat2": {
+      "record_id": "S4_squat2",
+      "subject": "S4",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 40.2625,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            16105
+          ],
+          "sha256": "739c4a459e20461bb5ea98bafe35353b09aefa1d1d22234d4c937075425dbff7"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            16105
+          ],
+          "sha256": "739c4a459e20461bb5ea98bafe35353b09aefa1d1d22234d4c937075425dbff7"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            56
+          ],
+          "sha256": "4bcecba5271779b321189995bbbacfc635f660c3ffad9307663e182b9e181ced"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "74ee2b8006629c1e452c42bad84c5f8c5db9314c464a502ff23f496dae09c636"
+        }
+      },
+      "record_sha256": "1ed932a23d71e0896a77023095baa76fb3d16163d0d057cfa561127e25df05f2"
+    },
+    "S4_squat3": {
+      "record_id": "S4_squat3",
+      "subject": "S4",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 38.96,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            15584
+          ],
+          "sha256": "1bc5df1b4df3005c0f70e9cfbf1fbf0e43a064c13bba18410707df8641b4ee93"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            15584
+          ],
+          "sha256": "1bc5df1b4df3005c0f70e9cfbf1fbf0e43a064c13bba18410707df8641b4ee93"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            53
+          ],
+          "sha256": "0267f23a86b3dca9519a8912420a332ad8466abf7cdddb9138d286f7540fc611"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "a377526cf0e8abf1b3415923afaea67dad5531be13b4a8790cb07acb9172f5c9"
+        }
+      },
+      "record_sha256": "bd2fd36650660202ce00dcad5d8b5ab474f3206474c7629a8d99179bc0b3cb79"
+    },
+    "S4_squat4": {
+      "record_id": "S4_squat4",
+      "subject": "S4",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 38.01,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            15204
+          ],
+          "sha256": "973b44e7cf8319d3dc962708f43c306054bfd9f6ab3ddf4f719ab33fb75b62dd"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            15204
+          ],
+          "sha256": "973b44e7cf8319d3dc962708f43c306054bfd9f6ab3ddf4f719ab33fb75b62dd"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            50
+          ],
+          "sha256": "43cebdab2bcb9e2857babcde5162641f0c7776bc4ab1c7b1c23b57775a67595a"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "55373b852571a5280f7847979f5a42be17e9eb2763bf323bce26c32575f66525"
+        }
+      },
+      "record_sha256": "d9b4197854c3e2b1687ec02552416c932f1dda532207357060de79079cd2293a"
+    },
+    "S4_squat5": {
+      "record_id": "S4_squat5",
+      "subject": "S4",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 43.52,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17408
+          ],
+          "sha256": "0d8b3796c4b5e0e6ba004b3f88bd6c18de8a9b4c3e43340ddc09cc55e67d33a9"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17408
+          ],
+          "sha256": "0d8b3796c4b5e0e6ba004b3f88bd6c18de8a9b4c3e43340ddc09cc55e67d33a9"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            59
+          ],
+          "sha256": "2b9ba44f09ea94f0b706e476ea08ee1bf777c6f7a5c583f7aabafab9fc6d4eca"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0fbf51d870313ae1919210a728f4801f31522e51ca861ebd4bc5f846ae3e2362"
+        }
+      },
+      "record_sha256": "efb765de3a57ae439b81a744f8cc23837fe05d594e352c11af2a875041213a4e"
+    },
+    "S4_step1": {
+      "record_id": "S4_step1",
+      "subject": "S4",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 44.96,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17984
+          ],
+          "sha256": "4d9e15ddc67c5bf69a539e92558a71f458833251e14730c9d7729d7863d136b4"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17984
+          ],
+          "sha256": "4d9e15ddc67c5bf69a539e92558a71f458833251e14730c9d7729d7863d136b4"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            59
+          ],
+          "sha256": "8d0b7ca2be1576848eb8be6450e9380ca6f9329e8690d8b0a20485467d5c7976"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "d004d969757645dc4247f06a22f3bd219f42ac4842f21f08c6432633ad806603"
+        }
+      },
+      "record_sha256": "d71c1fef3d8c0577255cf86aeec9d21dc13f1dd8ba0cea54276729999745478f"
+    },
+    "S4_step2": {
+      "record_id": "S4_step2",
+      "subject": "S4",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 49.28,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19712
+          ],
+          "sha256": "19ba966660e74125861cd0218f905198fe501fe58f5854b8a0dca775979b51ab"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19712
+          ],
+          "sha256": "19ba966660e74125861cd0218f905198fe501fe58f5854b8a0dca775979b51ab"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            64
+          ],
+          "sha256": "3c8715e47509c228f7c5c4ca786fe3ba88e8158aff346d5e46da937d0f2857b7"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "e42c84e83c9c7807138c83281b3831381e54e44c070ac2fe3ffafaca6b691ec6"
+        }
+      },
+      "record_sha256": "70206fe9bb173747168462ccbe9e7a86e19b9b24a5efb9b1b2d603d54d431974"
+    },
+    "S4_step3": {
+      "record_id": "S4_step3",
+      "subject": "S4",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 55.36,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22144
+          ],
+          "sha256": "57699bd7e602ad4bc4cc0b153b3dfff152ebe96f91d319804ae25b4e42adbfe2"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22144
+          ],
+          "sha256": "57699bd7e602ad4bc4cc0b153b3dfff152ebe96f91d319804ae25b4e42adbfe2"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            76
+          ],
+          "sha256": "64e95945699bc6b8d760ad815767acfc9ef64545559afbb6850995fcabed9a1c"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "40ced1f026bad14e8cf904acd24b533f61029611028c6f56a06861d4d28af6a9"
+        }
+      },
+      "record_sha256": "7ca68356a4ffc6580d3659e040d852bba158f270bd929e7379af3d6a825bb53d"
+    },
+    "S4_step4": {
+      "record_id": "S4_step4",
+      "subject": "S4",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 54.48,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            21792
+          ],
+          "sha256": "bf95073f2610e3a15ec9a3f2cf4891569b12be8cc26a2c6750b24356a687a3be"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            21792
+          ],
+          "sha256": "bf95073f2610e3a15ec9a3f2cf4891569b12be8cc26a2c6750b24356a687a3be"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            74
+          ],
+          "sha256": "2ee6458e2e298242c18c21fb30ef97337ce17665bcbe87b0bd06ba51b40daa70"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "a59d1a7e93ec44ea74f9c767d5b80307a1f13b4e548a0de09ad721c3ec8e5043"
+        }
+      },
+      "record_sha256": "ae864242258852b616383e2967d59d5c7e4fe6e651940ed6b10e9b7f32ec567f"
+    },
+    "S4_step5": {
+      "record_id": "S4_step5",
+      "subject": "S4",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 65.6,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            26240
+          ],
+          "sha256": "4b93509fa12cce8b2eeed108729ae1f0290a809d00499fa7dc65f1b5ec73aa87"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            26240
+          ],
+          "sha256": "4b93509fa12cce8b2eeed108729ae1f0290a809d00499fa7dc65f1b5ec73aa87"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            90
+          ],
+          "sha256": "3d8ff4a655db44fc1a2f460a95273fe3cbc9ec245cbe697210f370e3b34ed863"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0c7128d4ed848016c415847e56e4187302210cbf39d4d9d9aa2a656106d97645"
+        }
+      },
+      "record_sha256": "27d9440ea7e8d2c3fbf81d218bbc78d119fb7612a014847b8a3a4dd6c9aa5ce5"
+    },
+    "S5_rest1": {
+      "record_id": "S5_rest1",
+      "subject": "S5",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 286.625,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114650
+          ],
+          "sha256": "6b11fbf866301e8333ced3aed586421aca7c78943bef9bcaf7ff496b85648172"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114650
+          ],
+          "sha256": "6b11fbf866301e8333ced3aed586421aca7c78943bef9bcaf7ff496b85648172"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            404
+          ],
+          "sha256": "55bd876e9298c8916be7066802bd1e6d58a5a392c52c562df260974e02e4acc9"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "c50f5e5f76b9cc603278fd74cfb95c9a42866734a914d2ee4dbd70f68c2fc51c"
+        }
+      },
+      "record_sha256": "5ab3e1cf1b14d5d10055bbb626b5818c4a3bd206faab6cdaa65861bf70dc9cee"
+    },
+    "S5_rest2": {
+      "record_id": "S5_rest2",
+      "subject": "S5",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 288.685,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            115474
+          ],
+          "sha256": "138f18a10dd76a1438cdf6ad2bec9fc2fdf6695b172432e68b9e5a08dde6a21a"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            115474
+          ],
+          "sha256": "138f18a10dd76a1438cdf6ad2bec9fc2fdf6695b172432e68b9e5a08dde6a21a"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            413
+          ],
+          "sha256": "382e2b42315b13289d75d52b0de1f4cef8659fe922b6c602c5fd054a42bb56cc"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "8d0428529c224888b372def79264e190f0bfcb884d1d9046cde3de6fc4915b85"
+        }
+      },
+      "record_sha256": "33c9ab36419c7a8eb9454091ab1e5d5233005f1f2a13730107103f0e327cc463"
+    },
+    "S5_rest3": {
+      "record_id": "S5_rest3",
+      "subject": "S5",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 291.02,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            116408
+          ],
+          "sha256": "879138c753a7e88d58f2587cab95f1f6d6d3e878a7785c8577f688dd2678cec0"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            116408
+          ],
+          "sha256": "879138c753a7e88d58f2587cab95f1f6d6d3e878a7785c8577f688dd2678cec0"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            372
+          ],
+          "sha256": "23e7625ec0abf93e08c8ba70d469bb3568cd49d17c954e4376f29a6f20471f14"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "927b8286e6bebdf7cc6b1680ea982eda67e80ccb7c2bee33667f4776f161484b"
+        }
+      },
+      "record_sha256": "1d3489211397d0c446fed5cc01d9f958abfb88ff5909145d8ebc1df21cfb8c85"
+    },
+    "S5_rest4": {
+      "record_id": "S5_rest4",
+      "subject": "S5",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 287.8975,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            115159
+          ],
+          "sha256": "9f30c9daa4fafd0735bf8a762b6db919dabf44f7fcbade140bb1fb27a25fe08a"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            115159
+          ],
+          "sha256": "9f30c9daa4fafd0735bf8a762b6db919dabf44f7fcbade140bb1fb27a25fe08a"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            381
+          ],
+          "sha256": "ab1e214a5964f716147ddde81e3f95251a863ee57fdc5929d1b91275870fddf8"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "b839a09a6dbe57756740793a36411fb37f197646addef46018ed79f58df47384"
+        }
+      },
+      "record_sha256": "396ffe4776c45a1e9c985d2995dee63333b8041389c717b4fed7564e0ac1a6b3"
+    },
+    "S5_rest5": {
+      "record_id": "S5_rest5",
+      "subject": "S5",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 286.69,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114676
+          ],
+          "sha256": "e11169c95ee692fec5564455532a408015954a6406bc787718d64532b81a6a29"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114676
+          ],
+          "sha256": "e11169c95ee692fec5564455532a408015954a6406bc787718d64532b81a6a29"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            363
+          ],
+          "sha256": "16aa9bec556673a8f739b11060466180ddc0c4f936759c55d120b289118044d1"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "e756ee1c2ec33ae49d7eecd64153b680ba42c32f316da0405aefec5dd11c461e"
+        }
+      },
+      "record_sha256": "4f10ecf44616904e804169ac8ab4de0fe01567365e82d0a9a9f6c42fc2b8b9ec"
+    },
+    "S5_squat1": {
+      "record_id": "S5_squat1",
+      "subject": "S5",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 32.4375,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            12975
+          ],
+          "sha256": "b84dbc0238d044ea52be8d2ea20993693935589fbeee30b442c8a8bc31e3719c"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            12975
+          ],
+          "sha256": "b84dbc0238d044ea52be8d2ea20993693935589fbeee30b442c8a8bc31e3719c"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            53
+          ],
+          "sha256": "e21089087145505e914c3ebf381778e9f81a0ca33e1f411d9979240aca0eb93f"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "1c01cc0dba2ddeb4080c4772585182924d15cf092e8061cdc5ba8ab048a94041"
+        }
+      },
+      "record_sha256": "01fec026eb18ec2d3884cac927ddc7386efb934310d4a4864621d643418b1b33"
+    },
+    "S5_squat2": {
+      "record_id": "S5_squat2",
+      "subject": "S5",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 37.04,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            14816
+          ],
+          "sha256": "f022e4ad4867efccb18053ca606673e1e780fb77ea0888ccf3a0babbbbfa5dce"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            14816
+          ],
+          "sha256": "f022e4ad4867efccb18053ca606673e1e780fb77ea0888ccf3a0babbbbfa5dce"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            56
+          ],
+          "sha256": "524c26ae713fed1f64a5d186e8808f8b4bf51f7543073b2d2cea0c05afc67139"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "bab1816a0979bf2c9a8ef6d732c5bffb5eb7a9a62985a41654c0bd5ef7478157"
+        }
+      },
+      "record_sha256": "25868517e322e5a5320dc58feed3952d5a6a86b1aa37b35a77cb5e19b33019d7"
+    },
+    "S5_squat3": {
+      "record_id": "S5_squat3",
+      "subject": "S5",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 60.9625,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24385
+          ],
+          "sha256": "44b173d19f8557a2bd29fcb0fdf324b6236eaba4bff474cc736770a54b7542d4"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24385
+          ],
+          "sha256": "44b173d19f8557a2bd29fcb0fdf324b6236eaba4bff474cc736770a54b7542d4"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            0
+          ],
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            0,
+            2
+          ],
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "record_sha256": "d92d0c1cd268fda4b66f5794bfb464f03feccb54bd2d281d0060f9d56415e95d"
+    },
+    "S5_squat4": {
+      "record_id": "S5_squat4",
+      "subject": "S5",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 54.8925,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            21957
+          ],
+          "sha256": "03f7b9323ce38d288af274985a259ea0e2bc2040a1c7c2bd4e7e21587b4e689c"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            21957
+          ],
+          "sha256": "03f7b9323ce38d288af274985a259ea0e2bc2040a1c7c2bd4e7e21587b4e689c"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            79
+          ],
+          "sha256": "b9eb90b00d125a9cede801f7c12c612c280c37af25ff143d4e811dcfec5b31a3"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "92d01f03886e8a14901a0f05f232533cd0559a48f8d7ea771ffb1a38b4773422"
+        }
+      },
+      "record_sha256": "0b3a9192a4ff19f94204abbe30d913f6f22bb751dfc88a6dad033badf78956fd"
+    },
+    "S5_squat5": {
+      "record_id": "S5_squat5",
+      "subject": "S5",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 60.9625,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24385
+          ],
+          "sha256": "31297653d11cb4daa92f52bb473c3170c1b87a8883eb72ab880a6c392a07017f"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24385
+          ],
+          "sha256": "31297653d11cb4daa92f52bb473c3170c1b87a8883eb72ab880a6c392a07017f"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            89
+          ],
+          "sha256": "0603f2c8505164f93f68acd77a7015bb8f0c18a59b2b187363d075c6f61d95ff"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "d2ed9d0934d3046a4cb2abdce823c35bbfe8d62702888291b0a23d3d71bf44b6"
+        }
+      },
+      "record_sha256": "59fc6ac06b612b915bcfb549aaf409a3ec2488d6dccc6f3f2728090cae92cf3f"
+    },
+    "S5_step1": {
+      "record_id": "S5_step1",
+      "subject": "S5",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 50.905,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20362
+          ],
+          "sha256": "6a677727b1c7b75b36e1def59d6c97f202378c22012617569e473f847a12d4c7"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20362
+          ],
+          "sha256": "6a677727b1c7b75b36e1def59d6c97f202378c22012617569e473f847a12d4c7"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            97
+          ],
+          "sha256": "80e5e6340c744ba09ee4f2fd83b34e92f095247d43c9f83bb1a91b7ca98317c4"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "a7f4f67d96fa63c72c8ffeedd705bb45618aad2b77b12a5f236666336288e3dd"
+        }
+      },
+      "record_sha256": "41391625f345a3e5861baeb80a313bdc3209e014b2c7fe2726879aaad9cc6c64"
+    },
+    "S5_step2": {
+      "record_id": "S5_step2",
+      "subject": "S5",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 45.67,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18268
+          ],
+          "sha256": "549f545f2d99708445307ebf61a19d39c6fbe49faf6d1b9da36408e5f85b1e9a"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18268
+          ],
+          "sha256": "549f545f2d99708445307ebf61a19d39c6fbe49faf6d1b9da36408e5f85b1e9a"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            83
+          ],
+          "sha256": "e81e05b48a34167764a129b7ac08d634652e8bd95fbbb418a012c25c8b17d0a5"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "63820825f2570dca3f55d8dea1203b3cb799cd66f35ac1780c5e19ab353357c7"
+        }
+      },
+      "record_sha256": "06a13b2180565dd919628536299a140e0e9ab72c9e3b24faa79bd7e7b55c7003"
+    },
+    "S5_step3": {
+      "record_id": "S5_step3",
+      "subject": "S5",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 46.6225,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18649
+          ],
+          "sha256": "163a77640ee13a2846c558a6be77e628fa563af09ad877ce3433753f0497a01e"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18649
+          ],
+          "sha256": "163a77640ee13a2846c558a6be77e628fa563af09ad877ce3433753f0497a01e"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            87
+          ],
+          "sha256": "b71c9d3bd5e7a2561529158d54ede3764438ce7cc88b49115f532b15e8b3075e"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "919e9fb0c554b2dd7663a480d670de5cd27121d8219507e0b1d0e22ddd65bb01"
+        }
+      },
+      "record_sha256": "f004d49c1ee27f77f25c8745afd968ab4cd717cd746f80ea55f9d00a83492ad1"
+    },
+    "S5_step4": {
+      "record_id": "S5_step4",
+      "subject": "S5",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 51.0725,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20429
+          ],
+          "sha256": "06acc0b470daca8a653f1179a9e98275cbd35fdda637f012bd80c998d79a67b8"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20429
+          ],
+          "sha256": "06acc0b470daca8a653f1179a9e98275cbd35fdda637f012bd80c998d79a67b8"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            93
+          ],
+          "sha256": "c5d68b9b51c5379dc328a457795519d097f222d39dafaaf5f054b8ed25b613ab"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "ce716b1198ad8f908c4015fe7a332aa74a72d6008f801a44127b2864ec4357c4"
+        }
+      },
+      "record_sha256": "7ac7c803b68f0cfdae3d0681704119eb45161d6e30b643326960ab6fe78cf022"
+    },
+    "S5_step5": {
+      "record_id": "S5_step5",
+      "subject": "S5",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 47.705,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19082
+          ],
+          "sha256": "862c3d77cab4ed56059be34cbc6216f34d9cb53bcc760e307e7d6c1bb5fc0ff3"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19082
+          ],
+          "sha256": "862c3d77cab4ed56059be34cbc6216f34d9cb53bcc760e307e7d6c1bb5fc0ff3"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            94
+          ],
+          "sha256": "9ffcbee7528ad6fa9c878d4cf3518131752f772dd585ff6bc5ce6c72096ccd69"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "1a5c1248c9aa737e83127f64c5ad59927330a14247aa1bb2c541c7844909541f"
+        }
+      },
+      "record_sha256": "5e6bce5e2595ec2186cf4511f071a8f615fd7984a917ca3e786f278ed7e38c11"
+    },
+    "S6_rest1": {
+      "record_id": "S6_rest1",
+      "subject": "S6",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 278.325,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111330
+          ],
+          "sha256": "6d318c6a6531f8803d32019f07737d98a74e3ea0ae225812c3450425e4d88591"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111330
+          ],
+          "sha256": "6d318c6a6531f8803d32019f07737d98a74e3ea0ae225812c3450425e4d88591"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            354
+          ],
+          "sha256": "68a781e4e7578616fce5bb80cc63136fa7345f57f6f8ce4c0800de922f1aa7ca"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "cc49f07c2953c5868ec04ef33b3af49796db6e906746c3cbb2c78a60172f917f"
+        }
+      },
+      "record_sha256": "434f42603d0ff3ed75614b60af51b0dceea0625bd67a6fe77696b0c25b49e355"
+    },
+    "S6_rest2": {
+      "record_id": "S6_rest2",
+      "subject": "S6",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 285.7125,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114285
+          ],
+          "sha256": "fc5cd64520d0699aa199e0406091cc3ad8ac2651200cd1c2259fc023334c8060"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114285
+          ],
+          "sha256": "fc5cd64520d0699aa199e0406091cc3ad8ac2651200cd1c2259fc023334c8060"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            375
+          ],
+          "sha256": "26b05672c1a576917ef93b1f826331bd05a4cd37357883cdc8e2ee478cd29002"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "01d767a81c52c022a1a1fb7fc97b06749dd0b7a943ef0f2963d37afff4ecdf17"
+        }
+      },
+      "record_sha256": "cd9e45cfa488ff42fe1229939e57b16e1110447354c5af5cdbf541fc8747aa4e"
+    },
+    "S6_rest3": {
+      "record_id": "S6_rest3",
+      "subject": "S6",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 277.8075,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111123
+          ],
+          "sha256": "939cac3fe6e0d9d8e6328671ea6c47b7fd9e408524e05dbb6abe9e1481aafcd8"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111123
+          ],
+          "sha256": "939cac3fe6e0d9d8e6328671ea6c47b7fd9e408524e05dbb6abe9e1481aafcd8"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            341
+          ],
+          "sha256": "a464a96b01e50982430e06e8320474f70c76d7cb36a264605188afcb6aa311b0"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "90badd79bcdef818fd528f15548180c795f6994be3149163c1590ac2c8799af4"
+        }
+      },
+      "record_sha256": "6bc5b47dfbd355159769d6b3a48f5efb716299e45e91c3275246dc36443786d8"
+    },
+    "S6_rest4": {
+      "record_id": "S6_rest4",
+      "subject": "S6",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 278.3675,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111347
+          ],
+          "sha256": "074c0a54d7add6ffc9f58730f00c79853e421eec5922da7228827802c5af14f6"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            111347
+          ],
+          "sha256": "074c0a54d7add6ffc9f58730f00c79853e421eec5922da7228827802c5af14f6"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            356
+          ],
+          "sha256": "f25d6e293fd1a9dbb0a53d985c18afef91c0e4aa83e8797467256059bd1dcbd2"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "673d5339d2060be0e8875c866f298766366bf06f436d0a1b7ad7e2abc9133920"
+        }
+      },
+      "record_sha256": "72886e52d3a01becf26efa679285b9a90b54002d93799dc08ddf549cfc712f8a"
+    },
+    "S6_rest5": {
+      "record_id": "S6_rest5",
+      "subject": "S6",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 281.7825,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            112713
+          ],
+          "sha256": "327e911af988affd4b243bf0f706f5237342f9dde6b0c3daf801be4eade98f4d"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            112713
+          ],
+          "sha256": "327e911af988affd4b243bf0f706f5237342f9dde6b0c3daf801be4eade98f4d"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            358
+          ],
+          "sha256": "78e55e6f51dee8ac0448ed9f83f6524551fd8e31db6da96d2684258cea3e3c57"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "d49ffcbaf3a0ba08ca24f618203348a3c1eb5982ed24b6bddbea828f1249e359"
+        }
+      },
+      "record_sha256": "b2cd37e06bd6ad8b6f695c1d8c8b11067350deda8e2363624c0b251e45da381a"
+    },
+    "S6_squat1": {
+      "record_id": "S6_squat1",
+      "subject": "S6",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 41.52,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            16608
+          ],
+          "sha256": "239a609a4c18244314754ec4b67eccded3c4e773ab6b33e779de982e276baa1d"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            16608
+          ],
+          "sha256": "239a609a4c18244314754ec4b67eccded3c4e773ab6b33e779de982e276baa1d"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            62
+          ],
+          "sha256": "0b409f373eb39a3c44129b724a387d9e392abcc25dd38c6d930806efd68de669"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "eddf77b0bc056613a328c9941d642da15d81faa99b738a6e6396b10df49296b9"
+        }
+      },
+      "record_sha256": "cf4989e669e6c74b88fbf04907a4dfa41eef4e8c02debf85dd5566071fb5105a"
+    },
+    "S6_squat2": {
+      "record_id": "S6_squat2",
+      "subject": "S6",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 47.21,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18884
+          ],
+          "sha256": "6b71049ae44a92959003936c82d35c01dc4b92f3ce3315d8501f0d5f90ec3bd1"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            18884
+          ],
+          "sha256": "6b71049ae44a92959003936c82d35c01dc4b92f3ce3315d8501f0d5f90ec3bd1"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            69
+          ],
+          "sha256": "b21150d6c873c0e6a7f017279a1a17a656dbb8b147b45d1db1690e18e72e860a"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "895524b66e21aecd344b8ee023853c98aa28e9b07253716eef2df9dc3bedd9f9"
+        }
+      },
+      "record_sha256": "b81ea43281e2e7ffb75da9e5268d16de8355fc78dc9a10b08db9c6018957813b"
+    },
+    "S6_squat3": {
+      "record_id": "S6_squat3",
+      "subject": "S6",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 50.96,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20384
+          ],
+          "sha256": "775fb3925b1bb456df1a1c9e34f5312849c01754efe2a3e8b082a50a17559137"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20384
+          ],
+          "sha256": "775fb3925b1bb456df1a1c9e34f5312849c01754efe2a3e8b082a50a17559137"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            78
+          ],
+          "sha256": "770761ee4ad54d4872b4a2575015d5730c5888d9d4e367aa00d3e4d1799b9e00"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "8dde25db270d0d3c26bca76557934cd575d0d6b8e82a0b25f669abef29e5dc23"
+        }
+      },
+      "record_sha256": "307692618ecc9f0cfc1ab89956c73f9d5e6da68b455918823ce431e671151226"
+    },
+    "S6_squat4": {
+      "record_id": "S6_squat4",
+      "subject": "S6",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 49.36,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19744
+          ],
+          "sha256": "ac018fadd015a1349b385bf4f3739406173e6e21174a0ce726f0819c5be6108f"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19744
+          ],
+          "sha256": "ac018fadd015a1349b385bf4f3739406173e6e21174a0ce726f0819c5be6108f"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            76
+          ],
+          "sha256": "d8b548918e8e7406f8b60dd8c80263e0e9d24a783800ec20c53987df3416ccd7"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "27ab06bf41e4db684127469df25b3c5a90152252081129b509ff359d0d039f66"
+        }
+      },
+      "record_sha256": "a9a93be118b1be249edbe8994e6d254860b20c0b259a7df321ce14ab94c75ca5"
+    },
+    "S6_squat5": {
+      "record_id": "S6_squat5",
+      "subject": "S6",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 48.32,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19328
+          ],
+          "sha256": "a7d2b2874305a5b7925e166777b891de799f19b0d59471edc5a22e4025cecf62"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19328
+          ],
+          "sha256": "a7d2b2874305a5b7925e166777b891de799f19b0d59471edc5a22e4025cecf62"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            77
+          ],
+          "sha256": "f24c5f6347bb6b47e5491334da4d77d39976b7fe2d47e31720df03c4959ef4bb"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "19b51b6826b31d73afcd39e19c6b3fa706aac2327675f625a228380e072fda98"
+        }
+      },
+      "record_sha256": "a2bbb6ca66285197d120cb8803760388293c7c01e20fcd84373bf3a0bd8c5078"
+    },
+    "S6_step1": {
+      "record_id": "S6_step1",
+      "subject": "S6",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 61.3425,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24537
+          ],
+          "sha256": "62f32758e11b98c98c6977197372e09ccf88d8371cf2fb87357d75846bd1bdf5"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            24537
+          ],
+          "sha256": "62f32758e11b98c98c6977197372e09ccf88d8371cf2fb87357d75846bd1bdf5"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            93
+          ],
+          "sha256": "58091ebe97019e3150dfd1272ac9e820acb8a880c008cde62fbe4f811b4a5e9e"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "2729b42e9b5667a25c4c1d08ff7f4e18d736f56a23d60bcb444efb641ec5f126"
+        }
+      },
+      "record_sha256": "d91bf60ff5c236b2ee03d4fd0ecdd1840c2f6b65cb84456f4642e03531eae667"
+    },
+    "S6_step2": {
+      "record_id": "S6_step2",
+      "subject": "S6",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 69.04,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            27616
+          ],
+          "sha256": "1e2e8cee663c0977e18747075fd7dd0d30ed8b5d0137ae3c3789cc0c8da6247d"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            27616
+          ],
+          "sha256": "1e2e8cee663c0977e18747075fd7dd0d30ed8b5d0137ae3c3789cc0c8da6247d"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            99
+          ],
+          "sha256": "eaac60775570fdf84ef83147d99c005301aac157737bc6b44bf5dc0af4184229"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0f43141508e16a491612ab8488d2bbd847d0274b6ab40596eda4629b1e40bd83"
+        }
+      },
+      "record_sha256": "18857728e88f03a32cc071b2dae60a5ec4851e000586d7751a3ac47767930298"
+    },
+    "S6_step3": {
+      "record_id": "S6_step3",
+      "subject": "S6",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 66.0,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            26400
+          ],
+          "sha256": "af30c7211976ffe742d0a277bb451ba8168f7a0012d4409979c1488f60b2cc70"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            26400
+          ],
+          "sha256": "af30c7211976ffe742d0a277bb451ba8168f7a0012d4409979c1488f60b2cc70"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            99
+          ],
+          "sha256": "4f03285e5c5ad77639fbb28266317e6ac64bcf0bb7f9ae837fe1d03a728f0724"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "8eb219c424fbb3170be512c55e09a7b9606d2569cc959999fd8ba0aa0b831674"
+        }
+      },
+      "record_sha256": "52b4f5ba52496d7523f2ebe5a313447bb523a1c00c58a3c6ec3f366ad6397efb"
+    },
+    "S6_step4": {
+      "record_id": "S6_step4",
+      "subject": "S6",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 66.4575,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            26583
+          ],
+          "sha256": "58fcbaa436b909f9e8921aa1a473e5d9d73ef1d602bc7a2782a261bff1f78026"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            26583
+          ],
+          "sha256": "58fcbaa436b909f9e8921aa1a473e5d9d73ef1d602bc7a2782a261bff1f78026"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            104
+          ],
+          "sha256": "d5b5bae8379dd8754affeae5782a278a7701ce65c206cdb49114daaea9342492"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "8d2e0afd8c1314df802c6028853a5214b7de2437687ddcf425f4fb59d542d71f"
+        }
+      },
+      "record_sha256": "b9920f2f68d5df0854564278cf5815f36eb0fbb2a7747d74a1ba0de8d00d1486"
+    },
+    "S6_step5": {
+      "record_id": "S6_step5",
+      "subject": "S6",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 63.0625,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            25225
+          ],
+          "sha256": "50718613080989d51050579b526c14305452cbac1a3de1c988304b9ef0a3193d"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            25225
+          ],
+          "sha256": "50718613080989d51050579b526c14305452cbac1a3de1c988304b9ef0a3193d"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            95
+          ],
+          "sha256": "4a42e68f5705a67b1310d5e6b78657b7048df1bd426770ef55c89754d4625163"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "b1b2b91591bb3b8de8650a577a5451004ee6114d5e00759295c0b7ecf741e6f5"
+        }
+      },
+      "record_sha256": "2bac17d629323ea9ad12b9ab1ef2ad37a41642a19514bf73f0eda599df1b7ee8"
+    },
+    "S7_rest1": {
+      "record_id": "S7_rest1",
+      "subject": "S7",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 329.08,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            131632
+          ],
+          "sha256": "8b7051c39927e564f71dc387347a961cd8372c6ff4bb951fe97117e959522736"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            131632
+          ],
+          "sha256": "8b7051c39927e564f71dc387347a961cd8372c6ff4bb951fe97117e959522736"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            483
+          ],
+          "sha256": "32db03551d5f7088e56d1898469ab2499b05a9136f3d8787ac9496569ec5c338"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "6739f7f6f4d5c287f0e217b0c8859f22ca932d32ff7f775a603739233d504439"
+        }
+      },
+      "record_sha256": "70c40f380aee08e757dc8065642085d1b4d6f05871bfd67fba4258a3445a986d"
+    },
+    "S7_rest2": {
+      "record_id": "S7_rest2",
+      "subject": "S7",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 311.03,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            124412
+          ],
+          "sha256": "fe32e92042964d94bc51535cf7000f90cb55dced3dcd55988ca043da903547dd"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            124412
+          ],
+          "sha256": "fe32e92042964d94bc51535cf7000f90cb55dced3dcd55988ca043da903547dd"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            425
+          ],
+          "sha256": "2568d65d0aafd28b0e6746e0dc4c2be211179322db50fcfae181a1e0bb417806"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "64bf69245f6831e9dac629d8250b7ebc4bc330683e1b05be3b040887c8750536"
+        }
+      },
+      "record_sha256": "a439ca68850bd45a5d3fd0078df8b81ae6c23d3deccd24a858a9fce2d691acca"
+    },
+    "S7_rest3": {
+      "record_id": "S7_rest3",
+      "subject": "S7",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 286.9875,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114795
+          ],
+          "sha256": "0d551ef0760ae24faadb2470efb3912da1138e0766dbe3bf32f2a81a0470f51f"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            114795
+          ],
+          "sha256": "0d551ef0760ae24faadb2470efb3912da1138e0766dbe3bf32f2a81a0470f51f"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            381
+          ],
+          "sha256": "2b513c6bcb23d99b018f2198d8d215753386d38b6ba625e36544465836ab0148"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            2
+          ],
+          "sha256": "b5632a2948fa2cfcf8928b3b32b1d77a897c17ee181506d0bcd40f606549049e"
+        }
+      },
+      "record_sha256": "6b207e734d2343b3b4d050fee839965a9ee743def2b6c16e5e5b2685f43a099e"
+    },
+    "S7_rest4": {
+      "record_id": "S7_rest4",
+      "subject": "S7",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 293.26,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            117304
+          ],
+          "sha256": "a70fa8ffb57b75ed1c8c904be326727ffa2086d84868a47f267703d9a4274112"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            117304
+          ],
+          "sha256": "a70fa8ffb57b75ed1c8c904be326727ffa2086d84868a47f267703d9a4274112"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            370
+          ],
+          "sha256": "1427c9c158d27bed2aacf726764b3a9d9ba5a3eb4b6fbe91c978df88656561de"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "042ce056108c49fb9ee50272da364e86b6a09a17b6399c4e1db77ed1c0aac6a2"
+        }
+      },
+      "record_sha256": "f9efa618b46b5c0a88ed1612b37a8a98565345cb37e5f680d1d5d33fb94791ff"
+    },
+    "S7_rest5": {
+      "record_id": "S7_rest5",
+      "subject": "S7",
+      "activity": "rest",
+      "fs": 400.0,
+      "duration_s": 290.3875,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            116155
+          ],
+          "sha256": "555361f27b08c51bdacb5f9a20a5a12da50f3fccc44180f1381825050c5f58c1"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            116155
+          ],
+          "sha256": "555361f27b08c51bdacb5f9a20a5a12da50f3fccc44180f1381825050c5f58c1"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            358
+          ],
+          "sha256": "ae05cdbe460203e503dceb54a06817dbe950711837e96d672d62e4beac892d82"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            2
+          ],
+          "sha256": "ed6756474d52ddb1a0ccd32cede0d54e510e6828d9aa9c12211f37a449a0220e"
+        }
+      },
+      "record_sha256": "8dffe7e0e20fe550f2631bd4e1b10660d0723e8962d9dd9916f33bdf56d3aa5b"
+    },
+    "S7_squat1": {
+      "record_id": "S7_squat1",
+      "subject": "S7",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 55.8525,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22341
+          ],
+          "sha256": "31be30a53c98cafdd5497cad547f253c856a0108c4b68281a00b5116bb71fe78"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22341
+          ],
+          "sha256": "31be30a53c98cafdd5497cad547f253c856a0108c4b68281a00b5116bb71fe78"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            100
+          ],
+          "sha256": "c041fba4270fb4dc1b73d59697f554aea5da0bcf9b74ca968d097f77f0c369a8"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            2
+          ],
+          "sha256": "5ca3b8a0cda1e9b65e6f35a3cd7da2e5b8941ba53ae3be357a496b83d102d3b0"
+        }
+      },
+      "record_sha256": "f73070c9e665f7f0b314fd9d338c2de6aab69c7312e5ac0464e2abe49e42487a"
+    },
+    "S7_squat2": {
+      "record_id": "S7_squat2",
+      "subject": "S7",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 49.07,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19628
+          ],
+          "sha256": "2a3a3a08382f674f46f9533179b8d2eb07b75f22fa0bbb9ced90aafa5455313f"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19628
+          ],
+          "sha256": "2a3a3a08382f674f46f9533179b8d2eb07b75f22fa0bbb9ced90aafa5455313f"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            96
+          ],
+          "sha256": "02c6e5165897f9ebd125b04e699686f447b59d9e44c4d9fa28fe00362840db58"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "23731f41c84419987ad02f079dfe0c0b6a07e63710fe63d0db873e13eb980987"
+        }
+      },
+      "record_sha256": "bb71a0057a7bb1f6c0d1040eda5dcf52ae8a8764f2c6c328e2b7ccadc8e04611"
+    },
+    "S7_squat3": {
+      "record_id": "S7_squat3",
+      "subject": "S7",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 47.9775,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19191
+          ],
+          "sha256": "54b159d7c4dc183eae78cfa1882287919a35b55a6311171d6a3131b45dd2944a"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19191
+          ],
+          "sha256": "54b159d7c4dc183eae78cfa1882287919a35b55a6311171d6a3131b45dd2944a"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            98
+          ],
+          "sha256": "495caee2e9914afdf5edb9fdd59bfb2b478f90462963e47d24c232e8ad79a539"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "e518414b8332221394bacdafc24ed4a749b76961b0497ffb7c928cced6c37bb6"
+        }
+      },
+      "record_sha256": "c5226d33ce6e1283147174c0a2f1554153f31102c6ea2b1103d09533e7719a1d"
+    },
+    "S7_squat4": {
+      "record_id": "S7_squat4",
+      "subject": "S7",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 57.6325,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23053
+          ],
+          "sha256": "8e1ac41353c89fed2935c2a044eadd879819fcc21f420296698ef991cd9b1571"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23053
+          ],
+          "sha256": "8e1ac41353c89fed2935c2a044eadd879819fcc21f420296698ef991cd9b1571"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            115
+          ],
+          "sha256": "bd357c21b6916891044a4b14acde704809284914700b8b7b95a4ffaed590e32a"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "210efee1c4b327c7a4cf8f1a5a3d1c354403599d84ae2954c732f27da93350ad"
+        }
+      },
+      "record_sha256": "953ae8c0b5bd4afebece7815203004ce334efb9b33b3da6d30553d82e5e95f7c"
+    },
+    "S7_squat5": {
+      "record_id": "S7_squat5",
+      "subject": "S7",
+      "activity": "squat",
+      "fs": 400.0,
+      "duration_s": 56.3275,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22531
+          ],
+          "sha256": "6c91418e3d41614a61a19f7bcfdeb006c3920ffe74fe8616dad07d90455911ef"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22531
+          ],
+          "sha256": "6c91418e3d41614a61a19f7bcfdeb006c3920ffe74fe8616dad07d90455911ef"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            85
+          ],
+          "sha256": "aa7da381c5e8ae35169a9a9be330b4247fcca0d4968459e7a79827badd15b221"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "bd8776c0e2140494e1a1e68b0d922c747290c90909ffbe7ec7a3ca2879394951"
+        }
+      },
+      "record_sha256": "e11dd13b9cb40ea86566cba2f6d6c2adaf141e567ed33dbfe0b166ec4ff61bc9"
+    },
+    "S7_step1": {
+      "record_id": "S7_step1",
+      "subject": "S7",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 55.0575,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22023
+          ],
+          "sha256": "e18ed16d7580a55e800cd5ff3da104a024b972fc4aeeaacd06632c6a67021d9e"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            22023
+          ],
+          "sha256": "e18ed16d7580a55e800cd5ff3da104a024b972fc4aeeaacd06632c6a67021d9e"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            117
+          ],
+          "sha256": "727126927dab6fc7d103b1c4d519d4d3611e8acdc130b4d053c03862bb436b71"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "e2c96fb09e78c35c63face686561f9e1eaa6bd1c6d310aa0da52b87bfcf29aad"
+        }
+      },
+      "record_sha256": "40c52c5db1ffcbcfee76bc49153542f203c837dce5a4e162f1a6f87530e4a677"
+    },
+    "S7_step2": {
+      "record_id": "S7_step2",
+      "subject": "S7",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 58.5625,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23425
+          ],
+          "sha256": "c691442e3e588b91d9e2db2e8f3c4724d4af3788dfebcc7e12f40ae1330b7931"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            23425
+          ],
+          "sha256": "c691442e3e588b91d9e2db2e8f3c4724d4af3788dfebcc7e12f40ae1330b7931"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            135
+          ],
+          "sha256": "2e2e3d70b76aa1fbac9d88928edcf776e2c370aa300b788fd141f92c84a16d9e"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "672c7895c7efe972d175b1b14901d072b99d8e25dc646fdadcf7ab632be9a70a"
+        }
+      },
+      "record_sha256": "17af9b7d269c2f7065e8e4c0d29d0f29942fb69c545027ec06f7b8a66e705ac6"
+    },
+    "S7_step3": {
+      "record_id": "S7_step3",
+      "subject": "S7",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 42.665,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17066
+          ],
+          "sha256": "d443a4daaa9cd0be2034c36dee04aaeed6829030aac1ac012422082a3bbd5596"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            17066
+          ],
+          "sha256": "d443a4daaa9cd0be2034c36dee04aaeed6829030aac1ac012422082a3bbd5596"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            99
+          ],
+          "sha256": "a3dbf9ff734f2eda1e36c2223851b06afbe520517ea0630d9f000cebb1908e0c"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "08d8dda827489aa769be769948cb7a13cea80c6991791f9b193f30d2e0a5c681"
+        }
+      },
+      "record_sha256": "67ff9db55578d30e83e3daf03090d353be14f397d385bad98e51a55553f6ef0b"
+    },
+    "S7_step4": {
+      "record_id": "S7_step4",
+      "subject": "S7",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 50.495,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20198
+          ],
+          "sha256": "58953f186fe03e515e413bf1c9924395a35ded03ee68f7d2131682a946727838"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            20198
+          ],
+          "sha256": "58953f186fe03e515e413bf1c9924395a35ded03ee68f7d2131682a946727838"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            116
+          ],
+          "sha256": "1a3d4ba59bdf8d0c98b0e9a62ac90be747568a8d4f8227a83fb060da8e34cc84"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "b15f4b4e284e74748fbb4f547e89d3f8939149e133d14d7b3447b5ee1e9532a8"
+        }
+      },
+      "record_sha256": "d884190579e87b565e26f0f9244474c669686e02e4f996c01c8e2ada77d54bbf"
+    },
+    "S7_step5": {
+      "record_id": "S7_step5",
+      "subject": "S7",
+      "activity": "step",
+      "fs": 400.0,
+      "duration_s": 48.15,
+      "arrays": {
+        "raw_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19260
+          ],
+          "sha256": "561b79d8e3940ca6d8b0a244e9d2f14f1c5f17f7c69402bff5e98d91ae9fc1db"
+        },
+        "input_ppg": {
+          "dtype": "float64",
+          "shape": [
+            19260
+          ],
+          "sha256": "561b79d8e3940ca6d8b0a244e9d2f14f1c5f17f7c69402bff5e98d91ae9fc1db"
+        },
+        "onset_times_s": {
+          "dtype": "float64",
+          "shape": [
+            120
+          ],
+          "sha256": "6d484753ab92dee104c7a8a9ccd9d4ec465fb9bb8b418ac2c9a5276f6ad870aa"
+        },
+        "annotated_intervals_s": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "01ab46a06460c29cacd67d1b177cde160be39aeb992aaf14091c2fa46192cc6c"
+        }
+      },
+      "record_sha256": "abf5dc600fe24994e32859d5d1543a812f00768b34f9dbf39c59b07d35801c5a"
+    }
+  },
+  "data_manifest_sha256": "c2742969260a0816fdfae53c679e41da42eb4935e2e83844745637d0fe682c69",
+  "frames": "Continuous 8 s contexts, 6 s stride, 64 Hz center 6 s outputs; record time starts at zero; inference [1,1+6*N) seconds",
+  "sampling": {
+    "train_frames_per_person": 256,
+    "validation_frames_per_person": 128,
+    "selection": "Uniform deterministic indices across sorted record_id then start_s within each person; training and validation sampled independently. Full test acquisition inference."
+  },
+  "annotation_policy": "Training/validation entire 8 s context must fit within a single annotated interval. Test predictions cover each acquisition; score only annotation/inference intersections. Never concatenate recordings or gaps.",
+  "missing_samples": "All methods use the adapter's input_ppg copy with only isolated native NaNs linearly filled for whole-record inference. Original raw_ppg is retained and hashed; missing sample positions remain excluded from labeled intervals. No complete training or PRV evaluation window crosses a missing sample.",
+  "input_polarity": "Neural models: negative reflected-light intensity = blood-volume convention. Traditional: intensity maxima. Fixed from acquisition convention, no test polarity search.",
+  "fit": {
+    "seed": "each of 42/43/44; fixed train/validation/test people independent of initialization seed",
+    "epochs": 20,
+    "patience": 5,
+    "batch": 64,
+    "adam_lr": 0.001,
+    "gaussian_sigma_s": 0.04,
+    "positive_weight": 5.0,
+    "output_fs": 64,
+    "nms_distance_s": 0.28,
+    "precision": "FP32",
+    "thresholds": [
+      0.2,
+      0.35,
+      0.5,
+      0.65
+    ],
+    "selection": "Validation person-mean F1 at +/-50 ms; select epoch and threshold; first maximum wins",
+    "loss_weighting": "Equal total weight per training person; BCE over center six seconds"
+  },
+  "temporal": {
+    "AnyPPG": "same six stage_list outputs and original NumPy preprocessing",
+    "PaPaGei": "native official preprocessing; residual blocks (0, 3, 7, 11, 15, 17)",
+    "PaPaGei_channels": [
+      32,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "output_clock_hz": 64
+  },
+  "parameters": {
+    "AnyPPG": 26737,
+    "PaPaGei-S": 27367,
+    "PaPaGei-P": 27367,
+    "AnyPPG-random-frozen": 26737,
+    "SmallCNN": 17353
+  },
+  "reuse": "Original seed42 AnyPPG/SmallCNN fits and predictions, all fixed traditional predictions, original frame identities and AnyPPG stage caches; hash verified.",
+  "primary_comparisons": "F1 at 50ms and 60-second RMSSD error: AnyPPG, PaPaGei-S/P versus SmallCNN and AnyPPG versus random AnyPPG; Holm over 8 planned tests, paired person-level exact sign-flip after averaging seeds.",
+  "limitations": "7 people, one expert, predominantly resting PRV windows. PP/PRV algorithm agreement, not ECG HRV equivalence. Encoders/architectures/native preprocessing differ; random Any comparison isolates pretraining within one architecture.",
+  "encoder_optimization": false
+}

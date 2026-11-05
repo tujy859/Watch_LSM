@@ -1,0 +1,67 @@
+{
+  "MOMENT-1-small": {
+    "model": "MOMENT-1-small",
+    "random_init": false,
+    "seed": 42,
+    "device": "cpu",
+    "precision": "float32; no autocast",
+    "input_sha256": "cdaa7b5711d57163bb83769138b14e85bfa2858773c8305a849831a5ccb69fc7",
+    "native_input_sha256": "a66d0c44abcaee72f4a417ab14f0d0b243c89efacade3260817c0f4842cf9b1a",
+    "statistics_sha256": "949c4a2be4612f1d0eeb05e52ea8693fd2b3432ee920653d257d544ddf32a506",
+    "normalization_scope": "unlabeled available observation only; 120 s per ECSMP person or all three observed 2 s PPG-BP clips",
+    "native_fs": 64,
+    "native_input_samples": 128,
+    "prepared_samples": [
+      128
+    ],
+    "padding_samples": 0,
+    "cropped_samples": 0,
+    "native_patch_size": 8,
+    "encoder_state_before": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+    "encoder_state_after": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+    "encoder_parameters": 35337408,
+    "trainable_encoder_parameters": 0,
+    "checkpoint_sha256": {
+      "models/weights/moment/MOMENT-1-small/config.json": "6456b8e6f017323e8ef372c338c993380e246cb6291ffb8ca21fe7dfc53d0a6f",
+      "models/weights/moment/MOMENT-1-small/model.safetensors": "785e6c6f57ffa7cac7e2a1fff6369618d49f2f441563ddea76c866231e5aa877"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "feature_shape": [
+      3,
+      512
+    ],
+    "seconds": 0.17199999996228144
+  },
+  "SigmaPPG": {
+    "model": "SigmaPPG",
+    "random_init": false,
+    "seed": 42,
+    "device": "cpu",
+    "precision": "float32; no autocast",
+    "input_sha256": "cdaa7b5711d57163bb83769138b14e85bfa2858773c8305a849831a5ccb69fc7",
+    "native_input_sha256": "a9abb8201553dabbfe809d9581b2f495327c7c9ce3bd8af80350bb7f01590fc7",
+    "statistics_sha256": "949c4a2be4612f1d0eeb05e52ea8693fd2b3432ee920653d257d544ddf32a506",
+    "normalization_scope": "unlabeled available observation only; 120 s per ECSMP person or all three observed 2 s PPG-BP clips",
+    "native_fs": 50,
+    "native_input_samples": 100,
+    "prepared_samples": [
+      100
+    ],
+    "padding_samples": 0,
+    "cropped_samples": 0,
+    "native_patch_size": 100,
+    "encoder_state_before": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+    "encoder_state_after": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+    "encoder_parameters": 29700928,
+    "trainable_encoder_parameters": 0,
+    "checkpoint_sha256": {
+      "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+    },
+    "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+    "feature_shape": [
+      3,
+      360
+    ],
+    "seconds": 0.14100000000325963
+  }
+}

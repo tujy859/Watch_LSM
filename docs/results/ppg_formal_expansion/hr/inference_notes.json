@@ -1,0 +1,7 @@
+{
+  "unit": "person; average seed-specific MAEs first",
+  "ci": "10000 participant bootstrap replicates, unadjusted 95% intervals",
+  "p": "two-sided exact paired sign-flip; requires exchangeability/symmetry under null",
+  "multiplicity": "Holm correction over 7 predeclared primary comparisons separately in each of 7 scenarios; not all-task/global correction",
+  "limitation": "Only 15/16 participants; same fixed outer splits. Neither confidence interval nor p value establishes broad population or device superiority. Traditional errors are conditional on finite outputs; coverage reported."
+}

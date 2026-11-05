@@ -1,0 +1,53 @@
+{
+  "version": "synthetic-reference-denoising-v1",
+  "methods": [
+    "AnyPPG",
+    "PaPaGei-S",
+    "AnyPPG-random-frozen",
+    "SmallCNN"
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "reference": "EMBC21 manually valid resting raw PPG, blood-volume polarity, per-clip DC removed; not guaranteed truly noise-free",
+  "windows": "At most 24 uniformly selected nonoverlapping 8s clips/person, on record-zero 8s grid; all samples manually valid and finite",
+  "split": "7 person folds, test S(k), next person validation, other five train; no noisy copies of a person cross roles",
+  "noise_snr_db": [
+    -5.0,
+    5.0,
+    15.0
+  ],
+  "noise_recipe": "0.5 Gaussian white + sinusoid frequency U(0.1,0.4) Hz + 3 signed Gaussian transients width U(0.03,0.12)s; centered and scaled to prescribed realized energy SNR at125Hz",
+  "noise_randomness": "stable SHA256 seed of subject/record/start/SNR; same pairs for all models and all optimization seeds",
+  "normalization": "Only noisy 64Hz clip mean/std enter inference; reference AC waveform divided by same noisy std as target; no clean-driven alignment or gain fitting",
+  "sampling": {
+    "input_hz": 125,
+    "output_hz": 64,
+    "input_seconds": 8,
+    "scoring_seconds": [
+      1,
+      7
+    ]
+  },
+  "learned_output": "fixed 0.5-8Hz second-order zero-phase Butterworth output plus learned residual; last output convolution starts at zero",
+  "fit": {
+    "epochs": 20,
+    "patience": 5,
+    "batch": 64,
+    "lr": 0.001,
+    "loss": "person-balanced MSE in noisy-input-normalized units, central6s",
+    "selection": "validation-person mean NRMSE, earliest epoch on ties; no refit"
+  },
+  "primary_metrics": [
+    "NRMSE relative to reference RMS",
+    "SNR gain relative to noisy input",
+    "correlation"
+  ],
+  "secondary_hr": "Fixed existing Welch algorithm on central6s; EMBC reference from manual onset mean intervals, EPFL reference same Welch on supplied clean waveform (algorithm consistency only)",
+  "epfl": "All 340 copies, each9 nonoverlapping8s clips, evaluated by every trained fold/seed; one underlying person, descriptive noise strata only; never tune on EPFL",
+  "inference": "EMBC seven person paired exploratory bootstrap; average optimization seeds inside person; EPFL no population CI",
+  "pretraining": false,
+  "encoder_finetuning": false
+}

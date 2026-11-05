@@ -1,0 +1,405 @@
+[
+  {
+    "identity": {
+      "protocol_sha256": "42b45bf4aa9fb75ec8f253b8c5a3c61c35b09024f30f955d64c2531b0c9d1ce9",
+      "method": "PaPaGei-S",
+      "seed": null,
+      "rows_sha256": "dfca99cea7e225c737b5576c03b289cca3309251dce45ea642f7051ac519a5a9",
+      "input_sha256": "7e14065d3c3bc8f2ae9dfcd5761aa7862d27d4817923e01b17530da5358c065c",
+      "adapter_sha256": "7d2ef797e727cdc01df81657b4750eec46844441c50c30d8ee2f6c4d09241c99"
+    },
+    "frames": 2577,
+    "shapes": [
+      [
+        2577,
+        32,
+        1000
+      ],
+      [
+        2577,
+        32,
+        250
+      ],
+      [
+        2577,
+        64,
+        63
+      ],
+      [
+        2577,
+        128,
+        16
+      ],
+      [
+        2577,
+        256,
+        4
+      ],
+      [
+        2577,
+        512,
+        2
+      ]
+    ],
+    "encoder": {
+      "method": "PaPaGei-S",
+      "random_seed": null,
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_s.pt": "79d68671e51bdc951fee853e5a8241099e38148ff26ed888b843849332e0b988"
+      },
+      "state_before_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+      "encoder_parameters": 5785612,
+      "encoder_trainable_parameters": 0,
+      "input_fs": 125,
+      "input_samples": 1000,
+      "output_fs": 64,
+      "output_samples": 512,
+      "taps": [
+        0,
+        3,
+        7,
+        11,
+        15,
+        17
+      ],
+      "channels": [
+        32,
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "preprocessing": "Pinned official PaPaGei 0.5-12Hz Chebyshev II plus smoothing and per-window zscore",
+      "device": "cpu",
+      "precision": "FP32; no autocast",
+      "state_after_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175"
+    },
+    "sha256": {
+      "stage0.npy": "44e06c66f94812355f8eb183f3e458273b2c1bd028b0402d3b4b33341ca35c01",
+      "stage1.npy": "3363b60039eb6ba4edbd33a22217ad7f12c577041dd3c572c7df6620e698c126",
+      "stage2.npy": "89dcfd1ad86e9dcccfc636f2b2f497902d752a035742ed817f5fe1305b47b447",
+      "stage3.npy": "f08ece5ea6f56a185c3e44902f3acf122b15568f083a27b05931dd0947d3d169",
+      "stage4.npy": "b155d69d9e70625224b2107495d2e08c585584567c6f73eabfaed7b1e48a6178",
+      "stage5.npy": "cee21b58cacddc47e482e9b0b548aac3c67d1067b3beaac29853655b4c127fa9"
+    }
+  },
+  {
+    "identity": {
+      "protocol_sha256": "42b45bf4aa9fb75ec8f253b8c5a3c61c35b09024f30f955d64c2531b0c9d1ce9",
+      "method": "PaPaGei-P",
+      "seed": null,
+      "rows_sha256": "dfca99cea7e225c737b5576c03b289cca3309251dce45ea642f7051ac519a5a9",
+      "input_sha256": "7e14065d3c3bc8f2ae9dfcd5761aa7862d27d4817923e01b17530da5358c065c",
+      "adapter_sha256": "7d2ef797e727cdc01df81657b4750eec46844441c50c30d8ee2f6c4d09241c99"
+    },
+    "frames": 2577,
+    "shapes": [
+      [
+        2577,
+        32,
+        1000
+      ],
+      [
+        2577,
+        32,
+        250
+      ],
+      [
+        2577,
+        64,
+        63
+      ],
+      [
+        2577,
+        128,
+        16
+      ],
+      [
+        2577,
+        256,
+        4
+      ],
+      [
+        2577,
+        512,
+        2
+      ]
+    ],
+    "encoder": {
+      "method": "PaPaGei-P",
+      "random_seed": null,
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+      },
+      "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "encoder_parameters": 4993024,
+      "encoder_trainable_parameters": 0,
+      "input_fs": 125,
+      "input_samples": 1000,
+      "output_fs": 64,
+      "output_samples": 512,
+      "taps": [
+        0,
+        3,
+        7,
+        11,
+        15,
+        17
+      ],
+      "channels": [
+        32,
+        32,
+        64,
+        128,
+        256,
+        512
+      ],
+      "preprocessing": "Pinned official PaPaGei 0.5-12Hz Chebyshev II plus smoothing and per-window zscore",
+      "device": "cpu",
+      "precision": "FP32; no autocast",
+      "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1"
+    },
+    "sha256": {
+      "stage0.npy": "fc55839ff30b6392ab25dcb5b321a8b31a9ffdd46103217c0f52f26ae87c9ee6",
+      "stage1.npy": "85972c45476b8b3d4458fb8b998aa826f5d365f17900dde8630137ffcbd1dee5",
+      "stage2.npy": "4d5fc0a4dc97fb0efa57c9b63b3bbc02efdbb02caf6546cd556e9b36c1a2dd65",
+      "stage3.npy": "8626c13298cd6e270a8a5e940e5a561187ce1f3a76cfab3aac00f17c375f04af",
+      "stage4.npy": "3c9244dd84a230ea450fb11af5d0eb864b731cf1716b4b909a205f728a6e89d4",
+      "stage5.npy": "360e6b556dcf96a0cf8ce5cf511372b84ba5faa5c751a5a3bbdb19a4bf326e9b"
+    }
+  },
+  {
+    "identity": {
+      "protocol_sha256": "42b45bf4aa9fb75ec8f253b8c5a3c61c35b09024f30f955d64c2531b0c9d1ce9",
+      "method": "AnyPPG-random-frozen",
+      "seed": 42,
+      "rows_sha256": "dfca99cea7e225c737b5576c03b289cca3309251dce45ea642f7051ac519a5a9",
+      "input_sha256": "7e14065d3c3bc8f2ae9dfcd5761aa7862d27d4817923e01b17530da5358c065c",
+      "adapter_sha256": "7d2ef797e727cdc01df81657b4750eec46844441c50c30d8ee2f6c4d09241c99"
+    },
+    "frames": 2577,
+    "shapes": [
+      [
+        2577,
+        64,
+        250
+      ],
+      [
+        2577,
+        160,
+        125
+      ],
+      [
+        2577,
+        160,
+        63
+      ],
+      [
+        2577,
+        400,
+        32
+      ],
+      [
+        2577,
+        400,
+        16
+      ],
+      [
+        2577,
+        512,
+        8
+      ]
+    ],
+    "encoder": {
+      "method": "AnyPPG-random-frozen",
+      "random_seed": 42,
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "checkpoint_sha256": {},
+      "state_before_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "input_fs": 125,
+      "input_samples": 1000,
+      "output_fs": 64,
+      "output_samples": 512,
+      "taps": "all six AnyPPG stage_list outputs",
+      "channels": [
+        64,
+        160,
+        160,
+        400,
+        400,
+        512
+      ],
+      "preprocessing": "AnyPPG original onset PoC Butterworth 0.5-8Hz and NumPy per-window zscore",
+      "device": "cpu",
+      "precision": "FP32; no autocast",
+      "state_after_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad"
+    },
+    "sha256": {
+      "stage0.npy": "42e4e3688822b13f859973e92cb9036d3d4e072aa9b6c25a204953613755820b",
+      "stage1.npy": "da84aee5efcc2a6ab62b000f2a431550fdf8999ac613524a2c326b7f14787f7a",
+      "stage2.npy": "286ea0edc798a46a616dd8bdde7f6ffd634cdb5790eadda24468a9095efdb52b",
+      "stage3.npy": "0c952404415b73d06c163479d17eb2cb79638f8cbbea1d915d5e9a98fafd4f8a",
+      "stage4.npy": "3b35d347adffb618735e3749b9cfa6eb506e8b46ae02b40d20c40c87492c40cf",
+      "stage5.npy": "7d357f917a388806d82be8ed3efa955ee152759da6750f297fe227e520a07d40"
+    }
+  },
+  {
+    "identity": {
+      "protocol_sha256": "42b45bf4aa9fb75ec8f253b8c5a3c61c35b09024f30f955d64c2531b0c9d1ce9",
+      "method": "AnyPPG-random-frozen",
+      "seed": 43,
+      "rows_sha256": "dfca99cea7e225c737b5576c03b289cca3309251dce45ea642f7051ac519a5a9",
+      "input_sha256": "7e14065d3c3bc8f2ae9dfcd5761aa7862d27d4817923e01b17530da5358c065c",
+      "adapter_sha256": "7d2ef797e727cdc01df81657b4750eec46844441c50c30d8ee2f6c4d09241c99"
+    },
+    "frames": 2577,
+    "shapes": [
+      [
+        2577,
+        64,
+        250
+      ],
+      [
+        2577,
+        160,
+        125
+      ],
+      [
+        2577,
+        160,
+        63
+      ],
+      [
+        2577,
+        400,
+        32
+      ],
+      [
+        2577,
+        400,
+        16
+      ],
+      [
+        2577,
+        512,
+        8
+      ]
+    ],
+    "encoder": {
+      "method": "AnyPPG-random-frozen",
+      "random_seed": 43,
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "checkpoint_sha256": {},
+      "state_before_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "input_fs": 125,
+      "input_samples": 1000,
+      "output_fs": 64,
+      "output_samples": 512,
+      "taps": "all six AnyPPG stage_list outputs",
+      "channels": [
+        64,
+        160,
+        160,
+        400,
+        400,
+        512
+      ],
+      "preprocessing": "AnyPPG original onset PoC Butterworth 0.5-8Hz and NumPy per-window zscore",
+      "device": "cpu",
+      "precision": "FP32; no autocast",
+      "state_after_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0"
+    },
+    "sha256": {
+      "stage0.npy": "784b5e505a26f40f6af8d92bbd2fc85cd3daeea4aefec9b0399970275c9d9eeb",
+      "stage1.npy": "397e79a91206c440af774c472399d6618499c7c8e16486c706dae282436df1a5",
+      "stage2.npy": "516cb8074c33efdb16de34854e39f743fc9617d52d8c4d7f47aa1f9c7ce812ae",
+      "stage3.npy": "5db9f9242b120cb27b0e33dd9edae30ec978c95ee9701bf80a9046477f6bf319",
+      "stage4.npy": "7952ce7b8f5cc93860570ab1f878013f1a31c2f3ec9eb1870b36df3e450e5365",
+      "stage5.npy": "93e807eefd80bddbbb126e06d01ab746fa1c6e3b8dd28c3ac42a87ee1cefbef5"
+    }
+  },
+  {
+    "identity": {
+      "protocol_sha256": "42b45bf4aa9fb75ec8f253b8c5a3c61c35b09024f30f955d64c2531b0c9d1ce9",
+      "method": "AnyPPG-random-frozen",
+      "seed": 44,
+      "rows_sha256": "dfca99cea7e225c737b5576c03b289cca3309251dce45ea642f7051ac519a5a9",
+      "input_sha256": "7e14065d3c3bc8f2ae9dfcd5761aa7862d27d4817923e01b17530da5358c065c",
+      "adapter_sha256": "7d2ef797e727cdc01df81657b4750eec46844441c50c30d8ee2f6c4d09241c99"
+    },
+    "frames": 2577,
+    "shapes": [
+      [
+        2577,
+        64,
+        250
+      ],
+      [
+        2577,
+        160,
+        125
+      ],
+      [
+        2577,
+        160,
+        63
+      ],
+      [
+        2577,
+        400,
+        32
+      ],
+      [
+        2577,
+        400,
+        16
+      ],
+      [
+        2577,
+        512,
+        8
+      ]
+    ],
+    "encoder": {
+      "method": "AnyPPG-random-frozen",
+      "random_seed": 44,
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "checkpoint_sha256": {},
+      "state_before_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "input_fs": 125,
+      "input_samples": 1000,
+      "output_fs": 64,
+      "output_samples": 512,
+      "taps": "all six AnyPPG stage_list outputs",
+      "channels": [
+        64,
+        160,
+        160,
+        400,
+        400,
+        512
+      ],
+      "preprocessing": "AnyPPG original onset PoC Butterworth 0.5-8Hz and NumPy per-window zscore",
+      "device": "cpu",
+      "precision": "FP32; no autocast",
+      "state_after_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6"
+    },
+    "sha256": {
+      "stage0.npy": "ad8fb54ff3b86acda770b0e96b9768b503f2190ec50efec1707a934980149540",
+      "stage1.npy": "6be28041d1ada7c1033d01b1d71b7d3b1e2615d5c982fce797365930fe73deb9",
+      "stage2.npy": "4696e72e2563ef67dd7c11046fcb0f46d77f9b9381e4c56759facc1956b02a9f",
+      "stage3.npy": "a65744843398d7aced7ac0b1b658c4a05ebfda1e617b268ac08bc9acf5ce5d39",
+      "stage4.npy": "ae75a5a8b042b0434268dc41432aaf4da5dc8a8520c9dfe01305c176249991e0",
+      "stage5.npy": "018f267d921fa5dce185d079ece8b17e7b882c0aa1821380c12b720659a25c07"
+    }
+  }
+]

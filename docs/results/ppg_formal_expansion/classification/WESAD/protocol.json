@@ -1,0 +1,526 @@
+{
+  "dataset": "WESAD",
+  "records": 3274,
+  "participants": 15,
+  "class_counts": {
+    "0": 1748,
+    "1": 981,
+    "2": 545
+  },
+  "jobs": [
+    {
+      "id": "fold0-seed42",
+      "fold": 0,
+      "seed": 42,
+      "train": [
+        "S6",
+        "S9",
+        "S15",
+        "S17",
+        "S14",
+        "S16",
+        "S8",
+        "S13",
+        "S5"
+      ],
+      "validation": [
+        "S11",
+        "S3",
+        "S2"
+      ],
+      "test": [
+        "S10",
+        "S4",
+        "S7"
+      ]
+    },
+    {
+      "id": "fold0-seed43",
+      "fold": 0,
+      "seed": 43,
+      "train": [
+        "S3",
+        "S9",
+        "S17",
+        "S5",
+        "S13",
+        "S16",
+        "S2",
+        "S11",
+        "S15"
+      ],
+      "validation": [
+        "S8",
+        "S6",
+        "S14"
+      ],
+      "test": [
+        "S10",
+        "S4",
+        "S7"
+      ]
+    },
+    {
+      "id": "fold0-seed44",
+      "fold": 0,
+      "seed": 44,
+      "train": [
+        "S6",
+        "S14",
+        "S5",
+        "S16",
+        "S17",
+        "S13",
+        "S2",
+        "S9",
+        "S3"
+      ],
+      "validation": [
+        "S11",
+        "S8",
+        "S15"
+      ],
+      "test": [
+        "S10",
+        "S4",
+        "S7"
+      ]
+    },
+    {
+      "id": "fold1-seed42",
+      "fold": 1,
+      "seed": 42,
+      "train": [
+        "S9",
+        "S17",
+        "S5",
+        "S16",
+        "S4",
+        "S10",
+        "S14",
+        "S11",
+        "S7"
+      ],
+      "validation": [
+        "S2",
+        "S13",
+        "S3"
+      ],
+      "test": [
+        "S15",
+        "S6",
+        "S8"
+      ]
+    },
+    {
+      "id": "fold1-seed43",
+      "fold": 1,
+      "seed": 43,
+      "train": [
+        "S3",
+        "S11",
+        "S14",
+        "S10",
+        "S9",
+        "S16",
+        "S2",
+        "S13",
+        "S4"
+      ],
+      "validation": [
+        "S17",
+        "S5",
+        "S7"
+      ],
+      "test": [
+        "S15",
+        "S6",
+        "S8"
+      ]
+    },
+    {
+      "id": "fold1-seed44",
+      "fold": 1,
+      "seed": 44,
+      "train": [
+        "S7",
+        "S10",
+        "S4",
+        "S16",
+        "S5",
+        "S2",
+        "S3",
+        "S17",
+        "S13"
+      ],
+      "validation": [
+        "S14",
+        "S11",
+        "S9"
+      ],
+      "test": [
+        "S15",
+        "S6",
+        "S8"
+      ]
+    },
+    {
+      "id": "fold2-seed42",
+      "fold": 2,
+      "seed": 42,
+      "train": [
+        "S10",
+        "S4",
+        "S11",
+        "S6",
+        "S5",
+        "S15",
+        "S16",
+        "S13",
+        "S17"
+      ],
+      "validation": [
+        "S7",
+        "S8",
+        "S9"
+      ],
+      "test": [
+        "S14",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "fold2-seed43",
+      "fold": 2,
+      "seed": 43,
+      "train": [
+        "S7",
+        "S10",
+        "S9",
+        "S11",
+        "S8",
+        "S6",
+        "S17",
+        "S16",
+        "S15"
+      ],
+      "validation": [
+        "S5",
+        "S4",
+        "S13"
+      ],
+      "test": [
+        "S14",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "fold2-seed44",
+      "fold": 2,
+      "seed": 44,
+      "train": [
+        "S5",
+        "S10",
+        "S17",
+        "S15",
+        "S11",
+        "S13",
+        "S9",
+        "S6",
+        "S16"
+      ],
+      "validation": [
+        "S8",
+        "S4",
+        "S7"
+      ],
+      "test": [
+        "S14",
+        "S2",
+        "S3"
+      ]
+    },
+    {
+      "id": "fold3-seed42",
+      "fold": 3,
+      "seed": 42,
+      "train": [
+        "S2",
+        "S14",
+        "S15",
+        "S7",
+        "S8",
+        "S16",
+        "S6",
+        "S4",
+        "S11"
+      ],
+      "validation": [
+        "S10",
+        "S3",
+        "S9"
+      ],
+      "test": [
+        "S13",
+        "S17",
+        "S5"
+      ]
+    },
+    {
+      "id": "fold3-seed43",
+      "fold": 3,
+      "seed": 43,
+      "train": [
+        "S4",
+        "S9",
+        "S3",
+        "S11",
+        "S10",
+        "S2",
+        "S7",
+        "S16",
+        "S6"
+      ],
+      "validation": [
+        "S14",
+        "S8",
+        "S15"
+      ],
+      "test": [
+        "S13",
+        "S17",
+        "S5"
+      ]
+    },
+    {
+      "id": "fold3-seed44",
+      "fold": 3,
+      "seed": 44,
+      "train": [
+        "S9",
+        "S10",
+        "S16",
+        "S6",
+        "S7",
+        "S14",
+        "S3",
+        "S4",
+        "S11"
+      ],
+      "validation": [
+        "S2",
+        "S8",
+        "S15"
+      ],
+      "test": [
+        "S13",
+        "S17",
+        "S5"
+      ]
+    },
+    {
+      "id": "fold4-seed42",
+      "fold": 4,
+      "seed": 42,
+      "train": [
+        "S17",
+        "S4",
+        "S3",
+        "S14",
+        "S8",
+        "S2",
+        "S6",
+        "S15",
+        "S13"
+      ],
+      "validation": [
+        "S5",
+        "S7",
+        "S10"
+      ],
+      "test": [
+        "S11",
+        "S16",
+        "S9"
+      ]
+    },
+    {
+      "id": "fold4-seed43",
+      "fold": 4,
+      "seed": 43,
+      "train": [
+        "S15",
+        "S7",
+        "S17",
+        "S8",
+        "S2",
+        "S10",
+        "S14",
+        "S5",
+        "S4"
+      ],
+      "validation": [
+        "S13",
+        "S3",
+        "S6"
+      ],
+      "test": [
+        "S11",
+        "S16",
+        "S9"
+      ]
+    },
+    {
+      "id": "fold4-seed44",
+      "fold": 4,
+      "seed": 44,
+      "train": [
+        "S6",
+        "S3",
+        "S10",
+        "S2",
+        "S14",
+        "S5",
+        "S17",
+        "S4",
+        "S13"
+      ],
+      "validation": [
+        "S7",
+        "S8",
+        "S15"
+      ],
+      "test": [
+        "S11",
+        "S16",
+        "S9"
+      ]
+    }
+  ],
+  "encoders": [
+    "AnyPPG",
+    "PaPaGei-S",
+    "PaPaGei-P",
+    "PulsePPG",
+    "SigmaPPG",
+    "MOMENT-1-small",
+    "AnyPPG-random-frozen"
+  ],
+  "heads": [
+    "PCA16-Linear",
+    "PCA16-MLP"
+  ],
+  "controls": [
+    "HandFeatures-Linear",
+    "SmallCNN",
+    "TrainPrior"
+  ],
+  "observation": "Full ten seconds; all neural methods use two eight-second views starting 0 and 2 seconds; mean embeddings or CNN logits before prediction",
+  "normalization": "Native per-model preprocessing; PulsePPG uses unlabeled whole-record statistics (BUT ten seconds, WESAD/ECSMP source acquisition)",
+  "feature_preprocessing": "Training-only unweighted standardization, PCA16 covariance eigendecomposition, training component standardization; same features for both heads",
+  "linear": {
+    "C": [
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "max_iter": 3000
+  },
+  "mlp": {
+    "hidden": 16,
+    "epochs": 40,
+    "lr": 0.01,
+    "weight_decay": 0.0001,
+    "loss": "person-weighted cross entropy",
+    "select": "validation primary metric"
+  },
+  "cnn": {
+    "epochs": 20,
+    "patience": 5,
+    "lr": 0.001,
+    "batch_size": 128,
+    "loss": "person-weighted cross entropy",
+    "select": "validation primary metric"
+  },
+  "primary_metric": "balanced_accuracy",
+  "binary_threshold": "0.05 to 0.95 in steps .05, maximize validation person-weighted balanced accuracy; nearest .5 tie",
+  "test_protocol": "Five person folds; 3 seed-matched random encoders and supervised heads; no train+validation refit",
+  "primary_comparisons": "Six PCA16-Linear encoders vs HandFeatures-Linear, plus AnyPPG PCA16-Linear vs random same head; seven tests Holm corrected per dataset",
+  "other_comparisons": "MLP head differences, CNN and remaining pairs exploratory; report paired intervals without choosing winner on test set",
+  "code_sha256": "2c5dcf89bf120e7e806c1cc8ab94d25e3b6a61d08d88d6beb7046a0a21125344",
+  "source_files_sha256": {
+    "datasets/ppg_bench_processed/fs_125/WESAD/S10/ppg.npy": "368f85c7915e9cfc4bf993c7c8e29b2b9c9a817e9d284a58be98c8420cc4d9d4",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S10/condition_3class.npy": "01eb2cb2f182ae963c686af7123feadd318222e688c48dc3e19b9dad8a80f191",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S10/metadata.csv": "d7c48cc89a15c2818c430bd1a6f57939c3fb7eb731bba49b9f3f05ec47bfd33c",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S10/stats.json": "162da072a5b6adf3dbbfeb862d06de681a3f5089f22b8c89ae52f8e96305bd1a",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S11/ppg.npy": "8ed66b9c4e7bac75a59e9861a2bec677dfb31b70fe20ed249e54dd1fe96469f1",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S11/condition_3class.npy": "c757b07ee00e8bf1a765d1138fcca8b61cb57dcbc0f7d42075f5f151ece5f23f",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S11/metadata.csv": "90cc81c21b1fdd116117621eb357c364a6db357e9c768e0932bc7161380f5f7f",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S11/stats.json": "9172fbb6a66bbcb1dca1c00489293b73a337b22545acc94e9bdd0352e9ffe0e1",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S13/ppg.npy": "25b57e58c52e76ac496b6ebc535b06fdec28d5251d06c1a4217a9c4fd3b1116c",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S13/condition_3class.npy": "7269fe647232950e2a5c5ba378deda70a6708c641c23cc3bea638d751fe28bf3",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S13/metadata.csv": "ba78c1f943c91fcc4a3333d606bd8743aee15a0eddc67128a3b7d292da847f35",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S13/stats.json": "3c09eff24e6ff85f8d211c6448fad32d7ceca6bf76f120858247a18629e0ebb5",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S14/ppg.npy": "76e27f2a8376a4ba5f1e39709b6309a86f36b0b19d3c3d4bd8d8b2bb85f247a1",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S14/condition_3class.npy": "852f36b4e0c46e6f3bfc3493b6f89ec699f1ac03a4c07f83d40fbe78dbec117d",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S14/metadata.csv": "88eb91c5b4b7f21c6782b30191b2447b7045fc5e15f34e263ac36fe313162332",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S14/stats.json": "9e0c731618ad0c551a14b4c8426e97e5c27b81fc48a03e6d25ca4d848b3c9b68",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S15/ppg.npy": "ed804c98c750bc490d723769e624ec1dbae51d060abeb8f9aed71a499e050a82",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S15/condition_3class.npy": "7d7e7c09fc69a4940b98dd46a678debe16358bca90140c89b41e346243db0c1c",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S15/metadata.csv": "cd1257a2ad00da14d26c8f662439a72a2f2e36d1de1d68ed405e815dac35936f",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S15/stats.json": "63fe297ed2e8c22af22697f143e740ba67a62069fe227d5c29da764ab72d4ba6",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S16/ppg.npy": "c1484a827ebe4f44a6a5b218412cfd715e572256990a8d2bcf3f549a9cad7f6d",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S16/condition_3class.npy": "7fe47494ab25a1e6852f44c2444a5ed3b46274071f66f02607042fe6702de111",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S16/metadata.csv": "99e73b4fef684054d9e1002b7cd5aa9fb37a58ddbd787b85ed3dbbd55c19118c",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S16/stats.json": "5b4ac9c461dd7aaa379cdbad722dc56931d12226ee4d965406158ed054728deb",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S17/ppg.npy": "aa145f060a93a44bd0e28c695766cdaf4fb0815af2e75e219a6d003f54d19eff",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S17/condition_3class.npy": "ed914379e229259e913d4596806b34a820ba53ab0cd548aca0fea76d371fe24c",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S17/metadata.csv": "d126e22e5caa7cf282261f1cbd7b627b9c2d4d3767258f16d87612aa3a5460f1",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S17/stats.json": "52e062605718742789710adfc0dc618fe1a63eb53a78b83b9f025eb50d81462a",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S2/ppg.npy": "0c4b62dc6d95bae674e5fb3f3140af034c96b58966a469bf0d982ac3fb415d6b",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S2/condition_3class.npy": "ba7f2d765e9d9b64d26876806edc282b9c907e3520c615ffb5886e034eee107e",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S2/metadata.csv": "c74b5143980ad2445764a5cbb7340fa258a4b9a613a5227a3a8e961a8dab9cab",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S2/stats.json": "7a2c8b52915307b8d03f015df86fbf2a9b98858061cdee9c0ffb9074d362dabd",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S3/ppg.npy": "c812a60b6ad3281761e27db56f4e444858f145a0f1325f814ed78f28849acd9a",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S3/condition_3class.npy": "a31d291bd109e5dc2b35e1a5099addc825973320ce103cb0717fe556cc175678",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S3/metadata.csv": "d73f3d86738013475de695ca86ff800fe4f0f2468c98821e40563da3b6326292",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S3/stats.json": "7a2fd3591ae322d3b9ea15a304180a2cb4e8f9078fa236b0337fa730ca5f2989",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S4/ppg.npy": "9e4af1f826db7b153fdb8da20ce9ceb0b60f73f689a53b66c05131978fb731de",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S4/condition_3class.npy": "9c00d01ac83901ae3f730dd585e05d302f4cc1a6b988f95f66d6349c35e70609",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S4/metadata.csv": "ed6ffbaef812b16378a76cfd94359889978c92364d531d549a3c097c82454379",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S4/stats.json": "91244dcc76078e743b804bcc5ad286eb6a73102f13897d8f94ef849c903b77b8",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S5/ppg.npy": "51130af2068c12404126faa6c8c3d425d785625f84f6e5903a1cf16a04a2e1c4",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S5/condition_3class.npy": "2eacad295b5a8af31d89ce65cb4c7e9d7871cc063687014f361894786f388fdd",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S5/metadata.csv": "722f02a1b7e4bc6e4d86143c7d3e64bb3387e2eebcde77e6bed2a4e7361a4ee3",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S5/stats.json": "376bea54906c134be27e3c8e0693f8bf0b366bc013c4a4b756b2f1e8bc34b358",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S6/ppg.npy": "b2bf316d650554d66f801cfb3194489f81bc27966289e4e3e7d5647f7ae6da36",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S6/condition_3class.npy": "df2d077cbff85def4009162a331da5c798f608f0a7ebc3672978f54cde61c7c9",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S6/metadata.csv": "faadd25acd1c7e3d2f7fd3614dd2469b2d3e0366b83ad215ab551d15e14e1ad5",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S6/stats.json": "9828d6394d95c9702eecdfeff9e20edf237bf65d7bdafcbdef750d9d1b845a32",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S7/ppg.npy": "fa9dc4707a7a93653b14f15d4e8589958b11d3fd3753799bc0d789dd32e5d5fc",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S7/condition_3class.npy": "a4f45f201f160ebd0e00a29d95c5b458de134fc2830edf1d2a6853fb6299ab6c",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S7/metadata.csv": "5317a11fc744c36efe239041976b310e2f808bbc325211f7e67f130abc2a85db",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S7/stats.json": "1dbba9782ea2d721dc214027e598cabf0e66cb6a96f6279443474cd377b44b8a",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S8/ppg.npy": "022a64f48a81700abc05c09e4964e13249201e0641e873113c5557e86e0758e8",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S8/condition_3class.npy": "41cf5ce4d60ca3be3731a461e04a8b77e7b633d8ec754f07be5747679b5d5bf4",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S8/metadata.csv": "7013e214261780802a5747847029564ebba194bc8eac97d6a33c9bd2549f4375",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S8/stats.json": "2cea4ab0a04043516b867710d6e41f9c1bd3fc3cf779d2e82f1e60558f85c4f6",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S9/ppg.npy": "c5a8f8a8ccebd44bd514d733f6c84bc258d1b257d8a2c39307e55cb873898d3f",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S9/condition_3class.npy": "9563621b722b587ae96f8d0f94ca9e73d64d5206c0f1dc70bd2d05f42595533e",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S9/metadata.csv": "bdf1b097d84e066815f2090bbb80f1dedd5f7a4f4f98d724f71a77c50e0cdc41",
+    "datasets/ppg_bench_processed/fs_125/WESAD/S9/stats.json": "74fa74f15bd0c28f84bffea93dc35e66c6e0edba38d27a50321be29d9ddf31f0"
+  },
+  "files_sha256": {
+    "x125.npy": "a4d185bdb406d98e7e7fc141222ef2b69ae48c9c5195b32c6935da39aa111893",
+    "x64.npy": "46c9a2205c0ac19df9f983cc13402376b5c29c90545e9b88f0e5a97ff5cb0b2e",
+    "stats.npy": "71b97eedb2c65eac5bda99620dba567e10a074ff2b68b05055066c1d890a096a",
+    "hand.npy": "0493d1f8c08681ecc152080767d4a3e93a1d9cdaa279814afebe7ed88f582814",
+    "rows.csv": "8591195c9c05aa1d4fa2c7d637b016dcc97f150d0e75d911833405fdc8ade098"
+  },
+  "pretraining": false,
+  "encoder_finetuning": false
+}

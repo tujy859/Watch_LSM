@@ -1,10 +1,10 @@
 # 智能手表PPG基础模型评测（Watch-LSM）
 
-**2026-11-05：扩展方案及小样本流程已完成，正式扩展等待用户确认。** 查看[模型、任务、数据清单与试跑证据](docs/ppg_expansion_plan_and_pilot.md)和[模型覆盖图](docs/results/ppg_expansion_pilot/evaluation_coverage.png)。已打通PaPaGei-P/Sigma及受控预测头、随机初始化对照、PulseDB、腕部健康信息增量等流程；新增BIDMC真实患者身份审计纠正了旧记录级划分的解释。未启动预训练或完整新评测。
+**2026-11-05：用户批准后的四步正式扩展已实施。** 查看[完整结果、模型/任务清单与结论](docs/ppg_formal_expansion_results.md)、[跨任务综合图](docs/results/ppg_formal_expansion/formal_overview.png)和[健康信息增量图](docs/results/ppg_formal_expansion/health/health_increment.png)。六模型、统一预测器、随机Any和CNN/传统对照已覆盖HR、质量、状态、健康信息及临床辅助；逐点任务使用明确支持的模型子集。没有预训练或微调基础模型；没有恢复旧全套队列。
 
-当前目标是先建立科学严谨、工程轻量的评测PoC，再开展训练研究。第一阶段腕部心率、少标签与跨数据集迁移已比较AnyPPG、PaPaGei-S、Pulse-PPG、MOMENT及CNN/传统对照；第二阶段人工脉搏起始点/PRV及质量分类聚焦AnyPPG。查看[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[第一阶段报告](docs/ppg_hr_poc_phase1.md)，以及[完整模型覆盖、选型与Apple/Google论文对照分析](docs/ppg_model_scope_and_literature_analysis.md)。下图是AnyPPG的跨任务案例，不是全部开源基模排名。
+当前证据支持部分少标签HR和实验状态识别收益，**不支持基模在全部任务普遍更强**。ECSMP SDS主任务尚未证明超出人口学＋传统特征的稳定增量；临床、合成去噪的阴性结果完整保留。SpO₂移出正式范围：单路导出波形对监护仪标签的预测不能当血氧测量验证。历史[第一阶段](docs/ppg_hr_poc_phase1.md)、[第二阶段](docs/ppg_phase2_results.md)、[小样本流程](docs/ppg_expansion_plan_and_pilot.md)与[Apple/Google论文对照](docs/ppg_model_scope_and_literature_analysis.md)继续保留，协议不同的结果不混合。
 
-![跨任务方法比较](docs/results/ppg_phase2/ppg_task_comparison.png)
+![跨任务方法比较](docs/results/ppg_formal_expansion/formal_overview.png)
 
 当前采用 **Git 同步源码 + 每机独立 venv + 清单化本地数据缓存**。新设备从 [多设备开发指南](docs/DEVELOPMENT.md) 开始：
 
@@ -12,7 +12,7 @@
 
 调研与工程选型从 [调研入口](papers/README.md) 开始：长期参考用户维护的 [Wearable-Physiological-Foundation-Models](https://github.com/tujy859/Wearable-Physiological-Foundation-Models)，按任务查阅模型、benchmark 与数据集；本项目保存实际接入状态及验证证据。
 
-PPG-Bench 正式复现进行中：[进度与运行说明](docs/ppg_bench_reproduction.md)。本机状态用 `python scripts/ppg_bench_status.py` 查看，数据、权重与完整实验输出不随Git分发。
+历史PPG-Bench部分复现见[进度与运行说明](docs/ppg_bench_reproduction.md)，不是当前正式扩展评测的活动队列。本机旧结果用 `python scripts/ppg_bench_status.py` 查看，数据、权重与完整实验输出不随Git分发。
 
 ```bash
 python scripts/bootstrap_env.py --backend cpu
@@ -21,9 +21,9 @@ python scripts/bootstrap_env.py --backend cpu
 
 Windows 验证：`.venv\Scripts\python.exe scripts/doctor.py --device cpu --train-step`。Linux/macOS 使用 `.venv/bin/python`。运行设备可选 `auto/cpu/cuda/mps`，路径与硬件偏好放入忽略的 `watch_lsm.local.toml`。
 
-下文保留早期调研与探索结果。实验 4 未加载官方预训练权重，实验 4/6 的窗口随机划分存在重叠泄露风险；旧指标不能作为正式跨人泛化或临床结论。PulseDB 加载与血压正式评测仍待实现。
+下文保留早期调研与探索结果。实验 4 未加载官方预训练权重，实验 4/6 的窗口随机划分存在重叠泄露风险；旧指标不能作为正式跨人泛化或临床结论。PulseDB现已完成按需加载和患者隔离的MIMIC子集评测，完整AAMI协议仍未完成。
 
-项目保留生理信号基础模型调研、早期探索实验及PPG+ACC研究原型 `watch_lsm`。以下历史探索结果受上述权重与划分限制约束；当前正式评测证据以第一、二阶段报告及其独立审计为准。
+项目保留生理信号基础模型调研、早期探索实验及PPG+ACC研究原型 `watch_lsm`。以下历史探索结果受上述权重与划分限制约束；当前结论以最新正式扩展报告及独立审计为准。
 
 ---
 

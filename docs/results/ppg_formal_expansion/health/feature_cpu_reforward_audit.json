@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "rtol": 0.0001,
+  "atol": 0.0001,
+  "checks": [
+    {
+      "dataset": "ECSMP",
+      "cache": "AnyPPG-random-frozen__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 4.76837158203125e-07,
+      "state_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "AnyPPG-random-frozen__seed43.npz",
+      "clips": 3,
+      "max_abs_difference": 3.5762786865234375e-07,
+      "state_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "AnyPPG-random-frozen__seed44.npz",
+      "clips": 3,
+      "max_abs_difference": 2.384185791015625e-07,
+      "state_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "AnyPPG__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 2.86102294921875e-06,
+      "state_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "MOMENT-1-small__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 4.76837158203125e-07,
+      "state_sha256": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "PaPaGei-P__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 2.384185791015625e-07,
+      "state_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "PaPaGei-S__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 9.685754776000977e-08,
+      "state_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "PulsePPG__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 4.76837158203125e-05,
+      "state_sha256": "ee536dc4194480b6b8384cfed18b1f9d292f433381b47d76f9d10b24896ce98f",
+      "passed": true
+    },
+    {
+      "dataset": "ECSMP",
+      "cache": "SigmaPPG__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 8.106231689453125e-06,
+      "state_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "AnyPPG-random-frozen__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 4.76837158203125e-07,
+      "state_sha256": "97b2d58d16ae681348781deda01fe934a0c51abcdb1e1a7509028df7858567ad",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "AnyPPG-random-frozen__seed43.npz",
+      "clips": 3,
+      "max_abs_difference": 4.76837158203125e-07,
+      "state_sha256": "b5f8bdb76aaa5408c8cb1f65512050e8460305894d5950398a307ff6d8436cc0",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "AnyPPG-random-frozen__seed44.npz",
+      "clips": 3,
+      "max_abs_difference": 3.5762786865234375e-07,
+      "state_sha256": "5311ef9b9258ef07178e308aa2d44649249dd28f73ebe04c0fb72c10c55f32e6",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "AnyPPG__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 9.894371032714844e-06,
+      "state_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "MOMENT-1-small__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 8.866190910339355e-07,
+      "state_sha256": "72cf2b7031b18bf6caa0b525d5b8dd7e79b23098e833818c55c6a968d918aba3",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "PaPaGei-P__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 3.203749656677246e-07,
+      "state_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "PaPaGei-S__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 1.3113021850585938e-06,
+      "state_sha256": "96fedf87d54da1e5e6dab141bb8b50a522bff375deaf6e4224a85b752b5ea175",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "PulsePPG__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 4.00543212890625e-05,
+      "state_sha256": "ee536dc4194480b6b8384cfed18b1f9d292f433381b47d76f9d10b24896ce98f",
+      "passed": true
+    },
+    {
+      "dataset": "PPG-BP",
+      "cache": "SigmaPPG__seed42.npz",
+      "clips": 3,
+      "max_abs_difference": 7.748603820800781e-06,
+      "state_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+      "passed": true
+    }
+  ]
+}

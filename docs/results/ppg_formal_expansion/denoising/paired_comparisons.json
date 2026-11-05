@@ -1,0 +1,46 @@
+[
+  {
+    "model": "AnyPPG",
+    "control": "FixedBandpass",
+    "metric": "nrmse",
+    "difference": -0.26339981588236044,
+    "ci_low": -0.31295005559739764,
+    "ci_high": -0.20729748421244945,
+    "p_exact_signflip": 0.015625,
+    "people": 7,
+    "p_holm_four_contrasts": 0.0625
+  },
+  {
+    "model": "AnyPPG",
+    "control": "SmallCNN",
+    "metric": "nrmse",
+    "difference": 0.20406675996713908,
+    "ci_low": 0.15859217862685734,
+    "ci_high": 0.24709873892684966,
+    "p_exact_signflip": 0.015625,
+    "people": 7,
+    "p_holm_four_contrasts": 0.0625
+  },
+  {
+    "model": "PaPaGei-S",
+    "control": "FixedBandpass",
+    "metric": "nrmse",
+    "difference": -0.2998756768350391,
+    "ci_low": -0.3553448479138289,
+    "ci_high": -0.24147421103886013,
+    "p_exact_signflip": 0.015625,
+    "people": 7,
+    "p_holm_four_contrasts": 0.0625
+  },
+  {
+    "model": "PaPaGei-S",
+    "control": "SmallCNN",
+    "metric": "nrmse",
+    "difference": 0.1675908990144605,
+    "ci_low": 0.11351709688103441,
+    "ci_high": 0.21878060112860204,
+    "p_exact_signflip": 0.015625,
+    "people": 7,
+    "p_holm_four_contrasts": 0.0625
+  }
+]

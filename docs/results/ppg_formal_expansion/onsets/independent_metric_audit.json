@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "scored_record_outputs": 1890,
+  "intervals": 4212,
+  "prv_windows": 3222,
+  "scalar_comparisons": 92962,
+  "maximum_absolute_difference": 4.547473508864641e-13,
+  "scope": "All 25/50/100ms TP/FP/FN/F1, raw mean-PP/SDPP/RMSSD per 60s/300s window, all-person per-seed and three-seed means, 8 paired primary estimates/CIs/exact p/Holm. Does not reimplement minimum-cost timing-error or matched-PP assignment.",
+  "script_sha256": "dd1936ac676828ab50112c27e32248f21c606570d3c640e2d59d917a48049642",
+  "protocol_sha256": "42b45bf4aa9fb75ec8f253b8c5a3c61c35b09024f30f955d64c2531b0c9d1ce9",
+  "tables_sha256": {
+    "coverage.csv": "ffa173c888e11099726c140d09fa32aa45eeb11af925f8bd9517b44c13ab75e6",
+    "intervals.csv": "1971ab4b26d4ae114c95a5cb9a4458c2d4c35578b0e3e7ff877e3afa1edf2497",
+    "paired.csv": "73032fec715bf62a447b87973c7b978fa4da34611c4f7e331b5d26bbc14bd146",
+    "paired_per_subject.csv": "d5926886e8efc0b7e8ccabd520d169e44df7bb23ce9ec9f56903a0b5b6c576dc",
+    "paired_per_subject_seed.csv": "9c6592c9984d9c73c9e276feae54ce3923c924cfa53edeca7adf7bde2c062355",
+    "per_subject.csv": "af8e6b5b3a9a7006770f05469f98f3222c122cddc62a08fea3ccb55f0165848f",
+    "per_subject_seed.csv": "3d66898b4a0f9ea3ec5149774ee77874ceaa1262f4820106398c5c810eae6aec",
+    "prv_windows.csv": "e28e137bd9283c1543ebca833a8747952c7341c81f14f9d9201eb12f78c85980",
+    "summary.csv": "9bdd772abc8a027fdeead9081cd12bc4a89ab0b9ae21678df55025ce97b54100"
+  }
+}

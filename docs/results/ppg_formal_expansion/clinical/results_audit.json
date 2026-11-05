@@ -1,0 +1,202 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "dataset": "BIDMC",
+      "completed_outputs": 450,
+      "maximum_model_reload_errors": {
+        "AnyPPG": 0.0,
+        "PaPaGei-S": 0.0,
+        "PaPaGei-P": 0.0,
+        "PulsePPG": 0.0,
+        "SigmaPPG": 0.0,
+        "MOMENT-1-small": 0.0,
+        "AnyPPG-random-frozen": 0.0,
+        "HandFeatures": 0.0,
+        "TrainMean": 3.552713678800501e-15,
+        "SmallCNN": 1.9073486328125e-06,
+        "Baseline_modulation": 0.0,
+        "Amplitude_modulation": 0.0,
+        "Interval_modulation": 0.0,
+        "Median_fusion": 0.0
+      },
+      "independent_real_data_ridge_refits": [
+        {
+          "target": "resp_manual",
+          "model": "AnyPPG",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 8.526512829121202e-14
+        },
+        {
+          "target": "resp_manual",
+          "model": "AnyPPG",
+          "head": "PCA16-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 7.105427357601002e-15
+        },
+        {
+          "target": "resp_manual",
+          "model": "PaPaGei-P",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 4.263256414560601e-14
+        },
+        {
+          "target": "resp_manual",
+          "model": "PaPaGei-P",
+          "head": "PCA16-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 7.105427357601002e-15
+        },
+        {
+          "target": "resp_manual",
+          "model": "AnyPPG-random-frozen",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 2.383870878475136e-12
+        },
+        {
+          "target": "resp_manual",
+          "model": "AnyPPG-random-frozen",
+          "head": "PCA16-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.0516032489249483e-12
+        }
+      ],
+      "input_patients": 46,
+      "data_sha256": "ab5e08461be3c21f240ff2432d372d7140477e376088fb4525cb92e66b43125e",
+      "protocol_sha256": "156fdc779187b64adc241de22bab801c090c08b377b36c93cb0f36fd47ce63a1"
+    },
+    {
+      "dataset": "PulseDB",
+      "completed_outputs": 156,
+      "maximum_model_reload_errors": {
+        "AnyPPG": 0.0,
+        "PaPaGei-S": 0.0,
+        "PaPaGei-P": 0.0,
+        "PulsePPG": 0.0,
+        "SigmaPPG": 0.0,
+        "MOMENT-1-small": 0.0,
+        "AnyPPG-random-frozen": 0.0,
+        "HandFeatures": 0.0,
+        "TrainMean": 1.4210854715202004e-14,
+        "SmallCNN": 1.52587890625e-05
+      },
+      "independent_real_data_ridge_refits": [
+        {
+          "target": "sbp",
+          "model": "AnyPPG",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 7.176481631177012e-12
+        },
+        {
+          "target": "sbp",
+          "model": "AnyPPG",
+          "head": "PCA16-Ridge",
+          "alpha": 0.01,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.4210854715202004e-13
+        },
+        {
+          "target": "sbp",
+          "model": "PaPaGei-P",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.0516032489249483e-12
+        },
+        {
+          "target": "sbp",
+          "model": "PaPaGei-P",
+          "head": "PCA16-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 5.684341886080802e-14
+        },
+        {
+          "target": "sbp",
+          "model": "AnyPPG-random-frozen",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.82978965312941e-10
+        },
+        {
+          "target": "sbp",
+          "model": "AnyPPG-random-frozen",
+          "head": "PCA16-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.3528733688872308e-11
+        },
+        {
+          "target": "dbp",
+          "model": "AnyPPG",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 5.6203930398623925e-12
+        },
+        {
+          "target": "dbp",
+          "model": "AnyPPG",
+          "head": "PCA16-Ridge",
+          "alpha": 100.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.7053025658242404e-13
+        },
+        {
+          "target": "dbp",
+          "model": "PaPaGei-P",
+          "head": "Native-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.4068746168049984e-12
+        },
+        {
+          "target": "dbp",
+          "model": "PaPaGei-P",
+          "head": "PCA16-Ridge",
+          "alpha": 1000.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 4.263256414560601e-14
+        },
+        {
+          "target": "dbp",
+          "model": "AnyPPG-random-frozen",
+          "head": "Native-Ridge",
+          "alpha": 100.0,
+          "refit_precision": "float64",
+          "max_prediction_difference": 1.1047873726965918e-09
+        },
+        {
+          "target": "dbp",
+          "model": "AnyPPG-random-frozen",
+          "head": "PCA16-Ridge",
+          "alpha": 0.01,
+          "refit_precision": "float64",
+          "max_prediction_difference": 9.663381206337363e-12
+        }
+      ],
+      "input_patients": 162,
+      "data_sha256": "4149630a49080c08c2ef3880bb665779de613d29de8cb895a5f1709d24901647",
+      "protocol_sha256": "cd80984fc7b9313d97ef5093180d2548fbe341036bc62c08aa3e880801cb1261"
+    }
+  ],
+  "code_sha256": "903284fcf2edf5be7c3d41b4ec96b018c6cfe963280076be5a02c3ae1a92b5fd",
+  "inference": {
+    "unit": "patient, three seed-specific errors averaged before comparison",
+    "intervals": "10000 paired patient bootstrap draws, unadjusted 95% percentile intervals",
+    "p_values": "100000 two-sided patient sign flips; Holm within target across seven predeclared pairs",
+    "limits": "Fixed cohort/folds, possible pretraining exposure, finger PPG; no clinical device claim"
+  }
+}

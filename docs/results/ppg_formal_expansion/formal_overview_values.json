@@ -1,0 +1,3485 @@
+{
+  "sources": [
+    {
+      "path": "hr/summary.csv",
+      "sha256": "48ec7393af6531bce3692b0f6e8faaf1a5f8c0fa04ed3977f9693498dd05273c"
+    },
+    {
+      "path": "classification/BUT-PPG/summary.csv",
+      "sha256": "d6ac12a05494e58bcc69e867b357aaace86602e9142fda82c6770b8139378b82"
+    },
+    {
+      "path": "classification/WESAD/summary.csv",
+      "sha256": "1f2ad1b975c941821899497d8ccfcc5062d451255aa25e03509d3e8639f3fe6f"
+    },
+    {
+      "path": "classification/ECSMP/summary.csv",
+      "sha256": "09cd27763555790a46083a99918f4bf87a989036e68447555ac7a39fa73d7281"
+    },
+    {
+      "path": "health/ECSMP_summary.csv",
+      "sha256": "21445cd3f332df9308bbc99b4b9c772b4175a5aa4eefee009d599234f3819a43"
+    },
+    {
+      "path": "health/PPG-BP_summary.csv",
+      "sha256": "3d6ff25dd8007db8cd47927d17c0b8c1200b7df41817651937fbdbaf9bdeb0a9"
+    },
+    {
+      "path": "health/PPG-BP_summary.csv",
+      "sha256": "3d6ff25dd8007db8cd47927d17c0b8c1200b7df41817651937fbdbaf9bdeb0a9"
+    },
+    {
+      "path": "health/PPG-BP-age_summary.csv",
+      "sha256": "adfeab2c517fcd63a3a2289d3e40ea1a46c5bc4e751a515817e5ff940484bf50"
+    },
+    {
+      "path": "clinical/summary.csv",
+      "sha256": "f24bce13208209595064fafeba175184724d826c6e28d6492440a849306c4364"
+    },
+    {
+      "path": "onsets/summary.csv",
+      "sha256": "9bdd772abc8a027fdeead9081cd12bc4a89ab0b9ae21678df55025ce97b54100"
+    },
+    {
+      "path": "artifact/summary.csv",
+      "sha256": "5ea56176b85f708475cff6ef3a99710c7ffd53fd979e4b34840fd50a797d6089"
+    },
+    {
+      "path": "denoising/summary.csv",
+      "sha256": "4b9d19f4d30a715481ed205a7f5525d8cc838208f5568bb93ff9b3f35ab08311"
+    }
+  ],
+  "panels": [
+    {
+      "title": "心率 · DaLiA",
+      "detail": "9人训练＋3人验证；15人轮流测试",
+      "unit": "MAE（bpm）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 8.7927034253924,
+          "low": 7.2019909757914675,
+          "high": 10.649069940019599,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "8.7927034253924",
+            "ci_low_bpm": "7.2019909757914675",
+            "ci_high_bpm": "10.649069940019599",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 17.083527495114247,
+          "low": 14.226096604068601,
+          "high": 20.502447009588476,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae_bpm": "17.083527495114247",
+            "ci_low_bpm": "14.226096604068601",
+            "ci_high_bpm": "20.502447009588476",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 15.085622514122566,
+          "low": 12.64263682334953,
+          "high": 17.84993600638805,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae_bpm": "15.085622514122566",
+            "ci_low_bpm": "12.64263682334953",
+            "ci_high_bpm": "17.84993600638805",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 12.28219998330495,
+          "low": 9.956900966151085,
+          "high": 14.929282044259953,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "12.28219998330495",
+            "ci_low_bpm": "9.956900966151085",
+            "ci_high_bpm": "14.929282044259953",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 15.473264166434337,
+          "low": 12.867665244753567,
+          "high": 18.755432776307895,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "15.473264166434337",
+            "ci_low_bpm": "12.867665244753567",
+            "ci_high_bpm": "18.755432776307895",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 9.676803660864332,
+          "low": 8.01001956293648,
+          "high": 11.519611231344047,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae_bpm": "9.676803660864332",
+            "ci_low_bpm": "8.01001956293648",
+            "ci_high_bpm": "11.519611231344047",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 12.490371440279635,
+          "low": 10.231900556621152,
+          "high": 15.150962531166797,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae_bpm": "12.490371440279635",
+            "ci_low_bpm": "10.231900556621152",
+            "ci_high_bpm": "15.150962531166797",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 7.23794190477287,
+          "low": 5.8715990442830694,
+          "high": 8.906434328223531,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "SmallCNN",
+            "head": "Task-control",
+            "mae_bpm": "7.23794190477287",
+            "ci_low_bpm": "5.8715990442830694",
+            "ci_high_bpm": "8.906434328223531",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "Traditional": {
+          "estimate": 10.446480590323459,
+          "low": 8.705727650164274,
+          "high": 12.34034224669403,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "elgendi",
+            "head": "Task-control",
+            "mae_bpm": "10.446480590323459",
+            "ci_low_bpm": "8.705727650164274",
+            "ci_high_bpm": "12.34034224669403",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "Constant": {
+          "estimate": 18.89279754851259,
+          "low": 15.73412881474656,
+          "high": 22.70776646183956,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "full",
+            "method": "TrainMean",
+            "head": "Task-control",
+            "mae_bpm": "18.89279754851259",
+            "ci_low_bpm": "15.73412881474656",
+            "ci_high_bpm": "22.70776646183956",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统为Elgendi式"
+    },
+    {
+      "title": "心率 · WildPPG",
+      "detail": "9/10人训练＋3人验证；16人轮流测试",
+      "unit": "MAE（bpm）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 11.203742653622413,
+          "low": 8.512971407946383,
+          "high": 14.529994146900265,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "11.203742653622413",
+            "ci_low_bpm": "8.512971407946383",
+            "ci_high_bpm": "14.529994146900265",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 13.928956211084458,
+          "low": 11.193173284990579,
+          "high": 17.267295994830327,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae_bpm": "13.928956211084458",
+            "ci_low_bpm": "11.193173284990579",
+            "ci_high_bpm": "17.267295994830327",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 13.65910820499334,
+          "low": 11.079609544316241,
+          "high": 16.879540298828733,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae_bpm": "13.65910820499334",
+            "ci_low_bpm": "11.079609544316241",
+            "ci_high_bpm": "16.879540298828733",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 12.48781199950481,
+          "low": 10.087137491746718,
+          "high": 15.299144344138554,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "12.48781199950481",
+            "ci_low_bpm": "10.087137491746718",
+            "ci_high_bpm": "15.299144344138554",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 13.83698164552454,
+          "low": 10.977636197220862,
+          "high": 17.46191134895574,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "13.83698164552454",
+            "ci_low_bpm": "10.977636197220862",
+            "ci_high_bpm": "17.46191134895574",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 13.506415359984784,
+          "low": 10.87463333564085,
+          "high": 16.635525683538855,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae_bpm": "13.506415359984784",
+            "ci_low_bpm": "10.87463333564085",
+            "ci_high_bpm": "16.635525683538855",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 12.995465011456975,
+          "low": 10.564535502648342,
+          "high": 15.959001360681023,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae_bpm": "12.995465011456975",
+            "ci_low_bpm": "10.564535502648342",
+            "ci_high_bpm": "15.959001360681023",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 11.50479393469909,
+          "low": 8.965959305001936,
+          "high": 14.452451355295722,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "SmallCNN",
+            "head": "Task-control",
+            "mae_bpm": "11.50479393469909",
+            "ci_low_bpm": "8.965959305001936",
+            "ci_high_bpm": "14.452451355295722",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "Traditional": {
+          "estimate": 16.45552323826497,
+          "low": 13.936265222438225,
+          "high": 18.81760891482366,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "elgendi",
+            "head": "Task-control",
+            "mae_bpm": "16.45552323826497",
+            "ci_low_bpm": "13.936265222438225",
+            "ci_high_bpm": "18.81760891482366",
+            "people": "16",
+            "coverage": "0.9919647226907229"
+          }
+        },
+        "Constant": {
+          "estimate": 13.786771515595058,
+          "low": 10.849416909434014,
+          "high": 17.333164899278106,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "TrainMean",
+            "head": "Task-control",
+            "mae_bpm": "13.786771515595058",
+            "ci_low_bpm": "10.849416909434014",
+            "ci_high_bpm": "17.333164899278106",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统为Elgendi式"
+    },
+    {
+      "title": "少标签心率 · DaLiA",
+      "detail": "2人训练＋1人验证；15人轮流测试",
+      "unit": "MAE（bpm）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 10.661163688575904,
+          "low": 8.812887771656921,
+          "high": 13.027277963047892,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "10.661163688575904",
+            "ci_low_bpm": "8.812887771656921",
+            "ci_high_bpm": "13.027277963047892",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 19.662748206262318,
+          "low": 17.188507255033258,
+          "high": 23.000726026295258,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae_bpm": "19.662748206262318",
+            "ci_low_bpm": "17.188507255033258",
+            "ci_high_bpm": "23.000726026295258",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 17.77539782844304,
+          "low": 15.427719517826556,
+          "high": 20.84959242800221,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae_bpm": "17.77539782844304",
+            "ci_low_bpm": "15.427719517826556",
+            "ci_high_bpm": "20.84959242800221",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 14.922679454549604,
+          "low": 12.526209906149466,
+          "high": 17.67386828777834,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "14.922679454549604",
+            "ci_low_bpm": "12.526209906149466",
+            "ci_high_bpm": "17.67386828777834",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 17.944504963139757,
+          "low": 15.506540982489131,
+          "high": 21.05313715461643,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "17.944504963139757",
+            "ci_low_bpm": "15.506540982489131",
+            "ci_high_bpm": "21.05313715461643",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 12.37749844724775,
+          "low": 10.541519445357453,
+          "high": 14.4913748792261,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae_bpm": "12.37749844724775",
+            "ci_low_bpm": "10.541519445357453",
+            "ci_high_bpm": "14.4913748792261",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 14.686458668611946,
+          "low": 12.480098300982194,
+          "high": 17.59600247614956,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae_bpm": "14.686458668611946",
+            "ci_low_bpm": "12.480098300982194",
+            "ci_high_bpm": "17.59600247614956",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 11.45873816394575,
+          "low": 9.434145349559852,
+          "high": 14.229931175898157,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "SmallCNN",
+            "head": "Task-control",
+            "mae_bpm": "11.45873816394575",
+            "ci_low_bpm": "9.434145349559852",
+            "ci_high_bpm": "14.229931175898157",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "Traditional": {
+          "estimate": 10.446480590323459,
+          "low": 8.705727650164274,
+          "high": 12.34034224669403,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "elgendi",
+            "head": "Task-control",
+            "mae_bpm": "10.446480590323459",
+            "ci_low_bpm": "8.705727650164274",
+            "ci_high_bpm": "12.34034224669403",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        },
+        "Constant": {
+          "estimate": 21.43414904896299,
+          "low": 18.651379765944817,
+          "high": 24.990648895946418,
+          "source_row": {
+            "scenario": "within",
+            "source": "Dalia",
+            "target": "Dalia",
+            "budget": "3",
+            "method": "TrainMean",
+            "head": "Task-control",
+            "mae_bpm": "21.43414904896299",
+            "ci_low_bpm": "18.651379765944817",
+            "ci_high_bpm": "24.990648895946418",
+            "people": "15",
+            "coverage": "1.0"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统为Elgendi式"
+    },
+    {
+      "title": "少标签心率 · WildPPG",
+      "detail": "2人训练＋1人验证；16人轮流测试",
+      "unit": "MAE（bpm）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 11.807125416179069,
+          "low": 9.688699070367155,
+          "high": 14.559872891342987,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "11.807125416179069",
+            "ci_low_bpm": "9.688699070367155",
+            "ci_high_bpm": "14.559872891342987",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 14.258342623466813,
+          "low": 12.193163926465077,
+          "high": 16.938138623845905,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae_bpm": "14.258342623466813",
+            "ci_low_bpm": "12.193163926465077",
+            "ci_high_bpm": "16.938138623845905",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 14.245815799299223,
+          "low": 12.222851404982288,
+          "high": 16.945626673898,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae_bpm": "14.245815799299223",
+            "ci_low_bpm": "12.222851404982288",
+            "ci_high_bpm": "16.945626673898",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 13.155655438127813,
+          "low": 11.396139248219153,
+          "high": 15.226953792363485,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "13.155655438127813",
+            "ci_low_bpm": "11.396139248219153",
+            "ci_high_bpm": "15.226953792363485",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 14.328111692925397,
+          "low": 12.159773797257197,
+          "high": 17.216461302324884,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "14.328111692925397",
+            "ci_low_bpm": "12.159773797257197",
+            "ci_high_bpm": "17.216461302324884",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 14.440705848251378,
+          "low": 12.205114432724557,
+          "high": 17.48353118912541,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae_bpm": "14.440705848251378",
+            "ci_low_bpm": "12.205114432724557",
+            "ci_high_bpm": "17.48353118912541",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 13.575117025755324,
+          "low": 11.750886385364163,
+          "high": 15.9455014638328,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae_bpm": "13.575117025755324",
+            "ci_low_bpm": "11.750886385364163",
+            "ci_high_bpm": "15.9455014638328",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 14.449399008209143,
+          "low": 12.327501421832752,
+          "high": 17.130710338632642,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "SmallCNN",
+            "head": "Task-control",
+            "mae_bpm": "14.449399008209143",
+            "ci_low_bpm": "12.327501421832752",
+            "ci_high_bpm": "17.130710338632642",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "Traditional": {
+          "estimate": 16.45552323826497,
+          "low": 13.936265222438225,
+          "high": 18.81760891482366,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "elgendi",
+            "head": "Task-control",
+            "mae_bpm": "16.45552323826497",
+            "ci_low_bpm": "13.936265222438225",
+            "ci_high_bpm": "18.81760891482366",
+            "people": "16",
+            "coverage": "0.9919647226907229"
+          }
+        },
+        "Constant": {
+          "estimate": 14.693681731210884,
+          "low": 12.536346945429994,
+          "high": 17.553051154087598,
+          "source_row": {
+            "scenario": "within",
+            "source": "WildPPG",
+            "target": "WildPPG",
+            "budget": "3",
+            "method": "TrainMean",
+            "head": "Task-control",
+            "mae_bpm": "14.693681731210884",
+            "ci_low_bpm": "12.536346945429994",
+            "ci_high_bpm": "17.553051154087598",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统为Elgendi式"
+    },
+    {
+      "title": "跨数据集心率 · DaLiA → Wild",
+      "detail": "12人训练＋3人验证；16名新测试者",
+      "unit": "MAE（bpm）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 18.839401018561155,
+          "low": 15.530123314678473,
+          "high": 22.128423080195407,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "18.839401018561155",
+            "ci_low_bpm": "15.530123314678473",
+            "ci_high_bpm": "22.128423080195407",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 17.692375276341558,
+          "low": 14.97637003050438,
+          "high": 20.941510913970735,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae_bpm": "17.692375276341558",
+            "ci_low_bpm": "14.97637003050438",
+            "ci_high_bpm": "20.941510913970735",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 17.673098837431027,
+          "low": 15.222319010143956,
+          "high": 20.680732461096724,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae_bpm": "17.673098837431027",
+            "ci_low_bpm": "15.222319010143956",
+            "ci_high_bpm": "20.680732461096724",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 21.154181517658117,
+          "low": 18.058294187853193,
+          "high": 23.975002814586176,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "21.154181517658117",
+            "ci_low_bpm": "18.058294187853193",
+            "ci_high_bpm": "23.975002814586176",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 15.369945841792212,
+          "low": 13.084343172834975,
+          "high": 18.312967854447933,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae_bpm": "15.369945841792212",
+            "ci_low_bpm": "13.084343172834975",
+            "ci_high_bpm": "18.312967854447933",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 18.52400774702246,
+          "low": 15.951516008044644,
+          "high": 21.420470446833303,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae_bpm": "18.52400774702246",
+            "ci_low_bpm": "15.951516008044644",
+            "ci_high_bpm": "21.420470446833303",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 19.777204800845603,
+          "low": 16.493199039424386,
+          "high": 23.075515641606344,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae_bpm": "19.777204800845603",
+            "ci_low_bpm": "16.493199039424386",
+            "ci_high_bpm": "23.075515641606344",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 15.872821820276055,
+          "low": 13.758410635046708,
+          "high": 18.316026795564913,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "SmallCNN",
+            "head": "Task-control",
+            "mae_bpm": "15.872821820276055",
+            "ci_low_bpm": "13.758410635046708",
+            "ci_high_bpm": "18.316026795564913",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        },
+        "Traditional": {
+          "estimate": 16.45552323826497,
+          "low": 13.918663489847626,
+          "high": 18.82911709813132,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "elgendi",
+            "head": "Task-control",
+            "mae_bpm": "16.45552323826497",
+            "ci_low_bpm": "13.918663489847626",
+            "ci_high_bpm": "18.82911709813132",
+            "people": "16",
+            "coverage": "0.9919647226907228"
+          }
+        },
+        "Constant": {
+          "estimate": 17.35541474243864,
+          "low": 14.266973799642582,
+          "high": 21.345140953066384,
+          "source_row": {
+            "scenario": "transfer",
+            "source": "Dalia",
+            "target": "WildPPG",
+            "budget": "full",
+            "method": "TrainMean",
+            "head": "Task-control",
+            "mae_bpm": "17.35541474243864",
+            "ci_low_bpm": "14.266973799642582",
+            "ci_high_bpm": "21.345140953066384",
+            "people": "16",
+            "coverage": "1.0"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统为Elgendi式"
+    },
+    {
+      "title": "手机PPG质量 · BUT",
+      "detail": "50人；3,888条采集记录",
+      "unit": "AUROC ↑",
+      "points": {
+        "AnyPPG": {
+          "estimate": 0.8721824003091649,
+          "low": 0.8276384543711741,
+          "high": 0.9114166621188424,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "AnyPPG/PCA16-Linear",
+            "metric": "auroc",
+            "estimate": "0.8721824003091649",
+            "ci95_low": "0.8276384543711741",
+            "ci95_high": "0.9114166621188424",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 0.7859889802018906,
+          "low": 0.7057355960171143,
+          "high": 0.8496383739852666,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "PaPaGei-S/PCA16-Linear",
+            "metric": "auroc",
+            "estimate": "0.7859889802018906",
+            "ci95_low": "0.7057355960171143",
+            "ci95_high": "0.8496383739852666",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 0.7721937266070303,
+          "low": 0.7159954037578012,
+          "high": 0.8192558091634258,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "PaPaGei-P/PCA16-Linear",
+            "metric": "auroc",
+            "estimate": "0.7721937266070303",
+            "ci95_low": "0.7159954037578012",
+            "ci95_high": "0.8192558091634258",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 0.8603907476848041,
+          "low": 0.8086256020501479,
+          "high": 0.9077238395933144,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "PulsePPG/PCA16-Linear",
+            "metric": "auroc",
+            "estimate": "0.8603907476848041",
+            "ci95_low": "0.8086256020501479",
+            "ci95_high": "0.9077238395933144",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 0.799521658692822,
+          "low": 0.711353013874302,
+          "high": 0.8662836224154509,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "SigmaPPG/PCA16-Linear",
+            "metric": "auroc",
+            "estimate": "0.799521658692822",
+            "ci95_low": "0.711353013874302",
+            "ci95_high": "0.8662836224154509",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 0.8651406810358889,
+          "low": 0.8145403236028225,
+          "high": 0.908367893087722,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "MOMENT-1-small/PCA16-Linear",
+            "metric": "auroc",
+            "estimate": "0.8651406810358889",
+            "ci95_low": "0.8145403236028225",
+            "ci95_high": "0.908367893087722",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 0.8493098019005814,
+          "low": 0.7991877328605057,
+          "high": 0.8922652541516093,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "AnyPPG-random-frozen/PCA16-Linear",
+            "metric": "auroc",
+            "estimate": "0.8493098019005814",
+            "ci95_low": "0.7991877328605057",
+            "ci95_high": "0.8922652541516093",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 0.8524456644470363,
+          "low": 0.7898185334238542,
+          "high": 0.902061920707424,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "SmallCNN",
+            "metric": "auroc",
+            "estimate": "0.8524456644470363",
+            "ci95_low": "0.7898185334238542",
+            "ci95_high": "0.902061920707424",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "Traditional": {
+          "estimate": 0.8514484778345284,
+          "low": 0.7960227789738706,
+          "high": 0.8992909158983536,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "HandFeatures/Linear",
+            "metric": "auroc",
+            "estimate": "0.8514484778345284",
+            "ci95_low": "0.7960227789738706",
+            "ci95_high": "0.8992909158983536",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        },
+        "Constant": {
+          "estimate": 0.43825581877186376,
+          "low": 0.36080860494099226,
+          "high": 0.5140827077883994,
+          "source_row": {
+            "dataset": "BUT-PPG",
+            "method": "TrainPrior",
+            "metric": "auroc",
+            "estimate": "0.43825581877186376",
+            "ci95_low": "0.36080860494099226",
+            "ci95_high": "0.5140827077883994",
+            "participants": "50",
+            "records": "3888",
+            "seeds": "3"
+          }
+        }
+      },
+      "head": "训练集PCA16＋线性分类器；传统SQI特征"
+    },
+    {
+      "title": "腕部实验状态 · WESAD",
+      "detail": "15人；三类实验状态",
+      "unit": "平衡准确率 ↑",
+      "points": {
+        "AnyPPG": {
+          "estimate": 0.5528691841683607,
+          "low": 0.502293233242268,
+          "high": 0.607383201245593,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "AnyPPG/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.5528691841683607",
+            "ci95_low": "0.502293233242268",
+            "ci95_high": "0.607383201245593",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 0.4269949906374581,
+          "low": 0.40565663517957923,
+          "high": 0.4481134433320755,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "PaPaGei-S/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.4269949906374581",
+            "ci95_low": "0.40565663517957923",
+            "ci95_high": "0.4481134433320755",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 0.4565875691111884,
+          "low": 0.4303592199919843,
+          "high": 0.4844072917807905,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "PaPaGei-P/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.4565875691111884",
+            "ci95_low": "0.4303592199919843",
+            "ci95_high": "0.4844072917807905",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 0.5286236311764495,
+          "low": 0.48528980741367683,
+          "high": 0.572494828593657,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "PulsePPG/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.5286236311764495",
+            "ci95_low": "0.48528980741367683",
+            "ci95_high": "0.572494828593657",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 0.46976263553000913,
+          "low": 0.4403997436818613,
+          "high": 0.4985057604949254,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "SigmaPPG/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.46976263553000913",
+            "ci95_low": "0.4403997436818613",
+            "ci95_high": "0.4985057604949254",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 0.5641782414428902,
+          "low": 0.515197252483721,
+          "high": 0.6169187468788059,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "MOMENT-1-small/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.5641782414428902",
+            "ci95_low": "0.515197252483721",
+            "ci95_high": "0.6169187468788059",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 0.49117626634555484,
+          "low": 0.44574684685765625,
+          "high": 0.5375732603419623,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "AnyPPG-random-frozen/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.49117626634555484",
+            "ci95_low": "0.44574684685765625",
+            "ci95_high": "0.5375732603419623",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 0.5438401153134428,
+          "low": 0.5063556120193925,
+          "high": 0.5793750908554831,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "SmallCNN",
+            "metric": "balanced_accuracy",
+            "estimate": "0.5438401153134428",
+            "ci95_low": "0.5063556120193925",
+            "ci95_high": "0.5793750908554831",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "Traditional": {
+          "estimate": 0.49743263908277413,
+          "low": 0.44415701055238377,
+          "high": 0.5495701712123674,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "HandFeatures/Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.49743263908277413",
+            "ci95_low": "0.44415701055238377",
+            "ci95_high": "0.5495701712123674",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        },
+        "Constant": {
+          "estimate": 0.3333333333333333,
+          "low": 0.3333333333333333,
+          "high": 0.3333333333333333,
+          "source_row": {
+            "dataset": "WESAD",
+            "method": "TrainPrior",
+            "metric": "balanced_accuracy",
+            "estimate": "0.3333333333333333",
+            "ci95_low": "0.3333333333333333",
+            "ci95_high": "0.3333333333333333",
+            "participants": "15",
+            "records": "3274",
+            "seeds": "3"
+          }
+        }
+      },
+      "head": "训练集PCA16＋线性分类器；传统SQI特征"
+    },
+    {
+      "title": "腕部刺激类别 · ECSMP",
+      "detail": "60人；六类视频刺激，非情绪诊断",
+      "unit": "平衡准确率 ↑",
+      "points": {
+        "AnyPPG": {
+          "estimate": 0.16804681825930104,
+          "low": 0.1607506520648869,
+          "high": 0.17589342271225142,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "AnyPPG/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.16804681825930104",
+            "ci95_low": "0.1607506520648869",
+            "ci95_high": "0.17589342271225142",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 0.1721332737556808,
+          "low": 0.16376091939041723,
+          "high": 0.18045478329853248,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "PaPaGei-S/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.1721332737556808",
+            "ci95_low": "0.16376091939041723",
+            "ci95_high": "0.18045478329853248",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 0.16389189641394505,
+          "low": 0.15498556867262547,
+          "high": 0.17300548259203688,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "PaPaGei-P/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.16389189641394505",
+            "ci95_low": "0.15498556867262547",
+            "ci95_high": "0.17300548259203688",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 0.16584398955512275,
+          "low": 0.15603838742942777,
+          "high": 0.17537152770883366,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "PulsePPG/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.16584398955512275",
+            "ci95_low": "0.15603838742942777",
+            "ci95_high": "0.17537152770883366",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 0.17964779558918387,
+          "low": 0.1697990256719316,
+          "high": 0.18907542411471345,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "SigmaPPG/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.17964779558918387",
+            "ci95_low": "0.1697990256719316",
+            "ci95_high": "0.18907542411471345",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 0.17100612863317735,
+          "low": 0.15910913908610697,
+          "high": 0.18264357525678043,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "MOMENT-1-small/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.17100612863317735",
+            "ci95_low": "0.15910913908610697",
+            "ci95_high": "0.18264357525678043",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 0.1670308530277983,
+          "low": 0.15815562088913268,
+          "high": 0.17580962221309956,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "AnyPPG-random-frozen/PCA16-Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.1670308530277983",
+            "ci95_low": "0.15815562088913268",
+            "ci95_high": "0.17580962221309956",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 0.16757428858289805,
+          "low": 0.16331590557806105,
+          "high": 0.17166747616649283,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "SmallCNN",
+            "metric": "balanced_accuracy",
+            "estimate": "0.16757428858289805",
+            "ci95_low": "0.16331590557806105",
+            "ci95_high": "0.17166747616649283",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "Traditional": {
+          "estimate": 0.17191750541995923,
+          "low": 0.16137283049975037,
+          "high": 0.18218364536148932,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "HandFeatures/Linear",
+            "metric": "balanced_accuracy",
+            "estimate": "0.17191750541995923",
+            "ci95_low": "0.16137283049975037",
+            "ci95_high": "0.18218364536148932",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        },
+        "Constant": {
+          "estimate": 0.16666666666666666,
+          "low": 0.16666666666666666,
+          "high": 0.16666666666666666,
+          "source_row": {
+            "dataset": "ECSMP",
+            "method": "TrainPrior",
+            "metric": "balanced_accuracy",
+            "estimate": "0.16666666666666666",
+            "ci95_low": "0.16666666666666666",
+            "ci95_high": "0.16666666666666666",
+            "participants": "60",
+            "records": "9651",
+            "seeds": "3"
+          }
+        }
+      },
+      "head": "训练集PCA16＋线性分类器；传统SQI特征"
+    },
+    {
+      "title": "健康信息增量 · SDS",
+      "detail": "60人；连续120秒中性腕部PPG",
+      "unit": "MAE（SDS分数）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 7.189971082767385,
+          "low": 5.96682554112041,
+          "high": 8.50788309435153,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "AnyPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "7.189971082767385",
+            "mae_ci_low": "5.96682554112041",
+            "mae_ci_high": "8.50788309435153",
+            "rmse": "8.786382576399223",
+            "bias": "-0.17994845430766868"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 7.238123395091427,
+          "low": 5.975381592810486,
+          "high": 8.563107157064241,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "PaPaGei-S",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "7.238123395091427",
+            "mae_ci_low": "5.975381592810486",
+            "mae_ci_high": "8.563107157064241",
+            "rmse": "8.852438118572318",
+            "bias": "0.4522727815145896"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 6.841895026940919,
+          "low": 5.481639906984464,
+          "high": 8.34574467918435,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "PaPaGei-P",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "6.841895026940919",
+            "mae_ci_low": "5.481639906984464",
+            "mae_ci_high": "8.34574467918435",
+            "rmse": "8.905254847423823",
+            "bias": "-0.3525710461389031"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 7.539695418739347,
+          "low": 6.318096346691209,
+          "high": 8.843257653330161,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "PulsePPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "7.539695418739347",
+            "mae_ci_low": "6.318096346691209",
+            "mae_ci_high": "8.843257653330161",
+            "rmse": "9.073508995458551",
+            "bias": "0.15426785519251915"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 7.289471665767081,
+          "low": 6.064690858317229,
+          "high": 8.573503955929786,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "SigmaPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "7.289471665767081",
+            "mae_ci_low": "6.064690858317229",
+            "mae_ci_high": "8.573503955929786",
+            "rmse": "8.867947946130315",
+            "bias": "-0.7404752676742984"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 6.973416435338822,
+          "low": 5.7685199562150276,
+          "high": 8.284697765347625,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "MOMENT-1-small",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "6.973416435338822",
+            "mae_ci_low": "5.7685199562150276",
+            "mae_ci_high": "8.284697765347625",
+            "rmse": "8.605277620082333",
+            "bias": "-0.28325486193061433"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 7.256901755460387,
+          "low": 6.103098072173706,
+          "high": 8.460514042723279,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "AnyPPG-random-frozen",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "7.256901755460387",
+            "mae_ci_low": "6.103098072173706",
+            "mae_ci_high": "8.460514042723279",
+            "rmse": "8.658745650195502",
+            "bias": "0.20817587448440847"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 7.208290829685177,
+          "low": 6.013266488932635,
+          "high": 8.522834732924075,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "SmallCNN",
+            "inputs": "demographics_traditional_embedding",
+            "head": "cnn",
+            "people": "60",
+            "seeds": "3",
+            "mae": "7.208290829685177",
+            "mae_ci_low": "6.013266488932635",
+            "mae_ci_high": "8.522834732924075",
+            "rmse": "8.84255029177096",
+            "bias": "-0.4201846294620067"
+          }
+        },
+        "Traditional": {
+          "estimate": 6.916586556498166,
+          "low": 5.684979470104257,
+          "high": 8.248211850769392,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "shared_control",
+            "inputs": "demographics_traditional",
+            "head": "linear",
+            "people": "60",
+            "seeds": "3",
+            "mae": "6.916586556498166",
+            "mae_ci_low": "5.684979470104257",
+            "mae_ci_high": "8.248211850769392",
+            "rmse": "8.596934303135766",
+            "bias": "-0.32320165622213737"
+          }
+        },
+        "Constant": {
+          "estimate": 7.068287037037037,
+          "low": 5.846643518518518,
+          "high": 8.397019675925925,
+          "source_row": {
+            "dataset": "ECSMP",
+            "target": "sds_self_report_score",
+            "model": "train_mean",
+            "inputs": "none",
+            "head": "constant",
+            "people": "60",
+            "seeds": "3",
+            "mae": "7.068287037037037",
+            "mae_ci_low": "5.846643518518518",
+            "mae_ci_high": "8.397019675925925",
+            "rmse": "8.723560141548282",
+            "bias": "4.736951571734001e-16"
+          }
+        }
+      },
+      "head": "人口学＋传统特征＋表征；统一线性预测器"
+    },
+    {
+      "title": "健康信息增量 · 收缩压",
+      "detail": "218人；指端三个独立2秒片段",
+      "unit": "MAE（mmHg）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 13.340321282771763,
+          "low": 11.901074292911671,
+          "high": 14.795295314483674,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "AnyPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.340321282771763",
+            "mae_ci_low": "11.901074292911671",
+            "mae_ci_high": "14.795295314483674",
+            "rmse": "17.232849562669582",
+            "bias": "-0.1381829762068848"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 13.823875028640066,
+          "low": 12.358205672174286,
+          "high": 15.29582204702564,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "PaPaGei-S",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.823875028640066",
+            "mae_ci_low": "12.358205672174286",
+            "mae_ci_high": "15.29582204702564",
+            "rmse": "17.666630905312093",
+            "bias": "-0.2378476646574771"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 13.270269397940448,
+          "low": 11.885955644552114,
+          "high": 14.692602732281268,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "PaPaGei-P",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.270269397940448",
+            "mae_ci_low": "11.885955644552114",
+            "mae_ci_high": "14.692602732281268",
+            "rmse": "16.980733637560494",
+            "bias": "0.19834606204652833"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 13.549358828069424,
+          "low": 12.123701853233756,
+          "high": 15.006488683281747,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "PulsePPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.549358828069424",
+            "mae_ci_low": "12.123701853233756",
+            "mae_ci_high": "15.006488683281747",
+            "rmse": "17.38143266963694",
+            "bias": "0.08779153544538859"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 13.533988016449834,
+          "low": 12.166591075735017,
+          "high": 14.93040398350744,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "SigmaPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.533988016449834",
+            "mae_ci_low": "12.166591075735017",
+            "mae_ci_high": "14.93040398350744",
+            "rmse": "17.098667788199858",
+            "bias": "-0.4045882983812743"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 13.624743958704922,
+          "low": 12.163344726963839,
+          "high": 15.10565001067562,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "MOMENT-1-small",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.624743958704922",
+            "mae_ci_low": "12.163344726963839",
+            "mae_ci_high": "15.10565001067562",
+            "rmse": "17.544704587620632",
+            "bias": "-0.20702010643275368"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 13.672183940148969,
+          "low": 12.257305940096945,
+          "high": 15.112574040172394,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "AnyPPG-random-frozen",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.672183940148969",
+            "mae_ci_low": "12.257305940096945",
+            "mae_ci_high": "15.112574040172394",
+            "rmse": "17.452199208686398",
+            "bias": "0.027807506769006358"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 14.218244068067253,
+          "low": 12.738763726694573,
+          "high": 15.726159666006893,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "SmallCNN",
+            "inputs": "demographics_traditional_embedding",
+            "head": "cnn",
+            "people": "218",
+            "seeds": "3",
+            "mae": "14.218244068067253",
+            "mae_ci_low": "12.738763726694573",
+            "mae_ci_high": "15.726159666006893",
+            "rmse": "18.40083402204342",
+            "bias": "-0.2192209319434828"
+          }
+        },
+        "Traditional": {
+          "estimate": 13.304166332074372,
+          "low": 11.895693579334502,
+          "high": 14.73379297024383,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "shared_control",
+            "inputs": "demographics_traditional",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "13.304166332074372",
+            "mae_ci_low": "11.895693579334502",
+            "mae_ci_high": "14.73379297024383",
+            "rmse": "17.028595739322803",
+            "bias": "-0.1337009740477326"
+          }
+        },
+        "Constant": {
+          "estimate": 16.24932234583821,
+          "low": 14.618826574626437,
+          "high": 17.910973546902706,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_sbp_mmhg",
+            "model": "train_mean",
+            "inputs": "none",
+            "head": "constant",
+            "people": "218",
+            "seeds": "3",
+            "mae": "16.24932234583821",
+            "mae_ci_low": "14.618826574626437",
+            "mae_ci_high": "17.910973546902706",
+            "rmse": "20.43390682517621",
+            "bias": "0.0014942232639541628"
+          }
+        }
+      },
+      "head": "人口学＋传统特征＋表征；统一线性预测器"
+    },
+    {
+      "title": "健康信息增量 · 舒张压",
+      "detail": "218人；指端三个独立2秒片段",
+      "unit": "MAE（mmHg）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 8.59756579987374,
+          "low": 7.676074474765745,
+          "high": 9.573685706998331,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "AnyPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.59756579987374",
+            "mae_ci_low": "7.676074474765745",
+            "mae_ci_high": "9.573685706998331",
+            "rmse": "11.160785762429592",
+            "bias": "-0.08652002846039472"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 8.505441882506457,
+          "low": 7.575088174868446,
+          "high": 9.481986997533044,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "PaPaGei-S",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.505441882506457",
+            "mae_ci_low": "7.575088174868446",
+            "mae_ci_high": "9.481986997533044",
+            "rmse": "11.100334213629141",
+            "bias": "-0.08716677427735656"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 8.318848493565804,
+          "low": 7.413359463001087,
+          "high": 9.28478405410845,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "PaPaGei-P",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.318848493565804",
+            "mae_ci_low": "7.413359463001087",
+            "mae_ci_high": "9.28478405410845",
+            "rmse": "10.856411505322022",
+            "bias": "-0.15293209246864362"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 8.564363347088204,
+          "low": 7.641391512414106,
+          "high": 9.542038491266961,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "PulsePPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.564363347088204",
+            "mae_ci_low": "7.641391512414106",
+            "mae_ci_high": "9.542038491266961",
+            "rmse": "11.116668829949244",
+            "bias": "-0.02442762912391949"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 8.434489230075647,
+          "low": 7.520396045575438,
+          "high": 9.40347061910596,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "SigmaPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.434489230075647",
+            "mae_ci_low": "7.520396045575438",
+            "mae_ci_high": "9.40347061910596",
+            "rmse": "10.96248302408142",
+            "bias": "-0.08059570797141095"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 8.530895139442414,
+          "low": 7.614952956188045,
+          "high": 9.488455361915795,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "MOMENT-1-small",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.530895139442414",
+            "mae_ci_low": "7.614952956188045",
+            "mae_ci_high": "9.488455361915795",
+            "rmse": "11.058503595988268",
+            "bias": "-0.1988840771634549"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 8.56670886443686,
+          "low": 7.656418883027022,
+          "high": 9.517057035664289,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "AnyPPG-random-frozen",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.56670886443686",
+            "mae_ci_low": "7.656418883027022",
+            "mae_ci_high": "9.517057035664289",
+            "rmse": "11.087877033186999",
+            "bias": "0.055958695719628616"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 8.330602882088362,
+          "low": 7.466783867321824,
+          "high": 9.243820691381254,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "SmallCNN",
+            "inputs": "demographics_traditional_embedding",
+            "head": "cnn",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.330602882088362",
+            "mae_ci_low": "7.466783867321824",
+            "mae_ci_high": "9.243820691381254",
+            "rmse": "10.847087147516248",
+            "bias": "-0.980238882622534"
+          }
+        },
+        "Traditional": {
+          "estimate": 7.935974055583471,
+          "low": 7.083319799147316,
+          "high": 8.847294163303118,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "shared_control",
+            "inputs": "demographics_traditional",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "7.935974055583471",
+            "mae_ci_low": "7.083319799147316",
+            "mae_ci_high": "8.847294163303118",
+            "rmse": "10.34521148833209",
+            "bias": "-0.13663302626432602"
+          }
+        },
+        "Constant": {
+          "estimate": 8.933866656839204,
+          "low": 8.054766172093892,
+          "high": 9.874530067199766,
+          "source_row": {
+            "dataset": "PPG-BP",
+            "target": "cuff_dbp_mmhg",
+            "model": "train_mean",
+            "inputs": "none",
+            "head": "constant",
+            "people": "218",
+            "seeds": "3",
+            "mae": "8.933866656839204",
+            "mae_ci_low": "8.054766172093892",
+            "mae_ci_high": "9.874530067199766",
+            "rmse": "11.298224048340606",
+            "bias": "-0.008832215826751439"
+          }
+        }
+      },
+      "head": "人口学＋传统特征＋表征；统一线性预测器"
+    },
+    {
+      "title": "辅助表征 · 年龄",
+      "detail": "218人；年龄从全部输入协变量中移除",
+      "unit": "MAE（岁）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 10.656855526985987,
+          "low": 9.677075712829073,
+          "high": 11.662642263613675,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "AnyPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "10.656855526985987",
+            "mae_ci_low": "9.677075712829073",
+            "mae_ci_high": "11.662642263613675",
+            "rmse": "13.015456628810833",
+            "bias": "-0.166246197012361"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 10.593028630169405,
+          "low": 9.604715333339028,
+          "high": 11.62611756386767,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "PaPaGei-S",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "10.593028630169405",
+            "mae_ci_low": "9.604715333339028",
+            "mae_ci_high": "11.62611756386767",
+            "rmse": "13.115061492365353",
+            "bias": "-0.05977104067329598"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 10.318986874507406,
+          "low": 9.31967048682926,
+          "high": 11.352798138253531,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "PaPaGei-P",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "10.318986874507406",
+            "mae_ci_low": "9.31967048682926",
+            "mae_ci_high": "11.352798138253531",
+            "rmse": "12.898880637698687",
+            "bias": "0.1656049991039972"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 9.878582086411123,
+          "low": 8.890208136643695,
+          "high": 10.91290770117295,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "PulsePPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "9.878582086411123",
+            "mae_ci_low": "8.890208136643695",
+            "mae_ci_high": "10.91290770117295",
+            "rmse": "12.506619652189363",
+            "bias": "-0.13853360224917263"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 10.110882540157391,
+          "low": 9.116143626905819,
+          "high": 11.161217035262377,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "SigmaPPG",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "10.110882540157391",
+            "mae_ci_low": "9.116143626905819",
+            "mae_ci_high": "11.161217035262377",
+            "rmse": "12.746870585719167",
+            "bias": "0.09332615642377406"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 10.24988746746061,
+          "low": 9.280055510583539,
+          "high": 11.271298573892167,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "MOMENT-1-small",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "10.24988746746061",
+            "mae_ci_low": "9.280055510583539",
+            "mae_ci_high": "11.271298573892167",
+            "rmse": "12.727974002405553",
+            "bias": "-0.24434158421933216"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 10.38142726369508,
+          "low": 9.40377910791176,
+          "high": 11.426080318433083,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "AnyPPG-random-frozen",
+            "inputs": "demographics_traditional_embedding",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "10.38142726369508",
+            "mae_ci_low": "9.40377910791176",
+            "mae_ci_high": "11.426080318433083",
+            "rmse": "12.908956820599945",
+            "bias": "-0.21891838100368782"
+          }
+        },
+        "SmallCNN": null,
+        "Traditional": {
+          "estimate": 10.053503506310447,
+          "low": 9.052115227438481,
+          "high": 11.076577565750558,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "shared_control",
+            "inputs": "demographics_traditional",
+            "head": "linear",
+            "people": "218",
+            "seeds": "3",
+            "mae": "10.053503506310447",
+            "mae_ci_low": "9.052115227438481",
+            "mae_ci_high": "11.076577565750558",
+            "rmse": "12.609870345280777",
+            "bias": "-0.03587483233349067"
+          }
+        },
+        "Constant": {
+          "estimate": 12.426609598002903,
+          "low": 11.137827056572068,
+          "high": 13.74950942371236,
+          "source_row": {
+            "dataset": "PPG-BP-age",
+            "target": "chronological_age_years",
+            "model": "train_mean",
+            "inputs": "none",
+            "head": "constant",
+            "people": "218",
+            "seeds": "3",
+            "mae": "12.426609598002903",
+            "mae_ci_low": "11.137827056572068",
+            "mae_ci_high": "13.74950942371236",
+            "rmse": "15.838179896273479",
+            "bias": "-0.0018079062427419426"
+          }
+        }
+      },
+      "head": "人口学＋传统特征＋表征；统一线性预测器"
+    },
+    {
+      "title": "临床辅助 · 呼吸率",
+      "detail": "46名真实患者；735个32秒片段",
+      "unit": "MAE（次/分钟）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 2.498922718365414,
+          "low": 1.9637916071391985,
+          "high": 3.139648524486319,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae": "2.498922718365414",
+            "ci_low": "1.9637916071391985",
+            "ci_high": "3.139648524486319",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 2.490988285779364,
+          "low": 1.923470238648457,
+          "high": 3.169995520341824,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae": "2.490988285779364",
+            "ci_low": "1.923470238648457",
+            "ci_high": "3.169995520341824",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 2.5912132316027003,
+          "low": 2.018803014306691,
+          "high": 3.265593768761612,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae": "2.5912132316027003",
+            "ci_low": "2.018803014306691",
+            "ci_high": "3.265593768761612",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 2.4787574243503174,
+          "low": 1.9345036800036228,
+          "high": 3.125151339090103,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae": "2.4787574243503174",
+            "ci_low": "1.9345036800036228",
+            "ci_high": "3.125151339090103",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 2.5081547151003996,
+          "low": 1.9658956437014767,
+          "high": 3.1516757126067523,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae": "2.5081547151003996",
+            "ci_low": "1.9658956437014767",
+            "ci_high": "3.1516757126067523",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 2.79720977125235,
+          "low": 2.2513528538657646,
+          "high": 3.4410470154568213,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae": "2.79720977125235",
+            "ci_low": "2.2513528538657646",
+            "ci_high": "3.4410470154568213",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 2.5188779123863827,
+          "low": 1.9798800284081775,
+          "high": 3.159374266294326,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae": "2.5188779123863827",
+            "ci_low": "1.9798800284081775",
+            "ci_high": "3.159374266294326",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 2.5385425742344534,
+          "low": 1.980197236533324,
+          "high": 3.200211393635924,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "SmallCNN",
+            "head": "",
+            "mae": "2.5385425742344534",
+            "ci_low": "1.980197236533324",
+            "ci_high": "3.200211393635924",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "Traditional": {
+          "estimate": 2.5041557034789013,
+          "low": 1.9669787049132237,
+          "high": 3.1436466659266347,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "HandFeatures",
+            "head": "PCA16-MLP",
+            "mae": "2.5041557034789013",
+            "ci_low": "1.9669787049132237",
+            "ci_high": "3.1436466659266347",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        },
+        "Constant": {
+          "estimate": 2.388377670312449,
+          "low": 1.8625088867328017,
+          "high": 3.0081853962267364,
+          "source_row": {
+            "dataset": "BIDMC",
+            "target": "resp_manual",
+            "method": "TrainMean",
+            "head": "",
+            "mae": "2.388377670312449",
+            "ci_low": "1.8625088867328017",
+            "ci_high": "3.0081853962267364",
+            "patients": "46",
+            "coverage": "1.0",
+            "unit": "breaths/min"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统特征同头"
+    },
+    {
+      "title": "临床辅助 · 收缩压",
+      "detail": "100人训练/20人验证/42人测试；MIMIC子集",
+      "unit": "MAE（mmHg）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 16.755362138353444,
+          "low": 14.65088347314048,
+          "high": 19.058825052660794,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae": "16.755362138353444",
+            "ci_low": "14.65088347314048",
+            "ci_high": "19.058825052660794",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 16.364610629904558,
+          "low": 14.238291244360326,
+          "high": 18.785846196680552,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae": "16.364610629904558",
+            "ci_low": "14.238291244360326",
+            "ci_high": "18.785846196680552",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 17.224688325337574,
+          "low": 15.140299264839326,
+          "high": 19.50358481161904,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae": "17.224688325337574",
+            "ci_low": "15.140299264839326",
+            "ci_high": "19.50358481161904",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 15.756198612456924,
+          "low": 14.116088111311605,
+          "high": 17.511127096508766,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae": "15.756198612456924",
+            "ci_low": "14.116088111311605",
+            "ci_high": "17.511127096508766",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 16.654280443868824,
+          "low": 14.540738033851968,
+          "high": 19.011633588358077,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae": "16.654280443868824",
+            "ci_low": "14.540738033851968",
+            "ci_high": "19.011633588358077",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 15.913335486127389,
+          "low": 13.9679389519383,
+          "high": 18.084493040648585,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae": "15.913335486127389",
+            "ci_low": "13.9679389519383",
+            "ci_high": "18.084493040648585",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 16.50449520487423,
+          "low": 14.383201946562233,
+          "high": 18.86622600648442,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae": "16.50449520487423",
+            "ci_low": "14.383201946562233",
+            "ci_high": "18.86622600648442",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 17.4085486106828,
+          "low": 15.066728899794391,
+          "high": 20.035167851140933,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "SmallCNN",
+            "head": "",
+            "mae": "17.4085486106828",
+            "ci_low": "15.066728899794391",
+            "ci_high": "20.035167851140933",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "Traditional": {
+          "estimate": 15.873183218430446,
+          "low": 14.115706946952812,
+          "high": 17.781312967581155,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "HandFeatures",
+            "head": "PCA16-MLP",
+            "mae": "15.873183218430446",
+            "ci_low": "14.115706946952812",
+            "ci_high": "17.781312967581155",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "Constant": {
+          "estimate": 16.49443305073691,
+          "low": 14.179759239825653,
+          "high": 19.13494826022164,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "sbp",
+            "method": "TrainMean",
+            "head": "",
+            "mae": "16.49443305073691",
+            "ci_low": "14.179759239825653",
+            "ci_high": "19.13494826022164",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统特征同头"
+    },
+    {
+      "title": "临床辅助 · 舒张压",
+      "detail": "同一固定患者划分；非完整AAMI评测",
+      "unit": "MAE（mmHg）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 9.212192140626316,
+          "low": 8.178018413927594,
+          "high": 10.288041320789453,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "AnyPPG",
+            "head": "PCA16-MLP",
+            "mae": "9.212192140626316",
+            "ci_low": "8.178018413927594",
+            "ci_high": "10.288041320789453",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 9.603826620399857,
+          "low": 8.471107897661769,
+          "high": 10.831779919443461,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "PaPaGei-S",
+            "head": "PCA16-MLP",
+            "mae": "9.603826620399857",
+            "ci_low": "8.471107897661769",
+            "ci_high": "10.831779919443461",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 9.862611234905623,
+          "low": 8.616163854949493,
+          "high": 11.19546625133564,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "PaPaGei-P",
+            "head": "PCA16-MLP",
+            "mae": "9.862611234905623",
+            "ci_low": "8.616163854949493",
+            "ci_high": "11.19546625133564",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "PulsePPG": {
+          "estimate": 9.574889340713415,
+          "low": 8.373446093747933,
+          "high": 10.832019125929605,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "PulsePPG",
+            "head": "PCA16-MLP",
+            "mae": "9.574889340713415",
+            "ci_low": "8.373446093747933",
+            "ci_high": "10.832019125929605",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "SigmaPPG": {
+          "estimate": 9.66439008858958,
+          "low": 8.506953766930481,
+          "high": 10.911077678784354,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "SigmaPPG",
+            "head": "PCA16-MLP",
+            "mae": "9.66439008858958",
+            "ci_low": "8.506953766930481",
+            "ci_high": "10.911077678784354",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "MOMENT-1-small": {
+          "estimate": 9.770790163433041,
+          "low": 8.645713940964516,
+          "high": 11.00458739482622,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "MOMENT-1-small",
+            "head": "PCA16-MLP",
+            "mae": "9.770790163433041",
+            "ci_low": "8.645713940964516",
+            "ci_high": "11.00458739482622",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "AnyPPG-random-frozen": {
+          "estimate": 9.420965670904765,
+          "low": 8.338442381022858,
+          "high": 10.569617640251506,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "AnyPPG-random-frozen",
+            "head": "PCA16-MLP",
+            "mae": "9.420965670904765",
+            "ci_low": "8.338442381022858",
+            "ci_high": "10.569617640251506",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 10.074678515715627,
+          "low": 8.85694815620519,
+          "high": 11.337095079751169,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "SmallCNN",
+            "head": "",
+            "mae": "10.074678515715627",
+            "ci_low": "8.85694815620519",
+            "ci_high": "11.337095079751169",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "Traditional": {
+          "estimate": 8.837315226682014,
+          "low": 7.82433903747417,
+          "high": 9.889389881753862,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "HandFeatures",
+            "head": "PCA16-MLP",
+            "mae": "8.837315226682014",
+            "ci_low": "7.82433903747417",
+            "ci_high": "9.889389881753862",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        },
+        "Constant": {
+          "estimate": 9.728031501911978,
+          "low": 8.457987494508586,
+          "high": 11.09696545333331,
+          "source_row": {
+            "dataset": "PulseDB",
+            "target": "dbp",
+            "method": "TrainMean",
+            "head": "",
+            "mae": "9.728031501911978",
+            "ci_low": "8.457987494508586",
+            "ci_high": "11.09696545333331",
+            "patients": "42",
+            "coverage": "1.0",
+            "unit": "mmHg"
+          }
+        }
+      },
+      "head": "训练集PCA16＋小MLP；传统特征同头"
+    },
+    {
+      "title": "逐搏 · 人工PPG起始点",
+      "detail": "7人；±50毫秒容差；单专家参考",
+      "unit": "F1 ↑",
+      "points": {
+        "AnyPPG": {
+          "estimate": 0.9788545719290422,
+          "low": 0.9568878191362968,
+          "high": 0.993998664812754,
+          "source_row": {
+            "group": "all",
+            "method": "AnyPPG",
+            "metric": "f1_50ms",
+            "duration_s": "0",
+            "mean": "0.9788545719290422",
+            "ci95_low": "0.9568878191362968",
+            "ci95_high": "0.993998664812754",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "0.9812361891670597",
+            "n_eligible": "20725"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 0.9690246223411719,
+          "low": 0.9387511212124366,
+          "high": 0.9907051884019332,
+          "source_row": {
+            "group": "all",
+            "method": "PaPaGei-S",
+            "metric": "f1_50ms",
+            "duration_s": "0",
+            "mean": "0.9690246223411719",
+            "ci95_low": "0.9387511212124366",
+            "ci95_high": "0.9907051884019332",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "0.9731632725278754",
+            "n_eligible": "20725"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 0.9662163230368618,
+          "low": 0.936205172131703,
+          "high": 0.9882708034072651,
+          "source_row": {
+            "group": "all",
+            "method": "PaPaGei-P",
+            "metric": "f1_50ms",
+            "duration_s": "0",
+            "mean": "0.9662163230368618",
+            "ci95_low": "0.936205172131703",
+            "ci95_high": "0.9882708034072651",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "0.9706254806534993",
+            "n_eligible": "20725"
+          }
+        },
+        "PulsePPG": null,
+        "SigmaPPG": null,
+        "MOMENT-1-small": null,
+        "AnyPPG-random-frozen": {
+          "estimate": 0.9678023761598967,
+          "low": 0.9379475978967701,
+          "high": 0.9881358990973925,
+          "source_row": {
+            "group": "all",
+            "method": "AnyPPG-random-frozen",
+            "metric": "f1_50ms",
+            "duration_s": "0",
+            "mean": "0.9678023761598967",
+            "ci95_low": "0.9379475978967701",
+            "ci95_high": "0.9881358990973925",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "0.9728562241886446",
+            "n_eligible": "20725"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 0.9761288336289484,
+          "low": 0.9522222146270062,
+          "high": 0.9927849777956325,
+          "source_row": {
+            "group": "all",
+            "method": "SmallCNN",
+            "metric": "f1_50ms",
+            "duration_s": "0",
+            "mean": "0.9761288336289484",
+            "ci95_low": "0.9522222146270062",
+            "ci95_high": "0.9927849777956325",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "0.9798126378482882",
+            "n_eligible": "20725"
+          }
+        },
+        "Traditional": {
+          "estimate": 0.9661796910637512,
+          "low": 0.9398964767879948,
+          "high": 0.984975657908239,
+          "source_row": {
+            "group": "all",
+            "method": "MSPTDfast",
+            "metric": "f1_50ms",
+            "duration_s": "0",
+            "mean": "0.9661796910637512",
+            "ci95_low": "0.9398964767879948",
+            "ci95_high": "0.984975657908239",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "0.9588475922938385",
+            "n_eligible": "20725"
+          }
+        },
+        "Constant": null
+      },
+      "head": "冻结时序特征＋小输出头；不支持的接口留空"
+    },
+    {
+      "title": "脉率变异性 · RMSSD",
+      "detail": "7人；60秒窗口；多数静息，非ECG HRV",
+      "unit": "MAE（ms）↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 20.516521908776134,
+          "low": 12.243426674957124,
+          "high": 30.72046276512294,
+          "source_row": {
+            "group": "all",
+            "method": "AnyPPG",
+            "metric": "rmssd_ms_mae",
+            "duration_s": "60",
+            "mean": "20.516521908776134",
+            "ci95_low": "12.243426674957124",
+            "ci95_high": "30.72046276512294",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "1.0",
+            "n_eligible": "175"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 28.5255184569876,
+          "low": 15.625615769491997,
+          "high": 46.70496536141896,
+          "source_row": {
+            "group": "all",
+            "method": "PaPaGei-S",
+            "metric": "rmssd_ms_mae",
+            "duration_s": "60",
+            "mean": "28.5255184569876",
+            "ci95_low": "15.625615769491997",
+            "ci95_high": "46.70496536141896",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "1.0",
+            "n_eligible": "175"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 30.3443286101678,
+          "low": 19.163734567124038,
+          "high": 45.65154245330796,
+          "source_row": {
+            "group": "all",
+            "method": "PaPaGei-P",
+            "metric": "rmssd_ms_mae",
+            "duration_s": "60",
+            "mean": "30.3443286101678",
+            "ci95_low": "19.163734567124038",
+            "ci95_high": "45.65154245330796",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "1.0",
+            "n_eligible": "175"
+          }
+        },
+        "PulsePPG": null,
+        "SigmaPPG": null,
+        "MOMENT-1-small": null,
+        "AnyPPG-random-frozen": {
+          "estimate": 31.39711917805006,
+          "low": 19.59691386622071,
+          "high": 48.78223157141108,
+          "source_row": {
+            "group": "all",
+            "method": "AnyPPG-random-frozen",
+            "metric": "rmssd_ms_mae",
+            "duration_s": "60",
+            "mean": "31.39711917805006",
+            "ci95_low": "19.59691386622071",
+            "ci95_high": "48.78223157141108",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "1.0",
+            "n_eligible": "175"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 45.07772647186971,
+          "low": 14.653789756777817,
+          "high": 85.56116450894625,
+          "source_row": {
+            "group": "all",
+            "method": "SmallCNN",
+            "metric": "rmssd_ms_mae",
+            "duration_s": "60",
+            "mean": "45.07772647186971",
+            "ci95_low": "14.653789756777817",
+            "ci95_high": "85.56116450894625",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "1.0",
+            "n_eligible": "175"
+          }
+        },
+        "Traditional": {
+          "estimate": 38.32040559768215,
+          "low": 20.964241899362584,
+          "high": 64.36264301092022,
+          "source_row": {
+            "group": "all",
+            "method": "MSPTDfast",
+            "metric": "rmssd_ms_mae",
+            "duration_s": "60",
+            "mean": "38.32040559768215",
+            "ci95_low": "20.964241899362584",
+            "ci95_high": "64.36264301092022",
+            "n_subjects": "7",
+            "n_finite_subjects": "7",
+            "participant_mean_coverage": "1.0",
+            "n_eligible": "175"
+          }
+        },
+        "Constant": null
+      },
+      "head": "冻结时序特征＋小输出头；不支持的接口留空"
+    },
+    {
+      "title": "逐点伪影 · DaLiA/SEGADE",
+      "detail": "15人；4,305片段各固定中央6秒评分",
+      "unit": "F1 ↑",
+      "points": {
+        "AnyPPG": {
+          "estimate": 0.8619335054368082,
+          "low": 0.8395578602236489,
+          "high": 0.8860151256584586,
+          "source_row": {
+            "method": "AnyPPG",
+            "f1": "0.8619335054368082",
+            "ci_low": "0.8395578602236489",
+            "ci_high": "0.8860151256584586",
+            "participants": "15",
+            "records": "4305",
+            "seeds": "3",
+            "scored_points": "1653120",
+            "scored_seconds": "25830",
+            "annotation_seconds": "129150",
+            "coverage_fraction": "0.2",
+            "held_out_frame_coverage": "1.0",
+            "artifact_point_prevalence": "0.5687306523323059",
+            "sensitivity": "0.9124421760856052",
+            "sensitivity_ci_low": "0.8874953262934201",
+            "sensitivity_ci_high": "0.9355901389369053",
+            "specificity": "0.7206096471560297",
+            "specificity_ci_low": "0.6722431694771734",
+            "specificity_ci_high": "0.7661297531685625",
+            "balanced_accuracy": "0.8165259116208173",
+            "balanced_accuracy_ci_low": "0.8007708288045294",
+            "balanced_accuracy_ci_high": "0.8308700988417868",
+            "auprc": "0.9126905306107421",
+            "auprc_ci_low": "0.896614303268436",
+            "auprc_ci_high": "0.9291350190665643"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 0.8529609761686014,
+          "low": 0.825213676545214,
+          "high": 0.8811039391957901,
+          "source_row": {
+            "method": "PaPaGei-S",
+            "f1": "0.8529609761686014",
+            "ci_low": "0.825213676545214",
+            "ci_high": "0.8811039391957901",
+            "participants": "15",
+            "records": "4305",
+            "seeds": "3",
+            "scored_points": "1653120",
+            "scored_seconds": "25830",
+            "annotation_seconds": "129150",
+            "coverage_fraction": "0.2",
+            "held_out_frame_coverage": "1.0",
+            "artifact_point_prevalence": "0.5687306523323059",
+            "sensitivity": "0.9189843101237123",
+            "sensitivity_ci_low": "0.8914946190364302",
+            "sensitivity_ci_high": "0.9413964151095563",
+            "specificity": "0.6904575203070256",
+            "specificity_ci_low": "0.648566852482999",
+            "specificity_ci_high": "0.7338413542829682",
+            "balanced_accuracy": "0.8047209152153688",
+            "balanced_accuracy_ci_low": "0.7911947175688906",
+            "balanced_accuracy_ci_high": "0.8184045272912572",
+            "auprc": "0.8997025732499605",
+            "auprc_ci_low": "0.8787041900948734",
+            "auprc_ci_high": "0.921231134147394"
+          }
+        },
+        "PaPaGei-P": {
+          "estimate": 0.8498824016740605,
+          "low": 0.8226232092696799,
+          "high": 0.8777086826819301,
+          "source_row": {
+            "method": "PaPaGei-P",
+            "f1": "0.8498824016740605",
+            "ci_low": "0.8226232092696799",
+            "ci_high": "0.8777086826819301",
+            "participants": "15",
+            "records": "4305",
+            "seeds": "3",
+            "scored_points": "1653120",
+            "scored_seconds": "25830",
+            "annotation_seconds": "129150",
+            "coverage_fraction": "0.2",
+            "held_out_frame_coverage": "1.0",
+            "artifact_point_prevalence": "0.5687306523323059",
+            "sensitivity": "0.9322214171272459",
+            "sensitivity_ci_low": "0.9134244860362816",
+            "sensitivity_ci_high": "0.9481651035142031",
+            "specificity": "0.6583276136190145",
+            "specificity_ci_low": "0.6122054247007711",
+            "specificity_ci_high": "0.7032391450739596",
+            "balanced_accuracy": "0.79527451537313",
+            "balanced_accuracy_ci_low": "0.7777412656818271",
+            "balanced_accuracy_ci_high": "0.8116731537571661",
+            "auprc": "0.8906379008365399",
+            "auprc_ci_low": "0.869020927886217",
+            "auprc_ci_high": "0.9129735716242037"
+          }
+        },
+        "PulsePPG": null,
+        "SigmaPPG": null,
+        "MOMENT-1-small": null,
+        "AnyPPG-random-frozen": {
+          "estimate": 0.8488602332672637,
+          "low": 0.818878076539904,
+          "high": 0.8786198370924242,
+          "source_row": {
+            "method": "AnyPPG-random-frozen",
+            "f1": "0.8488602332672637",
+            "ci_low": "0.818878076539904",
+            "ci_high": "0.8786198370924242",
+            "participants": "15",
+            "records": "4305",
+            "seeds": "3",
+            "scored_points": "1653120",
+            "scored_seconds": "25830",
+            "annotation_seconds": "129150",
+            "coverage_fraction": "0.2",
+            "held_out_frame_coverage": "1.0",
+            "artifact_point_prevalence": "0.5687306523323059",
+            "sensitivity": "0.9216399499950885",
+            "sensitivity_ci_low": "0.8958484518875909",
+            "sensitivity_ci_high": "0.9426719405904427",
+            "specificity": "0.6727349175901779",
+            "specificity_ci_low": "0.6261947915216132",
+            "specificity_ci_high": "0.7197955963935145",
+            "balanced_accuracy": "0.7971874337926331",
+            "balanced_accuracy_ci_low": "0.7806188362212807",
+            "balanced_accuracy_ci_high": "0.8136543278378033",
+            "auprc": "0.8987749048763602",
+            "auprc_ci_low": "0.8775667469749305",
+            "auprc_ci_high": "0.9199822397801063"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 0.8694524211810645,
+          "low": 0.8501963449274446,
+          "high": 0.8904203432077004,
+          "source_row": {
+            "method": "SmallCNN",
+            "f1": "0.8694524211810645",
+            "ci_low": "0.8501963449274446",
+            "ci_high": "0.8904203432077004",
+            "participants": "15",
+            "records": "4305",
+            "seeds": "3",
+            "scored_points": "1653120",
+            "scored_seconds": "25830",
+            "annotation_seconds": "129150",
+            "coverage_fraction": "0.2",
+            "held_out_frame_coverage": "1.0",
+            "artifact_point_prevalence": "0.5687306523323059",
+            "sensitivity": "0.927436647799466",
+            "sensitivity_ci_low": "0.9031203896126168",
+            "sensitivity_ci_high": "0.9470325845181226",
+            "specificity": "0.7142201180677679",
+            "specificity_ci_low": "0.6632615917495277",
+            "specificity_ci_high": "0.7645056534348432",
+            "balanced_accuracy": "0.8208283829336168",
+            "balanced_accuracy_ci_low": "0.8024061052399333",
+            "balanced_accuracy_ci_high": "0.8377794292018054",
+            "auprc": "0.9267500549459214",
+            "auprc_ci_low": "0.9154662327802385",
+            "auprc_ci_high": "0.9389476480153042"
+          }
+        },
+        "Traditional": {
+          "estimate": 0.8220521252855746,
+          "low": 0.7889631824705922,
+          "high": 0.8554885062068436,
+          "source_row": {
+            "method": "HandFeatures",
+            "f1": "0.8220521252855746",
+            "ci_low": "0.7889631824705922",
+            "ci_high": "0.8554885062068436",
+            "participants": "15",
+            "records": "4305",
+            "seeds": "3",
+            "scored_points": "1653120",
+            "scored_seconds": "25830",
+            "annotation_seconds": "129150",
+            "coverage_fraction": "0.2",
+            "held_out_frame_coverage": "1.0",
+            "artifact_point_prevalence": "0.5687306523323059",
+            "sensitivity": "0.927964501742848",
+            "sensitivity_ci_low": "0.9071354375300771",
+            "sensitivity_ci_high": "0.9477437847887608",
+            "specificity": "0.5750359857722575",
+            "specificity_ci_low": "0.525352603932283",
+            "specificity_ci_high": "0.6225665148752214",
+            "balanced_accuracy": "0.7515002437575526",
+            "balanced_accuracy_ci_low": "0.7326144294111803",
+            "balanced_accuracy_ci_high": "0.7694598190438467",
+            "auprc": "0.870448845394124",
+            "auprc_ci_low": "0.8402266797061518",
+            "auprc_ci_high": "0.8994329595478152"
+          }
+        },
+        "Constant": {
+          "estimate": 0.7153291019814111,
+          "low": 0.6592720932399874,
+          "high": 0.7714154078956862,
+          "source_row": {
+            "method": "TrainPrior",
+            "f1": "0.7153291019814111",
+            "ci_low": "0.6592720932399874",
+            "ci_high": "0.7714154078956862",
+            "participants": "15",
+            "records": "4305",
+            "seeds": "3",
+            "scored_points": "1653120",
+            "scored_seconds": "25830",
+            "annotation_seconds": "129150",
+            "coverage_fraction": "0.2",
+            "held_out_frame_coverage": "1.0",
+            "artifact_point_prevalence": "0.5687306523323059",
+            "sensitivity": "1.0",
+            "sensitivity_ci_low": "1.0",
+            "sensitivity_ci_high": "1.0",
+            "specificity": "0.0",
+            "specificity_ci_low": "0.0",
+            "specificity_ci_high": "0.0",
+            "balanced_accuracy": "0.5",
+            "balanced_accuracy_ci_low": "0.5",
+            "balanced_accuracy_ci_high": "0.5",
+            "auprc": "0.5686065531286331",
+            "auprc_ci_low": "0.5016075010214245",
+            "auprc_ci_high": "0.6404084021345674"
+          }
+        }
+      },
+      "head": "冻结时序特征＋小输出头；不支持的接口留空"
+    },
+    {
+      "title": "合成去噪 · 腕部参考波形",
+      "detail": "7人；按人隔离；−5/5/15 dB合成噪声",
+      "unit": "NRMSE ↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 1.0158936337215425,
+          "low": 0.9264553833885029,
+          "high": 1.1077729798845648,
+          "source_row": {
+            "dataset": "EMBC21",
+            "method": "AnyPPG",
+            "metric": "nrmse",
+            "value": "1.0158936337215425",
+            "ci_low": "0.9264553833885029",
+            "ci_high": "1.1077729798845648",
+            "people": "7",
+            "pairs": "504"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 0.9794177727688638,
+          "low": 0.8883302393214674,
+          "high": 1.070161183343839,
+          "source_row": {
+            "dataset": "EMBC21",
+            "method": "PaPaGei-S",
+            "metric": "nrmse",
+            "value": "0.9794177727688638",
+            "ci_low": "0.8883302393214674",
+            "ci_high": "1.070161183343839",
+            "people": "7",
+            "pairs": "504"
+          }
+        },
+        "PaPaGei-P": null,
+        "PulsePPG": null,
+        "SigmaPPG": null,
+        "MOMENT-1-small": null,
+        "AnyPPG-random-frozen": {
+          "estimate": 0.9427165014199241,
+          "low": 0.8530801245027345,
+          "high": 1.0235764794892896,
+          "source_row": {
+            "dataset": "EMBC21",
+            "method": "AnyPPG-random-frozen",
+            "metric": "nrmse",
+            "value": "0.9427165014199241",
+            "ci_low": "0.8530801245027345",
+            "ci_high": "1.0235764794892896",
+            "people": "7",
+            "pairs": "504"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 0.8118268737544031,
+          "low": 0.743580206033179,
+          "high": 0.8881538344393005,
+          "source_row": {
+            "dataset": "EMBC21",
+            "method": "SmallCNN",
+            "metric": "nrmse",
+            "value": "0.8118268737544031",
+            "ci_low": "0.743580206033179",
+            "ci_high": "0.8881538344393005",
+            "people": "7",
+            "pairs": "504"
+          }
+        },
+        "Traditional": {
+          "estimate": 1.2792934496039028,
+          "low": 1.1410665202159085,
+          "high": 1.4100776806252417,
+          "source_row": {
+            "dataset": "EMBC21",
+            "method": "FixedBandpass",
+            "metric": "nrmse",
+            "value": "1.2792934496039028",
+            "ci_low": "1.1410665202159085",
+            "ci_high": "1.4100776806252417",
+            "people": "7",
+            "pairs": "504"
+          }
+        },
+        "Constant": {
+          "estimate": 1.683154605229176,
+          "low": 1.4725816311070894,
+          "high": 1.8988303586931266,
+          "source_row": {
+            "dataset": "EMBC21",
+            "method": "NoisyInput",
+            "metric": "nrmse",
+            "value": "1.683154605229176",
+            "ci_low": "1.4725816311070894",
+            "ci_high": "1.8988303586931266",
+            "people": "7",
+            "pairs": "504"
+          }
+        }
+      },
+      "head": "冻结时序特征＋小输出头；不支持的接口留空"
+    },
+    {
+      "title": "外部合成去噪 · EPFL",
+      "detail": "1人；340条噪声副本；无人口置信区间",
+      "unit": "NRMSE ↓",
+      "points": {
+        "AnyPPG": {
+          "estimate": 0.729755390107475,
+          "low": null,
+          "high": null,
+          "source_row": {
+            "dataset": "EPFL",
+            "method": "AnyPPG",
+            "metric": "nrmse",
+            "value": "0.729755390107475",
+            "ci_low": "",
+            "ci_high": "",
+            "people": "1",
+            "pairs": "3060"
+          }
+        },
+        "PaPaGei-S": {
+          "estimate": 0.8623929271970197,
+          "low": null,
+          "high": null,
+          "source_row": {
+            "dataset": "EPFL",
+            "method": "PaPaGei-S",
+            "metric": "nrmse",
+            "value": "0.8623929271970197",
+            "ci_low": "",
+            "ci_high": "",
+            "people": "1",
+            "pairs": "3060"
+          }
+        },
+        "PaPaGei-P": null,
+        "PulsePPG": null,
+        "SigmaPPG": null,
+        "MOMENT-1-small": null,
+        "AnyPPG-random-frozen": {
+          "estimate": 0.7510235553215779,
+          "low": null,
+          "high": null,
+          "source_row": {
+            "dataset": "EPFL",
+            "method": "AnyPPG-random-frozen",
+            "metric": "nrmse",
+            "value": "0.7510235553215779",
+            "ci_low": "",
+            "ci_high": "",
+            "people": "1",
+            "pairs": "3060"
+          }
+        },
+        "SmallCNN": {
+          "estimate": 1.1048305558529345,
+          "low": null,
+          "high": null,
+          "source_row": {
+            "dataset": "EPFL",
+            "method": "SmallCNN",
+            "metric": "nrmse",
+            "value": "1.1048305558529345",
+            "ci_low": "",
+            "ci_high": "",
+            "people": "1",
+            "pairs": "3060"
+          }
+        },
+        "Traditional": {
+          "estimate": 0.2390937279146723,
+          "low": null,
+          "high": null,
+          "source_row": {
+            "dataset": "EPFL",
+            "method": "FixedBandpass",
+            "metric": "nrmse",
+            "value": "0.2390937279146723",
+            "ci_low": "",
+            "ci_high": "",
+            "people": "1",
+            "pairs": "3060"
+          }
+        },
+        "Constant": {
+          "estimate": 1.065254662808622,
+          "low": null,
+          "high": null,
+          "source_row": {
+            "dataset": "EPFL",
+            "method": "NoisyInput",
+            "metric": "nrmse",
+            "value": "1.065254662808622",
+            "ci_low": "",
+            "ci_high": "",
+            "people": "1",
+            "pairs": "3060"
+          }
+        }
+      },
+      "head": "冻结时序特征＋小输出头；不支持的接口留空"
+    }
+  ]
+}
