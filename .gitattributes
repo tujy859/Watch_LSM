@@ -24,3 +24,5 @@ docs/results/ppg_phase2/**/*.csv -text whitespace=trailing-space,space-before-ta
 docs/results/ppg_expansion_pilot/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
 docs/results/ppg_expansion_pilot/*.csv -text whitespace=trailing-space,space-before-tab,cr-at-eol
 docs/results/ppg_formal_expansion/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+# Preserve the exact audited source bytes recorded in three classification audits.
+scripts/summarize_ppg_formal_classification.py -text whitespace=trailing-space,space-before-tab,cr-at-eol
