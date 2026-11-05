@@ -30,11 +30,16 @@ for path in (ROOT, ROOT / "scripts"):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
 from scripts.ppg_hr_poc_features import UPSTREAM_COMMIT, sha256, write_json
-from scripts.run_ppg_hr_poc import fit_ridge, macro_mae
 
 MODELS = ("AnyPPG", "PaPaGei-S", "PaPaGei-P", "PulsePPG", "SigmaPPG", "MOMENT-1-small")
 METHODS = (*MODELS, "AnyPPG-random-frozen")
 PCA_DIM = 16
+
+
+def macro_mae(y, prediction, subjects):
+    """Keep CPU-only head checks independent of the optional data checkout."""
+    return float(np.mean([np.mean(np.abs(y[subjects == s] - prediction[subjects == s]))
+                          for s in np.unique(subjects)]))
 
 
 def _upstream():
@@ -246,8 +251,8 @@ def fit_small_head(train_x, train_y, train_subjects, val_x, val_y, val_subjects,
     center, target_scale = float(np.mean(train_y)), max(float(np.std(train_y)), 1.)
     tx, ty = torch.tensor(train_x, dtype=torch.float32), torch.tensor((train_y-center)/target_scale, dtype=torch.float32)
     vx = torch.tensor(val_x, dtype=torch.float32)
-    from scripts.run_ppg_hr_poc import weights
-    w = torch.tensor(weights(train_subjects), dtype=torch.float32)
+    _, inverse, counts = np.unique(train_subjects, return_inverse=True, return_counts=True)
+    w = torch.tensor(len(train_subjects) / (len(counts) * counts[inverse]), dtype=torch.float32)
     with torch.random.fork_rng():
         torch.manual_seed(seed)
         model = torch.nn.Sequential(torch.nn.Linear(PCA_DIM, 16), torch.nn.ReLU(), torch.nn.Linear(16, 1))
@@ -285,6 +290,7 @@ def _write_csv(path, rows):
 
 
 def main():
+    from scripts.run_ppg_hr_poc import fit_ridge
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / ".local/ppg-expansion-pilot/models")
     parser.add_argument("--shared", type=Path, default=ROOT / "docs/results/ppg_expansion_pilot")
