@@ -4,6 +4,8 @@
 
 本阶段完成7人留一测试的315份逐搏预测、60组质量分类结果与跨域HR诊断。**AnyPPG在少标签HR、人工PPG参考下的60秒PRV以及相对CNN的质量分类中显示收益；并非所有任务都更强。** 全标签HR、跨数据集HR、成功匹配后的精细间期误差仍没有普遍优势。已完成的第一阶段HR结果见[原报告](ppg_hr_poc_phase1.md)。
 
+**模型范围说明（11月5日补充）**：本阶段和下方综合图聚焦AnyPPG；第一阶段还评了PaPaGei-S、Pulse-PPG及MOMENT，更早PPG-Bench包含PaPaGei-P和SigmaPPG。未进入本阶段的模型不能按“未测即落后”解释。完整覆盖、选择依据及Apple 2024/Google论文对照见[专题分析](ppg_model_scope_and_literature_analysis.md)。
+
 ## 跨任务对比图
 
 ![PPG跨任务方法对比](results/ppg_phase2/ppg_task_comparison.png)

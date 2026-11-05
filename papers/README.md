@@ -8,6 +8,8 @@
 
 第二阶段见[跨任务综合图与报告](../docs/ppg_phase2_results.md)：补齐EMBC21/Biagetti的人工腕部PPG起始点与完整BUT-PPG质量标签。DaLiA/Wild的ECG参考另做检测器核查，但跨模态毫秒配准未解决，严格ECG事件试跑只作为诊断。真实人工起始点、60秒PRV算法一致性和手机SQI分别报告，不能互相替代或直接推出临床HRV能力。
 
+2026-11-05补充[模型覆盖、选型与Apple/Google论文对照](../docs/ppg_model_scope_and_literature_analysis.md)：区分第一阶段三个PPG基模加MOMENT、第二阶段AnyPPG案例与历史五个PPG模型版本；重点复核Apple ICLR 2024的健康信息增量证据，及LSM、SensorFM、WBM的输入层级与适配方式。本次调研仓参考为[`0cdfed1a0b552de39b30d3fcb011c6e3a2e2baf7`](https://github.com/tujy859/Wearable-Physiological-Foundation-Models/tree/0cdfed1a0b552de39b30d3fcb011c6e3a2e2baf7)，核对`data/models.yaml`及腕戴模型、腕戴迁移、纵向可穿戴三个专题，关键结论回到原论文；未修改外部仓或运行新实验。
+
 ## 开工阅读顺序
 
 1. 阅读根目录 [AGENTS.md](../AGENTS.md)，确认当前实现状态、未完成任务和数据限制。

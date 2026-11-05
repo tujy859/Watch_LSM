@@ -9,17 +9,18 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-11-04（Asia/Shanghai，第二阶段逐搏/PRV、迁移诊断与SQI完成，综合图已生成；旧10月31日进程及数量仅历史快照）*
+*最后更新时间：2026-11-05（Asia/Shanghai，模型覆盖、选型与Apple/Google论文对照已复核；两阶段实验数值未改，旧10月31日进程及数量仅历史快照）*
 
 > **当前目标优先级**：用户明确先建立面向手表PPG的基础模型评测体系，再开展训练；项目为科学严谨、工程轻量的PoC。任务覆盖信号处理、HR/逐搏/PRV与健康表征；“基模更强”为待检验假设。具体实验顺序建议见[评测PoC讨论稿](docs/ppg_evaluation_poc_plan.md)，不把生产级架构或全套PPG-Bench跑完作为首个结论的前置条件。
 
-> **下一会话先读**：[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[腕部HR第一阶段结果](docs/ppg_hr_poc_phase1.md)。两阶段PoC均已完成，无须恢复训练。第二阶段共享证据在`docs/results/ppg_phase2/`，原始数据与概率/权重在`.local/ppg-phase2/`及数据目录。原PPG-Bench/PulseDB历史工作线再读[2026-10-31交接](docs/session_handover_2026-10-31.md)，旧全套队列本轮未恢复，不照搬历史PID。
+> **下一会话先读**：[模型覆盖、选型与论文对照](docs/ppg_model_scope_and_literature_analysis.md)、[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[腕部HR第一阶段结果](docs/ppg_hr_poc_phase1.md)。两阶段PoC均已完成，无须恢复训练。第二阶段共享证据在`docs/results/ppg_phase2/`，原始数据与概率/权重在`.local/ppg-phase2/`及数据目录。原PPG-Bench/PulseDB历史工作线再读[2026-10-31交接](docs/session_handover_2026-10-31.md)，旧全套队列本轮未恢复，不照搬历史PID。
 
 > **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **11月5日模型范围与Apple/Google论文对照复核**：新增`docs/ppg_model_scope_and_literature_analysis.md`，明确第一阶段AnyPPG/PaPaGei-S/Pulse-PPG加MOMENT、第二阶段仅AnyPPG基模案例、历史PPG-BP另含PaPaGei-P/SigmaPPG；后两者实际已评，不是因性能差或无法运行被排除。补充Pulse-PPG在Wild三人预算相对CNN减少1.84bpm[0.64,3.16]，Any两域收益更一致。Apple ICLR2024主要是人级健康信息与人口学/HR统计对照，不提供逐搏或HRV误差结论；PaPaGei-P的同人对比路线值得补入。LSM的线性/小卷积头差异说明当前Ridge结果不是能力上限；SensorFM/WBM为派生指标的长时建模，不能作为原始PPG去噪证据。调研仓参考`0cdfed1a0b552de39b30d3fcb011c6e3a2e2baf7`；建议补模型矩阵、受控任务头/随机骨干消融、一个健康信息增量任务，均为后续方案。本轮仅分析及文档更新，未启动评测、预训练、下载或恢复旧队列，未改实验结果。
 - [x] **11月4日第二阶段逐搏/PRV与综合图完成**：补齐EMBC21/Biagetti腕部400Hz数据及单专家onset：7人105采集记录、21806原始/21508有效标注，正确排除人工伪影与39孤立缺样；固定7折LOSO（5train/1val/1test），AnyPPG冻结六层时序特征+26737参数头、17353参数CNN、MSPTDfast风格传统算法，14神经拟合+7传统配置、315预测全部审计通过。实际评分20725点，F1±50ms为Any .97899/CNN .97472/传统 .96618；Any−CNN差CI跨0，成功匹配间期MAE三者约16ms，传统略低但覆盖也低。60秒RMSSD误差19.13/36.07/38.32ms、SDPP9.73/23.82/21.53ms；175窗中159静息，蹲起仅1人/2窗、踏步4人/14窗；300秒仅2人4窗，不能称标准HRV人群验证。独立17073标量复算最大差5.68e-14、CPU概率差<6.3e-6且事件完全一致，149项本机测试通过。综合PNG/SVG、原始量纲分面图及复现证据在`docs/results/ppg_phase2/`；图可仅用Git内统计重绘。未开展基模预训练或编码器微调，无新依赖、旧队列未恢复。
 - [x] **11月4日跨域HR下降与完整SQI完成**：相同Wild测试窗口上，Any迁移相对域内MAE增加6.53bpm[3.77,9.20]，CNN增加4.37[3.49,5.21]；Any低HR60–80贡献5.64、低ACC贡献4.04bpm，不能归因单纯剧烈运动或已证明硬件因果。完整BUT-PPG v2的3888条红通道/50人（830Good/3058Poor）已独立补齐，5折3种子60结果通过，Any/CNN/手工SQI AUROC .8723/.8340/.8528；Any−CNN CI>0，Any−手工CI跨0。手机HR可读性辅助域，不等于腕部形态质量。旧Good子集35条早期编码物理值读取及另795条RGB绿/红通道不一致问题已记录；旧数据和结果未覆盖。数据恢复清单`data_manifests/ppg_phase2_assets.json`，详细说明见第二阶段报告。
 - [x] **11月4日ECG参考审计与同步限制已登记**：最终参考为`.local/ppg-phase2/reference-v3/`，DaLiA原峰重复4条、Wild7条，原列表保留、受影响PRV窗排除；31人124输出哈希通过。DaLiA人工ECG峰独立抽查F1 .99249，Wild全长自动双检测器一致性.90699；Wild300秒可用1640/2592，严格.99门槛1343窗。可靠ECG峰不代表PPG毫秒配准；仅源训练人51片段诊断出现1.75–2.45秒最优偏移，且不恒定、有周期混叠。严格ECG事件试跑`.local/ppg-phase2/beats/`保留作同步诊断，不能进入有效PPG提点排名；未使用测试标签对齐或据此调整最终人工onset协议。新主参考是PPG自身单专家起始点，PRV算法一致性不等于ECG HRV。
