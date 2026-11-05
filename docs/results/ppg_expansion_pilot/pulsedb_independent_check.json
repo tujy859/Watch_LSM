@@ -1,0 +1,19 @@
+{
+  "rows": 128,
+  "ppg_max_abs_difference": 0.0,
+  "label_max_abs_difference": 0.0,
+  "abp_peak_turn_label_max_difference": [
+    5.684341886080802e-14,
+    2.842170943040401e-14
+  ],
+  "independent_h5py_loop": true,
+  "unit_tests_passed": 10,
+  "test_temp_directory": "project .local/test-tmp (system Temp denied by current execution permissions)",
+  "foundation_regression_metrics_independently_recomputed": 6,
+  "foundation_selected_rows_identity_verified": 128,
+  "sigma_actual_native_fs": 50,
+  "sigma_native_input_and_used_samples": [
+    500,
+    500
+  ]
+}

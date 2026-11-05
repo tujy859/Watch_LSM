@@ -1,0 +1,14 @@
+{
+  "checked_at": "2026-11-05T20:19:27.883361+08:00",
+  "local_unittest_count": 186,
+  "local_unittest_result": "passed",
+  "command": "python -m unittest discover -s tests -q",
+  "temporary_directory": "workspace .local/test-tmp",
+  "new_dependencies": false,
+  "new_pretraining": false,
+  "formal_expansion_started": false,
+  "markdown_local_links": "passed",
+  "completed_hr_figure_means_checked": 40,
+  "phase2_figure_values_unchanged": true,
+  "visual_review": "PNG coverage and HR figures inspected; no score from new pilots included"
+}

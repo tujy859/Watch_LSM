@@ -1,0 +1,366 @@
+{
+  "source_sha256": "548f5cf28183e430124232030b9898ff79f103ddd3001d4bd2458ff4657c7d2b",
+  "source": "docs/results/ppg_hr_poc/per_subject.csv",
+  "values": [
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "AnyPPG",
+      "mae_bpm": 7.876036012128476,
+      "ci_low": 6.336329251888269,
+      "ci_high": 9.626265219817956
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "PaPaGei-S",
+      "mae_bpm": 14.433262550535925,
+      "ci_low": 12.20200858925855,
+      "ci_high": 17.048879134003425
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "PulsePPG",
+      "mae_bpm": 10.489569088914141,
+      "ci_low": 8.793513833776355,
+      "ci_high": 12.436618870347207
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "MOMENT-1-small",
+      "mae_bpm": 8.628485273062223,
+      "ci_low": 7.094739027219405,
+      "ci_high": 10.361887857983366
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "SmallCNN",
+      "mae_bpm": 7.237941904772869,
+      "ci_low": 5.8392430998055955,
+      "ci_high": 8.962496713738034
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "elgendi",
+      "mae_bpm": 10.446480590323459,
+      "ci_low": 8.710847182854062,
+      "ci_high": 12.330502934165018
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "welch",
+      "mae_bpm": 17.396978699455822,
+      "ci_low": 13.518092303595076,
+      "ci_high": 22.323388553351716
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "full",
+      "method": "TrainMean",
+      "mae_bpm": 18.892797548512593,
+      "ci_low": 15.752464476990797,
+      "ci_high": 22.678647901090123
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "AnyPPG",
+      "mae_bpm": 11.18147834422834,
+      "ci_low": 8.561314623258168,
+      "ci_high": 14.539080410613476
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "PaPaGei-S",
+      "mae_bpm": 13.6235885678884,
+      "ci_low": 11.12961956678832,
+      "ci_high": 16.67151392331304
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "PulsePPG",
+      "mae_bpm": 12.017470519385826,
+      "ci_low": 9.594966325486258,
+      "ci_high": 14.941014665198999
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "MOMENT-1-small",
+      "mae_bpm": 12.633145120135499,
+      "ci_low": 10.097168542501622,
+      "ci_high": 15.802182697821102
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "SmallCNN",
+      "mae_bpm": 11.50479393469909,
+      "ci_low": 9.023654276320128,
+      "ci_high": 14.482073418333236
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "elgendi",
+      "mae_bpm": 16.45552323826497,
+      "ci_low": 13.918663489847626,
+      "ci_high": 18.82911709813132
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "welch",
+      "mae_bpm": 23.311632554680166,
+      "ci_low": 19.30425957961223,
+      "ci_high": 27.636720781483163
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "TrainMean",
+      "mae_bpm": 13.786771515595056,
+      "ci_low": 10.876796597009273,
+      "ci_high": 17.30115283411637
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "AnyPPG",
+      "mae_bpm": 9.520846831385553,
+      "ci_low": 7.830186121905059,
+      "ci_high": 11.528226564629279
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "PaPaGei-S",
+      "mae_bpm": 17.024674574699358,
+      "ci_low": 14.898426805741478,
+      "ci_high": 19.681279759802273
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "PulsePPG",
+      "mae_bpm": 12.384597763949099,
+      "ci_low": 10.53768568232978,
+      "ci_high": 14.65527936395979
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "MOMENT-1-small",
+      "mae_bpm": 10.50016243358976,
+      "ci_low": 8.765794951963493,
+      "ci_high": 12.630609117460558
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "SmallCNN",
+      "mae_bpm": 11.458738163945746,
+      "ci_low": 9.437153202247053,
+      "ci_high": 14.276803082394025
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "elgendi",
+      "mae_bpm": 10.446480590323459,
+      "ci_low": 8.710847182854062,
+      "ci_high": 12.330502934165018
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "welch",
+      "mae_bpm": 17.396978699455822,
+      "ci_low": 13.518092303595076,
+      "ci_high": 22.323388553351716
+    },
+    {
+      "scenario": "within",
+      "target": "Dalia",
+      "training_label_setting": "3",
+      "method": "TrainMean",
+      "mae_bpm": 21.434149048962997,
+      "ci_low": 18.670793505198716,
+      "ci_high": 24.93026615838262
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "AnyPPG",
+      "mae_bpm": 11.576767614979476,
+      "ci_low": 9.57028603205342,
+      "ci_high": 14.206497006434017
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "PaPaGei-S",
+      "mae_bpm": 14.000337163549027,
+      "ci_low": 12.06446805765599,
+      "ci_high": 16.430899892903064
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "PulsePPG",
+      "mae_bpm": 12.608274155372971,
+      "ci_low": 10.744767259477156,
+      "ci_high": 14.88064630780548
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "MOMENT-1-small",
+      "mae_bpm": 13.177049583823667,
+      "ci_low": 11.256987377099788,
+      "ci_high": 15.584832413001424
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "SmallCNN",
+      "mae_bpm": 14.449399008209145,
+      "ci_low": 12.32889542510928,
+      "ci_high": 17.128268630975985
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "elgendi",
+      "mae_bpm": 16.45552323826497,
+      "ci_low": 13.918663489847626,
+      "ci_high": 18.82911709813132
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "welch",
+      "mae_bpm": 23.311632554680166,
+      "ci_low": 19.30425957961223,
+      "ci_high": 27.636720781483163
+    },
+    {
+      "scenario": "within",
+      "target": "WildPPG",
+      "training_label_setting": "3",
+      "method": "TrainMean",
+      "mae_bpm": 14.693681731210884,
+      "ci_low": 12.5278441777265,
+      "ci_high": 17.56921186759375
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "AnyPPG",
+      "mae_bpm": 17.71581454140567,
+      "ci_low": 14.575966829885177,
+      "ci_high": 21.023276935319505
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "PaPaGei-S",
+      "mae_bpm": 19.30187846186138,
+      "ci_low": 16.760581385929115,
+      "ci_high": 22.0828938481404
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "PulsePPG",
+      "mae_bpm": 18.86665669667378,
+      "ci_low": 16.002362237765915,
+      "ci_high": 21.434254721769314
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "MOMENT-1-small",
+      "mae_bpm": 15.996416368904972,
+      "ci_low": 13.816206097989314,
+      "ci_high": 18.574411662067718
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "SmallCNN",
+      "mae_bpm": 15.872821820276055,
+      "ci_low": 13.758410635046708,
+      "ci_high": 18.316026795564913
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "elgendi",
+      "mae_bpm": 16.45552323826497,
+      "ci_low": 13.918663489847626,
+      "ci_high": 18.82911709813132
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "welch",
+      "mae_bpm": 23.311632554680166,
+      "ci_low": 19.30425957961223,
+      "ci_high": 27.636720781483163
+    },
+    {
+      "scenario": "transfer",
+      "target": "WildPPG",
+      "training_label_setting": "full",
+      "method": "TrainMean",
+      "mae_bpm": 17.35541474243864,
+      "ci_low": 14.266973799642582,
+      "ci_high": 21.345140953066384
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "created_at": "2026-11-05T11:54:31.777839+00:00",
+  "purpose": "Small-sample execution check only; not a performance ranking or clinical validation",
+  "data": "PulseDB v2, MIMIC source only for regression",
+  "upstream_commit": "db0824f18d9a462458e46fe94c31283a93a5c0d5",
+  "mapping_source": "https://github.com/pulselabteam/PulseDB/blob/db0824f18d9a462458e46fe94c31283a93a5c0d5/Generate_Subsets.m",
+  "seed": 20261105,
+  "sampling_hz": 125,
+  "window_seconds": 10,
+  "waveform_field": "PPG_F",
+  "reference_fields": [
+    "SegSBP",
+    "SegDBP"
+  ],
+  "pretrained_encoder_used": true,
+  "new_downloads": [],
+  "selection": "Fixed seeded official-row sampling, source and local-file availability; no BP-based selection",
+  "search": {
+    "Train_Info": {
+      "official_rows": 902160,
+      "candidate_rows_examined": 152,
+      "selected_people": 12,
+      "source": "MIMIC"
+    },
+    "CalFree_Test_Info": {
+      "official_rows": 111600,
+      "candidate_rows_examined": 15,
+      "selected_people": 4,
+      "source": "MIMIC"
+    }
+  },
+  "patient_identity": "source plus first seven characters of Subj_Name, checked against waveform SubjectID",
+  "patient_disjoint": true,
+  "split_patients": {
+    "train": [
+      "MIMIC:p063710",
+      "MIMIC:p068744",
+      "MIMIC:p069464",
+      "MIMIC:p076675",
+      "MIMIC:p084886",
+      "MIMIC:p086546",
+      "MIMIC:p086648",
+      "MIMIC:p087470"
+    ],
+    "validation": [
+      "MIMIC:p063878",
+      "MIMIC:p074618",
+      "MIMIC:p079875",
+      "MIMIC:p084629"
+    ],
+    "test": [
+      "MIMIC:p063187",
+      "MIMIC:p076896",
+      "MIMIC:p082065",
+      "MIMIC:p085508"
+    ]
+  },
+  "split_sizes": {
+    "train": {
+      "people": 8,
+      "segments": 64
+    },
+    "validation": {
+      "people": 4,
+      "segments": 32
+    },
+    "test": {
+      "people": 4,
+      "segments": 32
+    }
+  },
+  "mapping_checks": {
+    "rows_verified": 128,
+    "label_tolerance_mmhg": 1e-06,
+    "segment_id_differs_from_position": 128
+  },
+  "aami_mapping_only": [
+    {
+      "source": "MIMIC",
+      "info_row_zero_based": 0,
+      "patient_id": "MIMIC:p072634",
+      "segment_position_one_based": 1,
+      "labels_and_waveform_checked": true
+    },
+    {
+      "source": "VitalDB",
+      "info_row_zero_based": 674,
+      "patient_id": "VitalDB:p002747",
+      "segment_position_one_based": 9,
+      "labels_and_waveform_checked": true
+    }
+  ],
+  "features": {
+    "n_features": 16,
+    "input": "PPG only, no ECG/ABP/demographics"
+  },
+  "results": [
+    {
+      "target": "sbp",
+      "method": "PPG_features_Ridge",
+      "alpha": 100.0,
+      "validation_person_mae_mmhg": 26.107407294616436,
+      "test_person_mae_mmhg": 31.422674746339855,
+      "test_window_mae_mmhg": 31.422674746339855
+    },
+    {
+      "target": "sbp",
+      "method": "Train_mean",
+      "alpha": null,
+      "validation_person_mae_mmhg": null,
+      "test_person_mae_mmhg": 30.478845215126377,
+      "test_window_mae_mmhg": 30.478845215126377
+    },
+    {
+      "target": "dbp",
+      "method": "PPG_features_Ridge",
+      "alpha": 100.0,
+      "validation_person_mae_mmhg": 15.53144467860212,
+      "test_person_mae_mmhg": 8.798651676729865,
+      "test_window_mae_mmhg": 8.798651676729863
+    },
+    {
+      "target": "dbp",
+      "method": "Train_mean",
+      "alpha": null,
+      "validation_person_mae_mmhg": null,
+      "test_person_mae_mmhg": 8.220465045831379,
+      "test_window_mae_mmhg": 8.220465045831379
+    }
+  ],
+  "selected_rows_sha256": "018661b0ef3881a49c65eb63a5dd3a214083c2c7d692adb972bba83bbd166acc",
+  "limitations": [
+    "Only the selected train/validation/test patient sets were audited for intersection; not a whole-index audit",
+    "File availability and source restrict the pilot; it is not representative of PulseDB or AAMI",
+    "Validation people come exclusively from official Train_Info; no official standalone validation split exists here",
+    "Test comes from official CalFree_Test_Info; AAMI labels did not enter fitting, selection or reported errors",
+    "Future foundation-model results require pretraining-overlap disclosure: AnyPPG includes PulseDB; PaPaGei uses source cohorts",
+    "PPG_F is already filtered/normalized by PulseDB and is not clean/noisy denoising ground truth",
+    "The dataset is clinical finger PPG, not wrist blood-pressure validation",
+    "The reported test subset is now exposed by this pilot; later design choices must not treat it as a fresh blind holdout"
+  ],
+  "foundation_interface_check": [
+    {
+      "model": "AnyPPG",
+      "evidence": {
+        "model": "AnyPPG",
+        "random_init": false,
+        "seed": 42,
+        "pretrained_weights_loaded": true,
+        "random_initialization": null,
+        "shape": [
+          128,
+          512
+        ],
+        "native_fs": 125,
+        "native_input_samples": 1250,
+        "native_used_samples": 1250,
+        "encoder_parameters": 4044272,
+        "encoder_trainable_parameters": 0,
+        "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+        "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+        "checkpoint_sha256": {
+          "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+        },
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+        "device": "cuda",
+        "precision": "float32; no autocast",
+        "native_input_sha256": "1777181740d276557e04dc0aee3a92f408dc5c5af30c9a5cf84a3c35944f3542",
+        "record_statistics_sha256": "1f51abc07f5a205ade07cdcf76823bffa54bc37e3d7fab4c301ccc6c9a9ea2a6",
+        "torch_version": "2.5.1+cu124",
+        "numpy_version": "1.26.4",
+        "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+        "elapsed_seconds": 0.4369999999762513
+      },
+      "results": [
+        {
+          "target": "sbp",
+          "method": "AnyPPG_frozen_Ridge",
+          "alpha": 10.0,
+          "validation_person_mae_mmhg": 23.390268208831188,
+          "test_person_mae_mmhg": 27.10704067649147,
+          "test_window_mae_mmhg": 27.10704067649147
+        },
+        {
+          "target": "dbp",
+          "method": "AnyPPG_frozen_Ridge",
+          "alpha": 0.1,
+          "validation_person_mae_mmhg": 8.847135565113806,
+          "test_person_mae_mmhg": 12.293588947572246,
+          "test_window_mae_mmhg": 12.293588947572246
+        }
+      ]
+    },
+    {
+      "model": "PaPaGei-P",
+      "evidence": {
+        "model": "PaPaGei-P",
+        "random_init": false,
+        "seed": 42,
+        "pretrained_weights_loaded": true,
+        "random_initialization": null,
+        "shape": [
+          128,
+          512
+        ],
+        "native_fs": 125,
+        "native_input_samples": 1250,
+        "native_used_samples": 1250,
+        "encoder_parameters": 4993024,
+        "encoder_trainable_parameters": 0,
+        "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+        "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+        "checkpoint_sha256": {
+          "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+        },
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+        "device": "cuda",
+        "precision": "float32; no autocast",
+        "native_input_sha256": "1777181740d276557e04dc0aee3a92f408dc5c5af30c9a5cf84a3c35944f3542",
+        "record_statistics_sha256": "1f51abc07f5a205ade07cdcf76823bffa54bc37e3d7fab4c301ccc6c9a9ea2a6",
+        "torch_version": "2.5.1+cu124",
+        "numpy_version": "1.26.4",
+        "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+        "elapsed_seconds": 0.18700000003445894
+      },
+      "results": [
+        {
+          "target": "sbp",
+          "method": "PaPaGei-P_frozen_Ridge",
+          "alpha": 100.0,
+          "validation_person_mae_mmhg": 28.007975771785134,
+          "test_person_mae_mmhg": 28.659187248959828,
+          "test_window_mae_mmhg": 28.659187248959828
+        },
+        {
+          "target": "dbp",
+          "method": "PaPaGei-P_frozen_Ridge",
+          "alpha": 100.0,
+          "validation_person_mae_mmhg": 16.712868906743623,
+          "test_person_mae_mmhg": 8.43001438142734,
+          "test_window_mae_mmhg": 8.430014381427338
+        }
+      ]
+    },
+    {
+      "model": "SigmaPPG",
+      "evidence": {
+        "model": "SigmaPPG",
+        "random_init": false,
+        "seed": 42,
+        "pretrained_weights_loaded": true,
+        "random_initialization": null,
+        "shape": [
+          128,
+          360
+        ],
+        "native_fs": 50,
+        "native_input_samples": 500,
+        "native_used_samples": 500,
+        "encoder_parameters": 29700928,
+        "encoder_trainable_parameters": 0,
+        "state_before_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+        "state_after_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+        "checkpoint_sha256": {
+          "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+        },
+        "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+        "native_port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+        "device": "cuda",
+        "precision": "float32; no autocast",
+        "native_input_sha256": "f82d152fe6dcf5c5ae19007d5460a07bed4b93307b7d6e6b8da0fba9bb076077",
+        "record_statistics_sha256": "9c6827151937595d9ef98907329ba2cac5ac8c27d1b4262861b6a6ea863d89cb",
+        "torch_version": "2.5.1+cu124",
+        "numpy_version": "1.26.4",
+        "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+        "elapsed_seconds": 3.0939999999827705
+      },
+      "results": [
+        {
+          "target": "sbp",
+          "method": "SigmaPPG_frozen_Ridge",
+          "alpha": 0.1,
+          "validation_person_mae_mmhg": 27.709085787511903,
+          "test_person_mae_mmhg": 32.341210689770165,
+          "test_window_mae_mmhg": 32.341210689770165
+        },
+        {
+          "target": "dbp",
+          "method": "SigmaPPG_frozen_Ridge",
+          "alpha": 0.1,
+          "validation_person_mae_mmhg": 16.18792368345059,
+          "test_person_mae_mmhg": 10.566296613746255,
+          "test_window_mae_mmhg": 10.566296613746255
+        }
+      ]
+    }
+  ],
+  "foundation_input_note": "PPG_F was already filtered/normalized by PulseDB, then processed by each native model port. This checks execution, not the optimal preprocessing protocol. AnyPPG/PaPaGei-P use 1250 samples at 125 Hz; SigmaPPG resamples to 500 samples at 50 Hz and uses all 500, so all three use 10 seconds. The three encoders use identical fit/validation/test rows and Ridge alpha candidates; native embedding sizes differ, unlike the controlled task-head experiment in the separate model pilot.",
+  "foundation_input_identity_checked_rows": 128
+}

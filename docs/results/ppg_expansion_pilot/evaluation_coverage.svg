@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1080pt" height="763.2pt" viewBox="0 0 1080 763.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-05T20:19:27.511646</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 763.2
+L 1080 763.2
+L 1080 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 313.2 671.616
+L 1058.4 671.616
+L 1058.4 83.952
+L 313.2 83.952
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g clip-path="url(#pc1953c8d1e)">
+    <image xlink:href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAABuAAAAVsCAYAAADJ0lumAAAym0lEQVR4nOzbIW5bURBAUbuyZPCLu4cSM4Mu4C+qK+iOCuIlhJkEhVvFNqgCXJbKOFf6z845C3gaDXrS1ax/v56uK4BBzNNx6REA3h0uO9sAhuKvBIzEXwkYiX8SMJovSw8AAAAAAAAAj0SAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQuu309O1fBAAAAAAAAA+MxdwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAgAAHAAAAAAAAY3IBBwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABAaHO47Mr3AD5kno42CAzDPwkYjb8SAADAfXABBwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAAABDgAAAAAAAMbkAg4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAACHAAAAAAAAIzJBRwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACA0KZ8DAAAAIDP4XDZLT0CwLt5OtoGMBQXcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAIMABAAAAAADAmFzAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAQIADAAAAAACAMbmAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAgAAHAAAAAAAAY3IBBwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQWr+dnq7lgwAAj+K83S89AgAAAAB3yAUcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgtCkfAwB4JF//Pi89AsCN83ZvIwAAAHfABRwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAgAAHAAAAAAAAY3IBBwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACC0+fnyp3wP4EN+ff9mg8AwDpfd0iMA3JhXzzYCDMNfCRjJPB2XHgHghgs4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAQ4AAAAAAAAGBMLuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgtCkfAwB4JPN0XHoEgBvn7d5GgGH82C49AcB/55V/EjAWF3AAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAAAEOAAAAAAAABiTCzgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACAkwAEAAAAAAEBIgAMAAAAAAICQAAcAAAAAAAAhAQ4AAAAAAABCAhwAAAAAAACEBDgAAAAAAAAICXAAAAAAAAAQEuAAAAAAAAAgJMABAAAAAABASIADAAAAAACAkAAHAAAAAAAAIQEOAAAAAAAAQgIcAAAAAAAAhAQ4AAAAAAAACAlwAAAAAAAAEBLgAAAAAAAAICTAAQAAAAAAQEiAAwAAAAAAgJAABwAAAAAAACEBDgAAAAAAAEICHAAAAAAAAIQEOAAAAAAAAAgJcAAAAAAAABAS4AAAAAAAACA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" id="imagec4bbb08906" transform="scale(1 -1) translate(0 -587.858824)" x="313.2" y="-83.757176" width="745.411765" height="587.858824"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font: 12px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="70.8995" transform="rotate(-0 375.3 70.8995)">AnyPPG</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font: 12px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="70.968875" transform="rotate(-0 499.5 70.968875)">PaPaGei-S</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font: 12px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="70.968875" transform="rotate(-0 623.7 70.968875)">PaPaGei-P</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font: 12px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="70.968875" transform="rotate(-0 747.9 70.968875)">Pulse-PPG</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font: 12px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="70.8995" transform="rotate(-0 872.1 70.8995)">SigmaPPG</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font: 12px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="70.968875" transform="rotate(-0 996.3 70.968875)">MOMENT</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_7">
+      <path d="M 313.2 671.616
+L 313.2 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8"/>
+    </g>
+    <g id="xtick_8">
+     <g id="line2d_9">
+      <path d="M 437.4 671.616
+L 437.4 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10"/>
+    </g>
+    <g id="xtick_9">
+     <g id="line2d_11">
+      <path d="M 561.6 671.616
+L 561.6 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12"/>
+    </g>
+    <g id="xtick_10">
+     <g id="line2d_13">
+      <path d="M 685.8 671.616
+L 685.8 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14"/>
+    </g>
+    <g id="xtick_11">
+     <g id="line2d_15">
+      <path d="M 810 671.616
+L 810 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_16"/>
+    </g>
+    <g id="xtick_12">
+     <g id="line2d_17">
+      <path d="M 934.2 671.616
+L 934.2 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_18"/>
+    </g>
+    <g id="xtick_13">
+     <g id="line2d_19">
+      <path d="M 1058.4 671.616
+L 1058.4 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_20"/>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_21"/>
+     <g id="text_7">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="107.937362" transform="rotate(-0 303.2 107.937362)">腕部心率：域内、少标注人数</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_22"/>
+     <g id="text_8">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="147.114962" transform="rotate(-0 303.2 147.114962)">腕部心率：跨数据集</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_23"/>
+     <g id="text_9">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="186.292562" transform="rotate(-0 303.2 186.292562)">逐搏起始点 / 间期</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_24"/>
+     <g id="text_10">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="225.470162" transform="rotate(-0 303.2 225.470162)">PRV：RMSSD、间期标准差</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_25"/>
+     <g id="text_11">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="264.647762" transform="rotate(-0 303.2 264.647762)">手机PPG质量分类</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_26"/>
+     <g id="text_12">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="303.825362" transform="rotate(-0 303.2 303.825362)">点级运动伪影：SEGADE</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_27"/>
+     <g id="text_13">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="343.002963" transform="rotate(-0 303.2 343.002963)">配对波形去噪：合成压力测试</text>
+     </g>
+    </g>
+    <g id="ytick_8">
+     <g id="line2d_28"/>
+     <g id="text_14">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="382.180563" transform="rotate(-0 303.2 382.180563)">呼吸率：人工呼吸参考</text>
+     </g>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_29"/>
+     <g id="text_15">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="421.358162" transform="rotate(-0 303.2 421.358162)">血压：PulseDB官方划分</text>
+     </g>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_30"/>
+     <g id="text_16">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="460.535762" transform="rotate(-0 303.2 460.535762)">压力 / 中性 / 愉悦状态</text>
+     </g>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_31"/>
+     <g id="text_17">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="499.713362" transform="rotate(-0 303.2 499.713362)">六类情绪刺激</text>
+     </g>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_32"/>
+     <g id="text_18">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="538.890963" transform="rotate(-0 303.2 538.890963)">腕部SDS分数：健康信息增量</text>
+     </g>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_33"/>
+     <g id="text_19">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="578.068562" transform="rotate(-0 303.2 578.068562)">指端血压：健康信息增量</text>
+     </g>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_34"/>
+     <g id="text_20">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="617.246162" transform="rotate(-0 303.2 617.246162)">年龄：新受控任务头</text>
+     </g>
+    </g>
+    <g id="ytick_15">
+     <g id="line2d_35"/>
+     <g id="text_21">
+      <text style="font: 11px 'Microsoft YaHei'; text-anchor: end" x="303.2" y="656.617122" transform="rotate(-0 303.2 656.617122)">SpO2：探索性预测</text>
+     </g>
+    </g>
+    <g id="ytick_16">
+     <g id="line2d_36">
+      <path d="M 313.2 83.952
+L 1058.4 83.952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_37"/>
+    </g>
+    <g id="ytick_17">
+     <g id="line2d_38">
+      <path d="M 313.2 123.1296
+L 1058.4 123.1296
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_39"/>
+    </g>
+    <g id="ytick_18">
+     <g id="line2d_40">
+      <path d="M 313.2 162.3072
+L 1058.4 162.3072
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_41"/>
+    </g>
+    <g id="ytick_19">
+     <g id="line2d_42">
+      <path d="M 313.2 201.4848
+L 1058.4 201.4848
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_43"/>
+    </g>
+    <g id="ytick_20">
+     <g id="line2d_44">
+      <path d="M 313.2 240.6624
+L 1058.4 240.6624
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_45"/>
+    </g>
+    <g id="ytick_21">
+     <g id="line2d_46">
+      <path d="M 313.2 279.84
+L 1058.4 279.84
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_47"/>
+    </g>
+    <g id="ytick_22">
+     <g id="line2d_48">
+      <path d="M 313.2 319.0176
+L 1058.4 319.0176
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_49"/>
+    </g>
+    <g id="ytick_23">
+     <g id="line2d_50">
+      <path d="M 313.2 358.1952
+L 1058.4 358.1952
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_51"/>
+    </g>
+    <g id="ytick_24">
+     <g id="line2d_52">
+      <path d="M 313.2 397.3728
+L 1058.4 397.3728
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_53"/>
+    </g>
+    <g id="ytick_25">
+     <g id="line2d_54">
+      <path d="M 313.2 436.5504
+L 1058.4 436.5504
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_55"/>
+    </g>
+    <g id="ytick_26">
+     <g id="line2d_56">
+      <path d="M 313.2 475.728
+L 1058.4 475.728
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_57"/>
+    </g>
+    <g id="ytick_27">
+     <g id="line2d_58">
+      <path d="M 313.2 514.9056
+L 1058.4 514.9056
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_59"/>
+    </g>
+    <g id="ytick_28">
+     <g id="line2d_60">
+      <path d="M 313.2 554.0832
+L 1058.4 554.0832
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_61"/>
+    </g>
+    <g id="ytick_29">
+     <g id="line2d_62">
+      <path d="M 313.2 593.2608
+L 1058.4 593.2608
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_63"/>
+    </g>
+    <g id="ytick_30">
+     <g id="line2d_64">
+      <path d="M 313.2 632.4384
+L 1058.4 632.4384
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_65"/>
+    </g>
+    <g id="ytick_31">
+     <g id="line2d_66">
+      <path d="M 313.2 671.616
+L 1058.4 671.616
+" clip-path="url(#pc1953c8d1e)" style="fill: none; stroke: #ffffff; stroke-width: 3; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_67"/>
+    </g>
+   </g>
+   <g id="text_22">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="106.294706" transform="rotate(-0 375.3 106.294706)">正式结果</text>
+   </g>
+   <g id="text_23">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="106.294706" transform="rotate(-0 499.5 106.294706)">正式结果</text>
+   </g>
+   <g id="text_24">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="106.294706" transform="rotate(-0 623.7 106.294706)">小样本通路</text>
+   </g>
+   <g id="text_25">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="106.294706" transform="rotate(-0 747.9 106.294706)">正式结果</text>
+   </g>
+   <g id="text_26">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="106.294706" transform="rotate(-0 872.1 106.294706)">小样本通路</text>
+   </g>
+   <g id="text_27">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="106.294706" transform="rotate(-0 996.3 106.294706)">正式结果</text>
+   </g>
+   <g id="text_28">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="145.472306" transform="rotate(-0 375.3 145.472306)">正式结果</text>
+   </g>
+   <g id="text_29">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="145.472306" transform="rotate(-0 499.5 145.472306)">正式结果</text>
+   </g>
+   <g id="text_30">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="145.472306" transform="rotate(-0 623.7 145.472306)">拟评测</text>
+   </g>
+   <g id="text_31">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="145.472306" transform="rotate(-0 747.9 145.472306)">正式结果</text>
+   </g>
+   <g id="text_32">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="145.472306" transform="rotate(-0 872.1 145.472306)">拟评测</text>
+   </g>
+   <g id="text_33">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="145.472306" transform="rotate(-0 996.3 145.472306)">正式结果</text>
+   </g>
+   <g id="text_34">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="184.649906" transform="rotate(-0 375.3 184.649906)">正式结果</text>
+   </g>
+   <g id="text_35">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="184.649906" transform="rotate(-0 499.5 184.649906)">拟评测</text>
+   </g>
+   <g id="text_36">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="184.649906" transform="rotate(-0 623.7 184.649906)">拟评测</text>
+   </g>
+   <g id="text_37">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="184.649906" transform="rotate(-0 747.9 184.649906)">暂不纳入</text>
+   </g>
+   <g id="text_38">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="184.649906" transform="rotate(-0 872.1 184.649906)">暂不纳入</text>
+   </g>
+   <g id="text_39">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="184.649906" transform="rotate(-0 996.3 184.649906)">暂不纳入</text>
+   </g>
+   <g id="text_40">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="223.827506" transform="rotate(-0 375.3 223.827506)">正式结果</text>
+   </g>
+   <g id="text_41">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="223.827506" transform="rotate(-0 499.5 223.827506)">拟评测</text>
+   </g>
+   <g id="text_42">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="223.827506" transform="rotate(-0 623.7 223.827506)">拟评测</text>
+   </g>
+   <g id="text_43">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="223.827506" transform="rotate(-0 747.9 223.827506)">暂不纳入</text>
+   </g>
+   <g id="text_44">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="223.827506" transform="rotate(-0 872.1 223.827506)">暂不纳入</text>
+   </g>
+   <g id="text_45">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="223.827506" transform="rotate(-0 996.3 223.827506)">暂不纳入</text>
+   </g>
+   <g id="text_46">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="263.005106" transform="rotate(-0 375.3 263.005106)">正式结果</text>
+   </g>
+   <g id="text_47">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="263.005106" transform="rotate(-0 499.5 263.005106)">拟评测</text>
+   </g>
+   <g id="text_48">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="263.005106" transform="rotate(-0 623.7 263.005106)">小样本通路</text>
+   </g>
+   <g id="text_49">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="263.005106" transform="rotate(-0 747.9 263.005106)">拟评测</text>
+   </g>
+   <g id="text_50">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="263.005106" transform="rotate(-0 872.1 263.005106)">小样本通路</text>
+   </g>
+   <g id="text_51">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="263.005106" transform="rotate(-0 996.3 263.005106)">拟评测</text>
+   </g>
+   <g id="text_52">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="302.182706" transform="rotate(-0 375.3 302.182706)">拟评测</text>
+   </g>
+   <g id="text_53">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="302.182706" transform="rotate(-0 499.5 302.182706)">拟评测</text>
+   </g>
+   <g id="text_54">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="302.182706" transform="rotate(-0 623.7 302.182706)">拟评测</text>
+   </g>
+   <g id="text_55">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="302.182706" transform="rotate(-0 747.9 302.182706)">暂不纳入</text>
+   </g>
+   <g id="text_56">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="302.182706" transform="rotate(-0 872.1 302.182706)">暂不纳入</text>
+   </g>
+   <g id="text_57">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="302.182706" transform="rotate(-0 996.3 302.182706)">暂不纳入</text>
+   </g>
+   <g id="text_58">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="341.360306" transform="rotate(-0 375.3 341.360306)">拟评测</text>
+   </g>
+   <g id="text_59">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="341.360306" transform="rotate(-0 499.5 341.360306)">拟评测</text>
+   </g>
+   <g id="text_60">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="341.360306" transform="rotate(-0 623.7 341.360306)">暂不纳入</text>
+   </g>
+   <g id="text_61">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="341.360306" transform="rotate(-0 747.9 341.360306)">暂不纳入</text>
+   </g>
+   <g id="text_62">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="341.360306" transform="rotate(-0 872.1 341.360306)">暂不纳入</text>
+   </g>
+   <g id="text_63">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="341.360306" transform="rotate(-0 996.3 341.360306)">暂不纳入</text>
+   </g>
+   <g id="text_64">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="380.537906" transform="rotate(-0 375.3 380.537906)">小样本通路</text>
+   </g>
+   <g id="text_65">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="380.537906" transform="rotate(-0 499.5 380.537906)">拟评测</text>
+   </g>
+   <g id="text_66">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="380.537906" transform="rotate(-0 623.7 380.537906)">小样本通路</text>
+   </g>
+   <g id="text_67">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="380.537906" transform="rotate(-0 747.9 380.537906)">拟评测</text>
+   </g>
+   <g id="text_68">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="380.537906" transform="rotate(-0 872.1 380.537906)">小样本通路</text>
+   </g>
+   <g id="text_69">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="380.537906" transform="rotate(-0 996.3 380.537906)">拟评测</text>
+   </g>
+   <g id="text_70">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="419.715506" transform="rotate(-0 375.3 419.715506)">小样本通路</text>
+   </g>
+   <g id="text_71">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="419.715506" transform="rotate(-0 499.5 419.715506)">拟评测</text>
+   </g>
+   <g id="text_72">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="419.715506" transform="rotate(-0 623.7 419.715506)">小样本通路</text>
+   </g>
+   <g id="text_73">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="419.715506" transform="rotate(-0 747.9 419.715506)">拟评测</text>
+   </g>
+   <g id="text_74">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="419.715506" transform="rotate(-0 872.1 419.715506)">小样本通路</text>
+   </g>
+   <g id="text_75">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="419.715506" transform="rotate(-0 996.3 419.715506)">拟评测</text>
+   </g>
+   <g id="text_76">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="458.893106" transform="rotate(-0 375.3 458.893106)">小样本通路</text>
+   </g>
+   <g id="text_77">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="458.893106" transform="rotate(-0 499.5 458.893106)">拟评测</text>
+   </g>
+   <g id="text_78">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="458.893106" transform="rotate(-0 623.7 458.893106)">小样本通路</text>
+   </g>
+   <g id="text_79">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="458.893106" transform="rotate(-0 747.9 458.893106)">拟评测</text>
+   </g>
+   <g id="text_80">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="458.893106" transform="rotate(-0 872.1 458.893106)">小样本通路</text>
+   </g>
+   <g id="text_81">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="458.893106" transform="rotate(-0 996.3 458.893106)">拟评测</text>
+   </g>
+   <g id="text_82">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="498.070706" transform="rotate(-0 375.3 498.070706)">小样本通路</text>
+   </g>
+   <g id="text_83">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="498.070706" transform="rotate(-0 499.5 498.070706)">拟评测</text>
+   </g>
+   <g id="text_84">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="498.070706" transform="rotate(-0 623.7 498.070706)">小样本通路</text>
+   </g>
+   <g id="text_85">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="498.070706" transform="rotate(-0 747.9 498.070706)">拟评测</text>
+   </g>
+   <g id="text_86">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="498.070706" transform="rotate(-0 872.1 498.070706)">小样本通路</text>
+   </g>
+   <g id="text_87">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="498.070706" transform="rotate(-0 996.3 498.070706)">拟评测</text>
+   </g>
+   <g id="text_88">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="537.248306" transform="rotate(-0 375.3 537.248306)">小样本通路</text>
+   </g>
+   <g id="text_89">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="537.248306" transform="rotate(-0 499.5 537.248306)">拟评测</text>
+   </g>
+   <g id="text_90">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="537.248306" transform="rotate(-0 623.7 537.248306)">小样本通路</text>
+   </g>
+   <g id="text_91">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="537.248306" transform="rotate(-0 747.9 537.248306)">拟评测</text>
+   </g>
+   <g id="text_92">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="537.248306" transform="rotate(-0 872.1 537.248306)">拟评测</text>
+   </g>
+   <g id="text_93">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="537.248306" transform="rotate(-0 996.3 537.248306)">拟评测</text>
+   </g>
+   <g id="text_94">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="576.425906" transform="rotate(-0 375.3 576.425906)">小样本通路</text>
+   </g>
+   <g id="text_95">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="576.425906" transform="rotate(-0 499.5 576.425906)">拟评测</text>
+   </g>
+   <g id="text_96">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="576.425906" transform="rotate(-0 623.7 576.425906)">小样本通路</text>
+   </g>
+   <g id="text_97">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="576.425906" transform="rotate(-0 747.9 576.425906)">拟评测</text>
+   </g>
+   <g id="text_98">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="576.425906" transform="rotate(-0 872.1 576.425906)">拟评测</text>
+   </g>
+   <g id="text_99">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="576.425906" transform="rotate(-0 996.3 576.425906)">拟评测</text>
+   </g>
+   <g id="text_100">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="615.603506" transform="rotate(-0 375.3 615.603506)">拟评测</text>
+   </g>
+   <g id="text_101">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="615.603506" transform="rotate(-0 499.5 615.603506)">拟评测</text>
+   </g>
+   <g id="text_102">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="615.603506" transform="rotate(-0 623.7 615.603506)">拟评测</text>
+   </g>
+   <g id="text_103">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="615.603506" transform="rotate(-0 747.9 615.603506)">拟评测</text>
+   </g>
+   <g id="text_104">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="615.603506" transform="rotate(-0 872.1 615.603506)">拟评测</text>
+   </g>
+   <g id="text_105">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="615.603506" transform="rotate(-0 996.3 615.603506)">拟评测</text>
+   </g>
+   <g id="text_106">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="375.3" y="654.781106" transform="rotate(-0 375.3 654.781106)">小样本通路</text>
+   </g>
+   <g id="text_107">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="499.5" y="654.781106" transform="rotate(-0 499.5 654.781106)">拟评测</text>
+   </g>
+   <g id="text_108">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="623.7" y="654.781106" transform="rotate(-0 623.7 654.781106)">小样本通路</text>
+   </g>
+   <g id="text_109">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="747.9" y="654.781106" transform="rotate(-0 747.9 654.781106)">拟评测</text>
+   </g>
+   <g id="text_110">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="872.1" y="654.781106" transform="rotate(-0 872.1 654.781106)">小样本通路</text>
+   </g>
+   <g id="text_111">
+    <text style="font: 10px 'Microsoft YaHei'; text-anchor: middle" x="996.3" y="654.781106" transform="rotate(-0 996.3 654.781106)">拟评测</text>
+   </g>
+  </g>
+  <g id="text_112">
+   <text style="font: 700 19px 'Microsoft YaHei'; text-anchor: middle" x="540" y="30.452125" transform="rotate(-0 540 30.452125)">评测扩展方案：哪些已完成，哪些只跑通了小样本</text>
+  </g>
+  <g id="text_113">
+   <text style="font: 10.5px 'Microsoft YaHei'; text-anchor: middle" x="540" y="705.96" transform="rotate(-0 540 705.96)">绿色为既有协议的正式结果；本轮受控预测头仍只试跑。另设小CNN、传统方法、常数及随机Any对照。</text>
+  </g>
+  <g id="text_114">
+   <text style="fill: #555555; font: 10px 'Microsoft YaHei'; text-anchor: middle" x="540" y="730.3824" transform="rotate(-0 540 730.3824)">本图不是性能排名。灰色表示首轮不纳入；点级伪影和去噪已验证数据，但尚未训练基模输出头。</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pc1953c8d1e">
+   <rect x="313.2" y="83.952" width="745.2" height="587.664"/>
+  </clipPath>
+ </defs>
+</svg>

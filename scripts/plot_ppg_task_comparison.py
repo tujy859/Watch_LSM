@@ -102,10 +102,10 @@ def main():
         return values
     grouped(axes[0, 0], ["DaLiA 域内", "Wild 域内", "DaLiA→Wild"],
             hr_values([("Dalia", "within", "full"), ("WildPPG", "within", "full"), ("WildPPG", "transfer", "full")]),
-            "A  窗口心率 · 全标签预算", "MAE (bpm) ↓")
+            "A  心率 · 使用全部可用训练/验证者", "MAE (bpm) ↓")
     grouped(axes[0, 1], ["DaLiA", "WildPPG"],
             hr_values([("Dalia", "within", "3"), ("WildPPG", "within", "3")]),
-            "B  窗口心率 · 3人标签预算", "MAE (bpm) ↓")
+            "B  心率 · 2人训练、1人验证", "MAE (bpm) ↓")
     def beat_values(metric, duration):
         result = []
         for method in METHODS:

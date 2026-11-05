@@ -9,17 +9,21 @@
 
 ## 一、当前动态工作交接看板 (Active Handover & Task State)
 
-*最后更新时间：2026-11-05（Asia/Shanghai，模型覆盖、选型与Apple/Google论文对照已复核；两阶段实验数值未改，旧10月31日进程及数量仅历史快照）*
+*最后更新时间：2026-11-05（Asia/Shanghai，扩展模型/任务方案与小样本流程完成，完整扩展等待用户确认；新增BIDMC真实患者划分纠正，旧10月31日进程仅历史快照）*
 
 > **当前目标优先级**：用户明确先建立面向手表PPG的基础模型评测体系，再开展训练；项目为科学严谨、工程轻量的PoC。任务覆盖信号处理、HR/逐搏/PRV与健康表征；“基模更强”为待检验假设。具体实验顺序建议见[评测PoC讨论稿](docs/ppg_evaluation_poc_plan.md)，不把生产级架构或全套PPG-Bench跑完作为首个结论的前置条件。
 
-> **下一会话先读**：[模型覆盖、选型与论文对照](docs/ppg_model_scope_and_literature_analysis.md)、[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[腕部HR第一阶段结果](docs/ppg_hr_poc_phase1.md)。两阶段PoC均已完成，无须恢复训练。第二阶段共享证据在`docs/results/ppg_phase2/`，原始数据与概率/权重在`.local/ppg-phase2/`及数据目录。原PPG-Bench/PulseDB历史工作线再读[2026-10-31交接](docs/session_handover_2026-10-31.md)，旧全套队列本轮未恢复，不照搬历史PID。
+> **最新执行边界（11月5日用户明确）**：先梳理模型和任务、跑通小样本，再与用户确认是否启动正式计划。[扩展方案与试跑](docs/ppg_expansion_plan_and_pilot.md)已完成；**等待用户确认，不自动启动完整评测或恢复历史队列，不预训练基模**。此前历史“全套已授权”不能覆盖本条。说明标签用量时直接写训练/验证人数，避免未经解释的“全预算”等缩写。
 
-> **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。正式片段映射与基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
+> **下一会话先读**：[扩展方案、覆盖图与小样本证据](docs/ppg_expansion_plan_and_pilot.md)、[模型覆盖、选型与论文对照](docs/ppg_model_scope_and_literature_analysis.md)、[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[腕部HR第一阶段结果](docs/ppg_hr_poc_phase1.md)。两阶段PoC已完成，第三阶段仅小样本；新增共享证据在`docs/results/ppg_expansion_pilot/`，原始输入/预测在`.local/ppg-expansion-pilot/`。原PPG-Bench/PulseDB历史工作线再读[2026-10-31交接](docs/session_handover_2026-10-31.md)，旧全套队列本轮未恢复，不照搬历史PID。
+
+> **最新实施状态优先于历史记录**：本机已连接 `origin`，PR #1已合并，合并提交为 `30aef2c`；本地当前分支为 `main`，跟踪 `origin/main`。用户明确指定后续默认直接在 **main** 修改、提交和推送，不自动创建工作分支、worktree或PR。每台设备使用独立 **venv**，不要按Conda环境迁移设计。PulseDB的38份修复及207份补齐已全部完成；11:42复核245/245通过，完整AAMI清单243/243通过文件大小及HDF5首尾抽样验证。11月5日已跑通官方索引的128段小样本映射与预测，完整覆盖映射及正式基准评测仍待完成。最新本机结果用 `scripts/data_status.py` 查看（`.local/` 不提交Git）。项目级操作说明见 [`docs/DEVELOPMENT.md`](docs/DEVELOPMENT.md)。
 
 > 下方任何历史数据“已就绪”项仅描述当时核查的设备，不保证其他设备完整。日期化的迁移审计报告及机器可读错误清单属于原设备记录，不随 Git 分发；共享恢复范围以 `data_manifests/` 为准。
 
 ### 1. 当前已完成工作节点 (What Has Been Done)
+- [x] **11月5日扩展方案与小样本流程完成，正式运行待确认**：六模型Any/PaPaGei-S/P/Pulse/Sigma/MOMENT及随机Any同架构，在DaLiA/Wild各6人144窗完成36份预测；训练集PCA16后17参数线性头/289参数MLP，全部预测与独立重拟合通过。PulseDB新增按需加载器，官方Train的8训练/4验证患者和CalFree另4患者，每人8段共128段；位置/患者/标签独立核验通过，Any/P/Sigma真实前向，AAMI只验读2条映射。新增BIDMC人工呼吸/SpO2、WESAD状态、ECSMP刺激、BUT小样本共25项指标独立通过；ECSMP连续120秒SDS（18/6/6人）和PPG-BP血压增量（40/10/10人）两模型24组小头通过，未取得正式收益结论。补齐111个文件179.6MB：EPFL340 noisy/1 clean、SEGADE数组、BIDMC人工呼吸与Fix；SEGADE抽24条全部唯一映射、全1920点误差0，完整4305行仍待核验，公开波形已逐段滤波/min-max。186项本机测试通过；新模型覆盖图/正式HR全模型图及通俗术语说明见`docs/ppg_expansion_plan_and_pilot.md`。既有两阶段数值未改，仅跨任务图标题改用人数。无新依赖、预训练或完整扩展；须等待用户确认。
+- [x] **11月5日BIDMC患者身份纠正**：新官方Fix确认53条采集记录来自46真实患者，重复为s03386(06–09)、s11342(20–23)、s25323(38–39)。旧Any/PaPaGei-S已审计100项中92项存在患者级训练/测试交叉（25划分/种子中23种），此前53编号无交集仅为记录级检查，不能继续当严格跨患者结论。原数值/预测保留，旧报告已加纠正。新59窗小样本按原始患者分组，并对两标注CSV的一基采样点减1后归窗；人工呼吸参考独立差2.13e-14。证据`docs/results/ppg_expansion_pilot/bidmc_identity_audit.json`及`additional_tasks_independent_check.json`。旧BIDMC数值复现仍成立，不代表模型严格跨患者泛化。
 - [x] **11月5日模型范围与Apple/Google论文对照复核**：新增`docs/ppg_model_scope_and_literature_analysis.md`，明确第一阶段AnyPPG/PaPaGei-S/Pulse-PPG加MOMENT、第二阶段仅AnyPPG基模案例、历史PPG-BP另含PaPaGei-P/SigmaPPG；后两者实际已评，不是因性能差或无法运行被排除。补充Pulse-PPG在Wild三人预算相对CNN减少1.84bpm[0.64,3.16]，Any两域收益更一致。Apple ICLR2024主要是人级健康信息与人口学/HR统计对照，不提供逐搏或HRV误差结论；PaPaGei-P的同人对比路线值得补入。LSM的线性/小卷积头差异说明当前Ridge结果不是能力上限；SensorFM/WBM为派生指标的长时建模，不能作为原始PPG去噪证据。调研仓参考`0cdfed1a0b552de39b30d3fcb011c6e3a2e2baf7`；建议补模型矩阵、受控任务头/随机骨干消融、一个健康信息增量任务，均为后续方案。本轮仅分析及文档更新，未启动评测、预训练、下载或恢复旧队列，未改实验结果。
 - [x] **11月4日第二阶段逐搏/PRV与综合图完成**：补齐EMBC21/Biagetti腕部400Hz数据及单专家onset：7人105采集记录、21806原始/21508有效标注，正确排除人工伪影与39孤立缺样；固定7折LOSO（5train/1val/1test），AnyPPG冻结六层时序特征+26737参数头、17353参数CNN、MSPTDfast风格传统算法，14神经拟合+7传统配置、315预测全部审计通过。实际评分20725点，F1±50ms为Any .97899/CNN .97472/传统 .96618；Any−CNN差CI跨0，成功匹配间期MAE三者约16ms，传统略低但覆盖也低。60秒RMSSD误差19.13/36.07/38.32ms、SDPP9.73/23.82/21.53ms；175窗中159静息，蹲起仅1人/2窗、踏步4人/14窗；300秒仅2人4窗，不能称标准HRV人群验证。独立17073标量复算最大差5.68e-14、CPU概率差<6.3e-6且事件完全一致，149项本机测试通过。综合PNG/SVG、原始量纲分面图及复现证据在`docs/results/ppg_phase2/`；图可仅用Git内统计重绘。未开展基模预训练或编码器微调，无新依赖、旧队列未恢复。
 - [x] **11月4日跨域HR下降与完整SQI完成**：相同Wild测试窗口上，Any迁移相对域内MAE增加6.53bpm[3.77,9.20]，CNN增加4.37[3.49,5.21]；Any低HR60–80贡献5.64、低ACC贡献4.04bpm，不能归因单纯剧烈运动或已证明硬件因果。完整BUT-PPG v2的3888条红通道/50人（830Good/3058Poor）已独立补齐，5折3种子60结果通过，Any/CNN/手工SQI AUROC .8723/.8340/.8528；Any−CNN CI>0，Any−手工CI跨0。手机HR可读性辅助域，不等于腕部形态质量。旧Good子集35条早期编码物理值读取及另795条RGB绿/红通道不一致问题已记录；旧数据和结果未覆盖。数据恢复清单`data_manifests/ppg_phase2_assets.json`，详细说明见第二阶段报告。
@@ -91,6 +95,7 @@
 - [x] **D 盘根目录镜像备份已就绪**：已全量同步至 `D:\Watch_LSM`（139.41 GB，1,925 个核心文件，0 失败），并实测通过 HDF5 路径验证，可直接作为移动硬盘中转站或独立运行。
 
 ### 2. 接棒 Agent 下一步待办事项 (Next Steps for Incoming Agent)
+- [ ] **等待用户确认第三阶段正式范围**：已交付14类问题的模型/数据清单、分步执行建议与小样本证据，确认前不启动正式多折/多种子评测或恢复旧队列。优先补HR/SQI模型与受控头、腕部SDS/状态、真实患者BIDMC、有限PulseDB，再按参考可靠性推进逐搏/伪影/去噪。不得把试跑分数纳入正式胜负图。
 - [x] **完成手表PPG评测PoC首两阶段**：HR/少标签/单向迁移、人工腕部onset/60秒PRV、手机SQI及综合图已完成；结论以两阶段报告为准，不以预设胜出为验收条件。
 - [ ] **优先验证PRV收益与迁移解释**：下一研究扩展可补独立腕部人工标注、训练种子和同架构随机权重消融；跨域HR在新的开发集检验低HR覆盖和校准。DaLiA/Wild的ECG到PPG毫秒对齐未解决，不恢复旧ECG试跑作为有效提点排名。保持评测优先，不自动预训练。
 - [ ] **后续去噪/健康任务按可靠标签推进**：BUT完整SQI已完成，不再重复补Poor；SEGADE到DaLiA时间轴、EPFL配对去噪、TROIKA强运动及疾病标签仍需任务化核验。PulseDB映射及预训练患者重合边界未解决，暂不把既有指端血压结果当成手表血压能力。
@@ -177,6 +182,7 @@
 1. **接盘第一步**：每次接到任务，通读本文件，明确当前处于哪一个工作节点；开始或恢复开发时同时阅读 [调研与工程选型入口](papers/README.md)。用户维护的 [Wearable-Physiological-Foundation-Models](https://github.com/tujy859/Wearable-Physiological-Foundation-Models) 是长期领域参考源；涉及模型选型、数据集、benchmark与评测协议时按入口查阅相关最新资料，采用前核对原论文/官方实现并记录参考提交。访问失败时明确所用旧版本及限制，不把调研收录等同于本地实现完成；
 2. **代码编写规范**：
    - 保持文档与注释完整；
+   - **表达约定（11月5日用户要求）**：面向用户直接写训练/验证人数、观测时长与评测场景；不用未经解释的“全预算”等自定义简称。首次出现任务头、冻结、PRV等术语时给出简明解释；“全预算”历史字段只指留出测试人后全部可用训练/验证标签，不包含测试标签。
    - **术语约定**：生理信号的 recording / record 统一称“采集记录”，record list 称“采集记录列表”，不称“录音”；受试者、采集记录与切片窗口是不同层级，描述划分时须明确层级；
    - 永远使用相对路径；
    - 输出数值与时间范围时，严禁使用单半角波浪号（使用 `-` 或 `～`），转义文本中的美元符号（`\$`）；

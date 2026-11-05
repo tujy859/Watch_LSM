@@ -1,0 +1,954 @@
+{
+  "summary_code_sha256": "a820c32827f9290f3aa2519dcda4e88e50414e3b3c6e7795c052e7a0729e67e1",
+  "reports": [
+    {
+      "dataset": "BIDMC",
+      "status": "small_sample_pipeline_verified_not_performance_evidence",
+      "split": {
+        "train": [
+          "s01182",
+          "s01241",
+          "s01795",
+          "s01840"
+        ],
+        "validation": [
+          "s01995",
+          "s03386"
+        ],
+        "test": [
+          "s03516",
+          "s04641"
+        ]
+      },
+      "windows": 59,
+      "subjects": 8,
+      "tasks": [
+        "resp_manual",
+        "spo2_monitor"
+      ],
+      "data": {
+        "source_files_sha256": {
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_01_Signals.csv": "21495169cc36e82352d8e12cc6430927946d02d240b030715088d02396ea2d5c",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_01_Numerics.csv": "27d43794cf2e7150db10e8bfe61d2bfdb26873a8f1629ffc5fbee5c9a4eb6ef5",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_01_Breaths.csv": "698846517e27e7789d855875bae9774db3c189900efae8e486c300ed5ce58037",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_01_Fix.txt": "5acedc860fdf03ac117b333bc0ef6b6579fe066382ba89abfd14ccc863b83831",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_02_Signals.csv": "cbe4cc6532df50aaa56382cc6348effc76ed2347f6562a590876a0dfb747e2ea",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_02_Numerics.csv": "99aef20b2846815d45ecde184da753de58c8a85b7dd7af74a2f4c5282013704d",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_02_Breaths.csv": "b17230d3a2b3f7063b3a2e9b4dc94e46bf02c1dc7b3f71ee0507e0598d6609ac",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_02_Fix.txt": "d201db17781166b11c865c64bfc0c2a2f292d66462f9f5ff5a666a25aa7ecb24",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_03_Signals.csv": "c8a642b9d5c0054d401489a96b050f8977890fa45c7ffe1f778bd32ce7086c53",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_03_Numerics.csv": "6666475c072fe079f35f1fffe0890a97b56d1086985f8a5d76a23b88eb6c6036",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_03_Breaths.csv": "13369112102198ee51b291164c61614a06c73cc9edfa66af6b7070b786dded5f",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_03_Fix.txt": "1dabc778bfd78ca9507e2090a8a3dd64ea431a2b400df947c5f36185ccc70c71",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_04_Signals.csv": "46363e8552709b13b0ff35fc81914f441ac84e1ee656a5f5dbbf66cf7bcfea59",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_04_Numerics.csv": "2d3f34558f11ae5ff4170793942c86fd76ecc9c11a3868fd9dbaabf3249ee121",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_04_Breaths.csv": "ffbdd1b8bcd1047e45cca343487a2f3bc74fcf4b0a8c09a1d0951bc83c710d17",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_04_Fix.txt": "827cd32b04c38784aeb20cc682ad6cb52f42499eaf8432037fcd640c11f09387",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_05_Signals.csv": "1963671232fca4962400f660bcb437db3d53a414de2f9538ca423a67212112cf",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_05_Numerics.csv": "b26e17895c9961bf36c0172e0da2fd58120e30ab6df5c21a3cfc56665630c308",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_05_Breaths.csv": "a3e0d2c3e4d7f999e448fe98eecaa7cf4db3ae3946197045505c7f9821cd25f7",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_05_Fix.txt": "e690cbdeee11e7309bff2ff44810f5f1a3b8e88c3ce7654e1d3ffce3581fa0a2",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_06_Signals.csv": "fd82ddab95eb5c0d83b5e68f787809f29f8c3d2e3c02f6798d8630bc093e1a51",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_06_Numerics.csv": "d7b221639fe1baa3360544ac6507af78871ec190ac79a44f122ddde119c22d05",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_06_Breaths.csv": "b7675b1d7a5633f602e3aa5060853487be818193d044e3b340907a1738d53f89",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_06_Fix.txt": "19eddcfc359689d59b21cbecaed9952ee720903d208162c625c33f2cfd586599",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_10_Signals.csv": "36b50117c1445d929f551ecdd1cb1d4f243ec78f687a253dea27a5046693d662",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_10_Numerics.csv": "fc697ba7af8bb74eed871ab0eba10f4913ad14633e9e6b6337cdc19d03fb6df0",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_10_Breaths.csv": "f57b75c32d95ba4dd1b340d04b2a1e1881ff273e983f37a21dc18959a585eec6",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_10_Fix.txt": "e2bf5eadbf6130b02dbeb3ced89f3dd1e573a9632c3bbf72ca5afbeead19b0d5",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_11_Signals.csv": "64b931ccd9f6b94b293a8ff0558eca000d32a8c5c790247c04e5a883b259200f",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_11_Numerics.csv": "8adf747b0c52ea69cea47a8562149b68cb900b9b99215e6e17a33f88ad62f664",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_11_Breaths.csv": "c3b7ba78919895566d6134649bf8b5c7c572d11f32a8845cb1b269d45ec329ca",
+          "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_11_Fix.txt": "598dac42dd0598a149de95e46808326d7683037f0b0870e8d98f9df636e16ed7"
+        },
+        "fs": 125,
+        "seconds": 32,
+        "reference": "Manual two-annotator mean of within-window inter-breath rates; agreement <=2 breaths/min; monitor SpO2 average",
+        "manual_reference_rejected_windows": 4,
+        "subject_identity": "MIMIC-II parent ID from Fix.txt, not file number",
+        "pilot_record_selection": "First recording per selected patient; at most 8 evenly spaced 32-second windows; no labels used to choose recording"
+      },
+      "rows_sha256": "cb713c2b752cfff361c8c9f9959dae6cd3b7cfdcb3a9c27a74f539d4bb30dd47",
+      "input_sha256": "6c4a484fbc3412bd014d84c175e1218006d02337b31b2eb9a6b626fd1677beca",
+      "encoders": {
+        "AnyPPG": {
+          "model": "AnyPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            59,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 4000,
+          "native_used_samples": 4000,
+          "encoder_parameters": 4044272,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "checkpoint_sha256": {
+            "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "e1bb0491378e3212a982baa87796ab64c192a8b54c59a074ba65ccac2d1fd702",
+          "record_statistics_sha256": "9876d4fa4bcb6c7cf8667ffdf210a63b491cd2c0086424057d6504f44c7f88de",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.4690000000409782
+        },
+        "PaPaGei-P": {
+          "model": "PaPaGei-P",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            59,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 4000,
+          "native_used_samples": 4000,
+          "encoder_parameters": 4993024,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "checkpoint_sha256": {
+            "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "e1bb0491378e3212a982baa87796ab64c192a8b54c59a074ba65ccac2d1fd702",
+          "record_statistics_sha256": "9876d4fa4bcb6c7cf8667ffdf210a63b491cd2c0086424057d6504f44c7f88de",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.23399999999674037
+        },
+        "SigmaPPG": {
+          "model": "SigmaPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            59,
+            360
+          ],
+          "native_fs": 50,
+          "native_input_samples": 1600,
+          "native_used_samples": 1600,
+          "encoder_parameters": 29700928,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "state_after_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "checkpoint_sha256": {
+            "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "d2aeaa53a8a96aebfc996d4c075f55f6d89f2669b006361c822c6ae1b952a558",
+          "record_statistics_sha256": "c0e1300ff4a8966b3e15f641fe1ab763fe82ac0431219f9c87d749f1d39ab1a3",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 2.9060000000172295
+        }
+      },
+      "results": [
+        {
+          "dataset": "BIDMC",
+          "target": "resp_manual",
+          "method": "HandFeatures",
+          "metric": "MAE",
+          "value": 2.891075571647163,
+          "unit": "breaths/min",
+          "selected_regularization": 1.0,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 20
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "resp_manual",
+          "method": "AnyPPG",
+          "metric": "MAE",
+          "value": 3.804804256169929,
+          "unit": "breaths/min",
+          "selected_regularization": 10.0,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 16
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "resp_manual",
+          "method": "PaPaGei-P",
+          "metric": "MAE",
+          "value": 3.305636901541169,
+          "unit": "breaths/min",
+          "selected_regularization": 10.0,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 16
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "resp_manual",
+          "method": "SigmaPPG",
+          "metric": "MAE",
+          "value": 2.657398647971644,
+          "unit": "breaths/min",
+          "selected_regularization": 0.1,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 16
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "resp_manual",
+          "method": "TrainConstant",
+          "metric": "MAE",
+          "value": 2.2391181481573943,
+          "unit": "breaths/min",
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "spo2_monitor",
+          "method": "HandFeatures",
+          "metric": "MAE",
+          "value": 4.004573640369234,
+          "unit": "percentage points",
+          "selected_regularization": 10.0,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 20
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "spo2_monitor",
+          "method": "AnyPPG",
+          "metric": "MAE",
+          "value": 2.892002637383171,
+          "unit": "percentage points",
+          "selected_regularization": 0.1,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 16
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "spo2_monitor",
+          "method": "PaPaGei-P",
+          "metric": "MAE",
+          "value": 1.550161461766388,
+          "unit": "percentage points",
+          "selected_regularization": 10.0,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 16
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "spo2_monitor",
+          "method": "SigmaPPG",
+          "metric": "MAE",
+          "value": 1.7576158491931222,
+          "unit": "percentage points",
+          "selected_regularization": 10.0,
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13,
+          "input_features": 16
+        },
+        {
+          "dataset": "BIDMC",
+          "target": "spo2_monitor",
+          "method": "TrainConstant",
+          "metric": "MAE",
+          "value": 1.6355561755952381,
+          "unit": "percentage points",
+          "train_rows": 32,
+          "validation_rows": 14,
+          "test_rows": 13
+        }
+      ],
+      "predictions_sha256": "9956c51cd1ab540bf084d8f0ffeb39e89ea25599c3db04d7611f9dc27b58ea06",
+      "selection": "First eight sorted people; at most 18 evenly spaced eligible windows per person (BIDMC at most 8); single split/seed",
+      "code_sha256": "a820c32827f9290f3aa2519dcda4e88e50414e3b3c6e7795c052e7a0729e67e1",
+      "head": "train-only standardization/PCA min(16, training rows minus 1) for foundation features; Ridge or logistic; 3 validation-only regularization choices",
+      "pretraining": false,
+      "encoder_finetuning": false
+    },
+    {
+      "dataset": "BUT-PPG",
+      "status": "small_sample_pipeline_verified_not_performance_evidence",
+      "split": {
+        "train": [
+          "100",
+          "101",
+          "102",
+          "103"
+        ],
+        "validation": [
+          "104",
+          "105"
+        ],
+        "test": [
+          "106",
+          "107"
+        ]
+      },
+      "windows": 32,
+      "subjects": 8,
+      "tasks": [
+        "quality"
+      ],
+      "data": {
+        "fs": 125,
+        "seconds": 10,
+        "source_manifest_sha256": "237d209fb90c33f2df44e42eb67bb913b5776617d30495f6c718c7c94e07123b",
+        "source_x_sha256": "992381ffde72f1d1a9829f78af801c1806b8059ab2b80574396e6275c3cc049a",
+        "source_rows_sha256": "5dbdf60e4239e3ce941013d892d01c72c8671216d9e187adb5c0325d02f22dae",
+        "reference": "Original 10-second expert HR-readability quality; no shortening to 8 seconds"
+      },
+      "rows_sha256": "42f948dce207311dd71ee14d3032345c640e39c37c33c178f266f5523f01a2ba",
+      "input_sha256": "0cf0939e701ad8e3745d632016ecbc202bd23616ceadf726fddfacda681c39e7",
+      "encoders": {
+        "AnyPPG": {
+          "model": "AnyPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            32,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 1250,
+          "native_used_samples": 1250,
+          "encoder_parameters": 4044272,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "checkpoint_sha256": {
+            "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "5f60101ba56bca916b77b95377f93c217dc7230d5051322ee1d9a138b8de5c56",
+          "record_statistics_sha256": "573887a2b09ab0ddc0d965120116708468a3beee2ac2f28d597c0667847d0151",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.14100000000325963
+        },
+        "PaPaGei-P": {
+          "model": "PaPaGei-P",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            32,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 1250,
+          "native_used_samples": 1250,
+          "encoder_parameters": 4993024,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "checkpoint_sha256": {
+            "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "5f60101ba56bca916b77b95377f93c217dc7230d5051322ee1d9a138b8de5c56",
+          "record_statistics_sha256": "573887a2b09ab0ddc0d965120116708468a3beee2ac2f28d597c0667847d0151",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.125
+        },
+        "SigmaPPG": {
+          "model": "SigmaPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            32,
+            360
+          ],
+          "native_fs": 50,
+          "native_input_samples": 500,
+          "native_used_samples": 500,
+          "encoder_parameters": 29700928,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "state_after_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "checkpoint_sha256": {
+            "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "edef1e824988d9b636381070924a9ce408e7dc06a7a817eb573b91326d3e7b87",
+          "record_statistics_sha256": "213225c2d542672f9b8e4f22cc9cd90be87d6dd5ea1b8ef5c94361b9aeb85c4d",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.8290000000270084
+        }
+      },
+      "results": [
+        {
+          "dataset": "BUT-PPG",
+          "target": "quality",
+          "method": "HandFeatures",
+          "metric": "balanced_accuracy",
+          "value": 0.75,
+          "unit": "fraction",
+          "selected_regularization": 10.0,
+          "train_rows": 16,
+          "validation_rows": 8,
+          "test_rows": 8,
+          "input_features": 20
+        },
+        {
+          "dataset": "BUT-PPG",
+          "target": "quality",
+          "method": "AnyPPG",
+          "metric": "balanced_accuracy",
+          "value": 0.75,
+          "unit": "fraction",
+          "selected_regularization": 0.1,
+          "train_rows": 16,
+          "validation_rows": 8,
+          "test_rows": 8,
+          "input_features": 15
+        },
+        {
+          "dataset": "BUT-PPG",
+          "target": "quality",
+          "method": "PaPaGei-P",
+          "metric": "balanced_accuracy",
+          "value": 0.75,
+          "unit": "fraction",
+          "selected_regularization": 1.0,
+          "train_rows": 16,
+          "validation_rows": 8,
+          "test_rows": 8,
+          "input_features": 15
+        },
+        {
+          "dataset": "BUT-PPG",
+          "target": "quality",
+          "method": "SigmaPPG",
+          "metric": "balanced_accuracy",
+          "value": 0.6666666666666667,
+          "unit": "fraction",
+          "selected_regularization": 0.1,
+          "train_rows": 16,
+          "validation_rows": 8,
+          "test_rows": 8,
+          "input_features": 15
+        },
+        {
+          "dataset": "BUT-PPG",
+          "target": "quality",
+          "method": "TrainConstant",
+          "metric": "balanced_accuracy",
+          "value": 0.5,
+          "unit": "fraction",
+          "train_rows": 16,
+          "validation_rows": 8,
+          "test_rows": 8
+        }
+      ],
+      "predictions_sha256": "17557e7cc2f12d333f08221c2f0d3a18779b60cc302697ee59678f9866b0d7cc",
+      "selection": "First eight sorted people; at most 18 evenly spaced eligible windows per person (BIDMC at most 8); single split/seed",
+      "code_sha256": "35351c6d965f7b71240ef16caff650dae820be6f68326bb258c2ae5b6d73db6b",
+      "head": "train-only standardization/PCA min(16, training rows minus 1) for foundation features; Ridge or logistic; 3 validation-only regularization choices",
+      "pretraining": false,
+      "encoder_finetuning": false
+    },
+    {
+      "dataset": "ECSMP",
+      "status": "small_sample_pipeline_verified_not_performance_evidence",
+      "split": {
+        "train": [
+          "001",
+          "002",
+          "003",
+          "004"
+        ],
+        "validation": [
+          "005",
+          "006"
+        ],
+        "test": [
+          "007",
+          "009"
+        ]
+      },
+      "windows": 144,
+      "subjects": 8,
+      "tasks": [
+        "stimulus"
+      ],
+      "data": {
+        "source_files_sha256": {
+          "datasets/ppg_bench_processed/fs_125/ECSMP/001/ppg.npy": "1fc28b9a11802fe25140657b5853d989c5ae700ef545774c004bfbec6b57c315",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/001/stimulus.npy": "20bd197ea47ba998cb61a4666e4e5e500b552a1312df30b958de9371ad5b2741",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/001/metadata.csv": "64c89e3309435dbf86a8b5de4519e44befe7c7ac63e492b724fa977b7b1e46da",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/002/ppg.npy": "ff104eff46ebb05cba93be99bf0d0f583fd891e47ba65f83242b2830e034f1ce",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/002/stimulus.npy": "7cb2947041404498593f0755c979587b84c798abb2a5c4d423553b4a444e2ef8",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/002/metadata.csv": "3300fff888be608c454be8d4b296970d9c691db682e974566821960678ac1f14",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/003/ppg.npy": "33fa8f57b9e4432bcb12c99c689ad7b79666059dc1588d4dcd825973277295c0",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/003/stimulus.npy": "a9ceddc41e42ee250c18051c6d569173d6787caafc333a46e2d955f5b7e7d433",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/003/metadata.csv": "7a721feac23c5f81dd5cea6543bc700c4b4555ae20f97c6d62c4a07d56d807b7",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/004/ppg.npy": "fc1031270ed5a1ccdf7854bec1a6b3c98a86eb5503d21a9eb0785b7c76558712",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/004/stimulus.npy": "1839350e9fdd6f1feca7e5872d303b9ffa39b2e6628ba6ebe004733a2739fd38",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/004/metadata.csv": "0d2ec63bd3598e79c2b94eac857254c43f5ec3cc669c9727cbdcd05a58318a3d",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/005/ppg.npy": "76bef87f789be45dcf85f7bca7c42dc9c2a0717c0821bb376a63f113559afe3d",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/005/stimulus.npy": "0497a3504c593505f07eae219f9a168fae8f1f3fb7bb049c8b5842593c2c9ee5",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/005/metadata.csv": "bdb827b5988ef9691adddde66460ea981f18299e38e915279f2b6f8c065eed94",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/006/ppg.npy": "29c55cfbe41384c0972c5c62eee30587700e92377520a45c8f6ea771f692ac6c",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/006/stimulus.npy": "2cd52277fdacbd7c96419021167a33fc4bcbd1d665f4aa013b5b1d36d9aed098",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/006/metadata.csv": "ee1499925cd7d356b186eba808267521cf73a7fa4a449556bacbdef065b3cf29",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/007/ppg.npy": "5ef92ff450b213b6578dc598a4998d5103df3b3af5b89ea982626a8f45519765",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/007/stimulus.npy": "5d2f9cc3b5c289bab8135e34ebbf59594e24f43a08d36c39c7b5537ae6a6f199",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/007/metadata.csv": "41fa7c2abf9e35b0c644c635da3a46efca20cfa0e85b842e0097bd15f8d1ec64",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/009/ppg.npy": "c32ffe337c771c702f3c34a2430e305855d283219bacd2535f2346af36224a4f",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/009/stimulus.npy": "90b9b30d4e81098035364c1188c48418fa16a66bc00649714c29ec9aab44ceb4",
+          "datasets/ppg_bench_processed/fs_125/ECSMP/009/metadata.csv": "e943467cd3ec41b837d55cb24851e2b87352bd6af207ee89b886970bfd4d105e"
+        },
+        "fs": 125,
+        "seconds": 10,
+        "reference": "Existing pinned preprocessing: WESAD laboratory conditions / ECSMP video stimulus identity; not psychiatric diagnosis"
+      },
+      "rows_sha256": "2b3012cf8cd657d29a7f13c30eceee283595258ca7cbb9e742294238462850a9",
+      "input_sha256": "0bcf0279d59666874c7306f83f41469e8b831729cf8568b0ec73a2ffc9fc8aba",
+      "encoders": {
+        "AnyPPG": {
+          "model": "AnyPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            144,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 1250,
+          "native_used_samples": 1250,
+          "encoder_parameters": 4044272,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "checkpoint_sha256": {
+            "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "91ad5c6e59e1e48059bf3ed2c8a83769c1b1ec2a243baa486ae82a0d146881f5",
+          "record_statistics_sha256": "21006154f1ca54687da7a386f46b356054018864708c7bf374d18f6d65e83330",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.2970000000204891
+        },
+        "PaPaGei-P": {
+          "model": "PaPaGei-P",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            144,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 1250,
+          "native_used_samples": 1250,
+          "encoder_parameters": 4993024,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "checkpoint_sha256": {
+            "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "91ad5c6e59e1e48059bf3ed2c8a83769c1b1ec2a243baa486ae82a0d146881f5",
+          "record_statistics_sha256": "21006154f1ca54687da7a386f46b356054018864708c7bf374d18f6d65e83330",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.25
+        },
+        "SigmaPPG": {
+          "model": "SigmaPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            144,
+            360
+          ],
+          "native_fs": 50,
+          "native_input_samples": 500,
+          "native_used_samples": 500,
+          "encoder_parameters": 29700928,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "state_after_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "checkpoint_sha256": {
+            "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "990ea3f08b21d7bc854de091387b898a2c24a271e91f6a7fcb79914947b00cd3",
+          "record_statistics_sha256": "3001dfb28ff7717cafad59d99b406f39c00356c4f0203188fda5f68d3e55873b",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 1.0309999999590218
+        }
+      },
+      "results": [
+        {
+          "dataset": "ECSMP",
+          "target": "stimulus",
+          "method": "HandFeatures",
+          "metric": "balanced_accuracy",
+          "value": 0.2126984126984127,
+          "unit": "fraction",
+          "selected_regularization": 10.0,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 20
+        },
+        {
+          "dataset": "ECSMP",
+          "target": "stimulus",
+          "method": "AnyPPG",
+          "metric": "balanced_accuracy",
+          "value": 0.2611111111111111,
+          "unit": "fraction",
+          "selected_regularization": 0.1,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 16
+        },
+        {
+          "dataset": "ECSMP",
+          "target": "stimulus",
+          "method": "PaPaGei-P",
+          "metric": "balanced_accuracy",
+          "value": 0.05158730158730159,
+          "unit": "fraction",
+          "selected_regularization": 10.0,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 16
+        },
+        {
+          "dataset": "ECSMP",
+          "target": "stimulus",
+          "method": "SigmaPPG",
+          "metric": "balanced_accuracy",
+          "value": 0.16269841269841268,
+          "unit": "fraction",
+          "selected_regularization": 0.1,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 16
+        },
+        {
+          "dataset": "ECSMP",
+          "target": "stimulus",
+          "method": "TrainConstant",
+          "metric": "balanced_accuracy",
+          "value": 0.16666666666666666,
+          "unit": "fraction",
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36
+        }
+      ],
+      "predictions_sha256": "facf85a7929663c5a963bb630ceb01310a0081ef1cd91fb558b6c6faf8f8232c",
+      "selection": "First eight sorted people; at most 18 evenly spaced eligible windows per person (BIDMC at most 8); single split/seed",
+      "code_sha256": "35351c6d965f7b71240ef16caff650dae820be6f68326bb258c2ae5b6d73db6b",
+      "head": "train-only standardization/PCA min(16, training rows minus 1) for foundation features; Ridge or logistic; 3 validation-only regularization choices",
+      "pretraining": false,
+      "encoder_finetuning": false
+    },
+    {
+      "dataset": "WESAD",
+      "status": "small_sample_pipeline_verified_not_performance_evidence",
+      "split": {
+        "train": [
+          "S10",
+          "S11",
+          "S13",
+          "S14"
+        ],
+        "validation": [
+          "S15",
+          "S16"
+        ],
+        "test": [
+          "S17",
+          "S2"
+        ]
+      },
+      "windows": 144,
+      "subjects": 8,
+      "tasks": [
+        "condition_3class"
+      ],
+      "data": {
+        "source_files_sha256": {
+          "datasets/ppg_bench_processed/fs_125/WESAD/S10/ppg.npy": "368f85c7915e9cfc4bf993c7c8e29b2b9c9a817e9d284a58be98c8420cc4d9d4",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S10/condition_3class.npy": "01eb2cb2f182ae963c686af7123feadd318222e688c48dc3e19b9dad8a80f191",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S10/metadata.csv": "d7c48cc89a15c2818c430bd1a6f57939c3fb7eb731bba49b9f3f05ec47bfd33c",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S11/ppg.npy": "8ed66b9c4e7bac75a59e9861a2bec677dfb31b70fe20ed249e54dd1fe96469f1",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S11/condition_3class.npy": "c757b07ee00e8bf1a765d1138fcca8b61cb57dcbc0f7d42075f5f151ece5f23f",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S11/metadata.csv": "90cc81c21b1fdd116117621eb357c364a6db357e9c768e0932bc7161380f5f7f",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S13/ppg.npy": "25b57e58c52e76ac496b6ebc535b06fdec28d5251d06c1a4217a9c4fd3b1116c",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S13/condition_3class.npy": "7269fe647232950e2a5c5ba378deda70a6708c641c23cc3bea638d751fe28bf3",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S13/metadata.csv": "ba78c1f943c91fcc4a3333d606bd8743aee15a0eddc67128a3b7d292da847f35",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S14/ppg.npy": "76e27f2a8376a4ba5f1e39709b6309a86f36b0b19d3c3d4bd8d8b2bb85f247a1",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S14/condition_3class.npy": "852f36b4e0c46e6f3bfc3493b6f89ec699f1ac03a4c07f83d40fbe78dbec117d",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S14/metadata.csv": "88eb91c5b4b7f21c6782b30191b2447b7045fc5e15f34e263ac36fe313162332",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S15/ppg.npy": "ed804c98c750bc490d723769e624ec1dbae51d060abeb8f9aed71a499e050a82",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S15/condition_3class.npy": "7d7e7c09fc69a4940b98dd46a678debe16358bca90140c89b41e346243db0c1c",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S15/metadata.csv": "cd1257a2ad00da14d26c8f662439a72a2f2e36d1de1d68ed405e815dac35936f",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S16/ppg.npy": "c1484a827ebe4f44a6a5b218412cfd715e572256990a8d2bcf3f549a9cad7f6d",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S16/condition_3class.npy": "7fe47494ab25a1e6852f44c2444a5ed3b46274071f66f02607042fe6702de111",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S16/metadata.csv": "99e73b4fef684054d9e1002b7cd5aa9fb37a58ddbd787b85ed3dbbd55c19118c",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S17/ppg.npy": "aa145f060a93a44bd0e28c695766cdaf4fb0815af2e75e219a6d003f54d19eff",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S17/condition_3class.npy": "ed914379e229259e913d4596806b34a820ba53ab0cd548aca0fea76d371fe24c",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S17/metadata.csv": "d126e22e5caa7cf282261f1cbd7b627b9c2d4d3767258f16d87612aa3a5460f1",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S2/ppg.npy": "0c4b62dc6d95bae674e5fb3f3140af034c96b58966a469bf0d982ac3fb415d6b",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S2/condition_3class.npy": "ba7f2d765e9d9b64d26876806edc282b9c907e3520c615ffb5886e034eee107e",
+          "datasets/ppg_bench_processed/fs_125/WESAD/S2/metadata.csv": "c74b5143980ad2445764a5cbb7340fa258a4b9a613a5227a3a8e961a8dab9cab"
+        },
+        "fs": 125,
+        "seconds": 10,
+        "reference": "Existing pinned preprocessing: WESAD laboratory conditions / ECSMP video stimulus identity; not psychiatric diagnosis"
+      },
+      "rows_sha256": "59ad230b0109c873e4f095afa197a21631f5b75d9fb619a26189d2c739d33407",
+      "input_sha256": "c17ddc728277528094dfd268e1bea11543073c4617563e5d1d24fe9c2a895705",
+      "encoders": {
+        "AnyPPG": {
+          "model": "AnyPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            144,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 1250,
+          "native_used_samples": 1250,
+          "encoder_parameters": 4044272,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+          "checkpoint_sha256": {
+            "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "318e5544407c070393283eefc462ab81ac0fd889899072b205b1c66fee564317",
+          "record_statistics_sha256": "58f15d5de81594f392134895bbe751ae2b14f942d456839217ad1244509a7dc6",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.3130000000237487
+        },
+        "PaPaGei-P": {
+          "model": "PaPaGei-P",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            144,
+            512
+          ],
+          "native_fs": 125,
+          "native_input_samples": 1250,
+          "native_used_samples": 1250,
+          "encoder_parameters": 4993024,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+          "checkpoint_sha256": {
+            "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "318e5544407c070393283eefc462ab81ac0fd889899072b205b1c66fee564317",
+          "record_statistics_sha256": "58f15d5de81594f392134895bbe751ae2b14f942d456839217ad1244509a7dc6",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 0.2649999999557622
+        },
+        "SigmaPPG": {
+          "model": "SigmaPPG",
+          "random_init": false,
+          "seed": 42,
+          "pretrained_weights_loaded": true,
+          "random_initialization": null,
+          "shape": [
+            144,
+            360
+          ],
+          "native_fs": 50,
+          "native_input_samples": 500,
+          "native_used_samples": 500,
+          "encoder_parameters": 29700928,
+          "encoder_trainable_parameters": 0,
+          "state_before_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "state_after_sha256": "aa05330063eac307918e7001608013fa85b142738339e98d45eed1c0ec3a3244",
+          "checkpoint_sha256": {
+            "models/weights/sigmappg/sigma.pth": "b185072e04a2c7e0ce99dbbe96a241d0150a99f7b1c49414749ba3b1b404b68b"
+          },
+          "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+          "native_port": "ppg_bench.encoders.sigmappg:SigmaPPGPort",
+          "device": "cuda",
+          "precision": "float32; no autocast",
+          "native_input_sha256": "4f350f9506dc17f9b915d65b6eb54bd20e5b891db4eeac92278956d58ae8cf10",
+          "record_statistics_sha256": "739190ba2b8db0f711b3f555771af98def755d8428074b7f530b1a5265d40ebb",
+          "torch_version": "2.5.1+cu124",
+          "numpy_version": "1.26.4",
+          "gpu": "NVIDIA GeForce GTX 1660 SUPER",
+          "elapsed_seconds": 1.0
+        }
+      },
+      "results": [
+        {
+          "dataset": "WESAD",
+          "target": "condition_3class",
+          "method": "HandFeatures",
+          "metric": "balanced_accuracy",
+          "value": 0.47049441786283897,
+          "unit": "fraction",
+          "selected_regularization": 10.0,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 20
+        },
+        {
+          "dataset": "WESAD",
+          "target": "condition_3class",
+          "method": "AnyPPG",
+          "metric": "balanced_accuracy",
+          "value": 0.5103668261562998,
+          "unit": "fraction",
+          "selected_regularization": 10.0,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 16
+        },
+        {
+          "dataset": "WESAD",
+          "target": "condition_3class",
+          "method": "PaPaGei-P",
+          "metric": "balanced_accuracy",
+          "value": 0.3843700159489633,
+          "unit": "fraction",
+          "selected_regularization": 10.0,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 16
+        },
+        {
+          "dataset": "WESAD",
+          "target": "condition_3class",
+          "method": "SigmaPPG",
+          "metric": "balanced_accuracy",
+          "value": 0.41733120680489094,
+          "unit": "fraction",
+          "selected_regularization": 1.0,
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36,
+          "input_features": 16
+        },
+        {
+          "dataset": "WESAD",
+          "target": "condition_3class",
+          "method": "TrainConstant",
+          "metric": "balanced_accuracy",
+          "value": 0.3333333333333333,
+          "unit": "fraction",
+          "train_rows": 72,
+          "validation_rows": 36,
+          "test_rows": 36
+        }
+      ],
+      "predictions_sha256": "c4d5a44b63539fe887a2f44b6c966547665beab65df037dd799d4173f43b201d",
+      "selection": "First eight sorted people; at most 18 evenly spaced eligible windows per person (BIDMC at most 8); single split/seed",
+      "code_sha256": "35351c6d965f7b71240ef16caff650dae820be6f68326bb258c2ae5b6d73db6b",
+      "head": "train-only standardization/PCA min(16, training rows minus 1) for foundation features; Ridge or logistic; 3 validation-only regularization choices",
+      "pretraining": false,
+      "encoder_finetuning": false
+    }
+  ],
+  "interpretation": "Integration checks only; small chosen sample cannot support model rankings or clinical claims"
+}

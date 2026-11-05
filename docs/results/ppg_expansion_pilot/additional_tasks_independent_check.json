@@ -1,0 +1,146 @@
+{
+  "scope": "Independent saved-prediction/metric recomputation and raw two-annotator respiratory reference rebuild; no refitting or new inference",
+  "metrics_checked": 25,
+  "maximum_absolute_metric_difference": 1.1102230246251565e-16,
+  "bidmc_reference_windows_checked": 59,
+  "bidmc_reference_max_abs_difference_breaths_min": 2.1316282072803006e-14,
+  "reference_index_origin": "MATLAB 1-based CSV mapped with sample-1",
+  "source_report_sha256": "7f01b54368606bb02e0cd601660f387dce90829b47f3866c95fb40f59fa4a4a1",
+  "prediction_file_sha256": {
+    "BIDMC": "9956c51cd1ab540bf084d8f0ffeb39e89ea25599c3db04d7611f9dc27b58ea06",
+    "BUT-PPG": "17557e7cc2f12d333f08221c2f0d3a18779b60cc302697ee59678f9866b0d7cc",
+    "ECSMP": "facf85a7929663c5a963bb630ceb01310a0081ef1cd91fb558b6c6faf8f8232c",
+    "WESAD": "c4d5a44b63539fe887a2f44b6c966547665beab65df037dd799d4173f43b201d"
+  },
+  "checked": [
+    {
+      "dataset": "BIDMC",
+      "target": "resp_manual",
+      "method": "HandFeatures"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "resp_manual",
+      "method": "AnyPPG"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "resp_manual",
+      "method": "PaPaGei-P"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "resp_manual",
+      "method": "SigmaPPG"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "resp_manual",
+      "method": "TrainConstant"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "spo2_monitor",
+      "method": "HandFeatures"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "spo2_monitor",
+      "method": "AnyPPG"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "spo2_monitor",
+      "method": "PaPaGei-P"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "spo2_monitor",
+      "method": "SigmaPPG"
+    },
+    {
+      "dataset": "BIDMC",
+      "target": "spo2_monitor",
+      "method": "TrainConstant"
+    },
+    {
+      "dataset": "BUT-PPG",
+      "target": "quality",
+      "method": "HandFeatures"
+    },
+    {
+      "dataset": "BUT-PPG",
+      "target": "quality",
+      "method": "AnyPPG"
+    },
+    {
+      "dataset": "BUT-PPG",
+      "target": "quality",
+      "method": "PaPaGei-P"
+    },
+    {
+      "dataset": "BUT-PPG",
+      "target": "quality",
+      "method": "SigmaPPG"
+    },
+    {
+      "dataset": "BUT-PPG",
+      "target": "quality",
+      "method": "TrainConstant"
+    },
+    {
+      "dataset": "ECSMP",
+      "target": "stimulus",
+      "method": "HandFeatures"
+    },
+    {
+      "dataset": "ECSMP",
+      "target": "stimulus",
+      "method": "AnyPPG"
+    },
+    {
+      "dataset": "ECSMP",
+      "target": "stimulus",
+      "method": "PaPaGei-P"
+    },
+    {
+      "dataset": "ECSMP",
+      "target": "stimulus",
+      "method": "SigmaPPG"
+    },
+    {
+      "dataset": "ECSMP",
+      "target": "stimulus",
+      "method": "TrainConstant"
+    },
+    {
+      "dataset": "WESAD",
+      "target": "condition_3class",
+      "method": "HandFeatures"
+    },
+    {
+      "dataset": "WESAD",
+      "target": "condition_3class",
+      "method": "AnyPPG"
+    },
+    {
+      "dataset": "WESAD",
+      "target": "condition_3class",
+      "method": "PaPaGei-P"
+    },
+    {
+      "dataset": "WESAD",
+      "target": "condition_3class",
+      "method": "SigmaPPG"
+    },
+    {
+      "dataset": "WESAD",
+      "target": "condition_3class",
+      "method": "TrainConstant"
+    }
+  ],
+  "passed": true,
+  "source_file_hashes_verified": 83,
+  "raw_or_processed_row_identities_labels_waveforms_verified": 379,
+  "bidmc_original_patient_id_checked_against_fix": true
+}

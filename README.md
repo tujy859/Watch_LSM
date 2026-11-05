@@ -1,5 +1,7 @@
 # 智能手表PPG基础模型评测（Watch-LSM）
 
+**2026-11-05：扩展方案及小样本流程已完成，正式扩展等待用户确认。** 查看[模型、任务、数据清单与试跑证据](docs/ppg_expansion_plan_and_pilot.md)和[模型覆盖图](docs/results/ppg_expansion_pilot/evaluation_coverage.png)。已打通PaPaGei-P/Sigma及受控预测头、随机初始化对照、PulseDB、腕部健康信息增量等流程；新增BIDMC真实患者身份审计纠正了旧记录级划分的解释。未启动预训练或完整新评测。
+
 当前目标是先建立科学严谨、工程轻量的评测PoC，再开展训练研究。第一阶段腕部心率、少标签与跨数据集迁移已比较AnyPPG、PaPaGei-S、Pulse-PPG、MOMENT及CNN/传统对照；第二阶段人工脉搏起始点/PRV及质量分类聚焦AnyPPG。查看[跨任务综合图与第二阶段报告](docs/ppg_phase2_results.md)、[第一阶段报告](docs/ppg_hr_poc_phase1.md)，以及[完整模型覆盖、选型与Apple/Google论文对照分析](docs/ppg_model_scope_and_literature_analysis.md)。下图是AnyPPG的跨任务案例，不是全部开源基模排名。
 
 ![跨任务方法比较](docs/results/ppg_phase2/ppg_task_comparison.png)

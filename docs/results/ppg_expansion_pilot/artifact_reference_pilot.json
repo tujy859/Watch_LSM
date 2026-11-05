@@ -1,0 +1,565 @@
+{
+  "status": "sample_mapping_passed",
+  "purpose": "small annotation identity and traditional-output workflow check, not artifact detection efficacy",
+  "upstream_commit": "f5b2ad6e180a1474bc47d6c5ec5d482edaed6797",
+  "sources": [
+    "https://github.com/chengstark/Segade/blob/f5b2ad6e180a1474bc47d6c5ec5d482edaed6797/README.md",
+    "https://github.com/chengstark/Segade/blob/f5b2ad6e180a1474bc47d6c5ec5d482edaed6797/db2npy.py",
+    "https://github.com/chengstark/Segade/blob/f5b2ad6e180a1474bc47d6c5ec5d482edaed6797/data_split.py"
+  ],
+  "downloaded_arrays": [
+    {
+      "published_group": "train",
+      "rows": 3436,
+      "samples_per_row": 1920,
+      "artifact_points": 3870623,
+      "all_rows_min0_max1": true
+    },
+    {
+      "published_group": "test",
+      "rows": 869,
+      "samples_per_row": 1920,
+      "artifact_points": 851102,
+      "all_rows_min0_max1": true
+    }
+  ],
+  "selected_rows": 24,
+  "uniquely_mapped_rows": 24,
+  "ambiguous_rows": 0,
+  "sampled_group_subjects": {
+    "train": [
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S2",
+      "S3",
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "test": [
+      "S1",
+      "S14",
+      "S15"
+    ]
+  },
+  "sampled_group_subject_overlap": [],
+  "selected_mapping": [
+    {
+      "published_group": "train",
+      "published_row": 0,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S11",
+          "start_sample": 59520,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 930.0
+        }
+      ],
+      "artifact_fraction": 0.7729166666666667,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 312,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S12",
+          "start_sample": 136320,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 2130.0
+        }
+      ],
+      "artifact_fraction": 0.46197916666666666,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 624,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S5",
+          "start_sample": 145920,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 2280.0
+        }
+      ],
+      "artifact_fraction": 1.0,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 936,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S2",
+          "start_sample": 192000,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 3000.0
+        }
+      ],
+      "artifact_fraction": 0.7182291666666667,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 1249,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S6",
+          "start_sample": 184320,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 2880.0
+        }
+      ],
+      "artifact_fraction": 0.03177083333333333,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 1561,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S9",
+          "start_sample": 347520,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 5430.0
+        }
+      ],
+      "artifact_fraction": 0.5677083333333334,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 1873,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S7",
+          "start_sample": 226560,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 3540.0
+        }
+      ],
+      "artifact_fraction": 0.050520833333333334,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 2185,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S4",
+          "start_sample": 389760,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 6090.0
+        }
+      ],
+      "artifact_fraction": 0.16041666666666668,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 2498,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S3",
+          "start_sample": 264960,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 4140.0
+        }
+      ],
+      "artifact_fraction": 1.0,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 2810,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S10",
+          "start_sample": 670080,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 10470.0
+        }
+      ],
+      "artifact_fraction": 0.4453125,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 3122,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S13",
+          "start_sample": 572160,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 8940.0
+        }
+      ],
+      "artifact_fraction": 0.328125,
+      "status": "unique"
+    },
+    {
+      "published_group": "train",
+      "published_row": 3435,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S8",
+          "start_sample": 105600,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 1650.0
+        }
+      ],
+      "artifact_fraction": 1.0,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 0,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S1",
+          "start_sample": 207360,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 3240.0
+        }
+      ],
+      "artifact_fraction": 0.036458333333333336,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 78,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S1",
+          "start_sample": 216960,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 3390.0
+        }
+      ],
+      "artifact_fraction": 0.4895833333333333,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 157,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S1",
+          "start_sample": 437760,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 6840.0
+        }
+      ],
+      "artifact_fraction": 0.7484375,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 236,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S1",
+          "start_sample": 32640,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 510.0
+        }
+      ],
+      "artifact_fraction": 0.2109375,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 315,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S14",
+          "start_sample": 297600,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 4650.0
+        }
+      ],
+      "artifact_fraction": 1.0,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 394,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S14",
+          "start_sample": 19200,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 300.0
+        }
+      ],
+      "artifact_fraction": 0.0,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 473,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S14",
+          "start_sample": 34560,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 540.0
+        }
+      ],
+      "artifact_fraction": 0.0,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 552,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S14",
+          "start_sample": 568320,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 8880.0
+        }
+      ],
+      "artifact_fraction": 0.013020833333333334,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 631,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S15",
+          "start_sample": 336000,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 5250.0
+        }
+      ],
+      "artifact_fraction": 0.8385416666666666,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 710,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S15",
+          "start_sample": 380160,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 5940.0
+        }
+      ],
+      "artifact_fraction": 0.6411458333333333,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 789,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S15",
+          "start_sample": 245760,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 3840.0
+        }
+      ],
+      "artifact_fraction": 0.45677083333333335,
+      "status": "unique"
+    },
+    {
+      "published_group": "test",
+      "published_row": 868,
+      "unique_raw_locations": 1,
+      "matches": [
+        {
+          "subject": "S15",
+          "start_sample": 222720,
+          "method": "upstream_0.9_5hz_causal_filter_per_30s_then_minmax",
+          "max_absolute_error": 0.0,
+          "start_seconds": 3480.0
+        }
+      ],
+      "artifact_fraction": 0.5994791666666667,
+      "status": "unique"
+    }
+  ],
+  "point_label_definition": "1=human-marked artifact, 0=not marked; db2npy floor(start), ceil(end) at 64Hz",
+  "matching_rule": "all 1920 points within absolute 1e-10; raw minmax exhaustive sample offsets, two explicit upstream-filter variants on a 30-second grid only",
+  "waveform_preprocessing_observation": "Every downloaded row has exactly min=0, max=1; db2npy writes database values unchanged, so it alone does not establish upstream raw-waveform preprocessing.",
+  "eight_second_windows_checked": 72,
+  "traditional_output_coverage": {
+    "welch": 1.0,
+    "elgendi": 1.0
+  },
+  "model_fits": 0,
+  "new_subject_independent_evaluation_started": false,
+  "source_file_hashes": [
+    {
+      "subject": "S1",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S1/S1.pkl",
+      "sha256": "e4a35dfe711368d447a2a383e5dd98191594928ccb2ca8deeeda06cd6e628c14",
+      "wrist_samples": 589568
+    },
+    {
+      "subject": "S10",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S10/S10.pkl",
+      "sha256": "bed48c8e38bdaed8fbd5e3f662b49d240119a98dfe4619e4902931a0335f4e4f",
+      "wrist_samples": 681472
+    },
+    {
+      "subject": "S11",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S11/S11.pkl",
+      "sha256": "5c5c4c0308478df56e2f464810fa949abbf25450c9c934edc5cb00beb7cecff5",
+      "wrist_samples": 579072
+    },
+    {
+      "subject": "S12",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S12/S12.pkl",
+      "sha256": "a7a5c802f0005a633c86956fe92dfe60b350f80b27bd2509880e50582dedd406",
+      "wrist_samples": 506496
+    },
+    {
+      "subject": "S13",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S13/S13.pkl",
+      "sha256": "7ca31b91bf1825083707a4be1ce65612d864c7effa077d6780154419df5d9813",
+      "wrist_samples": 584704
+    },
+    {
+      "subject": "S14",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S14/S14.pkl",
+      "sha256": "c192b9090ac3c0107000d8424c038ccd11292cded1f6c46c97e2cae85c725392",
+      "wrist_samples": 573312
+    },
+    {
+      "subject": "S15",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S15/S15.pkl",
+      "sha256": "1f080cbce67be7a0638787e745c3a73a50bab7db4be0da3b6c84288d42aa3497",
+      "wrist_samples": 508096
+    },
+    {
+      "subject": "S2",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S2/S2.pkl",
+      "sha256": "5655a60bbc7c5e560f64bc238218284613c9528ae9e3c5517946d476fa8e4399",
+      "wrist_samples": 525120
+    },
+    {
+      "subject": "S3",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S3/S3.pkl",
+      "sha256": "0fe923d3a7e7fd60e5245e655a9c1d0a1c2c106ea3128e2dfe79ba0f2266f799",
+      "wrist_samples": 559424
+    },
+    {
+      "subject": "S4",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S4/S4.pkl",
+      "sha256": "539c0f112507a5b8b21d90f648f932ad4ba8acaeb76fb3b06d1d06b033cafda2",
+      "wrist_samples": 585600
+    },
+    {
+      "subject": "S5",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S5/S5.pkl",
+      "sha256": "e9593717aa524e4c0ab37ba5603f7e6190fff1385251d5a9615342f38f55afb1",
+      "wrist_samples": 595520
+    },
+    {
+      "subject": "S6",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S6/S6.pkl",
+      "sha256": "c9fece7217d0ffd648e55ec9d139237bfb37b9958efb6cff072d438e46ba34e4",
+      "wrist_samples": 336000
+    },
+    {
+      "subject": "S7",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S7/S7.pkl",
+      "sha256": "ea669d42137d1a90127bb7be3c5c5613f636a00814cd04c604c42586868b0390",
+      "wrist_samples": 597952
+    },
+    {
+      "subject": "S8",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S8/S8.pkl",
+      "sha256": "4072e197ff7ddbd184d721b6643215dd7101af93e1a9c00cbcca7827c94b4969",
+      "wrist_samples": 517120
+    },
+    {
+      "subject": "S9",
+      "path": "datasets/ppg_bench_raw/dalia/PPG_FieldStudy/S9/S9.pkl",
+      "sha256": "68853d6ae4cc5d22dcf0b3a693a367305a6c28287cf5248a99c6f0f49c65cf56",
+      "wrist_samples": 547840
+    }
+  ],
+  "annotation_file_hashes": [
+    {
+      "path": "datasets/segade/new_PPG_DaLiA_train/processed_dataset/scaled_ppgs.npy",
+      "sha256": "ad8c4d517512b5b6054f3a1195be7b9d42af039ccc022c230c5d310210cca558"
+    },
+    {
+      "path": "datasets/segade/new_PPG_DaLiA_train/processed_dataset/seg_labels.npy",
+      "sha256": "19ce5137b2dfd46e9885616469128fb91d2996814f9d8a07eb8ec3339a32c1b4"
+    },
+    {
+      "path": "datasets/segade/new_PPG_DaLiA_test/processed_dataset/scaled_ppgs.npy",
+      "sha256": "7a651ef6dbe83f42cd46270e27c1cefe8f913916ec01bffc9933c6363eaf4576"
+    },
+    {
+      "path": "datasets/segade/new_PPG_DaLiA_test/processed_dataset/seg_labels.npy",
+      "sha256": "f834e979f9e369c5d650c8b1ec2df7c3a4e613008e89d1a8704c7b7f6f433a95"
+    }
+  ],
+  "script_sha256": "c8662e1fd349ed94ae413bcac73673c48eeed5c057a9b75352c2b4d853d55aaf",
+  "local_mapping_sha256": "cc6285ce1fd88b14bc23255785a38cc552d84ba240c1ff6156ebb8ed0547b9ba",
+  "limitations": [
+    "Only sampled rows were investigated; full subject identity and temporal overlap audit remains required.",
+    "Official data_split.py performs KFold over array rows; do not reuse it as subject-independent validation.",
+    "Traditional HR output is a pipeline check, not an artifact classifier score or ECG-validated HR metric.",
+    "No approximate correlation match is accepted as annotation provenance."
+  ]
+}

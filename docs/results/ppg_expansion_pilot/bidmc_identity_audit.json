@@ -1,0 +1,2852 @@
+{
+  "scope": "Read-only identity audit of the historical 100 BIDMC linear evaluations (AnyPPG/PaPaGei-S, two tasks, five seeds/folds). No retraining or editing old outputs.",
+  "record_count": 53,
+  "unique_original_patient_ids": 46,
+  "repeated_patients": {
+    "s03386": [
+      "bidmc06",
+      "bidmc07",
+      "bidmc08",
+      "bidmc09"
+    ],
+    "s11342": [
+      "bidmc20",
+      "bidmc21",
+      "bidmc22",
+      "bidmc23"
+    ],
+    "s25323": [
+      "bidmc38",
+      "bidmc39"
+    ]
+  },
+  "completed_evaluations_audited": 100,
+  "evaluations_with_physical_patient_overlap": 92,
+  "unique_seed_fold_splits": 25,
+  "unique_splits_with_physical_patient_overlap": 23,
+  "previous_audit": "docs/results/ppg_bench_bidmc_linear_partial/audit.json",
+  "correction": "The prior phrase 53 subjects refers to recording groups. Record-level splits are disjoint but physical patients can occur on both sides. Matching published numerical results remains true; these scores do not demonstrate strict unseen-patient generalization.",
+  "all_records_to_original_patient": {
+    "bidmc01": "s01182",
+    "bidmc02": "s01241",
+    "bidmc03": "s01795",
+    "bidmc04": "s01840",
+    "bidmc05": "s01995",
+    "bidmc06": "s03386",
+    "bidmc07": "s03386",
+    "bidmc08": "s03386",
+    "bidmc09": "s03386",
+    "bidmc10": "s03516",
+    "bidmc11": "s04641",
+    "bidmc12": "s06914",
+    "bidmc13": "s07432",
+    "bidmc14": "s07784",
+    "bidmc15": "s08452",
+    "bidmc16": "s08915",
+    "bidmc17": "s08936",
+    "bidmc18": "s09483",
+    "bidmc19": "s09968",
+    "bidmc20": "s11342",
+    "bidmc21": "s11342",
+    "bidmc22": "s11342",
+    "bidmc23": "s11342",
+    "bidmc24": "s12531",
+    "bidmc25": "s12589",
+    "bidmc26": "s13314",
+    "bidmc27": "s13927",
+    "bidmc28": "s15646",
+    "bidmc29": "s17236",
+    "bidmc30": "s17497",
+    "bidmc31": "s17735",
+    "bidmc32": "s17756",
+    "bidmc33": "s19981",
+    "bidmc34": "s20471",
+    "bidmc35": "s20486",
+    "bidmc36": "s22348",
+    "bidmc37": "s24455",
+    "bidmc38": "s25323",
+    "bidmc39": "s25323",
+    "bidmc40": "s26845",
+    "bidmc41": "s26868",
+    "bidmc42": "s29093",
+    "bidmc43": "s29125",
+    "bidmc44": "s29503",
+    "bidmc45": "s29622",
+    "bidmc46": "s29866",
+    "bidmc47": "s30026",
+    "bidmc48": "s30243",
+    "bidmc49": "s31106",
+    "bidmc50": "s31141",
+    "bidmc51": "s31400",
+    "bidmc52": "s32195",
+    "bidmc53": "s32628"
+  },
+  "fix_sha256": {
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_01_Fix.txt": "5acedc860fdf03ac117b333bc0ef6b6579fe066382ba89abfd14ccc863b83831",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_02_Fix.txt": "d201db17781166b11c865c64bfc0c2a2f292d66462f9f5ff5a666a25aa7ecb24",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_03_Fix.txt": "1dabc778bfd78ca9507e2090a8a3dd64ea431a2b400df947c5f36185ccc70c71",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_04_Fix.txt": "827cd32b04c38784aeb20cc682ad6cb52f42499eaf8432037fcd640c11f09387",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_05_Fix.txt": "e690cbdeee11e7309bff2ff44810f5f1a3b8e88c3ce7654e1d3ffce3581fa0a2",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_06_Fix.txt": "19eddcfc359689d59b21cbecaed9952ee720903d208162c625c33f2cfd586599",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_07_Fix.txt": "06ec092cc3fb5dd5dc295eb9fcb660b8724206f26a6178d0801a58b0b99d5309",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_08_Fix.txt": "082ddc305c5caf7ffd0f577ed7203c7fb4bf1533c562ed9683e58b67acdebfc1",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_09_Fix.txt": "7ca0bf2488078c96787ba8030337b1dbcd858c7e095320096f682cb15237e505",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_10_Fix.txt": "e2bf5eadbf6130b02dbeb3ced89f3dd1e573a9632c3bbf72ca5afbeead19b0d5",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_11_Fix.txt": "598dac42dd0598a149de95e46808326d7683037f0b0870e8d98f9df636e16ed7",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_12_Fix.txt": "2c7ee62e7a53bbaa8018b3b5e601f91f6571ca82e930a26b555082671faa2384",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_13_Fix.txt": "8b3c98443b35dd61de9e363dc16b9600b2a58ae42050be966c05ec58f84b5a1e",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_14_Fix.txt": "9208229bfa0d257fa1853eebd7bf45c992e9556858c23312513e51161c22e149",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_15_Fix.txt": "43f3b76678240e15f7996061aa46eb4cf646c56205bfe4fe7e8df5e852464e4f",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_16_Fix.txt": "4e636e06cbb30a521eefa63fa52dccefa61db3d3242a5153d39eb8ef04c2ea8d",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_17_Fix.txt": "ea527422301e24209e85e2ebdfc38b65cd9e384c7d57bf93a761911c0c86fb5e",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_18_Fix.txt": "c3887a42f51e12ac86ac6cda445ca2c12c67f1738d7b2502abb4841f7a9d625b",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_19_Fix.txt": "e04a4803e21d52a1dfbcad123e5e98516f698abe1bc0607723edd0c781ddb003",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_20_Fix.txt": "f57f184e30ffc04071b242ca14373d89f7ec562da7d3c8ad25a92fcb3dc3b259",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_21_Fix.txt": "72b3369746e376459d7b98ae96a3133bd4c079d29db282d46d4e96e13c33c9ab",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_22_Fix.txt": "646ebe6fb6bba4f7fcf1e675e152d9d1244cf5c1e3ea8786a08078c140acee08",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_23_Fix.txt": "35ea4b07fd7385a188e60343784af77b055bd45cad7328c0e5b4b22d475cd054",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_24_Fix.txt": "d0ac12512954a5c96dac66baa4019b965dd23326c6880dc14432842a52101a6e",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_25_Fix.txt": "2d79a7204560519b1e7ae904adc2ffe752d9b02a2f5e36e91e1b822cf4a17b32",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_26_Fix.txt": "5a61a3d26848613018ba1c51992beb9e7678a8fd1362495e5ffa85ae341a68a5",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_27_Fix.txt": "601d724c8ee0873aafa39a6028dfce3870fefc6878d242f1751a545749c4afda",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_28_Fix.txt": "565794dd85aff8f51ca39ac7a05425c6c2033471a324c48b2eb72574fdd77128",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_29_Fix.txt": "6eb370be773d076e4c5fa05f589f278f3407265f53c781b9a4b1b68c4c3f3758",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_30_Fix.txt": "ff89731b765a944ef3c0b37c9fa4aac8096038258cb7f21ed94ce7f64e913533",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_31_Fix.txt": "db79e7ce6b921fdcdad90282ce4670d4444c14f666b08c5c970526a1d557811d",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_32_Fix.txt": "9e3c648d53520ee8478bc52477e9e667f26739241071196acdbcaaf06a16b2a0",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_33_Fix.txt": "2d5cbb5306878a1d1cbcaf02d0fa924e61a42bcbee3a6e8d3a2e281faffd7b1f",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_34_Fix.txt": "c925cbf502aa6807379a497553d178b725fbe771128dbc5e549e4bf7ea604913",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_35_Fix.txt": "dabdefb371ec82d68fa925fa37e88e0434f1062ff52efd0654781222199393c0",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_36_Fix.txt": "e955bc6001aab88c3e438b5757a54f2419be39fb0c76db9fece4006147465b34",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_37_Fix.txt": "c16dd59858ddc9c84af3821828aa8ef4fee4f6b26b39a456e6ef8f1e8b4ca0c3",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_38_Fix.txt": "300144bbe1a0faaeb82d65b2d513ed3f147535d9157f78f513c95dc7c551a556",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_39_Fix.txt": "3908ea0daefd660efc0cb4ea56170b57280eb92ce0b788ec4d42a0365d34cc85",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_40_Fix.txt": "76241c783917e80882df79c0f8702cbeafbef74aff3676b68f98e5a7714d5996",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_41_Fix.txt": "dde737fcb9b662fa21e8d4ccac4439bd17fc1bc59511de958fde0cfc190fd30a",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_42_Fix.txt": "ae0bc4bdd8f081aef8e4738f996df58de3fb275bc7c4d9535f9c56477d661161",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_43_Fix.txt": "ad1d343bf1304d66b983164d6ad12c1a0bfc8a08cb46b7b19bf55a39337071d5",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_44_Fix.txt": "defb61cfe9a0e3599cc89a517cabdd2bb55551d21a8a2008a3dc77557989a3f3",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_45_Fix.txt": "01d56fd890e31ec8e1598500dccb102f6340ff009c62c859ecd88ca5f260c78a",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_46_Fix.txt": "b3db69170b7e35437cb119c1ad04d8402179bbbcf4786d03b1153e0510433c95",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_47_Fix.txt": "535694430e5b28bd9fcdee6fad9b75582325ef7b2221468180879b1206b68022",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_48_Fix.txt": "26012a04d01dd4bb05ab5fd1af947373a8188b4932e01715c6df05e66dbf6dec",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_49_Fix.txt": "2924aa9c18724661bfa6370f255091c8c881e9ac9215f002ded6875e15990b91",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_50_Fix.txt": "4ccbd1e8bfedd5ee9a5a3e64e4268639ba42984b122a753d88fcf2d9b83fd8f2",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_51_Fix.txt": "091bb7b04d0886f07318cfd2be45e7db2565a361516f8a4698b7d87d87981df0",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_52_Fix.txt": "77e445a7e3217d6220cadcf0390d5e03fd877c1963da92829d2c8e97121103ae",
+    "datasets/ppg_bench_raw/bidmc/bidmc_csv/bidmc_53_Fix.txt": "320343b531479268a33da8162b184aa67624459190faf3a876ea8bb9988cde50"
+  },
+  "result_file_set_sha256": "0ae572b7f2c37b32e937906eaa9f0611877cdc887eb927994e302cb4e82e350d",
+  "checks": [
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21"
+          ],
+          "test": [
+            "bidmc22",
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07",
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07"
+          ],
+          "test": [
+            "bidmc08",
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21"
+          ],
+          "test": [
+            "bidmc22",
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07",
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07"
+          ],
+          "test": [
+            "bidmc08",
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "AnyPPG",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21"
+          ],
+          "test": [
+            "bidmc22",
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 42,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 43,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07",
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 44,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07"
+          ],
+          "test": [
+            "bidmc08",
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 45,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-resp",
+      "seed": 46,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21"
+          ],
+          "test": [
+            "bidmc22",
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 42,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s25323"
+      ],
+      "overlap_records": {
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 43,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07",
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21",
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 44,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [],
+      "overlap_records": {}
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc06"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07"
+          ],
+          "test": [
+            "bidmc08",
+            "bidmc09"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 45,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc20",
+            "bidmc23"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 0,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc21",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc20"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 1,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc07",
+            "bidmc08"
+          ],
+          "test": [
+            "bidmc06",
+            "bidmc09"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc22",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc21"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 2,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s11342"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc07",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc08"
+          ]
+        },
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc23"
+          ],
+          "test": [
+            "bidmc22"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 3,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s03386",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s03386": {
+          "train": [
+            "bidmc06",
+            "bidmc08",
+            "bidmc09"
+          ],
+          "test": [
+            "bidmc07"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc38"
+          ],
+          "test": [
+            "bidmc39"
+          ]
+        }
+      }
+    },
+    {
+      "model": "PaPaGei-S",
+      "task": "bidmc-spo2",
+      "seed": 46,
+      "fold": 4,
+      "record_groups_disjoint": true,
+      "physical_patient_overlap": [
+        "s11342",
+        "s25323"
+      ],
+      "overlap_records": {
+        "s11342": {
+          "train": [
+            "bidmc20",
+            "bidmc21",
+            "bidmc22"
+          ],
+          "test": [
+            "bidmc23"
+          ]
+        },
+        "s25323": {
+          "train": [
+            "bidmc39"
+          ],
+          "test": [
+            "bidmc38"
+          ]
+        }
+      }
+    }
+  ],
+  "official_importer_commit": "f5022e7029c5b6d6b8159b665dccc2c8f267976e",
+  "official_importer_url": "https://github.com/peterhcharlton/RRest/blob/f5022e7029c5b6d6b8159b665dccc2c8f267976e/RRest_v3.0/Data_Import_Scripts/BIDMC_data_importer.m",
+  "breath_annotation_index_note": "The official MATLAB importer copies ann.resp.breaths.x1/x2 directly into Breaths.csv (lines 842-855) and into RRest ref.breaths (lines 698-700). These signal sample numbers are MATLAB one-based; use (sample-1)/125 for zero-origin time. The constant offset leaves an unchanged interval difference but can change which annotations enter a half-open time window.",
+  "one_sample_boundary_examples": {
+    "bidmc13_ann1": [
+      4000
+    ],
+    "bidmc35_ann1": [
+      4000,
+      44000
+    ],
+    "bidmc49_ann1": [
+      20000
+    ],
+    "bidmc52_ann1": [
+      20000
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "status": "passed_pipeline_check_only",
+  "dataset": "ECSMP",
+  "seed": 20261105,
+  "split_counts": {
+    "train": 18,
+    "validation": 6,
+    "test": 6
+  },
+  "distinct_people": 30,
+  "raw_windows": 360,
+  "input_shape": [
+    360,
+    1250
+  ],
+  "observation": "First 120s beginning at earliest fully neutral 10s window; continuous original wrist BVP with 2s padding for peak extraction",
+  "inventory": {
+    "eligible_people": 60,
+    "age_range_years": [
+      18.0,
+      28.0
+    ],
+    "sex_counts": {
+      "Female": 41,
+      "Male": 19
+    },
+    "sds_range": [
+      28.75,
+      66.25
+    ],
+    "sds_at_least_50": 17,
+    "sds_at_least_53": 9,
+    "all_age_sex_sds_complete": true,
+    "raw_sds_matches_processed_people": 60,
+    "neutral_10s_windows_per_person_range": [
+      23,
+      24
+    ],
+    "source": "https://data.mendeley.com/datasets/vn5nknh3mn/2"
+  },
+  "covariate_names": [
+    "age_years",
+    "male_indicator"
+  ],
+  "traditional_description": "10 mean spectral/shape descriptors plus HR mean/SD, PP interval SD, RMSSD, pulse rate from raw continuous 120s; no correction or ECG reference",
+  "models": {
+    "AnyPPG": {
+      "model": "AnyPPG",
+      "random_init": false,
+      "seed": 20261105,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        360,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1250,
+      "native_used_samples": 1250,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "checkpoint_sha256": {
+        "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cpu",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "facf227ad38c51008ccd51c70001c03fa98cf77b1b9915dc38c6656df8610827",
+      "record_statistics_sha256": "33a6f1193b4404c86b5b128cab9c02d58fd13b1ce538db9c7e7c41e555d1c724",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": null,
+      "elapsed_seconds": 1.25,
+      "projection_components": 8,
+      "projection_fitted_people": 18,
+      "person_aggregation": "Arithmetic mean over identical fixed observation windows",
+      "input_waveforms_sha256": "facf227ad38c51008ccd51c70001c03fa98cf77b1b9915dc38c6656df8610827"
+    },
+    "PaPaGei-P": {
+      "model": "PaPaGei-P",
+      "random_init": false,
+      "seed": 20261105,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        360,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 1250,
+      "native_used_samples": 1250,
+      "encoder_parameters": 4993024,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+      "device": "cpu",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "facf227ad38c51008ccd51c70001c03fa98cf77b1b9915dc38c6656df8610827",
+      "record_statistics_sha256": "33a6f1193b4404c86b5b128cab9c02d58fd13b1ce538db9c7e7c41e555d1c724",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": null,
+      "elapsed_seconds": 0.9839999999967404,
+      "projection_components": 8,
+      "projection_fitted_people": 18,
+      "person_aggregation": "Arithmetic mean over identical fixed observation windows",
+      "input_waveforms_sha256": "facf227ad38c51008ccd51c70001c03fa98cf77b1b9915dc38c6656df8610827"
+    }
+  },
+  "independent_head_audit": {
+    "heads_checked": 8,
+    "saved_prediction_max_difference": 0.0,
+    "independent_closed_form_ridge_max_difference": 2.2026824808563106e-12,
+    "mae_recalculation_max_difference": 0.0,
+    "passed": true,
+    "encoder_reforward_performed_by_this_audit": false
+  },
+  "checks": [
+    "Distinct people across train/validation/test",
+    "Raw SDS scores match processed subject scores",
+    "No target-derived BP or disease fields used as covariates",
+    "Preprocessing and eight-component PCA fit training people only",
+    "Alpha selection uses validation people only; no refit on test or validation",
+    "All encoder states unchanged",
+    "Same fixed windows and person-level mean for both encoders",
+    "All predictions finite; one prediction per test person"
+  ],
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "limitations": [
+    "SDS is a self-report symptom scale, not clinician diagnosis",
+    "60 total available people aged 18-28; limited population range",
+    "Current fixed single split uses only 30 people",
+    "PRV descriptors are unvalidated algorithm estimates without ECG reference",
+    "Source alignment follows existing EEG/video metadata, not independently reannotated stimulus onsets",
+    "Pretraining overlap not fully certifiable; official listed sources do not establish individual non-overlap"
+  ],
+  "outputs_sha256": {
+    "AnyPPG__sds_self_report_score__demographics.npz": "12e411e21fa6e0020e9c6a1188f346bc125271b909ffd6b78d7734233cd7894b",
+    "AnyPPG__sds_self_report_score__demographics_traditional.npz": "6791da9d380157ca9f49a0682b4d293f5a5e1b38f2f037c86e2ca10864ad0fcb",
+    "AnyPPG__sds_self_report_score__embedding.npz": "ffe325da38173892b31a228be498e0574b2b25019a3e4f301386cfdc61e172b0",
+    "AnyPPG__sds_self_report_score__demographics_embedding.npz": "46685eb3c36d39e965ef7c82b44a8a9c36558ce31835508bc3871bfc3d7addb9",
+    "AnyPPG__sds_self_report_score__demographics_traditional_embedding.npz": "014c2c2cf5d218d2332d88c6d908c95234407f150f577c646d18b9eb184dabf5",
+    "PaPaGei-P__sds_self_report_score__embedding.npz": "d365e0d7f6c568e130eeac4556837cebc5338b4b7b434cf66fe1a49d10cd4528",
+    "PaPaGei-P__sds_self_report_score__demographics_embedding.npz": "7b3cc1604467217b079038ebd17f1e13a79411a5981e20f9799b38561ba99bc0",
+    "PaPaGei-P__sds_self_report_score__demographics_traditional_embedding.npz": "3cabe3ea2a87bf53a47913855542783bbfc8aa6ec41fde763175d1e35283512c"
+  },
+  "new_training": "Ridge task heads only; encoders frozen",
+  "full_evaluation_started": false,
+  "local_manifest_sha256": "ac228127bd60ebc7a4c24e9f44f5441e721dcecd92d1eb467a2533628e773d70"
+}

@@ -1,0 +1,85 @@
+{
+  "status": "paired_data_and_traditional_filter_pipeline_verified",
+  "foundation_model_evaluated": false,
+  "source": "https://zenodo.org/records/4981140",
+  "license": "CC-BY-4.0",
+  "subjects": 1,
+  "underlying_clean_signals": 1,
+  "noisy_copies": 340,
+  "fs": 250,
+  "samples": 18001,
+  "elapsed_signal_seconds": 72,
+  "validated_noisy_shapes_and_finite_values": 340,
+  "example_noisy_files": [
+    "ppg_std1_1.mat",
+    "ppg_std136_1.mat",
+    "ppg_std5000_1.mat"
+  ],
+  "reference": "Original clean waveform minus its full-record mean; no reference-guided time alignment or gain fitting",
+  "scoring": "Fixed 2 to 70 seconds; mean-centered input versus fixed bandpass output; arbitrary amplitude units",
+  "training": false,
+  "split": "None; copies of one clean waveform do not represent independent people",
+  "limitations": [
+    "Resting single person and synthetic noise; cannot establish real-motion or population generalization",
+    "Filename rounded noise intensity is not a measured SNR; metrics computed from actual paired arrays",
+    "Only classical filtering example; foundation waveform decoder remains a separate planned task"
+  ],
+  "clean_sha256": "3ab583bf39041a23484282a2d6052b54a1019a9ebbc0c5300a527579bd570aba",
+  "code_sha256": "35841d4955d8b56ef5c8b637da680e94cc5bd11d69fb13577ee49b75ac4b1dbb",
+  "examples": [
+    {
+      "file": "ppg_std1_1.mat",
+      "method": "mean_centered_input",
+      "mae": 1.642557963858402,
+      "rmse": 2.02913235209319,
+      "snr_db": 52.524197479257055,
+      "correlation": 0.9999972040684035,
+      "source_sha256": "7838e46df6621e9e863672607b9a1d7f560220bf8c712242e8db4ec3d267b5f3"
+    },
+    {
+      "file": "ppg_std1_1.mat",
+      "method": "fixed_bandpass_0.5_to_8_Hz",
+      "mae": 29.84600986971723,
+      "rmse": 37.95383098280748,
+      "snr_db": 27.085292598854366,
+      "correlation": 0.9990609244229691,
+      "source_sha256": "7838e46df6621e9e863672607b9a1d7f560220bf8c712242e8db4ec3d267b5f3"
+    },
+    {
+      "file": "ppg_std136_1.mat",
+      "method": "mean_centered_input",
+      "mae": 156.9431142145582,
+      "rmse": 194.79614210768165,
+      "snr_db": 12.878797953308442,
+      "correlation": 0.9751886828168108,
+      "source_sha256": "941be98aad81c9ee38d811f730095fe4f41496ed6290ad25582d612b2b8f0c74"
+    },
+    {
+      "file": "ppg_std136_1.mat",
+      "method": "fixed_bandpass_0.5_to_8_Hz",
+      "mae": 40.40596120552633,
+      "rmse": 50.385148950741446,
+      "snr_db": 24.62435404825346,
+      "correlation": 0.9982994473797242,
+      "source_sha256": "941be98aad81c9ee38d811f730095fe4f41496ed6290ad25582d612b2b8f0c74"
+    },
+    {
+      "file": "ppg_std5000_1.mat",
+      "method": "mean_centered_input",
+      "mae": 5664.585779927883,
+      "rmse": 7068.2707366394425,
+      "snr_db": -18.315858535676508,
+      "correlation": 0.11932082110562252,
+      "source_sha256": "5475d61e21c35c25c0276125a8ac5f9a536d1439a8b8650ee3906a2be42d6b72"
+    },
+    {
+      "file": "ppg_std5000_1.mat",
+      "method": "fixed_bandpass_0.5_to_8_Hz",
+      "mae": 1072.2879703823567,
+      "rmse": 1325.5880741868343,
+      "snr_db": -3.7777667810838778,
+      "correlation": 0.5398785786163587,
+      "source_sha256": "5475d61e21c35c25c0276125a8ac5f9a536d1439a8b8650ee3906a2be42d6b72"
+    }
+  ]
+}

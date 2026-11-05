@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "purpose": "Only dataset restoration and small-sample validation; no automatic complete evaluation.",
+  "segade": {
+    "source": "https://github.com/chengstark/Segade",
+    "commit": "f5b2ad6e180a1474bc47d6c5ec5d482edaed6797",
+    "files": [
+      {
+        "path": "datasets/segade/new_PPG_DaLiA_test/processed_dataset/scaled_ppgs.npy",
+        "url": "https://raw.githubusercontent.com/chengstark/Segade/f5b2ad6e180a1474bc47d6c5ec5d482edaed6797/data/new_PPG_DaLiA_test/processed_dataset/scaled_ppgs.npy",
+        "size": 13347968,
+        "git_blob_sha1": "ccc618834a250d6fe4ca448cfad14323891ca122"
+      },
+      {
+        "path": "datasets/segade/new_PPG_DaLiA_test/processed_dataset/seg_labels.npy",
+        "url": "https://raw.githubusercontent.com/chengstark/Segade/f5b2ad6e180a1474bc47d6c5ec5d482edaed6797/data/new_PPG_DaLiA_test/processed_dataset/seg_labels.npy",
+        "size": 13347968,
+        "git_blob_sha1": "0509d4ed2159ceb62d0914f9c99e0b4b15f58655"
+      },
+      {
+        "path": "datasets/segade/new_PPG_DaLiA_train/processed_dataset/scaled_ppgs.npy",
+        "url": "https://raw.githubusercontent.com/chengstark/Segade/f5b2ad6e180a1474bc47d6c5ec5d482edaed6797/data/new_PPG_DaLiA_train/processed_dataset/scaled_ppgs.npy",
+        "size": 52777088,
+        "git_blob_sha1": "5a301782390a9f8516174369c3dbcb7942166625"
+      },
+      {
+        "path": "datasets/segade/new_PPG_DaLiA_train/processed_dataset/seg_labels.npy",
+        "url": "https://raw.githubusercontent.com/chengstark/Segade/f5b2ad6e180a1474bc47d6c5ec5d482edaed6797/data/new_PPG_DaLiA_train/processed_dataset/seg_labels.npy",
+        "size": 52777088,
+        "git_blob_sha1": "b6057c6acb9d516d08281bf8e31ece4fff57cd42"
+      }
+    ]
+  },
+  "epfl": {
+    "source": "https://zenodo.org/records/4981140",
+    "license": "CC-BY-4.0",
+    "path": "datasets/epfl_synthetic/DataPPGwNoise.rar",
+    "url": "https://zenodo.org/api/records/4981140/files/DataPPGwNoise.rar/content",
+    "size": 47210761,
+    "md5": "73f29607a2ea9d968c983113f20272c5"
+  },
+  "bidmc": {
+    "source": "https://physionet.org/content/bidmc/1.0.0/",
+    "base": "https://physionet.org/files/bidmc/1.0.0/",
+    "output": "datasets/ppg_bench_raw/bidmc",
+    "supplement": "bidmc_01..53_Breaths.csv and bidmc_01..53_Fix.txt; official SHA256SUMS verification"
+  }
+}

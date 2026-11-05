@@ -1,0 +1,163 @@
+{
+  "status": "passed_pipeline_check_only",
+  "dataset": "PPG-BP",
+  "seed": 20261105,
+  "split_counts": {
+    "train": 40,
+    "validation": 10,
+    "test": 10
+  },
+  "distinct_people": 60,
+  "raw_windows": 180,
+  "input_shape": [
+    180,
+    263
+  ],
+  "observation": "Three independent 2.1-second fingertip PPG clips; 6.3 seconds total, not concatenated",
+  "inventory": {
+    "raw_people": 219,
+    "eligible_people": 218,
+    "excluded_ids": [
+      "231"
+    ],
+    "continuous_labels_complete": true,
+    "disease_nonblank_counts": {
+      "Diabetes": 37,
+      "cerebral infarction": 20,
+      "cerebrovascular disease": 25
+    },
+    "disease_blank_interpretation": "Blank cells are not independently adjudicated disease-negative controls",
+    "source": "https://doi.org/10.1038/sdata.2018.20"
+  },
+  "covariate_names": [
+    "age_years",
+    "male_indicator",
+    "bmi_kg_m2"
+  ],
+  "traditional_description": "Recorded table HR plus mean of 10 fixed PPG spectral/shape descriptors over three separate 2.1s clips; no PRV",
+  "models": {
+    "AnyPPG": {
+      "model": "AnyPPG",
+      "random_init": false,
+      "seed": 20261105,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        180,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 263,
+      "native_used_samples": 263,
+      "encoder_parameters": 4044272,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "state_after_sha256": "4211c12b940433805db8dc6b2ac37c42135b39a4f99a14e9b36644b50ec80bfa",
+      "checkpoint_sha256": {
+        "models/weights/anyppg/anyppg_ckpt.pth": "99b9bb0a3c2b83a1f5d8ca2963fbd25329b6530e8d337de8825722fc6fd5f4fa"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.anyppg:AnyPPGPort",
+      "device": "cpu",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "3afa344cdf3ca63d627e95c76ddb7f048cc67f2d09cd25ce09f17b90c4faea0b",
+      "record_statistics_sha256": "623212da0ec96f3e3a2cb7fa01dbe68736fc106bdec23c2b94f035157cd3b7ad",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": null,
+      "elapsed_seconds": 0.5630000000237487,
+      "projection_components": 8,
+      "projection_fitted_people": 40,
+      "person_aggregation": "Arithmetic mean over identical fixed observation windows",
+      "input_waveforms_sha256": "3afa344cdf3ca63d627e95c76ddb7f048cc67f2d09cd25ce09f17b90c4faea0b"
+    },
+    "PaPaGei-P": {
+      "model": "PaPaGei-P",
+      "random_init": false,
+      "seed": 20261105,
+      "pretrained_weights_loaded": true,
+      "random_initialization": null,
+      "shape": [
+        180,
+        512
+      ],
+      "native_fs": 125,
+      "native_input_samples": 263,
+      "native_used_samples": 263,
+      "encoder_parameters": 4993024,
+      "encoder_trainable_parameters": 0,
+      "state_before_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "state_after_sha256": "b23f5bda5b56f5689661e318b05af7bd6cad67dae4d42d8c5e3cff19163c6ef1",
+      "checkpoint_sha256": {
+        "models/weights/papagei/papagei_p.pt": "3a6850961af527cbb2e476d3ad0bb374ae86ed86ffdd55b0b0d7e2f49451518e"
+      },
+      "upstream_commit": "2bca102b7be2c0a9816a3872314784d2ef92555b",
+      "native_port": "ppg_bench.encoders.papagei:PaPaGei_P_Port",
+      "device": "cpu",
+      "precision": "float32; no autocast",
+      "native_input_sha256": "3afa344cdf3ca63d627e95c76ddb7f048cc67f2d09cd25ce09f17b90c4faea0b",
+      "record_statistics_sha256": "623212da0ec96f3e3a2cb7fa01dbe68736fc106bdec23c2b94f035157cd3b7ad",
+      "torch_version": "2.5.1+cu124",
+      "numpy_version": "1.26.4",
+      "gpu": null,
+      "elapsed_seconds": 0.43700000003445894,
+      "projection_components": 8,
+      "projection_fitted_people": 40,
+      "person_aggregation": "Arithmetic mean over identical fixed observation windows",
+      "input_waveforms_sha256": "3afa344cdf3ca63d627e95c76ddb7f048cc67f2d09cd25ce09f17b90c4faea0b"
+    }
+  },
+  "independent_head_audit": {
+    "heads_checked": 16,
+    "saved_prediction_max_difference": 0.0,
+    "independent_closed_form_ridge_max_difference": 2.842170943040401e-14,
+    "mae_recalculation_max_difference": 0.0,
+    "passed": true,
+    "encoder_reforward_performed_by_this_audit": false
+  },
+  "checks": [
+    "Distinct people across train/validation/test",
+    "PPG-BP three raw clips per person have 2100 finite samples",
+    "No target-derived BP or disease fields used as covariates",
+    "Preprocessing and eight-component PCA fit training people only",
+    "Alpha selection uses validation people only; no refit on test or validation",
+    "All encoder states unchanged",
+    "Same fixed windows and person-level mean for both encoders",
+    "All predictions finite; one prediction per test person"
+  ],
+  "ridge_alphas": [
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "limitations": [
+    "Finger auxiliary domain, not wrist validation",
+    "One cuff label per person; not beat-to-beat BP",
+    "2.1-second clips cannot support reliable PRV",
+    "No causal or clinical validation",
+    "Pretraining person overlap not fully certifiable; no conclusion of pretraining-unseen generalization"
+  ],
+  "outputs_sha256": {
+    "AnyPPG__cuff_sbp_mmhg__demographics.npz": "36606314a4fd82b82a4f619de51f2ef4f563c209d55ece294e3b663fc53e2b25",
+    "AnyPPG__cuff_sbp_mmhg__demographics_traditional.npz": "fb37cf8909e500488f58de8bd6b90e964ab569a7d64e4293318645d4c8726cbb",
+    "AnyPPG__cuff_sbp_mmhg__embedding.npz": "7d01e33627e0e33d58564582e2a1b6aa6bff6fcf640f2daf71bf85370f57bc17",
+    "AnyPPG__cuff_sbp_mmhg__demographics_embedding.npz": "71af0b4bd7c5f2570a19b6bf771503f5c6837253d2e34767d5443ab63bc4229a",
+    "AnyPPG__cuff_sbp_mmhg__demographics_traditional_embedding.npz": "5fe9510cc1390886e90007d3f49bc1360e6b11ada3f100c1aa470c5ba3d8f278",
+    "AnyPPG__cuff_dbp_mmhg__demographics.npz": "1ed8a4af648ba2cbeabe8c4f86b71e1f950b6974771acb3ece001674cc179ea0",
+    "AnyPPG__cuff_dbp_mmhg__demographics_traditional.npz": "2dd7f377764fba4202045c2e0f18a160df88115cce279f62ae9cca7d488cff72",
+    "AnyPPG__cuff_dbp_mmhg__embedding.npz": "f02b9432837e5ae1811ecfbfeba7fed50e2d12d7f0bc06442db6ef06a9a5ef30",
+    "AnyPPG__cuff_dbp_mmhg__demographics_embedding.npz": "0e0f57e9d107ab72860970c02a888ca8d9401e9f8f65a5f2dff1b3b0f1c481ef",
+    "AnyPPG__cuff_dbp_mmhg__demographics_traditional_embedding.npz": "212bb9403ba4b1ae14850109c0bb29e2fd64510666cdb669292e88b6ecbf4c11",
+    "PaPaGei-P__cuff_sbp_mmhg__embedding.npz": "c358df59ad7399a5d9126fc1f4bc79e977a499f2e123941d13b4f600268f93ba",
+    "PaPaGei-P__cuff_sbp_mmhg__demographics_embedding.npz": "189ee6220cecaa95627c735a153055c81954efb7a3381fb74a45ce39e23c9a06",
+    "PaPaGei-P__cuff_sbp_mmhg__demographics_traditional_embedding.npz": "357821755909a221e7e0888241a17156382bf3f78817badbeb2041b47df5d4b1",
+    "PaPaGei-P__cuff_dbp_mmhg__embedding.npz": "6ff6ff690891946b68d4a3b653b736e6b36c44a9c9fc66ca5df5c4e7c0f7f0d3",
+    "PaPaGei-P__cuff_dbp_mmhg__demographics_embedding.npz": "8570ee9210714b2bbb9db910665923fe245e8ddd9b2d2c0e150e8f36dddf4c34",
+    "PaPaGei-P__cuff_dbp_mmhg__demographics_traditional_embedding.npz": "e35f01b698021039185898dc8ad66218aebca577e26599635a0b04e5e4db43f7"
+  },
+  "new_training": "Ridge task heads only; encoders frozen",
+  "full_evaluation_started": false,
+  "local_manifest_sha256": "b4a76f01294d925bf8994c7e95840ce1586fc6181d6b7c817ec3f7516deb96d2"
+}

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "prediction_files_checked": 36,
+  "ridge_independent_sklearn_refits": 14,
+  "mlp_weight_reloads": 14,
+  "maximum_summary_recompute_difference_bpm": 0.0,
+  "maximum_independent_ridge_prediction_difference_bpm": 8.526512829121202e-14,
+  "maximum_reloaded_mlp_prediction_difference_bpm": 0.0,
+  "subject_splits_disjoint": true,
+  "random_anyppg_same_parameter_count_different_weights": true,
+  "frozen_state_pairs_checked": 14,
+  "pilot_report_sha256": "55b983797871b17c25ce4b918696dbd3baf032e21503b2f7fc316175ee02cfbe",
+  "scores_sha256": "6380bdeac0ac77b19c96085da3b74ae606f75925e443717cbcbd8faf11526bb4",
+  "audit_script_sha256": "16a9b6e0c469e5e8c30c48ad1ad2d4a10c0d440115b900a7ac3be5e8031a894e",
+  "scope": "prediction integrity and small workflow only, not full efficacy evaluation"
+}

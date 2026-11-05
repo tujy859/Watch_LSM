@@ -1,5 +1,7 @@
 # 调研与工程选型入口
 
+2026-11-05最新实施见[评测扩展方案与小样本流程](../docs/ppg_expansion_plan_and_pilot.md)：核对调研仓`9882df06694f1fa607467b8219c03d0a7cfed220`的数据专题；六模型统一小样本、PulseDB按需映射、ECSMP/PPG-BP信息增量通过。补齐EPFL、SEGADE和BIDMC人工呼吸/人口学资料。新发现BIDMC53记录来自46患者，旧部分分折存在真实患者交叉，已另存证据。完整扩展须用户确认，不能依据早期全套授权自动恢复队列。
+
 本目录保存 Watch-LSM 的论文、历史调研和项目相关分析。用户维护的 [Wearable-Physiological-Foundation-Models](https://github.com/tujy859/Wearable-Physiological-Foundation-Models) 是本项目长期参考的领域调研与资源索引；本项目记录具体采用理由、实现状态和实测证据。
 
 2026-11-04用户明确当前定位为**先评测、后训练的手表PPG研究PoC**。任务、强对照、数据边界及最小里程碑建议见[评测PoC讨论稿](../docs/ppg_evaluation_poc_plan.md)；调研仓中的生产级架构建议不作为本项目当前必做项。
