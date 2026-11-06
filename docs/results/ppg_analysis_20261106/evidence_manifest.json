@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-06",
+  "kind": "posthoc_readonly_diagnostics",
+  "new_model_fits": 0,
+  "pretraining": false,
+  "formal_results_overwritten": false,
+  "files_sha256": {
+    "sds_readonly.json": "3322811ae69cf5902f3067c7bec0501902d6d7c802101747f728c83331f57e55",
+    "denoising_readonly.json": "6009870f3521d8e02a13adca084114ce6cc362e5fa3196782366027a5abd2e10",
+    "../../../scripts/diagnose_ppg_sds_readonly.py": "fd85e9d227551cf688c55b777b59fb913aef003d9b3445ee62d54f32e93e3bd3",
+    "../../../scripts/diagnose_ppg_denoising_readonly.py": "0b43fa4f9a24805c57e22c40b81a85e8894c37de7e1e513d73570642ec2a9223"
+  },
+  "root_independent_DC_boundary_check": {
+    "windows": 168,
+    "linear_identity_max_abs_error": 1.4438228390645236e-11,
+    "full_window_squared_difference_fraction_mean": 0.6154203384311846
+  },
+  "reproduction_checks": {
+    "sds_statistics_and_input_hashes_identical_excluding_execution_metadata": true,
+    "denoising_numeric_max_abs_difference": 3.552713678800501e-15,
+    "denoising_nonnumeric_exact": true
+  },
+  "formal_original_artifact_hashes_checked": 95,
+  "new_scripts_syntax_checked": 2,
+  "existing_output_refusal_checked": 2,
+  "documentation_relative_links_checked": true
+}
